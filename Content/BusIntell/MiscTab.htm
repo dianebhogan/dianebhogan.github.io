@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Business Intelligence" />Misc tab</h1>
+        <p>Here you can edit the Report header, description, and footer. This is also where you adjust the permissions of the report. By default, reports are not shared with anyone. This allows you to build your own list of reports. </p>
+        <p>To share a report, select a role from the drop down list and then select the right you wish for that group to have. Please note that is the users you are sharing with do not have permissions to the data you are sharing they won’t be able to see the report.</p>
+        <p>
+            <img src="../Resources/Images/BI/MISC.jpg" style="width: 583px; height: 842px;" class="thumbnail" />
+        </p>
+        <h2>Exposing reports as a data source</h2>
+        <p>eIzenda BI reporting allows you to create your own data source reports by selecting the option <b>Expose as Datasource</b>. It is a best practice to ensure that the output of any Datasource report contains a foreign key that can be JOINED to other tables / Views in the main report.</p>
+        <h2>Drill-downs and Sub-reporting</h2>
+        <p>To create a drill-down report, you can start by designing the main report, but in order to be able to select a drill-down report, that sub-report must first have a drill-down key to show up in the selection list. This means it often makes more sense to work from the bottom up, from the lowest sub-report to the highest parent report.</p>
+        <p>A sub-report does not appear in the list of available sub-reports until it has a drill-down key defined. When this has been set and the report saved, any other report can access the sub-report in the list of available sub-reports. At this point you can define a drill-down style to control how the sub-report is accessed.</p>
+        <p class="ProcedureIntro">Select the Drill-down Type</p>
+        <p class="ProcedureIntro">
+            <img src="../Resources/Images/BI/DD_Type.jpg" />
+        </p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p>Option</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">. . .</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Disables the
+ drill-down without removing the link between this field and a subreport</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Link</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Opens sub-report in
+ the same browser window</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Link(New Window)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Opens sub-report in a
+ new browser window</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Embedded</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Embeds sub-report in
+ the table cell or directly into a form
+  
+  *NOTE* Please see section</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Popup</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Displays sub-report
+ in a pop-up window.&#160; You must click on the pop-up to clear it from the
+ screen.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Hover</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Shows the sub-report
+ on the same screen as an overlay when you hover over the current field,
+ chart, or gauge.  
+  NOTE: This option is not available on the Fields Tab!</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">ComboKey</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Indicates that this
+ drill-down key is a second, third, or other key that is not the first key. The
+ first key controls the drill-down style, and every other field with a target
+ sub-report and the ComboKey behavior defined passes their value along with
+ that first value, in field order.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Scheduler</h2>
+        <p>The scheduling controls may not be available to all users. If you do not see them, communicate with your system administrator.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Schedule</b>: Set the schedule date and time.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Repeat Type</b>: Set the repeat frequency.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Send Email As</b>: Set the format in which the email is sent.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Recipients</b>: Enter a comma separated list of recipients.</p>
+    </body>
+</html>

@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Import Queue management</h1>
+        <p>As records are retrieved from PrismHR, Import Queue (tblImportQueue) records are created and modified. The Import Queue Management dashboard and detail pages enable you to reset queue item statuses (reset to Pending, set to Complete) and interrogate error data using the Log Data field. </p>
+        <p>When the queue record fails to import into ClientSpace, we stamp the error message onto the Queue record for the following Ongoing import types:</p>
+        <ul>
+            <li>
+                <p>Location</p>
+            </li>
+            <li>
+                <p>I9</p>
+            </li>
+            <li>
+                <p>Employee</p>
+            </li>
+            <li>
+                <p>Employment</p>
+            </li>
+            <li>
+                <p>Contact</p>
+            </li>
+            <li>
+                <p>User</p>
+            </li>
+            <li>
+                <p>PayrollBatch</p>
+            </li>
+            <li>
+                <p>Company</p>
+            </li>
+            <li>
+                <p>ClientTeam</p>
+            </li>
+            <li>
+                <p>Codes</p>
+            </li>
+            <li>
+                <p>Employee Future Change</p>
+            </li>
+        </ul>
+        <p class="ProcedureIntro">To access the management suite:</p>
+        <ul>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Imports</b> &gt; <b>Manage Import Queue</b>.</li>
+        </ul>
+        <h2>Configuration includes</h2>
+        <p>The configuration includes the following steps:</p>
+        <ul>
+            <li>ImportIDs for Lookups and other data (ClientSpace)</li>
+            <li>Import Map Headers (ClientSpace)</li>
+            <li>Import Map Details (ClientSpace)</li>
+            <li>API Configuration form (ClientSpace)</li>
+            <li>HRP Subscription Dataforms (ClientSpace)</li>
+            <li>The PrismHR site parameters</li>
+        </ul>
+        <h3>Import IDs</h3>
+        <p>Certain Lookups and other data require translation to PrismHR values. Translation occurs by using ImportIDs on the following data:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');margin-left: 0;margin-right: auto;" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Contract Type (ClientMaster)</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Contract Status (ClientMaster)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">HR Rep User</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Sales Rep User</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Employment Status (Employee)</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Employment Type (Employee)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Marital Status (Employee)</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Gender (Employee)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Ethnic Classification (Employee)</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Work State Filing Status (Employee)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Home State Filing Status (Employee)</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Pay Method (Employment)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Pay Frequency (Employment)</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Import Map Headers</h3>
+        <p>Configure the Import Map Headers  for each file type to be produced. The configured headers MUST match the PEO headers listed in the following table.  You must configure the Custom Import Class for each Header.</p>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 518px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Import file</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Import Map Header</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">HRPAPI_company_ongoing*.csv</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">ClientSpace.PEO.Import.ClientMaster</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">HRPAPI_clientteam_ongoing*.csv</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">No custom import
+ class</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">HRPAPI_employee*.csv</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">ClientSpace.PEO.Import.Employee</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">HRPAPI_employment*.csv</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">ClientSpace.PEO.Import.Employment</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">HRPAPI_location*.csv</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">ClientSpace.PEO.Import.Location</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">HRPAPI_voucher*.csv</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">ClientSpace.PEO.Import.EmployeeVoucher</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">HRPAPI_payroll_batch*.csv</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">ClientSpace.PEO.Import.PayrollBatch</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p><b>These import map configurations should have been pushed to your site but may be inactive</b>. If you find these configurations do not exist on your site, log an Extranet case to add these configurations.</p>
+    </body>
+</html>

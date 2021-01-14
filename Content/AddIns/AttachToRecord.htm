@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Attaching emails to Dataforms</h1>
+        <p>With Attach To Record, you can attach emails to a dataform so that you do not have to create an Activity first, and then perform the additional step of attaching it to a record. When you select Attach To Record, the Select Record form opens in the right pane. You can select a dataform and then select a specific record.</p>
+        <p><b>Scenario</b>: Suppose that you have an email about a worker's comp claim, and you want to attach the email to a specific record. The selected Workspace determines the available forms, and the form drives the available records. You want to select the form that pertains to a worker's comp claim and then select the record that is relevant to the employee in question.</p>
+        <p class="ProcedureIntro">To attach the message to a dataform:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">From the <b>Post To ClientSpace</b> page, under <b>Links</b>, select <b>Attach To Record</b>.<br /></p>
+        <p class="StepResult">The Select Record form opens in the right pane.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Email/AttachEmail_selectRecord.png" />
+        </p>
+        <p class="L1Num" MadCap:autonum="2. ">For <b>Workspace</b>:</p>
+        <p class="Bullet2" MadCap:autonum="• ">If the FROM address is the same as the ClientSpace email address, it is not used to determine the Workspace. Instead, the first TO address is used to determine the Workspace.</p>
+        <p class="Bullet2" MadCap:autonum="• ">If the FROM address is DIFFERENT from the ClientSpace email address, the Workspace defaults to the Workspace of the email sender (the FROM address).</p>
+        <p class="Bullet2" MadCap:autonum="• ">The email address is compared to all employee email addresses (both Personal and Work email) in the system and tries to match the email. If a match is found, the Workspace associated with that employee is used. If multiple instances of the employee email (Personal and Work) exist, the most recently changed instance is used. If the From email is not recognized, then you can select a Workspace of your choice.</p>
+        <p class="L1Num" MadCap:autonum="3. ">In <b>Form Name</b>, select a dataform. When you select a dataform, the <b>Record</b> field becomes available. Form Name lists forms that are available to the selected Workspace.</p>
+        <p class="L1Num" MadCap:autonum="4. ">In <b>Record</b>, select a record. To see a more extensive list, click <b>Record Search</b>. The search list is loaded for the selected Workspace. You cannot change or remove the selected Workspace.</p>
+        <p class="L1Num" MadCap:autonum="5. ">To select a record from the <b>Search</b> list, highlight the row and click <b>Ok</b>.<br /></p>
+        <p class="StepResult">You are returned to the Post To ClientSpace page with the Select Record form auto-filled (right pane).</p>
+        <p class="L1Num" MadCap:autonum="6. ">Click <span class="UXElement">Attach To Record</span>.</p>
+        <p class="StepResult">In the right pane, the message "Email attached successfully!" appears.</p>
+        <p class="L1Num" MadCap:autonum="7. ">From here you can click <b>Open Record</b> to view the record with the newly attached email.<br /></p>
+        <p class="StepResult">The form that you selected in Form Name opens.</p>
+        <p class="L1Num" MadCap:autonum="8. ">From the open form, in the <b>Action Center</b>, expand <b>Activities</b> to see the newly attached email.</p>
+        <p class="L1Num" MadCap:autonum="9. ">When ready, click <b>Cancel</b>.<br /></p>
+        <p class="StepResult">You are returned to the Post to ClientSpace page.</p>
+        <p class="L1Num" MadCap:autonum="10. ">When ready, click <b>Close</b>.</p>
+    </body>
+</html>

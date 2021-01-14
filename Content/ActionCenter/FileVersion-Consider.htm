@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>File version considerations for dataforms</h1>
+        <p>While the process is consistent in use, it is important to recognize the following conditions and how they affect the process. Uploading a new file takes effect only after saving the Upload File dialog box AND the dataform is saved. If a Current File exists, uploading a new file and clicking Save  pins the new file as the Current File and versions the existing file.</p>
+        <p>The Dataform field File Name appears in red ink if it has changed and the form is not yet saved. If the dataform is not saved, no changes are made, and the newly uploaded file is abandoned. If the dataform is not saved, no changes are made.</p>
+        <p>For Orgs, Contacts, and Activity attachments, the behavior is similar to dataform attachments. For Orgs and Contacts, pinning is synchronized. For Activity attachments, pinning does not affect Contact/Org (Protected).</p>
+        <h3>Example</h3>
+        <ul>
+            <li>Upload File_A to Contact.<ul><li>File_A appears on both Contact and Org.</li></ul></li>
+            <li>Upload File_B to Contact.<ul><li>File_B appears and is pinned on Contact and Org. </li><li>File_A is versioned on both.</li></ul></li>
+            <li>Pin File_A on Contact.<ul><li>File_A is also pinned on Org (UnProtected).</li><li>File_B is versioned on both.</li></ul></li>
+            <li>Pin File_B on Org.<ul><li>File_A is still be pinned on Contact.</li></ul></li>
+            <li>Upload File_C on Org.<ul><li>File_C is pinned on Org.</li><li>File_A  remains pinned on Contact.</li><li>File_C is in the version list on Contact.</li></ul></li>
+        </ul>
+    </body>
+</html>

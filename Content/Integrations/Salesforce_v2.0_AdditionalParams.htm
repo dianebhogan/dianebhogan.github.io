@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Additional Parameters</h1>
+        <p>In the <b>Add Parameter</b> area of the API&#160;Configuration form (see the following image), you can customize your connection to the data using additional parameters, entered as a set of parameter names and values. Add these additional parameters by completing the Parameter - Value pairings, as shown.</p>
+        <p>
+            <img src="../Resources/Images/Integrations/AddParameters.png" />
+        </p>
+        <p>The following table provides details for the Parameter - Value pairings. </p>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 151px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Parameter</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Value description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">defaultorgowner</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Specify a LoginID (username)  as the owner of organizations that are imported from Salesforce, where the owner specified in Salesforce does not have a ClientSpace user account.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">ExcludeUserNames</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Specify a value that acts as a filter. User names that begin with the filter value, such as <em>abc</em>, are excluded during the user security import. The queue record is stamped with the message "User '&lt;userID&gt;' has excluded name, this record will not be processed."</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">exporttosf</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>0</b>: No Export <br />(<MadCap:variable name="MyVariables.ProductName" /> changes are not exported to Salesforce) defaults to <b>0</b></p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>1</b> = Export to and Import from Salesforce</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" rowspan="3">
+                        <p class="TableTextLeft">updatestage</p>
+                        <p>&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>0</b>: Opportunity Stage is never updated when exporting.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>1</b>: Opportunity Stage is updated when exporting.<br />(defaults to <b>1</b>). <b>Note</b>: Export is based on Client Master status and stage.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">When the value = <b>1</b>, the Opportunity Stage in Salesforce is updated by the export. The update is based on the following translation of the <MadCap:variable name="MyVariables.ProductName" /> Client Master status and stage name. For example, when <b>updatestage=1</b> and the Client Master status has moved from Accepted to Underwriting, then the stage is updated from Pricing to Proposal.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2" style="padding: 0px;">
+                        <table style="width: 100%;">
+                            <col style="width: 335px;" />
+                            <col />
+                            <tbody>
+                                <tr>
+                                    <td style="font-weight: bold;">
+                                        <p><MadCap:variable name="MyVariables.ProductName" /> Client Master status</p>
+                                    </td>
+                                    <td style="font-weight: bold;">Stage name</td>
+                                </tr>
+                                <tr>
+                                    <td>Prospect</td>
+                                    <td>Pricing</td>
+                                </tr>
+                                <tr>
+                                    <td>Submitted</td>
+                                    <td>Pricing</td>
+                                </tr>
+                                <tr>
+                                    <td>Accepted</td>
+                                    <td>Pricing</td>
+                                </tr>
+                                <tr>
+                                    <td>Underwriting</td>
+                                    <td>Proposal</td>
+                                </tr>
+                                <tr>
+                                    <td>PricingApproved</td>
+                                    <td>Proposal</td>
+                                </tr>
+                                <tr>
+                                    <td>Approved</td>
+                                    <td>Negotiation</td>
+                                </tr>
+                                <tr>
+                                    <td>ContractPending</td>
+                                    <td>Negotiation</td>
+                                </tr>
+                                <tr>
+                                    <td>Negotiation</td>
+                                    <td>Negotiation</td>
+                                </tr>
+                                <tr>
+                                    <td>UnderContract (Onboarding)</td>
+                                    <td>Closed Won</td>
+                                </tr>
+                                <tr>
+                                    <td>PendingActivation</td>
+                                    <td>Closed Won</td>
+                                </tr>
+                                <tr>
+                                    <td>Terminated</td>
+                                    <td>Closed Won</td>
+                                </tr>
+                                <tr>
+                                    <td>Dead</td>
+                                    <td>Closed Lost</td>
+                                </tr>
+                                <tr>
+                                    <td>Expired</td>
+                                    <td>Closed Lost</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">csworkspacedataproc</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">This proc exports workspace data (defaults to <b>peo_salesforce_org_s_workspace_by_org</b>).</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">csupdateproc</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">This proc  sets <b>_CSUpdateAllowed</b> (defaults to <b>peo_salesforce_s_allow_cs_update</b>). This proc determines when <MadCap:variable name="MyVariables.ProductName" /> will begin ignoring Salesforce.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">csavailableupdates</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">This proc determines which <MadCap:variable name="MyVariables.ProductName" /> changes are able to trigger an export (defaults to <b>peo_salesforce_s_available_cs_updates</b>). These must have associated Audit configurations in the Field Change Audit table.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">querysize</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">1000 (must be this value)</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">sessionlength </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">29 (must be this value)</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">querybatchsize </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">-1 (must be this value)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">version</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">2 (must be this value)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">IgnoreWorkQueueErrors</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Allows the admin to ignore work queue failures and mark them as completed, so they are not reprocessed.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Value of  0 or 1, defaults to 0.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Only applies to processing Work Queue records when there is a failure (could not save a form).</p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">0</span>: Work Queue record is NOT marked Completed (this is how it has worked in the past).</p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">1</span>: Work Queue record IS marked Completed and the WorkQueueErrorFieldName field in Salesforce is updated with the failure log info.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">WorkQueueInstance</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">This parameter enables the system administrator to process certain Work Queue records in Salesforce so that multiple instances of ClientSpace can use the Salesforce API&#160;for a single instance of Salesforce. To use this functionality,  specify a value to match the Salesforce Work Queue field.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft"><span class="UXElement">Salesforce Work Queue field</span>
+                        </p>
+                        <ul>
+                            <li>If this field is <span class="UXElement">not found</span> on the Work Queue, all Work Queue records are retrieved, regardless of the API Config parameter setting.</li>
+                            <li>If this field <span class="UXElement">is found</span> on the Work Queue, only those Work Queue records stamped with the value in the API Config parameter are retrieved.</li>
+                        </ul>
+                        <p class="TableTextLeft">Your Salesforce administrator must set up the field and apply the rules necessary to insert the correct value into this field for each Work Queue record inserted.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft"><span class="UXElement"><MadCap:variable name="MyVariables.ProductName"></MadCap:variable> Additional Parameters</span> </p>
+                        <ul>
+                            <li>When this field is <span class="UXElement">not present</span>, all Work Queue records are retrieved. </li>
+                            <li>When this field <span class="UXElement">is present</span> with an <span class="UXElement">empty</span> Value, all Work Queue records are retrieved.</li>
+                            <li>When this field <span class="UXElement">is present</span> with a <span class="UXElement">populated</span> Value, only Work Queue records with the matching WorkQueueInstance value in the ClientSpace API Config are processed.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">WorkQueueRecordsToProcess</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Defines the max number of records to be processed at one time (defaults to 2000).</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Can be set between 1 and 2000. Defaults to 2000.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">If 0 or less, it is set to 1.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">If &gt; 2000, it is set to 2000.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Retrieves the TOP(X) number of records from the work queue ordered by LastModifiedDate ascending (the earliest records).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">WorkQueueErrorFieldName</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Allows the admin to configure a custom field in Salesforce work queue item to capture API errors. Admin must have the ability to add an available custom field to the work queue record in Salesforce that is available for  read/write through the API.  Can be a rich text field to preserve log formatting.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Value of <span class="UXElement">&lt;FieldName__c&gt;</span> should be the name of the custom work queue record field name. Defaults to "" (empty).</p>
+                        <p class="TableBullet" MadCap:autonum="• ">If empty and IgnoreWorkQueueErrors = 1, the Work Queue is completed, and no error message is sent to Salesforce.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">If  <span class="UXElement">&lt;FieldName__c&gt;</span> and <span class="UXElement">IgnoreWorkQueueErrors = 0</span>, the Work Queue is NOT completed and no error messages are sent to Salesforce.</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">If <span class="UXElement"> &lt;FieldName__c&gt;</span> and field does not exist in the Work Queue, based on IgnoreWorkQueueErrors, the Work Queue may be completed with no error message sent to Salesforce.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Field must be configured in Salesforce and available.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">timezoneoffset</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Salesforce makes up the offset of the time zone from ClientSpace and sets the date a day back. This parameter corrects for the GMT offset that is applied by Salesforce. It matches the date in Salesforce to the ClientSpace date, and the time is set to 12:00 to match the ClientSpace record. </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">To correct the GMT offset added by Salesforce, ensure that the <span class="UXElement">timezoneoffset</span> parameter is set to match the appropriate time zone of the ClientSpace installation (Time Zone Name in App Settings). In the Eastern time zone, this would be a value of -5.</p>
+                        <ul>
+                            <li><span class="UXElement">0</span>: Passes the value as is.</li>
+                            <li><span class="UXElement">–</span><em>n</em>: Subtract hours. For example, to subtract 5 hours, specify <span class="UXElement">–5</span>.</li>
+                            <li><em>n</em>: Add hours. For example, to add 5 hours, specify <span class="UXElement">5</span>.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Fields that can trigger an export</h2>
+        <p>The following table lists the <MadCap:variable name="MyVariables.ProductName" /> fields that, when changed, can trigger an export. For the default PEO proc (<b>peo_salesforce_s_available_cs_updates</b>), these fields and the associated system objects are as follows.</p>
+        <table style="width: 100%; mc-table-style: url('../Resources/TableStyles/Standard_Table.css'); margin-left: 0; margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 235px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 453px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Associated system objects</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1" colspan="2">Fields</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Org Trigger </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">Name</p>
+                        <p class="TableBullet" MadCap:autonum="• ">AKA</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Phone</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Fax</p>
+                        <p class="TableBullet" MadCap:autonum="• ">crStatus</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Address1</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Address2<br /></p>
+                        <p class="TableBullet" MadCap:autonum="• ">City</p>
+                        <p class="TableBullet" MadCap:autonum="• ">State</p>
+                        <p class="TableBullet" MadCap:autonum="• ">PostalCode </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">Country	</p>
+                        <p class="TableBullet" MadCap:autonum="• ">luCurrentPEO</p>
+                        <p class="TableBullet" MadCap:autonum="• ">crSource</p>
+                        <p class="TableBullet" MadCap:autonum="• ">crBusinessType</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Website</p>
+                        <p class="TableBullet" MadCap:autonum="• ">IndustryCode</p>
+                        <p class="TableBullet" MadCap:autonum="• ">EmployerIDNumber</p>
+                        <p class="TableBullet" MadCap:autonum="• ">crCategory</p>
+                        <p class="TableBullet" MadCap:autonum="• ">DoNotCallP</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Org Other Info Trigger </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">EmployeeCount</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">GrossPayroll</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Contact Trigger </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">fkOrganizationId</p>
+                        <p class="TableBullet" MadCap:autonum="• ">fkAssignedToUserID</p>
+                        <p class="TableBullet" MadCap:autonum="• ">FirstName<br /></p>
+                        <p class="TableBullet" MadCap:autonum="• ">LastName</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Title</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Category</p>
+                        <p class="TableBullet" MadCap:autonum="• ">BusinessPhone</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Email1<br /></p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">CellPhone</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Fax</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Address1</p>
+                        <p class="TableBullet" MadCap:autonum="• ">City</p>
+                        <p class="TableBullet" MadCap:autonum="• ">State</p>
+                        <p class="TableBullet" MadCap:autonum="• ">PostalCode<br></br></p>
+                        <p class="TableBullet" MadCap:autonum="• ">Country</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Active</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Contact Other Info Trigger </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">mluContactType</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Client Master Trigger </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">ClientNumber</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Status</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Dateof1stPayroll<br /></p>
+                        <p class="TableBullet" MadCap:autonum="• ">ContractEffectiveDate<br /></p>
+                        <p class="TableBullet" MadCap:autonum="• ">CorporationType</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">luAltIndustryCode<br></br></p>
+                        <p class="TableBullet" MadCap:autonum="• ">SalesRegion<br /></p>
+                        <p class="TableBullet" MadCap:autonum="• ">fkParentCompanyID</p>
+                        <p class="TableBullet" MadCap:autonum="• ">luKillReason</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Incident Trigger fields (Task)<b>*</b></p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">Status</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">ContactManagementNote </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">Notes</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">manual sync</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">option on Client Master <b>Sync with PrismHR</b></p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">SFManualSync</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p><b>*</b> Tasks in <MadCap:variable name="MyVariables.ProductName" /> can be created by Salesforce task records from a Salesforce import (see the diagram in <MadCap:xref href="Salesforce_v2.0_ProcessOver.htm" title="see the diagram in the v2.0 Process Overview topic" alt="see the diagram in the v2.0 Process Overview topic" class="Heading">Process overview</MadCap:xref>). If one of the <MadCap:variable name="MyVariables.ProductName" /> tasks that was imported from Salesforce has a status change, it can trigger a Salesforce export.</p>
+    </body>
+</html>

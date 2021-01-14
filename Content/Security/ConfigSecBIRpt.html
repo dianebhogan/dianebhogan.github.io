@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Security" />Configuring security in Business Intelligence reportin<MadCap:annotation MadCap:comment="R90 Case 43087 Ad Hoc Profile - Add screen" MadCap:createDate="2020-03-11T13:23:06.989Z" MadCap:creator="Diane Hogan" MadCap:editDate="" MadCap:editor="" MadCap:initials="DH" MadCap:creatorCentralUserId="98c66c7b-566c-4028-b287-6a8c4e6d073b">g</MadCap:annotation></h1>
+        <p>This topic describes the elements involved in configuring and regulating security in Reporting Profile and Business Intelligence reports in <MadCap:variable name="MyVariables.ProductName" />.</p>
+        <h2>Configuring Reporting Profiles</h2>
+        <p>Configuring security for Reporting Profiles for Business Intelligence reporting is a multi-step process. For a <MadCap:variable name="MyVariables.ProductName" /> user to access data from BI reports, the user must have a Reporting Profile. These profiles, in combination with Dataform security, determine what data the user can access through the reports. This design ensures that if a user does not have access to a particular piece of data through the standard user interface (UI), they cannot access the data through reporting. The first step is to configure Reporting Profiles, which secure the tables and views used as datasources by the Reports interface.</p>
+        <p class="ProcedureIntro">To configure reporting profiles:</p>
+        <ol>
+            <li>
+                <p>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Security</b> &gt; <b>Reporting Profile</b>.<br />The Reporting Profile dashboard opens.<br /></p>
+            </li>
+            <li>
+                <p>For an existing profile, select a profile from the list and click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Jump</span>).</p>
+            </li>
+            <li>
+                <p>Select the appropriate options: <b>Allow Report Creation</b> or <b>Allow All Forms and Views</b>.</p>
+            </li>
+            <li>
+                <p>Click <b>Save</b>.</p>
+            </li>
+        </ol>
+        <p class="ProcedureIntro">To add a new profile:</p>
+        <ol>
+            <li>
+                <p>Click <b>Add</b>.</p>
+            </li>
+            <li>
+                <p>In <MadCap:annotation MadCap:comment="changed" MadCap:createDate="2020-03-11T13:23:26.722Z" MadCap:creator="Diane Hogan" MadCap:editDate="2020-03-11T13:23:30.052Z" MadCap:editor="Diane Hogan" MadCap:initials="DH" MadCap:creatorCentralUserId="98c66c7b-566c-4028-b287-6a8c4e6d073b"><b>New Reporting Profile</b>,</MadCap:annotation> in <b>Profile Name</b>, enter a name.</p>
+            </li>
+            <li>
+                <p>Select the appropriate options: <b>Allow Report Creation</b> or <b>Allow All Forms and Views</b>.</p>
+            </li>
+            <li>
+                <p>Click <b>Save</b>.</p>
+            </li>
+        </ol>
+        <p class="ActionTip">Reporting Profile security takes precedence over Report Security. The Reporting Profile security hides a report in the list if the user does not have access to all the tables called by the report.</p>
+        <h2>Configuring the user profile</h2>
+        <p>Now that you have the profile configured, you must add the profile to the user in question to enforce the form security.</p>
+        <p class="ProcedureIntro">To configure the user profile:</p>
+        <ol>
+            <li>
+                <p>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Users</b>.<br />The Users dashboard opens.<br /></p>
+            </li>
+            <li>
+                <p>Open the user account (double-click an entry).<br />The User Details form opens.<br /></p>
+            </li>
+            <li>
+                <p>In <b>Administrator Settings</b>, in the <b>Reporting Profile</b> list, select a profile for the user.</p>
+            </li>
+            <li>
+                <p>Click <b>Save</b>.</p>
+            </li>
+        </ol>
+        <h2>Securing the report</h2>
+        <p>The final step is to secure the individual reports. Report security in combination with the datasource security can be quite granular in its application.</p>
+        <p class="ProcedureIntro">To secure the report:</p>
+        <ol>
+            <li>
+                <p>Open a report.</p>
+            </li>
+            <li>
+                <p>On the report, click the <b>Misc</b> tab.</p>
+            </li>
+            <li>
+                <p>To adjust the <b>Share With</b> section of the report, select a ClientSpace role containing the users in question and an appropriate <b>Rights</b>. The various rights levels are:</p>
+            </li>
+        </ol>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <colgroup>
+                <col class="TableStyle-Procedure-Column-Column1" style="width: 90px;" />
+                <col class="TableStyle-Procedure-Column-Column1" />
+            </colgroup>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Full Access</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Report is available to the user to view, modify, and save changes to the report. Note that the owner user (UserName property of the ReportSet) is not changed on saving, that is the original owner (creator) of the report stays the same.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Read Only</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Report is available to the user to view, add, or remove filters, and modify existing filter values. Also, the user can modify (design) the report but cannot save it. However, the user could Save As this report.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">View Only</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Report is available to the user to view, but not to modify in any way or save changes to the report.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Locked</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Report is available to the user to view and modify existing filter values, but the user cannot add or remove filters or fields or save changes to the report. Note that modifying filter operator and/or filtered column is restricted as well.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">None</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Report is unavailable to (hidden from) the user.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Additional security: Report filtering using #CurrentUser</h3>
+        <p>A common practice in Sales reporting is to use the custom wildcard of #CurrentUser on a filter for the Assigned To user of an Organization or other similar User ID fields. This wildcard tells the report to only access records where the AssignedTo User ID is equal to the User ID of the currently logged in user of <MadCap:variable name="MyVariables.ProductName" />.</p>
+    </body>
+</html>

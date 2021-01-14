@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <div class="NoPageBreak">
+            <h1>Step 4: Conditions</h1>
+            <p>In this step, you can add one or more conditions to use in conjunction with the Workflow Action in Step 1 when determining if the workflow is triggered.&#160;What additional conditions would you like to have met to trigger this workflow?</p>
+            <p><span class="UXElement">Trigger on number of days from a date</span>:&#160;You can set a condition based on the number of days/months/years from a date. This feature uses the Field, Operator, and Value columns. See <MadCap:xref href="#Aging" title="To trigger conditions based on number of days/months/years from a date:" alt="To trigger conditions based on number of days/months/years from a date:">To trigger conditions based on number of days/months/years from a date</MadCap:xref>.</p>
+            <p><span class="UXElement">Clone a trigger</span>: For triggers that are similar, use the Clone feature to copy a trigger condition.  See <MadCap:xref href="#Cloning" title="Cloning a trigger condition" alt="Cloning a trigger condition">Cloning a trigger condition</MadCap:xref>.</p>
+            <p><span class="UXElement">Decide when you want to publish</span>:&#160;When you reach the end of the initial item of a Workflow Channel, you have the option to go back a step, continue, or finish. These options allow you to decide when you want to publish the newly added Workflow Channel. See <MadCap:xref href="#Completi" title="Completing the configuration" alt="Completing the configuration">Completing the configuration</MadCap:xref>.</p>
+            <p>
+                <img src="../Resources/Images/Workflow/AddWorkflow_Step4_Conditions.png" class="thumbnail" />
+            </p>
+        </div>
+        <p class="ProcedureIntro">To configure Conditions:</p>
+        <ol>
+            <li>Complete the form:</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 149px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Only trigger this workflow once</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Sometimes you only want a workflow to happen once. For example, the
+first time an employee marital status changes, you may want to send a notification about how
+this can affect their tax status and W4. You can use this option to ensure that this triggering condition is
+unique and only happens once.</p>
+                        <p class="TableTextLeft">When a single dataform is selected as the Triggering Form in Step 1, then <span class="UXElement">Only trigger this workflow once</span> is enabled (selected) and marked read-only. When a single dataform is selected as the Triggering Form, its respective Replace Fields and Condition options are removed from the workflow item. This works for Scheduled Workflows as well. Single dataforms such as Client Master and Client Team are not candidates for cloning because these forms have a one-to-one relationship with the workspace. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Publish</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">By default, this option is enabled. When the configuration is complete and you click Continue or Finish, a prompt is displayed asking if you want to publish.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Condition Expression</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">The Workflow Action condition was set in Step 1. This is the dataform or task
+field (or HdrAction) that when changed, it triggers the workflow.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">In Step 4, you can also add more complex triggering conditions to this primary condition by selecting dataform/task fields and setting a Value, Operator, and Label. </p>
+                        <p class="TableBullet" MadCap:autonum="• ">These conditions are combined with the Workflow Action set in Step 1 using an implied AND. </p>
+                        <p class="TableBullet" MadCap:autonum="• ">If the Condition Expression field is not filled, the additional conditions that are set in Step 4 are all treated as OR conditions. Example: The Workflow Action <b>AND</b> Condition 1 <b>OR</b> Condition2 <b>OR</b> Condition3.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">The Condition Expression field allows for AND as well as OR conditions using the Condition Expression feature. </p>
+                        <p class="TableBullet" MadCap:autonum="• ">Using the Label field on the Condition, you can combine trigger conditions into more complex expressions, overriding the default OR behavior combined with the implied AND for the Workflow Action. For example, the Workflow Action AND (Condition1 AND Condition2) OR (Condition3 AND Condition4) OR Condition5.</p>
+                        <p class="TableTextLeft">For a deeper discussion about Condition Expressions, see <MadCap:xref href="WFC_CondExpr.htm" title="condition expressions" alt="condition expressions" class="Heading">Condition expressions</MadCap:xref>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>To add conditions, click <b>Add</b> and complete the following fields:</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 148px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Source</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Source is a list of triggering options based on the Workflow Action triggering form. The Source list includes all active tabbed forms included in the tabbed set when the triggering form is the home form of a tabbed set. For details about tabbed dataforms, see <MadCap:xref href="TabbedDataforms.htm"><MadCap:concept term="Workflow Channels" />Workflow Channels and tabbed dataforms</MadCap:xref>.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">For a workflow action based on a <b>dataform</b>, this includes the triggering form and any server data procs associated with this form. Additionally, all active, triggerable, single forms are available in the application.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">For a workflow action based on a <b>task</b>, you can use fields from that task or fields from any single dataform from the workspace.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">You can configure conditions for task workflow channel items from the most recent parent dataform, even if your tasks are multiple levels deep. This enables you to logically refer to the child dataform. (For example, a milestone triggers a Case, and the Case triggers multiple layers of Tasks, all Tasks can reference the Case).</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">Source includes the most recently referenced dataform that would trigger the initial task (single or multi).</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">Condition Expressions operators (AND, OR, and NOT) work across multiple dataforms.</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">IsDirty does not appear in the trigger operator list because the task can be separated from the dataform by several other tasks; the dataform may not be dirty.</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">The Add Untriggered functionality is available when adding fields from this source.</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">If the most recent dataform is the main triggering dataform for the workflow, the condition Source is <b>Channel Trigger: &lt;NameOfTriggeringForm&gt;</b>.</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">If the most recent dataform is a cloned dataform workflow item, the condition Source is <b>Workflow #&lt;ItemNumber&gt;: &lt;ItemName&gt;</b>.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">HdrAction is only available when the Source is the parent triggering form.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">If you selected either a dataform or task for Source, Field contains an appropriate list of fields for the triggering task or form. You can add a triggered field and  also use multi-lookup fields (<b>Multi Lookup (MultiLookup)</b>) as triggering conditions. A  triggered form field is only editable on Add. Trigger Fields also support parent form fields (only available operators are empty, not empty, and dirty).</p>
+                        <p class="TableTextLeft">For Source such as Client&#160;Master, you can select Additional Record Information. Additional Record Information is for determining who made a change to employee information, such as email address changes. See <MadCap:xref href="TrackDataModsPrism.htm" title="Tracking data modifications in PrismHR" alt="Tracking data modifications in PrismHR">Tracking data modifications in PrismHR</MadCap:xref>.</p>
+                        <p class="ProcedureIntro">To add a trigger field:</p>
+                        <ol>
+                            <li>In <b>Field</b>, go to the end of the list and select <b>Add Untriggered Field</b>.<br />The Select an Untriggered Field dialog opens. <b>Field</b> contains a list of fields currently not marked as triggerable.<br /></li>
+                            <li>In <b>Field</b>, select an entry and click <b>Ok</b>.<br />The selected field is marked as triggerable and now appears in the Field list.</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Operator</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Operator is based on the type of Field selected but ranges from IsEmpty (nothing in a field) to a specified value. Each value from a <b>Multi Lookup</b> field can be added as a separate <b>=</b> condition.&#160;This supports complex AND, OR, and NOT conditions as well.  Is Dirty is not available in the Operator list when the Source is set to something other than the Triggering Form.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the value you are comparing the field to when attempting to meet a triggering condition.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Label</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Label is used when combining conditions into a complex Condition Expression.</p>
+                        <p class="TableTextLeft"><b>Note</b>: If a Label is not used in a Condition Expression, then the condition is an implied OR. In the example, if the Condition Expression was blank, this workflow would be triggered in the following manner: Workflow Action Trigger (Step 1) AND Condition1 OR Condition2</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="ProcedureIntro"><a name="Aging"></a>To trigger conditions based on number of days/months/years from a date:</p>
+        <ol MadCap:continue="true">
+            <li>Complete the form fields:</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 149px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select a date datatype field. This action makes the Aging operators available in <span class="UXElement">Operator</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Operator</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select one of the following:</p>
+                        <ul>
+                            <li><span class="UXElement">Aging (from now) &gt; =</span>
+                                <ul>
+                                    <li>Greater than or equal to the number of days/months/years in <span class="UXElement">Value</span>.</li>
+                                </ul>
+                            </li>
+                            <li><span class="UXElement">Aging (from now) &lt; =</span>
+                                <ul>
+                                    <li>Less than or equal to the number of days/months/years in <span class="UXElement">Value</span>.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p class="TableTextLeft">The less than operator requires that the evaluated date occurs between the calculated date and today.  It has to be between the date set in the configuration. For example, if the value is 6d, the from date must be between 6 days ahead and today.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Type a number accompanied by:</p>
+                        <ul>
+                            <li><span class="UXElement">d</span>: for days</li>
+                            <li><span class="UXElement">m</span>: for months</li>
+                            <li><span class="UXElement">y</span>: for years</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="ProcedureIntro">Putting it all together</p>
+        <p>The following example illustrates two conditions: GreaterThan_2days and LessThan_8Days. The Condition Expression is stated as GreaterThan_2days AND LessThan_8Days. For an aging evaluation, this condition requires more than 2 days and less than 8 days. </p>
+        <p>
+            <img src="../Resources/Images/Workflow/AgingConditions.png" class="thumbnail" />
+        </p>
+        <p>These trigger conditions can be a bit complex. If you need assistance, please log an Extranet case.</p>
+        <h2><a name="Cloning"></a>Cloning a trigger condition</h2>
+        <p>To save some time, you can clone a trigger condition and then edit as appropriate.</p>
+        <p>
+            <img src="../Resources/Images/Workflow/CloneTriggerCondition.png" alt="" title="" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">To clone a trigger:</p>
+        <ol>
+            <li>In the <span class="UXElement">Add</span> section, locate an entry that you want to copy.</li>
+            <li>Click <img src="../Resources/Images/ICONS/ICON_Clone.png" /> <span class="UXElement">Clone</span>.<br />A new row opens, with the trigger condition copied. Source, Field, and Operator are copied.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Workflow/ClonedTriggerCondition.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>You can now edit the new condition as appropriate.</li>
+            <li>Click <span class="UXElement">Apply</span> or <span class="UXElement">Save</span>.</li>
+        </ol>
+        <h2><a name="Completi"></a>Completing the configuration</h2>
+        <p>You can decide the next action:&#160;Back, Continue, or Finish.</p>
+        <p class="ProcedureIntro">To complete the configuration:</p>
+        <ol start="1">
+            <li>When ready, you can click <b>Back</b>, <b>Continue</b>, or <b>Finish</b>:<ul MadCap:continue="true" style="list-style-type: square;"><li>Click <b>Back</b> to return to the previous step of the Workflow item.</li></ul><ul MadCap:continue="true" style="list-style-type: square;"><li>Click <b>Continue</b> and respond to "This Workflow Channel is unpublished. Would you like to publish?" with the options <span class="UXElement">Yes</span> or <span class="UXElement">No</span>. Either selection takes you to the first step of the dependent Workflow item (the next item in the workflow). This allows you to add cascading steps that trigger from the workflow you just created.</li></ul><ul MadCap:continue="true" style="list-style-type: square;"><li>Click <b>Finish</b> and respond to "This Workflow Channel is unpublished. Would you like to publish?" with the options <span class="UXElement">Yes</span> or <span class="UXElement">No</span>.</li></ul><div class="indent"><ul MadCap:continue="true" style="list-style-type: circle;"><li><b>Yes</b> returns you to the Workflow Channel search list with the new Workflow Channel in a published state.</li></ul><ul MadCap:continue="true" style="list-style-type: circle;"><li><b>No</b> returns you to the Workflow Channel search list with the new Workflow Channel in an unpublished state.</li></ul></div></li>
+        </ol>
+        <h2><i class="fas fa-eye" style="font-family: Font Awesome 5 Free; font-size:24px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="See what you can do" alt="See what you can do"></i> What's next?  </h2>
+        <p>You can publish or unpublish from the Workflow Channels list.  See <MadCap:xref href="PubUnpubWorkflows.htm" title="publishing and unpublishing workflow channels" alt="publishing and unpublishing workflow channels" class="Heading">Publishing and unpublishing workflows</MadCap:xref>.</p>
+    </body>
+</html>

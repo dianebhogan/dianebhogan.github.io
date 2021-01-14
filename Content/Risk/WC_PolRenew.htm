@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>WC Policy renewals</h1>
+        <p>For Workers' Compensation policies that are set as defaults on State Legal Entities (SLE), their policy links are updated to connect the state legal entity to the new policy automatically on renewal. State legal entities without related policies are unaffected.</p>
+        <p>When a WC Policy is renewed from the Admin Workspace, risk administrators can control whether to update the default policy configurations on the State Master, SLE, and Contract Type Metadata records. Administrators can control updating these records for related pricing purposes. This logic and prompt are not applicable if activating a policy in the client's workspace.</p>
+        <p class="ProcedureIntro">To renew a policy:</p>
+        <ol>
+            <li>From the modules bar, click <span class="UXElement">Admin Workspace</span>.<br />The Admin Workspace tiles are displayed.</li>
+            <li>Select <span class="UXElement">Risk</span> &gt;&#160;<span class="UXElement">Workers Comp Policy</span>.<br />The Workers Comp Policy list is displayed.</li>
+            <li>Open a policy.<br />The Workers Comp Policy form opens.</li>
+            <li>In the <span class="UXElement">Action Center</span>, in the <span class="UXElement">Workflow</span> pane, click <span class="UXElement">Renew</span>.<br />The Renew WC&#160;Policy dialog box opens with the message:&#160;"Should this policy be the new default Master Policy on State Master, State Legal Entities and Contract Type Metadata that are currently set to the previous policy that is being expired?"</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/WorkComp/RenewPolicies.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Select a response:<ul style="list-style-type: square;"><li><span class="UXElement">Yes</span>: Updates the related policy on the child State Masters, State Legal Entities, and Contract Type Metadata to reflect the renewed policy.</li><li><span class="UXElement">No</span>: The related policy on the State Masters, State Legal Entities, and Contract Type Metadata remains unaffected.</li><li><span class="UXElement">Cancel</span>:&#160;Cancels the action and closes the dialog box.</li></ul></li>
+        </ol>
+    </body>
+</html>

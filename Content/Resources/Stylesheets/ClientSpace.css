@@ -1,0 +1,2453 @@
+﻿/*<meta />*/
+
+/* This stylesheet uses the MadCap CSS variables to control font and color in a single location */
+/* Three mediums: default, Print, and Short_Print  */
+
+@font-face 
+{
+	font-family: Lato;
+	src: url(../Fonts/Lato-Regular.ttf);
+}
+
+@font-face 
+{
+	font-family: 'Font Awesome 5 Brands Regular', 'Font Awesome 5 Free Regular', 'Font Awesome 5 Free Solid', 'FontAwesome';
+	src: url(../FontAwesome/webfonts/fa-brands-400.ttf);
+	src: url(../FontAwesome/webfonts/fa-regular-400.ttf);
+	src: url(../FontAwesome/webfonts/fa-solid-900.ttf);
+}
+
+:root
+{
+	--BrandPrimary: #333333;
+	--BrandPrimary2: #3C5A9A;
+	--BrandPrimary3: #545454;
+	--BrandPrimary4: #008AAD;
+	--BrandPrimary5: #017390;
+	--BrandPrimary6: #004969;
+	--BrandPrimary7: #F0F2F7;
+	--BrandFont: Lato, "Trebuchet MS";
+	--BrandFont2: "Segoe UI", "Open Sans", "Mier B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body	/* default */
+{
+	color: var(--BrandPrimary);
+	font-family: var(--BrandFont2);
+	margin-left: 0em;
+	padding-left: 1.5em;
+	padding-right: 1em;
+	border-bottom-width: .5em;
+	border-left-width: .5em;
+	border-right-width: .5em;
+	border-top-width: .5em;
+	font-size: 1em;
+	mc-hyphenate: never;
+	line-height: 1.4;
+}
+
+/* UX recommendation: Moves the Expand icon closer to the text in the navigation pane - HTML5 side nav */
+
+.is-accordion-submenu-parent > a span.submenu-toggle-container
+{
+	position: relative;
+	left: 30px;
+	top: 0;
+	height: 100%;
+	width: 2em;
+}
+
+div.topicwidth	/*This style controls width of topic for HTML5 output. Prevents spanning across wide screen.*/
+{
+	width: 75%;
+	mc-hidden: hidden;
+}
+
+div.side-menu
+{
+	padding-left: 600px;
+	margin-top: 15px;
+}
+
+div.side-content	/*This is the div for the side-content containing "Search Tips" and the "Contact Support" button*/
+{
+	padding-top: 10px;
+}
+
+div.content-container
+{
+	padding-top: 20px;
+	mc-hidden: hidden;
+}
+
+div.MCMiniTocBox_0
+{
+	border-left-color: var(--BrandPrimary2);
+	border-left-style: solid;
+	border-left-width: 2px;
+	padding-left: 10px;
+	padding-top: 2px;
+	mc-hidden: hidden;
+}
+
+/* Images side-by-side  */
+
+*
+{
+	box-sizing: border-box;
+}
+
+div.column
+{
+	float: left;
+	width: 25%;
+	padding: 5px;
+}
+
+.center
+{
+	padding: 1px 0;
+}
+
+
+
+/* Clearfix (clear floats) */
+
+div.row::after
+{
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/* Images side-by-side  */
+
+
+/*---------- START CSS Flexbox Layout ----------*/
+
+
+div.FlexContainer
+{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+div.FlexContainer > div
+{
+	background-color: var(--BrandPrimary2);
+	flex-grow: 1;
+	margin: 1em;
+	padding: 1em;
+	font-size: 1.5em;
+	color: white;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-radius: 2px;
+	background: #3C5A94;
+	border: 1px solid #dadada;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	margin-left: 2px;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+	transition: all 0.3s;
+}
+
+div.FlexContainer > div:hover
+{
+	background-color: #004969;
+	font: var(--BrandFont);
+	transition: all 0.8s cubic-bezier(.25,.8,.25,1);  
+	margin-left: 0px;
+	box-shadow: 4px 4px 6px 4px rgba(0,0,0,0.2);
+}
+
+div.FlexContainer > div > a
+{
+	display: block;
+	color: inherit;
+}
+
+/*---------- END CSS Flexbox Layout ----------*/
+
+
+/* Make image align center with title on guide landing pages  */
+
+div.box
+{
+	display: flex;
+	align-items: center;
+}
+
+/* END - Make image align center with title on guide landing pages  */
+
+
+h1	/* default */
+{
+	letter-spacing: normal;
+	clear: both;
+	mc-next-tag: p;
+	mc-heading-level: 1;
+	page-break-after: avoid;
+	page-break-inside: avoid;
+	page-break-before: avoid;
+	font-weight: normal;
+	font-size: 2.50em;
+	margin-bottom: 0.5em;
+	font-family: var(--BrandFont);
+	color: var(--BrandPrimary2);
+	margin-top: 0.75em;
+}
+
+h2	/* default */
+{
+	clear: both;
+	mc-next-tag: p;
+	mc-heading-level: 2;
+	border-bottom-color: transparent;
+	font-weight: normal;
+	font-size: 1.9em;
+	margin-bottom: 0.4em;
+	font-family: var(--BrandFont);
+	margin-top: 30px;
+	color: var(--BrandPrimary3);
+}
+
+h3	/* default */
+{
+	clear: both;
+	mc-next-tag: p;
+	mc-heading-level: 3;
+	font-weight: normal;
+	font-size: 1.6em;
+	margin-bottom: 0.5em;
+	font-family: var(--BrandFont);
+	margin-top: 28px;
+	color: var(--BrandPrimary2);
+}
+
+h4
+{
+	margin-bottom: .5em;
+	clear: both;
+	mc-next-tag: p;
+	mc-heading-level: 4;
+	font-weight: bold;
+	font-family: var(--BrandFont);
+	margin-top: 20px;
+	font-size: 1.4em;
+	color: var(--BrandPrimary3);
+}
+
+h5
+{
+	margin-bottom: .5em;
+	clear: both;
+	mc-next-tag: p;
+	mc-heading-level: 0;
+	font-weight: bold;
+	font-size: 1em;
+	font-family: var(--BrandFont);
+	margin-top: 18px;
+	color: var(--BrandPrimary3);
+}
+
+h6
+{
+	margin-bottom: .5em;
+	clear: both;
+	mc-next-tag: p;
+	mc-heading-level: 0;
+	font-style: italic;
+	font-family: var(--BrandFont);
+	font-weight: bold;
+	font-size: 1em;
+	margin-top: 18px;
+	color: var(--BrandPrimary3);
+}
+
+.responsive
+{
+	max-width: 100%;
+	height: auto;
+	mc-hidden: hidden;
+}
+
+a.Popup
+{
+	mc-popup-height: 15px;
+	color: var(--BrandPrimary2);
+}
+
+p
+{
+	margin-top: .5em;
+	margin-bottom: 1em;
+	font-size: 1em;
+	mc-hyphenate: never;
+	font-family: var(--BrandFont2);
+	color: var(--BrandPrimary);
+	line-height: 1.4;
+}
+
+p.StepResult
+{
+	mc-next-tag: p;
+	mc-next-class: L1Num;
+	margin-left: 0.25in;
+	margin-top: -6.5px;
+	margin-bottom: 4px;
+	line-height: 1.2;
+}
+
+p.UserGuideTitle	/* default */
+{
+	letter-spacing: normal;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	font-style: normal;
+	letter-spacing: 0em;
+	mc-auto-number-position: inside-head;
+	mc-auto-number-offset: 0px;
+	text-indent: 0px;
+	text-decoration: none;
+	font-family: var(--BrandFont);
+	font-size: 2.4em;
+	font-weight: bold;
+	text-align: left;
+	line-height: 115%;
+	color: var(--BrandPrimary2);
+}
+
+/* Copied from Dave Lee's suggestion from MadCap Forum and then edited to meet our needs for positioning */
+
+ol
+{
+	line-height: normal;
+	margin-top: 10px;
+	margin-bottom: 0.5em;
+	list-style-type: decimal;
+	margin: 1.12em;
+	margin-left: 0px;
+	padding: 0px 0px 0px 17px;
+}
+
+ul
+{
+	line-height: normal;
+	margin: 1.12em;
+	margin-top: 6px;
+	margin-bottom: 0.5em;
+	list-style-type: disc;
+	margin-left: 0px;
+	padding: 0px 0px 0px 20px;
+}
+
+li
+{
+	margin-top: 5px;
+	/*	padding-left: 8px;  */
+	margin-left: 6px;
+}
+
+ol ul,
+ul ul
+{
+	margin-left: 4px;
+	list-style-type: circle;
+}
+
+ol ol ul,
+ol ul ul,
+ul ol ul,
+ul ul ul
+{
+	margin-left: 20px;
+	list-style-type: square;
+}
+
+ul ol,
+ol ol
+{
+	margin-left: 20px;
+	list-style-type: lower-alpha;
+}
+
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol
+{
+	margin-left: 20px;
+	list-style-type: lower-roman;
+}
+
+li p
+{
+	margin: 0;
+	padding: 0;
+}
+
+li.MadCap1
+{
+	list-style: lower-alpha;
+	margin-left: 1em;
+}
+
+li.NoNumber
+{
+	list-style-type: none;
+}
+
+ol.L2
+{
+	margin-top: .5em;
+	margin-bottom: 0em;
+	margin-left: 3.2em;
+	margin-right: 2.1em;
+	padding-left: 1em;
+}
+
+i.Controls
+{
+	font-weight: normal;
+	font-style: italic;
+	letter-spacing: 0em;
+	color: var(--BrandPrimary);
+	text-decoration: none;
+	mc-disabled: true;
+}
+
+p.Bullet1
+{
+	text-align: left;
+	margin-left: 0.25in;
+	margin-right: 0in;
+	letter-spacing: 0em;
+	color: var(--BrandPrimary);
+	mc-auto-number-format: '• ';
+	mc-auto-number-position: outside-head;
+	mc-auto-number-offset: 24px;
+	text-decoration: none;
+	font-size: 1em;
+	margin-bottom: 5pt;
+	margin-top: 5pt;
+	line-height: 1.4;
+}
+
+p.Bullet2
+{
+	text-align: left;
+	margin-left: 0.5in;
+	margin-right: 0in;
+	margin-top: 6pt;
+	margin-bottom: 6pt;
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: 0em;
+	color: var(--BrandPrimary);
+	mc-auto-number-format: '• ';
+	mc-auto-number-position: outside-head;
+	mc-auto-number-offset: 24px;
+	text-decoration: none;
+	font-size: 1em;
+	line-height: 1.4;
+}
+
+p.Indent1
+{
+	text-align: left;
+	margin-left: 0.25in;
+	margin-right: 0in;
+	margin-top: 6pt;
+	margin-bottom: 6pt;
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: 0em;
+	color: var(--BrandPrimary);
+	text-indent: 0px;
+	font-size: 1em;
+}
+
+p.Indent2
+{
+	text-align: left;
+	margin-left: 0.5in;
+	margin-right: 0in;
+	margin-top: 6pt;
+	margin-bottom: 6pt;
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: 0em;
+	color: var(--BrandPrimary);
+	text-indent: 0px;
+	font-size: 1em;
+}
+
+p.Indent3
+{
+	text-align: left;
+	margin-left: 0.75in;
+	margin-right: 0in;
+	margin-top: 6pt;
+	margin-bottom: 6pt;
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: 0em;
+	color: var(--BrandPrimary);
+	text-indent: 0px;
+	font-size: 1em;
+}
+
+p.Code
+{
+	text-align: left;
+	margin-left: 0.25in;
+	margin-right: 0in;
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: 0em;
+	color: var(--BrandPrimary);
+	text-indent: 0px;
+	text-decoration: none;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 1em;
+}
+
+p.L1Num1	/* default Start numbering at 1 */
+{
+	text-align: left;
+	margin-left: 0.25in;
+	margin-right: 0in;
+	margin-top: 6pt;
+	margin-bottom: 6pt;
+	letter-spacing: 0em;
+	color: var(--BrandPrimary);
+	mc-auto-number-format: 'N:{n=1}. ';
+	mc-auto-number-position: outside-head;
+	mc-auto-number-offset: 24px;
+	font-size: 1em;
+	line-height: 1.4;
+}
+
+p.L1Num	/* Continue numbering    */
+{
+	text-align: left;
+	margin-left: 0.25in;
+	margin-right: 0in;
+	letter-spacing: 0em;
+	color: var(--BrandPrimary);
+	mc-auto-number-format: 'N:{n+}. ';
+	mc-auto-number-position: outside-head;
+	mc-auto-number-offset: 24px;
+	font-size: 1em;
+	margin-top: 5pt;
+	margin-bottom: 5pt;
+	line-height: 1.4;
+}
+
+p.Note	/* default */
+{
+	mc-next-tag: p;
+	mc-next-class: Body;
+	text-indent: 0px;
+	margin-left: 0px;
+	margin: 1.5em 1em 1.5em 0em;
+	color: var(--BrandPrimary);
+	mc-auto-number-format: '{b}Note:{/b}  ';
+}
+
+p.ActionTip
+{
+	mc-next-tag: p;
+	mc-next-class: Body;
+	text-indent: 0px;
+	border-style: solid;
+	border-width: 1px 1px 1px 10px;
+	border-color: #3C5A9A;
+	margin-left: 0px;
+	margin: 1.5em 1em 1.5em 0em;
+	padding: 7px 7px 7px 7px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+p.Warning	/* Changed Warning to Caution   */
+{
+	letter-spacing: normal;
+	background-color: #FFFFFF;
+	margin: 1.5em 1em 1.5em 1em;
+	padding-left: 0.8em;
+	padding-right: 0.8em;
+	padding-bottom: 0.8em;
+	padding-top: 0.8em;
+	font-size: 1em;
+	font-weight: normal;
+	mc-auto-number-format: '{b}{color gray}CAUTION:{/color}{/b}  ';
+	border: 1px solid #757575;
+	color: var(--BrandPrimary);
+}
+
+p.TableHead
+{
+	font-weight: bold;
+	line-height: normal;
+	margin-top: 0.025em;
+	margin-bottom: 0.025em;
+	color: var(--BrandPrimary3);
+}
+
+p.TableTextLeft
+{
+	line-height: normal;
+	margin-top: 0.025em;
+	margin-bottom: 0.025em;
+}
+
+p.TableTextLeftBold
+{
+	mc-next-tag: p;
+	mc-next-class: TableTextLeft;
+	line-height: normal;
+	margin-top: 0.025em;
+	margin-bottom: 0.025em;
+	font-weight: bold;
+	color: var(--BrandPrimary3);
+}
+
+p.TableBullet
+{
+	text-align: left;
+	margin-left: 0.25in;
+	margin-right: 0in;
+	letter-spacing: 0em;
+	mc-auto-number-format: '• ';
+	mc-auto-number-position: outside-head;
+	mc-auto-number-offset: 20px;
+	text-decoration: none;
+	font-size: 1em;
+	line-height: normal;
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+}
+
+p.TableBullet2
+{
+	text-align: left;
+	margin-left: 0.50in;
+	margin-right: 0in;
+	letter-spacing: 0em;
+	mc-auto-number-format: '• ';
+	mc-auto-number-position: outside-head;
+	mc-auto-number-offset: 20px;
+	text-decoration: none;
+	font-size: 1em;
+	line-height: normal;
+	margin-bottom: 2pt;
+	margin-top: 2pt;
+}
+
+p.TableTextLeftSmall	/* for Massive table style */
+{
+	margin-left: 0in;
+	margin-right: 0in;
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+	padding: 4pt;
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: 0em;
+	text-indent: 0px;
+	text-decoration: none;
+	font-size: 9pt;
+	text-align: left;
+	padding-left: 2pt;
+	padding-right: 2pt;
+	padding-top: 2pt;
+	line-height: normal;
+	color: var(--BrandPrimary);
+}
+
+table.Default
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0pt;
+	margin-bottom: 20pt;
+	border-spacing-x: 0;
+	border-spacing-y: 0;
+	border-collapse: collapse;
+	border-color: var(--BrandPrimary);
+	border-top-style: solid;
+	border-top-width: 1.25pt;
+	border-top-color: #1c5fab;
+	border-bottom-style: solid;
+	border-bottom-width: 1.25pt;
+	border-bottom-color: #1c5fab;
+	border-right-style: solid;
+	border-right-width: 1.25pt;
+	border-right-color: #1c5fab;
+	border-left-style: solid;
+	border-left-width: 1.25pt;
+	border-left-color: #1c5fab;
+}
+
+td.CellClass_2449215354
+{
+	border-bottom-style: solid;
+	border-bottom-width: 1.25pt;
+	border-bottom-color: #1c5fab;
+	padding-left: 4pt;
+	padding-right: 2pt;
+	padding-top: 2pt;
+	padding-bottom: 2pt;
+}
+
+td.CellClass_1201368786
+{
+	border-bottom-style: solid;
+	border-bottom-width: 1.25pt;
+	border-bottom-color: #1c5fab;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	padding-left: 4pt;
+	padding-right: 2pt;
+	padding-top: 2pt;
+	padding-bottom: 2pt;
+}
+
+td.CellClass_1358903378
+{
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	padding-left: 4pt;
+	padding-right: 2pt;
+	padding-top: 2pt;
+	padding-bottom: 2pt;
+}
+
+td.CellClass_1487551559
+{
+	padding-left: 4pt;
+	padding-right: 2pt;
+	padding-top: 2pt;
+	padding-bottom: 2pt;
+}
+
+td.CellClass_264432135
+{
+	padding-left: 10pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 10pt;
+}
+
+td.CellClass_2698411235
+{
+	padding-left: 4pt;
+	padding-right: 2pt;
+	padding-top: 2pt;
+	padding-bottom: 16pt;
+	border-bottom-style: None;
+	border-top-style: None;
+	border-left-style: None;
+	border-right-style: None;
+}
+
+td.CellClass_3172212673
+{
+	padding-left: 6pt;
+	padding-right: 4pt;
+	padding-top: 6pt;
+	padding-bottom: 4pt;
+}
+
+td.CellClass_1056682523
+{
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	padding-left: 4pt;
+	padding-right: 2pt;
+	padding-top: 2pt;
+	padding-bottom: 2pt;
+}
+
+td.CellClass_540670629
+{
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #000000;
+	padding-left: 4pt;
+	padding-right: 2pt;
+	padding-top: 2pt;
+	padding-bottom: 2pt;
+}
+
+td.CellClass_961363548
+{
+	padding-left: 10pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 10pt;
+	border-bottom-style: solid;
+	border-bottom-width: 1.25pt;
+	border-bottom-color: #1c5fab;
+	border-top-style: solid;
+	border-top-width: 1.25pt;
+	border-top-color: #1c5fab;
+	border-left-style: solid;
+	border-left-width: 1.25pt;
+	border-left-color: #1c5fab;
+	border-right-style: solid;
+	border-right-width: 1.25pt;
+	border-right-color: #1c5fab;
+}
+
+td.CellClass_2361688881
+{
+	padding-left: 4pt;
+	padding-right: 2pt;
+	padding-top: 2pt;
+	padding-bottom: 10pt;
+	border-bottom-style: None;
+	border-top-style: None;
+	border-left-style: None;
+	border-right-style: None;
+	background-color: #ffffff;
+}
+
+MadCap|xref	/* default */
+{
+	text-decoration: inherit;
+	mc-format: '{paratext}';
+	font-weight: normal;
+	color: var(--BrandPrimary2);
+}
+
+MadCap|xref.Heading
+{
+	mc-format: '{paratext}';
+}
+
+MadCap|dropDownHead.ErrMsg	/* Used in ClientSpace Help for error messages, problem resolution topics  */
+{
+	line-height: 1.1;
+	padding-bottom: 1em;
+	padding-top: 1em;
+	font-weight: normal;
+	color: var(--BrandPrimary3);
+	border-top-color: var(--BrandPrimary3);
+	border-top: solid 0.25px #c0c0c0;
+}
+
+MadCap|dropDownHead.Step	/* Used in ClientSpace Help for Steps within a single topic  */
+{
+	line-height: 1.1;
+	clear: both;
+	font-weight: normal;
+	font-size: 1.6em;
+	margin-bottom: 0.5em;
+	font-family: var(--BrandFont);
+	margin-top: 28px;
+	color: var(--BrandPrimary2);
+}
+
+p.InternalComment	/* used by technical writers  */
+{
+	color: #8b0000;
+	border-bottom: solid 1px #8b0000;
+	border-top: solid 1px #8b0000;
+	mc-label: 'Internal Comment: ';
+}
+
+p.RelatedTopics
+{
+	page-break-after: avoid;
+	page-break-before: avoid;
+	page-break-inside: avoid;
+	font-weight: bold;
+	margin-top: 1.5em;
+	padding-top: 1em;
+	color: var(--BrandPrimary2);
+	font-size: 1.1em;
+}
+
+p.TopicsList
+{
+	margin-top: 1.5em;
+	padding-top: 1em;
+	color: var(--BrandPrimary);
+	font-family: var(--BrandFont);
+	font-weight: normal;
+	font-size: 1.2em;
+	margin-bottom: 0em;
+}
+
+/* Relationship Table - links at bottom of topic for Concept, Task, Reference */
+
+p.conceptHeading_concept_0
+{
+	font-size: 0.9em;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 0.25em;
+	margin-top: 0.05em;
+	mc-hidden: hidden;
+}
+
+p.taskHeading_task_0
+{
+	font-size: 0.9em;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 0.25em;
+	margin-top: 0.05em;
+	mc-hidden: hidden;
+}
+
+p.conceptItem_concept_0
+{
+	font-size: 0.9em;
+	margin-let: 20pt;
+	margin-bottom: 0.25em;
+	margin-top: 0.025em;
+	color: var(--BrandPrimary5);
+	mc-hidden: hidden;
+}
+
+p.taskItem_task_0
+{
+	font-size: 0.9em;
+	margin-let: 20pt;
+	margin-bottom: 0.25em;
+	margin-top: 0.025em;
+	color: var(--BrandPrimary5);
+	mc-hidden: hidden;
+}
+
+span.CodePh
+{
+	font-family: 'Courier New', Courier, monospace;
+}
+
+div.NoPageBreak
+{
+	page-break-inside: avoid;
+}
+
+th
+{
+	font-style: normal;
+	font-weight: bold;
+	line-height: 1.4;
+	font-size: 1em;
+	font-family: var(--BrandFont2);
+	color: var(--BrandPrimary3);
+}
+
+td
+{
+	font-size: 1em;
+	font-family: var(--BrandFont2);
+	color: var(--BrandPrimary);
+	margin-top: 0.025em;
+	margin-bottom: 0.025em;
+	line-height: 1.3;
+}
+
+tr
+{
+	line-height: 1.3;
+	font-size: 1em;
+	font-family: var(--BrandFont2);
+	color: var(--BrandPrimary);
+	margin-top: 0.025em;
+	margin-bottom: 0.025em;
+}
+
+center
+{
+	text-align: left;
+}
+
+p.MiniTOC1
+{
+	color: var(--BrandPrimary2);
+	margin-top: .25em;
+	margin-bottom: .25em;
+	line-height: 1.0;
+	margin-left: 0px;
+	margin: 5px 10px 5px 0px;
+	font-weight: normal;
+}
+
+p.MiniTOC2
+{
+	font: inherit;
+	color: var(--BrandPrimary2);
+	line-height: 1.0;
+	margin-bottom: .25em;
+	margin-top: .25em;
+	mc-auto-number-format: '• ';
+	margin: 1px 0px 1px 15px;
+}
+
+p.MiniTOC3
+{
+	font: inherit;
+	color: var(--BrandPrimary2);
+	line-height: 1.0;
+	margin-bottom: .25em;
+	margin-top: .25em;
+	mc-auto-number-format: '• ';
+	margin: 1px 0px 1px 26px;
+}
+
+/*
+a.Link
+{
+	text-decoration: none;
+	color: var(--BrandPrimary2);
+	font-weight: normal;
+}
+*/
+
+a:link
+{
+	text-decoration: none;
+	color: var(--BrandPrimary2);
+	font-weight: normal;
+}
+
+a:visited
+{
+	text-decoration: none;
+	font-weight: normal;
+}
+
+a:hover
+{
+	color: var(--BrandPrimary6);
+	font-weight: bold;
+}
+
+a:active
+{
+	text-decoration: none;
+	font-weight: normal;
+}
+
+a.MiniTOC1:hover
+{
+	color: var(--BrandPrimary6);
+	font-weight: bold;
+}
+
+p.ProcedureIntro
+/*Use this style to signal the user that a procedures follows, such as To do something:*/
+/*FYI - Flare bug with mc-next-tag. Cannot use without mc-next-class. For <p> that is useless.*/
+/*Wait for a fix, then edit.                                                                  */
+{
+	font-weight: bold;
+	margin-top: 22px;
+	color: var(--BrandPrimary3);
+	margin-bottom: 1px;
+	mc-next-tag: p;
+}
+
+p.TableProcIntro	/*Use this style within a table to signal the user that a procedures follows, such as To do something:*/
+{
+	font-weight: bold;
+	color: var(--BrandPrimary3);
+	margin-top: 4px;
+	margin-bottom: 0.2em;
+}
+
+td.ZFooter	/* used in page layouts  */
+{
+	color: #a9a9a9;
+	font-size: 9pt;
+}
+
+MadCap|tocProxy
+{
+	border-top-color: #d3d3d3;
+	color: var(--BrandPrimary2);
+	margin-top: 6px;
+	padding-top: 6px;
+}
+
+/*Default medium - HTML5 Side Nav                                      */
+/*Changes applied because cannot control in skin.                      */
+/*body container - remove top spacing                                  */
+/*Continues the TOC pane border across the top of the topic area.      */
+
+div.MCBreadcrumbsBox_0	/* This style is provides the border above the breadcrumbs KEEP  */
+{
+	margin-top: 0px;
+	mc-hidden: hidden;
+}
+
+.body-container	/* Keep - need for HTML5 output formatting */
+{
+	padding-top: 0px;
+	border-top: 1px solid #a9a9a9;
+	mc-hidden: hidden;
+}
+
+/* DBH edited for Side Nav - ClientSpace Help      */
+
+MadCap|breadcrumbsProxy
+{
+	font-family: var(--BrandFont);
+	font-size: 9pt;
+	color: var(--BrandPrimary);
+	padding-bottom: 15px;
+	margin-top: 15px;
+	padding-top: 15px;
+	border: none;
+	border-top: none;
+	border-bottom-color: transparent;
+	text-align: left;
+	mc-breadcrumbs-count: 5;
+}
+
+table
+{
+	margin-right: auto;
+	width: 100%;
+	line-height: 1.3;
+	font-size: 1em;
+}
+
+.search-field	/*KEEP for HTML5 search box - removed box shadow per UX recommendations */
+{
+	mc-hidden: hidden;
+}
+
+b
+{
+	font-weight: bold;
+	color: var(--BrandPrimary3);
+}
+
+strong
+{
+	font-weight: bold;
+	color: var(--BrandPrimary3);
+}
+
+img.thumbnail
+{
+	max-width: 550px;
+	mc-thumbnail-max-height: auto;
+	mc-thumbnail-max-width: 450px;
+	title: Click to enlarge;
+	mc-thumbnail: popup;
+}
+
+img.thumbnail_right
+{
+	max-width: 550px;
+	mc-thumbnail-max-height: auto;
+	mc-thumbnail-max-width: 450px;
+	title: Click to enlarge;
+	mc-thumbnail: popup;
+	float: right;
+	margin: 0px 0px 20px 30px;
+}
+
+a.MCBreadcrumbsLink
+{
+	color: var(--BrandPrimary2);
+}
+
+pre	/* do not know what this is - so added hidden attribute */
+{
+	mc-hidden: hidden;
+}
+
+img
+{
+	max-width: 100%;
+}
+
+a
+{
+	color: var(--BrandPrimary2);
+}
+
+span.SearchHighlight
+{
+	background-color: #ffff00;
+}
+
+p.LandingTitle
+{
+	font-family: var(--BrandFont);
+	color: var(--BrandPrimary2);
+	margin-top: 1em;
+	margin-bottom: 1em;
+	vertical-align: middle;
+	font-size: 3em;
+}
+
+p.TOC2
+{
+	font-weight: normal;
+}
+
+p.TOC3
+{
+	font-weight: normal;
+}
+
+p.TOC4
+{
+	font-weight: normal;
+}
+
+p.TOC5
+{
+	font-weight: normal;
+}
+
+p.TOC6
+{
+	font-weight: normal;
+}
+
+p.TOC7
+{
+	font-weight: normal;
+}
+
+p.TOC8
+{
+	font-weight: normal;
+}
+
+p.TOC9
+{
+	font-weight: normal;
+}
+
+MadCap|relatedTopics
+{
+	color: var(--BrandPrimary2);
+}
+
+MadCap|helpControlMenuItem
+{
+	color: var(--BrandPrimary);
+}
+
+MadCap|helpControlMenuItem.Highlighted
+{
+	background-color: #017390;
+}
+
+MadCap|relationshipsProxy
+{
+	border-top-color: #d3d3d3;
+	border-top-width: 1px;
+}
+
+MadCap|relationshipsHeading.task
+{
+	font-size: 0.9em;
+	color: var(--BrandPrimary5);
+}
+
+MadCap|relationshipsHeading.reference
+{
+	font-size: 0.9em;
+	color: var(--BrandPrimary5);
+}
+
+MadCap|relationshipsHeading.concept
+{
+	font-size: 0.9em;
+	color: var(--BrandPrimary5);
+}
+
+MadCap|relationshipsItem
+{
+	font-size: 0.9em;
+	margin-left: 20pt;
+	color: var(--BrandPrimary5);
+}
+
+MadCap|relationshipsHeading
+{
+	color: var(--BrandPrimary3);
+	font-size: 0.9em;
+}
+
+p.TOC1
+{
+	page-break-after: avoid;
+}
+
+MadCap|conceptLink
+{
+	color: var(--BrandPrimary2);
+}
+
+MadCap|keywordLink
+{
+	color: var(--BrandPrimary2);
+}
+
+MadCap|toggler:focus
+{
+	color: var(--BrandPrimary2);
+}
+
+MadCap|toggler:hover
+{
+	color: var(--BrandPrimary6);
+	font-weight: bold;
+}
+
+MadCap|relatedTopics:hover
+{
+	color: var(--BrandPrimary6);
+	font-weight: bold;
+}
+
+MadCap|glossaryTerm
+{
+	color: var(--BrandPrimary2);
+	font-weight: normal;
+}
+
+MadCap|glossaryTerm:hover
+{
+	font-weight: bold;
+}
+
+/* FONT AWESOME   
+
+.fas-fa-exclamation:before
+{
+	color: var(--BrandPrimary2);
+	content: '\f12a';
+	font-family: 'Font Awesome 5 Brands Regular', 'Font Awesome 5 Free Regular', 'Font Awesome 5 Free Solid', 'FontAwesome';
+	font-style: normal;
+	font-weight: 900;
+	font-size: 24px;
+	text-decoration: inherit;
+}
+
+.fas-fa-flag:before
+{
+	color: var(--BrandPrimary2);
+	content: '\f024';
+	font-family: 'Font Awesome 5 Brands Regular', 'Font Awesome 5 Free Regular', 'Font Awesome 5 Free Solid', 'FontAwesome';
+	font-style: normal;
+	font-weight: 900;
+	font-size: 24px;
+	text-decoration: inherit;
+}
+
+.fas-fa-bell:before
+{
+	color: var(--BrandPrimary2);
+	content: '\f0f3';
+	font-family: 'Font Awesome 5 Brands Regular', 'Font Awesome 5 Free Regular', 'Font Awesome 5 Free Solid', 'FontAwesome';
+	font-style: normal;
+	font-weight: 900;
+	font-size: 30px;
+	text-decoration: inherit;
+	title: "Change in functionality";
+}
+
+.fas-fa-plus-circle:before
+{
+	color: var(--BrandPrimary2);
+	content: '\f055';
+	font-family: 'Font Awesome 5 Brands Regular', 'Font Awesome 5 Free Regular', 'Font Awesome 5 Free Solid', 'FontAwesome';
+	font-style: normal;
+	font-weight: 900;
+	font-size: 30px;
+	text-decoration: inherit;
+}
+
+.fas-fa-cog:before
+{
+	color: var(--BrandPrimary2);
+	content: '\f013';
+	font-family: 'Font Awesome 5 Brands Regular', 'Font Awesome 5 Free Regular', 'Font Awesome 5 Free Solid', 'FontAwesome';
+	font-style: normal;
+	font-weight: 900;
+	font-size: 30px;
+	text-decoration: inherit;
+}
+*/
+
+/* Font Awesome for drop-down toggler icons Copied from MadCap Flare Forum by Dave Lee  */
+
+MadCap|dropDown	/* MadCap|dropDown: Drop downs */
+{
+	mc-image-spacing: 0;
+	mc-open-image: none;
+	mc-closed-image: none;
+	mc-image-position: none;
+}
+
+.MCDropDownBody
+{
+	overflow: visible;
+}
+
+.dropDown.MCDropDown_Closed > .dropDownHead > .dropDownHotspot:after	/* FontAwesome : fa-angle-down for closed */
+{
+	font-family: "FontAwesome";
+	content: "\f107";
+	padding: 0 0 0 0.5em;
+	display: inline-block;
+	color: var(--BrandPrimary2);
+}
+
+.dropDown.MCDropDown_Open > .dropDownHead > .dropDownHotspot:after	/* FontAwesome : fa-angle-up for open */
+{
+	font-family: "FontAwesome";
+	content: "\f106";
+	padding: 0 0 0 0.5em;
+	display: inline-block;
+}
+
+.dropDownHotspot[name],
+.dropDownHotspot:empty	/* fix for issue where bookmark (which inserts a 'name' property) or an empty tag is included in dropdownhotspot; this extra link tag will cause a duplicate icon, so we need to hide it */
+{
+	display: none;
+}
+
+MadCap|toggler	/* MadCap|toggler: togglers */
+{
+	mc-open-image: none;
+	mc-closed-image: none;
+	mc-image-position: none;
+	mc-image-spacing: 0;
+}
+
+.toggler.MCToggler_Closed:after	/* FontAwesome : fa-angle-down for closed */
+{
+	font-family: "FontAwesome";
+	content: "\f107";
+	padding: 0 0 0 0.5em;
+	display: inline-block;
+}
+
+.toggler.MCToggler_Open:after	/* FontAwesome : fa-angle-up for open */
+{
+	font-family: "FontAwesome";
+	content: "\f106";
+	padding: 0 0 0 0.5em;
+	display: inline-block;
+}
+
+/* End of Toggler icon changes   */
+/* Video border  */
+
+.vid-border
+{
+	position: relative;
+	border: 1px solid grey;
+	mc-hidden: hidden;
+}
+
+MadCap|miniTocProxy
+{
+	border-top-style: none;
+	padding-left: 0px;
+}
+
+MadCap|popupBody
+{
+	background-color: var(--BrandPrimary7);
+	border: solid 1px #a9a9a9;
+}
+
+.is-accordion-submenu-parent
+{
+	mc-hidden: hidden;
+}
+
+/* Do not need 
+.fas-fa-bell
+{
+	mc-hidden: hidden;
+}
+
+.fas-fa-cog
+{
+	mc-hidden: hidden;
+}
+
+.fas-fa-exclamation
+{
+	mc-hidden: hidden;
+}
+*/
+
+MadCap|toggler
+{
+	mc-open-image: url(resources:Images/WebHelp/DropDownOpen.gif);
+}
+
+MadCap|menuProxy
+{
+	font: var(--BrandFont);
+	font-size: 1em;
+	font-color: var(--BrandPrimary2);
+	border-left: var(--BrandPrimary2);
+	border-left-width: 1px;
+}
+
+code
+{
+	font-size: 1em;
+	line-height: normal;
+}
+
+@media print
+{
+	MadCap|bodyProxy
+	{
+		mc-printer-page-orientation: portrait;
+		mc-printer-page-size: letter;
+		mc-page-number-format: decimal;
+		mc-page-number-start-value: 1;
+	}
+
+	a.Link
+	{
+		letter-spacing: 0em;
+		text-decoration: none;
+		color: var(--BrandPrimary2);
+	}
+
+	i.Controls
+	{
+		font-weight: normal;
+		font-style: italic;
+		letter-spacing: 0em;
+		color: #000000;
+		text-decoration: none;
+	}
+
+	p.Bullet1
+	{
+		text-align: left;
+		margin-left: 0.25in;
+		margin-right: 0in;
+		margin-top: 6pt;
+		font-weight: normal;
+		font-style: normal;
+		font-size: 11pt;
+		letter-spacing: 0em;
+		color: var(--BrandPrimary);
+		mc-auto-number-format: '• ';
+		mc-auto-number-position: outside-head;
+		mc-auto-number-offset: 24px;
+		text-decoration: none;
+		line-height: 13pt;
+		margin-bottom: 1px;
+	}
+
+	p.Indent1
+	{
+		font-weight: normal;
+		font-style: normal;
+		font-size: 11pt;
+		color: var(--BrandPrimary);
+	}
+
+	p.Bullet2
+	{
+		text-align: left;
+		margin-left: 0.5in;
+		margin-right: 0in;
+		margin-top: 6pt;
+		margin-bottom: 6pt;
+		font-weight: normal;
+		font-style: normal;
+		font-size: 11pt;
+		letter-spacing: 0em;
+		color: var(--BrandPrimary);
+		mc-auto-number-format: '• ';
+		mc-auto-number-position: outside-head;
+		mc-auto-number-offset: 24px;
+		line-height: 13pt;
+		text-decoration: none;
+	}
+
+	p.Indent2
+	{
+		font-weight: normal;
+		font-style: normal;
+		font-size: 11pt;
+		color: var(--BrandPrimary);
+	}
+
+	p.L1Num1	/* print */
+	{
+		text-align: left;
+		margin-left: 0.25in;
+		margin-right: 0in;
+		margin-top: 6pt;
+		font-size: 11pt;
+		letter-spacing: 0em;
+		mc-auto-number-format: 'N:{n=1}. ';
+		mc-auto-number-position: outside-head;
+		mc-auto-number-offset: 24px;
+		line-height: 13pt;
+		color: var(--BrandPrimary);
+		margin-bottom: 1px;
+	}
+
+	p.L1Num
+	{
+		text-align: left;
+		margin-left: 0.25in;
+		margin-right: 0in;
+		font-size: 11pt;
+		letter-spacing: 0em;
+		mc-auto-number-format: 'N:{n+}. ';
+		mc-auto-number-position: outside-head;
+		mc-auto-number-offset: 24px;
+		color: var(--BrandPrimary);
+		margin-top: 1px;
+		line-height: normal;
+		margin-bottom: auto;
+		padding-bottom: auto;
+	}
+
+	p.Code
+	{
+		text-align: left;
+		margin-left: 0.25in;
+		margin-right: 0in;
+		margin-top: 0pt;
+		margin-bottom: 0pt;
+		font-weight: normal;
+		font-style: normal;
+		letter-spacing: 0em;
+		text-indent: 0px;
+		text-decoration: none;
+		font: 'Courier New';
+		font-family: 'Courier New', Courier, monospace;
+		color: var(--BrandPrimary);
+		font-size: 10pt;
+	}
+
+	p.GuideDesc	/* for print cover page  */
+	{
+		font-size: 16pt;
+	}
+
+	table.Default
+	{
+		border-spacing-x: 0;
+		border-spacing-y: 0;
+		border-color: black;
+		border-left-color: #1c5fab;
+		border-right-color: #1c5fab;
+		border-top-color: #1c5fab;
+	}
+
+	td.CellClass_2449215354
+	{
+		border-bottom-style: solid;
+		border-bottom-width: 1.25pt;
+		border-bottom-color: #00c477;
+		padding-left: 4pt;
+		padding-right: 2pt;
+		padding-top: 2pt;
+		padding-bottom: 2pt;
+	}
+
+	td.CellClass_1201368786
+	{
+		border-bottom-style: solid;
+		border-bottom-width: 1.25pt;
+		border-bottom-color: #00c477;
+		border-left-style: solid;
+		border-left-width: 1px;
+		border-left-color: #000000;
+		padding-left: 4pt;
+		padding-right: 2pt;
+		padding-top: 2pt;
+		padding-bottom: 2pt;
+	}
+
+	td.CellClass_1358903378
+	{
+		border-bottom-style: solid;
+		border-bottom-width: 1px;
+		border-bottom-color: #000000;
+		padding-left: 4pt;
+		padding-right: 2pt;
+		padding-top: 2pt;
+		padding-bottom: 2pt;
+	}
+
+	td.CellClass_540670629
+	{
+		border-bottom-style: solid;
+		border-bottom-width: 1px;
+		border-bottom-color: #000000;
+		border-left-style: solid;
+		border-left-width: 1px;
+		border-left-color: #000000;
+		padding-left: 4pt;
+		padding-right: 2pt;
+		padding-top: 2pt;
+		padding-bottom: 2pt;
+	}
+
+	td.CellClass_1487551559
+	{
+		padding-left: 4pt;
+		padding-right: 2pt;
+		padding-top: 2pt;
+		padding-bottom: 2pt;
+	}
+
+	td.CellClass_1056682523
+	{
+		border-left-style: solid;
+		border-left-width: 1px;
+		border-left-color: #000000;
+		padding-left: 4pt;
+		padding-right: 2pt;
+		padding-top: 2pt;
+		padding-bottom: 2pt;
+		font: 11pt;
+	}
+
+	MadCap|xref.Table
+	{
+		
+	}
+
+	MadCap|xref.Heading
+	{
+		color: var(--BrandPrimary2);
+	}
+
+	td.CellClass_961363548
+	{
+		padding-left: 10pt;
+		padding-right: 6pt;
+		padding-top: 6pt;
+		padding-bottom: 10pt;
+		border-bottom-style: solid;
+		border-bottom-width: 1.25pt;
+		border-bottom-color: #00c477;
+		border-top-style: solid;
+		border-top-width: 1.25pt;
+		border-top-color: #00c477;
+		border-left-style: solid;
+		border-left-width: 1.25pt;
+		border-left-color: #00c477;
+		border-right-style: solid;
+		border-right-width: 1.25pt;
+		border-right-color: #00c477;
+	}
+
+	td.CellClass_2361688881
+	{
+		padding-left: 4pt;
+		padding-right: 2pt;
+		padding-top: 2pt;
+		padding-bottom: 10pt;
+		border-bottom-style: None;
+		border-top-style: None;
+		border-left-style: None;
+		border-right-style: None;
+		background-color: #ffffff;
+	}
+
+	td.CellClass_3172212673
+	{
+		padding-left: 6pt;
+		padding-right: 4pt;
+		padding-top: 6pt;
+		padding-bottom: 4pt;
+	}
+
+	td.CellClass_264432135
+	{
+		padding-left: 10pt;
+		padding-right: 6pt;
+		padding-top: 6pt;
+		padding-bottom: 10pt;
+	}
+
+	td.CellClass_2698411235
+	{
+		padding-left: 4pt;
+		padding-right: 2pt;
+		padding-top: 2pt;
+		padding-bottom: 16pt;
+		border-bottom-style: None;
+		border-top-style: None;
+		border-left-style: None;
+		border-right-style: None;
+	}
+
+	h1	/* print */
+	{
+		mc-heading-level: 1;
+		mc-auto-number-format: 'CH:Chapter {chapnum} ';
+		mc-auto-number-class: title;
+		font-family: var(--BrandFont);
+		font-weight: normal;
+		font-size: 24pt;
+		margin-top: 1.5in;
+		margin-bottom: 10pt;
+		color: var(--BrandPrimary2);
+	}
+
+	p
+	{
+		font-size: 11pt;
+		line-height: 1.2;
+	}
+
+	MadCap|xref	/* print */
+	{
+		text-decoration: inherit;
+		mc-format: '{paratext}';
+		color: var(--BrandPrimary2);
+	}
+
+	MadCap|dropDown
+	{
+		page-break-inside: avoid;
+	}
+
+	body
+	{
+		font-size: 11pt;
+		color: var(--BrandPrimary);
+		margin-bottom: 10px;
+		margin-right: 10px;
+		margin-top: 13px;
+		line-height: normal;
+	}
+
+	img
+	{
+		height: auto;
+		max-width: 6.9in;
+	}
+
+	h2	/* print */
+	{
+		page-break-before: avoid;
+		page-break-after: avoid;
+		page-break-inside: avoid;
+		font-family: var(--BrandFont);
+		font-size: 20pt;
+		font-weight: normal;
+		margin-bottom: 8pt;
+		margin-top: 30px;
+		color: var(--BrandPrimary3);
+	}
+
+	h3
+	{
+		page-break-after: avoid;
+		page-break-before: avoid;
+		page-break-inside: avoid;
+		font-family: var(--BrandFont);
+		font-size: 16pt;
+		font-weight: normal;
+		margin-top: 28px;
+		color: var(--BrandPrimary2);
+	}
+
+	h4
+	{
+		font-weight: bold;
+		page-break-after: avoid;
+		page-break-before: avoid;
+		page-break-inside: avoid;
+		font-size: 12pt;
+		font-family: var(--BrandFont);
+		margin-bottom: 6pt;
+		margin-top: 20px;
+		color: var(--BrandPrimary3);
+	}
+
+	h5
+	{
+		font-size: 11pt;
+		font-weight: bold;
+		page-break-after: avoid;
+		page-break-before: avoid;
+		page-break-inside: avoid;
+		font-family: var(--BrandFont);
+		margin-bottom: 8pt;
+		margin-top: 18px;
+		color: var(--BrandPrimary3);
+	}
+
+	h6
+	{
+		page-break-after: avoid;
+		page-break-before: avoid;
+		page-break-inside: avoid;
+		margin-bottom: 6pt;
+		font-family: var(--BrandFont);
+		color: var(--BrandPrimary);
+		font-weight: bold;
+		font-size: 11pt;
+		margin-top: 18px;
+	}
+
+	p.RelatedTopics
+	{
+		margin-top: .5em;
+	}
+
+	MadCap|xref.see
+	{
+		mc-format: 'see {paratext} {pageref}';
+	}
+
+	MadCap|xref.SeeAlsoHeading
+	{
+		mc-format: 'See also {h1} {pageref}';
+	}
+
+	p.UserGuideTitle
+	{
+		mc-heading-level: 1;
+		color: var(--BrandPrimary2);
+		line-height: normal;
+		font-size: 26pt;
+	}
+
+	p.InternalComment
+	{
+		
+	}
+
+	center
+	{
+		text-align: center;
+	}
+
+	p.ZNoTOC	/*Use this style for your h1 style - Contents topic - so that Contents does NOT appear in print output TOC.*/
+	{
+		padding-bottom: 24px;
+		padding-top: 6px;
+		font-size: 24pt;
+		margin-top: 1.5in;
+		margin-bottom: 10pt;
+		font-weight: normal;
+		color: var(--BrandPrimary);
+	}
+
+	td.ZHeader
+	{
+		font-size: 9pt;
+		color: var(--BrandPrimary);
+	}
+
+	td.ZFooter
+	{
+		border-top-color: solid 0.25pt #a9a9a9;
+		color: #a9a9a9;
+	}
+
+	td
+	{
+		font-size: 11pt;
+		line-height: normal;
+	}
+
+	p.ProcedureIntro
+	{
+		page-break-after: avoid;
+		font-weight: bold;
+		mc-next-tag: p;
+	}
+
+	span.title
+	{
+		margin-top: -50px;
+		float: left;
+		text-align: left;
+		font-weight: normal;
+	}
+
+	th
+	{
+		font-size: 11pt;
+	}
+
+	tr
+	{
+		font-size: 11pt;
+	}
+
+	table
+	{
+		width: 100%;
+		line-height: normal;
+		font-size: 11pt;
+	}
+
+	p.StepResult
+	{
+		margin-top: 2px;
+		margin-bottom: 4px;
+		padding-top: 0.75px;
+	}
+
+	MadCap|dropDownHead.ErrMsg
+	{
+		font-weight: normal;
+	}
+
+	img.thumbnail
+	{
+		mc-thumbnail: none;
+		max-width: 6.9in;
+	}
+
+	p.TableBullet
+	{
+		font-size: 11pt;
+	}
+
+	p.ShortPrintTitle
+	{
+		font-weight: bold;
+	}
+
+	p.SubHdr
+	{
+		page-break-after: avoid;
+	}
+
+	img.thumbnail_right
+	{
+		margin-bottom: 0px;
+		margin-left: 0px;
+	}
+}
+
+tr.Header
+{
+	
+}
+
+th.HeaderBar
+{
+	background-color: #F0F2F7;
+}
+
+table.Table
+{
+	caption-side: top;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+th.Cell
+{
+	
+}
+
+p.ShortPrintTitle	/* used in page header of Short_Print page layout  */
+{
+	color: var(--BrandPrimary2);
+	font-size: 2em;
+	font-weight: bold;
+}
+
+@media Short_Print
+{
+	h1
+	{
+		margin-top: 0.5in;
+		font-size: 24pt;
+		margin-bottom: 10pt;
+		column-break-after: avoid;
+	}
+
+	h2
+	{
+		font-size: 20pt;
+		column-break-after: avoid;
+		page-break-after: avoid;
+		margin-top: 30px;
+	}
+
+	h3
+	{
+		font-size: 16pt;
+		column-break-after: avoid;
+		page-break-after: avoid;
+		margin-top: 28px;
+	}
+
+	h4
+	{
+		font-size: 12pt;
+		column-break-after: avoid;
+		page-break-after: avoid;
+	}
+
+	h5
+	{
+		font-size: 11pt;
+		column-break-after: avoid;
+		page-break-after: avoid;
+		color: var(--BrandPrimary3);
+	}
+
+	h6
+	{
+		font-size: 11pt;
+		column-break-after: avoid;
+		page-break-after: avoid;
+	}
+
+	body
+	{
+		font-size: 11pt;
+		line-height: normal;
+	}
+
+	p
+	{
+		font-size: 11pt;
+		line-height: 1.2;
+	}
+
+	p.Bullet1
+	{
+		font-size: 11pt;
+		margin-top: 6pt;
+		margin-bottom: 1px;
+		line-height: 13pt;
+	}
+
+	p.Bullet2
+	{
+		font-size: 11pt;
+		line-height: 13pt;
+	}
+
+	p.ShortPrintTitle
+	{
+		font-weight: bold;
+	}
+
+	p.StepResult
+	{
+		font-size: 11pt;
+		margin-top: 2px;
+		margin-bottom: 4px;
+		padding-top: 0.75px;
+	}
+
+	table
+	{
+		width: 100%;
+		line-height: normal;
+		font-size: 11pt;
+	}
+
+	table.Default
+	{
+		width: 100%;
+	}
+
+	table.Table
+	{
+		width: 100%;
+	}
+
+	td.ZHeader
+	{
+		font-size: 9pt;
+		font-family: var(--BrandFont2);
+		color: var(--BrandPrimary);
+	}
+
+	img
+	{
+		max-width: 6.9in;
+	}
+
+	td
+	{
+		font-size: 11pt;
+		line-height: normal;
+	}
+
+	tr
+	{
+		font-size: 11pt;
+	}
+
+	th
+	{
+		font-size: 11pt;
+	}
+
+	MadCap|dropDownHead.ErrMsg
+	{
+		font-weight: normal;
+	}
+
+	img.thumbnail
+	{
+		mc-thumbnail: none;
+		max-width: 6.9in;
+	}
+
+	p.TableBullet
+	{
+		font-size: 11pt;
+	}
+
+	p.L1Num
+	{
+		margin-top: 1px;
+		font-size: 11pt;
+		line-height: normal;
+		margin-bottom: auto;
+	}
+
+	p.L1Num1
+	{
+		margin-bottom: 1px;
+		font-size: 11pt;
+	}
+
+	a.MCBreadcrumbsLink
+	{
+		color: var(--BrandPrimary2);
+	}
+
+	p.LandingTitle
+	{
+		
+	}
+
+	p.UserGuideTitle
+	{
+		line-height: normal;
+	}
+
+	p.SubHdr
+	{
+		page-break-after: avoid;
+	}
+
+	p.Code
+	{
+		font-size: 10pt;
+	}
+}
+
+MadCap|xref.title	/*Use this xref style to pull in Topic Title from topic properties. Enables you to control the xref text.*/
+{
+	mc-format: '{title}';
+}
+
+p.LastUpdated
+{
+	border-top-width: 1px;
+	border-top-color: #d3d3d3;
+	margin-top: 6px;
+	font: inherit;
+	font-size: 7pt;
+	padding-bottom: 0px;
+	border-top-style: solid;
+	padding-top: 4px;
+	margin-bottom: 0.8em;
+}
+
+p.Example
+{
+	font-style: italic;
+	margin-left: 0.25in;
+}
+
+div.MCTopicPopupContainer
+{
+	height: 7%;
+	width: 55%;
+	left: 25%;
+	top: 25%;
+}
+
+div.body_container
+{
+	padding-right: 400px;
+	mc-hidden: hidden;
+}
+
+ul.menu._Skins_SideMenu.mc-component	/* Menu Proxy - right side menu formatting  */
+{
+	width: 255px;
+	height: auto;
+	right: 50px;
+	overflow-y: visible;
+	max-height: fit-content;
+	background: #F0F2F7;
+	position: fixed;
+	float: right;
+	margin-top: 50px;
+	color: var(--BrandPrimary2);
+}
+
+p.SubHdr
+{
+	mc-next-tag: p;
+	mc-next-class: Body;
+	font-weight: bold;
+	line-height: 1.3;
+	border-top: solid 0.5px #d3d3d3;
+	padding-top: 12px;
+	margin-top: 1em;
+	color: var(--BrandPrimary3);
+}
+
+div.indent
+{
+	margin-left: 0.25in;
+}
+
+span.UXElement
+{
+	color: var(--BrandPrimary3);
+	font-weight: bold;
+}
+
+MadCap|xref.CustomText
+{
+	
+}
+
+.buttons._Skins_Toolbar.mc-component
+{
+	position: fixed;
+	right: 50px;
+}
+
+/* This is a way to set styling for <p> in a table to take on the same styling as p.TableTextLeft */
+
+/*
+tr p
+{
+	line-height: normal;
+	margin-top: 0.025em;
+	margin-bottom: 0.025em;
+} 
+*/
+
+p.Alert
+{
+	background-color: #F0F2F7;
+	margin: 1.5em 1em 1.5em 1em;
+	padding-left: 0.8em;
+	padding-right: 0.8em;
+	padding-bottom: 0.8em;
+	padding-top: 0.8em;
+	font-size: 1em;
+	font-weight: normal;
+	mc-auto-number-format: '{b}{color #004969}ALERT:{/color}{/b}  ';
+	border: 1px solid #757575;
+	color: var(--BrandPrimary);
+}
+
+p.clear
+{
+	clear: both;
+}
+
+/* This is for aligning an image with an h2 in Organizations. 
+Using text-top because image is tall  */
+
+img.vert-midalign
+{
+	vertical-align: middle;
+}
+
+img.vert-align
+{
+	vertical-align: text-top;
+}
+
+/*  START - Do NOT change - The following control image placement   */
+img.right
+{
+	float: right;
+	margin: 0px 0px 10px 30px;
+}
+
+img.left
+{
+	float: left;
+	margin: 0px 30px 10px 0px;
+}
+
+/*  START - Do NOT change - The following control image placement   */
+
+#myBtn
+{
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99;
+	font-family: var(--BrandFont2);
+	font-size: 18px;
+	font-weight: bold;
+	border: none;
+	outline: none;
+	color: var(--BrandPrimary6);
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 4px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: var(--BrandPrimary7);
+}
+
+#myBtn:hover
+{
+	background-color: transparent;
+}
+
+MadCap|dropDownHotspot.Steps
+{
+	mc-heading-level: 3;
+}

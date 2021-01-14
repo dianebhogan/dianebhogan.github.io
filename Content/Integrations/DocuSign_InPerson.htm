@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Simple.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="DocuSign" />Configuring the DocuSign email template for In Person Signing</h1>
+        <p>The DocuSign API supports In Person Signing, which acts as an electronic notary system that sends the e-document to a third party who then has the document signed in their presence to verify the transaction. </p>
+        <p>For example, if you are meeting in person with someone, you can use In Person Signing to simplify the signing process. With In Person Signing, a host facilitates a DocuSign session. The host must be a DocuSign account holder. Signers are only required to be with the host  to sign documents. Conducting the in person signing session entails getting together with your signers and initiating the signing session from your device. As the host, you start the signing session and then guide your signers through the process.</p>
+        <h2>In Person Signer and Signing Host</h2>
+        <p>With the In Person Signing feature, you set up an envelope and assign it to a DocuSign user who will act as a Signing Host for the process. The signer goes to the same physical location as the signing host; the host then initiates the signing process and then helps the signer complete the electronic documents.</p>
+        <p>For the DocuSign API, you identify the Signing Host and the In Person Signer. In Person Signer recipients are DocuSign users. Signing hosts are in the same physical location as the In Person Signer.    The document is sent to the signing host, who physically presents the document to the In Person Signer for signatures. An in person signing can include both In Person Signers and regular recipients. </p>
+        <h2>How In Person Signing works</h2>
+        <p>Our scenario involves a signing host and an In Person Signer: </p>
+        <p class="TableBullet" MadCap:autonum="• ">The host is an insurance agent. The agent meets with a client to review a new health insurance policy.</p>
+        <p class="TableBullet" MadCap:autonum="• ">The host is established as the Signing Host. The client is the In Person Signer.</p>
+        <p class="TableBullet" MadCap:autonum="• ">The host starts the signing process and guides the client through the signing process.</p>
+        <p>When starting the signing process, this is the message the signing host receives:</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Simple.css');border-top-left-radius: 1px;border-top-right-radius: 1px;border-bottom-right-radius: 1px;border-bottom-left-radius: 1px;border-left-style: solid;border-left-width: 1px;border-left-color: #808080;border-right-style: solid;border-right-width: 1px;border-right-color: #808080;border-top-style: solid;border-top-width: 1px;border-top-color: #808080;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #808080;margin-left: 0;margin-right: auto;overflow: hidden;" class="TableStyle-Simple" cellspacing="0">
+            <col class="TableStyle-Simple-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Simple-Body-Row1">
+                    <td class="TableStyle-Simple-BodyA-Column1-Row1">
+                        <p class="TableTextLeft">John Adams assigned you as the host for an in-person signing session for <i>Nathan Hale</i>. As a host, you will:</p>
+                        <ol>
+                            <li>Pass control of the signing session to the hosted signer.</li>
+                            <li>Ask the signer to enter any required authentication information.</li>
+                            <li>Help the signer sign and get a copy of the finished document.</li>
+                            <li>Take control of the signing session.</li>
+                            <li>Log in to your DocuSign account to complete the signing session.</li>
+                        </ol>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="ProcedureIntro">Next:</p>
+        <p class="TableBullet" MadCap:autonum="• ">Pass control of the session to Nathan Hale.</p>
+        <p class="ProcedureIntro">After signed by the In Person Signer:</p>
+        <p class="TableBullet" MadCap:autonum="• ">To complete the signing process, pass control back to &lt;hostname&gt;.</p>
+        <p class="ProcedureIntro">Next:</p>
+        <p class="TableBullet" MadCap:autonum="• ">The Signing Host is prompted to log into their DocuSign Account.</p>
+        <p class="TableBullet" MadCap:autonum="• ">After logging into the DocuSign Account and finishing that task, subsequent signers are emailed.  If you do not complete this step, the process halts.</p>
+        <p class="ProcedureIntro">To configure DocuSign for in person signing:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">From Step 3 Addresses, complete the form fields. </p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 159px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Address Source Procedure</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select a stored procedure (optional) that can provide additional address options based on system data. A stored procedure can be selected from any stored procedure in the system with a name containing <b>emailtemplate_recipient_proc</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">From Address</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Select the From address for the email. You can select from a distinct set of options: </p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Admin Email</b>: Uses the default admin email set in the systems App Settings. Only User Developers can change this email address. For assistance, please log an Extranet case.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>AdHoc</b>: Allows you to  add the From list by typing it in manually.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>User</b>: Select a specific user of the system by selecting them from a list.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Procedure</b>: Select an address stored procedure and pick the From address.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Field on a Form</b>: Select a dataform from a list of single forms in the system that have fields from which an email can be extracted. Then pick the appropriate field.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="2. ">To add a new recipient record to this notification, click <span class="UXElement">Add</span>. </p>
+        <p class="StepResult"> A new row opens for adding recipients. Each recipient's source, type, and address must be unique.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 158px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Source</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the source of the Signing Host. </p>
+                        <p class="TableBullet" MadCap:autonum="• ">For dataform sources, this is where the signing host's email address and legal name are retrieved.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">For Source as Adhoc Email Address, enter the email address of the signing host in Address.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">For in person signers, select <b>In Person Signer</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Address</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the email address of the signing host. This must be a valid DocuSign user account or DocuSign will reject the document.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">When Source is a dataform, this is the signing host's email address. </p>
+                        <p class="TableBullet" MadCap:autonum="• ">When Source is <b>Adhoc Email Address</b>, enter the email address of the signing host.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Legal Name</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the legal name of the signing host. This must be a valid DocuSign username or DocuSign will reject the document.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">When Source is <span class="UXElement">Adhoc Email Address</span>, enter the Legal Name of the signing host. </p>
+                        <p class="TableBullet" MadCap:autonum="• ">When Source is a dataform, this field is set to TBD and automatically filled from the User or Contact FirstName LastName specified in Source and Address.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">In Person Signer Source</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the Source of the person who must sign in the presence of the signing host.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">When Source is a dataform, this is the form from which to retrieve the In Person Signer's Legal Name.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">When Source is Adhoc Email Address, enter the Legal Name of the Person who must sign in the In Person Signer Name field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">In Person Signer Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">This is the name of the person who must sign in the presence of the signing host.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">When In Person Signer Source is a dataform, this is the field from which to retrieve the In Person Signer's Legal Name.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">When In Person Signer Source is Adhoc Email Address, enter the In Person Signer's Legal Name.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="3. ">For details about completing the additional fields/columns, see <MadCap:xref href="DocuSign_ET-Step3.htm" title="Step 3 Addresses" alt="Step 3 Addresses">Step 3: Addresses</MadCap:xref>.</p>
+        <p class="L1Num" MadCap:autonum="4. ">Click <span class="UXElement">Apply</span>.</p>
+    </body>
+</html>

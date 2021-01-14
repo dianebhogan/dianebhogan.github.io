@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+    </head>
+    <body>
+        <h1>Internet Explorer settings for <MadCap:variable name="MyVariables.ProductName" /></h1>
+        <p class="InternalComment">removed from client facing doc</p>
+        <p>Because of the amount of interactivity in <MadCap:variable name="MyVariables.ProductName" />, from dialog windows to merges, there are some basic browser settings that should be made on any machine to take full advantage of <MadCap:variable name="MyVariables.ProductName" /> functionality. These browser changes range from security settings to add-ons and are comprised of the following.</p>
+        <h2>Trusted site settings </h2>
+        <p>The domain of your <MadCap:variable name="MyVariables.ProductName" /> installation will need to be added to the browsers Trusted site list – for Clients who host with <MadCap:variable name="MyVariables.CompanyName" /> this domain is usually *.clientspace.net. As you can see from the following example, this may not be the case for your site. </p>
+        <p class="Bullet1" MadCap:autonum="• ">You will know you have properly added the domain if you are in <MadCap:variable name="MyVariables.ProductName" /> and access the security tab of Internet Options, the Trusted sites zone will be selected by default.</p>
+        <p>
+            <img src="../Resources/Images/Issues/IEOptions_TrustedSites.png" />
+        </p>
+        <p>If you are unable to access the sites area, or unable to add your <MadCap:variable name="MyVariables.ProductName" /> domain to the trusted sites list, please contact your local IT administrator, as these settings may be locked down in your environment.</p>
+        <h2>Pop-up blocking </h2>
+        <p>The blocking of pop-ups from <MadCap:variable name="MyVariables.ProductName" /> can cause unexpected behavior in the application, so the <MadCap:variable name="MyVariables.ProductName" /> domain for your install should also be added to the list of <b>Allowed sites</b> for pop-ups in Internet explorer. </p>
+        <p class="L1Num1" MadCap:autonum="1. ">To access the list, go to <b>Tools</b>&gt; <b>Internet Options</b>.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Select the <b>Privacy</b> tab.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Click <b>Settings</b>.<br />The Pop-up Blocker Settings dialog box opens.</p>
+        <p class="L1Num" MadCap:autonum="4. ">Ensure that your <MadCap:variable name="MyVariables.ProductName" /> site is in the Allowed Sites list. <br /></p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Issues/IE_PopUpBlocker.png" />
+        </p>
+        <p class="L1Num" MadCap:autonum="5. ">To add the domain of your <MadCap:variable name="MyVariables.ProductName" /> installation to the list of allowed sites, type domain in the <b>Address of website to allow</b> box, prefacing it with an asterisk <b>*</b>.</p>
+        <p class="L1Num" MadCap:autonum="6. ">Click <b>Add</b>.</p>
+        <h2>Additional considerations for Internet Explorer 10+</h2>
+        <p> With Internet Explorer 10 and higher, Microsoft made some major changes to the way the browser handles JavaScript and other web technologies, which can cause unexpected behavior in the application. To avoid these issues, set your browser to use compatibility mode for the <MadCap:variable name="MyVariables.ProductName" /> application. </p>
+        <p class="ProcedureIntro">Compatibility mode can be set through the following steps:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Open Internet Explorer and go to your <MadCap:variable name="MyVariables.ProductName" /> login page.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Some users have reported that the login page does not load under I.E. 10. That is OK, we just need to get the URL from the browsers address bar.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Issues/IE_getURL.png" />
+        </p>
+        <p class="L1Num" MadCap:autonum="3. ">Select the domain portion of the URL.<br /> In the example, this would be clientspace.net, your install may be different. </p>
+        <p class="L1Num" MadCap:autonum="4. ">In Internet Explorer, go to the <b>Tools</b> menu. </p>
+        <p class="L1Num" MadCap:autonum="5. ">If you do not have an Option for Tools, right-click the top of your browser and ensure the Menu Bar is selected. </p>
+        <p class="L1Num" MadCap:autonum="6. ">Then go to <b>Tools</b> &gt; <b>Compatibility View Settings</b>.</p>
+        <p class="L1Num" MadCap:autonum="7. ">Add the domain portion of the URL that you just selected into the <b>Add this website</b> field (this will default in some cases) and click <b>Add</b>.<br />This will set the browser to use compatibility mode for any page where the URL ends in that domain (in our example, clientspace.net).</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Issues/Compat.jpg" />
+        </p>
+        <p class="L1Num" MadCap:autonum="8. ">Save your settings, and you are done.</p>
+        <h2>ActiveX filtering</h2>
+        <p> In a few rare cases we have seen ActiveX filtering enabled in a client's browser, which again, can cause unexpected behavior in <MadCap:variable name="MyVariables.ProductName" />. ActiveX filtering can be disabled from the Tools menu in Internet Explorer. Review to ensure that ActiveX filtering is not selected.</p>
+        <h2>Installing ActiveX Add-ins for <MadCap:variable name="MyVariables.ProductName" /></h2>
+        <p>The ActiveX Addins can be installed from the Admin Workspace in a client's production site. In a few rare cases, the ActiveX Addin installer is not on the Admin Workspace TOC. In this situation, log an Extranet case. </p>
+        <p class="L1Num1" MadCap:autonum="1. ">From the Admin Workspace TOC, click the <b>ActiveX Install</b> link. </p>
+        <p class="L1Num" MadCap:autonum="2. ">When this is first selected, It will say LOADED next to each ActiveX add-in but they will fail to load.</p>
+        <p class="StepResult">Although it shows the ActiveX Addins loaded, the install did not complete properly because the permission request at the bottom of the screen is needed to install properly. </p>
+        <p class="L1Num" MadCap:autonum="3. ">Click <b>Install</b> and your browser will redirect off the page. </p>
+        <p class="L1Num" MadCap:autonum="4. ">Click <b>ActiveX Install</b> again and this time the controls will not load manually. The application will ask to install before each ActiveX addin, totaling five times. After installed, the controls will show as LOADED.</p>
+    </body>
+</html>

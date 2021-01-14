@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 60 ( CORE )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;9/11/2017&#160;&#160;&#160;&#160;&#160;<strong>Sprint Ended:</strong>&#160;10/6/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(CORE)-Homepagewidgetsonappledevices-NEXT"><span style="color: rgb(51,153,102);">Home page widgets&#160;on apple devices - NEXT</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where home page widgets didn't handle responsive design correctly on ipad/iPhone</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(CORE)-FieldDisplayRulesfix"><span style="color: rgb(51,153,102);">Field Display Rules fix</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue with creating style field display rules for dataform fields which had a "State" field display rule already applied.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(CORE)-InactiveWorkspacesNotShowingLinkstoChildRecordsCorrectly"><span style="color: rgb(51,153,102);">Inactive Workspaces Not Showing Links to Child Records Correctly</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where records associated with Inactive Workspaces would not display properly throughout the system on lists and badge counters.&#160; System now includes records for workspaces which are inactive.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(CORE)-SubscriptionEmailChange"><span style="color: rgb(51,153,102);">Subscription Email Change</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where subscription emails were being sent which read "Changes are marked in bold" but then the changes were not marked in bold due to ClientSpace NEXT does not have access to the contents of Dirty Fields at the time the emails are generated.&#160; Subscription email now contains a link to the dataform allowing the user to drill in and see the changes.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(CORE)-IncidentMassUpdatesexecutingcandyBusinessLogic(Next)-NEXT"><span style="color: rgb(51,153,102);">Incident Mass Updates executing candy Business Logic (Next)&#160;- NEXT</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where when mass updating Incidents, hard errors would fire on&#160;save causing the save to fail in the background, but not throw an error.&#160; We now set the header action to 'massupdate' before submitting data to the web service save.&#160; This allows custom business logic (HE, SE, BizLogic) to determine if the logic should execute during the mass update.&#160;</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(CORE)-RecurringTaskDoesn'tsendnotification"><span style="color: rgb(51,153,102);">Recurring Task Doesn't send notification</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where a task set as recurring on Save would send a notification, but subsequent tasks that are cloned from it would not.&#160; Cloned tasks will now generate email responses to the users define in the Notification tab of the task.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(CORE)-RequiredFieldissues-FieldDisplay"><span style="color: rgb(51,153,102);">Required Field issues - Field Display</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue which occurred because of the way the field display code was relying on the field labels to find required fields, the recent change to add the help icon to the field labels caused this to break.&#160;&#160;The field display code was changed&#160;to not rely on the labels, but to use an attribute, directly on the fields, instead.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(CORE)-CloneUser,DefaultToNext"><span style="color: rgb(51,153,102);">Clone User, Default To Next&#160;&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Fixed an issue where a cloned user would not inherit the "Default to NEXT" setting of the user account from which it was cloned.&#160; System will now also clone the "Default to NEXT" setting.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(CORE)-ScheduledProcessList-LastRun-ENHANCEMENT"><span style="color: rgb(51,153,102);"><strong>Scheduled Process List - Last Run - &#160;&#160;</strong><span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Last Run (sec) has been added as a column on the Scheduled process list, displaying the last run duration in Seconds and allowing the admin to quickly assess long running scheduled processes.&#160; This column is sortable</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(CORE)-MergeAdmin-MergeTypeFilter-ENHANCEMENT"><span style="color: rgb(51,153,102);">Merge Admin - Merge Type Filter -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Merge Type has been added as a filter field to the Merge Admin dialog, allowing you to filter by type of PDF, Word or Excel.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(CORE)-CounterBadgeonActivities"><span style="color: rgb(51,153,102);">Counter Badge on Activities</span>
+                        </h4>
+                        <hr />
+                        <p>Corrected an issue where the Activities counter badge in the Action items list was not displaying the appropriate count for Organizations with more than 10 activities.&#160;</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(CORE)-DeletingDocuments-dataformattachmentsandactionitemsecurtity-NEXT-ENHANCEMENT"><span style="color: rgb(51,153,102);">Deleting Documents - dataform attachments and action item securtity - NEXT -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Changes were made to standardize the way that Right Menu file security works across entities in the system. Previously the dataform file right Action item menu was wide open, so if you have view rights to the dataform you can add, edit and delete files, but, on orgs, contacts, activities and tasks, you&#160;needed at least&#160;edit rights to the entity in order to add, edit or delete files. All entities now work like this:<br />* First, you&#160;must have edit rights for the entity that you're on in order to do anything but view files.<br />* If you have edit rights, then you can optionally lock files down using an "_$Attachment" security entity.</p>
+                        <ul>
+                            <li>Dataforms use {TableName}_$Attachment - set by checking the&#160;"Attachments Secured" box on Dataform properties</li>
+                            <li>Orgs, contacts, activties will use CRM_$Attachment - must be added by a ClientSpace representative - if you would like to utilize CRM attachment security contact your Account manger.</li>
+                            <li>Tasks will use Incident_$Attachment&#160;- must be added by a ClientSpace representative - if you would like to utilize Task attachment security contact your Account manger.</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(CORE)-DatabasePerformanceTuning-ENHANCEMENT"><span style="color: rgb(51,153,102);">Database Performance Tuning -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>In our ongoing efforts to improve system performance and the user experience we have added several additional indexes to commonly used dataform tables to speed data access, including such dataforms as the Client Master and Policy Comp Codes.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(CORE)-GridColumnResizinginChrome"><span style="color: rgb(51,153,102);">Grid Column Resizing in Chrome&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where grid columns would not resize properly in the Google Chrome browser.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

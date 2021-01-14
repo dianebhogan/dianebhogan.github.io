@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 60 ( PEO )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;9/11/2017&#160;&#160;&#160;&#160;&#160;<strong>Sprint Ended:</strong>&#160;10/6/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(PEO)-OSHA301Merge-CompClaimdataform-ENHANCEMENT"><span style="color: rgb(51,153,102);">OSHA 301 Merge - Comp Claim dataform -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A PDF based merge of ClientSpace Claim information to the OSHA 301 form has been added to PEO. The merge will run from the Comp Claim dataform. &#160; The merge uses the following fields:<br /><br />NEW FIELD(S) ON COMP CLAIM INJURY:<br />&#160;- Describe Injury or Illness as Text Wide<br />&#160;- Treated In Emergency Room as Lookup type (Yes, No)<br />&#160;- Hospitalized Overnight as Inpatient as Lookup type (Yes, No)<br /><br />FROM EMPLOYEE DATAFORM:<br />&#160;- FirstName<br />&#160;- LastName<br />&#160;- Address1<br />&#160;- Address2<br />&#160;- City<br />&#160;- State<br />&#160;- ZipCode<br />&#160;- DOB<br />&#160;- crGender (code value)<br /><br />FROM CURRENT EMPLOYMENT DATAFORM:<br />&#160;- OriginalHireDate<br />&#160;- HireDate<br /><br />FROM COMP CLAIM DATAFORM<br />&#160;- CarrierClaimNumber<br />&#160;- SystemClaimNumber<br />&#160;- DateInjury<br />&#160;- DateReported<br />&#160;- TimeWorkdayStart<br />&#160;- TimeInjury<br />&#160;- DateDeath<br />&#160;- ClaimSpecialistName (fkClaimSpecialistUserID, decode to User's Firstname Lastname)<br />&#160;- ClaimSpecialistTitle (fkClaimSpecialistUserID, decode to User's Title)<br />&#160;- ClaimSpecialistPhone (fkClaimSpecialistUserID, decode to User's Phone)<br /><br />FROM COMP CLAIM INJURY DATAFORM:<br />&#160;- PreInjuryActivity<br />&#160;- InjuryAccidentDetails<br />&#160;- CauseInjuryDetail<br />&#160;- InjuryOrIllnessDetails (new field as Text Wide)<br />&#160;- TreatedInER as Lookup type (new Yes, No lookup field)<br />&#160;- HospitalizedOvernight as Lookup type (new Yes, No lookup field)<br /><br />FROM TREATMENT DATAFORM:<br />Get Provider details for the oldest active treatment record using the Treatment.fkProviderID<br />&#160;- ProviderName<br />&#160;- ProviderAddress 1 &amp; 2 (insert a comma and space if there is an address 2)<br />&#160;- ProviderCity<br />&#160;- ProviderState<br />&#160;- ProviderZip<br />&#160;- Physican (new 'text' field on treatment dataform)</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(PEO)-DisplayWCCodeonWorkItem-NEXT-ENHANCEMENT"><span style="color: rgb(51,153,102);">Display WC Code on Work Item - NEXT -&#160;&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>NEXT has been enhanced to display the Comp Code and State in the Work Item when on the Pricing Comp Code. &#160; The system will now display 8810FL for a code of 8810 in the state of FL. &#160;For more information on Work Items read <a href="https://clientspace.atlassian.net/wiki/x/RhiABQ" rel="nofollow">"Navigating ClientSpace NEXT".</a></p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(PEO)-UpdateLogictoThrowError&quot;DataWillbeLost&quot;ifNavigatingtoaRequiredForm-ENHANCEMENT"><span style="color: rgb(51,153,102);">Update Logic to Throw Error "Data Will be Lost" if Navigating to a Required Form -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Enhanced the business logic when clicking the Required Forms link so that the system will warn you that navigating away from the page may cause data loss, as it does when you close a dataform without saving changes.</p>
+                        <h4 id="Release60(PEO)-SurchargeSecurity"><span style="color: rgb(51,153,102);">Surcharge Security&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Updated Surcharge Security to resolve an issue where a ClientSpace user that did not have access or had limited access to the Surcharges dataform was still able to access and edit surcharges through the pricing console. Pricing console now respects the View / Add / Edit rights maintained in Role administration.</p>
+                        <h4 id="Release60(PEO)-ClientReinstateruleexception"><span style="color: rgb(51,153,102);">Client Reinstate rule exception</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where under certain circumstances if the Pricing comp code or pricing State records become inactivated the system would throw an error when attempting to reinstate the terminated client. System will no longer throw an error.</p>
+                        <h4 id="Release60(PEO)-ApprovalProcessenhancement-ENHANCEMENT"><span style="color: rgb(51,153,102);">Approval Process enhancement -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Enhanced the underwriting approval process to remove the ability to mis-configure business rules on approval creation that could cause the pricing workflow to break.</p>
+                        <h4 id="Release60(PEO)-&quot;OverridePricing&quot;defaultsissue"><span style="color: rgb(51,153,102);">"Override Pricing" defaults issue</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where when "Override Pricing for this batch" is ticked the Minimum Admin Per Account and Minimum Admin Per Head fields were re-defaulting back from the Admin Workspace, overriding any changes that had been made.</p>
+                        <h4 id="Release60(PEO)-PricingLockedissue"><span style="color: rgb(51,153,102);">Pricing Locked issue</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where when Recalculate Pricing logic runs on the Batch, State &amp; Codes a BatchRepricing checkbox on the batch is ticked and then unticks when pricing is finished to prevent multiple users from making pricing changes at the same time. If the logic doesn't fully run or an exception is created the checkbox would remain checked. The logic has been changed so the box will be unchecked regardless.</p>
+                        <h4 id="Release60(PEO)-PrismHRAPIImportGrayListClients-ENHANCEMENT"><span style="color: rgb(51,153,102);">PrismHR API Import Gray List Clients -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Added the ability to specify which Client Numbers should not import specific Employment data or Payroll/Billing Vouchers from PrismHR via the API. No payroll/billing vouchers will be imported, and the following Employment fields are set to "0" during the initial and ongoing employment import:<br />- HourlyRate<br />- AnnualPay<br />- WageRate<br />- AnnualPayPctChange<br />- AnnualPayrollAmountChange</p>
+                        <p>To configure graylist clients, add the following to the Additional parameters section of the Prism API configuration in ClientSpace:&#160; graylistclients=### (### to be replaced with the actual client number of the client to be listed.&#160; be sure to include leading zeroes if your prism installation utilizes this numbering format)</p>
+                        <h4 id="Release60(PEO)-DatabasePerformanceTuning-ENHANCEMENT"><span style="color: rgb(51,153,102);">Database Performance Tuning -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Database performance tuning has been done to enhance performance for some commonly used dataforms such as the Client Master and Policy Comp Codes.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(PEO)-WidgetDrillDownIssues"><span style="color: rgb(51,153,102);">Widget Drill Down Issues</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue with some widgets where when drilled into to get the underlying dataform search the appropriate Key was not being passed so the system would return an unfiltered list of records by default.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(PEO)-SalesForcetriggeringchanges-ENHANCEMENT"><span style="color: rgb(51,153,102);">Sales Force triggering changes -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The stored procedure that monitors the field change audit table changes was missing basic Organization fields.&#160; Updated the code which monitors the field changes and triggers events.&#160; The following fields are now included in the Update to Salesforce triggering process (PEO):</p>
+                        <p><strong>Org Trigger Fields</strong>
+                        </p>
+                        <ul>
+                            <li>'Name',</li>
+                            <li>'AKA',</li>
+                            <li>'Phone',</li>
+                            <li>'Fax',</li>
+                            <li>'crStatus',</li>
+                            <li>'Address1',</li>
+                            <li>'Address2',</li>
+                            <li>'City',</li>
+                            <li>'State',</li>
+                            <li>'PostalCode',</li>
+                            <li>'Country',</li>
+                            <li>'luCurrentPEO',</li>
+                            <li>'crSource',</li>
+                            <li>'crBusinessType',</li>
+                            <li>'Website',</li>
+                            <li>'IndustryCode',</li>
+                            <li>'EmployerIDNumber',</li>
+                            <li>'crCategory','DoNotCall',&#160;&#160;&#160;&#160;&#160;&#160;</li>
+                        </ul>
+                        <p><strong>Org Other Info Fields</strong>
+                            <br /> 'EmployeeCount','GrossPayroll',&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+                        <p>
+                            <br />
+                        </p>
+                        <p><strong>Contact Trigger Fields</strong>
+                        </p>
+                        <ul>
+                            <li>'fkOrganizationId',</li>
+                            <li>'fkAssignedToUserID',</li>
+                            <li>'FirstName',</li>
+                            <li>'LastName',</li>
+                            <li>'Title',</li>
+                            <li>‘Category',</li>
+                            <li>'BusinessPhone',</li>
+                            <li>'Email1',</li>
+                            <li>'CellPhone',</li>
+                            <li>'Fax',</li>
+                            <li>'Address1',</li>
+                            <li>'City',</li>
+                            <li>'State',</li>
+                            <li>'PostalCode',</li>
+                            <li>'Country',</li>
+                            <li>'Active',</li>
+                        </ul>
+                        <p>
+                            <br /><strong>Contact Other Info Trigger Fields</strong>
+                            <br /> 'mluContactType',</p>
+                        <p><strong>Client Master Trigger Fields</strong>
+                        </p>
+                        <ul>
+                            <li>'ClientNumber',</li>
+                            <li>'Status',</li>
+                            <li>'Dateof1stPayroll',</li>
+                            <li>'ContractEffectiveDate',</li>
+                            <li>'CorporationType',</li>
+                            <li>‘luAltIndustryCode',</li>
+                            <li>'SalesRegion',</li>
+                            <li>'fkParentCompanyID',</li>
+                            <li>'luKillReason'</li>
+                        </ul>
+                        <p />
+                        <h4 id="Release60(PEO)-Unabletoclosecase"><span style="color: rgb(51,153,102);">Unable to close case</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where the HE_ValidateIncidents business rule on Cases was triggering even though there are no active tasks, because the tasks were a different status than 3-Complete.</p>
+                        <p>This rule has been adjusted to ignore Tasks that are inactive.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release60(PEO)-NEWPOLICYSTATECOSTFACTORSDATAFORM-ENHANCEMENT"><span style="color: rgb(51,153,102);">NEW POLICY STATE COST FACTORS DATAFORM -&#160;&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A child dataform has been added to the WC Policy dataform to manage and track cost factors by state. This new table has a parent form field to the WC Policy that is read-only and a State lookup field that is required.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <ul>
+                            <li>When adding a new Policy State Cost Factors record from the policy, default all field values from the policy.</li>
+                            <li>When determining which Cost Factors to use for calculating a funding rate or defaulting on the pricing state, the system will use the Policy State Factors if they exist for that state otherwise will use the Policy cost factors.</li>
+                            <li>A link has been configured to open the Policy State Cost Factors dataform from the WC Policy and secure to this dataform's security entity. The link is only visible if the "Use Cost Factors" is set to "Yes".</li>
+                            <li>The Policy State Cost Factors form is cloned when a policy is renewed. This applies to Policies in either the Admin Workspace or in the Client's workspace.</li>
+                            <li>A HE Rule "HE_HasDuplicate" has been created to prevent duplicate Policy State Records.&#160;</li>
+                            <li>All pricing calculations which take Cost factors into account have been re-factored to use this new dataform if available.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

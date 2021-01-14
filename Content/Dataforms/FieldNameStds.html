@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/TwoColumn_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Dataform field naming standards</h1>
+        <p>
+            <MadCap:concept term="Dataforms" />This topic describes the standards and conventions for naming dataforms and dataform fields.</p>
+        <h2>General guidelines</h2>
+        <p>Care should be taken when first creating a dataform, as the underlying database table is generated from the name at the time of creation. For example, if a dataform is added with the name Certs, a database table <b>gen_Certs</b> is generated, where gen_CertificateOfInsurance would have been preferable. </p>
+        <p>So, when adding a dataform, think about what you would want the database table to be named, then, after it is created, the form name can be changed to something more human readable or industry jargonized, without having an effect on the underlying database table.</p>
+        <p>Field names are in Pascal Case, which means that field names are created by concatenating capitalized words. For example:</p>
+        <p class="Bullet1" MadCap:autonum="• ">FirstName</p>
+        <p class="Bullet1" MadCap:autonum="• ">GrossPayroll</p>
+        <p class="Bullet1" MadCap:autonum="• ">MinAdminPerAccount</p>
+        <p>Prefixes are all lowercase. For example:</p>
+        <p class="Bullet1" MadCap:autonum="• ">luState</p>
+        <p class="Bullet1" MadCap:autonum="• ">fsOrganizationInformation</p>
+        <p>When using the ID suffix, both letters should be uppercase. For example:</p>
+        <p class="Bullet1" MadCap:autonum="• ">fkEmployeeID</p>
+        <p class="Bullet1" MadCap:autonum="• ">fkUserID</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">Always examine the automatically generated field name after typing in the label to make sure they are Pascal Case and have the appropriate prefix and suffix. DO NOT leave a field with a long winded name because of what the label is. For example, a field with the label “Are union workers or employees under collective bargaining agreements employed?” should not be left as the automatically generated name. In this case, it was appropriately shortened to <b>luEECoveredUnderCBAEmployed</b>.</p>
+        <h2>Datatype guidelines</h2>
+        <h3>Prefix fk and suffix ID</h3>
+        <p>Any fields that store an ID to another entity should have the prefix <b>fk</b> and the suffix ID. </p>
+        <p><i>Example</i>: fkEmployeeID</p>
+        <p>A few examples of foreign key datatypes:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Any of the Organization or Contact datatypes</p>
+        <p class="Bullet1" MadCap:autonum="• ">Any of the User datatypes</p>
+        <p class="Bullet1" MadCap:autonum="• ">Parent Form</p>
+        <p class="Bullet1" MadCap:autonum="• ">Comp Code Suggest</p>
+        <p class="Bullet1" MadCap:autonum="• ">Employee Type Ahead</p>
+        <p class="Bullet1" MadCap:autonum="• ">Project Type Selector</p>
+        <p class="Bullet1" MadCap:autonum="• ">Role Selectors</p>
+        <p class="Bullet1" MadCap:autonum="• ">Workspace Selectors</p>
+        <h3>Prefix lu</h3>
+        <p>Lookup (core) have the <b>lu</b> prefix. </p>
+        <p><i>Example</i>: luStatus</p>
+        <h3>Prefix mlu</h3>
+        <p>Lookup – Multiple (core) have the <b>mlu</b> prefix. </p>
+        <p><i>Example</i>:</p>
+        <p class="Bullet1" MadCap:autonum="• ">mluCommissionMethod</p>
+        <p class="Bullet1" MadCap:autonum="• ">mluCertifications</p>
+        <h3>Is, Has, Can</h3>
+        <p>Check boxes store a Boolean value (True/False, Yes/No), so they should start with the word <b>Is</b>, <b>Has</b>, or <b>Can</b>, depending on what sounds more correct. </p>
+        <p><i>Example</i>:</p>
+        <p class="Bullet1" MadCap:autonum="• ">IsBrokerSubmitted</p>
+        <p class="Bullet1" MadCap:autonum="• ">HasCustomPayroll</p>
+        <p class="Bullet1" MadCap:autonum="• ">CanCreateWorkspace</p>
+        <h3>Date</h3>
+        <p>Date fields should begin with the word <b>Date</b>. </p>
+        <p><i>Example</i>: DateReported</p>
+        <h3>Prefix fs</h3>
+        <p>Field Sets should have the prefix <b>fs</b>. </p>
+        <p><i>Example</i>: fsContactInformation</p>
+        <h3>Prefix sf</h3>
+        <p>Secure attachments should have the prefix <b>sf</b>.</p>
+        <p><i>Example</i>: sfLossHistory</p>
+        <h3>Other datatypes</h3>
+        <p>All other datatypes should stick to the Pascal Case convention.</p>
+        <p style="font-style: italic;">Examples:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/TwoColumn_Table.css');" class="TableStyle-TwoColumn_Table" cellspacing="0">
+            <col class="TableStyle-TwoColumn_Table-Column-Column1" style="width: 166px;" />
+            <col class="TableStyle-TwoColumn_Table-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-TwoColumn_Table-Body-Body1">
+                    <td class="TableStyle-TwoColumn_Table-BodyE-Column1-Body1">
+                        <p class="Bullet1" MadCap:autonum="• ">GrossPayroll </p>
+                    </td>
+                    <td class="TableStyle-TwoColumn_Table-BodyD-Column1-Body1">(Decimal)</td>
+                </tr>
+                <tr class="TableStyle-TwoColumn_Table-Body-Body1">
+                    <td class="TableStyle-TwoColumn_Table-BodyE-Column1-Body1">
+                        <p class="Bullet1" MadCap:autonum="• ">TotalEmployees </p>
+                    </td>
+                    <td class="TableStyle-TwoColumn_Table-BodyD-Column1-Body1">(Integer)</td>
+                </tr>
+                <tr class="TableStyle-TwoColumn_Table-Body-Body1">
+                    <td class="TableStyle-TwoColumn_Table-BodyE-Column1-Body1">
+                        <p class="Bullet1" MadCap:autonum="• ">GeneralNotes </p>
+                    </td>
+                    <td class="TableStyle-TwoColumn_Table-BodyD-Column1-Body1">(TextArea or Log)</td>
+                </tr>
+                <tr class="TableStyle-TwoColumn_Table-Body-Body1">
+                    <td class="TableStyle-TwoColumn_Table-BodyE-Column1-Body1">
+                        <p class="Bullet1" MadCap:autonum="• ">LastName </p>
+                    </td>
+                    <td class="TableStyle-TwoColumn_Table-BodyD-Column1-Body1">(Text)</td>
+                </tr>
+                <tr class="TableStyle-TwoColumn_Table-Body-Body1">
+                    <td class="TableStyle-TwoColumn_Table-BodyB-Column1-Body1">
+                        <p class="Bullet1" MadCap:autonum="• ">PrimaryEmail </p>
+                    </td>
+                    <td class="TableStyle-TwoColumn_Table-BodyA-Column1-Body1"> (Email)</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

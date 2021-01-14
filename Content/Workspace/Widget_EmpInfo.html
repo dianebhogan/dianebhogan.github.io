@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Widget: Employee Info</h1>
+        <p>
+            <img src="../Resources/Images/Widget/EmpInfo.jpg" class="right" />
+        </p>
+        <p>The Employee Info widget is on the Workspace Landing Page when the Client Master Status is Client, Pending Termination, or Terminated. This widget provides insight into the variance of employee counts from the Pricing Batch in relation to actual payrolls produced. Employee numbers may appear skewed in specific scenarios where the client is seasonal or in cases where there are gaps in pay for employees.</p>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 152px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1" colspan="2">Widget definition</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Active EE     </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Count of the Employee records in the workspace where the Employment Status = Active.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Payrolled EE (90 days)        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Count of distinct Employee IDs for Payrolls in the last 90 days.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Contract EE</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Sum of Employee Counts for each WC Code on the current activated Pricing Batch.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Variance </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Difference between the Payroll EE and Contract EE.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

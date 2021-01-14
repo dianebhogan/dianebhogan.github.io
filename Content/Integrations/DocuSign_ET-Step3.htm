@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <div class="NoPageBreak">
+            <h1>Step 3: Addresses</h1>
+            <p>
+                <MadCap:concept term="DocuSign" />In this step, you code your tags for DocuSign in the green Add section. The tags tell DocuSign what to read to determine if the field is a signature, a date, or a text field. These are the tags that you registered in your  merge template. Ensure that your merge template tags match the Signature Anchor (in the following procedure).</p>
+            <p>You can also send a document with the requirement for In Person Signing, which is used when a valid DocuSign user acts as a signing host for a signer.  The document is sent to the signing host who physically delivers the document to the In Person Signer for signatures. For details on how to set this up, see <MadCap:xref href="DocuSign_InPerson.htm" title="Configuring DocuSign for in-person signing" alt="Configuring DocuSign for in-person signing">Configuring the email template for In Person Signing</MadCap:xref>.</p>
+            <p>
+                <img src="../Resources/Images/Integrations/DS_Step3.png" class="thumbnail" />
+            </p>
+            <p class="ProcedureIntro">To configure the tags:</p>
+            <ol>
+                <li>Complete the form fields. </li>
+            </ol>
+            <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+                <col class="TableStyle-Procedure-Column-Column1" style="width: 174px;" />
+                <col class="TableStyle-Procedure-Column-Column1" />
+                <tbody>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">Address Source Procedure</td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select a stored procedure (optional) that can provide additional address options based on system data. A stored procedure can be selected from any stored procedure in the system with a name containing <b>emailtemplate_recipient_proc</b>.</td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyB-Column1-Body1">From Address</td>
+                        <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                            <p class="TableTextLeft">Select the From Address for the email. You can select from a distinct set of options: </p>
+                            <p class="TableBullet" MadCap:autonum="• "><b>Admin Email</b>: Uses the default admin email set in the systems App Settings. Only User Developers can change this email address. For assistance, please log an Extranet case.</p>
+                            <p class="TableBullet" MadCap:autonum="• "><b>AdHoc</b>: Allows you to add the From list by typing it in manually.</p>
+                            <p class="TableBullet" MadCap:autonum="• "><b>User</b>: Select a specific user of the system by selecting them from a list.</p>
+                            <p class="TableBullet" MadCap:autonum="• "><b>Procedure</b>: Select an address stored procedure and pick the From Address.</p>
+                            <p class="TableBullet" MadCap:autonum="• "><b>Field on a Form</b>: Select a dataform from a list of single forms in the system that have fields from which an email can be extracted. Then pick the appropriate field.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ol MadCap:continue="true">
+                <li>To add your tags for DocuSign, click <span class="UXElement">Add</span>.<br /> A new row opens for adding DocuSign fields on the merge document. </li>
+            </ol>
+            <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+                <col class="TableStyle-Procedure-Column-Column1" style="width: 175px;" />
+                <col class="TableStyle-Procedure-Column-Column1" />
+                <tbody>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">Source</td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                            <p class="TableTextLeft">Source is the dataform where the field for the recipient is stored. The field can be a contact for a user field. The document is sent directly to these users. For Adhoc Email Address, enter the email address of the signer in the Address field.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">Type</td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                            <p class="TableTextLeft">This field indicates the type of signature: </p>
+                            <p class="TableBullet" MadCap:autonum="• ">Signer</p>
+                            <p class="TableBullet" MadCap:autonum="• ">In Person Signer</p>
+                            <p class="TableTextLeft">If you select In Person Signer, see <MadCap:xref href="DocuSign_InPerson.htm" title="Configuring DocuSign for in-person signing" alt="Configuring DocuSign for in-person signing">Configuring the email template for In Person Signing</MadCap:xref>.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">Address</td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                            <p class="TableTextLeft">This is the email address of the person who must sign.</p>
+                            <p class="TableBullet" MadCap:autonum="• ">When Source is a dataform, select the user or contact type field on the form from which you would like to extract the email address. </p>
+                            <p class="TableBullet" MadCap:autonum="• ">When Source is <b>Address Source Procedure</b>, select the appropriate option. </p>
+                            <p class="TableBullet" MadCap:autonum="• ">When Source is <b>Adhoc Email Address</b>, enter the email address to which you would like to send, such as bsmith@test.com.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">Legal Name</td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                            <p class="TableTextLeft">This is the legal name of the person who must sign.</p>
+                            <p class="TableBullet" MadCap:autonum="• ">When Source is <span class="UXElement">Adhoc Email Address</span>, enter the Legal Name of the signer that matches the Adhoc Email Address, such as Robert Smith. </p>
+                            <p class="TableBullet" MadCap:autonum="• ">When Source is a dataform, this field is set to TBD and automatically filled from the User or Contact FirstName LastName specified in Source and Address, when the email is sent.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                            <p class="TableTextLeft">In Person Signer Source</p>
+                        </td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                            <p class="TableTextLeft">See <MadCap:xref href="DocuSign_InPerson.htm" title="Configuring DocuSign for in-person signing" alt="Configuring DocuSign for in-person signing">Configuring the email template for In Person Signing</MadCap:xref>.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                            <p class="TableTextLeft">In Person Signer Name</p>
+                        </td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                            <p class="TableTextLeft">See <MadCap:xref href="DocuSign_InPerson.htm" title="Configuring DocuSign for in-person signing" alt="Configuring DocuSign for in-person signing">Configuring the email template for In Person Signing</MadCap:xref>.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">Signature Order</td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                            <p class="TableTextLeft">This field determines the order in which the signature fields are presented in DocuSign. A recommended best practice is to use the order the signature tags are presented in the document, top to bottom, left to right as the signature order.</p>
+                            <p class="StepResult">&#160;</p>
+                            <p class="TableTextLeft">As you add tags, the process continues with ascending numbers, giving them each a new number (reference the screenshot that follows this table). However, the signing order is per recipient, each of that recipient's tags that they need to address in DocuSign.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                            <p class="TableTextLeft">Signature Type</p>
+                            <p class="TableTextLeft">&#160;</p>
+                        </td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                            <p class="TableTextLeft">
+                                <img src="../Resources/Images/Integrations/DS_Step3_SigType.png" class="left" />
+                            </p>
+                            <p class="TableTextLeft">Select a Signature Type. When you select a type, this action places the appropriate DocuSign action on the document. Additionally, <MadCap:variable name="MyVariables.ProductName" /> does not literally add check boxes to the form. We put the action tag in the document and let DocuSign do the heavy lifting when the document is compiled. Signature actions range from Approve, to Initial Here, to Sign Here, and many other tags. For assistance with custom tags, such as custom formatted fields and radio buttons, log an Extranet case. To implement Radio Buttons as a Signature Type, you must configure Radio Buttons as a custom type within DocuSign.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1"># Tabs</td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                            <p class="TableTextLeft">If <span class="UXElement">Ignore If Not Present</span> is selected, it will clone that Recipient and Tab for the number of Tags that are needed, appending "-1", "-2", and so on to the end of the tag. This enables a dynamic number of Tags that are generated by merge SQL and placed into the document while only having to set up one Recipient record on the email template. Let's say you have a \Name\ tag for the signee's name. Instead of creating separate \Name\-1, \Name\-2, \Name\-3 recipient entries,  create a single recipient entry with the tag of \Name\ and set the <span class="UXElement"># Tabs</span> to 3. It is a best practice to check the <span class="UXElement">Ignore if not present</span> option, otherwise DocuSign will reject the document if all tabs are not present.</p>
+                            <p class="StepResult">&#160;</p>
+                            <p class="TableTextLeft">By default, the # Tabs is set to 1. This means that this tag is only present one time in the document. If you want to clone the tag and allow it to be used multiple times throughout the document, change the # Tabs to the number of potential tags you may have. Therefore, you only need to set this if you need multiples of the same. If you use # Tabs for Radio Buttons or Yes/No actions, it will fill all of those DocuSign tags the same way when the signer responds. For example, if there are three Tabs for Yes/No action and the signer responds Yes to one, it marks Yes to the remaining two as well  because the tags have the same label.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">Signature Anchor</td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                            <p class="TableTextLeft">This is the custom tag that you embed in your DocuSign document that is used to merge the signature action in DocuSign. While there is no set standard, it is important to use a custom tag that does not occur naturally in written text. An example of a signature location for Initial 1, for example, could be \init1\ or for a signature, \S1\. The associated tag in the merged document must match this signature pattern exactly. </p>
+                            <p class="ActionTip">Ensure the tags you used in your merge template match the tags in Signature Anchor. See <MadCap:xref href="DocuSign_MergeTemp.htm" title="Configuring the merge template" alt="Configuring the merge template">Configuring the merge template</MadCap:xref>.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">Display Text</td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                            <p class="TableTextLeft">This value appears in the tooltip of the Signature field on the document that is being signed. It is displayed near the signature location as instructions on what to do in DocuSign. For example, an initial location might have a signature display text of “Initial here”. Check boxes might state, “Select all that apply” and so on.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">Label</td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">Descriptive text that is displayed in the ClientSpace list to provide a more complete description of that recipient item. For example, instead of multiple Signature items in the list, you may want to use the label to indicate the type of signature, such as Principal Signature or Risk Signature, and so on.</td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">Ignore if not present</td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                            <p class="TableTextLeft">DocuSign allows you to include a parameter on each Recipient/Tab in the envelope called Ignore If Not Present. The DocuSign integration allows you to define and include a recipient and associated tags in the envelope but not throw an error if that tag is not found in the envelope's documents using the Ignore If Not Present option on the recipient configuration. This makes tags optional as the system allows the send to DocuSign with or without tags marked in this way.  When the <span class="UXElement"># Tabs</span> exceeds 1, you can enable this option by selecting Yes. The default setting is No.</p>
+                            <p class="StepResult">&#160;</p>
+                            <p class="TableTextLeft">For Radio Buttons or Yes/No actions, ensure that each tag has a different label value. When these tags have the same label, DocuSign applies the response that the signer enters in one tag to the rest of the tags of that same action/label.</p>
+                            <p class="StepResult">&#160;</p>
+                            <p class="TableTextLeft">For Email Templates with multiple documents that also have conditions on the contract type or required addendums, use the <span class="UXElement">Ignore if not present</span> option. Enabling this option allows the DocuSign email to be sent when that document is not included.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                            <p class="TableTextLeft">Required</p>
+                        </td>
+                        <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                            <p class="TableTextLeft">
+                                <img src="../Resources/Images/Integrations/DS_Required.png" class="left" />
+                            </p>
+                            <p class="TableTextLeft">Indicate if this is a required field for the Signer during the DocuSign process. This option helps to streamline the process for signers when the fields are not applicable. When selected (Yes), the Signer must sign the custom tag. When not required (No), the tag appears as optional to the Signer.</p>
+                            <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">For existing Email Templates (configured before R93), the tags are set to Required unless you change them.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="indent">
+                <p>In the following example, each row represents a signer action such as signature, date, and title. The Signature Anchor column (noted in the image) uses the tags from the merge template. This example shows two signers (S1 is John Smith and S2 is Bob Jones), and each signer must indicate a date and add their title. </p>
+                <p>After the first person has signed, the process sends to the next person to sign. DocuSign reads all the tags for the first signer, then goes to next one. If the entries are out of order in the Email Template, it does not matter. The processing order proceeds by signer. Our example shows two signers, John Smith and Bob Jones. All the tags for John Smith are processed before the tags for that of Bob Jones. This is the case even if the tags for the signers were in a different order than shown in the example.</p>
+            </div>
+            <div class="indent">
+                <p>
+                    <img src="../Resources/Images/Integrations/DS_addresses.png" class="thumbnail" />
+                </p>
+            </div>
+            <ol MadCap:continue="true">
+                <li>Click <b>Next</b> to proceed to <MadCap:xref href="DocuSign_ET-Step4.htm" title="Step 4 Conditions" alt="Step 4 Conditions">Step 4: Conditions</MadCap:xref>.</li>
+            </ol>
+        </div>
+    </body>
+</html>

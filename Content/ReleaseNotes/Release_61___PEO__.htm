@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 61 ( PEO )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;10/09/2017&#160;&#160;&#160;&#160;&#160;<strong>Sprint Ended:</strong>&#160;11/03/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-UserField-CaseEscalationENHANCEMENT"><span style="color: rgb(51,153,102);">User Field - Case Escalation&#160;&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A new field has been added to the User Other Info tab called <strong>"Immediate Supervisor"</strong> - This is a User datatype.</p>
+                        <p>The Case escalation process has been enhanced to include <strong>"Next Priority"</strong>, <strong>"Next Assigned to User"</strong> and <strong>"Escalation Notification Recipient" </strong>(includes "Immediate Supervisor").&#160; When a case with a matching priority and an Escalation Time value less than or equal to now the case will be escalated, Setting the Priority to "Next Priority", the Asssigned To User to "Next Assigned To User" and notifying the "Escalation Notification Recipient"&#160;</p>
+                        <p>These escalations can then be cascaded - Low to Medium, then Medium to High and so on changing the escalation hours, assigned to or notification recipient as required.&#160; For help configuring case escalations, contact your account manager.</p>
+                        <p>The following system changes have been completed for this development:</p>
+                        <p>New fields have been added&#160;to the Case Type Escalation <br />&#160; &#160;• Next Priority (Lookup)<br />&#160; &#160;• Next Assigned To User (User filtered by Role, PEO Employee role)<br />&#160; &#160;• Send Escalation Email (checkbox)<br />&#160; &#160;• Escalation Notification Recipient (Lookup)<br />&#160; &#160;• Role<br />&#160; &#160;• Department Manager<br />&#160; &#160;• Immediate Supervisor<br />&#160; &#160;• Escalation Email Role (role selector)</p>
+                        <p>Field Display Rules were added:<br />&#160; • When "Send Escalation Email" = True Then enable "Escalation Notification Recipient" <br />&#160; • When "Escalation Notification Recipient" = RoleThen enable "Escalation Email Role"</p>
+                        <p>&#160; • Added a&#160;new field to User Other Info tab called "Immediate Supervisor" - User selector datatype.</p>
+                        <p>&#160; • Added metadata to Case Status for "Exclude from Escalation"</p>
+                        <p>&#160; • Created a&#160;new Schedule Process called Process Case Escalations.<br />&#160; • When this process runs, it checks the Case Escalation 1 fields to determine if the case should be escalated, if so, then it&#160;checks for the "Exclude from Escalation" flag, Next Priority, Next Assigned To User, and the Send Escalation Email flag. <br />&#160; • If "Exclude from Escalation" is checked, then end, if unchecked&#160;we proceed to the next step.<br />&#160; • If Next Priority is set, then change the Case Priority. This triggers a&#160;business rule to reset escalation fields.<br />&#160; • If Next Assigned To User is set, the system&#160;changes the Case Assigned To User.<br />&#160; • If Send Escalation Email flag is checked the system then sends a new Case Escalation email. This email should use Email Templates with the same Field Replace&#160;logic as the existing case notification email template.</p>
+                        <p>&#160; • A new business rule has been added to the Client Service Case that will recalculate the Case Escalation fields any time the Case Priority changed.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-ConvertLandingPagesandHeaderstoWidgetLayoutsENHANCEMENT"><span style="color: rgb(51,153,102);">Convert Landing Pages and Headers to Widget Layouts&#160;&#160;</span><span style="color: rgb(51,153,102);"><span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Workspace Landing Page headers have been Widgetized - allowing for the items displayed at the top of the Workspace Landing Page to be customized by Contract Stage.&#160; By default, our PEO system has been configured with three unique landing page "styles" -</p>
+                        <p><strong>Client</strong>:&#160; Contract Stages of "Client" and "Terminated"</p>
+                        <p><strong>Implementation</strong>: Contract Stage of "Implementation"</p>
+                        <p><strong>Prospect</strong>: Contract Stages of "Prospect",&#160;"Declined" and "Dead"</p>
+                        <p>
+                            <br />
+                        </p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-AddClientNumbertoCaseEmailsENHANCEMENT"><span style="color: rgb(51,153,102);">Add Client Number to Case Emails&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The code which provides data for the Client Service Case notification has been enhanced to add Client Number from the Client Master as an optional replacement field. This information can be added to Client Service Case notifications using the replacement code of {ClientNumber}.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-EmailTemplateStoredProceduresENHANCEMENT"><span style="color: rgb(51,153,102);">Email Template Stored Procedures&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Field replacement SQL has been added which returns Employee and Employment fields designed for automating email template workflow driven by the termination of an employee.&#160; &#160;The stored procedures 'peo_employment_emailtemplate_merge' and 'peo_employee_emailtemplate_recipient_proc'&#160; which return the following values for field replacement:</p>
+                        <ul>
+                            <li>EeFirstName</li>
+                            <li>EeMiddleInit</li>
+                            <li>EeLastname</li>
+                            <li>EeFullName</li>
+                            <li>EeAddress1</li>
+                            <li>EeAddress2</li>
+                            <li>EeAddress</li>
+                            <li>EeCity</li>
+                            <li>EeState</li>
+                            <li>EeZip</li>
+                            <li>EeCSZ</li>
+                            <li>EeCounty</li>
+                            <li>EeIdentifier</li>
+                            <li>DOTEmployee</li>
+                            <li>EeSalutation</li>
+                            <li>EeMedCard</li>
+                            <li>EeNickname</li>
+                            <li>EePhone</li>
+                            <li>EeMobile</li>
+                            <li>EeFax</li>
+                            <li>EeEmail</li>
+                            <li>W2Address1</li>
+                            <li>W2Address2</li>
+                            <li>W2Address</li>
+                            <li>W2City</li>
+                            <li>W2County</li>
+                            <li>W2State</li>
+                            <li>W2ZipCode</li>
+                            <li>W2CSZ</li>
+                            <li>EeifkEmployeeID</li>
+                            <li>EmployeeEmploymentID</li>
+                            <li>EmploymentStatus</li>
+                            <li>EmploymentType</li>
+                            <li>HireDate</li>
+                            <li>HomeDept</li>
+                            <li>JobCode</li>
+                            <li>JobTitle</li>
+                            <li>LastDateWorked</li>
+                            <li>LastPayrollDate</li>
+                            <li>LastPayrollUpdate</li>
+                            <li>ClientLocationID</li>
+                            <li>OriginalHireDate</li>
+                            <li>PayFrequency</li>
+                            <li>PayMethod</li>
+                            <li>ReasonForTerm</li>
+                            <li>SeniorityDate</li>
+                            <li>EeShift</li>
+                            <li>HoursPerPeriod</li>
+                            <li>StartDate</li>
+                            <li>StatusChangeDate</li>
+                            <li>SutaState</li>
+                            <li>TermDate</li>
+                            <li>WageRate</li>
+                        </ul>
+                        <p>peo_employee_emailtemplate_recipient_proc returns the following recipient values:</p>
+                        <p style="margin-left: 60.0px;"><strong>From</strong>: Default admin email from App Settings</p>
+                        <p style="margin-left: 60.0px;"><strong>To</strong>: Terminating Employee and Client Contact from that employees' default location</p>
+                        <p style="margin-left: 60.0px;"><strong>CC</strong>: None</p>
+                        <p>For information on how to use this new functionality to streamline your employee termination workflow, contact your account manager.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-EmployeeBenefitsDetaildataformENHANCEMENT"><span style="color: rgb(51,153,102);">Employee Benefits Detail dataform&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A new PEO multi&#160;dataform has been added - "Employee Benefits Detail" designed for tracking individual employee benefits.&#160; The dataform contains the following felds:<br />&#160; - <strong>Related Employee</strong> (Parent Form; Employee Demographic; Multi)<br />&#160; - <strong>Status </strong>(lookup; new lu group "Employee Benefits Detail Status"; Pending, Active, Expired)<br />&#160; - <strong>Group Number</strong> (Text)<br />&#160; - <strong>Subscriber Number</strong> (Text)<br />&#160; - <strong>Effective Date</strong> (Date)<br />&#160; - <strong>Expiration Date</strong> (Date)<br />&#160; - <strong>Plan Type</strong> (lookup; Same as on Benefits Plan)<br />&#160; - <strong>Offered Benefits Plan</strong> (Parent Form - Offered Benefits Plan)<br />&#160; - <strong>Coverage Level</strong> (lookup; same as on Employee Benefits)<br />&#160; - <strong>Plan Tier</strong> (Parent Form - Benefits Plan Tier)<br />&#160; - <strong>Employee Premium</strong> (Money)<br />&#160; - <strong>Employee Cost</strong> (Money)<br />&#160; - <strong>Dependent Premium</strong> (Money)<br />&#160; - <strong>Dependent Cost</strong> (Money)</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-CaseDiscussionEmailTemplateissue"><span style="color: rgb(51,153,102);">Case Discussion Email Template issue</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where unpublished email templates were available when creating or replying to case discussions. Email Templates are now hidden on the Case Discussion if no Email Templates are configured or published.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-WidgetLinks"><span style="color: rgb(51,153,102);">Widget Links</span>
+                        </h4>
+                        <hr />
+                        <p>Corrected the Workers' Compensation and Unemployment Insurance&#160; widget dashboard search SQL to utilize the ProjectUser table to filter the results to only workspaces to which a user has access.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-PerformanceTuning-PricingMatrixesENHANCEMENT"><span style="color: rgb(51,153,102);">Performance Tuning - Pricing Matrixes&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The code which generates the data for the Pricing console matrixes which display aggregate pricing data have been optimized to improve performance on sites with many states and codes within a batch.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-WCCodeMarkedReviewwhenWCCarvedOut"><span style="color: rgb(51,153,102);">WC Code Marked Review when WC Carved Out</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where Pricing Codes would be continuously marked as "Needs Review" even if the associated Pricing State was set to not offer Workers' Compensation. Unchecking the "Needs Review" flag for states that do not offer comp will now persist after code save and not get re-set.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-FEINeditableandshouldnotbe"><span style="color: rgb(51,153,102);">FEIN editable and should not be&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue in the pricing console where Org fields were locked on the Client Master, but remained unlocked on the same fields when displayed in the pricing console, allowing the fields to be editable when they shouldn't. These Organization fields now properly mimic their behavior on the Client Master dataform.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-CostAdjustmentFactorIssue"><span style="color: rgb(51,153,102);">Cost Adjustment Factor Issue</span>
+                        </h4>
+                        <hr />
+                        <p>The Cost Adjustment Factor on the new Policy State Cost Factor dataform includes logic to respect the High Deductible Factor on the related WC Policy. When the High Deductible Factor on the Policy was changed the system did not refresh the Cost Adjustment Factor value on the related Policy State Cost Factor Dataform.</p>
+                        <p>As a result the Funding Rate was not getting re-calculated.</p>
+                        <p>A change was made so that when the High Deductible Value is changed on the policy the system refreshes the Cost Adjustment Factor on the related Policy State Cost Factors and in turn runs the logic to refresh the Funding Rates for the Codes in that State.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-PrismHRAPIupgradetoversion1.10ENHANCEMENT"><span style="color: rgb(51,153,102);">PrismHR API upgrade to version 1.10&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Upgraded the PEO services to the API code&#160;v1.10<br />Added implementation of &#160;Location Code when creating Clients - Main location will be created on initial Client Export<br /><br />New Voucher summation field mappings have been added - The API Paths are:<br />- Payroll/SUMAdministrativeFee<br />- Payroll/SUMFICAMedicare<br />- Payroll/SUMFICAOASDI<br />- Payroll/SUMFUTA<br />- Payroll/SUMGrossWages<br />- Payroll/SUMSUTA<br />- Payroll/SUMWorkersCompensation</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-ClientPolicyRatesnotDefaulting"><span style="color: rgb(51,153,102);">Client Policy Rates not Defaulting</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where Client policy rates would not get reset properly if initially overridden.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-OSHA300AAverageEELogic"><span style="color: rgb(51,153,102);">OSHA 300A Average EE Logic&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Corrected an issue with OSHA 300A report where employee totals and payroll period counts would not match up properly if employees were in multiple pay cycles. Also adjusted the report to use Period End Date instead of PayDate for date calculations</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-PricingConsoleexcessivepricingmatrixrequestsENHANCEMENT"><span style="color: rgb(51,153,102);">Pricing Console excessive pricing matrix requests&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The method by which the pricing matrix acquires data to populate the fields has been re-factored to make it more efficient, only refreshing overall pricing when there is a change to the underlying data that would affect all of the data - switching states in the pricing state grid for example no longer refreshes all of the page data, merely the pricing state matrix.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-OverallBreakdowndoesnotdisplayData"><span style="color: rgb(51,153,102);">Overall Breakdown does not display Data&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>The Pricing Matrix has been converted to a 'widget' and the input data requirements changed. This caused the link to become non-functional.&#160; This has been corrected and the Pricing Breakdown now works corectly.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-MinimumPremiumnotbeingcloned"><span style="color: rgb(51,153,102);">Minimum Premium not being cloned</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where during WC Policy renewal, the related WC Rates are cloned. During this process the Minimum Premium field was not getting cloned this has been corrected and Minimum premium is now appropriately cloned to the new policy rates.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-PrismAPI-ContactImport-Phase1ENHANCEMENT"><span style="color: rgb(51,153,102);">PrismAPI - Contact Import - Phase 1&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Our PEO system has been enhanced to use the newly available Contact Information in the PrismHR API. Initial Contact imports are available to synchronize Contact information from PrismHR to ClientSpace.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-CaseCategoryonCaseTypeEscalationENHANCEMENT"><span style="color: rgb(51,153,102);">Case Category on Case Type Escalation&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A new business rule has been created to enhance the case escalation process - "<strong>SetCaseCategory</strong>" will automatically set the appropriate category based on the Case Type for which the escalation record is being created. Previously Category would default to blank, allowing for an unusable escalation record to be created as Category is not a required field on the form. This new rule guarantees the appropriate category will be set every time.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-PrismAPI-CompanyInitialEnhancements-CreateLegalEntitiesENHANCEMENT"><span style="color: rgb(51,153,102);">PrismAPI - Company Initial Enhancements - Create Legal Entities&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Company initial import has been enhanced to now create legal entity records in the Admin workspace for PrismHR clients where the associated Legal Entity does not already exist in ClientSpace.&#160; Previously these records would be skipped with the error "A matching legal entity record cannot be found for client XXXXX"</p>
+                        <p>This process creates a very basic record, it is recommended that a&#160;ClientSpace Admin update this record with data from PrismHR as soon as possible after the stub record is generated.&#160; For Non-PEO clients if a matching record is not found the system will create a "GENERIC ASO" legal entity.&#160; This will be used by all subsequent non-PEO clients where a matching legal entity cannot be found.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-PrismHRsubscriptionforms"><span style="color: rgb(51,153,102);">PrismHR subscription forms</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue of the PrismHR subscription log files growing too large on installations using the PrismHR API with large data sets. Instead of appending data to the Notes field, the system now will replace existing data with the current Subscription information.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release61(PEO)-ClientMasterSetLegalEntityruleexception"><span style="color: rgb(51,153,102);">Client Master SetLegalEntity rule exception</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where the CM SetLegalEntity rule might cause an exception if the workspace is not using pricing (i.e. no batch). The exception was a foreign key constraint violation because the value of '0' is being set on the fkLegalEntityID field.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

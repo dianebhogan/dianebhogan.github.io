@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Securing attachments</h1>
+        <p>You secure attachments (files) the same way for non-admins across all entities in the system.</p>
+        <p>All entities work like this:</p>
+        <p class="L1Num" MadCap:autonum="1. ">First, you must have Edit rights for the entity (dataform or otherwise) that you are on  to do anything but view files.</p>
+        <p class="L1Num" MadCap:autonum="2. ">
+            <MadCap:concept term="Security" />If you have Edit rights, you can optionally lock files down using an <b>_$Attachment</b> security entity.</p>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 188px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Procedure-Head-Header1">
+                    <th class="TableStyle-Procedure-HeadE-Column1-Header1">Entity</th>
+                    <th class="TableStyle-Procedure-HeadD-Column1-Header1">Security entity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Dataforms</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft"> Use <b>{TableName}_$Attachment</b>: Set by selecting the <b>Attachments Secured</b> option on Dataform properties.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Orgs, Contacts, Activities</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Use <b>CRM_$Attachment</b>: Must be added by a <MadCap:variable name="MyVariables.ProductName" /> representative. If you would like to utilize CRM attachment security, log an Extranet case.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Tasks</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Use <b>Incident_$Attachment</b>: Must be added by a <MadCap:variable name="MyVariables.ProductName" /> representative. If you would like to utilize task attachment security, log an Extranet case.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Attachments panel in Client Master</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">To use the Attachments panel on the Client Master, you need to be part of a role that has the <b>gen_ClientMaster_$Attachment</b> security entity.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="ProcedureIntro">To add a security entity to a role:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Security</b> &gt; <b>Roles</b>.</p>
+        <p class="StepResult">The Security Roles dashboard opens. </p>
+        <p class="L1Num" MadCap:autonum="2. ">Filter the roles by Role Title, Users that are associated with the role, or Entity Name of the associated Security Entities.<br /></p>
+        <p class="L1Num" MadCap:autonum="3. ">If a user needs access to a particular security entity, do <b>one</b> of the following:</p>
+        <p class="Bullet2" MadCap:autonum="• ">Add the user to a role that already contains the required entity by filtering roles by desired entity.</p>
+        <p class="Bullet2" MadCap:autonum="• ">Add the security entity  to a role that user is already associated with by filtering roles.</p>
+        <p class="L1Num" MadCap:autonum="4. ">Add the appropriate View, Add, Edit, Delete, and Admin rights&#160;for the role.</p>
+        <p class="L1Num" MadCap:autonum="5. ">To see if a user is already in a role with a specific entity, filter the Roles by user <em>and</em> Entity.</p>
+        <p class="L1Num" MadCap:autonum="6. ">You can also use a wildcard when searching for roles. When setting search parameters, place the % symbol before your search string to make it a wildcard keyword search. ex %Service Case</p>
+    </body>
+</html>

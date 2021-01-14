@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring link display condition<MadCap:annotation MadCap:comment="R90 Case 40837" MadCap:createDate="2020-03-16T14:30:23.298Z" MadCap:creator="Diane Hogan" MadCap:creatorCentralUserId="98c66c7b-566c-4028-b287-6a8c4e6d073b" MadCap:editDate="2020-03-16T14:30:34.531Z" MadCap:editor="Diane Hogan" MadCap:initials="DH">s</MadCap:annotation></h1>
+        <p>When you customize a link, you can control how and when it displays. Display conditions  ensure that your configured link displays only when and to whom you want. These link display conditions can trigger either from a field on the dataform, or from a trigger value returned in a Header proc (custom code developed by our development team). Display conditions appear in the Add section of the Configure Links Detail form. You can add multiple display conditions.</p>
+        <p>
+            <img src="../Resources/Images/Dataform/DisplayConditions.png" class="thumbnail" />
+        </p>
+        <p>By default, multiple display conditions are treated as OR statements when determining display behavior unless a Condition Expression is configured for this link. Adding a Condition Expression makes the triggering condition explicit, meaning that display conditions not included in the Condition Expression are ignored. For a detailed explanation of how condition expressions work, see <MadCap:xref href="../WFC/WFC_CondExpr.htm" title="condition expressions" alt="condition expressions" class="Heading">Condition expressions</MadCap:xref>.</p>
+        <p>In the <b>Add</b> area of the form, you define conditions using <b>Source</b>, <b>Field</b>, <b>Operator</b>, and <b>Value</b>. You assign the condition a name using <b>Label</b>. Label values are used in the <b>Condition Expression</b> field located before the <b>Add</b> area.</p>
+        <p>
+            <img src="../Resources/Images/Dataform/DisplayConditions_Label-CondExp.png" class="thumbnail" />
+        </p>
+        <p>You can use multi-lookup fields for triggering conditions (Field and Value columns in the Add section). Each value from the multi-lookup can be added as a separate <b>=</b> condition. This supports complex AND, OR, and NOT conditions. The following image is an example of conditions using the <b>=</b> Operator and a Condition Expression. The example specifies that both conditions SYR&#160;and NY must be met.</p>
+        <p>
+            <img src="../Resources/Images/Dataform/Expression.png" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">To configure link display conditions:</p>
+        <ol>
+            <li>Click <b>Add</b>.<br />A row opens with the following fields: Source, Field, Operator, Value, and Label.</li>
+            <li>Complete the fields as appropriate.</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <colgroup>
+                <col class="TableStyle-Procedure-Column-Column1" style="width: 89px;" />
+                <col class="TableStyle-Procedure-Column-Column1" />
+            </colgroup>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Source</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is where the system looks to find the trigger value that matches your condition. The options are:</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Form Data</b>: The system looks at the dataform to find the triggering field and value.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Header Proc</b> (1 or 2): The system runs a stored procedure  when the dataform opens. Can pull information from other dataforms in the system.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the field that is interrogated for the trigger <span class="UXElement">Value</span>. The available fields are determined by what you selected in Source. </p>
+                        <p class="TableTextLeft">You can use multi-lookup fields as triggering conditions. Each value from the multi-lookup can be added as a separate <span class="UXElement">=</span> condition. This supports complex AND, OR, and NOT conditions.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">
+                            <MadCap:annotation MadCap:initials="DH" MadCap:editor="Diane Hogan" MadCap:editDate="2020-03-16T14:30:18.857Z" MadCap:creatorCentralUserId="98c66c7b-566c-4028-b287-6a8c4e6d073b" MadCap:creator="Diane Hogan" MadCap:createDate="2020-03-16T14:30:01.711Z" MadCap:comment="New row for Operator.">Operator</MadCap:annotation>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Operator options are dynamic and are driven by the datatype selected in <span class="UXElement">Field</span>. Options are Equals, Does Not Equal, Empty, Greater Than, Greater Than or Equal, Less Than, Less Than or Equal, and Not Empty.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the value in the trigger Field that evaluates to true and must match the value stored in the database. Start typing a Value when Field is a parent form or a lookup. Value can also be blank (<i>Empty</i>) when triggering links from Form Data, enabling display conditions when a field is empty. Blank is only valid when the Source is <b>Form Data</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Label</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Provide a Label when building a condition expression in the Condition Expression field. Examples of a Label could be Cond1, Cond2, Cond3. Additionally, you may want to be more descriptive. If you are filtering for a city, then use the city name, such as NYC, or use NY&#160;to represent a filter for the state. A best practice is to use short names.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="ProcedureIntro">To clone a trigger:</p>
+        <ol>
+            <li>In the <span class="UXElement">Add</span> section, locate an entry that you want to copy.</li>
+            <li>Click <img src="../Resources/Images/ICONS/ICON_Clone.png" /> <span class="UXElement">Clone</span>.<br />A new row opens, with the trigger condition copied. Source, Field, and Operator are copied.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Workflow/CloneTriggerCondition.png" alt="" title="" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>You can now edit the new condition as appropriate.</li>
+            <li>When ready, click <span class="UXElement">Apply</span> or <span class="UXElement">Save</span>.</li>
+        </ol>
+    </body>
+</html>

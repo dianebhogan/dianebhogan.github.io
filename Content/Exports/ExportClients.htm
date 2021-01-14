@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <script src="https://kit.fontawesome.com/be77eb5025.js" crossorigin="anonymous">
+        </script>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Exporting Clients</h1>
+        <p>The <span class="UXElement">Export Client to PrismHR</span> process creates a ClientSpace Client entry in Prism. Prism returns a Client Number, which is then stored on the <MadCap:variable name="MyVariables.ProductName" /> Client Master for the respective Client. Although the Export Client to PrismHR&#160;process delivers much of the necessary Prism data, it does not mean that the Client will be fully configured in Prism. You may have to manually configure additional fields in Prism before this Client is ready to accept Employees.</p>
+        <p>Two business rules prepare a ClientSpace Client for export: <span class="UXElement">ClientMaster.HE_ValidateExportClient</span> and <span class="UXElement">ClientMaster.ExportClientToHRP</span>.</p>
+        <p class="ProcedureIntro">To export Clients:</p>
+        <ol>
+            <li>In the <span class="UXElement">Action Center</span>, click the link <span class="UXElement">Export Client to PrismHR</span>. <br />This action executes the validation rule <span class="UXElement">HE_ValidateExportClient</span> and the Business Rule <span class="UXElement">ExportClientToHRP</span> with a Header Action of ExportClient.</li>
+            <li>
+                <p>A check is made for fields that are required by Prism to create a Client entry successfully:</p>
+                <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+                    <col class="TableStyle-Procedure-Column-Column1" style="width: 308px;" />
+                    <col class="TableStyle-Procedure-Column-Column1" />
+                    <tbody>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Org Name</li>
+                                </ul>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Org AKA</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>ImportID</li>
+                                </ul>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Org DBA</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Org County</li>
+                                </ul>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Org Address1</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Org Address2</li>
+                                </ul>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Org City</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Org State</li>
+                                </ul>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Org Postal Code</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>CM Contract Type</li>
+                                </ul>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>CM&#160;Status</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>CM Status Date</li>
+                                </ul>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Org Business Type</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Org Phone</li>
+                                </ul>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Org Fax</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Org Email</li>
+                                </ul>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>CM Contract Effective Date</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Org Employer ID&#160;Number</li>
+                                </ul>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Admin </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Legal Entity </li>
+                                </ul>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Processing Team Payroll Specialist </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>User ID </li>
+                                </ul>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                                <ul style="list-style-type: square;">
+                                    <li>Import ID</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>For missing fields: A Hard Error is thrown indicating the missing fields. The business rule does not execute. The Export Status is set to Failed Validation.</li>
+            <li>If the Hard Error check passes, this rule sets the Client Master luExportStatus field to Ready and clears the Export Log field.</li>
+            <li>The Business Rule does the following:<ul style="list-style-type: square;"><li>Packages the Client data.</li><li>Issues the data to Prism to create a Client.</li><li>If the Export fails:<ul style="list-style-type: circle;"><li>NO MESSAGES ARE ISSUED!  You must review the Export Status and Export Log fields for results.</li><li>The Export Status field is set to Failed API, and the Export Log field contains the cause of the failure.  Some of the errors may be ClientSpace related, and some may be Prism related. <MadCap:annotation MadCap:createDate="2020-03-25T12:51:17.5271323-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="What does this mean? Do we need to keep? Does it need to be bold?" MadCap:editor="dhogan" MadCap:editDate="2020-03-25T12:51:33.3309182-04:00">Saved via Business Logic, HRP pipeline.</MadCap:annotation></li><li>At this point, correct the errors before proceeding.</li></ul></li><li>If the Export passes, the Export Status field is set to Client Export Complete.  The Client Number is populated with the value provided by Prism. <MadCap:annotation MadCap:createDate="2020-03-25T12:51:40.2316087-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="same comment" MadCap:editor="dhogan" MadCap:editDate="2020-03-25T12:51:42.8825169-04:00">Saved via Business Logic, HRP pipeline</MadCap:annotation>.</li></ul></li>
+            <li>Complete the Client in Prism.</li>
+        </ol>
+        <p class="ProcedureIntro">To view fields that can exported from <MadCap:variable name="MyVariables.ProductName" /> to Prism:</p>
+        <p><i class="fas fa-file-excel" style="font-size:24px;color:var(--BrandPrimary2);"></i> Open the <a href="../Resources/Misc/ClientSpaceAPI_DataMapping.xlsx" target="_blank" title="ClientSpace-PrismAPI Data Mapping spreadsheet" alt="ClientSpace-PrismAPI Data Mapping spreadsheet">ClientSpace-PrismAPI Data Mapping spreadsheet</a>.</p>
+    </body>
+</html>

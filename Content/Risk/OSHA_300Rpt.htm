@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>OSHA 300 Report Details</h1>
+        <p>The OSHA&#160;300 report is a <em>log</em> of work-related injuries and illnesses logged throughout the calendar year. It includes confidential information, a description of the injury or illness, and the number of days away, restricted, or transferred. To produce OSHA logs from <MadCap:variable name="MyVariables.ProductName" />, the following areas must have accurate data:</p>
+        <ul>
+            <li>WC Claims
+</li>
+            <li>RTW Records
+</li>
+            <li>Locations
+</li>
+            <li>Employee Vouchers
+</li>
+        </ul>
+        <p class="StepResult">&#160;</p>
+        <p>The OSHA Log reports (300, 300A) previously included inactive locations in the report. Because some clients have a business need for inactive locations and there is no way to delete these locations through the user interface,  the Client Location form has an Obsolete Date field. The OSHA 300/300A logic  includes active Client Location records and inactive Client Location records where the Obsolete Date is within the OSHA Year selected. Inactive records that do not have an Obsolete Date are excluded.</p>
+        <p class="ProcedureIntro">To configure and run the report:</p>
+        <ol>
+            <li>On the modules bar, select <span class="UXElement">Admin Workspace</span>.<br />The Admin Workspace tiles display.</li>
+            <li>In the <span class="UXElement">Action Center</span>, under <span class="UXElement">Reports</span>, click <span class="UXElement">OSHA 300a</span>.<br />The OSHA 300A form opens.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Risk/OSHA300_form.png" class="thumbnail">
+                </img>
+            </p>
+        </div>
+        <ol start="3">
+            <li>Complete the form:</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 195px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Client</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li>If filled in, then run the report for that Workspace. </li>
+                            <li>If the report is run from within a Client Workspace, this field auto-fills for that client.  If the Client field is not completed, the report only runs for Workspaces where the Client Master Status = Client, unless Include Terminated Clients  is selected.
+</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Location</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Location provides a list of Active Locations in that Workspace. This field is not appropriate for use when running from the Admin Workspace.
+</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">
+When Summarize By Account  is not selected and the location is not populated, a report is generated for every client location, including active Client Location records and inactive Client Location records where the Obsolete Date (field on the Client Location) is within the OSHA Year selected. Inactive records that do not have an Obsolete Date are excluded. The claim is shown on the OSHA 300 report based on the Comp Claimant Location field matching the selected location.
+</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Contract Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Primarily used when running the report from the Admin Workspace for multiple clients. You can filter for Client Workspaces of the selected contract type.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Year</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This required field filters for Claims logged in the selected calendar year.
+</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Summarize By Account</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When this option is selected, all available claims for the OSHA year selected display under the Primary location for that client.
+</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Client Options</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Used when running for multiple clients from the Admin Workspace. </p>
+                        <p class="TableTextLeft">Select for clients With Claims, Without Claims, With and Without Claims.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Include Terminated Clients</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Primarily used from the Admin Workspace. This setting allows you to include claims from workspaces where the client may have had claims and been terminated in the OSHA year selected.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Hide Location Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Execute</span>.</li>
+        </ol>
+        <p>The report generates and opens as a PDF.</p>
+        <h2>Column mappings</h2>
+        <p>The following table provides a mapping of the OSHA&#160;300 report.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 222px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Column mappings</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableTextLeft">Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Establishment name</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Client name</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">City, State</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">City and State</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">(A) Case No.</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Carrier Claim Number</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">(B) Employee's Name</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">If Privacy Consideration is selected on the Claim tab, then Private outputs. Else, the Employee's first and last name are displayed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">(C) Job Title</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Job Title fills in automatically with the value from the Employee Employment Job Title field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">(D) Date of injury or onset of illness (mo/day)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Mapped to CompClaim.DateOfInjury field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">(E) Where the event occurred </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">The Accident Site from the Injury tab shows here.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">(F) Describe injury or illness</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">The Injury Accident Details from the Injury tab shows here.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">(G) Death</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">This field is checked if the CompClaim.Resulted In Death field is set to Yes.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">(H) Days away from work</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">This field is checked if not a Death AND an RTW record exists for Out Of Work. Days away from work is based on Return To Work records that have a status of Out of Work.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">(I) Job transfer or restriction</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">This field is checked if not a Death AND there are no Out of Work RTW records AND am RTW record exists for Light Duty.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">(J) Other recordable cases</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">This field is checked if not a Death AND there are No Out of Work or Light Duty records AND an RTW record exists for either Full Duty or Alternate Job.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">(K) Away from work (days)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Based on an RTW record of Out of Work. Not affected by Alternate Job or Full Duty. If an RTW record has no End Date, then End Date is assumed to be 12/31 of the OSHA Year. If the value is greater than 180 days, it defaults to 180 days.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">(L) On job transfer or restriction (days)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Based on an RTW record of Out of Work. Not affected by Alternate Job or Full Duty. If an RTW record has no End Date, then End Date is assumed to be 12/31 of the OSHA Year. If the value is greater than 180 days, it defaults to 180 days. Job Transfer or Restrictions is based on RTW records that have a status of Light Duty.  Intentionally, excludes Alternate Job.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">(M) </p>
+                        <p class="TableTextLeft">(1) Injury, (2) Skin Disorder, (3) Respiratory Condition, (4) Poisoning, (5) Hearing Loss, (6) All other illnesses</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Maps to the CompClaimInjury.OSHA Classification field.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="ActionTip">The Location dataform fields, <span class="UXElement">Related to Another Location?</span> and <span class="UXElement">Related Location</span>, were added  so that locations can be related for OSHA purposes. Totals for the related location are added to the related location when running the report.</p>
+    </body>
+</html>

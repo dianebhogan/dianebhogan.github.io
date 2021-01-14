@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Distributing your dataform: Making dataforms accessible</h1>
+        <p>After a dataform is created and configured, you need to provide some way for it to be used, and this can be accomplished in several ways. A dataform might need to be workspace specific, so you would need to add it to  a single workspace, or it may need to be more widespread, so you would want it copied to each workspace as they are generated. You may also want to only expose access to the dataform from the header of another dataform. Certain financial dataforms in the PEO system are exposed through header links from the dataforms for which they contain financial data. This document discusses each of these methods of Dataform Distribution.</p>
+        <h2>Adding a dataform to a workspace</h2>
+        <p class="ProcedureIntro">To add a dataform to a workspace:</p>
+        <ol>
+            <li>Navigate to the Workspace in question. This can be a single administrative workspace, or you can have the dataform generated on Workspace creation. Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Workspace Templates</b>.<br />The Workspace Template Search dashboard opens.<br /></li>
+            <li>Locate and open the template in question.</li>
+            <li>In the <b>Action Center</b> menu, select <img src="../Resources/Images/ICONS/ICON_WorkspaceDataforms.png" /> <b>Dataforms</b>.</li>
+        </ol>
+        <p class="Indent1">
+            <img src="../Resources/Images/Dataform/ActionCenter_Dataforms.png" />
+            <br />The Workspace Dataforms list is displayed.<br /></p>
+        <ol MadCap:continue="true">
+            <li>Click <b>Add</b>.<br />The Add Dataforms dialog opens.<br /></li>
+            <li>Find and select the dataform. <br />When adding a dataform, if the entry in the dataform search dialog is disabled, this means the dataform already exists in the workspace.</li>
+            <li>Click <b>Ok</b>.</li>
+        </ol>
+        <p>The dataform is added to all child workspaces of that template.</p>
+        <h2>Adding a new link to the dataform</h2>
+        <p>Dataforms can also be accessed from custom links in another dataform header. Configuring a header link is detailed in the topic <MadCap:xref href="../Admin_Config/ConfigLinks.html">Configuring links</MadCap:xref>. This topic discusses the link configuration items to create a Workspace Dataform link.</p>
+        <p class="ProcedureIntro">To add a new link to the dataform:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Custom Links</b>.<br />The Configure Links dashboard opens.<br /></li>
+            <li>Click <b>Add</b>.<br />The Configure Links Detail form opens.<br /></li>
+            <li>Use the following field descriptions to guide you through adding a new link.</li>
+        </ol>
+        <p class="Indent1">
+            <img src="../Resources/Images/Dataform/ConfigLink.png" class="thumbnail" />
+        </p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 142px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Location</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The name of the dataform on which you want to link to appear.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Group</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Where will the link appear in the header?</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Display Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The text that is displayed in the Action Items area as a selectable link.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Display Action</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Lists the possible actions for the selected link group. The available
+ actions are based on the selected Group and include items such as running a
+ report or merge. This then creates a HdrAction to fire a business rule or
+ open a system dataform. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Sort Order</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When multiple links are displayed in the header, this determines
+ their order within the link group.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Sort/Merge</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select the report or merge to run using the appropriate display
+ action when a Report link is selected.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Target Dataform</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The dataform you would like the user to access from this link.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Code Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the HrdAction produced when an Action link is selected.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Custom Function</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the custom function that is called from an Action link.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Custom Function Data</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the data that is passed to a custom function if required.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Security Entity</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This can be used to hide the link from unauthorized access.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">URL</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Use this field to configure the URL that opens on a URL Display
+ Action. When defining an external URL, include the protocol (http:// or https://)&#160;as
+ links. Without the protocol, the link is treated as internal to the
+ application.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Confirmation Message</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Provide a confirmation message that displays an OK / Cancel dialog
+ box before running the link action. This is most often used with Action
+ Links.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">A short description of the dataform and how it should be used. This
+ text appears when you point to the link.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Display this Link when adding</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This section can be used to set parameters for when the link should
+ display. For a complete discussion of configuring link display see <MadCap:xref href="../Admin_Config/ConfigLinks.html" title="configuring links" alt="configuring links" class="Heading">Configuring links</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Pinned Open</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When selected, this forces the link to always display in the Action
+ Items area. The link does not collapse when the associated group is
+ collapsed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Condition Expression</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This field uses the Labels from any conditions that you added
+ under&#160;Add. You can combine multiple triggers into more complex
+ expressions and override the default OR behavior. Conditions that are not
+ included in this field are&#160;ignored.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Active</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">By default, configured links are active.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>After configuring the Dataform Link, remember to <b>Save</b> your changes.</li>
+        </ol>
+        <p>For questions about Admin Dataforms, please log an Extranet case.</p>
+    </body>
+</html>

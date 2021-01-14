@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>What makes a dataform required?                        
+        </h1>
+        <p>The configurability of ClientSpace allows you to ensure specific information is gathered as part of the Pricing process. One way to do so is by requiring the presence of a dataform before submissions can be made. There are several ways this can be configured, all through business rules. </p>
+        <p>This topic provides an overview of common required Table rules and how they can be configured to ensure the appropriate information is gathered throughout the sales and pricing process.</p>
+        <div class="NoPageBreak">
+            <p style="font-weight: bold;">So what makes a dataform required anyway?</p>
+            <p>Several business rules, both soft and hard error varieties control this functionality. We will look at the hard errors, which stop the workflow process. Through  these configurable rules and others like them, as well a s required field engine rules on the dataform, ClientSpace makes it possible for you to design and create pricing workflows to ensure that your sales process is consistent and all required documentation is complete.&#160;</p>
+        </div>
+        <div class="NoPageBreak">
+            <p class="ProcedureIntro">HE_RequiredTableEngine
+        </p>
+            <p>Requires a specific dataform be created for the workspace before allowing the Action to continue. In the previous example,  to submit the deal a Collateral form must be created for the workspace.</p>
+            <p>
+                <img src="../Resources/Images/Sales/HE_ReqTable.png" class="thumbnail" />
+            </p>
+        </div>
+        <div class="NoPageBreak">
+            <p class="ProcedureIntro">HE_RequiredTablePerContractTypeEngine
+        </p>
+            <p>Requires a specific dataform be created for the workspace  before allowing the Action to continue based on Contract type. Specific contract types could require different forms.</p>
+            <p>
+                <img src="../Resources/Images/Sales/HE_ReqTablePerCT.png" class="thumbnail" />
+            </p>
+        </div>
+        <div class="NoPageBreak">
+            <p class="ProcedureIntro">HE_RequiredFieldPerContractType
+        </p>
+            <p>Requires a specific dataform field be completed / filled for the workspace  before allowing the Action to continue based on Contract type. Specific contract types could require different dataform fields.</p>
+            <p>
+                <img src="../Resources/Images/Sales/he_reqFieldPerCT.png" class="thumbnail" />
+            </p>
+        </div>
+        <div class="NoPageBreak">
+            <p class="ProcedureIntro">HE_RequiredTablePerCodeEngine
+        </p>
+            <p>If specific Comp Codes are present in the Pricing Batch (rule accepts a comma separated list - no spaces) require a specific dataform to be created for the workspace  before allowing the Action to continue.</p>
+            <p>
+                <img src="../Resources/Images/Sales/he_reqTablePerCode.png" class="thumbnail" />
+            </p>
+        </div>
+    </body>
+</html>

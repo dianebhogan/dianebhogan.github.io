@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\Resources\MasterPages\StepTopics.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="ReplyAboveLine" />Configuring Case Discussion: Reply Above This Line</h1>
+        <p>
+            <img src="../Resources/Images/Case/CaseDisc_Reply.png" class="thumbnail_right" />
+        </p>
+        <p>The Reply Above This Line functionality is an optional method for replying to case discussion messages. The reply is through the email mailbox Reply  button, as you would normally reply to any email message. When you type the response and send it, the message is integrated with the <MadCap:variable name="MyVariables.ProductName" /> case discussion thread. </p>
+        <p>The Reply button method is more direct than that of the original method, Send a Reply link, which is embedded in the email message. Both methods are shown in the accompanying image. The Send a Reply link is always available and does <span class="UXElement">not</span> require additional configuration. However, using the Reply button <span class="UXElement">requires</span> an Email Integration record with a mailbox address that matches the From Email Override address in the CSCDISC and CSCDISCNEW email templates. </p>
+        <p>
+            <img src="../Resources/Misc/Replybutton.png" class="thumbnail_right" />
+        </p>
+        <p>The accompanying diagram illustrates an <span class="UXElement">overview</span> of the configuration steps for using the Reply button. The first step is to activate a rule and disable an older rule. Next you will configure the Email Integration mailbox. Then you add the Email Override address. The configuration steps for using the Reply button follow.</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="Step">
+                <MadCap:dropDownHotspot style="mc-heading-level: 3;">Step 1:&#160;Configure the rules</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>In this step, let's <span class="UXElement">activate</span> SendReply and <span class="UXElement">disable</span> SendEmailIntegrationReply. SendEmailIntegrationReply is an older rule that has been replaced with SendReply.</p>
+                <p class="ProcedureIntro">To activate SendReply:</p>
+                <ol>
+                    <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Advanced</span> &gt; <span class="UXElement">Manage Rules</span>.<br />The Custom Logic Rules dashboard opens.</li>
+                    <li>Filter the list for the Table Name <span class="UXElement">Case Discussion Message</span> with the Rule Title <span class="UXElement">SendReply</span> and click <img src="../Resources/Images/ICONS/ICON_Jump.png"></img> (<span class="UXElement">Jump</span>).<br />The Rules Detail form opens.</li>
+                    <li>Complete the fields:</li>
+                </ol>
+                <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+                    <col class="TableStyle-Procedure-Column-Column1" style="width: 180px;" />
+                    <col class="TableStyle-Procedure-Column-Column1" />
+                    <tbody>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                <p class="TableTextLeft">Execution Pipeline</p>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                <p class="TableTextLeft">Select <span class="UXElement">Default</span> and <span class="UXElement">EmailIntegration</span>.</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                                <p class="TableTextLeft">Active</p>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                                <p class="TableTextLeft">Select this option to enable the rule.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ol MadCap:continue="true">
+                    <li>Click <span class="UXElement">Save</span>.</li>
+                </ol>
+                <div class="indent">
+                    <p>
+                        <img src="../Resources/Images/Case/CaseDisc_ActRule.png" alt="" title="" class="thumbnail" />
+                    </p>
+                </div>
+                <p>Next, you must disable SendEmailIntegrationReply.</p>
+                <p class="ProcedureIntro">To disable SendEmailIntegrationReply:</p>
+                <ol>
+                    <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png"></img> &gt;&#160;<span class="UXElement">Advanced</span> &gt; <span class="UXElement">Manage Rules</span>.<br />The Custom Logic Rules dashboard opens.</li>
+                    <li>Filter the list for the Table Name <span class="UXElement">Case Discussion Message</span> with the Rule Title <span class="UXElement">SendEmailIntegrationReply</span> and click <img src="../Resources/Images/ICONS/ICON_Jump.png"></img> (<span class="UXElement">Jump</span>).<br />The Rules Detail form opens. If you cannot find the rule, it may be archived. In <span class="UXElement">More Search</span>, select <span class="UXElement">All</span> and click <span class="UXElement">Search</span>.</li>
+                    <li>Clear the <span class="UXElement">Active</span> option (disables the rule). See the following image.</li>
+                    <li>Click <span class="UXElement">Save</span>.</li>
+                </ol>
+                <p>
+                    <img src="../Resources/Images/Case/CaseDisc_DisRule.png" alt="" title="" class="thumbnail">
+                    </img>
+                </p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="Step">
+                <MadCap:dropDownHotspot style="mc-heading-level: 3;"><a name="Step"></a>Step 2:&#160;Configure the Email Integration Mailbox</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The Email Integration record is where you configure the mailbox for routing the discussion messages. The email address for the mailbox is also set in the case discussion email templates CSCDISC and CSCDISCNEW.</p>
+                <p>
+                    <img src="../Resources/Images/Case/EmailInteg_mailbox.png">
+                    </img>
+                </p>
+                <p>Our example shows a mailbox with a Username payroll.bigtimepeo@gmail.com. We will refer to this email address in the next step.</p>
+                <p class="ProcedureIntro">To configure the  mailbox:</p>
+                <ol>
+                    <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Email Integration</span>.<br />The Email Integration dashboard opens.</li>
+                    <li>Click <span class="UXElement">Add</span>.<br />The New Email Integration form opens.</li>
+                </ol>
+                <div class="indent">
+                    <p>
+                        <img src="../Resources/Images/Integrations/API_Add.png" class="thumbnail">
+                        </img>
+                    </p>
+                </div>
+                <ol MadCap:continue="true">
+                    <li>Complete the form fields.</li>
+                </ol>
+                <MadCap:snippetBlock src="../Resources/Snippets/EmailInteg_New.flsnp">
+                </MadCap:snippetBlock>
+                <ol MadCap:continue="true">
+                    <li>Select <span class="UXElement">Active</span>. This enables the Email Integration.</li>
+                    <li>Click <span class="UXElement">Apply</span>.<br />The Alias step opens. An Email Integration record can have multiple aliases on a mailbox. The email address is how it connects to the mailbox. The alias defines what it does with the mailbox. In this step, specify the email address to match an email mailbox, such as payroll.bigtmepeo@gmail.com. You will  use this email address in the email template configuration (next topic).</li>
+                </ol>
+                <div class="indent">
+                    <p>
+                        <img src="../Resources/Images/Case/EmailInteg_Alias.png" class="thumbnail">
+                        </img>
+                    </p>
+                </div>
+                <ol MadCap:continue="true">
+                    <li>Select both options:&#160;<span class="UXElement">Default Alias</span> and <span class="UXElement">Include Attachments</span>.</li>
+                    <li>Click <span class="UXElement">Next</span>.<br />The Action step opens.</li>
+                </ol>
+                <div class="indent">
+                    <p>
+                        <img src="../Resources/Images/Case/EmailInteg_Action3.png" class="thumbnail">
+                        </img>
+                    </p>
+                </div>
+                <ol MadCap:continue="true">
+                    <li>Complete the form fields.<br />For <span class="UXElement">Business Object</span>, ensure that you specify <b>ClientSpace.PEO.Business.EmailIntDiscussionMsg</b>.</li>
+                </ol>
+                <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+                    <col class="TableStyle-Procedure-Column-Column1" style="width: 109px;">
+                    </col>
+                    <col class="TableStyle-Procedure-Column-Column1" style="width: 428px;">
+                    </col>
+                    <tbody>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                <p class="TableTextLeft">Workspace</p>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                <p class="TableTextLeft">Required.
+ Contains the workspace that will be used by this email alias for the dataform creation if no matches for the sender's address are found. This
+ is the default workspace used during the processing of the
+ email. This value may be overridden by including the workspace in the
+ body of the email.&#160;The override value must contain a valid workspace ID
+ and be formatted as WSID=# with no spaces between the WSID= and
+ the workspace ID.&#160;</p>
+                                <p class="TableBullet" MadCap:autonum="• ">Select a workspace from the list.</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                <p class="TableTextLeft">Reply Template</p>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                <p class="TableTextLeft">Required.
+ Must contain the reply template to be used to send the process complete
+ notification.&#160;Select a Reply Template from the list. This can be an existing triggered template, or you can create one
+ just for this reply. See <MadCap:xref href="../Integrations/EmailInteg_ReplyTemp.htm" title="Creating the Email Integration Reply Template" alt="Creating the Email Integration Reply Template">Creating the Email Integration Reply Template</MadCap:xref>.</p>
+                                <ul>
+                                    <li>For case discussions, select <span class="UXElement">Case to Email Reply</span>.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                <p class="TableTextLeft">Business Object</p>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                <p class="TableTextLeft">Required when implementing Reply Above This Line functionality. Set the value as <b>ClientSpace.PEO.Business.EmailIntDiscussionMsg</b>. </p>
+                                <p class="StepResult">&#160;</p>
+                                <p class="TableTextLeft">The ClientSpace.PEO.Business.EmailIntDiscussionMsg business object reads the inbound email and connects it to the appropriate discussion thread. This business object performs the heavy lifting, so it is important it is properly configured.</p>
+                                <p class="StepResult">&#160;</p>
+                                <p class="TableTextLeft">If <span class="UXElement">Always Use Default Workspace</span> is not selected and  the business object is configured, the system checks the body of the email for the CSID / WSID information.  If no match is found, the system uses the <MadCap:xref href="../Integrations/EmailProcessing.htm" title="Email Processing hierarchy" alt="Email Processing hierarchy">Email Processing</MadCap:xref> hierarchy to determine which workspace is used when creating the new dataform.</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                <p class="TableTextLeft">Always Use Default Workspace</p>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                <p class="TableTextLeft">When selected, this option forces the system to use the default
+ workspace set in the <span class="UXElement">Workspace</span> field,&#160;regardless
+ of the other methods of workspace selection.</p>
+                            </td>
+                        </tr>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                                <p class="TableTextLeft">Dataform</p>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                                <p class="TableTextLeft">Required.
+ Contains the project type associated with this email alias.&#160;This
+ determines what type of dataform to create.&#160;Select the Project Type from the list. </p>
+                                <ul>
+                                    <li>For case discussions, select <span class="UXElement">Case Discussion Message</span>.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ol MadCap:continue="true">
+                    <li>Click <span class="UXElement">Save</span>. You do not need to complete the Field Mapping step.</li>
+                </ol>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="Step">
+                <MadCap:dropDownHotspot style="mc-heading-level: 3;">Step 3:&#160;Configure the Email Templates</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>
+                    <img src="../Resources/Images/Case/EmailInteg_Mailbox_EmailTemp.png" class="thumbnail_right">
+                    </img>
+                </p>
+                <p>The email templates  for case discussions are CSCDISC: Case Discussion, CSCDISCNEW: Case Discussion New, and CSCRPLY: Case Discussion Reply. These templates are already configured for case discussions. However, you need to set a value in CSCDISC and CSCDISCNEW for the <span class="UXElement">From Email Override</span> address, which is the connection to the Email Integration Mailbox (see the accompanying image). The From Email Override address in the email template CSCDISC and CSCDISCNEW must match the Mailbox address that you specified in the Email Integration record. Our example uses payroll.bigtimepeo@gmail.com. In this topic, you will edit <span class="UXElement">From Email Override</span> in the email templates <span class="UXElement">CSCDISC</span> and <span class="UXElement">CSCDISCNEW</span>.</p>
+                <p class="ProcedureIntro">To configure the From Email Override:</p>
+                <ol>
+                    <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Email Templates</span>.<br />The Email Templates dashboard opens.</li>
+                    <li>Locate and open <span class="UXElement">CSCDISC</span> Client Service Case Discussion (click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Jump</span>)).<br />The email template opens.</li>
+                    <li>In <span class="UXElement">From Email Override</span>, enter the email address that you set in the Email Integration record. Our example uses payroll.bigtimepeo@gmail.com.</li>
+                </ol>
+                <div class="indent">
+                    <p>
+                        <img src="../Resources/Images/Case/EmailInteg_FromEmailOverride.png" class="thumbnail">
+                        </img>
+                    </p>
+                </div>
+                <ol MadCap:continue="true">
+                    <li>Click <span class="UXElement">Save</span>.</li>
+                    <li><span class="UXElement">Repeat</span> the procedure for <span class="UXElement">CSCDISCNEW</span> and <span class="UXElement">Save</span>.</li>
+                </ol>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="Step">
+                <MadCap:dropDownHotspot style="mc-heading-level: 3;">Step 4: Review the Email Integration scheduled process</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The scheduled process for email integration is named <span class="UXElement">Process Email Integration</span>.  When the scheduled process runs, it sweeps through the mailbox looking for unread messages, grabs the information such as the From and To address, and the body of the email. It then uses the Email Integration record that is related to the email address, such as payroll.bigtimepeo@gmail.com. It references the Alias and Action parts of the Email Integration record (as shown)&#160;and processes accordingly.</p>
+                <p>
+                    <img src="../Resources/Images/Case/EmailInteg_Action2.png">
+                    </img>
+                </p>
+                <p>For case discussions, it creates a <span class="UXElement">Case Discussion Message</span>. The Business Object logic directs it to look for a ReplyID in the Subject line that matches a case discussion that already exists and then updates that case discussion. When a user responds, it uses the Reply Template <span class="UXElement">Case to Email Reply</span>.</p>
+                <p class="ProcedureIntro">To review the scheduled process configuration:</p>
+                <ol>
+                    <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Advanced</span> &gt; <span class="UXElement">Scheduled Processes</span>.<br />The Scheduled Processes Admin dashboard opens.</li>
+                    <li>Open <span class="UXElement">Process Email Integration</span> (click <img src="../Resources/Images/ICONS/ICON_Jump.png"></img> (<span class="UXElement">Jump</span>)).<br />The Process Email Integration form opens.</li>
+                    <li>Review the Frequency, Frequency Type, and Valid Days.<br />Typically, you want this  to run every minute, every day of the week. </li>
+                </ol>
+                <div class="indent">
+                    <p>
+                        <img src="../Resources/Images/Case/SchedProcess_frequency.png" class="thumbnail">
+                        </img>
+                    </p>
+                </div>
+                <ol MadCap:continue="true">
+                    <li>For any changes, please log an Extranet case.</li>
+                </ol>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="Step">
+                <MadCap:dropDownHotspot style="mc-heading-level: 3;">Reviewing how this works</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>
+                    <img src="../Resources/Misc/ReplyButtonProcess.png" class="thumbnail_right" />
+                </p>
+                <p>This diagram illustrates the <MadCap:variable name="MyVariables.ProductName" /> process to determine if case discussions are integrated into the case discussion thread when using the Reply button. This diagram shows a successful result when configuration steps are followed, and what happens if the configuration process is not followed.</p>
+                <p>&#160;</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+    </body>
+</html>

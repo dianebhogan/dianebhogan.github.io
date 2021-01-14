@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultProjectImport
+  AutoSync="false"
+  DeleteStale="true"
+  IncludePattern="*.css;*.flpgl;GlobalVariables.flvar;Variables.flvar;Cover_laptop.png;PrismHR_Logo_Small.png;Default.flcts;Copyright_Notice.htm"
+  ExcludePattern="AliasFile.flali;*.flsnp;*.flmco"
+  LastImport="2020-01-07T15:09:56.7319045-05:00">
+  <Files>
+    <Url
+      Source="file:///C:/DOC Global Project/GlobalProject/GlobalProject.flprj"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/GlobalProject.flprj" />
+  </Files>
+  <ExcludedFiles>
+    <Url
+      Source="../../Content/Resources/Stylesheets/StylesForHomePage.css"
+      AbsoluteSource="file:///C:/DOC ClientSpace/ClientSpace/Content/Resources/Stylesheets/StylesForHomePage.css" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/PrismDelta.css"
+      AbsoluteSource="file:///C:/DOC ClientSpace/ClientSpace/Content/Resources/Stylesheets/PrismDelta.css" />
+    <Url
+      Source="../../Content/Resources/TableStyles/Standard_Table.css"
+      AbsoluteSource="file:///C:/DOC ClientSpace/ClientSpace/Content/Resources/TableStyles/Standard_Table.css" />
+    <Url
+      Source="../../Content/Resources/TableStyles/Procedure.css"
+      AbsoluteSource="file:///C:/DOC ClientSpace/ClientSpace/Content/Resources/TableStyles/Procedure.css" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/Content.flpgl"
+      AbsoluteSource="file:///C:/DOC ClientSpace/ClientSpace/Content/Resources/PageLayouts/Content.flpgl" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/ShortPrint.flpgl"
+      AbsoluteSource="file:///C:/DOC ClientSpace/ClientSpace/Content/Resources/PageLayouts/ShortPrint.flpgl" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/TOC.flpgl"
+      AbsoluteSource="file:///C:/DOC ClientSpace/ClientSpace/Content/Resources/PageLayouts/TOC.flpgl" />
+  </ExcludedFiles>
+  <CollectedSourceFiles>
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/ShortPrint.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/ShortPrint.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/Stylesheets/PrismDelta.css"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/Stylesheets/PrismDelta.css" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/Images/Logos/PrismHR_Logo_Horiz200px.png"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/Images/Logos/PrismHR_Logo_Horiz200px.png" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/Images/Logos/PrismHR_Logo_Horiz300px.png"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/Images/Logos/PrismHR_Logo_Horiz300px.png" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/Content.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/Content.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/Copyright.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/Copyright.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/Title.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/Title.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/TOC.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/TOC.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/Stylesheets/StylesForHomePage.css"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/Stylesheets/StylesForHomePage.css" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/TableStyles/Procedure.css"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/TableStyles/Procedure.css" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/TableStyles/Standard_Table.css"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/TableStyles/Standard_Table.css" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Project/VariableSets/GlobalVariables.flvar"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Project/VariableSets/GlobalVariables.flvar" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Project/VariableSets/Variables.flvar"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Project/VariableSets/Variables.flvar" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/TableStyles/Massive_Table.css"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/TableStyles/Massive_Table.css" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/Images/Logos/PrismHR_Logo_Small.png"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/Images/Logos/PrismHR_Logo_Small.png" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/Vision Images/PrismHR_Logo_Small_old.png"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/Vision Images/PrismHR_Logo_Small_old.png" />
+  </CollectedSourceFiles>
+  <SkippedSourceFiles>
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/CoverImages/Cover_laptop.png"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/CoverImages/Cover_laptop.png" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/Images/Logos/logo-prismhr_50px.png"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/Images/Logos/logo-prismhr_50px.png" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/Images/Logos/PrismHR_Logo_Horiz200px.png"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/Images/Logos/PrismHR_Logo_Horiz200px.png" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/Images/Logos/PrismHR_Logo_Horiz300px.png"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/Images/Logos/PrismHR_Logo_Horiz300px.png" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/Content.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/Content.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/Copyright.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/Copyright.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/RN_Release_Notes.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/RN_Release_Notes.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/RN_Release_Notes_DRAFT.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/RN_Release_Notes_DRAFT.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/Task_Sheet_PDF.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/Task_Sheet_PDF.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/Title.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/Title.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/TOC.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/TOC.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/TS_Content_PDF.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/TS_Content_PDF.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/TS_Content_PDF_Normal_Only.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/TS_Content_PDF_Normal_Only.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/TS_WS_Content_PDF.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/TS_WS_Content_PDF.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/UG_ChapL1_PDF.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/UG_ChapL1_PDF.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/UG_Content_PDF.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/UG_Content_PDF.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/UG_FrontMatter_PDF.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/UG_FrontMatter_PDF.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/UG_TOC_PDF.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/UG_TOC_PDF.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/PageLayouts/UserGuide_PDF.flpgl"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/PageLayouts/UserGuide_PDF.flpgl" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/Stylesheets/davison.css"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/Stylesheets/davison.css" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/Stylesheets/PrismHR.css"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/Stylesheets/PrismHR.css" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/Stylesheets/StylesForHomePage.css"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/Stylesheets/StylesForHomePage.css" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/TableStyles/Massive_Table.css"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/TableStyles/Massive_Table.css" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/TableStyles/Procedure.css"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/TableStyles/Procedure.css" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/TableStyles/Standard_Table.css"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/TableStyles/Standard_Table.css" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/Vision Images/PrismHR_Logo.png"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/Vision Images/PrismHR_Logo.png" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/Vision Images/PrismHR_Logo_Medium.png"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/Vision Images/PrismHR_Logo_Medium.png" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Resources/Vision Images/PrismHR_Logo_Small.png"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Resources/Vision Images/PrismHR_Logo_Small.png" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Shared-Files/Copyright_Notice.htm"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Shared-Files/Copyright_Notice.htm" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Shared-Files/UG_Cover_Page.htm"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Shared-Files/UG_Cover_Page.htm" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Shared-Files/UG_Cover_Page_PhrHrp.htm"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Shared-Files/UG_Cover_Page_PhrHrp.htm" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Content/Shared-Files/UG_Cover_Page_Pulse.htm"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Content/Shared-Files/UG_Cover_Page_Pulse.htm" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Project/ConditionTagSets/Default.flcts"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Project/ConditionTagSets/Default.flcts" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Project/VariableSets/GlobalVariables.flvar"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Project/VariableSets/GlobalVariables.flvar" />
+    <Url
+      Source="../../../../DOC Global Project/GlobalProject/Project/VariableSets/Variables.flvar"
+      AbsoluteSource="file:///C:/DOC Global Project/GlobalProject/Project/VariableSets/Variables.flvar" />
+  </SkippedSourceFiles>
+  <GeneratedFiles>
+    <Url
+      Source="../../Content/Resources/PageLayouts/ShortPrint.flpgl"
+      TimeStamp="9/20/2019 3:27:40 PM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/PrismDelta.css"
+      TimeStamp="9/27/2019 4:45:51 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Logos/PrismHR_Logo_Horiz200px.png"
+      TimeStamp="1/14/2019 1:09:09 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Logos/PrismHR_Logo_Horiz300px.png"
+      TimeStamp="11/29/2018 11:57:25 AM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/Content.flpgl"
+      TimeStamp="9/20/2019 3:29:01 PM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/Copyright.flpgl"
+      TimeStamp="4/23/2019 10:44:18 AM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/Title.flpgl"
+      TimeStamp="5/7/2019 4:01:00 PM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/TOC.flpgl"
+      TimeStamp="4/23/2019 11:48:14 AM" />
+    <Url
+      Source="../../Content/Resources/Stylesheets/StylesForHomePage.css"
+      TimeStamp="12/11/2018 10:35:49 AM" />
+    <Url
+      Source="../../Content/Resources/TableStyles/Procedure.css"
+      TimeStamp="9/16/2019 10:17:53 AM" />
+    <Url
+      Source="../../Content/Resources/TableStyles/Standard_Table.css"
+      TimeStamp="4/10/2019 12:41:43 PM" />
+    <Url
+      Source="../VariableSets/GlobalVariables.flvar"
+      TimeStamp="8/12/2019 3:31:15 PM" />
+    <Url
+      Source="../VariableSets/Variables.flvar"
+      TimeStamp="9/19/2019 9:50:19 AM" />
+    <Url
+      Source="../../Content/Resources/TableStyles/Massive_Table.css"
+      TimeStamp="2/19/2019 4:52:38 PM" />
+    <Url
+      Source="../../Content/Resources/Images/Logos/PrismHR_Logo_Small.png"
+      TimeStamp="8/14/2019 10:05:27 AM" />
+    <Url
+      Source="../../Content/Resources/Vision Images/PrismHR_Logo_Small_old.png"
+      TimeStamp="9/30/2019 9:55:58 AM" />
+  </GeneratedFiles>
+</CatapultProjectImport>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <div class="NoPageBreak">
+            <h1>
+                <MadCap:concept term="Workflow Channels" />Workflow Channels and tabbed dataforms</h1>
+            <p>Tabbed dataforms comprise a parent (home form) and child forms, which are extensions of the parent. The following image is an example of the Employee dataform with four tabs: Employee Benefits, Employee 401k, COBRA, and State Continuation. This is a tabbed set of dataforms.</p>
+            <p>
+                <img src="../Resources/Images/EmailTemplates/TabbedDataform.png" class="thumbnail" />
+            </p>
+        </div>
+        <p>When configuring Workflow Channels, you can reference data from a tabbed dataform set on the:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Content step</p>
+        <p class="Bullet1" MadCap:autonum="• ">Conditions step</p>
+        <p class="Bullet1" MadCap:autonum="• ">Notifications step</p>
+        <h2>On the Content and Notifications steps</h2>
+        <p>On the Content and Notifications steps, you can set user fields to values that exist on dataforms across a tabbed set. Let's say that you have a parent dataform, and it has a few child dataforms — we call this a tabbed relationship. You want to be able to reference user fields on both dataform types. (Note, we can also have a parent-child relationship that is not tabbed.)</p>
+        <p class="Bullet1" MadCap:autonum="• ">In the Content  step, when you select <b>Assigned To</b>, the Assigned to Options dialog box offers the User Source as Current User, Specific User, and From a Field on a Form.</p>
+        <p class="Bullet1" MadCap:autonum="• ">In the Notifications step, when you select <b>None</b>, the Options dialog box offers User Source as None, Specific User, and From a Field on a Form.</p>
+        <p class="Bullet1" MadCap:autonum="• ">For both steps, when you select <b>From a Field on a Form</b>, you have additional choices — from which Dataform and then when you select a dataform, which Field. The items in the Field list are driven by the Dataform you select.</p>
+        <p>The user type fields on workflow item tasks and dataforms include any child forms in a tabbed relationship with the available selected dataform when the user source option of <b>From a Field on a Form</b> is selected. The child form name has an asterisk, as in the following example: <code>*Employee -- Project User (ProjectUser)</code>.</p>
+        <p>
+            <img src="../Resources/Images/Workflow/ContentStep_AssignedToOptions.png" class="thumbnail">
+            </img>
+        </p>
+        <p>These tabbed form fields appear in the <b>Field</b> list below the primary form field in the tab relationship and are formatted as follows:</p>
+        <p><code>*&lt;ChildFormName&gt; — &lt;UserFieldName&gt;</code>
+        </p>
+        <p><b>Example</b>:&#160;A form named Form Parent is in a tabbed relationship with Form Two and Form Three. Form Two and Form Three are child forms to Form Parent. Each form has user fields. </p>
+        <p>Let's say you have the following scenario in the Assigned To Options dialog: </p>
+        <p class="Bullet1" MadCap:autonum="• ">In <b>Dataform</b>, Form Parent is selected. </p>
+        <p class="Bullet1" MadCap:autonum="• ">In <b>Field</b>, the fields for Form Parent are listed at the top of the <b>Field</b> selector, and fields from the child forms are available below the primary form in the following format:</p>
+        <p class="Indent2">*Form Two -- User By Role (fkUserByRoleID)</p>
+        <p class="Indent2">*Form Two -- Specialist User (fkSpecialistUserID)</p>
+        <p class="Indent2">*Form Three -- Other User (fkOtherUserID)</p>
+        <p>Keep in mind, all these fields are user fields. You can select any user field from a child dataform. You can also select a user field from the parent form and any single dataforms.</p>
+        <p><b>Example</b>: The following example shows a parent form named <b>Tony Test Form</b> in the <b>Dataform</b> list. Tony Test Form is a parent form to Form One. When Tony Test Form is selected, the <b>Field</b> field displays all user-related fields from the parent form and child form. For <b>Fields</b>, you can select a field from the parent form (in this case Tony Test Form) or you can select fields from any child dataforms. Child forms are denoted with an asterisk (*), as shown in the following example.</p>
+        <p>
+            <img src="../Resources/Images/Workflow/Fields_childform.png" class="thumbnail" />
+        </p>
+        <h2>On the Conditions Step</h2>
+        <p>Workflow Channels include all active tabbed forms on the Conditions step of a workflow item when the triggering form is the home form of a tabbed set.
+</p>
+        <p>
+            <img src="../Resources/Images/Workflow/AddWorkflow_Step4_Conditions.png" class="thumbnail" />
+        </p>
+        <h3>Source and Field lists</h3>
+        <p>The <b>Source</b> list includes all active tabbed forms included in the tabbed set when the triggering form is the home form of a tabbed set. In the Source list, the primary tabbed dataform precedes the child tabbed forms. The child dataform names are prepended with a dash (<b>–</b>). The <b>Field</b> list is filtered based on the selected Source.
+</p>
+        <p>
+            <img src="../Resources/Images/Workflow/SourceField_lists.png" class="thumbnail" />
+        </p>
+        <p>This example shows that for the Source column, Tony Test Form is the parent, and Form One is the child.</p>
+        <p>
+            <img src="../Resources/Images/Workflow/ParentChild.png" />
+        </p>
+        <p>The following example shows the Source column with a child dataform selected (-Form One) and in the Field column, a field named State Lookup 2 is selected.</p>
+        <p>
+            <img src="../Resources/Images/Workflow/Condition_TabForm.png" class="thumbnail" />
+        </p>
+        <h3>Conditions</h3>
+        <p>Condition Expressions operators (AND, OR, and NOT) work across multiple dataforms. You can configure conditions for task workflow channel items from the most recent parent dataform if your tasks are multiple levels deep. This enables you to refer back to the child dataform logically. (For example, a milestone triggers a Case, and the Case triggers multiple layers of Tasks, all Tasks can reference the Case).</p>
+        <p class="Bullet1" MadCap:autonum="• ">Source includes the most recently referenced dataform that would trigger the initial task (single or multi).</p>
+        <p class="Bullet1" MadCap:autonum="• ">Condition Expressions operators (AND, OR, and NOT) work across multiple dataforms.</p>
+        <p class="Bullet1" MadCap:autonum="• ">IsDirty does not appear in the trigger operator list because the task can be separated from the dataform by several other tasks; the dataform may not be dirty. IsDirty is only available for the triggering form. Child forms or other single dataforms in the workspace should never be dirty unless the change is occurring there.</p>
+        <p class="Bullet1" MadCap:autonum="• ">The Add Untriggered functionality is available when adding fields from this source.</p>
+        <p class="Bullet1" MadCap:autonum="• ">If the most recent dataform is the main triggering dataform for the workflow, the condition Source is <b>Channel Trigger: &lt;NameOfTriggeringForm&gt;</b>.</p>
+        <p class="Bullet1" MadCap:autonum="• ">If the most recent dataform is a cloned dataform workflow item, the condition Source is <b>Workflow #&lt;ItemNumber&gt;: &lt;ItemName&gt;</b>.</p>
+        <p class="ActionTip">For tabbed form fields that are used in triggering workflows, you cannot delete or inactivate any of the fields. The system indicates where the field is used: <i>Channel: &lt;Workflow Channel Name&gt;, Item: &lt;Workflow Channel Item Name&gt;</i> (with a clickable link to the affected Workflow Channel configuration). Delete is enabled when all dependencies are cleared.</p>
+    </body>
+</html>

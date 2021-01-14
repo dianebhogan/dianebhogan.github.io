@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\Resources\MasterPages\ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Release Notes" />Release 77 Notes</h1>
+        <p><strong>Rxx Sprint</strong>:&#160;2/1/2019&#160;to&#160;2/28/2019. To learn about product features that you may not recognize, contact your Customer Success Manager.</p>
+        <h2>Enhancements</h2>
+        <p>Hover on the icons to discover the level of product enhancements: <img src="../Resources/Images/ICONS/ICON_FunctionalChange.png" title="Change in functionality" alt="Change in functionality" /> <img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" title="ClientSpace Premium (ClientSpace with additional modules)" alt="ClientSpace Premium (ClientSpace with additional modules)" /> <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /><br /></p>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 69px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 88px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1" style="text-align: center;">
+                        <p class="TableHead">Level of change</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35343</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Certificate of Insurance report</p>
+                        <p class="TableTextLeft">The Certificate of Insurance report was modified to use the report signature stored under <strong>System Admin</strong> &gt; <strong>Branding</strong> &gt; <strong>Reporting Signature</strong>. If this branding file has not been set or is removed, the system defaults to the previous method of using the Signature file stored in the custom images directory. This ensures that clients who are already using custom signature files are not affected.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">35455</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Import External Source Linking Records for Third Party Integrations</p>
+                        <p class="TableTextLeft">The API system now has a supporting import to import External Source Linking records into tblExternalSourceLinking. This imports NEW records only, and does&#160;not update existing records. The primary purpose of this import is to seed the external source linking record in preparation of implementing an integration (example, Salesforce).</p>
+                        <p>This import is based on the following configurations:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Uses PEO staging form <strong>gen_ImportExternalSourceLinking</strong></p>
+                        <p class="TableBullet" MadCap:autonum="• ">Rule <strong>CreateExternalSourceLink</strong> must be configured on&#160;form <strong>gen_ImportExternalSourceLinking</strong></p>
+                        <p class="TableBullet" MadCap:autonum="• ">No soft/hard errors are&#160;available during the import process</p>
+                        <p>This configuration imports the following five columns:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">ClientSpaceTableName (ClientSpace Table, tblOrganization, tblContact, gen_Whatever) [Text]</p>
+                        <p class="TableBullet" MadCap:autonum="• ">ClientSpaceID (ClientSpace RowGUID for the ClientSpaceTableName table) [Text RowGUID]</p>
+                        <p class="TableBullet" MadCap:autonum="• ">fkAPIConfigurationID (API Config associated with this record) [PK]</p>
+                        <p class="TableBullet" MadCap:autonum="• ">ExternalObject (External Object Type, example "Account") [Text]</p>
+                        <p class="TableBullet" MadCap:autonum="• ">SourceID (External Object ID) [Text]</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">36086</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">PrismHR API </p>
+                        <p class="TableTextLeft">API functionality within the application has been updated to be compatible with version 1.15 of the PrismHR API. No API configurations in the application are updated at this time. If your PrismHR installation has been updated to version 1.15 and you would like to update the API connection to take advantage of this, contact Professional Services.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">36605</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">HRPAPI_Users</p>
+                        <p class="TableTextLeft">Updated the HRPAPI_Users (ongoing) import to eliminate extraneous users from being imported from Prism. Prism users who are not Service Provider user types are not imported into <MadCap:variable name="MyVariables.ProductName" /> through the HRPAPI_Users initial and ongoing imports.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35461</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Import configuration</p>
+                        <p class="TableTextLeft">Import Configuration was enhanced to allow the Record Source Column to use the primary key (pkDataformID) of the record. When the record Source Column is set to use the primary key, only updates will be allowed. To insert records, the Record Source Column needs to be ImportID.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">36232</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Email integration</p>
+                        <p class="TableTextLeft">The email integration function was enhanced to include both an employee's work or personal email when determining the related employee to select when creating a case. This compares both the personal and work email addresses for&#160;a match. If multiple records are matched, the system selects the most recently updated active record based on Date Updated admin field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35529</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Email add-in</p>
+                        <p class="TableTextLeft">The email add-in has been enhanced to include the organization name when selecting additional contacts as part of the process of creating activities in the system through the add-in. This helps to eliminate confusion where multiple contacts may have the same name, or where one person exists as a contact on multiple organizations.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">36234</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Case discussions: Work or personal email</p>
+                        <p class="TableTextLeft">Case Discussions was enhanced, allowing you to choose an employee's work or personal email when configuring an employee as a discussion recipient.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">When an employee has only a work email, the recipient list displays Employee name and work email by default.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">When an employee has only a personal email, the recipient list displays Employee name and personal email by default.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">When an employee has both a work and personal email, the recipient list displays Employee name and work email by default.&#160;When the employee is selected as a recipient, the right pane of the selector provides the option of selecting either the work or personal email as the discussion recipient.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">If no emails exist for the employee, the system displays the existing error message that states this Employee cannot be selected because there is no email.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35832</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Workflow Channels business rule</p>
+                        <p class="TableTextLeft">Workflow Channels was enhanced with the <strong>_WorkflowTaskAutoComplete</strong> business rule, allowing a series of tasks to be automatically closed by a specified trigger event. This rule is designed to complete all tasks on the associated dataform that were cloned from a comma-separated list of Workflow Items configured as parameters on the business rule.</p>
+                        <p>This rule contains three parameters:</p>
+                        <p class="TableBullet" MadCap:autonum="• "><strong>WorkflowItemList (required)</strong>: Insert a comma-separated (no spaces) list of Task Workflow Channel Item IDs. These can be retrieved by going to <strong>System Admin</strong> &gt; <strong>Workflow</strong> <strong>Channels</strong>&#160;and opening the appropriate workflow channel. The associated Item IDs are in the leftmost column of the Workflow Items in this Channel list at the bottom of the page. Subsequent child items are also closed if their&#160;IDs are&#160;added to this list.&#160;</p>
+                        <p class="TableBullet" MadCap:autonum="• "><strong>SendNotification (optional)</strong>:&#160;Select this option to ensure that notifications are sent when tasks are automatically closed by this rule.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><strong>EntireWorkspace (optional)</strong>:&#160;This rule closes task&#160;workflow items associated with the triggering dataform by default.&#160;Selecting this option allows the rule to close task&#160;workflow items on any dataform in the workspace whose ID has been added to the WorkflowItemsList.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">35859</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Workflow Channels user datatypes available as conditions</p>
+                        <p class="TableTextLeft">Workflow Channels was enhanced to allow workflow triggering from User fields on dataforms. These user fields can be used both as the primary trigger for a workflow as well as additional triggering conditions so that when a user field changes, such as the Payroll Specialist, the system can route that change to an internal team member to execute a business process.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">36664</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">
+                        <img src="../Resources/Images/ICONS/ICON_FunctionalChange.png" title="Change in functionality" alt="Change in functionality" />
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">System Admin fully converted</p>
+                        <p class="TableTextLeft">ClientSpace Classic code was deprecated.&#160;The following classic system admin interfaces were removed from the system:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Classic: Email Admin</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Classic: Email Integration/Email Template</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Classic: Exception Log</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Classic: Field Audit Trail/User Audit Trail</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Classic: Scheduled Process Admin</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Classic: Time Tracker</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">29035</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Dataforms subscriptions</p>
+                        <p class="TableTextLeft">Dataform subscriptions was enhanced to allow subscription notifications to be sent to:</p>
+                        <p class="TableBullet" MadCap:autonum="• "> Internal users only</p>
+                        <p class="TableBullet" MadCap:autonum="• ">External users only</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Both internal and external users</p>
+                        <p class="TableTextLeft">These notification options are available&#160;from the Address step in Email Templates when the <strong>Include Dataform Subscribers as 'CC' Recipients</strong> option is selected.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">37059</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Saved Search actions</p>
+                        <p class="TableTextLeft">Saved Search functionality was enhanced from a single button (to save a search) along with the option to restore the system default, which also removes any search customization.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">37244</td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Immediate Supervisor</p>
+                        <p class="TableTextLeft">The <strong>IMPORT_user*.csv</strong> import was enhanced to include Immediate Supervisor and Default workspace. These fields are imported on both insert and update for internal users, and updates to external users (External users cannot be created via import).</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Fixes</h2>
+        <table class="TableStyle-Standard_Table" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" cellspacing="0">
+            <col style="width: 123.0px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 393.0px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 527.0px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Issue summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Resolution</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">34259</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Stopping Timer clears unsaved field changes on Time records</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue when creating a time tracking record from a dataform with unsaved changes. Saving the time tracking record would lose the unsaved dataform changes.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">34885</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Email Integration Email Templates do not respect Publish flag</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue in which Email Integration was not respecting the Publish/Unpublish flag for email templates when generating automatic email responses on dataform creation.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">36735</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">List refresh removes Inactive list item formatting</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where a list refresh could cause the Inactive record formatting (Bold and italicized) to be removed from the inactive records.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">36909</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Notification Widget</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Corrected an issue where the <strong>CanResize</strong> flag of the Notification widget was set to <strong>True</strong>, which the widget does not support,&#160;causing unexpected behavior in the widget when an administrator would resize it in a layout.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">36914</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Email Template Recipient Address is case sensitive</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where the duplicate checking was case sensitive. For example,&#160;<a href="mailto:billq@prismhr.com" class="external-link" rel="nofollow">billq@prismhr.com</a> and <a href="mailto:Billq@PrismHR.com" class="external-link" rel="nofollow">Billq@PrismHR.com</a> and <a href="mailto:billq@Prismhr.com" class="external-link" rel="nofollow">billq@Prismhr.com</a> were all seen as different email addresses. This has been changed so that it is no longer case sensitive.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">36922</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Task link is broken</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Corrected an issue with&#160;several misconfigured system templates that caused unexpected behavior.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">36990</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Salesforce API issue</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue when importing an Opportunity from Salesforce. If an associated Organization did not exist in ClientSpace, the process would attempt to create that Organization to house the Opportunity data and fail. In some cases, the ID used to retrieve the Account was incorrect. This would only occur with a very specific setup in which the Opportunity was only mapped to Organization and Org Other Info.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">37009</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Remove Case Category metadata dataform from Workspaces</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Removed the Case Category metadata dataform from any workspace. This form is only accessible via the Case Category Lookup group. Fixed the <strong>Workspace Type Multiple Select</strong>&#160;dataform type, removing the ability to use the <strong>Form Searchable</strong> checkbox. A javascript error would be thrown when loading the search page for the dataform, and the loading spinner&#160;would spin endlessly.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">37011</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Error in Workflow Channel</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where the Workflow Channel Name typeahead validation would break in the presence of special characters, causing a 401 Unauthorized error during the validation call.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">37068</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Orgs and Workspaces not coming over</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where the Assigned to User on the Organization (OwnerId in Salesforce) was not being created on new Account inserts, causing the Salesforce export to fail for certain Organizations and Workspaces.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">37085</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Task badge count incorrect</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue with the Task Action item badge counter that displayed an incorrect value for inactive tasks under certain circumstances.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">37152</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Case Type changes</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where the Backup User field on the Client Service Case Type dataform was set to use an incorrect role, which left the backup user field blank so that case type changes could not be saved.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">37155</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Error when saving a workflow</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where saving changes to a&#160;child item of a scheduled workflow would cause the system to generate an unspecified server error.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">37184</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Salespeople and underwriting cannot add surcharges in the pricing console.</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where the Add Surcharges dialog would not respect associated contract type, causing surcharges to be missing from the add dialog.&#160; The add dialog now properly presents all active&#160;surcharges with no contract type or with a matching contract type when <strong>Hide in Surcharge Quick Selector</strong>&#160;is not selected.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">37198</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Client Visit Search on Temperature</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where the <strong>Temperature</strong> filter of the Client Visits module would cause an error to be thrown and not filter the list properly.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">37202</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Unable to access the notes in the Activities section of the workspace.</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue when opening activities from the Activities Workspace Landing Page widget would throw an error.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">37215</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Pricing Console surcharges</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Removed the double-click functionality for Surcharges Add dialog.&#160;Surcharges can still be selected by clicking the <strong>Select</strong> option.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">37264</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Home with Cases (Classic)</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Updated the Home with Cases dashboard to replace the deprecated Messages quadrant with an Events quadrant in the classic interface.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">37314</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">"Audit This field" option does not save in Dataform Admin NEXT</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">Corrected an issue which did not allow the "Audit this Field" checkbox to be saved. Checking the box and saving the record would clear the checkbox. The system now properly saves this flag, and triggers field auditing for the checked records on dataform save.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

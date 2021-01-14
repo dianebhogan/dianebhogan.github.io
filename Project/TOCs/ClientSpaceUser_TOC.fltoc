@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1"
+  conditions="">
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Book/PrintCoverPage.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    conditions="ClientSpace.Print"
+    BreakType="pageLayout"
+    PageType="title"
+    AutoEndOnLeftPage="disabled"
+    StartSection="false"
+    PageLayout="/Content/Resources/PageLayouts/Title.flpgl">
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Book/Copyright_Notice.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      conditions="ClientSpace.Print"
+      BreakType="pageLayout"
+      PageType="left"
+      AutoEndOnLeftPage="disabled"
+      StartSection="false"
+      PageLayout="/Content/Resources/PageLayouts/Copyright.flpgl" />
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Book/TableOfContents.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      BreakType="chapter"
+      AutoEndOnLeftPage="disabled"
+      PageType="right"
+      StartSection="false"
+      PageNumberReset="reset"
+      PageLayout="/Content/Resources/PageLayouts/TOC.flpgl"
+      conditions="ClientSpace.Print"
+      SectionNumberReset="continue"
+      VolumeNumberReset="same"
+      ChapterNumberReset="continue"
+      ComputeToc="false"
+      ReplaceMergeNode="false"
+      PageNumberFormat="decimal"
+      PageNumber="3" />
+  </TocEntry>
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/UserProfile/UserProfile.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    BreakType="chapter"
+    PageType="continue"
+    AutoEndOnLeftPage="disabled"
+    PageNumber="1"
+    PageLayout="/Content/Resources/PageLayouts/Content.flpgl"
+    PageNumberReset="continue"
+    StartSection="false"
+    ChapterNumberFormat="decimal"
+    ChapterNumberReset="continue"
+    PageNumberFormat="decimal"
+    SectionNumberReset="continue"
+    VolumeNumberReset="same">
+    <TocEntry
+      Title="[%=System.LinkedHeader%]"
+      Link="/Content/UserProfile/PersonalizeUserProfile.html"
+      StartSection="false"></TocEntry>
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/UserProfile/ChangePswd.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    <TocEntry
+      Title="[%=System.LinkedHeader%]"
+      Link="/Content/UserProfile/EnableOutOfOffice.html"
+      StartSection="false">
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
+        Link="/Content/UserProfile/Video_OutOffice.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+        conditions="ClientSpace.Screen" />
+    </TocEntry>
+  </TocEntry>
+  <TocEntry
+    Title="[%=System.LinkedHeader%]"
+    Link="/Content/HowToUse/SystemCalendar.html"
+    BreakType="chapter"
+    PageType="continue"
+    AutoEndOnLeftPage="disabled"
+    ChapterNumberFormat="decimal"
+    StartSection="false"
+    PageNumberReset="continue"
+    PageLayout="/Content/Resources/PageLayouts/Content.flpgl"
+    SectionNumberReset="continue"
+    VolumeNumberReset="same"
+    ChapterNumberReset="continue">
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Manage/Cal-View.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Manage/Recurrence.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+  </TocEntry>
+  <TocEntry
+    Title="[%=System.LinkedHeader%]"
+    Link="/Content/ActionCenter/Overview.html"
+    BreakType="chapter"
+    PageType="continue"
+    AutoEndOnLeftPage="disabled"
+    PageNumber="(multiple)"
+    StartSection="false"
+    PageNumberReset="continue"
+    PageLayout="/Content/Resources/PageLayouts/Content.flpgl"
+    ChapterNumberFormat="decimal"
+    ChapterNumberReset="continue">
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/ActionCenter/Video_ActionCenter.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      conditions="ClientSpace.Screen" />
+  </TocEntry>
+  <TocEntry
+    Title="[%=System.LinkedHeader%]"
+    Link="/Content/Navigating/ActionItems.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    StartSection="false"
+    BreakType="chapter"
+    PageNumber="(multiple)"
+    PageNumberReset="continue"
+    SectionNumberReset="continue"
+    VolumeNumberReset="same"
+    ChapterNumberReset="continue"
+    PageType="continue"
+    AutoEndOnLeftPage="disabled"
+    ChapterNumberFormat="decimal"
+    PageLayout="/Content/Resources/PageLayouts/Content.flpgl"></TocEntry>
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/ActionCenter/Attachments.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    BreakType="chapter"
+    PageType="continue"
+    AutoEndOnLeftPage="disabled"
+    PageNumberReset="continue"
+    ChapterNumberFormat="decimal"
+    ChapterNumberReset="continue"
+    PageLayout="/Content/Resources/PageLayouts/Content.flpgl">
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/ActionCenter/Upload-File-Versions.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+  </TocEntry>
+  <TocEntry
+    Title="[%=System.LinkedHeader%]"
+    Link="/Content/Manage/Activities.html"
+    BreakType="chapter"
+    PageType="continue"
+    AutoEndOnLeftPage="disabled"
+    ChapterNumberFormat="decimal"
+    StartSection="false"
+    PageNumberReset="continue"
+    PageLayout="/Content/Resources/PageLayouts/Content.flpgl"
+    SectionNumberReset="continue"
+    VolumeNumberReset="same"
+    ChapterNumberReset="continue">
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/Navigating/Video_Activities.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+      conditions="ClientSpace.Screen" />
+  </TocEntry>
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Manage/Appointments.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    BreakType="chapter"
+    PageType="continue"
+    AutoEndOnLeftPage="disabled"
+    ChapterNumberFormat="decimal"
+    StartSection="false"
+    PageNumberReset="continue"
+    PageLayout="/Content/Resources/PageLayouts/Content.flpgl"
+    SectionNumberReset="continue"
+    VolumeNumberReset="same"
+    ChapterNumberReset="continue" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/CasesTasks/CasesTasks.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    BreakType="chapter"
+    PageNumber="(multiple)"
+    PageType="continue"
+    AutoEndOnLeftPage="disabled"
+    ChapterNumberFormat="decimal"
+    StartSection="false"
+    PageNumberReset="continue"
+    PageLayout="/Content/Resources/PageLayouts/Content.flpgl"
+    SectionNumberReset="continue"
+    VolumeNumberReset="same"
+    ChapterNumberReset="continue">
+    <TocEntry
+      Title="[%=System.LinkedTitle%]"
+      Link="/Content/CasesTasks/CaseTaskManager.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+  </TocEntry>
+</CatapultToc>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1 MadCap:autonum="Chapter 1 ">Business Intelligence report: API&#160;log</h1>
+        <p>Construct your report to view records in <b>tblScheduledProcessHistory</b>:
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">
+Join to the <b>tblScheduledProcess</b> table (SPH.fk = SP.pk) and include <b>SPH.ProcessStartDate</b>, <b>SPH.LogData</b>, and <b>SPH.ProcessEndDate</b>.
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">Sort on <b>SPH.ProcessStartDate</b> descending.
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">Filter on <b>SP.Method = “SalesForceUpdate”</b></p>
+        <p class="ProcedureIntro">The Salesforce scheduled process</p>
+        <p>Importing Salesforce data relies on a scheduled process to keep the data in sync between the two systems. While this is not a real-time update, it should provide adequate connectivity between the two systems. The following example provides the recommended settings for processing the Salesforce Update.</p>
+        <p>
+            <img src="../Resources/Images/Integrations/SalesforceScheduledProcess.png"  />
+        </p>
+        <p style="font-weight: bold;">Recommended settings:</p>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 125px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Name</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1"> Salesforce Update</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Frequency</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1"> 15</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Frequency Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1"> Minute</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Next Run Date</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1"> Today's date</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Next Run Time </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Set to a future time when you would like the process to begin.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Valid Days</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1"> Select the days of the week you would like the scheduled process to run on. This can be business days, or every day, whichever fits your business model.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Description</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1"> Brief description. In the example, we used Salesforce Update.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Max Run Minutes</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1"> How long the process is allowed to run before automatically stopping.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Last Run Seconds (read-only)</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1"> This is a measure of how long the process took the last time it ran.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Active</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">Only active processes are run by the scheduler.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>In the configuration example, the Salesforce Update process will run every 15 minutes beginning on 1/14/2019 at 12:00 am. The process will run every day of the week and will be automatically aborted if it takes more than 120 minutes to run.</p>
+    </body>
+</html>

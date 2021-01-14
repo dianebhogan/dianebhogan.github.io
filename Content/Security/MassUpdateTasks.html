@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Security" />Task Security
+</h1>
+        <p>This topic discusses Task Security in ClientSpace.&#160;For more detailed information about security&#160;entities,&#160;see <MadCap:xref href="SecurityEntities.html" title="security entities" alt="security entities" class="Heading">Security Entities</MadCap:xref>.</p>
+        <h2>Security hierarchy</h2>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css'); margin-left: 0; margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 232px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Default Security (no incident security entities)</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">If you are the <strong>Creator</strong>, <strong>AssignedTo</strong>, or <strong>Owner</strong> of the task, your&#160;user account will&#160;have&#160;View and Edit rights to existing tasks. </p>
+                        <p><strong>Notification Users</strong> will have View Access to the task, but unless additional security is provided by other entities the task fields will be read-only.&#160;</p>
+                        <p class="TableTextLeft">You can Add Tasks to Org, Contacts, or a dataform. Due Date field and Mark for Deletion field&#160;are read-only by default.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Incident_AllowTaskMaintenance</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Allows user to edit tasks even though they are not one of the principal users of the task. (Creator, AssignedTo, and Owner)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Incident_DueDate         </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Gives rights to edit Due Date field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Incident_MarkForDelete
+                        </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Gives rights to edit Mark for Deletion field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Incident_Dash_CanViewAllUsers</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Unlocks the User search field on the Task Search Module.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Incident_Can_Add_Without_Dataform</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Put the Add button on the Home dashboard and the Task Search Module. Still presents the workspace selector.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Incident_btnMassUpdate</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Gives access to the Mass Update button on task lists.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>It is also important to note that Global Admin users have full rights to View, Add and Edit tasks regardless of whether they are one of the principal users&#160;on the task or have any of the above security entities.</p>
+        <h2>Giving users access to mass update tasks
+               </h2>
+        <p>The User must be in a Role with the Incident_btMassUpdate entity.</p>
+        <p class="ProcedureIntro">To give users access to mass update tasks:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Determine the Roles to which the user is a member.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Add <strong>Incident_btnMassUpdate</strong> to one of the user's roles or add the user to a role that already has that entity by following the <strong>Role Administration guidelines</strong>.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Go to <strong>System Admin</strong> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<strong>Security</strong> &gt; <strong>Roles</strong>.</p>
+        <p class="L1Num" MadCap:autonum="4. ">Filter roles by Role Title, Users that are associated with the role, or Entity Name of the associated Security Entities.</p>
+        <p class="L1Num" MadCap:autonum="5. ">If a user needs to have access to a particular security entity, you can do <b>one</b> of the following:<br /></p>
+        <p class="Bullet2" MadCap:autonum="• ">Add the user to a role that already contains the required entity by filtering roles by targeted entity.</p>
+        <p class="Bullet2" MadCap:autonum="• ">Add the security entity to a role that the user is already associated with by filtering roles.</p>
+        <p class="L1Num" MadCap:autonum="6. ">Add the appropriate View, Add, Edit, Delete, and Admin rights&#160;for the role.</p>
+        <p class="L1Num" MadCap:autonum="7. ">To see if a user is already in a role with a specific entity, filter the Roles by user <em>and</em> Entity.</p>
+        <p class="L1Num" MadCap:autonum="8. ">You can also use a wildcard when searching for roles.&#160;When&#160;setting search parameters, place a % symbol before your search string&#160;to make it&#160;a wildcard&#160;keyword search.&#160; ex %Service Case</p>
+    </body>
+</html>

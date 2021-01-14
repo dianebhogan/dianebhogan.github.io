@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Ensuring <MadCap:variable name="MyVariables.ProductName" /> email is delivered to your domain</h1>
+        <p>Many of the <MadCap:variable name="MyVariables.ProductName" /> systems generate emails – Calendar events, Client Service Case, and Task notifications are among the most frequent email generators. To ensure these auto-generated emails do not get interpreted as spam, you should authorize the <MadCap:variable name="MyVariables.ProductName" /> system as a valid sender of mail for your domain. There are many ways to do this, but the simplest and most foolproof are one or a combination of the following methods. Each mail and DNS system can be radically different, so this topic provides an overview of suggested steps you should take but is not meant to provide step-by-step instructions on how to perform these actions. Your network or IT&#160;Administrator will most likely perform the following changes.</p>
+        <p class="ProcedureIntro">To authorize <MadCap:variable name="MyVariables.ProductName" /> for mail in your domain, do one or more of the following:</p>
+        <ol>
+            <li>Add the <MadCap:variable name="MyVariables.ProductName" /> Server IP or hostname to your email system unrestricted list.<ul style="list-style-type: square;"><li>An unrestricted list  allows emails from a source, such as <MadCap:variable name="MyVariables.ProductName" />,  into your email Inbox.  The procedure for adding trusted email addresses to your unrestricted list  varies across the different email clients and internet security platforms.</li></ul></li>
+            <li>Utilize SPF records in your company DNS servers to authorize the <MadCap:variable name="MyVariables.ProductName" /> Server IP or hostname as valid for your domain mail.<ul style="list-style-type: square;"><li>An SPF Record is simply a DNS Record published for a domain that dictates which servers are allowed to send mail on behalf of that domain. When a mail server receives a message, it looks up the DNS record from domain to determine if the server sending the message is published in the SPF record. If the sending server is not in the published SPF record, the message fails.  There are a number of free SPF generators available. Research the phrase "SPF generator." There are also a number of sites for checking the validity of the SPF record you create.  These sites should be utilized by an administrator in your environment familiar with DNS and its configuration.</li></ul><ul style="list-style-type: square;"><li>The generated DNS record for the domain should look similar to the following, but should be customized based on how your network utilizes DNS : <code>v=spf1 mx a:mail.clientspace.net ~all</code></li></ul></li>
+        </ol>
+        <p>For questions about the IP address of your <MadCap:variable name="MyVariables.ProductName" /> server for mail authorization,  please log an Extranet case.</p>
+    </body>
+</html>

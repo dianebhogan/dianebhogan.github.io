@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultConditionTagSet
+  Comment="My set of condition tags"
+  conditions="">
+  <ConditionTag
+    BackgroundColor="#ff0000"
+    Name="Print"
+    Comment="Print only"
+    OriginalName="Print" />
+  <ConditionTag
+    BackgroundColor="#0000ff"
+    Name="Screen"
+    Comment="Screen only" />
+  <ConditionTag
+    BackgroundColor="#008000"
+    Name="Exclude"
+    Comment="Always exclude" />
+  <ConditionTag
+    BackgroundColor="#ff00ff"
+    Name="YesImport"
+    Comment="Safe to reimport files marked with this condition." />
+  <ConditionTag
+    BackgroundColor="#2f4f4f"
+    Name="NoImport"
+    Comment="Do NOT reimport files marked with this condition. Safeguard against *.* reimport AND if someone selects option &quot;Auto-reimport before Generate Output&quot;" />
+  <ConditionTag
+    BackgroundColor="#9acd32"
+    Name="FutureDev"
+    Comment="Future development, not ready for production" />
+  <ConditionTag
+    BackgroundColor="#fa8072"
+    Name="SalesOnly"
+    Comment="Include content in Sales Guide only" />
+  <ConditionTag
+    BackgroundColor="#ff0000"
+    Name="SME_Review"
+    Comment="Topic waiting for SME feedback" />
+  <ConditionTag
+    BackgroundColor="#0000ff"
+    Name="BorderColor"
+    Comment="When this condition set on image map, trigger condition to add border to bookmarked text" />
+  <ConditionTag
+    BackgroundColor="#ff00ff"
+    Name="Sprint_R98"
+    Comment="Complete the content to use in R98"
+    OriginalName="Sprint_R96" />
+</CatapultConditionTagSet>

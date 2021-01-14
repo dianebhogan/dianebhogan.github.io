@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <map id="map1">
+            <area shape="rectangle" coords="113,111,1028,147" dragDirection="0" title="File Column" alt="File Column" href="../Popups/Imports/FileColumn.htm" target="_popup" MadCap:conditions="ClientSpace.Screen" />
+            <area shape="rectangle" coords="125,154,514,187" dragDirection="0" title="Dataform" alt="Dataform" href="../Popups/Imports/Dataform2.htm" target="_popup" MadCap:conditions="ClientSpace.Screen" />
+            <area shape="rectangle" coords="155,193,510,224" dragDirection="0" title="Field" alt="Field" href="../Popups/Imports/Field.htm" target="_popup" MadCap:conditions="ClientSpace.Screen" />
+            <area shape="rectangle" coords="631,194,1027,226" dragDirection="0" title="Data Type" alt="Data Type" href="../Popups/Imports/DataType.htm" target="_popup" MadCap:conditions="ClientSpace.Screen" />
+            <area shape="rectangle" coords="108,230,511,265" dragDirection="0" title="Lookup Table" alt="Lookup Table" href="../Popups/Imports/LookupTable.htm" target="_popup" MadCap:conditions="ClientSpace.Screen" />
+            <area shape="rectangle" coords="623,234,1025,266" dragDirection="0" title="Lookup Field" alt="Lookup Field" href="../Popups/Imports/LookupField.htm" target="_popup" MadCap:conditions="ClientSpace.Screen" />
+            <area shape="rectangle" coords="187,273,510,306" dragDirection="0" title="Required Value" alt="Required Value" href="../Popups/Imports/ReqValue.htm" target="_popup" MadCap:conditions="ClientSpace.Screen" />
+            <area shape="rectangle" coords="708,270,1026,310" dragDirection="0" title="Required Column" alt="Required Column" href="../Popups/Imports/ReqCol.htm" target="_popup" MadCap:conditions="ClientSpace.Screen" />
+            <area shape="rectangle" coords="105,312,430,347" dragDirection="0" title="Default Value" alt="Default Value" href="../Popups/Imports/DefValue.htm" target="_popup" MadCap:conditions="ClientSpace.Screen" />
+            <area shape="rectangle" coords="137,352,1026,382" dragDirection="0" title="API Path" alt="API Path" href="../Popups/Imports/APIPath.htm" target="_popup" MadCap:conditions="ClientSpace.Screen" />
+            <area shape="rectangle" coords="115,388,932,500" dragDirection="0" title="Description" alt="Description" href="../Popups/Imports/Description2.htm" target="_popup" MadCap:conditions="ClientSpace.Screen" />
+        </map>
+        <h1>Configuring the Import Map Detail</h1>
+        <p>After you configure the Import Map Header  (to select the dataform you will insert/update), the next step is to add the fields using the Import Map Detail form. Add each field from the import file that you want to import into <MadCap:variable name="MyVariables.ProductName" />, selecting the most appropriate values that match both the data you are importing as well as the field into which you are importing the data.</p>
+        <p class="ProcedureIntro">To configure the Import Map Detail:</p>
+        <ol>
+            <li>From the Import Map Header form that you just added/edited (in <MadCap:xref href="ConfigMapHeader.htm" title="Configuring the Import Map Header" alt="Configuring the Import Map Header">Configuring the Import Map Header</MadCap:xref>), in the right pane, click <b>Fields</b>.<br />The Import Map Search dashboard opens. The list presents the fields that have been added for the Import Map Header. </li>
+            <li>To add fields, click <b>Add</b>.<br /> The Import Map Detail form opens.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Imports/ImportMapDetail.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Complete the required fields.</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col style="width: 210px;" class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">File Column</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required. This is the
+ exact column header name from the data file you are importing.&#160;This field is
+ case sensitive: <i>Clientname</i> is different from <i>ClientName</i>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Dataform</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select a dataform. The system then provides a list of fields from that&#160;dataform in the
+ Field list.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select the field you
+want to populate. The Dataform selected on the Import Map Detail must match either the Dataform selected on the Import Map Header Detail or the tabbed forms related to that dataform.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">
+                            <img src="../Resources/Images/Imports/MatchDataforms.png" class="thumbnail" />
+                        </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Tabbed
+ dataforms always have a parent form field linked to the primary dataform
+ selected on the Import Map Header Detail and are associated with the primary form as a
+ tab. For information about associating tabbed forms, log an Extranet case.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Data Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required.  Indicates the type of information you insert into the field. The
+ following list describes the types of data that your file should contain and
+ can include:</p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">Checkbox</span>: Import file should contain a One for True and a Zero for False</p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">Date</span>: Properly mm/dd/yyyy formatted date string (10/15/2016).</p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">Foreign Key</span>: Foreign Keys use the provided value in the file to match the selected Table and Field in the configuration and set the foreign key stored in the field to the primary key of the selected record.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">Lookup</span>: Lookups use the provided value from the file and match that to the ImportID of the configured Lookup field to select and store the appropriate associated Code value in the field.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">Number</span>: Whole number or decimal.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">Phone</span>: Formatted or unformatted phone number.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">Text</span>: Plain text value.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">Time</span>: Similar to date, but should contain the Time value, such as 11:15 PM, that you would like to store in the field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Lookup Table</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When the Data Type <span class="UXElement">Foreign Key</span>
+ is selected, use this required field&#160;to select the table (in
+ conjunction with Field) to match the foreign key passed from the file.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Lookup Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When the
+Data Type <span class="UXElement">Foreign Key</span> is selected, use this required field&#160;to select the
+ field (in conjunction with Table) to match the foreign key passed from
+ the file.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Required Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When
+ selected, the datarow value must be provided in the file (no blank cells), or
+ the default value must be entered. If neither of these is present, the system issues a validation error.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Required Column</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When selected, this column must be in the header and datarow of the imported
+ file (blank values in the datarow use the default value configured).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Default Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">You can configure this in several ways on a field-by-field basis. </p>
+                        <ol>
+                            <li>Click <b>None</b>.<br />The Default Value Options dialog box opens.</li>
+                            <li>You can configure the default value field to handle blank values using the following options:</li>
+                        </ol>
+                        <p class="TableTextLeftBold">Standard Imports</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>None</b>: If the Import file column is empty, clears the dataform field.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Current Value</b>: If the Import file column is empty, it leaves the current value in the dataform field.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Special Value</b>:&#160;</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">If the Import file column is empty, set the value in the dataform field to the value provided (for example, "UseThisValue").</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">If there is a problem with the configured Default Value, the Current Value is the default.</p>
+                        <p class="TableTextLeftBold">Salesforce Imports</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>None</b>: If the Import file column is empty, clears the dataform field.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Current Value</b>:&#160;If the Salesforce field value is empty or API Path is set to UseDefault, it leaves the current value in the dataform field.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Specific Value</b>:&#160;</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">If the Salesforce field value is empty or API Path is set to UseDefault, it sets the value in the dataform field to the value provided (for example, "UseThisValue").</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">For User, Organization, or Contact fields, the provided value MUST be the PK of the form to use (no decoding is performed, the raw value is used).</p>
+                        <p class="TableTextLeftBold">Salesforce Exports</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>None</b>: If the Salesforce field value is empty OR API Path is set to UseDefault, it clears the Salesforce Object field.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Current Value</b>: If the Salesforce field value is empty OR API Path is set to UseDefault, it leaves the current value in the Salesforce Object field.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Specific Value</b>:</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">If the Salesforce field value is empty or API Path is set to UseDefault, it sets the value in the Salesforce Object field to the value provided (for example, "UseThisValue").</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">For Account, Opportunity, or Contact fields, the provided value MUST be the SalesforceID of the record to use (no decoding is performed, the raw value is used).</p>
+                        <ol MadCap:continue="true">
+                            <li>When done, click <b>Ok</b>.</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Allow Invalid Lookup Values</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This option is only available when Data Type is Lookup. </p>
+                        <ul>
+                            <li>When enabled, the Allow Invalid Lookup Values option allows column data to be imported into the field that does not match the ImportID of a valid lookup (this is normally required). For Lookup (core) and Lookup - Typeahead datatypes, the invalid data is imported and displayed in the field. For multi-lookups, the data is imported into the field but does not display. Enabling this option allows these invalid values and logs the failed validation.</li>
+                            <li>When cleared, failed validations are logged and <span class="UXElement">not</span> imported.</li>
+                        </ul>
+                        <p class="TableTextLeft">See <MadCap:xref href="ManageDataImports.htm" title="Managing import data " alt="Managing import data ">Managing import data</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">API Path</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Specifies the
+ mapping path used to connect to a third-party API. This field is  used only
+for imports configured to access directly from a third-party
+ system&#160;API. This field is available when Import Type is set to API on the Import Map Header Detail form.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Description&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">A short description
+ of the imported data being imported, such  as the data source. For example, "Payroll System, Client Address 1 field."</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Active  </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">When selected, this field is actively
+ included in the import and subject to associated validation. Inactive
+ rows are ignored on import.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>To add multiple records, click <span class="UXElement">Save &amp; New</span>. Else, click <b>Save</b>.</li>
+            <li>Continue adding fields, until you have included each field in the import file you would like to insert into <MadCap:variable name="MyVariables.ProductName" />.</li>
+        </ol>
+    </body>
+</html>

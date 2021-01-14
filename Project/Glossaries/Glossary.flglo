@@ -1,0 +1,901 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultGlossary
+  conditions="">
+  <GlossaryEntry
+    glossTerm="Glossary.Term14">
+    <Terms>
+      <Term>Footnote</Term>
+    </Terms>
+    <Definition
+      Link="">A comment that is used to explain a specific area of the text. Both the area in the text and the comment contain a number or symbol that ties the two together. A footnote (or endnote) comment can be placed at the end of a page, document, chapter, section, or book.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term16"
+    IgnoreCase="false"
+    Stem="True">
+    <Terms>
+      <Term>Action Center</Term>
+    </Terms>
+    <Definition
+      Link="">The Action Center is in the right navigation area of the interface. The Action Center provides a centralized location for actions within the application. Available actions vary based on location in the application.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term17"
+    Stem="True"
+    IgnoreCase="false">
+    <Terms>
+      <Term>Action Items</Term>
+    </Terms>
+    <Definition
+      Link="">Items displayed in the Action Center are Action items - this active content is based on the current active work item selected in the Work Center and can consist of Action Items such as Workflow, Links and Reports, or Action Center Panels such as My Tasks and Activities.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term18"
+    IgnoreCase="false"
+    Stem="">
+    <Terms>
+      <Term>Ad hoc reporting</Term>
+    </Terms>
+    <Definition
+      Link="">From Latin meaning 'For this', ad hoc is literally defined as "formed or used for a special purpose: made or done without planning because of an immediate need."  The Izenda Business Intelligence ad-hoc reporting module allows you to build customized, highly specific reports based on [%=MyVariables.ProductName%] data with little or no need for programming.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term19"
+    Stem=""
+    IgnoreCase="false">
+    <Terms>
+      <Term>Admin Workspace</Term>
+    </Terms>
+    <Definition
+      Link="">The Admin Workspace is a specialized set of administrative dataforms used to set default information throughout the system, ranging from Pricing and Workers' Compensation defaults to system-wide settings governing imports. Co-locating these dataforms in a single workspace makes for ease in management and configuration.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term20"
+    IgnoreCase="false">
+    <Terms>
+      <Term>API</Term>
+    </Terms>
+    <Definition
+      Link="">An API is an Application Programming Interface and specifies a software component in terms of its operations, their inputs and outputs and underlying types and available methods. APIs are used in [%=MyVariables.ProductName%] to connect one software system to another to facilitate the transfer of data between the two systems. APIs generally require additional configuration in both [%=MyVariables.ProductName%] and the other software system and may have an associated cost.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term21"
+    IgnoreCase="false"
+    Stem="">
+    <Terms>
+      <Term>Business Intelligence</Term>
+    </Terms>
+    <Definition
+      Link="">Business intelligence, or BI, is an umbrella term that refers to a variety of software applications used to analyze an organization's raw data. For [%=MyVariables.ProductName%], BI sepcifically refers to the embedded Izenda Business Intelligence module that allows you to create on-demand reports from your [%=MyVariables.ProductName%] data using a simple interface.
+- Dashboards are a dynamic and interactive tool for viewing critical information from multiple sources in a single view. Users can hover over a report to get details or drill down into it for greater insight. Users can create and customize their own BI dashboards, then use them to print, save, share, and send reports. Security options let you decide who can view or make edits.
+- Data Source: With regards to business intelligence, a datasource is the table, view, or datasource report used to provide data for your Report – Datasources may be joined using Foreign Key relationships to aggregate data. In Business Intelligence, datasources are configured on the Datasource tab.
+- Fields are the individual data points available from a datasource in business intelligence. An example is: tblOrganization is the datasource, Name, Address1, City are fields from that datasource.
+- Filters: In the Filters tab, the fields of the table/view chosen in the Data Sources tab can be filtered so that only pertinent entries appear in the table.
+- Scheduling: Izenda BI allows reports and dashboards to be scheduled and automatically emailed to a recipients list. Care should be taken when scheduling reports or dashboards, because the schedule has no way of respecting the #CurrentUser or #CurrentWorkspace options for filtering, so each recipient of the report will receive all of the data contained within the report based on any static filters that are saved on the report.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term22"
+    IgnoreCase="false">
+    <Terms>
+      <Term>Business logic (Rules)</Term>
+    </Terms>
+    <Definition
+      Link="">Dataform business logic and rules are powerful tools that are available for supporting dataform workflow and managing data integrity in [%=MyVariables.ProductName%]. These configurable rules allow you to trigger field validation, clear field values at specific sections of a workflow, and automatically complete fields based on values from other source fields.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term23"
+    Stem=""
+    IgnoreCase="false">
+    <Terms>
+      <Term>Chiclet</Term>
+    </Terms>
+    <Definition
+      Link="">Chiclets are filtered search criteria that display as buttons below the Quick search on the dashboard modules.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term24"
+    IgnoreCase="false">
+    <Terms>
+      <Term>File Upload Utility</Term>
+    </Terms>
+    <Definition
+      Link="">The File Upload utility is a small Windows utility designed to Produce and/or Upload formatted files from a third party system into the [%=MyVariables.ProductName%] system.  The utility resides on the database or reports server and can be scheduled to attach to most SQL type systems and produce formatted reports that the utility will then upload to your [%=MyVariables.ProductName%] installation via a secured https connection.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term25"
+    IgnoreCase="false">
+    <Terms>
+      <Term>CRM</Term>
+    </Terms>
+    <Definition
+      Link="">Customer relationship management (CRM) refers to practices, strategies, and technologies that companies use to manage and analyze customer interactions and data throughout the customer lifecycle, with the goal of improving business relationships with customers, assisting in customer retention and driving sales growth. CRM software systems such as [%=MyVariables.ProductName%] are designed to help facilitate this process.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term26"
+    IgnoreCase="false">
+    <Terms>
+      <Term>Dashboard</Term>
+    </Terms>
+    <Definition
+      Link="">Dashboards are a window into data management in [%=MyVariables.ProductName%] providing at a glance, filtered access to [%=MyVariables.ProductName%] data.  Some, such as the Home Dashboard, or Home with Cases provide aggregate data across multiple [%=MyVariables.ProductName%] systems, such as Workspaces, Organizations, Calendar Events, and Tasks.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term27"
+    Stem=""
+    IgnoreCase="false">
+    <Terms>
+      <Term>Database</Term>
+    </Terms>
+    <Definition
+      Link="">A database is an organized collection of data. It is the collection of schemas, tables, queries, reports, views, and other objects. The data are typically organized to model aspects of reality in a way that supports processes requiring information, such as modelling the employees and their related information that are attached to a client in order to facilitate HR management.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term28"
+    IgnoreCase="false"
+    Stem="">
+    <Terms>
+      <Term>Dataform</Term>
+    </Terms>
+    <Definition
+      Link="">The dataform is a dynamically generated, configurable web page used for storing information. Dataforms are comprised of fields arranged in fieldsets, and can be designed to be dynamic, hiding, or displaying data as needed.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term29"
+    Stem=""
+    IgnoreCase="false">
+    <Terms>
+      <Term>Datasource</Term>
+    </Terms>
+    <Definition
+      Link="">With regards to reporting, a datasource is the table, view, or datasource report used to provide data for your report. Datasources can be joined using Foreign Key relationships to aggregate data. 
+
+Datatype</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term30"
+    Stem=""
+    IgnoreCase="false">
+    <Terms>
+      <Term>Datatype</Term>
+    </Terms>
+    <Definition
+      Link="">Datatypes are the building blocks of dataform fields, allowing a Global Admin to create configurable forms for storing specific types of information. Datatypes allow the admin user to ensure information is stored consistently throughout the system to ensure proper formatting.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term31"
+    Stem=""
+    IgnoreCase="false">
+    <Terms>
+      <Term>Display configuration</Term>
+    </Terms>
+    <Definition
+      Link="">Configurable field display allows you to configure dataform fields and fieldsets to be hidden, read-only, or editable based on trigger conditions set by the system administrators. This allows for highly flexible dataform configurations based on workflow or business need.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term32"
+    Stem=""
+    IgnoreCase="false">
+    <Terms>
+      <Term>EDV (Employment Deduction Vouchers)</Term>
+    </Terms>
+    <Definition
+      Link="">EDVs are ClientSpace records each of which equate to a single deduction record from an employee payroll voucher (check). These EDVs are merged to generate Payroll Deduction Master Benefit records (MBRs), which are then compared to other MBR records created from Carrier Invoices for the same time period and client. This is the heart of Benefits Reconciliation.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term33"
+    IgnoreCase="false">
+    <Terms>
+      <Term>Entities</Term>
+    </Terms>
+    <Definition
+      Link="">Units of security. Entities provide specific access rights (View / Edit / Add / Admin) to a system component, such as a specific dataform or even dataform field. Entities can also be more esoteric, such as the Download entity that provides access to download dataform data in [%=MyVariables.ProductName%].</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term34"
+    IgnoreCase="false"
+    Stem="">
+    <Terms>
+      <Term>Extranet</Term>
+    </Terms>
+    <Definition
+      Link="">The Extranet is a custom version of [%=MyVariables.ProductName%] used by PrismHR to track client interactions, handle support, track development, and pretty much manage all internal and external communications at PrismHR in Sarasota. Yes, Virginia - we do drink our own Koolaid. The Extranet is a Candy over CORE solution for PrismHR with highly customized versions of some standard [%=MyVariables.ProductName%] modules such as Client Service cases and Business Intelligence. Access to the Extranet is restricted to a few key personnel at our client sites, normally the principals and "Go To" people for [%=MyVariables.ProductName%] within their organization.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term35"
+    IgnoreCase="false">
+    <Terms>
+      <Term>Candy</Term>
+    </Terms>
+    <Definition
+      Link="">Overlying the Core and PEO products is the Custom, or Candy layer of the software. This layer is client specific and is comprised of custom dataforms, business rules, reports etc. used by our clients to make [%=MyVariables.ProductName%] their own.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term36"
+    Stem=""
+    IgnoreCase="false">
+    <Terms>
+      <Term>Core Layer</Term>
+    </Terms>
+    <Definition
+      Link="">ClientSpace is built in a series of software layers. Core is the most basic of the layers. Out of the box, it comes with basic CRM functionality, as well as the Lead Management and Client Service modules. This layer is still extremely powerful, as it is the foundation of all ClientSpace functionality. This includes our powerful Dataform Engine, Workflow Engine, Data Integration tools, and Ad-Hoc Reports and Dashboards. Using the tools available here we can build elaborate systems to help manage your business.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term37"
+    IgnoreCase="false">
+    <Terms>
+      <Term>Field</Term>
+    </Terms>
+    <Definition
+      Link="">Dataform fields are the containers where a specific piece of information is stored in the [%=MyVariables.ProductName%] system. Adding a field to a dataform dynamically generates a column on that dataform's underlying SQL table and creates a series of SQL stored procedures to handle inserting, deleting, and editing the data stored in that field. Dataform fields can be grouped in Fieldsets for better organization of data on the page. Field requirement is negated when a field is hidden.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term38"
+    Stem=""
+    IgnoreCase="false">
+    <Terms>
+      <Term>Fieldset</Term>
+    </Terms>
+    <Definition
+      Link="">Dataform fieldsets are descriptive bounding boxes used to group sets of data on dataforms together. Fieldsets can be nested within each other, as well as dynamically hidden or displayed based on trigger values. Dynamically hiding a fieldset hides all of the fields within it. Field requirement is negated when a field is hidden.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term39"
+    IgnoreCase="false">
+    <Terms>
+      <Term>Filing cabinet scenario</Term>
+    </Terms>
+    <Definition
+      Link="">The filing cabinet scenario is a metaphor for the [%=MyVariables.ProductName%] relational database and the way data is stored. The filing cabinet in this scenario is the database - a place to store and access information.  The folders in the filing cabinet represent Workspaces in ClientSpace, with the individual papers or groups of papers in the folder representing Dataforms. A single document would be a Single dataform, Multiforms would be a collection of related documents (all of the employee applications for example, paperclipped together).</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term40"
+    Stem="True">
+    <Terms>
+      <Term>ActiveX Controls (Classic)</Term>
+    </Terms>
+    <Definition
+      Link="">The ActiveX controls were a series of browser add-ins specifically designed to enhance functionality within the app. ActiveX controls should always be downloaded from the Admin workspace in your install.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term42"
+    Stem=""
+    IgnoreCase="false">
+    <Terms>
+      <Term>Client installation</Term>
+    </Terms>
+    <Definition
+      Link="">The site where ClientSpace resides, the client installation could describe a Development or DEV site, a User Acceptance Testing or UAT site, a Quality Assurance or QA site, or the site that is used by our clients, their Production or PROD site. In most cases, each of these installations have separate databases to store the individual data associated with the site.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term43"
+    Stem=""
+    IgnoreCase="false">
+    <Terms>
+      <Term>ClientSpace</Term>
+    </Terms>
+    <Definition
+      Link="">A powerful Enterprise Workflow Automation platform that provides the ideal environment for building software solutions that are perfectly suited to the needs of your workforce. If it’s a CRM, Sales Automation System, Workflow/Process Management System, or a Data Management system, we’ve got you covered. We pride ourselves on our unique ability to make software that fits your business, not vice-versa, to deliver measurable returns on your technology investment.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term44"
+    Stem="True">
+    <Terms>
+      <Term>ClientSpace PEO</Term>
+    </Terms>
+    <Definition
+      Link="">ClientSpacePEO is an integrated CRM and workflow management system that has been developed specifically for the PEO / Employee Leasing industry. ClientSpacePEO goes far beyond customary sales contact management and client service functionality included with competing software packages.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term45"
+    Stem="True">
+    <Terms>
+      <Term>Cloning or Clone</Term>
+    </Terms>
+    <Definition
+      Link="">Cloning refers to the generation of a ClientSpace object by copying a template example of that object. Items that can be cloned range from Tasks and Dataforms to Workspaces and even Users. Cloning is often used to provide consistency of data, or for workflow design. You cannot clone a single dataform if it already exists in a workspace, such as the Client Master because single dataforms typically have a one-to-one relationship with the Workspace.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term46"
+    Stem="True">
+    <Terms>
+      <Term>Cloud</Term>
+    </Terms>
+    <Definition
+      Link="">The word cloud often refers to the Internet, and more precisely, to some data center full of servers connected to the Internet. In ClientSpace terms, our data center space is in a secured off-site location, where servers run each of our ClientSpace installations.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term47"
+    Stem="True">
+    <Terms>
+      <Term>Concierge</Term>
+    </Terms>
+    <Definition
+      Link="">A category of the PrismHR work process that does not include sprint development work. Concierge work can include such items as database scripts, configuration, imports, merges, and reports.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term48"
+    Stem="True">
+    <Terms>
+      <Term>Configurable</Term>
+    </Terms>
+    <Definition
+      Link="">Configurable features may be unique to an installation – these are customizations to the system that can be configured by a Global Administrator of the system through the Admin Settings area. Some examples of configurable items are dataform links, workflow, and standard CORE and PEO business rules. Configurable items are different from customizable items in that configurable items do not require PrismHR development to implement.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term49"
+    Stem=""
+    IgnoreCase="false">
+    <Terms>
+      <Term>Contextual help text</Term>
+    </Terms>
+    <Definition
+      Link="">Contextual help text can be added to the Description field when adding a dataform field to provide more detailed information about the field. On any dataform, hover over the field label, and if the label changes color or the mouse pointer changes shape or both, then there is related help text to be found by clicking the info bubble.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term50"
+    Stem="True">
+    <Terms>
+      <Term>Customizable</Term>
+    </Terms>
+    <Definition
+      Link="">Customizable refers to features that may be unique to your ClientSpace install, but this customization happens in the code, requiring PrismHR development. This differs from configuration, which is also unique to an installation, but may be configured by a Global Administrator of the system. Some examples of customizable items are custom Business rules, Dataform flags that can be used for triggering actions on Save, or custom jquery to provide dialog boxes to ensure appropriate workflow.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term51"
+    Stem="True">
+    <Terms>
+      <Term>Database Management System (DBMS)</Term>
+    </Terms>
+    <Definition
+      Link="">A database management system (DBMS) is a computer software application that interacts with the user, other applications, and the database itself to capture and analyze data. A general-purpose DBMS is designed to allow the definition (set the default parameters - how big, what type of data, etc.), creation (adding new data), querying (attaching to and analyzing the data), update, and administration of databases. Well-known DBMSs include Microsoft SQL Server, MySQL, PostgreSQL, Oracle, Sybase, and IBM DB2. ClientSpace uses an underlying DBMS of Microsoft SQL Server relational database.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term52"
+    Stem="True">
+    <Terms>
+      <Term>Foreign Key Relationships (Primary key to Foreign key)</Term>
+    </Terms>
+    <Definition
+      Link="">In the context of relational databases, a foreign key is a field (or collection of fields) in one table that uniquely identifies a row of another table. In other words, a foreign key is a column or a combination of columns that are used to establish and enforce a link between two tables. The table containing the foreign key is called the child table, and the table containing the candidate key (or primary key) is called the parent table. ClientSpace most commonly uses foreign key relationships to relate data between dataforms within the same workspace. An example of this would be the relationship between clients and locations. The ProjectID of the client would be the fkProjectID (fk for foreign key) of the location allowing you to store the locations for all clients in one table, yet still, relate a client's specific locations to the client workspace.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term53"
+    Stem="True">
+    <Terms>
+      <Term>Global Admin</Term>
+    </Terms>
+    <Definition
+      Link="">Global Admins are the designated administrators of your ClientSpace system. Global Admin functionality is set using the Global Admin option on the User detail record. A user with Global Admin rights is normally not subject to the system security, which restricts a non-admin user and thus can Add/Edit and Delete most system records, including users. Because of this unrestricted access, Global Admin rights should be provided infrequently and with extreme care.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term54"
+    Stem="True">
+    <Terms>
+      <Term>Go Live Date</Term>
+    </Terms>
+    <Definition
+      Link="">This refers to the date a PrismHR client and their employees can log into and use their production ClientSpace site for the very first time. Prior to Go Live, clients work with their PrismHR account manager and business analyst to configure ClientSpace for your individual company needs and implement the initial modules used.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term55"
+    Stem="True">
+    <Terms>
+      <Term>Hamburger menu</Term>
+    </Terms>
+    <Definition
+      Link="">An expandable menu icon that, when selected, expands to display other menu options. The name reflects the three horizontal lines that resemble a hamburger. It is also delicious and tastes great with fries.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term56"
+    Stem="True"
+    IgnoreCase="false">
+    <Terms>
+      <Term>Header (dataform)</Term>
+    </Terms>
+    <Definition
+      Link="">The header or dataform header is the area at the top of each dataform reserved for custom configuration and information display, normally used to display aggregate information about a specific client stored on other dataforms.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term57"
+    Stem="True">
+    <Terms>
+      <Term>Implementation</Term>
+    </Terms>
+    <Definition
+      Link="">Implementation refers to the initial setup and configuration of a client's production environment. Implementations vary from straight forward to very complex, depending on your needs and how many modules you wish to implement when you go live.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term58"
+    Stem="True">
+    <Terms>
+      <Term>Imports</Term>
+    </Terms>
+    <Definition
+      Link="">Imports to ClientSpace are a method of integrating other systems with the ClientSpace application and can include data from Payrolls systems, Loss Run imports, Claims management (Unemployment and Workers' Compensation), etc.  Imports are managed through the Import / Export area of Admin Settings and generally consist of an Import Configuration mapping and an associated text file (.txt, .csv). These files can be produced by several methods, including the File Upload utility, Formatted reports, or API integration.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term59"
+    Stem="True">
+    <Terms>
+      <Term>Info Bubble</Term>
+    </Terms>
+    <Definition
+      Link="">Info bubbles present field-level help. Merely hovering over an available info bubble presents help text about the field. This is often used to describe the math used for calculated fields.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term60"
+    Stem="True">
+    <Terms>
+      <Term>Landing page tiles</Term>
+    </Terms>
+    <Definition
+      Link="">The Workspace Landing Page provides a quick overview of the client. The Landing Page Tiles provide quick access to the client information in the form of a series of panels at the top of the Workspace Landing Page. Most tiles contain a selectable link in the header row to drill into more detailed information about that tile. Visible tiles vary based on the status of the workspace.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term61"
+    Stem="True">
+    <Terms>
+      <Term>Lead</Term>
+    </Terms>
+    <Definition
+      Link="">The beginning of the Sales process in ClientSpace - a lead can be defined as a potential prospect.  A lead can be as simple as a Company Name, or a contact and Phone number and are recorded in a ClientSpace Organization record.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term62"
+    Stem="True">
+    <Terms>
+      <Term>Left navigation: Work Items</Term>
+    </Terms>
+    <Definition
+      Link="">A running list of work items currently opened in ClientSpace. Left Nav items are hierarchical, meaning that in some cases, such as a task opened from a dataform, the lower item (task) takes precedence, making the higher item (dataform) read-only until the lower item has been closed (certain top-level objects such as Landing pages and Organizations are exempt from this behavior). This also allows you to close multiple items with one click. In the example, closing the dataform also closes the task that was opened from the dataform. This hierarchy can be multiple levels deep such as Workspace &gt; Dataform &gt; Task. Closing the workspace closes all the items below it in the hierarchy.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term63"
+    Stem="True">
+    <Terms>
+      <Term>Links (configurable)</Term>
+    </Terms>
+    <Definition
+      Link="">Custom header links allow you link to custom reports, merges and dataforms within the current workspace or the admin workspace, or even configure your own workflow from scratch.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term64"
+    Stem="True">
+    <Terms>
+      <Term>Lookups</Term>
+    </Terms>
+    <Definition
+      Link="">Lookups are the configurable selection options available in the Core lookup datatype. Lookups are related to a Lookup Group, which describes the lookup and is used to configure the lookup datatype when creating a new drop-down field on a dataform.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term65"
+    Stem="True">
+    <Terms>
+      <Term>MBR (Master Benefits Record)</Term>
+    </Terms>
+    <Definition
+      Link="">Master Benefits Records or MBRs come in two flavors: Payroll Deduction MBRs, which are generated by merging EDV records collected from the payroll system based on a specific set of criteria, and Carrier Invoice MBRs, which are generated from imported carrier invoice records. Comparing the positive amounts received from payroll deductions to the negative amounts paid to carrier invoices is the basis of Benefits reconciliation in ClientSpace.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term66"
+    Stem="True">
+    <Terms>
+      <Term>Merge</Term>
+    </Terms>
+    <Definition
+      Link="">A ClientSpace merge gives our customers the ability to merge specific data from the ClientSpace system dynamically into your business documents and forms, removing the need for manual completion of forms, such as a Request for Proposal (RFP) or Client Service Agreement (CSA). Merges are available in Word, Excel, or PDF format.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term67"
+    Stem="True">
+    <Terms>
+      <Term>Metadata</Term>
+    </Terms>
+    <Definition
+      Link="">Literally meaning data about data, metadata in ClientSpace is what is known as Descriptive metadata, which is defined as "Data about individual instances of application data or the data content." The application of metadata in ClientSpace is through lookups, where a particular lookup code, such as ContractType has associated metadata that can be used to associate other information directly to a particular code or drive business logic. Metadata relationships require the creation of a special metadata form and configuration at the lookup group level.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term68"
+    Stem="True">
+    <Terms>
+      <Term>Modules</Term>
+    </Terms>
+    <Definition
+      Link="">Modules are configurable access buttons that allow you to open several system objects, including system dashboards, BI objects such as reports and BI Dashboards, and even external systems through Third Party Applications administration or the Outlook Add-in. Modules are securable and selectable at the user level allowing each user's module configuration to be unique.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term69"
+    Stem=""
+    IgnoreCase="false">
+    <Terms>
+      <Term>Multiform or Multi dataform</Term>
+    </Terms>
+    <Definition
+      Link="">A ClientSpace dataform where there may be multiple forms per Client Workspace, such as Locations. The Multi dataform has a one-to-many relationship with the Workspace, such as physical locations for a client, or paycheck records for an employee. An example of this is the Employee dataform.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term70"
+    Stem="True">
+    <Terms>
+      <Term>Orgs</Term>
+    </Terms>
+    <Definition
+      Link="">Organizations or Orgs are client specific forms designed for collecting data on potential clients through the prospecting stages of the Sales Process. After pricing is required, a workspace is generated from the Org, creating a foreign key relationship between the Workspace and the Org.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term71"
+    Stem="True">
+    <Terms>
+      <Term>Outlook Add-In</Term>
+    </Terms>
+    <Definition
+      Link="">The Outlook add-in is a separate application that installs into Outlook on your local desktop and communicates directly with your ClientSpace installation using a remotely connected Web service. This application is configurable from the modules configured on the user profile and allows you to Create Cases and Tasks from the content of an email, attach emails to existing cases and tasks and post to ClientSpace, which adds the email contents as an activity to the ClientSpace contacts whose email address matches any of the recipients.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term72"
+    Stem="True">
+    <Terms>
+      <Term>Pipeline</Term>
+    </Terms>
+    <Definition
+      Link="">A pipeline determines which rules are applied when the data is saved.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term73"
+    Stem="True">
+    <Terms>
+      <Term>Pricing Console</Term>
+    </Terms>
+    <Definition
+      Link="">The pricing console is the integrated pricing module in ClientSpace PEO. This module aggregates data from the Pricing Batch, Pricing State, and Pricing Comp Code dataforms, enabling centralized management of Pricing and profitability at the client level.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term74"
+    Stem="True">
+    <Terms>
+      <Term>Primary key</Term>
+    </Terms>
+    <Definition
+      Link="">A primary key is a special relational database table column (or combination of columns) designated to uniquely identify all table records. 
+A primary key’s main features are:
+- It must contain a unique value for each row of data.
+- It cannot contain null (empty)values.
+This primary key from one table is used on other tables as a foreign key, allowing you to tie data from different tables together through this foreign key relationship.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term75"
+    Stem="True">
+    <Terms>
+      <Term>PROD</Term>
+    </Terms>
+    <Definition
+      Link="">PROD or production sites are the client installations our clients use to do their daily work. These sites are configurable by local Global Admins and any changes that are created in the production site, (such as new dataforms) require a copy of that site's database be taken and replicated to the PrismHR development site before we can add custom code based around these changes (a custom business rule on the new dataform).</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term76"
+    Stem="True">
+    <Terms>
+      <Term>Project Milestone</Term>
+    </Terms>
+    <Definition
+      Link="">The Project Milestone dataform is a specialized multiform designed to be used to track the step-by-step workflow associated with bringing a Project to completion. Milestones have a defined start and end date, as well as an actual completion date to help with keeping your project on track.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term77"
+    Stem="True">
+    <Terms>
+      <Term>Prospect</Term>
+    </Terms>
+    <Definition
+      Link="">Category assigned to a potential client in ClientSpace. Prospects generally require the salesperson to collect data about the lead with the goal of generating pricing.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term78"
+    Stem="True">
+    <Terms>
+      <Term>Relational Database</Term>
+    </Terms>
+    <Definition
+      Link="">The relational model is the conceptual basis of relational databases. Proposed by E.F. Codd in 1969, it is a method of structuring data using relations.  In the relational model, all data must be stored in relations (tables), and each table consists of rows and columns (kind of like a spreadsheet). Each table must have a header and body. The header is simply the list of columns in the table. The body is the set of data that actually populates the table, organized into rows. You can extrapolate that the junction of one column and one row will result in a unique value - this value is called a tuple.  The second major characteristic of the relational model is the usage of keys. These are specially designated columns within a table used to order data or relate data to other tables. One of the most important keys is the primary key, which is used to uniquely identify each row of data. To make querying for data easier, most relational databases go further and physically order the data by the primary key. Foreign keys relate data in one table to the primary key of another table.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term79"
+    Stem="True">
+    <Terms>
+      <Term>Release (software)</Term>
+    </Terms>
+    <Definition
+      Link="">A ClientSpace release is the packaged update produced by a Sprint development cycle. More information about individual sprint release items can be found in our Release Notes.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term80"
+    Stem="True">
+    <Terms>
+      <Term>Requirement (field)</Term>
+    </Terms>
+    <Definition
+      Link="">Dataform fields can be required on save of the dataform either through configuration (selecting the Required option) or from business logic such as the RequireFieldOnThisForm business rule. When a field is required the system does not allow the dataform to be saved if the field is visible and empty.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term81"
+    Stem="True">
+    <Terms>
+      <Term>RFP (Request for Proposal)</Term>
+    </Terms>
+    <Definition
+      Link="">A request for proposal (RFP) is a document that solicits proposal, often made through a bidding process, by an agency or company interested in procurement of a commodity, service or valuable asset, to potential suppliers to submit business proposals. In ClientSpace terms, this is normally in the form of a pre-formatted merge or report that uses ClientSpace data to customize the document to the prospective client.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term82"
+    Stem="True">
+    <Terms>
+      <Term>Right Navigation: Action Center</Term>
+    </Terms>
+    <Definition
+      Link="">Navigation center for links, notes, attachments, and time tracking items. The contents of the right navigation pane change based on the current active work object. For example, an open Org has a right navigation pane that contains Contacts, Activities, Appointments, Tasks, Attachments, and Security, while a Workspace Landing Page may only contain Links, Reports, Tasks, Activities, and Time Tracking.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term83"
+    Stem="True">
+    <Terms>
+      <Term>Role</Term>
+    </Terms>
+    <Definition
+      Link="">A ClientSpace role is a unit of security used to define specific rights within the system and can be attached to individual users and one or more security entities. Roles can be automatically generated by the system, such as Departmental roles, or manually created by a ClientSpace admin to aggregate security functions in the system together and assign them to a user or users.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term84"
+    Stem="True">
+    <Terms>
+      <Term>Security Entities</Term>
+    </Terms>
+    <Definition
+      Link="">Entities are the security objects used by the application to check what rights a user has to view, create or modify a system object. Entities are most commonly created by securing a Dataform or dataform field.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term85"
+    Stem="True">
+    <Terms>
+      <Term>Self hosted</Term>
+    </Terms>
+    <Definition
+      Link="">Most PrismHR clients use our cloud environment to host the web and database servers that are ClientSpace. In a few instances, however, clients have opted to purchase their own servers and Self Host. Self hosting can make upgrades less frequent and more difficult as we do not have direct access to these servers.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term86"
+    Stem="True">
+    <Terms>
+      <Term>Set</Term>
+    </Terms>
+    <Definition
+      Link="">Top level work items in ClientSpace are referred to as Sets and are indicated in the Work Items area of the Left navigation pane by a brown bar.  Sets may contain Work Items and Sub Threads. Some examples of a Set would be a dashboard, Workspace Landing Page, or other type of ClientSpace module.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term87"
+    Stem="True">
+    <Terms>
+      <Term>Single dataform</Term>
+    </Terms>
+    <Definition
+      Link="">A ClientSpace dataform where there is only ever one per Client Workspace. A Single dataform has a one-to-one relationship with the Workspace. An example of a single form would be the Client Master dataform.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term88"
+    Stem="True">
+    <Terms>
+      <Term>SOUNDEX Checking</Term>
+    </Terms>
+    <Definition
+      Link="">SOUNDEX converts an alphanumeric string to a four-character code that is based on how the string sounds when spoken. SOUNDEX codes from different strings can be compared to see how similar the strings sound when spoken. Soundex checking is used when creating new organizations in ClientSpace to ensure that Organization detail records are not duplicated.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term89"
+    Stem="True">
+    <Terms>
+      <Term>Stored Procedure</Term>
+    </Terms>
+    <Definition
+      Link="">A stored procedure is a piece of prepared SQL code that can be reused over and over again. So instead of ClientSpace having to create the same select statement every time you open something like the workspace search dashboard, the code is saved as a stored procedure and then just called by ClientSpace when you want to look for a workspace. There are multiple advantages to this, including efficiency (it is more efficient to store the code once than to re-write the same code again and again) and consistency - as the procedure is stored it will work in the same way every time. In addition to running the same SQL code over and over again, you also have the ability to pass parameters to the stored procedure, in our workspace search example this could be the Workspace name or Client Number, and depending on what parameters are passed, the same stored procedure can produce different results to match your request.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term90"
+    Stem="True">
+    <Terms>
+      <Term>Sub-thread</Term>
+    </Terms>
+    <Definition
+      Link="">A Sub-thread is a Child of a work item in the left navigation or Work Center area. Examples of sub-thread items would be time records opened from a task, or a task record opened from a case.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term91"
+    Stem="True">
+    <Terms>
+      <Term>Subscriber (Dataform)</Term>
+    </Terms>
+    <Definition
+      Link="">Dataform subscribers are users that have requested dataform specific notifications when a save occurs. You can subscribe to dataform notifications by using the Subscribers Action item on any dataform where this is enabled, or for Client Service Cases by adding a subscription record using the Case Type Subscriptions dashboard.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term92"
+    Stem="True">
+    <Terms>
+      <Term>System Administration</Term>
+    </Terms>
+    <Definition
+      Link="">System administration entails Global Administrator(s) configuring the ClientSpace system to suit the specific needs and business requirements at your company. Much of the work of system administration is performed through the System Admin control panel. Everything from App Settings to User Administration can be configured in this area, including such items as application security, Departments, System Defaults, Lookup configuration, and more.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term93"
+    Stem="True">
+    <Terms>
+      <Term>Tasks</Term>
+    </Terms>
+    <Definition
+      Link="">Used in ClientSpace to track individual work items, tasks are configurable assignment items with an Owner and AssignedTo person and defined start and end dates. Tasks can be linked to workspaces, or directly to an associated dataform. Tasks can also be scheduled using the Scheduled Workflow Channels, allowing for complex workflows to be built within the application.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term94"
+    Stem="True">
+    <Terms>
+      <Term>Template Workspace</Term>
+    </Terms>
+    <Definition
+      Link="">Template Workspaces are special workspaces used for cloning during the workspace creation process. In this way, ClientSpace allows you to set up multiple workspace configurations (such as an industry-specific workspaces with a specific, limited list of TOC items) then choose how you want the workspace to look and feel by selecting the appropriate template during workspace creation. Template Workspaces are not available from Workspace Search and must be accessed from System Admin &gt; Workspace Templates.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term95"
+    Stem="True">
+    <Terms>
+      <Term>Thread</Term>
+    </Terms>
+    <Definition
+      Link="">A thread is a work item organized below and associated with a Set item in the work items are of ClientSpace. Threads may have sub-threads associated below them. An example of this would be a Workspace landing page (SET) opened in the Work items area, a Client Service case (Thread) opened from the landing page, and a task (sub-Thread) opened from the Case. Closing the Thread or Set using the X in the upper right corner closes all associated items below it.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term96"
+    Stem="True">
+    <Terms>
+      <Term>Typeahead</Term>
+    </Terms>
+    <Definition
+      Link="">Typeahead search is a method for progressively searching for and filtering through text. It is also sometimes known as autocomplete, incremental search, search-as-you-type, inline search, instant search, and word wheeling (from dynamicweb). As you type in the field, one or more matches for the term are found and immediately presented. The immediate feedback enables you to find what you are looking for much quicker than scrolling through a potentially long list.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term97"
+    Stem="True">
+    <Terms>
+      <Term>UAT</Term>
+    </Terms>
+    <Definition
+      Link="">User Acceptance Testing or UAT is both the ClientSpace installation and the process used by the PrismHR quality assurance department to test new development items. This installation type is also used by PrismHR account managers and business analysts to demonstrate new candy functionality to our clients before upgrading their production site with the new changes.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term98"
+    Stem="True">
+    <Terms>
+      <Term>Users</Term>
+    </Terms>
+    <Definition
+      Link="">ClientSpace users are distinct logins used to access the ClientSpace system. Users can be defined as one of two types:
+- Internal users: These would normally be employees of the company using ClientSpace as a CRM.
+- External users: Non-employees who need to access ClientSpace data. (brokers or clients for example).</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term99"
+    Stem="True">
+    <Terms>
+      <Term>Widget</Term>
+    </Terms>
+    <Definition
+      Link="">Panels that appear on the landing page, or dataform header that offer snippets of data from other sources within the database, such as the Required Forms widget at the top of the Client Master page. Also called landing page tiles.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term100"
+    Stem="True">
+    <Terms>
+      <Term>Work Center</Term>
+    </Terms>
+    <Definition
+      Link="">The left navigation pane in the application is called the Work Center. This is were multitasking takes place as each work item opened is opened with its own thread.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term101"
+    Stem="True">
+    <Terms>
+      <Term>Work Item</Term>
+    </Terms>
+    <Definition
+      Link="">A top-level item (in the hierarchy) opened in the Work Center is called a work item. Each work item is opened under its own thread, allowing for true multitasking within the app.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term102"
+    Stem=""
+    IgnoreCase="false">
+    <Terms>
+      <Term>Work item hierarchy</Term>
+    </Terms>
+    <Definition
+      Link="">The step-down arrangement of work items and sub-threads in the work center showing related items. Work item hierarchies can be collapsed to preserve space. Closing an item in the hierarchy closes all items below the closed item.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term103"
+    Stem="True">
+    <Terms>
+      <Term>Workflows</Term>
+    </Terms>
+    <Definition
+      Link="">Workflows map business processes systematically and help prevent some tasks from falling through the cracks or getting lost amongst numerous emails. In ClientSpace, Workflows are often designed using template tasks and configurable links.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term104"
+    Stem="True">
+    <Terms>
+      <Term>Workspace</Term>
+    </Terms>
+    <Definition
+      Link="">A Workspace is a set of dataforms for collecting and storing information, normally about a specific client or business. Workspace dataforms are related to a specific project, and so share a common fkProjectID (foreign key). Workspaces are often created by cloning a Template Workspace, allowing for a consistent look and feel, as well as a consistent set of dataforms.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term105"
+    Stem="True">
+    <Terms>
+      <Term>Workspace landing page</Term>
+    </Terms>
+    <Definition
+      Link="">A current (based on Contract Status) overview of the Client Workspace. The Workspace landing page acts in many ways as the container for Client.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term0"
+    Stem="True">
+    <Terms>
+      <Term>Condition expressions</Term>
+    </Terms>
+    <Definition
+      Link="">Condition expressions are used in email templates, workflow channels, widget layouts, and custom links. Condition expressions are used to control when an event or action is triggered. Condition Expressions use Labels from Display Conditions along with AND, OR, and NOT operators to control precedence and sequence.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term1"
+    Stem="True">
+    <Terms>
+      <Term>Workflow Channels</Term>
+    </Terms>
+    <Definition
+      Link="">Workflow Channels enable you to create automatically generated tasks and dataforms (and associated notifications) based on predefined triggering conditions.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term2"
+    Stem="True">
+    <Terms>
+      <Term>Case</Term>
+    </Terms>
+    <Definition
+      Link="">A case is a top-level project, and related tasks are the individual items that need to be completed for the project. You can use cases only, or use tasks that are related to the case.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term3"
+    Stem="True">
+    <Terms>
+      <Term>Workspace Template</Term>
+    </Terms>
+    <Definition
+      Link="">Workspace Templates are special workspaces used for cloning during the Workspace creation process. In this way, ClientSpace allows you to set up multiple workspace configurations (such as an industry-specific Workspaces with a specific, limited list of TOC items) then choose how you want the workspace to look and feel by selecting the appropriate template during workspace creation.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term4"
+    Stem="True">
+    <Terms>
+      <Term>Merge Procedure</Term>
+    </Terms>
+    <Definition
+      Link="">A Merge Procedure is a piece of prepared SQL code that can be reused over and over again.</Definition>
+  </GlossaryEntry>
+  <GlossaryEntry
+    glossTerm="Glossary.Term5"
+    Stem="True">
+    <Terms>
+      <Term>Cloning</Term>
+    </Terms>
+    <Definition
+      Link="">Cloning is when an object is generated by copying a template example of that object. Cloning is often used to provide consistency of data, or for workflow design.</Definition>
+  </GlossaryEntry>
+</CatapultGlossary>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="2"
+  Comment="Review"
+  Type="WebHelp2"
+  Destinations=""
+  ShowMadCapBacklink="false"
+  GlossaryTermConversion="marked"
+  MasterToc="/Project/TOCs/Review.fltoc"
+  Skin="/Project/Skins/HTML5.flskn"
+  ExcludeUnreferencedContent="true"
+  TopicToolbarSkin="/Project/Skins/Toolbar.flskn"
+  MasterStylesheetOverride="true"
+  MasterPage="/Content/Resources/MasterPages/OtherTopics.flmsp"
+  MasterStylesheet="/Content/Resources/Stylesheets/ClientSpace.css"
+  ConditionTagExpression="exclude[ClientSpace.Print]"
+  OutputFile="review"
+  MenuSkin="/Project/Skins/SideMenu.flskn"
+  SearchBarSkin="/Project/Skins/SearchTopics.flskn"
+  SearchResultsSkin="/Project/Skins/SearchResults.flskn"
+  FaviconSkin="/Project/Skins/Favicon.flskn"
+  DisableAutoSync="true"
+  MakeFileLowerCase="true"
+  MoveOutputContentToRoot="true"
+  PreCompileScaledImages="true">
+  <PrintedOutput
+    CollapseMargins="true"
+    GenerateTOCProxy="true"
+    GenerateIndexProxy="true"
+    GenerateGlossaryProxy="true"
+    OutputFormat="doc" />
+  <Destinations></Destinations>
+</CatapultTarget>

@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Email Integration" /><a name="FieldMapping"></a>Step 3: Field Mapping</h1>
+        <p>Use field mapping to complete the fields for the Dataform you selected. Fields are exposed to Email Integration by selecting the Cloneable option on field properties under Dataform management. These fields can either be configured with static values, such as selecting a specific lookup value from a field or by using replacement fields to fill a field with information from the received email.</p>
+        <p>
+            <img src="../Resources/Images/Integrations/DF_Map.png" class="thumbnail">
+            </img>
+        </p>
+        <p class="ProcedureIntro">To use replacement fields:</p>
+        <ol>
+            <li>Click <b>Get Replace Fields</b>. <br />The Replace Fields dialog box opens with a list of fields from the email. <br /></li>
+            <li>Select as many fields as required and then click <span class="UXElement">Copy</span>. <br />The Clipboard dialog box opens with the selected fields.</li>
+            <li>Click <span class="UXElement">Ok</span>.</li>
+            <li>Paste the copied fields into the appropriate field, such as Subject or Text Area.</li>
+        </ol>
+        <p>When the task or dataform is produced through the cloning process, these fields are replaced with the appropriate field data. The Communication Method field, unless filled in, defaults to <span class="UXElement">Email Integration</span>.</p>
+        <h2>Email Integration Email Field Replace codes</h2>
+        <p>The following field replacement codes are available for use in email template data map fields as well as, the email alias data map fields.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');margin-left: 0;margin-right: auto;" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">{EmailBody} </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The entire email
+ body.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">{EmailSubject} </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The email
+ subject.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">{EmailToAddress} </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The email To
+ address. In the event there are multiple email addresses, this is the
+ first email address.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">{EmailFromAddress} </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The email sent From
+ address.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">{EmailHasAttachments}
+  </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">True or False
+ depending on if the email had attachments. This does not indicate that the
+ attachment was downloaded and attached. It only indicates the email had
+ an attachment.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">{EmailAttachmentCount}
+  </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The number of
+ attachments on the email.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">{EmailAttachmentsRefused}</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">{EmailAttachmentsRefusedReason}</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">{EmailAttachmentsUploaded}</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">{EmailCCAddressAll}&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The copied recipient
+ email addresses.&#160;&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">{EmailEmailForwardedFromAddress}&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The forwarded From
+ email address.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">{EmailToAddressAll}&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The email recipient
+ addresses.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">{EmailMessageID} </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The email message
+ ID.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">{WSSource}   </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Information about
+ which of the source selection methods was used to determine the workspace in
+ which to create the case.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><i class="fas fa-eye" style="font-family: Font Awesome 5 Free; font-size:30px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="See what you can do" alt="See what you can do"></i> What's next</h2>
+        <p class="Body">Review the topic <MadCap:xref href="EmailProcessing.htm" title="Email Integration processing" alt="Email Integration processing">Email Integration processing</MadCap:xref> for a comprehensive picture of the process. And then create the Email Integration Reply Template (<MadCap:xref href="EmailInteg_ReplyTemp.htm" title="Creating the Email Integration Reply Template" alt="Creating the Email Integration Reply Template">Creating the Email Integration Reply Template</MadCap:xref>.</p>
+    </body>
+</html>

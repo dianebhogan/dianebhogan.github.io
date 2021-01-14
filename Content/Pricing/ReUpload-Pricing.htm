@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Re-uploading pricing data</h1>
+        <p>After you have generated the initial pricing, you may need to generate pricing again from time-to-time because numbers  change. For example, employee numbers can fluctuate, which then changes the payroll numbers. Re-uploading the pricing data file makes this process very easy.</p>
+        <p class="ProcedureIntro">To re-upload the data:</p>
+        <ol>
+            <li>
+                <p>From the Pricing Console, in the <span class="UXElement">States and Codes</span> area, click <span class="UXElement">Pre-load</span>.<br />The Pre-load State and Code List dialog box opens.</p>
+            </li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Sales/Pricing-Preload_StateCodeList.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>
+                <p>Click <span class="UXElement">Choose File</span>.<br />File Explorer opens.</p>
+            </li>
+            <li>
+                <p>Locate the file and click <span class="UXElement">Open</span>.<br />The file appears in the Choose File box.</p>
+            </li>
+            <li>
+                <p>Click <span class="UXElement">Pre-load</span>.<br />For data that already exists, the pre-load process displays an informative message that requires action when returning to the grid.</p>
+            </li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Sales/Pricing-messages.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>
+                <p>Click <span class="UXElement">Ok</span> to close the message.<br />You are returned to the Pricing Console. The newly uploaded row appears in a different grid, States and Codes Pre-load Worksheet, for reviewing the data, potentially correcting and re-uploading, and merging when ready. In our example, we have an entry with red text and yellow background, which indicates the data already exists, and we need to determine if a merge is a correct action.</p>
+            </li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Sales/Pricing-entriesflagged.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>
+                <p>To merge all data when you have multiple entries in the grid, click <span class="UXElement">Merge All</span>.</p>
+            </li>
+            <li>
+                <p>To merge only the selected row, click <span class="UXElement">Merge Selected</span>.</p>
+            </li>
+        </ol>
+        <h2>Interpreting the results of the inserted data</h2>
+        <p>The following table explains the results of the re-upload process.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');width: 100%;margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 271px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 409px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Colors</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Indicates </p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableTextLeft">Action</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Red text with a yellow background</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">The newly uploaded file has the same states and codes as in the original file, but with different data. </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Merge makes sense, assuming you want to overwrite the existing data.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Red text with a red background</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">The uploaded file is missing required data.</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Edit the file and re-upload.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Standard text, no shaded background</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">The data is mergeable because it does not match existing data.</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Merge</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

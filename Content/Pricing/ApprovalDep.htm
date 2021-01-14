@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1 MadCap:autonum="Chapter 1 ">Approval dependencies</h1>
+        <p>Approval Dependencies define the hierarchy of Approval records using a system of parent-child dependencies.  If an Approval record is dependent on another Approval record (considered the parent record), the dependent Approval record cannot be accessed until the parent is approved.  As the parent is approved, escalation of dependent Approvals takes place (now generating Task Triggering), making them accessible to the user for Approving/Declining.</p>
+        <h2>The Approval process: Accepting the RFP Batch</h2>
+        <p>The Accept link (or the link configured to execute the CM.Accept business rule) is selected [CM Pipeline].</p>
+        <p>CM.Accept rule is executed.</p>
+        <p class="Bullet1" MadCap:autonum="• ">The active ‘Submitted’ RFP Batch is located</p>
+        <p class="Bullet1" MadCap:autonum="• ">The ‘Create Approvals’ process is executed</p>
+        <p class="Bullet2" MadCap:autonum="• ">All existing Approvals {in the workspace} are inactivated (IsActive = False) [Db]</p>
+        <p class="Bullet2" MadCap:autonum="• ">The Contract Type found on the Client Master is retrieved (if missing, the Batch Contract Type is used)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Client Approval Dependencies are inserted:</p>
+        <p class="Bullet2" MadCap:autonum="• ">Any existing Approval Dependency records in this workspace are deleted [Db]</p>
+        <p class="Bullet2" MadCap:autonum="• ">New Approval Dependency records are inserted in this workspace [Db] based on the following criteria:</p>
+        <p class="Bullet2" MadCap:autonum="• ">The associated Underwriting Definition must match the Batch Type (e.g., RFP)</p>
+        <p class="Bullet2" MadCap:autonum="• ">The associated Underwriting Definition must match the Contract Type OR have an empty Contract Type</p>
+        <p class="Bullet2" MadCap:autonum="• ">Must be active</p>
+        <p class="Bullet2" MadCap:autonum="• ">Construct a list of Underwriting Definitions based on the following criteria:</p>
+        <p class="Bullet2" MadCap:autonum="• ">Unique Departments</p>
+        <p class="Bullet2" MadCap:autonum="• ">Approval Type matches the Batch type (RFP/Renewal)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Contract Type matches the CM/PB Contract Type OR is empty</p>
+        <p class="Bullet2" MadCap:autonum="• ">Definition is active</p>
+        <p class="Bullet2" MadCap:autonum="• ">For each Underwriting Definition in the list:</p>
+        <p class="Bullet2" MadCap:autonum="• ">Determine if an Approval can be created from this Definition:</p>
+        <p class="Bullet2" MadCap:autonum="• ">If the Definition Department is NOT “Benefits”</p>
+        <p class="Bullet2" MadCap:autonum="• ">OR the Health Benefits field on the Client Master = “Yes”</p>
+        <p class="Bullet2" MadCap:autonum="• ">If an Approval record CANNOT be created from this Definition, move to the next Underwriting Definition</p>
+        <p class="Bullet2" MadCap:autonum="• ">If an Approval CAN be created:</p>
+        <p class="Bullet2" MadCap:autonum="• ">Get the Assigned To User (either from the Assigned To or the Assigned To Ref on the Definition)</p>
+        <p class="Bullet2" MadCap:autonum="• ">If the Assigned To User CANNOT be located, do not create an Approval for this Definition</p>
+        <p class="Bullet2" MadCap:autonum="• ">If the Assigned To User CAN be located, then</p>
+        <p class="Bullet2" MadCap:autonum="• ">Attempt to locate an existing Approval record (in this workspace) which matches this Underwriting Definition</p>
+        <p class="Bullet2" MadCap:autonum="• ">Department</p>
+        <p class="Bullet2" MadCap:autonum="• ">Contract Type</p>
+        <p class="Bullet2" MadCap:autonum="• ">Batch ID</p>
+        <p class="Bullet2" MadCap:autonum="• ">Assigned To User</p>
+        <p class="Bullet2" MadCap:autonum="• ">IsActive = False</p>
+        <p class="Bullet2" MadCap:autonum="• ">If a matching Approval record is found</p>
+        <p class="Bullet2" MadCap:autonum="• ">Set its status to ‘Pending’ (or ‘Waiting’ if it is a dependent) [Db]</p>
+        <p class="Bullet2" MadCap:autonum="• ">Set IsActive = True [Db]</p>
+        <p class="Bullet2" MadCap:autonum="• ">No Task triggering is generatedIf a matching Approval record is NOT found</p>
+        <p class="Bullet2" MadCap:autonum="• ">Create an Underwriting Approval record using the Department, Assigned To, Batch ID, Contract Type, Dependency Count information from the Definition [APP Pipeline]</p>
+        <p class="Bullet2" MadCap:autonum="• ">Apply Row Security to the record [Db]</p>
+        <p class="Bullet2" MadCap:autonum="• ">Generate the [CloneTask]“APP_department”</p>
+        <p class="Bullet2" MadCap:autonum="• ">Next Underwriting Definition</p>
+        <h2>Approval ‘Approve’</h2>
+        <p>After ‘Accepted’, Approvals are in place based on the methods previously described.  When an Approval is ‘Approved’</p>
+        <p>If there are Approvals that must be approved prior to approving this Approval, an error is thrown “This record is waiting for the following Approval(s) to be ‘Approved’”.  This should not be the norm as there are user interface controls in place to properly display the parents of dependent Approvals before access to the dependent is granted</p>
+        <p>If the Department is ‘Risk’ and the Batch contains Codes Requiring Review, an error is thrown “This Pricing Batch cannot be approved because it has associated Pricing Codes that are marked for review”</p>
+        <p>If no validation errors are encountered, Approvals are evaluated:</p>
+        <p class="Bullet1" MadCap:autonum="• ">For Developers: the appropriate Approval Workflow Object is instantiated.  This object contains specific methods implemented to act upon Approvals based on the type, such as Pricing, No Pricing)</p>
+        <p class="Bullet1" MadCap:autonum="• ">If the Approval has changed to ‘Approved’</p>
+        <p class="Bullet2" MadCap:autonum="• ">The Approved By User, Date and Time approved are set [Pipeline].</p>
+        <p class="Bullet2" MadCap:autonum="• ">[CloneTask] ‘APPROVED_department’ is generated.</p>
+        <p class="Bullet2" MadCap:autonum="• ">Dependent Approvals statuses are escalated.</p>
+        <p class="Bullet2" MadCap:autonum="• ">A list of dependent Approvals (if any) is retrieved.</p>
+        <p class="Bullet1" MadCap:autonum="• ">For each dependent Approval:</p>
+        <p class="Bullet2" MadCap:autonum="• ">The Assigned To User is located.</p>
+        <p class="Bullet2" MadCap:autonum="• ">If an Assigned To User is found, [CloneTask]‘APP_department’ is generated.</p>
+        <p class="Bullet2" MadCap:autonum="• ">The dependent Approval status is progressed to ‘Pending’ [UnderwritingApproval Pipeline]  No rules are executed; this is only a mechanism to allow task triggering to be generated.</p>
+        <p class="Bullet1" MadCap:autonum="• ">If all Approvals are ‘Approved’</p>
+        <p class="Bullet1" MadCap:autonum="• ">For Developers:</p>
+        <p class="Bullet2" MadCap:autonum="• ">An overridable method ‘SetApprovedWorkflow’ is called.  This allows candy solutions to perform some custom actions at this point in the process</p>
+        <p class="Bullet2" MadCap:autonum="• ">An overridable method ‘OnHasAllApprovals’ is called.  This allows candy solutions to perform some custom actions at this point in the process</p>
+        <p class="Bullet2" MadCap:autonum="• ">In PEO, the ‘SetApprovedWorkflow’ method</p>
+        <p class="Bullet2" MadCap:autonum="• ">Sets CM and Pricing Batch status to ‘Approved’ [Db]</p>
+        <p class="Bullet2" MadCap:autonum="• ">Update Comparison Batches [Db]</p>
+        <p class="Bullet2" MadCap:autonum="• ">[CloneTask]‘CM_Approved’ is generated</p>
+        <p class="Bullet2" MadCap:autonum="• ">If all Approvals have NOT been ‘Approved’ the process remains in its current state awaiting additional Approval activity</p>
+        <h2>Approval ‘Decline’</h2>
+        <p>When an Approval is ‘Declined’</p>
+        <p>For Developers: the appropriate Approval Workflow Object is instantiated</p>
+        <p>If the Approval has changed to ‘Declined’</p>
+        <p class="Bullet1" MadCap:autonum="• ">For Developers:</p>
+        <p class="Bullet2" MadCap:autonum="• ">An overridable method ‘SetDeclinedWorkflow() is called.  This allows candy solutions to perform some custom actions at this point in the process</p>
+        <p class="Bullet1" MadCap:autonum="• ">In PEO, the ‘SetDeclinedWorkflow’ method</p>
+        <p class="Bullet2" MadCap:autonum="• ">Sets the CM and Pricing Batch status to ‘Prospect’ and ‘New’ respectively [Db]</p>
+        <p class="Bullet2" MadCap:autonum="• ">Updates the Comparison Batches [Db]</p>
+        <p class="Bullet2" MadCap:autonum="• ">Sets the Pricing Batch Date Declined field to the current date [Db]</p>
+        <p class="Bullet2" MadCap:autonum="• ">[CloneTask]‘DEC_department’ is generated</p>
+        <p class="Bullet1" MadCap:autonum="• ">All other Approvals remain in their current state and status</p>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring distribution groups for Email Integration with Office 365</h1>
+        <p>To create distinct client Email Integration aliases with an Exchange mail server in Office 365, you first need to create custom distribution groups on your exchange mailbox.  This topic walks you through the process of creating these unique groups.</p>
+        <p class="ProcedureIntro">To configure distribution groups for email integration:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Log into Office 365 Online using an account that has administrative rights on the targeted mailbox.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Go to the <b>Admin Area</b> of the account.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Select <b>Groups</b> and choose <b>Set up distribution lists and other Exchange groups in the Exchange Admin center</b>.</p>
+        <p class="L1Num" MadCap:autonum="4. ">Choose <b>Add new</b> &gt; <b>Distribution group</b>.</p>
+        <p class="L1Num" MadCap:autonum="5. ">Complete the Distribution group setup by adding the following:</p>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 119px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">DisplayName</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Best practice is to make this the email address without the domain (@somewhere.com).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Alias</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Best practice is to make this the same as the Display Name.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Email address</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Generated automatically by the system but can be altered before you save.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Members</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Add the primary mailbox to the Members area.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="6. "><b>Save</b> the Group Record.</p>
+        <p class="L1Num" MadCap:autonum="7. ">Edit the record and select <b>Delivery Management</b>.</p>
+        <p class="L1Num" MadCap:autonum="8. ">Select <b>Senders inside and outside of my organization</b>.</p>
+        <p class="L1Num" MadCap:autonum="9. "><b>Save</b> the record again.</p>
+        <p>The alias email address is now ready to use when configuring <MadCap:variable name="MyVariables.ProductName" /> Email Integration alias records. These instructions require Admin access to the Exchange mailbox. Contact your Exchange administrator for help configuring these group options.</p>
+    </body>
+</html>

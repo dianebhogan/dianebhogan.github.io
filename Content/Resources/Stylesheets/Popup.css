@@ -1,0 +1,48 @@
+﻿
+p.MyStyle
+{
+	font-family: Arial;
+	font-size: 12pt;
+	margin: 0px;
+}
+
+img
+{
+	border: none;
+}
+
+a.Popup
+{
+
+}
+
+p
+{
+	margin-top: .5em;
+	margin-bottom: 1em;
+	font-size: 1em;
+	mc-hyphenate: never;
+	line-height: normal;
+	font-family: var(--BrandFont2);
+	color: var(--BrandPrimary);
+}
+
+p.border
+{
+	height: auto;
+	width:auto;
+	padding: 10px;
+	border: 1px solid;
+	border-radius: 5px;
+	background-color: #f2f8fc;
+}
+
+div.title-bar-container
+{
+display: none;
+}
+
+._Skins_HTML5_ClientSpace .sidenav-wrapper
+{
+display: none;
+}

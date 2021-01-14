@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>How Payroll Batch data is updated</h1>
+        <p>The PrismHR&#160;API&#160;updates the payroll batch throughout the payroll creation process. The system creates a new ClientSpace Payroll batch record as soon as the record is created in PrismHR. It then updates the batch status using a scheduled process, so if a batch is stopped at a certain point in the payroll system, notification and workflow events are triggered in ClientSpace based on the status update.  </p>
+        <p>Available statuses include:</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');margin-left: 0;margin-right: auto;" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Payroll calculation results rejected by client</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Payroll calculation completed with warning</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Payroll printed with errors</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Payroll calculation results pending client approval</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Payment pending</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Time sheet entry in progress</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Payroll is complete</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Payroll is ready to print</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Payroll is ready for time sheet entry</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Payroll finalization in progress</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Payroll finalization complete with errors</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Payroll is ready to calculate</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Payroll calculation completed with errors</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Finalization pending approval</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Wire transfer pending</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Payroll reports are ready for review</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Payroll is ready to ship</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="TableTextLeft">Payroll Batch Ongoing Imports  handle failed or deleted payroll batches in PrismHR.</p>
+        <ul>
+            <li>Payroll Batch DELETE events are processed to create Import Queue records.</li>
+            <li>When DELETE events are processed to generate Import file rows, they are marked Completed with the message: "Batch '#####.###' Deleted, this record will not be processed"</li>
+            <li>If <MadCap:variable name="MyVariables.ProductName" /> cannot retrieve a Payroll Batch from an event, that event (Import Queue record) is marked as Completed with a message: "Batch '#####.###'  Unable to include Queue Record in Import file, no getBillingCodeTotalsForBatch response info, this event will not be processed"</li>
+        </ul>
+        <h2>Client validation</h2>
+        <p>In ClientSpace, Client number validation  occurs before processing the Payroll Batch Import Queue records. If the Client is not found, the queue record is completed with a note. The validation occurs for queue records created from the Payroll Batch Import process, not the Ongoing Import process. The Ongoing process checks the Client number in <MadCap:variable name="MyVariables.ProductName" /> before creating the queue record.</p>
+        <h2>Employee count</h2>
+        <p>When regular payroll batches are processed as Completed, the employee counts are calculated from the Employee records and their status classifications:&#160;full-time active, part-time active, full-time terminated, part-time terminated, full-time leave, and part-time leave. Use the Employee count records in the <MadCap:variable name="MyVariables.ProductName" /> Executive Dashboards to compare the number of active employees to the number of paid employees.</p>
+        <h2>Voided batches</h2>
+        <p>For voided batches, <MadCap:variable name="MyVariables.ProductName" /> uses the list of employees to determine the pay groups that are being voided and builds that batch similar to running a scheduled payroll batch. The billing codes are then distributed across the pay groups to balance out the original payroll batch. This provides a zero-sum between the initial run batch and the batch that is voiding the first batch.</p>
+    </body>
+</html>

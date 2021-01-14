@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>PEO underwriting approval process</h1>
+        <p>This topic describes the  Underwriting Approval process for RFP and Renewal Batches.  It is intended for Business Analysts to aid in understanding the process and configuration of the system.  It identifies the technical features of the  Underwriting Approval process.</p>
+        <h2>Underwriting approval process overview</h2>
+        <p>The Underwriting Approval Process concept is:</p>
+        <p class="Bullet1" MadCap:autonum="• ">To create Approval records based on specific Pricing Batch criteria (which it has always done)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Re-use existing Approval records whenever possible to preserve audit data (which it has done although not always appropriately).</p>
+        <p class="Bullet1" MadCap:autonum="• ">Resolve shortcomings in the existing process when changing Contract Status after Approvals have been generated (which left some Approvals in place although they were not applicable to the business)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Add Task Triggering to Dependent Approval Escalation</p>
+        <p>The process is designed so that certain key Milestones generate Clone Tasks or perform dataform pipeline Saves so that Task Triggering can be initiated.  Other minor Milestones are performed directly in the database which will NOT generate Task Triggering.  In this document, the following conventions are used to identify which type of action is performed for those Milestones:</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>[Db]</b> indicates a database action that does not generate Task Triggering</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>[CloneTask]</b> indicates a custom Clone Task action is broadcast</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>[Pipeline]</b> indicates a record is either added or modified through Business Logic causing Task Triggering to fire</p>
+        <p class="ProcedureIntro">The following Processes are evaluated:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Creating Underwriting Definitions</p>
+        <p class="Bullet1" MadCap:autonum="• ">Creating Underwriting Approval Dependencies</p>
+        <p class="Bullet1" MadCap:autonum="• ">Accept the RFP Batch the first time</p>
+        <p class="Bullet1" MadCap:autonum="• ">Approve or Decline Approval Records</p>
+        <p class="Bullet1" MadCap:autonum="• ">Reprocess the Batch</p>
+        <p class="Bullet1" MadCap:autonum="• ">Accept the RFP Batch on subsequent attempts</p>
+        <p class="Bullet1" MadCap:autonum="• ">Submit the Renewal Batch</p>
+        <p class="Bullet1" MadCap:autonum="• ">Approve the Renewal Batch Approval Records</p>
+        <p class="Bullet1" MadCap:autonum="• ">Decline the Renewal Batch</p>
+        <p class="Bullet1" MadCap:autonum="• ">Changing Contract Types</p>
+        <p class="Bullet1" MadCap:autonum="• ">Additional Client Master RPF Actions that affect Approvals (Decline, ReActivate)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Additional Renewal Batch Actions (Kill, Clone)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Comparison Batches</p>
+        <p class="Bullet1" MadCap:autonum="• ">Approval State Diagrams</p>
+    </body>
+</html>

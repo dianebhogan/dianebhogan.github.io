@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Configuring Case Discussion Email Templates</h1>
+        <MadCap:microContent id="microcontent1">
+            <p>Case Discussions use email templates to send the content of the Discussion Message to the designated recipients. The email templates that make this happen are CSCDISC:&#160;Case Discussion, CSCRPLY: Case Discussion Reply, and CSCDISCNEW: Case Discussion New. ClientSpace administrators can configure these email templates to meet the needs of the organization. For example, you may need several reply templates to address stop payment authorizations or payroll issues.</p>
+        </MadCap:microContent>
+        <h2>Send a Reply and Reply Above This Line</h2>
+        <p>Recipients can reply to the email using an embedded <span class="UXElement">Send a Reply</span> link in the email message that  opens the discussion thread. The Send a Reply link is always available. Optionally, you can configure <MadCap:variable name="MyVariables.ProductName" /> to allow responses using the email mailbox <span class="UXElement">Reply</span> button. The Reply button initiates Reply Above This Line functionality.</p>
+        <p>
+            <img src="../Resources/Images/Case/CaseDisc_Reply.png" class="thumbnail" />
+        </p>
+        <MadCap:microContent id="microcontent5">
+            <p>Reply Above This Line  allows users to reply to a Case Discussion directly from their email mailbox using the Reply button, as you would with any other email reply. This functionality requires additional ClientSpace configuration for Email Integration. While the email templates (CSCDISC and CSCDISCNEW) themselves do <span class="UXElement">not</span> require Email Integration, the reply above the line functionality <span class="UXElement">does</span>. For Reply Above This Line  to work, both CSCDISC and CSCDISCNEW must have a <span class="UXElement">From Email Override</span> address that matches an Active Email Integration mailbox. See <MadCap:xref href="../CasesTasks/Config_CaseDiscAboveLine.htm" title="Configuring Case Discussion: Reply Above the Line" alt="Configuring Case Discussion: Reply Above the Line">Configuring Case Discussion: Reply Above the Line</MadCap:xref>.</p>
+        </MadCap:microContent>
+        <p>
+            <img src="../Resources/Images/Case/CaseDisc_ReplyAnnotations.png" class="thumbnail" />
+        </p>
+        <h2>Field Replacement</h2>
+        <p>Case Discussion templates provide replacement field functionality represented as brackets <span class="UXElement">{ }</span>. For a list of the fields, see <MadCap:xref href="../CasesTasks/CSC_FieldReplacement.htm#Client" title="Client Service Case field replacement" alt="Client Service Case field replacement">Client Service Case field replacement</MadCap:xref>.</p>
+        <h2>Accessing the email templates</h2>
+        <p class="ProcedureIntro">To access the email templates:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Email Templates</span>.<br />The Email Templates dashboard opens.</li>
+            <li>Locate the entries that begin with <span class="UXElement">CSC</span>.</li>
+            <li>Open and edit the email template, as noted in the following procedures.</li>
+        </ol>
+        <p class="TopicsList" MadCap:conditions="ClientSpace.Screen">Case Discussion Email Template procedures </p>
+        <MadCap:miniTocProxy MadCap:conditions="ClientSpace.Screen" />
+    </body>
+</html>

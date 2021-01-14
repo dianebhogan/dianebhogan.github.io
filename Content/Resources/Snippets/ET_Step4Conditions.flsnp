@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <p class="ProcedureIntro">To configure conditions:</p>
+        <ol>
+            <li>Complete the fields:</li>
+        </ol>
+        <table style="mc-table-style: url('../TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 158px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">No Primary Trigger</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">When selected, no single condition must be met to trigger the email template. When selected, the <b>Primary Trigger Field</b> is disabled.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Primary Trigger Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Optional. From the Triggering Form selected in Step 1, which, when changed, triggers the event. This can also be a HdrAction, such as a configured action link on the form.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">The following statements refer to the condition entries in the <b>Add</b> area.
+Condition entries are identified with a <b>Label</b> (the last column).</p>
+                        <p class="TableBullet" MadCap:autonum="• ">If a Primary Trigger Field is selected, that field MUST change values to trigger this template and evaluate the conditions.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">If a Primary Trigger Field is not selected, only the conditions are evaluated.
+</p>
+                        <p class="TableBullet" MadCap:autonum="• ">If a Primary Trigger Field is selected, the conditions are combined with the Primary Trigger Field using an implied AND.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">If no Condition Expression is used, the additional conditions are treated as OR conditions.</p>
+                        <p class="TableTextLeft">The Primary Trigger Field only displays fields associated with the triggering dataform and includes the ability to Add Untriggered Field.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="ProcedureIntro">To add display conditions:</p>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Add</span>. <br />A row opens with columns Source, Field, Operator, Value, and Label. The Add section is where you can add more granular triggering conditions.  Each row you add is a display condition. When Condition Expression is empty, the display conditions process as ORs, meaning only one of the conditions must be met for the email notification to trigger.</li>
+        </ol>
+        <table style="mc-table-style: url('../TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 124px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Source</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Source is the dataform or stored procedure that provides the triggering condition. Source includes all active, single forms and dataforms included in a tabbed set. Source aligns with Implementation Groups. For example, if you do not use risk functionality, then risk related dataforms are not presented in the list.</p>
+                        <p>When you select <b>Task</b> as the Triggering Form in Step 1 Initial, in this step Source sets to Task.</p>
+                        <p class="TableTextLeft">HdrAction is only available when Source is the parent triggering form. If Source is anything other than the Triggering Form, HdrAction is not available in the Field list.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Field</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">
+                            <img src="../Images/EmailTemplates/Source-EQ-Task.png" class="right" />
+                        </p>
+                        <p class="TableTextLeft">Select the dataform or Stored Procedure field to compare to the trigger value. </p>
+                        <p class="TableTextLeft"><span class="UXElement">A&#160;few notes:</span>
+                        </p>
+                        <ul>
+                            <li>Email Template triggering provides multi-lookup fields (Multi Lookup (MultiLookup)) as triggering conditions. </li>
+                            <li>Field supports parent form fields (only available operators are empty, not empty, and dirty).</li>
+                            <li>You can Add Untriggered Fields dynamically as well as current, active, triggerable fields from the Source.</li>
+                            <li>When you select <b>Task</b> as the Triggering Form in Step 1 Initial, the options for  Field include all task fields. For example, when you select Send Notification, and this option is enabled in the Task, then the email notification is triggered.</li>
+                        </ul>
+                        <p class="TableProcIntro">To add a trigger field:</p>
+                        <ol>
+                            <li>In <b>Field</b>, go to the end of the list and select <b>Add Untriggered Field</b>.<br />The Select an Untriggered Field dialog opens. <b>Field</b>&#160;contains a list of fields currently not marked as Triggerable.</li>
+                            <li>In <b>Field</b>, select an entry.</li>
+                            <li>Click <b>Ok</b>.<br />The selected field is marked as triggerable and now appears in the Field list.</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Operator</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Choose the type of comparison. Each value from a Multi Lookup Trigger Field can be added as a separate "<b>=</b>" condition.&#160;This supports complex AND, OR, and NOT conditions as well.  Is Dirty is not available in the Operator list when the Source is set to something other than the Triggering Form.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Value</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">The criteria against which the trigger field is compared. For a condition that is using a user datatype as the Field, the Value field uses a <MadCap:popup><MadCap:popupHead>typeahead</MadCap:popupHead><MadCap:popupBody>As you type in the field, one or more matches for the term are found and immediately presented.</MadCap:popupBody></MadCap:popup> method so that you do not need to look up the User ID for the text field.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Label</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">The label to use when constructing Condition Expressions for triggering. Make this label short and representative of the Trigger Field. Labels are used in the Condition Expression field.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Condition Expression</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Allows for <b>AND</b>, <b>OR</b>, and <b>NOT</b> conditions using the trigger conditions (Label) from the Add section. Using the Label field that corresponds to the entries in the Add section, you can combine the conditions into more complex expressions. The Condition Expression field could state, for example (Condition1 AND Condition2) OR (Condition3 AND Condition4) OR Condition5. Condition Expressions adhere to AND/OR/NOT across tabbed dataform conditions. For a detailed explanation about conditions, see <MadCap:xref href="../../WFC/WFC_CondExpr.htm" title="condition expressions" alt="condition expressions" class="Heading">Condition Expressions</MadCap:xref>.</p>
+                        <p class="ActionTip">When the Condition Expression field is empty, the row entries are treated as OR conditions.&#160;Only one of the conditions must be met.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <MadCap:microContent id="microcontent1">
+            <p class="ProcedureIntro">To clone a trigger condition:</p>
+            <p>To save some time, you can clone a trigger condition and then edit as appropriate.</p>
+            <p>
+                <img src="../Images/EmailTemplates/CloneTriggerCondition.png" class="thumbnail" />
+            </p>
+            <ol>
+                <li>In the <span class="UXElement">Add</span> section, locate an entry that you want to copy.</li>
+                <li>Click <img src="../Images/ICONS/ICON_Clone.png" /> <span class="UXElement">Clone</span>.<br />A new row opens, with the trigger condition copied. Source, Field, and Operator are copied.</li>
+                <li>You can now edit the new condition as appropriate.</li>
+                <li>Click <span class="UXElement">Apply</span> or <span class="UXElement">Save</span>.</li>
+            </ol>
+        </MadCap:microContent>
+    </body>
+</html>

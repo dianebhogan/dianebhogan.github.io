@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('../Resources/MasterPages/ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Release 96 Notes</h1>
+        <p><strong>R96 Sprint</strong>:&#160;9/1/2020&#160;to&#160;9/30/2020. To learn about product features that you may not recognize, contact your Customer Success Manager.</p>
+        <h2>Release schedule</h2>
+        <p>Release updates are implemented by groups.</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Click to view the R96 release schedule.</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The release schedule is subject to change and is&#160;updated as required.  To determine your group or to ask questions, please log a case for Professional Services in the Extranet.</p>
+                <table class="TableStyle-Standard_Table" style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" cellspacing="0">
+                    <col class="TableStyle-Standard_Table-Column-Column1" />
+                    <col class="TableStyle-Standard_Table-Column-Column1" />
+                    <col class="TableStyle-Standard_Table-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard_Table-Head-Header1">
+                            <th class="TableStyle-Standard_Table-HeadD-Column1-Header1" colspan="3">
+                                <p class="TableHead">Sprint <span style="font-weight: normal;">9/1/2020 to 9/30/2020</span></p>
+                            </th>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Head-Header1">
+                            <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                                <p class="TableHead">Upgrade groups</p>
+                            </th>
+                            <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                                <p class="TableHead">Date of upgrade</p>
+                            </th>
+                            <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                                <p class="TableHead">For this sprint, tentatively occurs on</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Group 1</td>
+                            <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">First Tuesday of the month</td>
+                            <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">October 6, 2020</td>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Group 2</td>
+                            <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Second Tuesday of the month</td>
+                            <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">October  13, 2020</td>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Group 3</td>
+                            <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Third Tuesday of the month</td>
+                            <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">October  20, 2020</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <h2>Enhancements</h2>
+        <p>Enhancements are grouped as Change in Functionality, ClientSpace Premium (ClientSpace with additional modules), Advanced Administration, and General.</p>
+        <h3><i class="fas fa-bell" style="font-family: Font Awesome 5 Free; font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="Change in functionality" alt="Change in functionality"></i> Change in Functionality</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 69px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">46928</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Email Integration: Password field </p>
+                        <p class="TableTextLeft">When editing the password for an email integration credential, the Password field is now hidden. A new option for changing the password is available in the Action Center as   <img src="../Resources/Images/ICONS/ICON_ChangePassword.png" /> (Change Password). The Password field is only available on adds. See <MadCap:xref href="../Integrations/EmailInteg_Credentials.htm" title="Creating, modifying, or deleting Email Integration credentials" alt="Creating, modifying, or deleting Email Integration credentials">Creating, modifying, or deleting Email Integration credentials</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">47111</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">PrismHR&#160;API: Log exceptions</p>
+                        <p class="TableTextLeft">When the queue record fails to import into ClientSpace, we now stamp the error message onto the Queue record for Contact, User, and PayrollBatch. See <MadCap:xref href="../Integrations/PrismHR_Ongoing_QueueMgmt.htm" title="Import Queue management" alt="Import Queue management">Import Queue management</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">44623</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Importing Lookup Values</p>
+                        <p class="TableTextLeft">You can now configure lookup value imports to accept invalid values, which then logs the error for review. A new option for lookup fields, <span class="UXElement">Allow Invalid Lookup Values</span> is now on the Import Map Detail. See <MadCap:xref href="../ImportsUploads/ConfigMapDetail.htm" title="Configuring the Import Map Detail" alt="Configuring the Import Map Detail">Configuring the Import Map Detail</MadCap:xref> and <MadCap:xref href="../ImportsUploads/ManageDataImports.htm" title="Managing import data " alt="Managing import data ">Managing import data</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">43740</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Client Info Widget: Last Visit Date filter</p>
+                        <p class="TableTextLeft">On the Workspace landing page, the Client Info Widget now shows the Last Visit Date based on Completed visits.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">47062</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">ClientSpace Calendar: External calendar </p>
+                        <p class="TableTextLeft">From the ClientSpace Calendar, for external events created by the logged-in user, you can now view the location, attendees, and any meeting notes. This enhancement provides added convenience – you no longer need to switch to the external calendar application to see these details. See <MadCap:xref href="../Manage/Cal-View.htm" title="Viewing the ClientSpace Calendar" alt="Viewing the ClientSpace Calendar">Viewing the ClientSpace Calendar</MadCap:xref>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3><i class="fas fa-plus-circle" style="font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="ClientSpace Premium (ClientSpace with additional modules" alt="ClientSpace Premium (ClientSpace with additional modules"></i> ClientSpace Premium</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 69px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">46081</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">OSHA Dataform: Location OSHA&#160;Totals</p>
+                        <p class="TableTextLeft">A new multi-dataform, Location OSHA&#160;Totals, is now available. It contains the Total Hours Worked and Average EE&#160;Count per year, per location, and is populated by the PrismHR&#160;API. This enhancement eliminates the need to add this data from PrismHR manually. See <MadCap:xref href="../Risk/OSHA_300ARpt.htm" title="OSHA 300A Report Details" alt="OSHA 300A Report Details">OSHA 300A Report Details</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">46085</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">OSHA 300A Report: Calculate headcount and hours by location</p>
+                        <p class="TableTextLeft">The OSHA&#160;300A report now uses the new dataform  Location OSHA&#160;Totals to obtain data for headcount and hours by location. A new scheduled process PrismHR Import OSHA Location Data  pulls data for the previous year and populates the dataform Location OSHA&#160;Totals. See <MadCap:xref href="../Risk/OSHA_300ARpt.htm" title="OSHA 300A Report Details" alt="OSHA 300A Report Details">OSHA 300A Report Details</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">46036</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">OSHA: NAICS&#160;Code by Location</p>
+                        <p class="TableTextLeft">The Client Location dataform has a new field, Override NAICS. When the Client Location is configured with an Override NAICS code, and the 300A report is run by location, the Override is shown on the report, replacing the Organization default NAICS code. When the Client Location has no Override NAICS code, the code is retrieved from the Org / Client Master. See <MadCap:xref href="../Risk/OSHA_300ARpt.htm" title="OSHA 300A Report Details" alt="OSHA 300A Report Details">OSHA 300A Report Details</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">42719</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Risk Management: Pricing State</p>
+                        <p class="TableTextLeft">The Pricing Policy field now filters based on the Comp Model. This enhancement filters out irrelevant policies to aid in reducing errors when selecting a policy.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">47041</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Benefit Plan Manager: Main Benefit Group</p>
+                        <p class="TableTextLeft">When creating a benefits batch, if a benefit group of <span class="UXElement">Main</span> does not exist, the system creates a new benefit group named Main and sets it as the default Benefit Group. This enhancement makes pricing benefits easier.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">46590</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Benefit Plan Manager: Rate Group</p>
+                        <p class="TableTextLeft">The name Plan Tier was changed to Rate Group to match the PrismHR terminology. The name change appears in dataforms, links, methods, and rules.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">46439</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Benefit Plan Manager: Annual Period</p>
+                        <p class="TableTextLeft">The Offered Benefits Plan dataform was updated to remove the field requirement for the Annual Period field on Add or Edit. The field is still required to export the Offered plan. This enhancement allows you to edit the Offered Benefits Plan without completing the Annual Period field because it may not yet be determined.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">46527</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Client Profitability Report: Task information</p>
+                        <p class="TableTextLeft">The merge proc PEO_merge_client_profitability now includes Task information. This enhancement enables accurately defining the time spent on client work. For information about the Client Profitability Report, see <MadCap:xref href="../Profit/Intro.htm" title="[%=MyVariables.ProductName%] Profitability Report" alt="[%=MyVariables.ProductName%] Profitability Report">[%=MyVariables.ProductName%] Profitability Report</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">46903</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">CCMSI Connection</p>
+                        <p class="TableTextLeft">ClientSpace now provides a connection to the CCMSI API (CCMSI assists clients with self-insured property and casualty claims management). Workers' Comp Claim data can now be entered into ClientSpace and exported to CCMSI, saving users time. You must be a CCMSI customer to use the API. To configure the connection, see <MadCap:xref href="../Integrations/CCMSI.htm" title="CCMSI" alt="CCMSI">CCMSI</MadCap:xref>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3><i class="fas fa-cog" style="font-size:32px;color:var(--BrandPrimary2);padding:1px 6px 6px;" title="ClientSpace Advanced Administration" alt="ClientSpace Advanced Administration"></i> Advanced Administration</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 69px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">46508</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Dataforms: Field display conditions for tabs</p>
+                        <p class="TableTextLeft">Dynamic field display conditions now support tabs along with fields. This enhancement enables you to display tabs when needed, based on a field value. See <MadCap:xref href="../Admin_Config/ConfigDynFieldDisp.html" title="Configuring dynamic field display" alt="Configuring dynamic field display">Configuring dynamic field display</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">44044</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Search:&#160;Field Display Rule Search</p>
+                        <p class="TableTextLeft">The Field Display Rule Search dashboard now provides Rule Number as a column, displaying the rule ID&#160;number. You can search by Rule Number in Quick Search and More search. For details on using Search, see <MadCap:xref href="../HowToUse/Searching.html" title="Searching in [%=MyVariables.ProductName%]" alt="Searching in [%=MyVariables.ProductName%]">Searching in [%=MyVariables.ProductName%]</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">44173</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Set Field Value On Form</p>
+                        <p class="TableTextLeft">A new rule _SetFieldValueOnForm allows administrators to set a field value on another form to a specific value. The rule is configurable in all forms; however, the TargetForm cannot be a multiform. The FieldValue parameter validates the configuration against the FieldName datatype. This enhancement does not support the time datatype.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">46596</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Scheduled process:&#160;Seed Client Team Role  </p>
+                        <p class="TableTextLeft">The scheduled process Seed Client Team Role now deletes all Client Team Role rows before recreating the Client Team Role forms. This enhancement eliminates the previous requirement to delete all records manually before running the scheduled process. See <MadCap:xref href="../Integrations/ScheduledProcesses.html" title="Scheduled processes " alt="Scheduled processes ">Scheduled processes</MadCap:xref>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>General Enhancements</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 69px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">47175</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Attachments:&#160;Drag files</p>
+                        <p class="TableTextLeft">You can now drag files to the Attachments pane without the need to use the Upload File dialog box. This enhancement provides a more seamless user experience when adding attachments. See <MadCap:xref href="../ActionCenter/Attachments.htm" title="Attachments" alt="Attachments">Attachments</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">45813</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Organizations:&#160;Primary Workspace</p>
+                        <p class="TableTextLeft">You can now specify the default workspace for an organization with multiple workspaces. A new field Primary Workspace is available on the Home tab for System Admins. See <MadCap:xref href="../Sales/AddOrgRecord.htm" title="Adding and editing Organizations" alt="Adding and editing Organizations">Adding and editing Organizations</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">43622</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Uploaded Files Queue: Workspace column on dashboard</p>
+                        <p class="TableTextLeft">When viewing the Uploaded Files Queue, a column for the associated Workspace is now available, which provides clarity when viewing the  DocuSign entries. See <MadCap:xref href="../Integrations/DocuSign_UpFilesQueueDash.htm" title="Viewing document status in the DocuSign process" alt="Viewing document status in the DocuSign process">Viewing document status in the DocuSign process</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">46278</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Email Admin: Email Template column</p>
+                        <p class="TableTextLeft">The Email Admin dashboard has a new optional column, Email Template. This enhancement aids in troubleshooting issues with the notification by listing which email template sent the notifications. The Email Template column includes a link to the related template, allowing the admin to jump directly to the template from Email Admin. See <MadCap:xref href="../EmailAdmin/Email-Admin.htm" title="Email Admin" alt="Email Admin">Email Admin</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">44333</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Employment dataform:&#160;Last Hire Date</p>
+                        <p class="TableTextLeft">The Employment dataform field Hire Date is now named Last Hire Date.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">46816</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Workflow Channels:&#160;Cloneable message for triggered form</p>
+                        <p class="TableTextLeft">If a Workflow Channel is set to unpublished and then the triggered dataform used by the Workflow Channel is changed to not cloneable, a new warning message displays when publishing the channel: <em>Workflow channel cloning is no longer enabled for this triggered form. If you still wish to use this as your triggered form, go to Dataform admin and check the 'Enable WFC Cloning' checkbox</em>. This warning displays each time the Triggered Form is not Workflow Cloneable, and the Workflow Channel changes to Published (Active). See <em>Configuring your workflow</em>, <MadCap:xref href="../WFC/Step1_WFCChannel.htm" title="Step 1: Channel" alt="Step 1: Channel">Step 1:&#160;Channel</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">46867</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Lookups</p>
+                        <p class="TableTextLeft">Both the Lookup (core) and Lookup Type Ahead (core) datatypes support basic and advanced lookup filtering in the same way, using either the Filter Field (basic) or the Filter Source (advanced). Additionally, Lookup - Multiple (core) datatypes now support basic filtering using the Filter Field. See the follow-on basic and advanced filtering topics included with <MadCap:xref href="../Admin_Config/Lookups.html" title="Configuring lookups" alt="Configuring lookups">Configuring lookups</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">47781</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Lookups: Info bubbles</p>
+                        <p class="TableTextLeft">The fields Filter Value and Filter Source now have info bubbles for lookup filtering at the field level.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">47747</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Client Service Case: Notifications</p>
+                        <p class="TableTextLeft">The recipient procedures for Client Service Case Email Templates now include Client Team users, to ensure that notifications are sent to the intended recipients.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">46275</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Search: Search users by Date Created</p>
+                        <p class="TableTextLeft">In More search, you can now search users by Date Created. For details on using Search, see <MadCap:xref href="../HowToUse/Searching.html" title="Searching in [%=MyVariables.ProductName%]" alt="Searching in [%=MyVariables.ProductName%]">Searching in [%=MyVariables.ProductName%]</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">43529</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Modules: Category column</p>
+                        <p class="TableTextLeft">In the Modules dashboard, the Category column now shows the decoded name, such as Business Intelligence rather than BI.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">45924</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Widgets:&#160;Trigger conditions</p>
+                        <p class="TableTextLeft">For Widget Layouts secured to a specific security entity, users (including Global Admins) who do not have View rights to that entity are no longer able to view the layout.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">44366</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Client Master:&#160;Pricing Renewal Date</p>
+                        <p class="TableTextLeft">On the Client Master, the field Renewal Date was changed to Pricing Renewal Date. This enhancement provides clarity to what the renewal date references.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">44043</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">PrismHR API: Employee mailing address mapping</p>
+                        <p class="TableTextLeft">Data mapping for the Employee Mailing Address through the PrismHR API is now available. This enhancement provides a correct mailing address for employees. To view the data mapping spreadsheet, see <MadCap:xref href="../Integrations/PrismHRAPIDataMapping.html" title="ClientSpace data mapping for the PrismHR API" alt="ClientSpace data mapping for the PrismHR API">ClientSpace data mapping for the PrismHR&#160;API</MadCap:xref>.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">The data is mapped on the HRPAPI_employee import maps:</p>
+                        <ul>
+                            <li>AltAddress1</li>
+                            <li>AltAddress2</li>
+                            <li>AltCity</li>
+                            <li>AltCounty</li>
+                            <li>AltState</li>
+                            <li>AltZipCode</li>
+                            <li>AltZipSuffix</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Fixes</h2>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="margin-left: auto;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 63px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 269px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Issue summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Resolution</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">46867</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Lookup filtering </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <ul>
+                            <li>Resolved an issue where the Filter Source field was empty.</li>
+                            <li>Resolved an issue with lookup filtering with multiple lookup values.</li>
+                            <li>Resolved an issue with lookup typeaheads.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">47465</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Dataform API exception logging</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue that prevented NEXT&#160;from logging exceptions.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">47327</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Performance</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Refactored a stored procedure to improve performance.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">47308</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">_SetFieldOnFormFromForm errors when to and from fields have data type dtFileManager</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">_SetFieldOnFormFromForm now successfully copies a file (link) from one form field to another form field when the to and from fields have data type dtFileManager.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

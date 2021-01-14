@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Workflow Channels" />Workflow Channel Action Items</h1>
+        <p>
+            <img src="../Resources/Images/Workflow/DeleteItem.png" class="right" />
+        </p>
+        <p>Workflow Channel action items appear in the Action Center pane. This topic reviews Links, Dependent Workflow, and Attachments.</p>
+        <h2>Links:&#160;Delete Item</h2>
+        <p>
+            <img src="../Resources/Images/Workflow/Msg-Del-DepCondition2.png" class="thumbnail_right" />
+        </p>
+        <p class="ProcedureIntro">Deleting workflow items and any dependent items</p>
+        <ol>
+            <li>To delete a workflow item and any dependent items, click <b>Delete</b>. <br />A message displays in the form of a simplified flowchart showing the dependents. When you delete the workflow item, the dependents are also deleted.</li>
+            <li>Click <span class="UXElement">Delete</span> or <span class="UXElement">Cancel</span>.</li>
+        </ol>
+        <p>&#160;</p>
+        <p class="ProcedureIntro">Workflow items with dependent conditions</p>
+        <p>
+            <img src="../Resources/Images/Workflow/Msg-Del-DepCondition2.png" class="thumbnail_right" />
+        </p>
+        <p>You cannot delete a workflow item dependent on a condition in a different workflow item, in the same tree, but not a descendant. If you attempt this, an error displays with a link to the dependent items. </p>
+        <p>The first message is in the form of a simplified flowchart showing the dependents: "This action cannot be undone."  </p>
+        <p>When you click <span class="UXElement">Delete</span>, another message displays "Unable to delete Workflow" with the workflow items that contain a trigger condition that references this workflow. These dependent items prevent deletion. You can link directly to the workflow items preventing deletion.</p>
+        <p>
+            <img src="../Resources/Images/Workflow/Msg-Del-DepCondition.png" class="thumbnail" />
+        </p>
+        <h2>Dependent Workflow</h2>
+        <p>
+            <img src="../Resources/Images/Workflow/DEP_WF.png" class="right" />
+        </p>
+        <p>The Dependent Workflow Action Item allows you to trigger additional steps based on the original workflow item that was triggered. You can trigger multiple items simultaneously from the same triggering condition as dependent workflows.  These items can then trigger additional workflow items, allowing for a cascading workflow. Triggering a dataform workflow always ends the cascade.</p>
+        <p>The Dependent Workflow Action Item includes:</p>
+        <ul>
+            <li><b>Workflow counter badge</b>: Displays a count of the dependent workflow items immediately following this item.</li>
+            <li><b>Continue Workflow from Here</b>: Allows you to add more dependent workflow items from this point in the workflow.</li>
+            <li><b>Workflow list</b>: Displays the individual workflow items that are dependent at this point.</li>
+        </ul>
+        <h2>Workflow Attachments</h2>
+        <p>
+            <img src="../Resources/Images/Workflow/WF_ATTACH.png" class="right" />
+        </p>
+        <p>Workflow Attachments stores attachments created when a workflow item generates a task or dataform. These attachments are specific to the workflow that created the record. When that workflow item is automatically generated, it contains a link back to the original file linked to the workflow during configuration. This process does not clone the file; it merely provides a link to the original object. Workflow Attachments are useful for workflows designed around standardized processes such as employee onboarding, where you need to use the same document every time.</p>
+        <p>&#160;</p>
+    </body>
+</html>

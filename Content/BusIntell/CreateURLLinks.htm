@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Business Intelligence" />Creating URL links for Business Intelligence&#160;reports</h1>
+        <p>Sometimes you may want to include Workspace specific reports, such as an Employee Analysis or a Contact report, which includes the ProjectID of the current Workspace to filter the records. </p>
+        <p>A filter for "fkProjectID (or ProjectID) equals" is required to make this "Current Workspace" functionality work.  The system takes the ProjectID stored in the page information and passes the appropriate Workspace information to the code,  to limit the report for just one workspace. However, you need to have a filter.</p>
+        <p class="ProcedureIntro">To create URL&#160;links:</p>
+        <p class="L1Num" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Configure Links</b>.<br /></p>
+        <p class="StepResult">The Configure Links dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Click <b>Add</b>.<br /></p>
+        <p class="StepResult">The Configure Links Detail form opens.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/BI/BI_Links.png" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="3. ">Fill out required fields. </p>
+        <p class="Bullet2" MadCap:autonum="• ">Select the <b>Location</b>.</p>
+        <p class="Bullet2" MadCap:autonum="• "><b>Group</b>: Link 2 (for purposes of this example).</p>
+        <p class="Bullet2" MadCap:autonum="• "><b>Display Action</b>: URL.</p>
+        <p class="Bullet2" MadCap:autonum="• ">Add a <b>Display Value</b>.</p>
+        <p class="Bullet2" MadCap:autonum="• ">Add a <b>Sort Order</b>.</p>
+        <p class="Bullet2" MadCap:autonum="• ">For <b>URL</b>, add the following link, replacing <b>#CategoryName</b> with the actual report Category and <b>#ReportName</b> with the name of the report in question:</p>
+        <p class="Indent1"><code>/BusinessIntelligence/ReportViewer.aspx?rn=#CategoryName%5C#ReportName&amp;projectid={fkProjectID}</code>
+        </p>
+        <p class="Indent1">In the example, the URL has been encoded to eliminate spaces. </p>
+        <p class="Indent1">The encoded URL for the report named "Client Service Cases" in the category of "Client Service" is as follows:  <code>/BusinessIntelligence/ReportViewer.aspx?rn=Client%20Service%2FClient%20Service%20Case%20List&amp;projectid={fkProjectID}</code></p>
+        <p class="L1Num" MadCap:autonum="4. ">Click <b>Save</b> to save your link.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">When creating links to be launched from the workspace landing page, you must use {ProjectID} instead of {fkProjectID}. For example: <code>/BusinessIntelligence/ReportViewer.aspx?rn=#CategoryName%5C#ReportName&amp;projectid={ProjectID}</code></p>
+    </body>
+</html>

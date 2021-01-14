@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Exporting Employees</h1>
+        <p>The <span class="UXElement">Export Employees to PrismHR</span>&#160;process creates a ClientSpace Employee entry in Prism. Prism returns an Employee Identifier that is then stored on the <MadCap:variable name="MyVariables.ProductName"></MadCap:variable> Employee record for the respective Client/Employee.  Prism will NOT allow Employees to be added to Clients that are not properly configured or have incomplete data. You must verify that the Client is properly configured AND manually set the Export Status on the Client Master.</p>
+        <p>The business rule <span class="UXElement">ClientMaster.HE_ValidateExportEmployees</span> prepares ClientSpace Employees for export on the Client Master. A Client Master link <span class="UXElement">Export Employees to PrismHR</span> is displayed when the ClientMaster luExportStatus field is empty or set to Client Setup Complete.</p>
+        <p>
+            <img src="../Resources/Images/Exports/ExportEmployees.png" alt="" title="" class="thumbnail">
+            </img>
+        </p>
+        <h2>Exporting all Employees</h2>
+        <p class="ProcedureIntro">To export Employees:</p>
+        <ol>
+            <li>When the Client Master has a Client Number, the link <span class="UXElement">Export Employees to PrismHR</span>&#160;becomes available. </li>
+            <li>Click the link <span class="UXElement">Export Employees to PrismHR</span>. <br />This action validates required information for each Employee (HE_ValidateExportEmployees). If any Employee fails, that Employee record is updated with a list of missing data. All Employees must pass validation before proceeding. <MadCap:annotation MadCap:createDate="2020-03-25T12:51:48.7758184-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="same comment" MadCap:editor="dhogan" MadCap:editDate="2020-03-25T12:51:51.8027307-04:00">Saved via Business Logic, HRP pipeline.</MadCap:annotation><br /></li>
+            <li>A list of Employees (or an individual employee) ready for export is retrieved. That list includes any Employees that meet the following criteria:<ul style="list-style-type: square;"><li>CM.luExportStatus field = Client Setup Complete</li><li>CM.ClientNumber field is not empty</li><li>The Employee Identifier field is empty</li><li>The Employee IsActive is True</li></ul></li>
+            <li>For each Employee in the list:<ul style="list-style-type: square;"><li>The Client Number associated with the Employee is retrieved.</li><li>The following ClientSpace fields are sent. An asterisk <b>*</b> indicates a required field.</li></ul></li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');width: 523px;" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 261px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">EmployeeID</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">ProjectID</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">FirstName *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">LastName *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">BirthDate</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">BirthDate is validated.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">EmployerID</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Address1</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">ZipCode</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">City</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">StateCode</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">SSN *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">EmployeeStatusCode *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">EmployeeTypeCode</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">WorkLocationCode *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">JobCode *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">OrigHireDate *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">LastHireDate *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">PEOStartDate *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">PayMethod</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">PayRate</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">StandardHours *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">FedFileStatus</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">PayGroup *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">BenefitsGroup</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">AutoPay</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">PayPeriod</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Gender</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p>EthnicCode</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The following fields are sometimes sent depending on the employee's work state:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');width: 260px;" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">WorkStateFilingStatus</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">HomeStateFilingStatus</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">WorkStateExemptAmt</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">HomeStateExemptAmt</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">WorkStatePrimaryAllowance</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">HomeStatePrimaryAllowance</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">HomeStateSecondaryAllowance</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Continue to build a set of Employees to be imported to Prism.</li>
+            <li>The set of Employees is then staged in Prism (importEmployees()). An HRP object is returned after this call. That object is evaluated:<ul MadCap:continue="true" style="list-style-type: square;"><li>If the HRP object Error is set to ‘pass’ meaning the employees were staged properly, the HRP object import error node is evaluated. If that node is empty, the Employees staging was successful and has passed validation. If an error is pending, the Employees that did not pass validation is not exported (a log entry is generated).</li></ul><ul MadCap:continue="true" style="list-style-type: square;"><li>For the Employees that were properly staged, the set is now committed (commitEmployees()).</li></ul><ul MadCap:continue="true" style="list-style-type: square;"><li>After committing, the Employees are updated in ClientSpace: Each Employee’s Identifier is set.</li></ul></li>
+            <li>If the validation passes, the rule <span class="UXElement">ExportEmployeesToHRP</span> executes.<ul style="list-style-type: square;"><li>This rule packages the Employee and Employment data for each Employee of the current Client. </li></ul><ul style="list-style-type: square;"><li>Issues the data, one Employee at a time, to Prism requesting that an Employee be imported and committed.</li></ul></li>
+            <li>If the Export fails:<ul style="list-style-type: square;"><li>NO MESSAGES ARE ISSUED TO THE USER!  The User must review the Export Status and Export Log fields for results.</li><li>The Export Status field is set to Failed API, and the Export Log field will contain the cause of the failure.  Some of the errors will be ClientSpace related, and some may be Prism related.</li></ul><ul style="list-style-type: square;"><li>At this point, correct the errors  before proceeding.</li></ul></li>
+            <li>After the Export passes:<ul style="list-style-type: square;"><li>The Export Status field is set to Employee Setup Pending.  The Employee may have further configuration requirements in Prism. <MadCap:annotation MadCap:createDate="2020-03-25T15:05:32.2528475-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="same comment" MadCap:editor="dhogan" MadCap:editDate="2020-03-25T15:05:34.7631339-04:00">Saved via Business Logic, Default pipeline.</MadCap:annotation></li></ul><ul style="list-style-type: square;"><li>The Employee Identifier is populated by the value provided by Prism. <MadCap:annotation MadCap:createDate="2020-03-25T12:51:57.7919855-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="same comment" MadCap:editor="dhogan" MadCap:editDate="2020-03-25T12:51:59.6879153-04:00">Saved via Business Logic, Default pipeline.</MadCap:annotation></li></ul></li>
+        </ol>
+        <h2>Exporting single Employees</h2>
+        <p class="Body">The Action Center link, <span class="UXElement">Export Employee to PrismHR</span> appears only if the EmployeeIdentifier field is empty and the Client Master status is UnderContract, PendingActivation, or PendingTermination.</p>
+        <ol>
+            <li>From the <span class="UXElement">Employee</span> record, in the <span class="UXElement">Action Center</span>, click <span class="UXElement">Export Employee to PrismHR</span>.</li>
+            <li>Review the steps in the previous procedure, exporting all Employees.</li>
+        </ol>
+    </body>
+</html>

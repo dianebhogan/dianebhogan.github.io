@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Security entities</h1>
+        <p>The file attachment datatype   adheres to both dataform and file management security rights.  These security rights work in the following way:</p>
+        <p><b>Dataform_Field security</b>: View/Add/Edit/Delete controls whether a user can:</p>
+        <ul>
+            <li><b>View</b>: View the file from the field.</li>
+            <li><b>Add</b>: Add a new file when the field is empty.</li>
+            <li><b>Edit</b>: Update or change an existing file (folder icon).</li>
+            <li><b>Delete</b>: Delete a file from the Dataform (trashcan icon).</li>
+        </ul>
+        <p class="StepResult">&#160;</p>
+        <p>With field edit rights comes an additional layer of security in the Upload File dialog box using the File_Man security entities:</p>
+        <ul>
+            <li><b>File_Man_Delete</b>: Delete a version of the file.</li>
+            <li><b>File_Man_Pin</b>: Swap files in the versioning hierarchy.</li>
+            <li><b>File_Man_Ver_Override</b>: Override the default  setting when uploading a file. The user can select either the Yes, Pin New File or No, Replace File.  Each time the page loads, the default value is selected.</li>
+        </ul>
+    </body>
+</html>

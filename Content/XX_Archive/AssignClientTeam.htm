@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Auto-assigning a client team using the Service Team field</h1>
+        <p>Business Rules can be configured on the Client Processing Team dataform so when a Service Team is selected it will auto-populate the Client Team's various roles. To do this, a Global Admin needs to configure a rule for each role that needs to be auto-filled. See the following figure for an example of how to configure this rule. This rule sets the Implementation Specialist when the "Blue Jay" Service Team is selected.</p>
+        <p class="ProcedureIntro">To auto assign a client team:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Manage Rules</b>.<br />The Custom Logic Rules dashboard opens.<br /></li>
+            <li>To add a business rule, click <b>Add</b>.<br />The Rule Details form opens.<br /></li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Dataform/RuleDetails.png" alt="" title="" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Complete the form fields.</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 155px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Table Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the dataform where this rule executes when the dataform is saved.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Method</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Choose <b>_SetFieldValue</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Rule Title</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Provide an abbreviated explanation of
+ what this rule does. For example, <i>Set Implementation Specialist for
+Green Team</i>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">RuleType</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">ClientSpace controls this field
+ automatically.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Provide a more thorough explanation of
+ what this rule is to accomplish.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Primary Trigger
+ Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select the field  to
+ cause the change.&#160;In this example, <b>Service Team (fkServiceTeamID)</b>
+ represents the Service Team field on this dataform.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Primary Trigger Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Type the value of what is stored in
+ the database for the Trigger Field.&#160;In this example <b>8</b> is the value
+ that is stored in the system to represent the Green Team.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Secondary Trigger Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select an additional trigger condition that
+ must be met, if necessary.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Secondary Trigger
+ Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Set the secondary trigger value.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Execution Pipeline</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Leave this set to <b>Default</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Execution Order</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This field controls the order in which
+ rules execute. Rules execute from lowest to highest number. It may
+ be necessary to look at other rules already configured on this dataform to
+ determine the order of precedence for executing rules.</p>
+                        <p class="TableTextLeft"><b>Execution Order of Precedence</b>: Within the Rules system, there is a distinct order of precedence that occurs, that being HardError, SoftError, BizLogic. This means that setting a field to a specific value automatically with BizLogic, then validating that field with a Hard Error  never occurs in the correct order, as the Hard Error fires before the BizLogic fills the field. </p>
+                        <p class="TableTextLeft">This order of precedence happens irrespective of the execution order placed on the configured rule, so Hard Errors fire in Execution order least to greatest, then Soft Errors fire in their order of execution, then the Biz Logic happens, again in the order of execution set on each rule.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Save Action</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Will this rule be applied on Insert of
+ a new dataform, or the update of an existing dataform or on both?</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Workspace Template</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select the Workspace Templates to
+ which this rule applies.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">sFieldName</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Type the technical database name for
+ the field that needs to be set. In this example, <i>ImplementationSpecialist</i>
+ represents the Implementation Specialist field on the Client Team dataform.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">sFieldValue</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Type the value of what should be
+ stored in the database for the Trigger Field. In this example, 495 is the
+ value that is stored in the system to represent Adam Harris, the
+ Implementation Specialist.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">Use a combination of Ad-hoc Reports, the Dataform Specifications Report, Lookup Admin, and or Dataform Admin to find the technical database names and the values stored in the database to represent the value that is seen by the user from the dataform. This rule would also work well in cases where you may want to set the Implementation Specialist to X when the Payroll Specialist is Y.</p>
+    </body>
+</html>

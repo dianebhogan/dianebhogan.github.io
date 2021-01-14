@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Using the Slack integration</h1>
+        <p>To use the Slack integration, simply type one of the available Slash commands after typing the prefix command you assigned in Step 1 of the Slack integration settings. In our example, we are using <code>/clientspace</code>.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">Sharing data in a Group Channel - When returning data to a group channel using the following commands, the returned information will be visible only to you, unless you explicitly use the <code>-share</code> command.  If you include <code>-share</code> in your request, the returned data will be visible to anyone in the Slack channel.  Example: <code>/clientspace mycases -share</code></p>
+        <p>The following is a list of available commands that can be used in Slack to retrieve <MadCap:variable name="MyVariables.ProductName" /> information:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 118px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Command</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Description and examples</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">case</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Returns
+ information about a Case by Case Number.</p>
+                        <p>Example: <code> /clientspace case 1234</code></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">escalated</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Returns
+ escalated cases assigned to you, ordered by Escalation Date Descending
+ (newest first)</p>
+                        <p>Examples:</p>
+                        <p><code>/clientspace  escalated</code>
+                        </p>
+                        <p><code>/clientspace  escalated -share</code>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">help</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Lists
+ all of the available commands</p>
+                        <p>Example:&#160;<code>/clientspace help</code></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">mycases</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Returns
+ the most recent 10 cases assigned to you, ordered by Date Created descending
+ (newest first)</p>
+                        <p>Examples:</p>
+                        <p><code>/clientspace  mycases</code>
+                        </p>
+                        <p><code>/clientspace  mycases -share</code>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">mytasks</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Returns
+ the most recent 10 tasks assigned to you, ordered by Start Date descending
+ (newest first)</p>
+                        <p>Examples:</p>
+                        <p><code>/clientspace  mytasks</code>
+                        </p>
+                        <p><code>/clientspace  mytasks -share</code>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">task</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Returns
+ information about a specific Task by TaskID</p>
+                        <p>Example:
+ <code>/clientspace task 1234</code></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Using slack requests returns a Slack post containing pertinent information about your request including a selectable link that opens the case/task in a new <MadCap:annotation MadCap:createDate="2019-08-20T10:44:38.3730770-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="Replace screenshot" MadCap:editor="dhogan" MadCap:editDate="2019-08-20T10:44:45.6839311-04:00">browser.</MadCap:annotation></p>
+        <p>
+            <img src="../Resources/Images/Integrations/response.jpg" />
+        </p>
+    </body>
+</html>

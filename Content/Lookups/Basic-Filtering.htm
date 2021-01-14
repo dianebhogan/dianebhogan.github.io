@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Basic field filtering: Using the lookup Filter and dataform field Filter Value</h1>
+        <p>ClientSpace provides lookup <em>field</em> filtering, which allows you to reduce the number of value choices  selected from a dataform field. This is accomplished  using the Filter field on the Lookup Details form. You can use the Filter field to filter the dataform field using either a straightforward basic filter or a controlling field using advanced filtering. We discuss advanced filtering in the next topic.</p>
+        <p>
+            <img src="../Resources/Images/Lookups/State-list.png" class="right" />
+        </p>
+        <p>For basic field filtering, let's continue to use the US States as an example. The Lookup Group, named US States, is already established. The lookup values are also established: the states from Alaska to Wyoming (in alpha order). In the preceding topic, we configured the Client Location dataform  to use the lookup group <em>US States</em> for the field State. Because no filter value is applied, the field displays all the lookup values in the group US States, as shown in the adjacent image.</p>
+        <p>So then, how can you apply further filtering to limit the list? Let's first look at basic field filtering.</p>
+        <p>Now let's step through the procedure for configuring basic <em>field</em> filtering using the Filter value in the lookup details. For our example, we use  Florida and assign a value to indicate a geographic region.</p>
+        <p class="StepResult">&#160;</p>
+        <p class="ActionTip">Basic filtering applies to the Lookup (core), Lookup Type Ahead (core), and Lookup - Multiple (core) datatypes.</p>
+        <p class="StepResult">&#160;</p>
+        <h2>1. Assign a Filter value to the lookup detail</h2>
+        <p class="ProcedureIntro">To assign a Filter value:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Lookups</b>.<br />The Lookups dashboard opens. </li>
+            <li>Filter the list to search for your lookup group. <br />Our example uses <em>US States</em> as the search filter.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Lookups/LookupValues-states.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Open a state. <br />The Lookup Details form opens. Our example uses Florida. Let's assign a Filter value to indicate a geographical region.</li>
+            <li>In <span class="UXElement">Filter</span>, enter a value.<br />We assigned a value <em>SE</em> to represent the Southeast geographic region.<br /></li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Lookups/State-with-Filter-value.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+            <li>Repeat this process for each of your lookups. For this example, US States, we need to assign an appropriate Filter value to each state (such as, SE, NE, or MW). For your lookup group and values, apply the same approach.</li>
+        </ol>
+        <h2>2. Configure the dataform field to use Filter Value</h2>
+        <p>Now with a Filter value assigned to our states, let's see it in action. Note, we have already set the Filter value for all of the Southeastern states. The lookup values (states) have a filter value (such as SE for Florida, Georgia, North Carolina, and South Carolina). However, to use the filter value to limit what is displayed in a dataform field, we must perform additional field configuration.  Let's continue the example using Southeastern states. We want to narrow the dataform field to only list states with a filter value of SE so that only Southeastern states appear in the list.</p>
+        <p class="ProcedureIntro">To configure the dataform field using Filter Value:</p>
+        <ol>
+            <li>Return to the field configuration. Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Advanced</span> &gt; <span class="UXElement">Dataform Admin</span> &gt; <span class="UXElement">Fields</span>.</li>
+            <li>Open the field in question, and in <span class="UXElement">Filter Value</span>, enter a value.<br />Our example shows the State field with <span class="UXElement">SE</span> in Filter Value.  </li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Lookups/Config-dataform-field-with-filter-value.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <p>The next step is to reload the dataform to use the new lookup settings.</p>
+        <p class="ProcedureIntro">To reload the dataform:</p>
+        <ul>
+            <li>
+                <p>On the dataform, on the <span class="UXElement">Action Center</span> toolbar, click  (<span class="UXElement">Reload</span>).</p>
+            </li>
+        </ul>
+        <h2>See it in action</h2>
+        <p>Now that we have hard-coded a value in Filter Value for the State field let's see how this looks on the dataform. We only want the Southeastern states to display in the list. So, we assigned a Filter for each state lookup and then set a Filter Value on the dataform field. The State selections are now just the Southeastern states. <span class="UXElement">**</span></p>
+        <p>
+            <img src="../Resources/Images/Lookups/BasicFieldFiltering-results.png" class="thumbnail" />
+        </p>
+        <p class="ActionTip"><span class="UXElement">**</span> It is essential to understand that filtered lookup fields display only the lookup values with filters that match the Filter Value on the dataform field configuration and any lookup values in the lookup group that do not have a filter set. For example, states that are not assigned a Filter, such as SE or NE, will, by default, appear in the list of available values. States that display in the list and are not in the Southeast indicate that you need to assign a value to Filter in the lookup details. In other words, assign a Filter value for all the lookups that belong to a Lookup Group – if you do not want irrelevant items in the lookup field list.</p>
+    </body>
+</html>

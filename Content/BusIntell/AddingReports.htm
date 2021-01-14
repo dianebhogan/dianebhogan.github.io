@@ -1,0 +1,819 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Business Intelligence" />Adding underlying <MadCap:variable name="MyVariables.ProductName" /> data to Business Intelligence reports
+                        </h1>
+        <p>You can add functionality to Izenda reports by drilling into ClientSpace records from ad-hoc reports.  </p>
+        <p>The numbers in curly braces are the field positions for the parameter you want to pass, so {0} indicates the field you are on, {2} indicates the second column (field)&#160;in&#160;the Izenda report.&#160; It is important to know that fields (columns) &#160;that are visually grouped in a report are not included when counting columns for use in these parameter curly braces. So if the first two fields on your report are visually grouped and you wanted to send the parameter in field #4, you would actually use&#160;{2} unless the link is on field 4 in which case you would use {0}.</p>
+        <p>By using the following code samples and the appropriate data fields, you can add robust functionality to ad-hoc reports.&#160; </p>
+        <p class="ProcedureIntro">To add linkto drill-down functionality inline on a report:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Add the following codes (see the following list) on the <b>Fields</b> tab &gt; <b>Advanced Field Settings</b> <img src="../Resources/Images/ICONS/ICON_IzendaAdvFieldSettings.png" /> &gt; <b>Url</b> field.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/BI/AdHocDrilldown.jpg" />
+        </p>
+        <p class="ProcedureIntro">Standard formatting is as follows: /next/linkto/{TableCode}/{ID}</p>
+        <p class="Bullet1" MadCap:autonum="• "><strong>next/linkto </strong>:&#160;Alerts BI that you are creating a link to another record.</p>
+        <p class="Bullet1" MadCap:autonum="• "><strong>{TableCode}</strong> is the predetermined Code of the dataform or core table that you want to link to. This code is hardcoded into the URL you are embedding into your report.&#160;</p>
+        <p class="Bullet1" MadCap:autonum="• "><strong>{ID}</strong> is the key of the detail record you want to drill into and is dynamically replaced in your URL by Izenda. Keep in mind that <strong>Visual Group fields on reports do not count</strong> when figuring the order.</p>
+        <p><strong>Dataform TableCode</strong>:&#160;You can link to dataform pages with the following format:</p>
+        <ul>
+            <li>/next/linkto/clientservicecase/{ID}</li>
+        </ul>
+        <p>A new column, called <strong>TableCode</strong>, has been added to the ProjectTypes table, this has been defaulted to the AttributeTableName with the "gen_" prefix stripped off.</p>
+        <p>So, in the example , it uses the TableCode <strong>clientservicecase</strong> to hit the ProjectTypes table, find the associated ProjectTypeID, and build the URL to the dataform edit page with that ProjectTypeID and the provided RecordID.</p>
+        <p><strong>Core TableCode</strong>: You can also link to Core detail page through this mechanism, a predefined set of core TableCode-to-detail page URL mappings are checked first:</p>
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 151px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Organization&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">usage: /next/linkto/organization/{ID}</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Contact&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">usage: /next/linkto/contact/{ID}</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Workspace</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">usage: /next/linkto/workspace/{ID}</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Task&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">usage: /next/linkto/task/{ID}</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Activity&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">usage: /next/linkto/activity/{ID}</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">TimeTracker&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">usage: /next/linkto/timetracker/{ID}</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">User&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">usage: /next/linkto/user/{ID}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Secondary TableCode</strong>: If the specified TableCode is not found in the list of known core/peo TableCodes, it then hits tblTableMetadata, where there are two new columns: TableCode and DetailUrl. It uses the specified TableCode to lookup the tblTableMetadata row with the matching TableCode, and pull the associated DetailUrl field, it looks for the string {ID}, and replace it with the record Id that was passed to the LinkTo page.</p>
+        <p>So, if you have a row in tblTableMetadata with a TableCode = "Foo", and a DetailUrl = "~/foo/bar/{ID}</p>
+        <p>Then, embed a link using the LinkTo page like this: <code>/next/linkto/foo/123</code></p>
+        <p>An example of this is /next/linkto/workspace/{0} where the Projects Table entry in&#160;tblTableMetadata&#160;has been updated to allow direct linking to the Workspace Landing Page.</p>
+        <p style="font-weight: bold;">A few caveats</p>
+        <p class="Bullet1" MadCap:autonum="• ">* None of these new columns (TableCode or DetailUrl) are exposed on the UI. Look directly in the database, or run an Ad Hoc report to see the values.</p>
+        <p class="Bullet1" MadCap:autonum="• ">*New values can be added on request by <MadCap:variable name="MyVariables.CompanyName" />.</p>
+        <p class="Bullet1" MadCap:autonum="• ">* When you load up a detail page from the Link To page, you don't get your modules across the top nav, nor do you get the user name drop-down in the upper right of the top nav. This is by design. This is meant to be a stripped down version of the navigation, for drilling into detail pages.</p>
+        <p class="Bullet1" MadCap:autonum="• ">*To encode a link to the<strong> Pricing Console</strong> of a workspace, use the following format in the fields <strong>Advanced | Url</strong> field: /next/PEO/PricingConsole/pricingconsole/{projectId} where /{projectid} represents the column on the report containing the ProjectID column on your report. Remember to remove formatting such as commas. from the ProjectID column or the report returns an error.</p>
+        <h2>Tips</h2>
+        <ul>
+            <li>When a report is designed to run within a workspace (using <strong>#currentworkspace</strong> as a hardcoded filter in the report against a ProjectID column), you can pass the projectid of the workspace you are on using the querystring parameter projectid. For example:
+                <ul><li><strong>In the report:</strong> <img src="../Resources/Images/BI/curws.jpg" /><br /></li><li><strong>In the link configuration:</strong> /BusinessIntelligence/ReportViewer.aspx?rn=workspacetest&amp;projectid={fkProjectID}</li><li><strong>If the link is configured to run from the Workspace Landing Page:</strong> /BusinessIntelligence/ReportViewer.aspx?rn=workspacetest&amp;projectid={ProjectID}<br /><br /></li></ul></li>
+        </ul>
+        <ul>
+            <li>When a report is designed to filter records for only the current user (using <strong>#currentuser</strong> as a hardcoded filter in the report against a UserID column), the system automatically passes the current user ID into this filter. For the example report above<ul><li><strong>In the report:</strong><img src="../Resources/Images/BI/curuser.jpg" /></li><li><span><strong>In the link configuration</strong>: /BusinessIntelligence/ReportViewer.aspx?rn=workspacetest</span></li></ul></li>
+        </ul>
+        <p class="ProcedureIntro">To add custom links to dataform File fields:&#160;</p>
+        <p>If a dataform in your report contains a file upload field, you can create a link to download the file using the following format:</p>
+        <p class="Bullet1" MadCap:autonum="• "><strong>/next/Files/Download?id={ID}</strong>
+        </p>
+        <p class="Bullet1" MadCap:autonum="• "><strong>{ID}</strong> is the file upload field in your report (containing the file GUID), and is dynamically replaced in your Url by Izenda. Keep in mind that <strong>Visual Group fields on reports do not count</strong> when figuring out the order.</p>
+        <h2>PEO&#160;TableCodes</h2>
+        <p>The following is a list of standard <strong>PEO</strong> dataform tables and the associated TableCodes. If you don't find what you are looking for on this list or would like to add a TableCode for a custom table, log an Extranet case.</p>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Dataform Table</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">TableCode</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_AcctManagerVisit</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">AcctManagerVisit</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_AdminCaseCategory</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">AdminCaseCategory</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_AdminCaseTypes</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">AdminCaseTypes</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_AdminCompCodeMaster</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">AdminCompCodeMaster</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_AdminHoliday</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">AdminHoliday</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_AdminLegalEntity</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">AdminLegalEntity</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_AdminLossRunImport</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">AdminLossRunImport</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_AdminLossRunImportMapping</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">AdminLossRunImportMapping</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_AdminLossRunImportMappingLookup</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">AdminLossRunImportMappingLookup</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_AdminPolicyCompCodes</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">AdminPolicyCompCodes</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_AdminServiceTeam</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">AdminServiceTeam</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_AdminStateLegalEntity</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">AdminStateLegalEntity</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_AdminStateRates</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">AdminStateRates</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_AdminWorkersCompPolicy</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">AdminWorkersCompPolicy</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_AnnualAdministration</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">AnnualAdministration</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_ApprovalDependency</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">ApprovalDependency</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_Attorney</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Attorney</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_BenefitPlan</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">BenefitPlan</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_BenefitPlanTier</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">BenefitPlanTier</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_Benefits</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Benefits</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_BenefitsBenefitPlan</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">BenefitsBenefitPlan</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_BenefitsPlanCategoryMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">BenefitsPlanCategoryMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_BenefitsPlanGroup</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">BenefitsPlanGroup</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_BenefitsPricing</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">BenefitsPricing</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_BenefitsReconAdmin</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">BenefitsReconAdmin</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_BenefitTierDefinition</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">BenefitTierDefinition</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_BodyPartMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">BodyPartMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_CauseofInjuryMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">CauseofInjuryMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_CensusEmployeeImport</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">CensusEmployeeImport</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_CertificateOfInsurance</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">CertificateOfInsurance</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_ClaimDeductibleBill</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">ClaimDeductibleBill</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_ClaimNotes</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">ClaimNotes</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_ClaimTypeMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">ClaimTypeMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_ClientActivity</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">ClientActivity</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_ClientCertificates</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">ClientCertificates</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_ClientDistressCall</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">ClientDistressCall</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_ClientLocation</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">ClientLocation</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_ClientMaster</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">ClientMaster</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_ClientMasterStatusMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">ClientMasterStatusMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_ClientProcessingTeam</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">ClientProcessingTeam</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_ClientSatisfactionLevelMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">ClientSatisfactionLevelMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_ClientServiceCase</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">ClientServiceCase</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_ClientServiceCaseDiscussion</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">ClientServiceCaseDiscussion</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_ClientServiceCaseEscalation</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">ClientServiceCaseEscalation</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_ClientServiceCaseExpenses</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">ClientServiceCaseExpenses</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_ClientServiceCasePriorityMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">ClientServiceCasePriorityMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_ClientServiceCaseTime</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">ClientServiceCaseTime</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_ClientStatistics</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">ClientStatistics</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_ClientTeamRole</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">ClientTeamRole</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_ClientTeamRoleMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">ClientTeamRoleMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_ClientVisitTypeMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">ClientVisitTypeMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_COBRA</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">COBRA</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_COICertificateHolder</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">COICertificateHolder</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_COIVersionMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">COIVersionMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_Collateral</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Collateral</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_CommissionDetail</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">CommissionDetail</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_Company401k</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Company401k</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_CompanyInformation</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">CompanyInformation</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_CompClaim</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">CompClaim</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_CompClaimClaimant</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">CompClaimClaimant</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_CompClaimFinancial</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">CompClaimFinancial</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_CompClaimInjury</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">CompClaimInjury</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_CompClaimLegal</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">CompClaimLegal</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_CompClaimPayment</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">CompClaimPayment</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_CompClaimPredictiveScore</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">CompClaimPredictiveScore</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_CompClaimReserve</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">CompClaimReserve</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_CompClaimRTW</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">CompClaimRTW</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_CompClaimRTWStatusMeta</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">CompClaimRTWStatusMeta</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_CompClaimSubrogation</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">CompClaimSubrogation</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_CompClaimTreatment</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">CompClaimTreatment</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_CompClaimWitness</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">CompClaimWitness</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_CompCodeTranslation</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">CompCodeTranslation</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_CompCodeTranslationLink</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">CompCodeTranslationLink</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_Contact</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Contact</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_ContactOtherInfo</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">ContactOtherInfo</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_ContactTypeOtherInfoMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">ContactTypeOtherInfoMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_ContractTypeMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">ContractTypeMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_ConvertEDVRecords</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">ConvertEDVRecords</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_Correspondence</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Correspondence</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_CPEhrRAF</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">CPEhrRAF</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_DeductionVoucher</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">DeductionVoucher</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_DefaultAdminFee</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">DefaultAdminFee</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_DefaultClientTeam</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">DefaultClientTeam</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_DefaultCompDiscount</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">DefaultCompDiscount</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_Dependent</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Dependent</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_DiscountThreshold</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">DiscountThreshold</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_DiscussionMessage</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">DiscussionMessage</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_DiscussionRecipient</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">DiscussionRecipient</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_DiscussionThread</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">DiscussionThread</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_Employee401k</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Employee401k</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_EmployeeBenefits</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">EmployeeBenefits</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_EmployeeCertifications</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">EmployeeCertifications</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_EmployeeDeductionVoucher</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">EmployeeDeductionVoucher</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_EmployeeEmploymentInformation</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">EmployeeEmploymentInformation</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_Employees</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Employees</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_EmployeeVoucher</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">EmployeeVoucher</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_EmploymentStatusMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">EmploymentStatusMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_EntityQualifications</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">EntityQualifications</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_EPLIClaim</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">EPLIClaim</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_EPLIClaimFinancial</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">EPLIClaimFinancial</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_EPLIClaimLegal</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">EPLIClaimLegal</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_EPLIPolicy</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">EPLIPolicy</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_ExecTeam</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">ExecTeam</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_FMLA</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">FMLA</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_FSA</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">FSA</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_HSA</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">HSA</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_I9</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">I9</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_ImportInvoiceRecords</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">ImportInvoiceRecords</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_IndustryCodeMapping</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">IndustryCodeMapping</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_InterfaceException</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">InterfaceException</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_JurisdictionReportFormat</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">JurisdictionReportFormat</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_LifeInsurance</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">LifeInsurance</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_LossDataFactor</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">LossDataFactor</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_LossHistory</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">LossHistory</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_MasterBenefitsRecord</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">MasterBenefitsRecord</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_MBRMatchingRecord</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">MBRMatchingRecord</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_MBRReconcile</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">MBRReconcile</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_MedicalProvider</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">MedicalProvider</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_NatureofInjuryMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">NatureofInjuryMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_NewQuestionnaire</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">NewQuestionnaire</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_OASISInvoice</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">OASISInvoice</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_OfferedBenefitPlanSummary</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">OfferedBenefitPlanSummary</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_OfferedPlanClassification</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">OfferedPlanClassification</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_OrderAssignment</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">OrderAssignment</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_OrganizationSourceMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">OrganizationSourceMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_OrganizationStatusMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">OrganizationStatusMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_OrgOtherInfo</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">OrgOtherInfo</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_OrgTransferRequest</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">OrgTransferRequest</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_OSHACode</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">OSHACode</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_PayFrequencyMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">PayFrequencyMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_Payroll</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Payroll</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_PayrollCycle</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">PayrollCycle</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_PayrollInformation</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">PayrollInformation</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_PayrollStatistics</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">PayrollStatistics</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_PensionPlans</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">PensionPlans</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_PensionPlanSupplemental</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">PensionPlanSupplemental</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_PolicyCodeMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">PolicyCodeMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_Positions</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Positions</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_PreSaleBenefitPlan</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">PreSaleBenefitPlan</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_PreSaleBenefits</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">PreSaleBenefits</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_PricingBatch</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">PricingBatch</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_PricingBatchState</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">PricingBatchState</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_PricingCompCode</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">PricingCompCode</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_ProjectMilestone</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">ProjectMilestone</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_Qualifications</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Qualifications</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_RevenueAdjustors</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">RevenueAdjustors</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_RFPQuestionnaire</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">RFPQuestionnaire</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_RiskProfile</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">RiskProfile</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_SalesEntity</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">SalesEntity</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_SlavicPlanHub</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">SlavicPlanHub</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_StaffingAdministration</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">StaffingAdministration</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_StaffingClientMaster</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">StaffingClientMaster</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_StateContinuation</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">StateContinuation</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_StateMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">StateMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_Surcharges</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Surcharges</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_SurchargeType</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">SurchargeType</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_SurchargeTypeDependency</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">SurchargeTypeDependency</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_SurchargeTypeMetadata</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">SurchargeTypeMetadata</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_SurchargeTypePriceThresholds</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">SurchargeTypePriceThresholds</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_TaxNotices</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">TaxNotices</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_Termination</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Termination</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_TPA</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">TPA</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_UnderwriterApproval</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">UnderwriterApproval</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_UnderwritingDefinition</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">UnderwritingDefinition</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_UnemploymentBenefitCharges</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">UnemploymentBenefitCharges</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_UnemploymentClaim</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">UnemploymentClaim</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_UnemploymentClaimFinancial</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">UnemploymentClaimFinancial</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_WCClaimNote</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">WCClaimNote</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">gen_WorkOrder</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">WorkOrder</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>tblTableMetada</h2>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" data-highlight-colour="green"><strong>tablename</strong>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" data-highlight-colour="green"><strong>DetailUrl</strong>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2" data-highlight-colour="green"><strong>TableCode</strong>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Projects</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">~/workspaces/landing/{ID}</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Workspace</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">tblContact</td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">~/contacts/detail/{ID}</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">Contact</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>For more information about configuring advanced functionality in ad hoc reporting, log an Extranet case  to schedule a training session.
+        </p>
+    </body>
+</html>

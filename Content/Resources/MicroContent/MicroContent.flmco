@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MicroContentSet Comment="Default micro content set.">
+    <MicroContent id="what-is-a-task">
+        <MicroContentPhrase>What is a task</MicroContentPhrase>
+        <MicroContentPhrase>define tasks</MicroContentPhrase>
+        <MicroContentPhrase>tasks and cases</MicroContentPhrase>
+        <MicroContentPhrase>tasks</MicroContentPhrase>
+        <MicroContentPhrase>task</MicroContentPhrase>
+        <MicroContentPhrase>what are tasks</MicroContentPhrase>
+        <MicroContentPhrase>what tasks</MicroContentPhrase>
+        <MicroContentResponse href="../../CasesTasks/CasesTasks.htm#microcontent1" />
+    </MicroContent>
+    <MicroContent id="what-is-a-case">
+        <MicroContentPhrase>What is a case</MicroContentPhrase>
+        <MicroContentPhrase>cases</MicroContentPhrase>
+        <MicroContentPhrase>define cases</MicroContentPhrase>
+        <MicroContentPhrase>cases and tasks</MicroContentPhrase>
+        <MicroContentPhrase>case</MicroContentPhrase>
+        <MicroContentPhrase>what are cases</MicroContentPhrase>
+        <MicroContentResponse href="../../CasesTasks/CasesTasks.htm#microcontent2" />
+    </MicroContent>
+    <MicroContent id="conditionexpressions">
+        <MicroContentPhrase>ConditionExpressions</MicroContentPhrase>
+        <MicroContentResponse>
+            <xhtml:html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                <xhtml:body>
+                    <xhtml:p>Condition expressions are used in email templates, workflow channels, widget layouts, and custom links. Condition expressions are used to control when an event or action is triggered.</xhtml:p>
+                    <xhtml:p>Condition Expressions use Labels from Display Conditions along with AND, OR, and NOT operators to control precedence and sequence.</xhtml:p>
+                    <xhtml:p xhtml:class="Bullet1" MadCap:autonum="• ">The <xhtml:b>AND</xhtml:b> operator specifies that all specified conditions must be met for a query to return true. The AND is exclusive. AND narrows a search by telling the database that <xhtml:b>all</xhtml:b> keywords used must be found.</xhtml:p>
+                    <xhtml:p xhtml:class="Bullet1" MadCap:autonum="• ">The <xhtml:b>OR</xhtml:b> operator specifies that if one of two or more conditions is met, then the query is true. The OR only needs one data point to be present. OR broadens a search by telling the database that <xhtml:b>any</xhtml:b> of the words it connects are acceptable.</xhtml:p>
+                    <xhtml:p xhtml:class="Bullet1" MadCap:autonum="• ">The <xhtml:b>NOT</xhtml:b> operator allows you to exclude items that are not relevant to your search. NOT narrows your search by telling the database to <xhtml:b>eliminate all terms that follow it</xhtml:b>.</xhtml:p>
+                </xhtml:body>
+            </xhtml:html>
+        </MicroContentResponse>
+    </MicroContent>
+    <MicroContent id="user-modules">
+        <MicroContentPhrase>What is a user module</MicroContentPhrase>
+        <MicroContentPhrase>users module</MicroContentPhrase>
+        <MicroContentPhrase>module</MicroContentPhrase>
+        <MicroContentPhrase>modules</MicroContentPhrase>
+        <MicroContentPhrase>What is a module</MicroContentPhrase>
+        <MicroContentPhrase>What are user modules</MicroContentPhrase>
+        <MicroContentPhrase>define modules</MicroContentPhrase>
+        <MicroContentPhrase>user modules</MicroContentPhrase>
+        <MicroContentResponse href="../../Workspace/LandPage.html#microcontent1" />
+    </MicroContent>
+    <MicroContent id="clientspace">
+        <MicroContentPhrase>ClientSpace</MicroContentPhrase>
+        <MicroContentPhrase>What is ClientSpace</MicroContentPhrase>
+        <MicroContentPhrase>Define ClientSpace</MicroContentPhrase>
+        <MicroContentResponse href="../../HowToUse/getknow.htm#microcontent1" />
+    </MicroContent>
+    <MicroContent id="workflow-channels">
+        <MicroContentPhrase>Workflow Channels</MicroContentPhrase>
+        <MicroContentPhrase>define workflow channels</MicroContentPhrase>
+        <MicroContentPhrase>what are workflow channels</MicroContentPhrase>
+        <MicroContentResponse href="../../WFC/Introduction.htm#microcontent1" />
+    </MicroContent>
+    <MicroContent id="dataforms">
+        <MicroContentPhrase>Dataforms</MicroContentPhrase>
+        <MicroContentPhrase>define dataforms</MicroContentPhrase>
+        <MicroContentPhrase>what are dataforms</MicroContentPhrase>
+        <MicroContentResponse href="../../Dataforms/Dataforms.html#microcontent1" />
+    </MicroContent>
+    <MicroContent id="user-profile">
+        <MicroContentPhrase>user profile</MicroContentPhrase>
+        <MicroContentResponse href="../Snippets/UserProfile.flsnp#microcontent1" />
+    </MicroContent>
+    <MicroContent id="contacts">
+        <MicroContentPhrase>contacts</MicroContentPhrase>
+        <MicroContentResponse>
+            <xhtml:html xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                <xhtml:head>
+                    <xhtml:link xhtml:href="../TableStyles/Standard_Table.css" xhtml:rel="stylesheet" MadCap:stylesheetType="table" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+                    <xhtml:meta xhtml:name="description" xhtml:content="Contacts are a way of storing information in the system, primarily contact information for clients or potential clients used during the sales process and after, without creating a user and providing access to the system." />
+                </xhtml:head>
+                <xhtml:body>
+                    <xhtml:p>Contacts are a way of storing information in the system, primarily contact information for clients or potential clients used during the sales process and after, without creating a user and providing access to the system. This information can be imported from external systems such as Salesforce, Act-On, and <MadCap:variable xhtml:name="MyVariables.CompanyName" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />.&#160;In this topic we provide an overview of contacts and some of the System features related to them.</xhtml:p>
+                </xhtml:body>
+            </xhtml:html>
+        </MicroContentResponse>
+    </MicroContent>
+    <MicroContent id="modules-bar">
+        <MicroContentPhrase>modules bar</MicroContentPhrase>
+        <MicroContentPhrase>what is modules bar</MicroContentPhrase>
+        <MicroContentPhrase>where modules bar</MicroContentPhrase>
+        <MicroContentResponse href="../../Popups/ModulesBar.htm#microcontent1" />
+    </MicroContent>
+    <MicroContent id="organization">
+        <MicroContentPhrase>Organization</MicroContentPhrase>
+        <MicroContentPhrase>what is organization</MicroContentPhrase>
+        <MicroContentResponse href="../../Sales/GettingStarted.htm#microcontent1" />
+    </MicroContent>
+    <MicroContent id="workspace">
+        <MicroContentPhrase>Workspace</MicroContentPhrase>
+        <MicroContentResponse href="../../Workspace/LandPage.html#microcontent2" />
+    </MicroContent>
+    <MicroContent id="email-templates">
+        <MicroContentPhrase>Email Templates</MicroContentPhrase>
+        <MicroContentResponse href="../../EmailTemp/Intro_EmailTemplates.htm#microcontent1" />
+    </MicroContent>
+    <MicroContent id="additional-record-information">
+        <MicroContentPhrase>Additional Record Information</MicroContentPhrase>
+        <MicroContentResponse href="../Snippets/AdditionalInformation.flsnp#microcontent1" />
+    </MicroContent>
+    <MicroContent id="multiform">
+        <MicroContentPhrase>multiform</MicroContentPhrase>
+        <MicroContentPhrase>multi form</MicroContentPhrase>
+        <MicroContentPhrase>multiple dataforms</MicroContentPhrase>
+        <MicroContentResponse>
+            <xhtml:html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                <xhtml:body>
+                    <xhtml:p>Multiform or multi dataform is a dataform. You can have multiple forms per client workspace such as Location. The multi dataform has a one-to-many relationship with the workspace, such as physical locations for a client or paycheck records for an employee.</xhtml:p>
+                </xhtml:body>
+            </xhtml:html>
+        </MicroContentResponse>
+    </MicroContent>
+    <MicroContent id="what-are-rules">
+        <MicroContentPhrase>What are rules</MicroContentPhrase>
+        <MicroContentPhrase>business rules</MicroContentPhrase>
+        <MicroContentResponse>
+            <xhtml:html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                <xhtml:body>
+                    <xhtml:p>Dataform business logic and rules are powerful tools that are available for supporting dataform workflow and managing data integrity in ClientSpace. These configurable rules allow you to trigger field validation, clear field values at specific sections of a workflow, and automatically complete fields based on values from other source fields.</xhtml:p>
+                </xhtml:body>
+            </xhtml:html>
+        </MicroContentResponse>
+    </MicroContent>
+    <MicroContent id="cscdisc">
+        <MicroContentPhrase>CSCDISC</MicroContentPhrase>
+        <MicroContentPhrase>case discussion templates</MicroContentPhrase>
+        <MicroContentPhrase>case discussion email templates</MicroContentPhrase>
+        <MicroContentResponse href="../../EmailTemp/Config-CaseDisc-ET.htm#microcontent1" />
+    </MicroContent>
+    <MicroContent id="cscrply">
+        <MicroContentPhrase>CSCRPLY</MicroContentPhrase>
+        <MicroContentPhrase>case discussion reply</MicroContentPhrase>
+        <MicroContentPhrase>reply template</MicroContentPhrase>
+        <MicroContentPhrase>reply email template</MicroContentPhrase>
+        <MicroContentPhrase>case discussion reply email template</MicroContentPhrase>
+        <MicroContentPhrase>case discussion template</MicroContentPhrase>
+        <MicroContentResponse href="../../CasesTasks/CSCRPLY.htm#microcontent1" />
+    </MicroContent>
+    <MicroContent id="cscdiscemint">
+        <MicroContentPhrase>CSCDISCEMINT</MicroContentPhrase>
+        <MicroContentPhrase>case to email reply</MicroContentPhrase>
+        <MicroContentResponse href="../../CasesTasks/CSCDISCEMINT.htm#microcontent1" />
+    </MicroContent>
+    <MicroContent id="cscdiscnew">
+        <MicroContentPhrase>CSCDISCNEW</MicroContentPhrase>
+        <MicroContentResponse href="../../CasesTasks/CSCDISCNEW.htm#microcontent1" />
+    </MicroContent>
+    <MicroContent id="reply-above-this-line">
+        <MicroContentPhrase>Reply Above This Line</MicroContentPhrase>
+        <MicroContentPhrase>reply above the line</MicroContentPhrase>
+        <MicroContentPhrase>case discussion reply above the line</MicroContentPhrase>
+        <MicroContentResponse href="../../EmailTemp/Config-CaseDisc-ET.htm#microcontent5" />
+    </MicroContent>
+    <MicroContent id="what-is-cloning">
+        <MicroContentPhrase>What is cloning?</MicroContentPhrase>
+        <MicroContentResponse>
+            <xhtml:html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                <xhtml:body>
+                    <xhtml:p>Cloning is when an object is generated by copying a template example of that object. Cloning is often used to provide consistency of data, or for workflow design.</xhtml:p>
+                </xhtml:body>
+            </xhtml:html>
+        </MicroContentResponse>
+    </MicroContent>
+    <MicroContent id="email-integration">
+        <MicroContentPhrase>email integration</MicroContentPhrase>
+        <MicroContentResponse href="../../Integrations/EmailIntegration.htm#microcontent1" />
+    </MicroContent>
+    <MicroContent id="scheduled-processes">
+        <MicroContentPhrase>scheduled processes</MicroContentPhrase>
+        <MicroContentPhrase>scheduled process</MicroContentPhrase>
+        <MicroContentResponse href="../../Integrations/ScheduledProcesses.html#microcontent1" />
+    </MicroContent>
+    <MicroContent id="out-of-office">
+        <MicroContentPhrase>out of office</MicroContentPhrase>
+        <MicroContentPhrase>out of office option</MicroContentPhrase>
+        <MicroContentPhrase>how to enable out of office?</MicroContentPhrase>
+        <MicroContentPhrase>enable out of office</MicroContentPhrase>
+        <MicroContentResponse href="../../UserProfile/EnableOutOfOffice.html#microcontent1" />
+    </MicroContent>
+    <MicroContent id="widget-layout">
+        <MicroContentPhrase>widget layout</MicroContentPhrase>
+        <MicroContentPhrase>widget layouts</MicroContentPhrase>
+        <MicroContentPhrase>what are widget layouts?</MicroContentPhrase>
+        <MicroContentResponse href="../../Widgets/WidgetLayouts.html#microcontent1" />
+    </MicroContent>
+    <MicroContent id="change-password">
+        <MicroContentPhrase>Change password</MicroContentPhrase>
+        <MicroContentPhrase>how to change my password</MicroContentPhrase>
+        <MicroContentPhrase>how change password</MicroContentPhrase>
+        <MicroContentPhrase>How to change password?</MicroContentPhrase>
+        <MicroContentPhrase>where change password?</MicroContentPhrase>
+        <MicroContentResponse href="../../UserProfile/ChangePswd.htm#microcontent1" />
+    </MicroContent>
+    <MicroContent id="forgot-username-password">
+        <MicroContentPhrase>Forgot username password</MicroContentPhrase>
+        <MicroContentPhrase>forgot password</MicroContentPhrase>
+        <MicroContentPhrase>forgot username</MicroContentPhrase>
+        <MicroContentResponse href="../../UserProfile/ChangePswd.htm#microcontent2" />
+    </MicroContent>
+    <MicroContent id="friendly-name">
+        <MicroContentPhrase>Friendly name</MicroContentPhrase>
+        <MicroContentPhrase>How to specify friendly name?</MicroContentPhrase>
+        <MicroContentResponse href="../../EmailTemp/FromFriendlyName.htm#microcontent1" />
+    </MicroContent>
+    <MicroContent id="cloning-trigger-conditions">
+        <MicroContentPhrase>cloning trigger conditions</MicroContentPhrase>
+        <MicroContentPhrase>clone trigger</MicroContentPhrase>
+        <MicroContentPhrase>cloning trigger condition</MicroContentPhrase>
+        <MicroContentPhrase>clone trigger conditions</MicroContentPhrase>
+        <MicroContentPhrase>clone conditions</MicroContentPhrase>
+        <MicroContentPhrase>cloning conditions</MicroContentPhrase>
+        <MicroContentResponse href="../Snippets/ET_Step4Conditions.flsnp#microcontent1" />
+    </MicroContent>
+</MicroContentSet>

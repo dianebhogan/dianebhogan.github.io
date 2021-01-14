@@ -1,0 +1,127 @@
+﻿/*<meta />*/
+
+@font-face 
+{
+	font-family: Lato;
+	src: url(../Fonts/Lato-Regular.ttf);
+}
+
+@font-face 
+{
+	font-family: 'Font Awesome 5 Brands Regular', 'Font Awesome 5 Free Regular', 'Font Awesome 5 Free Solid', 'FontAwesome';
+	src: url(../FontAwesome/webfonts/fa-brands-400.ttf);
+	src: url(../FontAwesome/webfonts/fa-regular-400.ttf);
+	src: url(../FontAwesome/webfonts/fa-solid-900.ttf);
+}
+
+:root
+{
+	--BrandPrimary: #333333;
+	--BrandPrimary2: #3C5A9A;
+	--BrandPrimary3: #545454;
+	--BrandPrimary4: #008AAD;
+	--BrandPrimary5: #017390;
+	--BrandPrimary6: #004969;
+	--BrandPrimary7: #F0F2F7;
+	--BrandFont: Lato, "Trebuchet MS";
+	--BrandFont2: "Segoe UI", "Open Sans", "Mier B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+*
+{
+	box-sizing: border-box;
+}
+
+#myInput
+{
+	background-image: url('../Images/ICONS/ICON_Search.png');
+	background-position: 10px 12px;
+	background-repeat: no-repeat;
+	width: 100%;
+	font-size: 16px;
+	padding: 12px 20px 12px 40px;
+	border: 1px solid #ddd;
+	margin-bottom: 0;
+}
+
+.MCGlossaryProxy_0
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 !important;
+	border-top: none !important;
+	padding-left: 0 !important;
+	padding-top: 0 !important;
+}
+
+.MCGlossaryProxy_0 li
+{
+	border: 1px solid #ddd;
+	margin-top: -1px;
+	/* Prevent double borders */
+	text-decoration: none;
+	display: block;
+}
+
+.GlossaryPageDefinition
+{
+	padding: 10px;
+}
+
+.GlossaryPageTerm
+{
+	background-color: #f6f6f6;
+	padding: 10px 10px 10px 20px;
+}
+
+/*.GlossaryPageLink:hover:not(.header) 
+{
+	background-color: #eee;
+}*/
+
+.GlossaryPageTerm
+{
+	font-weight: bold;
+	font-family: var(--BrandFont2);
+}
+
+.GlossaryPageDefinition,
+.GlossaryPageEntry
+{
+	user-select: none;
+}
+
+.GlossaryPageDefinition
+{
+	display: none;
+}
+
+.GlossaryPageEntry
+{
+	cursor: pointer;
+}
+
+div.GlossaryPageDefinition
+{
+	font-size: 1em;
+	font-family: var(--BrandFont2);
+}
+
+div.GlossaryPageTerm
+{
+	background-color: #F0F2F7;
+	font-size: 1em;
+}
+
+@media print
+{
+	div.GlossaryPageDefinition
+	{
+		font-size: 11pt;
+	}
+
+	div.GlossaryPageTerm
+	{
+		font-size: 11pt;
+	}
+}

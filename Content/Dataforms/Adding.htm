@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Dataforms" />Adding a dataform</h1>
+        <p>Before you create a dataform, consider:
+        </p>
+        <ul>
+            <li>The type of data you need to track</li>
+            <li>How that data is used in <MadCap:variable name="MyVariables.ProductName" /> and other systems</li>
+            <li>The relationship between the new dataform and others in your system</li>
+        </ul>
+        <p>Advanced planning can save time after you publish the dataform and start to collect data.&#160;After you have determined how you would like to build out your new dataforms, you can begin the process. The first step is to add the dataform. This process creates a new table in the SQL database with the predetermined system columns.</p>
+        <p class="ProcedureIntro">To add a new dataform:
+</p>
+        <ol>
+            <li>Go to <strong>System Admin</strong> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <strong>Advanced</strong> &gt; <strong>Dataform Admin</strong>.<br />The Dataform Admin dashboard opens.<br /></li>
+        </ol>
+        <p class="Indent1">
+            <img src="../Resources/Images/Dataform/Dataform_Add.png" class="thumbnail" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Click <strong>Add</strong>.<br />The Dataform Properties: New Dataform form opens.<br /></li>
+        </ol>
+        <p class="Indent1">
+            <img src="../Resources/Images/Dataform/DataformProperties_New.png" class="thumbnail" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>For <b>Dataform Configuration</b>, complete the form fields as required.</li>
+        </ol>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 134px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Dataform Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the name of the dataform that is displayed within the application, such as in lists. Required.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Dataform Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select the type: </p>
+                        <p class="TableBullet" MadCap:autonum="• ">Standard</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Organization</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Contact</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Dataform Group</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Grouping dataforms makes them easier to search for later.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Provide a short description of the dataform and its purpose.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>After you configure this first section, click <b>Apply</b>.</li>
+            <li>After you <b>Apply</b> changes, then you see the <b>Table Name</b> and <b>Default Field</b> fields.</li>
+        </ol>
+        <p class="Indent1">
+            <img src="../Resources/Images/Dataform/DataformProperties_table_default.png" class="thumbnail" />
+        </p>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 125px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Table Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Displays the generated table name that is stored in the database. This can be useful for reporting. You cannot edit this field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Default Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">When you associate one dataform with another through linked fields, the default attribute is displayed in the list. It is a best practice to make the default attribute field of the form Required, so any linked forms have something to display.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Next: Action Center</h2>
+        <p>The next step is to secure the form, add and configure fields, and add and configure tabs. These actions are performed in the Action Center pane (on the right side of the screen).</p>
+        <p class="ProcedureIntro">To continue with the configuration:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">In the <b>Action Center</b>, click <b>Secured</b>, <b>Fields</b>, or <b>Tabbed Forms</b>.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Use the following field descriptions to guide you through the configuration.</p>
+        <p class="Bullet2" MadCap:autonum="• "><b>Secured</b>: Secures the form and generates a security entity for the field in the format of <b>gen_TableName</b>. For more details about using security entities in Role security, review <MadCap:xref href="../Security/OrgWorkspaceSecConfig.html" title="configuring organization and workspace security" alt="configuring organization and workspace security" class="Heading">Configuring Organization and Workspace Security</MadCap:xref>.</p>
+        <p class="Bullet2" MadCap:autonum="• "><b>Fields</b>: This is where you add and configure fields for this dataform (see <MadCap:xref href="AddFields.htm" title="adding dataform fields" alt="adding dataform fields" class="Heading">Adding dataform fields</MadCap:xref>).</p>
+        <p class="Bullet2" MadCap:autonum="• "><b>Tabbed Forms</b>: This is where you add and configure tabs for any foreign key related child forms of this dataform. (Child forms have a Parent form field that uses this dataform as the Parent Form. See <MadCap:xref href="AddTabs.htm" title="adding dataform tabs" alt="adding dataform tabs" class="Heading">Adding dataform tabs</MadCap:xref>.)</p>
+        <h2>Next: Customize the Features </h2>
+        <p class="ProcedureIntro">To further customize your dataform:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">On the Dataform Properties form, locate the <b>Features</b> area, where you find an array of options.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Use the following field descriptions to guide you through the configuration.</p>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 201px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Enable tasks</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Adds the My Tasks action item to the dataform. Tasks added from this dataform are linked to this dataform.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Enable Attachments</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Adds the Attachment Action Item to the dataform, providing the ability to attach files to the dataform.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Enable Subscribers</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Adds the Subscribers Action Item to the dataform, which allows you to automatically notify system users from email, about changes to the form.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Enable Subscription Emails</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This field sets which notification system is used when producing dataform subscription emails. If selected, a core system notification is produced when the record is changed. If selected and a published Email Template has been configured for this dataform, that template is used. If cleared and no template exists, subscription emails are not sent.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Enable Activities</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Determines whether Activities may be attached to and displayed on this dataform.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Enable Time Tracking</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Adds the Time Tracker action item  to the dataform. Time tracked from this icon is linked to this dataform.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Enable WFC&#160;Cloning</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Used to determine if a form is available to <MadCap:popup><MadCap:popupHead>clone</MadCap:popupHead><MadCap:popupBody>Cloning is when an object is generated by copying a template example of that object.&#160;Cloning is often used to provide consistency of data, or for workflow design.</MadCap:popupBody></MadCap:popup>. This means that the form can be created by the Workflow Channel as the triggered form.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Clearing this option initiates a validation to determine if this dataform is used as a Triggering Form or triggering condition in a Workflow Channel. When used, a warning message is displayed with a link to the referenced items. Only published Workflow Channels are referenced. This option cannot be cleared until the dependencies are removed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Enable Triggering</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Used by Workflow Channels and Email Templates to determine if this dataform is available as a Triggering Form during the initial Workflow Channel and Email Template configuration.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Clearing this option initiates a validation to determine if this dataform is used as a  condition in a Workflow Channel or Email Template. When used, a warning message is displayed with a link to the referenced items. Only published items are referenced. This option cannot be cleared until the dependencies are removed.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="3. ">After you configure this section, click <b>Apply</b>.</p>
+        <h2>Viewing audit information</h2>
+        <p>The audit trail contains the admin data, as well as other, create and change events for the dataform and associated fields. Dataform properties also provide the following information:</p>
+        <ul>
+            <li>Date Created</li>
+            <li>Created By</li>
+            <li>Date Updated</li>
+            <li>Updated By</li>
+        </ul>
+        <p class="ProcedureIntro">To view the audit trail:</p>
+        <ol>
+            <li>From an open dataform, in the <b>Action Center</b>, click <img src="../Resources/Images/ICONS/ICON_MagGlass.png" /> (<b>Audit Trail</b>).<br />The <span class="UXElement">Audit Trail For: <em>something</em></span> is displayed.</li>
+            <li>The list shows Date, Table Name, Field Name, Action, Original Value, New Value, and Login ID.</li>
+            <li>Click <span class="UXElement">Close</span>.</li>
+        </ol>
+    </body>
+</html>

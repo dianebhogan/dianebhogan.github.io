@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 62 ( CORE )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;11/6/2017&#160;&#160;&#160;&#160;&#160;<strong>Sprint Ended:</strong>&#160;12/5/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release62(CORE)-Inactiveusersshowingonthecalendaruserselector-NEXT"><span style="color: rgb(51,153,102);">Inactive users showing on the calendar user selector&#160;- NEXT</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where inactive users would display in the main user selection list of the ClientSpace calendar. The selector list now only displays active user accounts.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release62(CORE)-PDFfilesoniPad-NEXT"><span style="color: rgb(51,153,102);">PDF files on iPad- NEXT</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where multi page pdf documents would open on an iPad (Safari browser) but would only display the first page of the document. Multi-page pdf documents now display normally on the iPad.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release62(CORE)-UnhandledexceptionthrownwhenmarkingTaskPrivate-NEXT"><span style="color: rgb(51,153,102);"><span style="color: rgb(255,0,0);"><span style="color: rgb(51,153,102);">Unhandled exception thrown when marking Task Private - NEXT</span></span></span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue in ClientSpace where if a Global Admin opened a task that they were not one of the principals on (Owner, Assigned To, Creator) and then marked the task as "Private", on save the system would throw an unhandled Exception.&#160;</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release62(CORE)-UpgradeBusinessIntelligencetolatestversion"><span style="color: rgb(51,153,102);">Upgrade Business Intelligence to latest version</span>
+                        </h4>
+                        <hr />
+                        <p>The Izenda business intelligence engine has been upgraded to the latest version - 6.10.0.24 to resolve several outstanding reports issues.&#160; For a full look at the Izenda changes with this and other releases, <a href="http://wiki.izenda.us/Release-Notes" class="external-link" rel="nofollow">review the Izenda release notes here.</a></p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release62(CORE)-EnhanceBItorespect#currentrecord-ENHANCEMENT"><span style="color: rgb(51,153,102);">Enhance BI to respect #currentrecord&#160; -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The business intelligence (BI) app was enhanced to respect the <strong>#currentrecord</strong> flag - this allows you to design and link reports which accept the dataform ID of the dataform from which the report is launched, passing this record&#160;ID&#160;as a #currentrecord filter parameter to the report.&#160;</p>
+                        <p>In order to pass the form ID to the report the Link used to&#160;open the report should be formatted in the following manner&#160;- &#160;/BusinessIntelligence/ReportViewer.aspx?rn=[report_path_and_name]&amp;formid={FormID}</p>
+                        <p>An example of this would be : /BusinessIntelligence/ReportViewer.aspx?rn=currentrecordtest&amp;formid={FormID}</p>
+                        <p>The report should also contain a #currentrecord filter to accept the FormID being passed.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release62(CORE)-ClientSpacetoPrismHRSSO(SingleSignOn)-ENHANCEMENT"><span style="color: rgb(51,153,102);">ClientSpace to PrismHR SSO (Single Sign On) -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>ClientSpace has been updated to use the new TSSO standard for single sign on authentication from ClientSpace to PrismHR.&#160;</p>
+                        <p>This uses a central connection point (Extranet) to determine the appropriate install, making configuration easier.&#160; For detailed documentation on how to configure this integration refer to Implementing&#160; SSO from ClientSpace to PrismHR.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release62(CORE)-RefactorTaskSearchProcusingthelatestperformancedesign-ENHANCEMENT"><span style="color: rgb(51,153,102);">Refactor Task Search Proc using the latest performance design -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The search code which drives the Task Manager module has been optimized to improve performance for large sets of data.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release62(CORE)-TabsSetsNotRespectingDataformInactivity"><span style="color: rgb(51,153,102);">Tabs Sets Not Respecting Dataform Inactivity&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Dataform rendering has been enhanced so as to not display a tab dataform if the dataform which the tab is using has been marked as Inactive.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release62(CORE)-AllowAccesstoAdminWorkspacefromSystemAdmin-ENHANCEMENT"><span style="color: rgb(51,153,102);">Allow Access to Admin Workspace from System Admin -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A new "Administrative Data" area has been added to the System Admin pages in ClientSpace NEXT.&#160;</p>
+                        <p>This allows direct Access to the Admin Workspace landing page by clicking the "<strong>Administrative Data</strong>" link, as well as the ability to search for and open the administrative dataform stored in the admin workspace.</p>
+                        <p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" src="https://clientspace.atlassian.net/wiki/download/thumbnails/306577437/AdminData.jpg?version=2&amp;modificationDate=1512404425777&amp;cacheVersion=1&amp;api=v2&amp;width=357&amp;height=250" srcset="https://clientspace.atlassian.net/wiki/download/thumbnails/306577437/AdminData.jpg?version=2&amp;modificationDate=1512404425777&amp;cacheVersion=1&amp;api=v2&amp;width=714&amp;height=500 2x, https://clientspace.atlassian.net/wiki/download/thumbnails/306577437/AdminData.jpg?version=2&amp;modificationDate=1512404425777&amp;cacheVersion=1&amp;api=v2&amp;width=357&amp;height=250 1x" /></span>
+                        </p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release62(CORE)-UserAdminInterfaceENHANCEMENT"><span style="color: rgb(51,153,102);">User Admin Interface&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A user admin interface has been added to the System Admin area of ClientSpace NEXT.&#160; This allows for management of existing users, and adding new users from scratch, as well as the ability to assume a ClientSpace user.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release62(CORE)-GmailCalendarSyncIssue-NEXT"><span style="color: rgb(51,153,102);">Gmail Calendar Sync Issue - NEXT</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where if a single occurrence of an External recurring event was cancelled (deleted), it would still show on the ClientSpace calendar as an external event after syncing.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release62(CORE)-UnabletomovedataformENHANCEMENT"><span style="color: rgb(51,153,102);">Unable to move dataform&#160;</span><span style="color: rgb(51,153,102);"><span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The business rules _HE_RequireCurrentUserTimeRecord and _SE_RequireCurrentUserTimeRecord have been enhanced to detect the action of moving a record to a new workspace. In that case, the rules will be ignored.</p>
+                        <p><strong>NOTE</strong>: it is possible to change data on the form AND move to a new workspace during the same action, in which case the changes will be accepted and a Time Record will not be required</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release62(CORE)-MultipleVoidsinDocuSign"><span style="color: rgb(51,153,102);">Multiple Voids in DocuSign</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved issue with DocuSign Get Doc Status scheduled process that allowed Voided documents to be processed and attached each time the process was run. When processing queue records, the system will now ignore those records in "processedvoided" status to prevent uploading multiple voided documents.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release62(CORE)-NewUserAdminEmailNotification"><span style="color: rgb(51,153,102);">New User Admin Email Notification</span>
+                        </h4>
+                        <hr />
+                        <p>The Admin user will not be notified when a User account is added</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

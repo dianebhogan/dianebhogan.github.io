@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Business Rules" />Configuring Case Discussion business rules for replies</h1>
+        <p>With the advent of email to case discussions, there are two flavors of Case Discussions. This topic pertains to the original version of Case Discussions that supports a REPLY link in the discussion message. While there are certain areas of similarity in the two configurations, the required business rules are not compatible. For purposes of this topic, the SendReply rule must be enabled on the Discussion message and its email integrated equivalent must be deactivated.</p>
+        <p class="ProcedureIntro">SendReply (original)</p>
+        <p class="ProcedureIntro">
+            <img src="../Resources/Images/Case/SendReply.png" class="thumbnail" />
+        </p>
+        <p class="Bullet1" MadCap:autonum="• ">Uses <b>CSCDISC</b> [sent to external user] and <b>CSCDISCNEW</b> [sent to internal user, notifies that a new reply has been posted]</p>
+        <p class="Bullet1" MadCap:autonum="• ">Set on <b>Default Pipeline</b></p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Must</b> inactivate the <b>SendEMailIntegrationReply</b> rule</p>
+    </body>
+</html>

@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Email Templates" />Configuring notifications for Employee email address changes</h1>
+        <p>When a worksite employee’s work or personal email address is added or changed, you can send a notification to the employee. If the employee did not add, edit, or authorize a change to their email address, they can contact their service provider. The notification helps worksite employees and service providers to be more proactive in detecting and preventing fraud attempts.</p>
+        <p> How does it work? When an Employee’s Work Email and Personal Email changes occur in PrismHR, a business rule sets the Previous Email fields. The business rule (<span class="UXElement">SetPreviousEmails</span>) is set on the Employee dataform for when PersonalEmail or WorkEmail is changed. This rule stamps the old value into the corresponding PersonalEmailPrevious and WorkEmailPrevious fields. This rule is set to run on the Default and Imports pipelines.</p>
+        <p class="ProcedureIntro">To configure an email address change notification template:</p>
+        <p class="L1Num" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Email Templates</b>.<br /></p>
+        <p class="StepResult">The Email Templates dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Click <b>Add</b>.</p>
+        <p class="StepResult">The Email Template wizard opens at Step 1 Initial.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Complete <b>Step 1 Initial</b>.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 162px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="font-weight: normal;">
+                        <p class="TableTextLeft">Triggering Form</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select <b>Employee</b>. The Employee dataform is where the previous email addresses reside.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="font-weight: normal;">Template Code</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Add a short descriptive code to identify this template, such as <b>EmailChanged</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="font-weight: normal;">Template Name</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Add a descriptive name (this is displayed in the application list), such as <b>Email address change notification</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="font-weight: normal;">Description</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Include a brief description, such as <b>Employee email address change notification</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="font-weight: normal;">Execute On</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select <b>Insert or Update</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="font-weight: normal;">Merge Procedure</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select an optional Merge Procedure to provide additional system information for Field Replacement.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="font-weight: normal;">Execution Pipeline</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Indicates how the data enters <MadCap:variable name="MyVariables.ProductName" />. Keep the setting as Default.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1" style="font-weight: normal;">
+                        <p class="TableTextLeft">Workspace Templates</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Select the Workspace Templates that will receive this email. Default is <b>All Templates</b>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/EmailTemplates/EmailAdd_Notif1.png" alt="" title="" class="thumbnail" />
+            </p>
+        </div>
+        <p class="L1Num" MadCap:autonum="4. ">Click <b>Next</b> and complete <b>Step 2 Content</b>.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 163px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Subject</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The subject line of the email that is generated. The email recipients see this subject. For example, <span class="UXElement">Alert:&#160;Your email address has changed</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Body</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">This is the body of the email. This field supports rich text, so the email can be branded with links. This is seen by the email recipients. You can use replacement fields to customize the message. To use replacement fields, click <span class="UXElement">See Replace Fields</span>. For details about replacement fields, see <MadCap:xref href="../Admin_Config/ReplacementFields.htm" title="Replacement fields" alt="Replacement fields">Replacement fields</MadCap:xref>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/EmailTemplates/EmailAdd_Notif2.png" alt="" title="" class="thumbnail" />
+            </p>
+        </div>
+        <p class="L1Num" MadCap:autonum="5. ">Click <b>Next</b> and complete <b>Step 3 Addresses</b>.</p>
+        <div class="indent">
+            <p>In this step you add the recipients. You want to select Previous Work and Previous Personal email addresses to ensure that when an employee's email address is changed, the notification is sent the previous email addresses in the event the system is compromised by a hacker. Sending the notification to the changed email (a new email address that could be supplied by a hacker) would potentially never reach the employee. Sending the notification to the previous email, would reach the employee because the previous email is most likely the employee's true email address.</p>
+        </div>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 162px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Address Stored Procedure</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Optional. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Include Dataform Subscribers as 'CC' Recipients</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When you select this option it adds anyone who is subscribed to the dataform as CC recipients when this notification is sent. This is in addition to the recipients you configure in the Add section. When enabled (selected), this option defaults <span class="UXElement">Subscriber Type</span> to <span class="UXElement">Both</span>. </p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Internal</b>: When the email template is triggered, only internal dataform subscribers are notified.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>External</b>: When the email template is triggered, only external dataform subscribers are notified.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Both</b>: If you select Both or leave the field blank, all dataform subscribers are notified.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">From Address</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">This field defaults to Admin Email Address (the application administrator's email address). This is the default admin email set in System Admin &gt; Advanced &gt; App Settings.</p>
+                        <p class="TableProcIntro">To change this setting:</p>
+                        <ol>
+                            <li>Click the link (<span class="UXElement">Admin Email Address</span>).<br />The From Address Options dialog box opens.<br /></li>
+                            <li>Select one of the following options:<ul style="list-style-type: circle;"><li><span class="UXElement">Admin Email</span>: Uses the default admin email set in  App Settings. Only User Developers can change this email. For assistance with App Settings, please log a case in the Extranet.</li><li><b>AdHoc</b>: Allows you to manually add to the From list by simply typing it in.  This should be an active mailbox address so the employee can reply directly to the email if they need to contact you immediately.  Additionally, you can specify a friendly name to accompany the email address. For more details about using AdHoc, see <MadCap:xref href="FromFriendlyName.htm" title="Specifying a friendly name as From Address" alt="Specifying a friendly name as From Address">Specifying a friendly name as From Address</MadCap:xref>.</li><li><b>User</b>: Select a specific user of the system.</li><li><b>Procedure</b>: Select an address stored procedure and pick the From address.</li><li><b>Field on a Form</b>: Select a dataform from a list of forms in the system that have relevant email fields. You can set user fields to values that exist on dataforms across a tabbed set. If the selected user fields are empty, the default value is the system admin. For more details, see <MadCap:xref href="Step3_ETAddresses.htm#From" title="From a Field on a Form" alt="From a Field on a Form">From a Field on a Form</MadCap:xref>.</li></ul></li>
+                            <li>When done, click <b>Ok</b>.</li>
+                        </ol>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="6. ">To add the affected employee as a recipient, click <b>Add</b>. </p>
+        <p class="StepResult">A row opens. This is where you specify the Employee's work and personal email address. We recommend that you add four rows for current work, current personal, previous work, and previous personal email addresses. See the example.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 163px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Source</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">For this email template, select <b>Employee</b>. This selection makes the Employee's email addresses (Previous Work and Personal) available in the Address column. To include additional team members as recipients, you can select Client Team or Adhoc Email Address. When you select Adhoc Email Address as the Source, you can type a specific email address in Address.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Type can be <b>To</b> or <b>CC</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Address</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">The Address you select triggers the employee notification  when their email addresses change. Select the previous email addresses to ensure the employee receives a notification if, indeed, the change was an attempt to commit fraud.</p>
+                        <p class="TableTextLeft">Add four rows,  for current and previous  email addresses.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Select <span class="UXElement">Previous Work Email (WorkEmailPrevious)</span>.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Select  <span class="UXElement">Previous Personal Email (PersonalEmailPrevious)</span>.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Select <span class="UXElement">Work Email (WorkEmail)</span>.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Select <span class="UXElement">Personal Email (Email)</span>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/EmailTemplates/EmailAdd_Notif3.png" alt="" title="" class="thumbnail" />
+            </p>
+        </div>
+        <p class="L1Num" MadCap:autonum="7. ">Click <b>Next</b> and complete <b>Step 4 Conditions</b>.</p>
+        <div class="indent">
+            <p>When configuring the email template, Step 4 Conditions is where you specify a condition for checking if the employee Work and Personal email fields have changed. When these fields change (Value: Is Dirty), that condition triggers the notification to the affected employee.</p>
+        </div>
+        <p class="L1Num" MadCap:autonum="8. ">Click <b>Add</b>.</p>
+        <p class="StepResult">A&#160;row opens for adding conditions to include Source, Field, Operator, Value, and Label. You can add multiple conditions.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 163px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Source</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Indicates the dataform or stored procedure that provides the triggering condition. Select <b>Employee</b>. The Employee dataform contains the employee's work and personal email addresses.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is where you specify the Work and Personal email addresses. Add two rows for:</p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">Work Email (WorkEmail)</span>
+                        </p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">Personal Email (Email)</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Operator </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Is Dirty</span>. This value detects when the email address has changed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Not applicable for email address changes. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Label</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Not applicable for email address changes.  </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/EmailTemplates/EmailAdd_Notif4.png" alt="" title="" class="thumbnail" />
+            </p>
+        </div>
+        <p class="L1Num" MadCap:autonum="9. ">Click <b>Next.</b></p>
+        <p class="L1Num" MadCap:autonum="10. ">Skip Step 5 Attachments. </p>
+        <p class="L1Num" MadCap:autonum="11. ">Click <b>Finish</b> to save your work.</p>
+        <p>After you click Finish, you see the Email Template list. This email template does not work just yet because it is  unpublished (inactive). You must publish it to make it active.</p>
+        <p class="ProcedureIntro">If you are ready to publish immediately:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Select the row for the new email template.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Click <b>Publish</b>.	</p>
+        <p class="StepResult">The email template is published.</p>
+        <p class="ProcedureIntro">If you want to publish later:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Navigate to the Email Template list again. </p>
+        <p class="L1Num" MadCap:autonum="2. ">Clear the <span class="UXElement">Published</span> option. </p>
+        <p class="StepResult">The email template is unpublished.</p>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.FutureDev">
+    <head>
+    </head>
+    <body>
+        <h1>Implementing bi-directional contact syncing</h1>
+        <p>Contact record syncing can be a bi-directional synchronization between <MadCap:variable name="MyVariables.ProductName" /> and PrismHR. Because there is not a universal system of record across all user groups, synchronizing between the two systems is very critical. For example, payroll specialists who work in the PrismHR system rely on the Prism contacts. And customer service representatives who work with <MadCap:variable name="MyVariables.ProductName" />, rely on contact data in <MadCap:variable name="MyVariables.ProductName" />. </p>
+        <p>The goal of contact syncing is to maintain consistent contact data between the PrismHR and <MadCap:variable name="MyVariables.ProductName" /> systems. The key piece of data that makes this happen is ImportIDs. For clients that have been using both PrismHR and <MadCap:variable name="MyVariables.ProductName" /> for contact management, the <MadCap:variable name="MyVariables.ProductName" /> ImportIDs must be standardized before activating the ongoing synchronization process. Before implementing bi-directional contact syncing, please submit an Extranet case. For organizations that adhere to a true system of record, we understand that you need to follow the guidelines of your company. Therefore, this topic may not apply.</p>
+        <h2>Part 1:&#160;How bi-directional contact syncing works for the initial cleanup</h2>
+        <p class="Body">The <MadCap:variable name="MyVariables.ProductName" /> scheduled process <span class="UXElement">PrismHR Bi-directional Contacts Sync</span> performs the following tasks:</p>
+        <ol>
+            <li>When the scheduled process <span class="UXElement">PrismHR Bi-directional Contacts Sync</span> runs, it gets a list of all Clients in <MadCap:variable name="MyVariables.ProductName" />.</li>
+            <li>For each of the Clients:<ul style="list-style-type: square;"><li>Gets a list of all <MadCap:variable name="MyVariables.ProductName" /> Contacts by Client.</li><li>Gets a list of all Prism Contacts by Client.</li><li>The system tries to match the <MadCap:variable name="MyVariables.ProductName" /> Contact to the PrismHR Contact as follows:<ul style="list-style-type: circle;"><li>If the ImportID&#160;matches ClientNumber-ContactID syntax, we assume the Contacts are already properly synced and move to the next Contact record.</li><li>If there is no ImportID or a non match with the ClientNumber-ContactID format, then the system looks for a match on Primary Email. If the Primary Email matches, the system sets the <MadCap:variable name="MyVariables.ProductName" /> Contact ImportID (ClientNumber-ContactID).</li><li>If there is no match on the Primary Email, the system matches on First Name Last Name. The match considers First Last as well as Last, First. If the name matches, then the system sets the <MadCap:variable name="MyVariables.ProductName" /> Contact ImportID (ClientNumber-ContactID).</li></ul></li></ul></li>
+            <li>If <MadCap:variable name="MyVariables.ProductName" /> cannot find a match in PrismHR, then the business rule enables <span class="UXElement">Sync With Prism</span> on the Contact record and creates the contact in Prism. It pulls back the appropriate ImportID to ClientSpace. Now the records are synced long term.</li>
+            <li>To synchronize the Import process, you can control the import behavior for Contacts into <MadCap:variable name="MyVariables.ProductName" /> through the API&#160;configuration parameter <span class="UXElement">ContactImportBehavior</span>. Control is through a value associated with the parameter:<ul style="list-style-type: square;"><li>Insert: Inserts Contacts into <MadCap:variable name="MyVariables.ProductName" /> from PrismHR if they do not already exist.</li><li>Update:&#160;Updates matched Contacts in <MadCap:variable name="MyVariables.ProductName" /> when the Contact in PrismHR has been updated.</li><li>Both: Performs both Insert and Update actions.</li></ul><p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">Through the parameter, ContactImportBehavior, you can control how data imports from PrismHR to <MadCap:variable name="MyVariables.ProductName" />. Leaving the parameter value blank specifies that no Contacts are imported from PrismHR.</p></li>
+        </ol>
+        <p class="SubHdr">Example of a <MadCap:variable name="MyVariables.ProductName" /> Contact record</p>
+        <p class="Body">On the Contact record, the field <span class="UXElement">Import ID</span> contains the Client Number and the Contact ID from PrismHR. In the following example, The Import ID&#160;is <span class="UXElement">104-1</span>. This is an example of a <MadCap:variable name="MyVariables.ProductName" /> Contact record that is synchronized with PrismHR.</p>
+        <ul>
+            <li><span class="UXElement">104</span> represents the Client, <em>Del Friscos Tex Mex</em>.</li>
+            <li><span class="UXElement">1</span> represents <em>John Marley</em>, who is the contact.</li>
+        </ul>
+        <p>
+            <img src="../Resources/Images/Integrations/Contact_ImportID.png" alt="" title="" class="thumbnail" />
+        </p>
+        <p>In PrismHR, the following image shows the Client <em>Del Friscos Tex Mex</em> and the Contacts with their respective IDs 1 through 4.</p>
+        <p>
+            <img src="../Resources/Images/Integrations/Contact_Prism-Client-ContactID.png" />
+        </p>
+        <h3>Overview of the steps to enable contact syncing</h3>
+        <ol>
+            <li>Enable and set the run frequency of the scheduled process <span class="UXElement">PrismHR Bi-directional Contacts Sync</span>.  See <MadCap:xref href="Contact_SchedProcess.htm" title="Enabling the scheduled process" alt="Enabling the scheduled process">Enabling the scheduled process</MadCap:xref>.</li>
+            <li>Enable and set the run frequency of the scheduled process <span class="UXElement">Prism Export Contacts</span>. See <MadCap:xref href="Contact_ExpCon_schedproc.htm" title="Enabling the Export Contacts scheduled process" alt="Enabling the Export Contacts scheduled process">Enabling the Export Contacts scheduled process</MadCap:xref>.</li>
+            <li>Add the API Configuration parameter <span class="UXElement">ContactImportBehavior</span>. See <MadCap:xref href="Contact_APIparameter.htm" title="Adding the Contact API parameter" alt="Adding the Contact API parameter">Adding the Contact API parameter</MadCap:xref>.</li>
+            <li>Enable the  Import Map <span class="UXElement">HRPAPI_contact*.csv</span>. See <MadCap:xref href="Contact_ImpMap.htm" title="Enabling the Import Map Header" alt="Enabling the Import Map Header">Enabling the Import Map Header</MadCap:xref>.</li>
+        </ol>
+        <p class="TopicsList" MadCap:conditions="ClientSpace.Screen">Topics in this section</p>
+        <MadCap:miniTocProxy MadCap:conditions="ClientSpace.Screen" />
+    </body>
+</html>

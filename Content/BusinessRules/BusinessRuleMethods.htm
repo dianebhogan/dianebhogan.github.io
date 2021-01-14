@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Business Rules" />Business Rule Methods</h1>
+        <p>This topic provides a list of methods, a description of the method, and the accompanying parameters.</p>
+        <p>Dataform rules include Biz Logic, Hard Errors, and Soft Errors. These rules can trigger events, ensure that data does not become corrupt (for example, no duplicate SSN and FEIN), and manage the requirements of a workflow, along with any number of custom functions.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Business Logic Rules  compare fields, perform calculations, change values of fields, validate values, and more</p>
+        <p class="Bullet1" MadCap:autonum="• ">Hard Errors (HE) are hard and fast requirements that must be met before the action can be completed. These are most commonly used to require data be entered before a certain step in the process but without making it a hard requirement to save the current dataform.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Soft Errors (SE) are used as reminders and warnings. These can be configured as custom and complex warnings, or they can be simple warnings to remind someone to complete a specific field.</p>
+        <p>For details about adding a business rule, see <MadCap:xref href="ConfigRulesBusinessLogic.html" title="Configuring rules and business logic" alt="Configuring rules and business logic">Configuring rules and business logic</MadCap:xref>.</p>
+        <h2>Clear Field rules</h2>
+        <p>You can automatically clear a field based on a specific trigger condition.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 151px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 241px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Method</th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Description</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">_ClearFieldValue</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Clears the value in a specific field on save.</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>sFieldName</b> (field to be set)</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>sFieldValue</b> (value to be entered in the field)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">_ClearTabFieldValue</td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Clears a field on the sTabTableName dataform on save.</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>sTabTableName</b>&#160;(Dataform Table of Tabbed Dataform)</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>sFieldName</b> (field to be set</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Create Field rules</h2>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 277px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 176px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Method</th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Description</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">_CreateCalendarEvent</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">FieldName</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Subject</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Invitees</p>
+                        <p class="TableBullet" MadCap:autonum="• ">StartTime</p>
+                        <p class="TableBullet" MadCap:autonum="• ">EndTime</p>
+                        <p class="TableBullet" MadCap:autonum="• ">MeetingType</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">_CreateExportTransaction</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">ExportConfigGUID</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">_CreateExportTransactionAndData</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">ExportConfigGUID</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">_CreateExportTransactionAndDataByUser</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• ">ExportUser</p>
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• ">ExportConfigProc</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Required Field rules</h2>
+        <p>The Required Field business rules enable a dataform field to be completed under certain circumstances.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col style="width: 189px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 544px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Method</th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Description</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">_RequireFieldOnThisForm</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Checks for a value in a field on the current form.</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">sFieldName</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">_RequireTabField</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Checks for a value in a field on a related tab.</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">sTabTableName</p>
+                        <p class="TableBullet" MadCap:autonum="• ">sFieldName</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">_RequireAdHocField</td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Checks for a value in a field that resides in a node that is embedded in the dataform XML packet.</p>
+                        <p class="TableTextLeft">For example, there could be an Org node (on the PEO Client Master), and you want to require the Source field. In that case, the parameters would be:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">sFieldPath:&#160; Org/crSource &#160;&#160;</p>
+                        <p class="TableBullet" MadCap:autonum="• ">sFieldLabel: Source</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">sFieldPath</p>
+                        <p class="TableBullet" MadCap:autonum="• ">sFieldLabel&#160;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Prevent duplicate records</h2>
+        <p>By default, these rules validate other active dataforms of the same type within the same workspace. You can configure the rules with an All Workspaces flag, which allows the rule to validate across all workspaces with the dataform. Similarly, an Include Inactive flag allows the rule to include inactive records both within a workspace and across workspaces.</p>
+        <table style="width: 100%; mc-table-style: url('../Resources/TableStyles/Standard_Table.css'); margin-left: 0; margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 230px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Method</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Description</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableTextLeft">Parameters</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">_HE_PreventDuplicateRecords</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Hard Error that validates a unique dataform record based on a configured Field Name parameter (such as ImportID).  Default behavior validates active dataforms within the same workspace.  The default error message for this rule states, "This form cannot be saved because the value for '&lt;fieldName&gt;' is not unique."</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <ul>
+                            <li><span class="UXElement">FieldName</span> (text): The field which the rule will validate for duplicate records.</li>
+                            <li><span class="UXElement">AllWorkspaces</span> (checkbox): When selected, the rule validates the current record against all dataforms of its type across all workspaces, overriding the default same workspace behavior.</li>
+                            <li>
+                                <p><span class="UXElement">IncludeInactiveRecords</span> (checkbox): When selected, the rule validation includes Inactive records, overriding the default active only behavior.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">_SE_PreventDuplicateRecords</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Soft Error that validates a unique dataform record based on a configured Field Name parameter (such as ImportID).  Default behavior validates active dataforms within the same workspace.  The default error message for this rule states, "The value for &lt;fieldName&gt; is not unique to the system, are you sure you want to proceed?"</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <ul>
+                            <li><span class="UXElement">FieldName </span>(text): The field which the rule will validate for duplicate records.</li>
+                            <li><span class="UXElement">AllWorskspaces</span> (checkbox): When selected, the rule validates the current record against all dataforms of its type across all workspaces, overriding the default same workspace behavior.</li>
+                            <li><span class="UXElement">IncludeInactiveRecords</span> (checkbox): When selected, the rule validation includes Inactive records, overriding the default active only behavior.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Core rules</h2>
+        <p>In addition to the standard required field rules, two CORE rules allow for multiple trigger conditions when requiring fields. Both rules add an additional Trigger field and Trigger value in the parameter area of HE/SE_RequiredFieldEngine rule. Essentially this allows you to have multiple triggers for a required field rule.</p>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 252px;">
+            </col>
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 112px;">
+            </col>
+            <col class="TableStyle-Standard_Table-Column-Column1">
+            </col>
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Method</th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Description</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">_SE_RequireFieldOnFormOnTrigger</p>
+                        <p class="TableTextLeft">_HE_RequireFieldOnFormOnTrigger</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Soft Error</p>
+                        <p class="TableTextLeft">Hard Error</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">TriggerTable:&#160;must be  <b>gen_x</b>  or  <b>#ThisForm</b>.&#160;</p>
+                        <p class="TableBullet2" MadCap:autonum="• "><b>#ThisForm</b>  uses live data from the current form PRIOR to the save.&#160;</p>
+                        <p class="TableBullet2" MadCap:autonum="• "><b>gen_x</b>  evaluates the TriggerField value in the database to determine if TriggerField = TriggerValue</p>
+                        <p class="TableBullet" MadCap:autonum="• ">TriggerField:&#160;must be a valid field on <b>Trigger Table</b>.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">TriggerValue:&#160;must be a value or  <b>#IsEmpty</b>.</p>
+                        <p class="Bullet1" MadCap:autonum="• ">RequiredTable:&#160;must be  <b>gen_x</b>  or  <b>#ThisForm</b>.&#160;</p>
+                        <p class="TableBullet2" MadCap:autonum="• "><b>#ThisForm</b>  uses live data from the current form PRIOR to the save.</p>
+                        <p class="TableBullet2" MadCap:autonum="• "><b>gen_x</b>  evaluate the RequiredField value in the database to determine if RequiredField is populated.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">RequiredField:&#160;must be a valid field on <b>RequiredTable</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">_HE_RequireFileDescription</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Hard Error</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Requires a document uploaded to a field that has a description before saving</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">_HE_RequireFileCategory</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Hard Error</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Requires a document uploaded to a field that has a category before saving</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">_HE_LimitFileUploadTypes</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Hard Error</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft"> Limits the file types that can be saved into a field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">_HE_ValidateMinMax</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Hard Error</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Validates the minimum and maximum values for specific datatypes that support Integer, Number, Decimal, and Money. If the imported amount exceeds the minimum or maximum values, the import fails and records each failed issue. When all the values in the field meet the acceptable range, the dataform is updated.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Set Field rules</h2>
+        <p>Sometimes you want to automatically set a field value based on a set of triggering parameters; for this reason, the <b>_SetField</b> rules were created.</p>
+        <p>The <b>_SetField</b> rules provide several non-specific trigger values:</p>
+        <p class="Bullet1" MadCap:autonum="• ">#IsEmpty: fires the rule if the trigger field on the Triggering Form has no value</p>
+        <p class="Bullet1" MadCap:autonum="• ">#IsNotEmpty: fires the rule if the trigger field on the Triggering Form has some value - anything but empty</p>
+        <p class="Bullet1" MadCap:autonum="• ">#IsDirty: fires the rule if the trigger field on the Triggering Form has any value other than empty and has been changed prior to save</p>
+        <p class="Bullet1" MadCap:autonum="• ">#IsDirtyAndIsEmpty: fires the rule if the trigger field on the Triggering Form has had its value cleared prior to save</p>
+        <p class="Bullet1" MadCap:autonum="• ">#IsDirtyAndNotEmpty: fires the rule if the trigger field on the Triggering Form has some value - anything but empty and has been changed prior to save</p>
+        <p>These options and descriptions are in the contextual help (click the field label). The Trigger Values of this help are selectable links that fill the trigger field automatically.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 240px;">
+            </col>
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 387px;">
+            </col>
+            <col class="TableStyle-Standard_Table-Column-Column1">
+            </col>
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Method</th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Description</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">_SetDateFieldValue</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Sets a Date field on the TableName dataform.</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>sFieldName</b>  (field to be set)</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>sFieldValue</b>  (value to be entered in the field accepts datetime shortcuts (t,d,w,m,y), such as:</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">t (today),</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">1w (+1  week)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">_SetDateFieldValueFromSourceField</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• "><b>TargetField</b>  (field on form to be set)</p>
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• "><b>SourceField</b>  (field on SourceForm to be inserted)</p>
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• "><b>SourceForm</b>  (Dataform providing inserted value)</p>
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• "><b>OffsetInterval</b>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">_SetFieldFromKey</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">The Field Name of the field (on the Dataform Name dataform) into which the Record ID is inserted if the field is empty. Sets&#160;a Text or Integer field to that form's ID. If the field is already filled out, it does not replace the value.&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>TargetField</b>: The TargetField must be either a Text or Integer Input datatype. Can be used on new or existing records.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">_SetFieldFromForm***</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Sets&#160;a field on the TableName dataform from a field on another dataform.</p>
+                        <p>Sets a field on the current single dataform from a field on a different single dataform. Must be in the same workspace. The data types must match.&#160;</p>
+                        <p>For configuration purposes, TableName is the current (target) dataform. This is to be configured for single dataforms only.&#160;Leaving the TriggerField and TriggerValue blank when configuring this rule sets the value on save of trigger dataform. If improperly configured using multi-forms, the data is set from the most recently created form, even if it is inactivated.</p>
+                        <p><b>***Can only be used on gen_ dataforms that are  not  Multiforms.</b>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>TargetField</b>:&#160;field on form to be set</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>SourceField</b>:&#160;field on SourceForm to be inserted</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>SourceForm</b>:&#160;Dataform providing inserted value</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>AllowEmptyValue</b>:&#160;Clears the target field if SourceField is empty. When unchecked, the&#160;target field remains unchanged.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">_SetFieldOnFormFromForm***</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Sets a field on&#160;another dataform  ( gen_DataformName)  from a field on the current dataform (#ThisForm) or from another dataform (gen_DataFormName).</p>
+                        <p>Sets a field on a single dataform from a different single dataform in the same workspace. This is triggered by a third, completely different single dataform in the same workspace.</p>
+                        <p>The source and target data types must be the same. This is to be configured for single dataforms only. Leaving the TriggerField and TriggerValue blank when configuring this rule sets the value on save of trigger dataform. If improperly configured, when the source dataform is a multi-form, the data is set from the most recent source multiform, even if it is inactive. If the target dataform is a multiform, the data is set on the most recent multiform, even if it is inactive.&#160;</p>
+                        <p><b>***Can only be used on gen_ dataforms that are  not  Multiforms.</b>
+                        </p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• "><b>TargetField</b>  (field on the form to be set)</p>
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• "><b>SourceField</b>  (field on SourceForm to be inserted)</p>
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• "><b>TargetForm</b>&#160;</p>
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• "><b>SourceForm</b>  (Dataform providing inserted value)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">_SetFieldValue</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Sets a field on the TableName dataform on save</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>sFieldName</b>  (field to be set)</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>sFieldValue</b>  (value to be entered in the field)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">_SetFieldValueFromPattern</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">This rule has the ability to extract the first instance of a value from within a text field using a valid .Net RegEx pattern and set the value of another text field on the same page to this extracted value.&#160;Some .Net regex patterns found online begin with the  ^  character, which must be removed when configuring this rule.</p>
+                        <p>This business rule operates based on the following:</p>The SourceField value is always be treated as textTargetField must be a Text data typeTargetField is ALWAYS overwritten with the results of the pattern matchSourceField and TargetField must be on the current dataform and cannot be used on tabbed forms. If the pattern match returns no value, the TargetField is cleared.</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>TargetField</b>: Text datatype</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>SourceField</b>: text</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Pattern</b>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">_SetImportID</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">_SetTabDateFieldValue</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Sets a Date field on the sTabTableName dataform (Tab dataform associated with the triggering dataform)</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>sTabTableName</b>  (Dataform Table of Tabbed Dataform)</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>sFieldName</b>  (field to be set)</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>sFieldValue</b>  (value to be entered in the field accepts datetime shortcuts (t,d,w,m,y)&#160;such as t (today), 1w (+1&#160;week) etc.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">_SetTabFieldValue</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Sets a field on the sTabTableName dataform on save.</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>sTabTableName</b>&#160;(Dataform Table of Tabbed Dataform)</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>sFieldName</b>  (field to be set)</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>sFieldValue</b>  (value to be entered in the field).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">_SetTabUserField</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Sets a user field on the dataform tab that is a from a user field on the parent dataform of the tab. This only works from the Parent form to the Child form.</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>TabTableName</b>&#160;(Dataform Table of Tabbed Dataform)</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>TargetField</b>  (field to be set)</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>SourceField</b>
+                        </p>
+                        <p class="TableBullet2" MadCap:autonum="• ">Use #CurrentUser to set the target user field to the current logged in user.&#160;</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">Use #LoginID (with LoginID replaced by a specific user login ID) to automatically set the target user field to a specific user.)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">_SetUserField</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">Sets a user field on the same dataform.&#160;&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• "><b>TargetField</b>:&#160;If a non-user field is selected as the TargetField, such as a text field, the importID will be set in the TargetField.&#160;</p>
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• "><b>SourceField</b>:&#160;</p>
+                        <p colspan="1" class="TableBullet2" MadCap:autonum="• ">Use  #CurrentUser&#160;to set the target user field to the current logged in user.</p>
+                        <p colspan="1" class="TableBullet2" MadCap:autonum="• ">Use #LoginID (with LoginID replaced by a specific user login ID) to automatically set the target user field to a specific user. Leaving the TriggerField and TriggerValue blank when configuring this rule sets the value on save of trigger dataform.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Complete all non-archived tasks</h2>
+        <p>You can create a rule that will close all associated tasks on a dataform regardless of the origin of the task so that you do not have to close tasks manually.</p>
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 213px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Method</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">_TaskAutoCompleteAll</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">When you create the rule, use the method <b>_TaskAutoCompleteAll</b>. This method completes all non-archived tasks that are associated with a dataform except for tasks that define a recurring rule.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Primary and Secondary Trigger fields</h2>
+        <p>When configuring business rules, the Primary Trigger Field and Secondary Trigger Field lists include fields that are User datatypes. Trigger value fields are text fields that support the following configurations:</p>
+        <p class="TableBullet" MadCap:autonum="• ">A single User ID</p>
+        <p class="TableBullet" MadCap:autonum="• ">#IsDirty</p>
+        <p class="TableBullet" MadCap:autonum="• ">#IsEmpty</p>
+        <p class="TableBullet" MadCap:autonum="• ">#IsDirtyAndEmpty</p>
+        <p class="TableBullet" MadCap:autonum="• ">#IsDirtyAndNotEmpty</p>
+        <h3>Primary Trigger</h3>
+        <p class="Bullet1" MadCap:autonum="• ">Primary Trigger Field: can specify <b>HdrAction</b> or a field on the current dataform</p>
+        <p class="Bullet1" MadCap:autonum="• ">Primary Trigger Value: the <b>HdrAction</b> value or the field value used for comparison</p>
+        <p class="Bullet1" MadCap:autonum="• ">Compares Primary Trigger Field <b>HdrAction</b> value or the dataform field value with Primary Trigger Value entered</p>
+        <p class="Bullet1" MadCap:autonum="• ">The Primary Trigger Value <b>must have changed</b> for the rule to fire, based on the following criteria:</p>
+        <p class="TableBullet2" MadCap:autonum="• ">If comparing HdrAction value, the HdrAction is assumed changed</p>
+        <p class="TableBullet2" MadCap:autonum="• ">If comparing dataform field values (e.g., luState=MA), the dataform field must have changed</p>
+        <p class="TableBullet2" MadCap:autonum="• ">If #IsEmpty, #IsNotEmpty, dataform field is assumed changed</p>
+        <p class="TableBullet2" MadCap:autonum="• ">If #IsDirty, #IsDirtyAndIsEmpty, #IsDirtyAndNotEmpty, dataform field must have changed</p>
+        <p class="Bullet1" MadCap:autonum="• ">Click the label for a list of # conditions that are hyperlinked to set the condition in Primary Trigger Value.</p>
+        <h3>Secondary Trigger</h3>
+        <p>Secondary trigger field and value fields are enabled when a primary trigger condition has been set and are <b>optional</b>. Criteria for secondary trigger conditions are as follows:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Primary Trigger condition <b>must</b> be met. Secondary Trigger acts as an AND with Primary Trigger.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Secondary Trigger Field: can specify <b>HdrAction</b>, a field on the current dataform, or a field from ServerDataProc1 or ServerDataProc2</p>
+        <p class="Bullet1" MadCap:autonum="• ">Secondary Trigger Field: when using Server Data Procs, the format is SDP1.FieldName or SDP2.FieldName</p>
+        <p class="Bullet1" MadCap:autonum="• ">Secondary Trigger Value: the <b>HdrAction</b> value or the dataform/SPD1/SPD2 field value</p>
+        <p class="Bullet1" MadCap:autonum="• ">Compares Secondary Trigger Field HdrAction value or the dataform/ServerDataformProc field value with Secondary Trigger Value entered</p>
+        <p class="Bullet1" MadCap:autonum="• ">The Primary Trigger Value <b>must have changed</b> for the rule to fire, based on the following criteria:</p>
+        <p class="TableBullet2" MadCap:autonum="• ">If comparing <b>HdrAction</b> value, the <b>HdrAction</b> is assumed changed</p>
+        <p class="TableBullet2" MadCap:autonum="• ">If comparing SDP1/SDP2 value, the current value is assumed changed</p>
+        <p class="TableBullet2" MadCap:autonum="• ">If comparing dataform field values (e.g., luState=MA), the current dataform field must have changed</p>
+        <p class="TableBullet2" MadCap:autonum="• ">If #IsEmpty, #IsNotEmpty, current dataform/SPD1/SPD2 field is assumed changed</p>
+        <p class="TableBullet2" MadCap:autonum="• ">If #IsDirty, #IsDirtyAndIsEmpty, #IsDirtyAndNotEmpty, dataform field must have changed</p>
+        <p class="TableBullet2" MadCap:autonum="• ">If #IsDirty, #IsDirtyAndIsEmpty, #IsDirtyAndNotEmpty, previous value is assumed Empty, field must have changed (contains a value)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Click the label to for a list of # conditions that are hyperlinked to set the condition in Secondary Trigger Value.</p>
+    </body>
+</html>

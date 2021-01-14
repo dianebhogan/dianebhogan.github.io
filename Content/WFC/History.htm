@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\Resources\MasterPages\OtherTopics.flmsp');">
+    <head>
+    </head>
+    <body>
+        <h1>Workflow History</h1>
+        <p>Workflow history is available for dataforms  and tasks created from a workflow. It provides the history of how the dataform or task was created and shows the workflow item that generated the event. History is available from the Workflow History link on the Action Center. The link only shows if the item is triggered by a workflow and is only available to Global Admins and Developer users. </p>
+        <p>The triggering history shows the most recent event for the current task or dataform and cascades to the first triggering event.</p>
+        <p class="ProcedureIntro">To view workflow history:</p>
+        <ol MadCap:continue="true">
+            <li>Open a dataform or a task.<br />Our example shows an open task. Note the Workflow History bar in the Action Center with a badge counter showing the number of events.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Workflow/WorkflowHistory.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>In the <span class="UXElement">Action Center</span>, click <span class="UXElement">Workflow History</span>.<br />The Workflow Triggering History opens. The Workflow Triggering History shows that the task was triggered by Client Master 695 from Workflow Item 1212. This example shows one entry because that is the extent of the triggering events.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Workflow/TriggeringHistory.png" class="thumbnail" />
+            </p>
+        </div>
+        <div class="indent">
+            <p>The triggering history displays as many events as having occurred to this point. The following example shows multiple events, with the last one as the first event that was triggered.</p>
+            <p>
+                <img src="../Resources/Images/Workflow/TriggeringHistory2.png" class="thumbnail" />
+            </p>
+        </div>
+        <p class="ProcedureIntro">To view the dataform, task, or workflow item:</p>
+        <ol start="1">
+            <li>Select the <span class="UXElement">This task was triggered by</span> link to open the triggering form.</li>
+            <li>Select the <span class="UXElement">From</span> link to go to that item in the workflow configuration.</li>
+            <li>Click <span class="UXElement">Close</span>.</li>
+        </ol>
+    </body>
+</html>

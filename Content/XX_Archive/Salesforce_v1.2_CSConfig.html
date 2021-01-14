@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring <MadCap:variable name="MyVariables.ProductName" /></h1>
+        <p>Several ClientSpace mechanisms must be configured before implementing this process.</p>
+        <p class="ProcedureIntro">To configure <MadCap:variable name="MyVariables.ProductName" />:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<b>Advanced</b> &gt; <b>API&#160;Configuration</b>.<br />The API Configuration list is displayed.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Click <b>Add</b>.<br />The New API&#160;Configuration form opens.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/NewAPIConfiguration.png" />
+        </p>
+        <p class="L1Num" MadCap:autonum="3. ">Complete the form:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css')" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 169px;" />
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 560px;" />
+            <thead>
+                <tr class="TableStyle-Procedure-Head-Header1">
+                    <th class="TableStyle-Procedure-HeadE-Column1-Header1">Field</th>
+                    <th class="TableStyle-Procedure-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">API Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select <b>Web Service</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Application Code</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li><strong>SFDCDEV</strong> is the sandbox configuration</li>
+                            <li><strong>SFDCPROD</strong> is the Production configuration</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Application Name</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Enter <strong>Salesforce Integration</strong>  &#160;<em>(user choice)</em></td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Username</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Enter the username of the API account.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Password</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Enter the password of the API account AND the integration key.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Description</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Provide a description (user choice).</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Endpoint</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Enter the URL of the API for the Partner WSDL.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Secondary ID</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">not used</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Logging Level</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li><strong>0</strong> None</li>
+                            <li><strong>1</strong> Only logs that the process ran and the date/time begin and end</li>
+                            <li><strong>2</strong> Logs process details and results (for setup and debugging only)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Active</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Configuration ID</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

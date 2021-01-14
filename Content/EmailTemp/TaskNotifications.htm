@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html MadCap:conditionTagExpression="include[SnippetConditions-EmailTemplates.System]" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Email Templates" />Sending task notifications through Email Templates</h1>
+        <p>System administrators can produce task notifications through email templates, enabling flexibility for messaging and branding. These email templates are <b>System</b> email templates. Task notifications  include System Email Template with the code value INCIDENT. If the INCIDENT template does not exist, ClientSpace uses the original notification style. For emails generated from the INCIDENT template, the Email Admin dashboard displays TaskSystemEmailTemplate in the Source column (otherwise displays Task).</p>
+        <p class="TableTextLeft">System Email Templates include:</p>
+        <ul>
+            <li>
+                <p>The System Email Template for Incidents contains the Task Comments field (The Comments field is not included in the fields that changed list).</p>
+            </li>
+            <li>
+                <p>On creation of a new Task, the Updated By User replace field populates.</p>
+            </li>
+        </ul>
+        <p>
+            <img src="../Resources/Images/EmailTemplates/TaskNotifications.png" alt="" title="" class="thumbnail" />
+        </p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">By default, <MadCap:variable name="MyVariables.ProductName" /> provides an INCIDENT Email Template.</p>
+        <p class="ProcedureIntro">To create a System Email Template for task notifications:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Email Templates</b>.</p>
+        <p class="StepResult">The Email Templates dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Click <b>Add</b>.</p>
+        <p class="StepResult">The Add Email Template form opens.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Complete the form.<br />For Type, select <span class="UXElement">System</span>.</p>
+        <MadCap:snippetBlock src="../Resources/Snippets/ET_Step1_Initial.flsnp" />
+        <p class="L1Num" MadCap:autonum="4. ">Click <b>Save</b>.</p>
+    </body>
+</html>

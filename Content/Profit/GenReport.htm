@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Generating the Client Profitability Report</h1>
+        <p>You generate the report from the Client Profitability link in the Action Center. This link is accessible from the Client Master.</p>
+        <p class="ProcedureIntro">To generate the report:</p>
+        <ol>
+            <li>From the  Client Master, in the <span class="UXElement">Action Center</span>, under <span class="UXElement">Reports</span>, click <span class="UXElement">Client Profitability</span>.<br />The Client Profitability form opens.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Profitability/ClientProfitability-form.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol>
+            <li>Edit the fields as required:</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');width: 70%;" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 72px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Client</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Default is the selected client from the Client Master or Workspace landing page.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">From</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Use the date picker to select the starting date, or type a date using the format: mm/dd/yyyy.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">To</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Use the date picker to select the ending date,  or type a date using the format: mm/dd/yyyy.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Execute</span>.<br />The report generates and downloads as an Excel spreadsheet. </li>
+        </ol>
+        <p class="ProcedureIntro">To view the report:</p>
+        <ol>
+            <li>Locate your download files and open the spreadsheet.</li>
+            <li>Excel opens  the report on the <span class="UXElement">Client Summary</span> tab. There are multiple tabs.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Profitability/ClientSummary.png" alt="" title="" />
+            </p>
+        </div>
+        <p>The example shows the date range from January 1 to the end of the year, December 31. The Gross Margin and Cost of Service are highlighted, along with the Net Profit Margin. In this example, while the profit is very positive, there are many costs associated with maintaining this client.</p>
+        <p class="SubHdr">Client Summary</p>
+        <p class="Body">This tab presents a summarized view of the data. This part of the report reveals what it costs you to administer the client compared to your gross margin. The Contract vs. Actual show any variance between the contracted amounts and actual costs. </p>
+        <p class="SubHdr">Contract Info</p>
+        <p class="Body">This tab presents the contract costs – the costs incurred by the company to fulfill the terms of the contract. A summary of the contract data is also presented in the Client Summary tab.</p>
+        <p class="SubHdr">Payroll_New </p>
+        <p class="Body">This tab presents the payroll batch and bill code records. We viewed this data in the Payroll Batch runs and the Billing Voucher records.</p>
+        <p class="SubHdr">Client Service</p>
+        <p class="Body">This tab presents costs associated with visits, cases, and tasks. For tasks, cases, and visits you can see basic information for each record, which also includes time records if applicable. The sum of the total time spent is included in the Cost of Service total on the first tab, Client Summary.</p>
+        <p class="SubHdr">WorkComp</p>
+        <p class="Body">This tab presents the costs associated with Workers' Compensation. It lists the claims that fit your date range. Additionally, if you are tracking time in the claim, the Time Spent column shows much time your staff spent on this activity.</p>
+        <p class="SubHdr">Unemployment</p>
+        <p class="Body">This tab shows the costs of unemployment by employees for the selected date range. Time Spent captures time tracking from <MadCap:variable name="MyVariables.ProductName" />.</p>
+    </body>
+</html>

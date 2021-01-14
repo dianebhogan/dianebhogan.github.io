@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/HOME/Dissertation.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <TocEntry
+      Title="Learning and Doing through Software Documentation"
+      Link="/Content/Resources/PDFs/Dissertation_Diane Hogan.pdf"
+      FrameName="_blank"
+      ReplaceMergeNode="true" />
+  </TocEntry>
+</CatapultToc>

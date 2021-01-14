@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>CSV Import File Creation macro</h1>
+        <p>To import .csv files&#160;into <MadCap:variable name="MyVariables.ProductName" />, the files must be appropriately formatted, with comma delimiting and&#160;quote wrapping the text.&#160; The&#160;following instructions walk you through creating a CreateCSV macro and adding it to the Quick Access toolbar in Excel, which correctly formats the selected&#160;spreadsheet data into an importable format. The information is excerpted from the Microsoft Office online help and modified to include specific instructions for the CreateCSV macro. These instructions are designed for Office 2010 and later.        </p>
+        <h2>Macros and the Visual Basic Editor
+        </h2>
+        <p>Microsoft Office allows you to run pre-recorded instructions on Excel data. To do so, you must write your code in a place and in a way that Office can understand; typically, by using the Visual Basic Editor. Although it is installed by default, many users do not know that it is even available until it is enabled on the ribbon.</p>
+        <h3>Developer tab
+        </h3>
+        <p>All Office 2010 and later applications use the ribbon. One tab on the ribbon is the&#160;<strong>Developer</strong>&#160;tab, where you access the Visual Basic Editor and other developer tools. Because Office 2010 does not display the&#160;<strong>Developer</strong>&#160;tab by default, you must enable it using the following procedure:</p>
+        <p class="ProcedureIntro">To enable the Developer tab:</p>
+        <p class="L1Num" MadCap:autonum="1. ">On the&#160;<strong>File</strong>&#160;tab, choose&#160;<strong>Options</strong>&#160;to open the&#160;<strong>Excel Options</strong>&#160;dialog box.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Click&#160;<strong>Customize Ribbon</strong>.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Under&#160;<strong>Choose commands from</strong>, select&#160;<strong>Popular Commands</strong>.</p>
+        <p class="L1Num" MadCap:autonum="4. ">Under&#160;<strong>Customize the ribbon</strong>, select&#160;<strong>Main tabs</strong>.</p>
+        <p class="L1Num" MadCap:autonum="5. ">Select the&#160;<strong>Developer</strong>&#160;option.</p>
+        <p class="L1Num" MadCap:autonum="6. ">Click&#160;<strong>OK</strong>.</p>
+        <p class="L1Num" MadCap:autonum="7. ">After Excel displays the&#160;<strong>Developer</strong>&#160;tab, note the location of the&#160;<strong>Visual Basic</strong>,&#160;<strong>Macros</strong>, and&#160;<strong>Macro Security</strong>.</p>
+        <p>
+            <img src="../Resources/Images/Imports/DevelopTab.jpg" />
+        </p>
+        <h3>Security Issues
+        </h3>
+        <p class="Bullet1" MadCap:autonum="• ">To specify which macros can run and under what conditions, click <strong>Macro Security</strong>.</p>
+        <p>Although rogue macro code can seriously damage your computer, security conditions that prevent you from running helpful macros can seriously undermine your productivity. Macro security is a complex and involved topic that you should study and understand if you work with Excel macros.</p>
+        <p>For the purposes of this article, be aware that if the&#160;<strong>Security Warning: Macros have been disabled</strong>&#160;bar appears between the ribbon and the worksheet when you open a workbook that contains a macro, you can click the&#160;<strong>Enable Content</strong>&#160;button to enable the macros.</p>
+        <p>Also, as a security measure, you cannot save a macro in the default Excel file format (.xlsx); instead, <strong>you must save the macro in a file with a special extension, .xlsm</strong>.</p>
+        <h3>Visual Basic Editor
+        </h3>
+        <p>The following procedure shows you how to create a new blank workbook in which to store your macros. You can then save the workbook in the .xlsm format.</p>
+        <p class="ProcedureIntro">To create a new blank workbook:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">On the Developer tab, click <strong>Macros</strong>.<br /></p>
+        <p class="StepResult">The Macro dialog box opens.</p>
+        <p class="StepResult">For <b>Macro Name</b>, type&#160;<strong>CreateCSV</strong>.<br />The Create function becomes available.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Click <strong>Create</strong>.&#160;<br /></p>
+        <p class="StepResult">The Visual Basic Editor opens with the outlines of a new macro ready.</p>
+        <p>VBA is a full-featured programming language with a correspondingly full-featured programming environment. This article examines only those tools that you use to get started with programming, and that excludes most of the tools in the Visual Basic Editor. With this caveat, close the&#160;<strong>Properties</strong>&#160;window on the left side of the Visual Basic Editor, and ignore the two dropdown lists that appear above the code.</p>
+        <p>
+            <img src="../Resources/Images/Imports/CreatCSV.jpg" />
+        </p>
+        <p>The Visual Basic Editor contains the following code:</p>
+        <p class="Code"><span style="color: rgb(255,102,0);">VB</span>
+        </p>
+        <p class="Code">Sub&#160;CreateCSV()</p>
+        <p class="Code" />
+        <p class="Code">End&#160;Sub</p>
+        <p>&#160;</p>
+        <p class="Indent1"><em>Sub</em>&#160;stands for&#160;<em>Subroutine</em>, which you can define for now as macro. Running the&#160;CreateCSV&#160;macro runs any code that is between&#160;Sub CreateCSV&#160; ()&#160;and&#160;End Sub.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Now edit the macro so that it looks similar to the following code. Feel free to copy and paste the code below – everything between <strong>Sub CreateCSV()</strong> and <strong>End Sub</strong>.</p>
+        <p class="Code"><span style="color: rgb(255,102,0);">VB</span>
+        </p>
+        <p class="Code">Sub&#160;CreateCSV()</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Dim&#160;lColumnCount&#160;As&#160;Long</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Dim&#160;lRowCount&#160;As&#160;Long</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Dim&#160;strFileName&#160;As&#160;String</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;MsgBox ("This Macro will create a CSV version of the SELECTED ROWS AND COLUMNS.&#160; It will surround the cell data with quotes and separate each cell with a comma.&#160; Finally, it will replace any chr(10)s with chr(13)s.")</p>
+        <p class="Code" />
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;strFileName = InputBox("Please enter the destination file path.",&#160;"",&#160;"C:\Temp\Imports\" &amp; LCase(ActiveSheet.Name) &amp; ".csv")</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;If&#160;(strFileName =&#160;"")&#160;Then</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Exit&#160;Sub</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;End&#160;If</p>
+        <p class="Code" />
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;On&#160;Error&#160;Resume&#160;Next</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Open strFileName&#160;For&#160;Output&#160;As&#160;#1</p>
+        <p class="Code" />
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;If&#160;Err.Number &gt; 0&#160;Then</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;MsgBox ("Error: The path you selected may be bad.")</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Exit&#160;Sub</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;End&#160;If</p>
+        <p class="Code" />
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;lColumnCount = Selection.Columns.Count</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;lRowCount = Selection.Rows.Count</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Dim&#160;sValue&#160;As&#160;String</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;For&#160;lRow = 1&#160;To&#160;lRowCount</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;For&#160;lColumn = 1&#160;To&#160;lColumnCount</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;sValue = Selection.Cells(lRow, lColumn).Value</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;If&#160;lColumn = lColumnCount&#160;Then</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;If&#160;sValue =&#160;""&#160;Then</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Write #1,&#160;""</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Else</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Write #1, sValue</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;End&#160;If</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Else</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;If&#160;sValue =&#160;""&#160;Then</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Write #1,&#160;"",</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Else</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Write #1, Replace(Replace(Replace(Replace(sValue, Chr(10), Chr(13)), Chr(14),&#160;""), Chr(24),&#160;""), Chr(25),&#160;""),</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;End&#160;If</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;End&#160;If</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Next&#160;lColumn</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Next&#160;lRow</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Close #1</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;MsgBox ("CSV file created successfully.")</p>
+        <p class="Code">End&#160;Sub</p>
+        <p>&#160;</p>
+        <p class="Indent1">When used this macro will take whatever columns and rows are currently selected in the workbook and save them in the C:\Temp\Imports directory (if you have not already created this directory, an "Invalid path" error will be thrown). The CSV file will use the Worksheet name as the file name and save it with a <code>.csv</code> file extension.</p>
+        <p class="L1Num" MadCap:autonum="4. ">Go back to the&#160;<strong>Developer</strong>&#160;tab in Excel and click the&#160;<strong>Macros</strong>&#160;button again.<br /></p>
+        <p class="StepResult">You should now see CreateCSV as an option.</p>
+        <p>You just created and implemented custom VBA code in Excel.&#160;</p>
+        <h2>Making macros accessible
+        </h2>
+        <p>You can also get to the&#160;<strong>Macros</strong>&#160;dialog box from the&#160;<strong>View</strong>&#160;tab, but if you use a macro frequently, you might find it more convenient to access it with a keyboard shortcut or a&#160;<strong>Quick Access Toolbar</strong>&#160;button.</p>
+        <p>To create a button for the&#160;<strong>CreateCSV</strong>&#160;macro on the&#160;<strong>Quick Access Toolbar</strong>, use the following procedure. The following procedure describes how to make a button for a macro on the Quick Access Toolbar:</p>
+        <p class="ProcedureIntro">To create a button for a macro on the Quick Access Toolbar:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Click the&#160;<strong>File</strong>&#160;tab.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Click&#160;<strong>Options</strong> and then click&#160;<strong>Quick Access Toolbar</strong>.</p>
+        <p class="L1Num" MadCap:autonum="3. ">In the list under&#160;<strong>Choose commands from:</strong>, select <strong>Macros</strong>. </p>
+        <p class="L1Num" MadCap:autonum="4. ">Find the text that is similar to&#160;<strong>Book1!CreateCSV</strong>&#160;in the list that appears and select that text.</p>
+        <p class="L1Num" MadCap:autonum="5. ">Click <strong>Add &gt;&gt;</strong>&#160;to add the macro to the list.</p>
+        <p class="L1Num" MadCap:autonum="6. ">Click <strong>Modify…</strong>&#160;to select a button image to associate with the macro. </p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Imports/Modify.jpg" />
+        </p>
+        <p class="L1Num" MadCap:autonum="7. ">Click <b>OK</b>. <br />You should see your new button on the&#160;<strong>Quick Access Toolbar</strong>&#160;above the&#160;<strong>File</strong>&#160;tab.&#160;This CreateCSV button will be available in any workbook now.<br /></p>
+        <p class="L1Num" MadCap:autonum="8. ">Now you can quickly run your macro at any time without using the&#160;<strong>Developer</strong>&#160;tab. Give it a try.</p>
+    </body>
+</html>

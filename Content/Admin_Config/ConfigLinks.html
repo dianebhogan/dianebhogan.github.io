@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring links <i class="fas fa-cog" style="font-size:32px;color:var(--BrandPrimary2);padding:1px 6px 6px;" title="ClientSpace Advanced Administration" alt="ClientSpace Advanced Administration"></i></h1>
+        <p>Configurable links enable administrators to control the accessibility of data in the system dynamically. Configurable links can significantly improve the user experience by making related dataforms, reports, and workflows available from the dataform a user is currently on at specific points in the workflow. You can link to custom reports, merges, and dataforms within the current workspace or the Admin Workspace, or even configure a workflow from scratch. An example of configured links creative use is to make reports or workflow links available when specific data is entered. For example, a salesperson can only submit an order for approval when there is a resolution. </p>
+        <p>This topic provides the tools you need to start configuring custom links. To learn how you can configure link display <em>conditions</em>, see <MadCap:xref href="Config_LinkDisplayCond.htm" title="Configuring link display conditions" alt="Configuring link display conditions">Configuring link display conditions</MadCap:xref>.</p>
+        <p class="ProcedureIntro">To configure and manage links:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Advanced</span> &gt; <span class="UXElement">Custom Links</span>.<br />The Configure Links dashboard opens. To search the list, see <MadCap:xref href="ConfigLinks_Search.htm" title="Searching in the Configure Links list" alt="Searching in the Configure Links list">Searching in the Configure Links list</MadCap:xref>.<br /></li>
+            <li>Click <span class="UXElement">Add</span>.<br />The Configure Links Detail form opens.<br /></li>
+        </ol>
+        <p class="Indent1">
+            <img src="../Resources/Images/Dataform/ConfigLinks1.png" class="thumbnail" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Complete the form.<br />The value selected in <span class="UXElement">Group</span> drives the other form fields. The remaining form fields are listed under Display Action with their corresponding Group link.</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 181px;" />
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 257px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Location</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">Name of the dataform or system
+ object on which you want the link to appear.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Display Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">This is what  displays in the action area of the dataform or system object as the selectable link. When <span class="UXElement">Workspace Dataform</span> is selected, <span class="UXElement">Linked Field</span> becomes available.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Group</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">Denotes the type of link you are creating and drives the other
+ fields on the form to complete the
+ configuration:</p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">Action</span>
+                        </p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">Report</span>
+                        </p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">Link 1</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Sort Order</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">Orders the Links in the Action Center Workflow Actions first,
+ then Links (Link1), then Reports. The Sort Order determines how the
+ individual items are displayed within the groups.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" rowspan="4">
+                        <p class="TableTextLeft">Display Action</p>
+                        <p class="TableTextLeft">&#160;</p>
+                        <p class="TableTextLeft">&#160;</p>
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">Lists the possible actions for the selected link Group. Display Actions are based on the Group selection.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p>When <span class="UXElement">Group</span> =&#160;<span class="UXElement">Action</span>, the  Display Actions are:</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li>
+                                <p class="TableTextLeft"><span class="UXElement">Custom Function</span>: Call a custom JavaScript function to perform an action (requires
+ additional coding by our development team). Custom Function enables the Custom Function and
+ Custom Function Data fields.</p>
+                            </li>
+                            <li>
+                                <p class="TableTextLeft"><span class="UXElement">Submit w/Action</span>: Generates a HdrAction on the page  to trigger rules or workflow. Enter this HdrAction in Code
+ Value.</p>
+                            </li>
+                            <li>
+                                <p class="TableTextLeft"><span class="UXElement">Submit w/Action (close)</span>: Generates a HdrAction on the page 
+ to trigger rules or workflow, and after generated, the page closes.  Enter this
+ HdrAction in Code Value.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p>When <span class="UXElement">Group</span> =&#160;<span class="UXElement">Link1</span>, the  Display Actions are:</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li>
+                                <p><span class="UXElement">Custom Function</span>: Call a custom JavaScript function (requires additional coding by our development team). Custom Function enables Custom Function and Custom Function Data.</p>
+                            </li>
+                            <li>
+                                <p><span class="UXElement">Workspace Organization</span>: Open the workspaces associated Organization.</p>
+                            </li>
+                            <li>
+                                <p><span class="UXElement">Workspace Organization Contacts</span>:&#160;Open the workspaces associated Organization Contacts.</p>
+                            </li>
+                            <li>
+                                <p><span class="UXElement">Workspace Dataform</span>: Open a workspace dataform from the header of this dataform.</p>
+                                <ul>
+                                    <li>
+                                        <p>Select the
+ dataform in the Target Dataform field. </p>
+                                    </li>
+                                    <li>
+                                        <p>If
+ configured for a dataform with a foreign key relationship, this brings
+ back associated records.</p>
+                                    </li>
+                                    <li>
+                                        <p> Workspace dataform links adhere to the relationship to the dataform on which the link is configured, filtering the returned data appropriately. For example, configuring a workspace dataform link on the Employee dataform to the WC Claims dataform returns only claims associated with the employee in question.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><span class="UXElement">Admin Dataform</span>: Open an Admin dataform from the header of this dataform (Admin
+dataforms live in the Admin Workspace). <ul><li>Select the dataform in the
+ Target Dataform field.</li></ul></li>
+                            <li><span class="UXElement">URL</span>: Open another web page in a new tab or window depending on your browser
+ configuration settings. <ul><li>Enter the URL in the URL field.</li></ul></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p>When <span class="UXElement">Group</span> = <span class="UXElement">Report</span>, the Display Actions are:</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li><span class="UXElement">Run Report</span>: This is the Report or Merge that executes when you select the link.<ul><li>Run Report enables the Report/Merge field.&#160;</li></ul></li>
+                            <li><span class="UXElement">Run BI&#160;Report</span>: This is the link displayed in the Action Center.<ul><li>BI Report links follow CurrentUser and RecordID filtering. </li><li>To use with CurrentWorkspace filtering:<ul><li>Select Group &gt; Link 1. </li><li>Select Display Action &gt; URL. </li><li>In URL, enter the link of the BI report.</li></ul></li><li>Run BI&#160;Report enables the Report field. Select from a list of available target BI reports.</li></ul></li>
+                            <li><span class="UXElement">Open Filter Page</span>: This is the link displayed in the Action Center.</li>
+                            <li><span class="UXElement">Custom Function</span>: This is the custom function to be called. </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Report / Merge</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">The Report or Merge to execute using a Display Action when a Report link is clicked. When the link is clicked, a form ID of the dataform is passed. Report/Merge are only available when Group = Report.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">Report</span> is available when you select Run BI&#160;Report in Display Action.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">Report/Merge</span> is available when you select any other Display Action when Group = Report.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Target Dataform</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">This is the dataform to be opened from configured dataform links (Link1).  This field is enabled when a Link Group is selected.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Code Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">The HdrAction that is produced when  the link is clicked (Action).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Linked Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">The selections in this field are driven by the parent-child relationship of the <span class="UXElement">Location</span> dataform and the <span class="UXElement">Target Dataform</span>. The link on the Location dataform will link to the selection in Linked Field. When there is only one field, it automatically displays. For example, when there are two parent fields on the Client Service Case connected to the Employee, the Linked Field determines which field the Employee link references.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Custom Function</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">The custom function to be called from an Action link.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Custom Function Data</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">The data that is passed to a custom function, if required.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Security Entity</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">Select a security entity to secure the link for viewing. For users to see the link, they must be in a role with the security entity.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">URL</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">This is where you configure the URL that you want to open on a URL Display Action.  For an external URL, you must include the protocol (http:// or https://) as links without this are treated as internal to the application.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Confirmation Message</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">Before running the link action, display an OK / Cancel dialog box with a message. Most often used with Action Links.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">Provide a description of what action the link does. This description displays when you hover over the link on the dataform or system object.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Display this Link when adding</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">Prior to Save, dataforms generally do not display links. This option allows you to display the link before the initial form Save. Single dataforms with defaulted fields can appear as though they have been saved before the database's actual record exists. If you configure a link and it does not appear when you are testing, try saving the dataform. If you want the link to always appear, regardless of whether the dataform has been saved, select the <span class="UXElement">Display this link when adding</span> option.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Pinned Open</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">When this option is enabled (selected), it forces the link to display in the Action Items area. The link does not collapse when the associated group is collapsed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Badge Counter Proc</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">Select a stored procedure to display a count of the Active and Inactive records for the Location. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Condition Expression</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1" colspan="2">
+                        <p class="TableTextLeft">Condition Expressions use Labels from Display Conditions along with AND, OR, and NOT operators to control precedence and sequence. You can create complicated Link Display Conditions using unique combinations of the configured display conditions configured in the Add section.  </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Using the Label field on the Link Display Condition, you can combine trigger conditions into more complex expressions, overriding the default OR behavior. For example: (Condition1 AND Condition2) OR (Condition3 AND Condition4) OR Condition5. Link Display Conditions that are not included in the Condition Expression are ignored.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">The expression in this field is derived from the added conditions. See <MadCap:xref href="Config_LinkDisplayCond.htm" title="Configuring link display conditions" alt="Configuring link display conditions">Configuring link display conditions</MadCap:xref>.</p>
+                        <p class="TableTextLeft">For more information about Condition Expressions, see <MadCap:xref href="../WFC/WFC_CondExpr.htm" title="condition expressions" alt="condition expressions">Condition expressions</MadCap:xref>.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Project Code is set in Workspace Settings. Link configurations accept ProjectCode or TemplateCode as a Field trigger, allowing you to use Template Code to limit link display to all children of a given Template or Project Code to limit displaying a single Client Workspace.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Apply</span>.</li>
+        </ol>
+        <p class="ProcedureIntro">To add conditions:</p>
+        <ol>
+            <li>Go to the next topic, <MadCap:xref href="Config_LinkDisplayCond.htm">Configuring link display conditions</MadCap:xref>.</li>
+        </ol>
+    </body>
+</html>

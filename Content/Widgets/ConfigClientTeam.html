@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Configuring the Client Team widget</h1>
+        <p>
+            <img src="../Resources/Images/Widget/ClientTeamWidget.png" class="right" />
+        </p>
+        <p>The <MadCap:variable name="MyVariables.ProductName" /> workspace landing page is the central hub for Client data.  This is the home of the configurable Client Team widget and it allows up to 10 Client Team members to be displayed. By default, it shows 4.</p>
+        <p>The header of the Client Team widget contains a header bar with a link to jump to the Client Team dataform as well as an expansion control that allows the panel to show more team members. Configuring the widget involves configuring the Client Team Role lookup value and associated metadata.</p>
+        <p class="ProcedureIntro">To configure the Client Team widget:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Dataform Admin</b>.<br />The Dataform Admin dashboard opens. We will select a Client Team field to display on the workspace landing page widget. Alternatively, you can add a new Client Team member by adding a new user field to the dataform. Our examples use Snack Manager, which has already been added.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Widget/Dataform-list.png" class="thumbnail" />
+                <br />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Open the Team dataform and in the Action Center, click <span class="UXElement">Fields</span>. </li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Widget/Dataform-Team-Fields.png" alt="" title="" class="thumbnail" />
+                <br />The list of fields displays.</p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Select a field and click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Open</span>).<br /></li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Widget/SelectField.png" />
+            </p>
+            <p>Our example uses Snack Manager.</p>
+            <p>
+                <img src="../Resources/Images/Widget/Dataform-FieldName.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Copy the field name. <br />Our example shows the field as fkSnackManagerID.</li>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Lookups</span>.<br />The Lookups dashboard opens.</li>
+            <li>Filter the list to match your selection. Our example uses Client Team Roles, fkSnackManagerId. </li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Widget/Lookups-list.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Open the record.<br />The Lookup Details opens.</li>
+            <li>Find the corresponding Client Team Field lookup (or create a new one) making sure to paste the field name you copied in the last step as the Code value. Our example uses Code as fkSnackManagerID and Decode as Snack Manager.</li>
+        </ol>
+        <p class="Indent1">
+            <img src="../Resources/Images/Widget/Lookup-Details.png" class="thumbnail" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>In <span class="UXElement">Additional Settings</span>, apply any lookup changes and display order (up to 10 Client Team fields).</li>
+        </ol>
+        <p class="Indent1">
+            <img src="../Resources/Images/Widget/Additional-Settings.png" class="thumbnail" />
+        </p>
+        <ol MadCap:continue="true">
+            <li><span class="UXElement">Save</span> your changes and refresh the Client Team dataform.</li>
+        </ol>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.SME_Review">
+    <head>
+    </head>
+    <body>
+        <h1>The DocuSign Process</h1>
+        <p class="InternalComment"><b>TECH WRITER NOTES</b>:&#160;Some of this content is in other topics - Voided documents. And some content may not be usable or relevant. Review with an SME&#160;before you add this content to the TOC. </p>
+        <p>This topic provides technical process information for what happens at each step of the DocuSign API process. &#160;</p>
+        <h2>Dataform Save operation, Send File for Signatures
+        </h2>
+        <p>Assuming trigger conditions are met and the Email Template type = DocuSign, the process continues. The System executes the Document Merge, renaming the file to RenameFileTo Additional Parameter from associated Email Template.</p>
+        <p>The system retrieves Email Template Additional Parameters:</p>
+        <p class="Bullet1" MadCap:autonum="• ">LinkTable, the dataform to attach the signed document</p>
+        <p class="Bullet1" MadCap:autonum="• ">LinkColumn, the field on the dataform to save the signed document (if not specified, the document is attached to LinkTable)</p>
+        <p>The system retrieves the RowGUID of the LinkTable dataform and:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Create a new <strong>Uploaded Files Queue</strong> record (<strong>UFQ</strong> tblUploadedFilesQueue)</p>
+        <p class="Bullet2" MadCap:autonum="• ">status = new</p>
+        <p class="Bullet2" MadCap:autonum="• ">record type = DocuSign</p>
+        <p class="Bullet2" MadCap:autonum="• ">DateQueued set to <b>Now</b></p>
+        <p class="Bullet2" MadCap:autonum="• ">ProcessingLog set to <b>Queue record created</b></p>
+        <p class="Bullet2" MadCap:autonum="• ">Subject set to Email Template Subject</p>
+        <p class="Bullet2" MadCap:autonum="• ">set LinkTable, LinkColumn, and LinkGUID values</p>
+        <p class="Bullet1" MadCap:autonum="• ">Attach Merged Document to new UFQ record (as an attachment)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Create Document Signers (<strong>UFQR</strong> <strong>tblUploadedFilesQueueRecipient</strong>) records</p>
+        <p class="Bullet2" MadCap:autonum="• ">Retrieve a list of Email Template Recipients</p>
+        <p class="Bullet2" MadCap:autonum="• ">Resolve recipient proc recipients to Legal Name and Email Address</p>
+        <p class="Bullet2" MadCap:autonum="• ">Resolve dataform recipients to Legal Name and Email Address</p>
+        <p class="Bullet2" MadCap:autonum="• ">AdHoc recipients Legal Name and Email Address are stored when the recipient is created on Email Template</p>
+        <p class="Bullet2" MadCap:autonum="• ">For each resolved Signer, create a UFQR record</p>
+        <p class="Bullet2" MadCap:autonum="• ">Legal Name</p>
+        <p class="Bullet2" MadCap:autonum="• ">Email Address</p>
+        <p class="Bullet2" MadCap:autonum="• ">Routing Order (Signing Order)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Signature Location</p>
+        <p class="Bullet2" MadCap:autonum="• ">Initial Location</p>
+        <p class="Bullet2" MadCap:autonum="• ">Date Location</p>
+        <p>The document is then processed and sent to DocuSign through the DocuSign Request Signature scheduled process.</p>
+        <h3>Voided documents</h3>
+        <p>The DocuSign process handles voided documents, allowing the user to void a document that has already begun processing through the DocuSign system.</p>
+        <p>This is accomplished with two business rules specifically for Voided documents:</p>
+        <ul>
+            <li>The biz rule (core) <strong>_VoidDocuSignDocument</strong>&#160;updates the Uploaded Files Queue record status to <strong>voided</strong>. The&#160;scheduled process DocuSign Request Signature voids the envelope(s) in DocuSign. The Scheduled process DocuSign Get Docs Status retrieves any voided documents and attaches to the dataform if configured to attach (otherwise the voided document is attached only to the Uploaded Files Queue record).</li>
+            <li>A&#160;soft error (core) <strong>_SE_VoidDocuSignDocument</strong>&#160;warns the user that documents (envelopes) will be voided. This rule also identifies the number of envelopes that are affected.</li>
+        </ul>
+        <p>Both rules are configurable with the following parameters:</p>
+        <ul>
+            <li><strong>DataformOnly</strong> (option). When selected, it only voids envelopes (and thereby documents) associated with the Dataform on which the rule is configured. When cleared, voids all envelopes in the Workspace associated with the Dataform on which the rule is configured.</li>
+            <li><strong>AllowVoidStatus</strong> (comma delimited string). Provides the status of Uploaded Files Queue records that can be voided. See the Signature Status lookup group for valid statuses and use the CODE in this parameter, separated by a comma, with no spaces.</li>
+        </ul>
+        <h3>Scheduled Process descriptions
+        </h3>
+        <p class="SubHdr">"Request Signature" scheduled process
+        </p>
+        <p>When the Request Signature Scheduled Process runs, it performs the following actions:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Retrieve a list of all UFQ records with status = "new"</p>
+        <p class="Bullet1" MadCap:autonum="• ">Retrieve a list of Document Signers for this UFQ record</p>
+        <p class="Bullet1" MadCap:autonum="• ">Retrieve the LinkGUID of the unsigned document attached to this UFQ record (this file was attached when the Email Template triggered)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Retrieve the file data for this LinkGUID</p>
+        <p class="Bullet1" MadCap:autonum="• ">Construct an Envelope Definition packet</p>
+        <ul>
+            <li style="list-style-type: none;background-image: none;">
+                <ul>
+                    <li>&#160;&#160;&#160;add Document bytes</li>
+                    <li>&#160;&#160;&#160;add Document Name</li>
+                    <li>&#160;&#160; add Signer Sign, Initial, and Date tabs for each Signer</li>
+                    <li>&#160;&#160; set Envelope status = "sent" (instructs DocuSign to immediately send this document out for Signatures)</li>
+                </ul>
+            </li>
+        </ul>
+        <p class="Bullet1" MadCap:autonum="• ">Send Envelope Definition to DocuSign</p>
+        <p class="Bullet1" MadCap:autonum="• ">Updates UFQ status = "sent"</p>
+        <p class="SubHdr">"Get Docs Status" scheduled process
+        </p>
+        <p>The "Get Docs Status" Scheduled Process performs the following actions when it runs:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Retrieves the Envelope ID and Status of all DocuSign Envelopes since the earliest UFQ Last Checked date (where UFQ status != "processed")</p>
+        <p class="Bullet1" MadCap:autonum="• ">The system attempts to match Envelope IDs to UFQ SecondaryIdentifier values</p>
+        <p class="Bullet1" MadCap:autonum="• ">If there is no matching UFQ record, the message envelope is ignored</p>
+        <p class="Bullet1" MadCap:autonum="• ">Match found</p>
+        <p class="Bullet2" MadCap:autonum="• ">If UFQ status = Envelope status, ignore as nothing has changed</p>
+        <p class="Bullet2" MadCap:autonum="• ">If UFQ status = "processedsigned/processeddeclined", ignore as this Envelope and UFQ record no longer need to be managed</p>
+        <p class="Bullet2" MadCap:autonum="• ">If Envelope status = "completed", download signed document, UFQ set to "processedsigned"</p>
+        <p class="Bullet2" MadCap:autonum="• ">If Envelope status = "declined", download declined document, UFQ set to "processeddeclined"</p>
+        <p class="Bullet2" MadCap:autonum="• ">If Envelope status = "created, deleted, delivered, signed, sent, voided, correct", update UFQ to that status, do nothing with the document</p>
+        <p class="SubHdr">Final step</p>
+        <p>The final step in the DocuSign process is to Download Signed or Declined document (from Get Docs Status).</p>
+        <p>This step will:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Get the combined document set from DocuSign by Envelope ID</p>
+        <p class="Bullet1" MadCap:autonum="• ">Store the file locally in AppVar "TempPath" + "/docusign"</p>
+        <ul>
+            <li style="list-style-type: none;background-image: none;">
+                <ul>
+                    <li>&#160;filename is 'newguid' + "_tempdocusignfile.pdf"</li>
+                </ul>
+            </li>
+        </ul>
+        <p class="Bullet1" MadCap:autonum="• ">Upload the file to ClientSpace</p>
+        <p class="Bullet1" MadCap:autonum="• ">Rename file to 'envelopestatus' + "_" + RenameFileTo Additional Parameter (envelope status will be 'COMPLETED' or 'DECLINED')</p>
+        <p class="Bullet1" MadCap:autonum="• ">Attach file to UFQ record (always as an attachment on the record)</p>attach file to Dataform record<p class="Bullet2" MadCap:autonum="• ">Email Template LinkTable" additional parameter</p><p class="Bullet2" MadCap:autonum="• ">Email Template LinkColumn additional parameter (if empty, file is stored as an attachment to the dataform)</p><p class="Bullet2" MadCap:autonum="• ">always save the LinkTable dataform record</p><p class="Bullet2" MadCap:autonum="• ">HdrAction = "DOCUSIGN_COMPLETED" or "DOCUSIGN_DECLINED"</p><p class="Bullet2" MadCap:autonum="• ">Pipeline = "DocuSign"</p><p class="Bullet2" MadCap:autonum="• ">RulesToRun = "BizLogic"</p><p class="Bullet2" MadCap:autonum="• ">If LinkColumn is specified, that field will contain the signed/declined file</p><p class="Bullet1" MadCap:autonum="• ">After the file is uploaded, the temp file is deleted.</p></body>
+</html>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Viewing the submitted cases in <MadCap:variable name="MyVariables.ProductName" /></h1>
+        <p>
+            <MadCap:concept term="Employee Support Center" />After a case is submitted in the Employee Portal, you can review the case details in <MadCap:variable name="MyVariables.ProductName"></MadCap:variable> within the client's workspace.</p>
+        <p class="ActionTip">When the Workspace (Client)&#160;is unknown from cases created from the Employee Portal, (for example, a client number is undetermined or cannot be found), then the Case  is created in the Client Services Department workspace. An administrator can change the name of the workspace for the system to redirect.</p>
+        <p>The following example shows the Category as <em>Employee Portal</em> with a Case Type of <em>Manager Question</em>.</p>
+        <p>
+            <img src="../Resources/Images/EmpPortal/ReviewCaseDetails.png" class="thumbnail" />
+        </p>
+        <p>The following fields populate from Submit a Question in the Employee Portal Support Center.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');margin-left: 0;margin-right: auto;" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 119px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Case Type</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p colspan="1" class="Bullet1" MadCap:autonum="• "><b>Employee Question</b>: Case submitted by an employee or manager for themselves.</p>
+                        <p colspan="1" class="Bullet1" MadCap:autonum="• "><b>General Question</b>: Case submitted by a manager but not related to an employee.</p>
+                        <p colspan="1" class="Bullet1" MadCap:autonum="• "><b>Manager Question</b>: Case submitted by a manager for an employee.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Reported By</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">The reporter's username. If a manager submits the case, the manager's username displays. If worksite&#160;employee submits the case, the employee's username displays.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Employee</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">The employee's name. If a manager manually enters an employee's name in the case, the&#160;information entered displays in the Issue field.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Subject</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">The Subject defined in the case.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyB-Column1-Body1">Issue</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyA-Column1-Body1">The Description defined in the case.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SubHdr">When ClientSpace cannot communicate with PrismHR</p>
+        <p>When <MadCap:variable name="MyVariables.ProductName" /> cannot communicate with PrismHR, an error message is displayed with error code: "Unfortunately, the service is currently unavailable. Please try again later. [Message ID: {Error Code}]" To view the error codes and their meaning, see <MadCap:xref href="../AppErrors/ErrMsgs_PrismHRAPI.htm" title="error messages" alt="error messages" class="Heading">Error messages: ClientSpace and the PrismHRAPI</MadCap:xref>.</p>
+    </body>
+</html>

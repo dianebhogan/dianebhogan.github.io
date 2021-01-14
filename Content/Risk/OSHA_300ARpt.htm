@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1 MadCap:autonum="Chapter 1 ">OSHA 300A Report Details</h1>
+        <p>The OSHA 300A report is a <em>summary</em> of work-related injuries and illnesses. It tallies the number of cases and total days away, restricted, or transferred. Before you produce the OSHA Logs, these areas must have accurate data: WC&#160;Claims, RTW&#160;Records, and Locations.</p>
+        <h2>Get the OSHA&#160;Location Totals</h2>
+        <p>Before you run the OSHA 300A report for each client, you need to obtain the location totals from PrismHR. To run totals for a single client, you execute this from the Client Master in the Action Center. When the location totals are generated from the Client Master, the totals are for the current year. When run from the Scheduled Process Admin dashboard, the totals are for the previous year. Additionally, the scheduled process runs at the beginning of the year to pull data for all clients for the previous year.</p>
+        <p class="ProcedureIntro">To get the totals:</p>
+        <ol>
+            <li>Open the Client Master.</li>
+            <li>In the <span class="UXElement">Action Center</span>, under <span class="UXElement">Workflow</span>, click <span class="UXElement">Get OSHA Location Totals</span>.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Risk/GetOSHA-Location-Totals.png" />
+            </p>
+        </div>
+        <p>The scheduled process PrismHR Import OSHA Location Data generates location totals for the current year. Now you are ready to run the report.</p>
+        <h2>Run the report</h2>
+        <p>You can run the OSHA&#160;report from the Admin Workspace, the Client Master, or a Client Workspace.</p>
+        <p class="ProcedureIntro">To configure and run the report:</p>
+        <ol>
+            <li>On the modules bar, select <span class="UXElement">Admin Workspace</span>.<br />The Admin Workspace tiles display.</li>
+            <li>In the <span class="UXElement">Action Center</span>, under <span class="UXElement">Reports</span>, click <span class="UXElement">OSHA 300A</span>.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Risk/RunReport.png" class="thumbnail" />
+            </p>
+        </div>
+        <div class="indent">
+            <p>The OSHA 300A form opens.<br /></p>
+        </div>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Risk/OSHA300A_form.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol start="3">
+            <li>Complete the form:</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 195px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Client</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li>If filled in, then run the report for that Workspace. </li>
+                            <li>If the report is run from within a Client Workspace, this field auto-fills for that client.  </li>
+                            <li>If the Client field is not completed, the report only runs for Workspaces where the Client Master Status = Client, unless Include Terminated Clients  is selected.
+</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Location</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Location provides a list of Active Locations in that Workspace. This field is not appropriate for use when running from the Admin Workspace.
+</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">
+When Summarize By Account  is not selected, and the location is not populated:</p>
+                        <ul>
+                            <li>A report is generated for every client location<ul><li>including active Client Location records</li><li> and inactive Client Location records where the Obsolete Date (field on the Client Location) is within the OSHA Year selected </li></ul></li>
+                            <li>Inactive records that do not have an Obsolete Date are excluded. The claim is shown on the OSHA 300 report based on the Comp Claimant Location field matching the selected location.
+</li>
+                        </ul>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">For clients running OSHA 300A reports by location, you can choose a NAICS code if the code on the Org/Client Master does not align with the locations function. On the Client Location record, the value for <span class="UXElement">Override NAICS</span> replaces the NAICS code on the 300A&#160;report.</p>
+                        <p class="ProcedureIntro">To select a NAICS code:</p>
+                        <ol>
+                            <li>On the <span class="UXElement">Client Master</span>, in the <span class="UXElement">Action Center</span>, under Links, click <span class="UXElement">Locations</span>.<br />The Client Location form opens. The following image shows the fieldset, Location Information with the field Override NAICS.</li>
+                            <li>In Override NAICS:<ul style="list-style-type: square;"><li>When the Client Location contains an Override NAICS code, the Override is shown on the 300A report.</li><li>When the Client Location contains no Override NAICS code, the code is retrieved from the Org / Client Master.</li></ul></li>
+                        </ol>
+                        <p class="StepResult">&#160;</p>
+                        <div class="indent">
+                            <p class="TableTextLeft">
+                                <img src="../Resources/Images/Risk/ClientLocation_OverrideNAICS.png" class="thumbnail" />
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Contract Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Primarily used when running the report from the Admin Workspace for multiple clients. You can filter for Client Workspaces of the selected contract type.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Year</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This required field filters for Claims logged in the selected calendar year.
+</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Summarize By Account</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When this option is selected, all available claims for the OSHA year selected display under the Primary location for that client.
+</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Client Options</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Used when running for multiple clients from the Admin Workspace. </p>
+                        <p class="TableTextLeft">Select for clients With Claims, Without Claims, With and Without Claims.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Include Terminated Clients</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Primarily used from the Admin Workspace. This setting allows you to include claims from workspaces where the client may have had claims and been terminated in the OSHA year selected.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Hide Location Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Execute</span>.</li>
+        </ol>
+        <h3>Column mappings</h3>
+        <p>The following table provides a mapping of <MadCap:variable name="MyVariables.ProductName" /> data to the OSHA&#160;300A report.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 222px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Column mappings</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableTextLeft">Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Establishment name</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Org Name and Location Name if not Summarizing By Account.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Street, City, State, Zip</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">From Location unless Summarizing by Account then get from the Org.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Industry description</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">From Org Business Type field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">SIC</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">From Org or Client Master depending on App Setting configuration.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">NAICS</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">From Org or Client Master depending on App Setting configuration.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Annual average number of employees</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Total Employees / Months Paid.  Total Employees = Count of Employees with Vouchers during the selected OSHA Year.  Months Paid = Sum of months with employees who had a voucher.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Total Hours Worked</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">For Employees,  we take Total hours directly from the employee vouchers and sum those.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Field (G)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Sum of column (G) from OSHA 300.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Field (H)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Sum of column (H) from OSHA 300.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Field (I)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Sum of column (I) from OSHA 300.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Field (J)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Sum of column (J) from OSHA 300.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Field (K)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Sum of column (K) form OSHA 300.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Field (L)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Sum of column (L) from OSHA 300.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Field (M)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Sum of Columns (1) - (6) from OSHA 300.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Locations</h3>
+        <p>The OSHA Log reports (300, 300A) previously included inactive locations in the report. Because some clients have a business need for inactive locations and there is no way to delete these locations through the user interface,  the Client Location form has an Obsolete Date field. The OSHA 300/300A logic  includes active Client Location records and inactive Client Location records where the Obsolete Date is within the selected OSHA Year. Inactive records that do not have an Obsolete Date are excluded.</p>
+        <p class="ActionTip">The Location dataform fields, <span class="UXElement">Related to Another Location?</span> and <span class="UXElement">Related Location</span>, were added  so that locations can be related for OSHA purposes. Totals for the related location are added to the related location when running the report.</p>
+    </body>
+</html>

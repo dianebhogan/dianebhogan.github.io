@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Parent form datatype morphing</h1>
+        <p>By default, if there are less than 250 records when a Parent Form datatype presents on the page, it displays as a drop-down list. If there are more than this threshold, the field becomes a type ahead with a search pop-up.  </p>
+        <p>The threshold can be changed in the <b>Related Fields</b> section of the field settings using the <b>ROWCOUNT</b> command. Records can also be brought in from a different workspace using the Related Fields section as well by adding the partial <b>GUID</b> of the workspace. </p>
+        <p>For example, to have a threshold of 50 records and to bring in records from a workspace with the partial GUID 'ce3d5dee' as well as the current workspace, you would add <b>ROWCOUNT=50;ce3d5dee;CURRENT</b> to the Related Fields section.</p>
+        <p>The ROWCOUNT command can alternatively be used to extend the threshold beyond 250 where the records can be filtered by other means. For example, there are several places in the application such as Client Service Cases where a parent form field is filtered by another field on the dataform. An example of this would be a Client Service heavy environment where you have 275 case types. The case type list on the dataform is filtered by the case category, but the Morphing aspect of the parent form datatype converts the field when the dataform loads, prior to the category filtering. In this instance, you can add the ROWCOUNT=300; switch to the Related Fields property, the control remains a drop-down, but is filtered client side by the Category field. Caution should be exercised when using this option, as too many rows can exceed the length of the standard drop-down list, making selecting from the bottom of the list impossible due the limits on scrolling in these controls</p>
+    </body>
+</html>

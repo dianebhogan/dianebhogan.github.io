@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Configuring the merge template</h1>
+        <p>
+            <MadCap:concept term="DocuSign" />The merge template is where you register the DocuSign tags such as Signature, Date, Name, and Title. The tags reside in the contract document, such as a Client Service Agreement. You can use a Word doc, an Excel file, or a PDF as your merge template. For our example, we are using a Word doc.</p>
+        <p>Let's say that you have a contract that needs a signature, perhaps a Client Service Agreement. You want to use <MadCap:variable name="MyVariables.ProductName" /> as the mechanism to automate the signing process so that you can also save the contract in the CSA&#160;field on the Collateral form. You create the contract with the appropriate statements, and at the end of the document is where you want dates, titles, names, and signatures. </p>
+        <h2>1. Determine the required tags</h2>
+        <p>Tags represent the input area for the contract signers to enter a date, name, title, and signature. You can configure as many tags as required. You must use a unique symbol that differentiates the tag from actual content. A pair of slashes is recommended because they are typically not used in content. You can use a backslash <span class="UXElement">\</span> or forward slash <span class="UXElement">/</span>. For contracts that require multiple signatures, increment the tag numbers. For example, S1 represents the first signer, and S2 would represent the second signer, and so on. Don't forget to add dates and other text for the subsequent signers, such as D2, and N2.</p>
+        <ul style="list-style-type: square;">
+            <li><span class="UXElement">Word docs</span>: Place the tags where you need input.</li>
+        </ul>
+        <div class="indent">
+            <p class="ActionTip">Add the tag in a text box so that it can be easily adjusted up or down on the document. DocuSign actions often appear lower in the application than where the tag is configured on the merge template. Adding them in a text box allows you to make adjustments as to where they appear on the document.</p>
+        </div>
+        <ul style="list-style-type: square;">
+            <li><span class="UXElement">Excel files</span>: Place the tags in the appropriate cells. </li>
+            <li><span class="UXElement">PDFs</span>:  Open the PDF, select Edit PDF, and add the tag as text by selecting Add Text. A text box opens. Type the tag in the text box, such as \D1\.</li>
+        </ul>
+        <h2>2. Insert the tags</h2>
+        <p>The next step is to configure your document so that you place the tags where the signers input data. The following example illustrates how you would use tags in the input fields for Date, Name, and Signature:</p>
+        <ul>
+            <li><span class="UXElement">\D1\</span> represents the Date for the first signer </li>
+            <li><span class="UXElement">\S1\</span> represents the Signature for the first signer</li>
+            <li><span class="UXElement">\N1\</span> represents the Name for the first signer </li>
+        </ul>
+        <p>
+            <img src="../Resources/Images/Integrations/DS_MergeTemp.png" class="thumbnail" />
+        </p>
+        <p>When you have configured your contract with the necessary tags, save the file with a unique name, such as <span class="UXElement">Client Service Agreement.docx</span>.</p>
+        <p class="ActionTip">Before you go live with the merge template, change the DocuSign tag font color to white. This prevents the tags from showing on the signed document. DocuSign can read the tags with a white font color.</p>
+        <p><i class="fas fa-hand-point-right" style="color:var(--BrandPrimary2);"></i> Now you are ready to proceed to the next topic, <MadCap:xref href="DocuSign_UploadMerge.htm" title="Upload the merge template" alt="Upload the merge template">Uploading the merge template</MadCap:xref>.</p>
+    </body>
+</html>

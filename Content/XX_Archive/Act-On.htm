@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+    </head>
+    <body>
+        <h1>Act-On</h1>
+        <p>Act-On is a powerful marketing tool to help you to automate Contact management and marketing. The following document describes the ClientSpace integration of this tool. If you have questions about implementing either of these products with ClientSpace, log an Extranet case. </p>
+        <p style="font-weight: bold;">Purpose</p>
+        <p>The purpose of this specification is to describe the integration with Act-On, and to provide a guide for configuring the system to properly implement the functionality.</p>
+        <p style="font-weight: bold;">Process Overview</p>
+        <p>Act-On is a system focused on collecting and managing industry marketing data.  The ClientSpace integration process is designed to synchronize specific Contact information with this system.</p>
+        <p class="Bullet1" MadCap:autonum="• ">This integration utilizes the following ClientSpace functionality:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Scheduled processes that perform the data synchronization</p>
+        <p class="Bullet1" MadCap:autonum="• ">API Configuration forms that define the API connection and operational data</p>
+        <p class="Bullet1" MadCap:autonum="• ">Contact, Contact Other Info forms that are used to store the Act-On data</p>
+        <p class="Bullet1" MadCap:autonum="• ">HIGHLY configurable within ClientSpace.  See the Configuration sections below for details</p>
+        <p>Act-On operates directly on the Contact form and the mapping of where data is stored cannot be configured.  The process:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Adds ClientSpace Contacts to Act-On</p>
+        <p class="Bullet1" MadCap:autonum="• ">Updates ClientSpace Contacts with Act-On Lead Score data</p>
+        <p class="Bullet1" MadCap:autonum="• ">Triggers tasks within ClientSpace based on a Lead Score Threshold value; when a Lead Score ascends above the threshold and declines below the threshold appropriate custom task triggering will take place</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">These services charge for each request and limit the number of API calls allowed in a given time frame.  Use caution when testing!</p>
+        <p style="font-weight: bold;">Prerequisites</p>
+        <p>Before utilizing these integrations, complete the following items:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Act-On API account must be established and the following information must be available:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Act-On</p>
+        <p class="Bullet2" MadCap:autonum="• ">Username</p>
+        <p class="Bullet2" MadCap:autonum="• ">Password</p>
+        <p class="Bullet2" MadCap:autonum="• ">Client ID</p>
+        <p class="Bullet2" MadCap:autonum="• ">Client Secret</p>
+        <p class="Bullet2" MadCap:autonum="• ">API Endpoint Url</p>
+        <p class="Bullet2" MadCap:autonum="• ">List ID: the identifier of the list that will manage Contacts (this will be provided by the ClientSpace client who is implementing the process)</p>
+        <p class="Bullet2" MadCap:autonum="• ">ClientSpace configuration</p>
+        <p style="font-weight: bold;">Act-On ClientSpace Configuration</p>
+        <p>The following form must be configured:</p>
+        <p>
+            <img src="../Resources/Images/Integrations/ActOnConfig.png" />
+        </p>
+        <p class="Bullet1" MadCap:autonum="• ">API Type: Web Service</p>
+        <p class="Bullet1" MadCap:autonum="• ">App Code: Act-On (cannot deviate!)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Endpoint: this is the Act-On API server Url as in</p>
+        <p class="Bullet1" MadCap:autonum="• ">https://restapi.Act-Onsoftware.com</p>
+        <p class="Bullet1" MadCap:autonum="• ">Username (from Act-On)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Password (from Act-On)</p>
+        <p class="Bullet1" MadCap:autonum="• ">SecondaryID (from Act-On).  This is the ClientID value provided by Act-On.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Additional Parameters: this is a set of ‘name  value’ pairs  used to configure the process.  Click "Add Parameter to begin adding these:</p>
+        <p class="Bullet2" MadCap:autonum="• ">Required: clientsecret - the client secret value provided by Act-On</p>
+        <p class="Bullet2" MadCap:autonum="• ">Required: listid - the Act-On list Id that will be used to manage Contacts.  This is provided by the ClientSpace client implementing this process</p>
+        <p class="Bullet2" MadCap:autonum="• ">Required: leadscorethreshold - the Act-On Lead Score threshold value that will be used to generate custom clone key tasks</p>
+        <p class="Bullet2" MadCap:autonum="• ">Required: listreturnfields - a comma separated list of Contact fields to be returned when retrieving a list.  For example, “listreturnfields=E-mail Address,First Name,Last Name,Company,Lead Score” will return the Email, First Name, Last Name, Company name and Lead Score for an Act-On Contact.</p>
+        <p class="Bullet2" MadCap:autonum="• ">These fields are columns in Lists within Act-On.  The field name in this configuration parameter MUST MATCH THE COLUMN NAME IN THE LIST ON Act-On!</p>
+        <p class="Bullet2" MadCap:autonum="• ">Optional: addprocname - stored procedure used to retrieve Contacts that will be added to the Act-On list.  If this field is not present the default core procedure ‘nw_contact_s_pendingAct-Onrecords’ will be used</p>
+        <p class="Bullet2" MadCap:autonum="• ">Optional: leadscoreprocname  -stored procedure used to retrieve Contacts that will be sync’d with Act-On Lead Score data.  If this field is not present the default core procedure ‘nw_contact_s_pendingAct-Onleadscoresyncrecords’ will be used</p>
+        <p>An example of Additional Parameters can be found below (you would need to fill in the blank "Value" fields):</p>
+        <p>
+            <img src="../Resources/Images/Integrations/ActOnParams.png" />
+        </p>
+        <p><b>ZoomInfo API config</b> (required for Act-On fields to display - this step is unnecessary if the installation already has a ZoomInfo API Config)</p>
+        <p class="Bullet1" MadCap:autonum="• ">API Type: Web Service</p>
+        <p class="Bullet1" MadCap:autonum="• ">App Code: ZoomInfo (cannot deviate!)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Endpoint: Put in a dummy url</p>
+        <p class="Bullet1" MadCap:autonum="• ">Username: DummyUser</p>
+        <p class="Bullet1" MadCap:autonum="• ">Password: DummyPassword</p>
+        <p class="Bullet1" MadCap:autonum="• ">Active: Set this to unchecked</p>
+        <p style="font-weight: bold;">Security Entities</p>
+        <p>The Organization and Contact Act-On fields can be secured Security Entities.  The entities may have to be added to ClientSpace (by a developer) to take effect.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Contact.Act-OnID = CRM_Act-OnID</p>
+        <p class="Bullet1" MadCap:autonum="• ">Contact.DateLastAct-OnSend = CRM_DateLastAct-OnSend</p>
+        <p class="Bullet1" MadCap:autonum="• ">Contact.luAct-OnSyncStatus = CRM_luAct-OnSyncStatus</p>
+        <p class="Bullet1" MadCap:autonum="• ">Contact.LeadScore = CRM_LeadScore</p>
+        <p style="font-weight: bold;">Act-On Process</p>
+        <p>The Act-On integration process operates as follows:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Scheduled Process “Update Act-On Contacts” executes</p>
+        <p class="Bullet1" MadCap:autonum="• ">Authenticate with Act-On:</p>
+        <p class="Bullet2" MadCap:autonum="• ">Tests if an Act-On authentication has taken place in the past</p>
+        <p class="Bullet2" MadCap:autonum="• ">If so, test the expiration time on that last authentication</p>
+        <p class="Bullet2" MadCap:autonum="• ">If expired, create a new authentication request; store the expiration time of this new request to be used for the next authentication attempt</p>
+        <p class="Bullet2" MadCap:autonum="• ">If not expired, use that last authentication token for this session</p>
+        <p class="Bullet2" MadCap:autonum="• ">ADD CONTACTS: Retrieve a list of Contacts to add to Act-On based on the “addprocname” value specified in the API Configuration Additional Parameters field.  The default stored procedure filters on Contact Data as follows:</p>
+        <p class="Indent3">luAct-OnSyncStatus = ‘Pending’</p>
+        <p class="Indent3">Act-OnID = empty</p>
+        <p class="Indent3">Active = true</p>
+        <p class="Indent2">for each Contact returned:</p>
+        <p class="Indent3">Add the Contact to Act-On with Email, First Name and Last Name</p>
+        <p class="Indent1">If successful, update the Contact:</p>
+        <p class="Bullet2" MadCap:autonum="• ">Set Act-OnID</p>
+        <p class="Bullet2" MadCap:autonum="• ">Set luAct-OnSyncStatus = Complete</p>
+        <p class="Bullet2" MadCap:autonum="• ">Set DateLastAct-OnSend = now</p>
+        <p class="Bullet2" MadCap:autonum="• ">Save the Contact (database save)</p>
+        <p class="Bullet1" MadCap:autonum="• ">If adding the contact failed, update the Contact</p>
+        <p class="Bullet2" MadCap:autonum="• ">Set luAct-OnSyncStatus = Failed</p>
+        <p class="Bullet2" MadCap:autonum="• ">Set GeneralNotes = append “Act-On Add Contact Failed on ‘now’”</p>
+        <p class="Bullet2" MadCap:autonum="• ">Save the Contact (database save)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Next Contact…</p>
+        <p class="Bullet2" MadCap:autonum="• ">UPDATE LEAD SCORE: Retrieve a list of Contacts for Lead Score processing Act-On based on the “leadscoreprocname” value specified in the API Configuration Additional Parameters field.  The default stored procedure filters on Contact Data as follows:</p>
+        <p class="Indent3">luAct-OnSyncStatus = ‘Complete’</p>
+        <p class="Indent3">Act-OnID = not empty</p>
+        <p class="Indent3">DateLastAct-OnSend = empty or &gt; than TBD</p>
+        <p class="Indent3">Active = true</p>
+        <p class="Indent2">If there are Contacts to process</p>
+        <p class="Indent3">Act-On List Request: request from Act-On the List information specified in the Act-On API Configuration Additional Parameters, “listid”</p>
+        <p class="Indent3">For each Contact to process</p>
+        <p class="Indent2">If the List Request failed, update the Contact</p>
+        <p class="Indent3">luAct-OnSyncStatus = Failed</p>
+        <p class="Indent3">GeneralNotes: append “Act-On Retrieve Lead Score failed on ‘now’”</p>
+        <p class="Indent3">Save the Contact (database save)</p>
+        <p class="Bullet1" MadCap:autonum="• ">If the List Request was successful</p>
+        <p class="Bullet2" MadCap:autonum="• ">search for the Contact in the list by Act-OnID</p>
+        <p class="Bullet2" MadCap:autonum="• ">If the contact is not found in the list, update the Contact:</p>
+        <p class="Indent2">luAct-OnSyncStatus = Failed</p>
+        <p class="Indent2">GeneralNotes: append “Act-On Retrieve Lead Score failed on ‘now’, unable to locate Contact in Act-On List”</p>
+        <p class="Bullet2" MadCap:autonum="• ">If the contact is found in the list, update the Contact</p>
+        <p class="Indent3">LeadScore = Act-On Lead Score</p>
+        <p class="Indent3">luAct-OnSyncStatus = Complete</p>
+        <p class="Indent3">DateLastAct-OnSend = now</p>
+        <p class="Indent3">Save the Contact (database save)</p>
+        <p class="Bullet2" MadCap:autonum="• ">If the contact is found in the list, evaluate the Lead Score</p>
+        <p class="Indent3">If the PRIOR Lead Score was BELOW the threshold AND the CURRENT Lead Score is ABOVE the threshold, trigger task “LEADSCORE_IMPROVED” in the CRM Workspace</p>
+        <p class="Indent3">If the CURRENT Lead Score is BELOW the threshold AND the PRIOR Lead Score was ABOVE the threshold, trigger task “LEADSCORE_DECLINED”</p>
+        <p class="Indent3">Next Contact…</p>
+        <p class="Indent3">Process Complete</p>
+    </body>
+</html>

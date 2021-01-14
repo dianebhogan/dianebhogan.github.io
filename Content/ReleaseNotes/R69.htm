@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('../Resources/MasterPages/ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Release 69 Notes</h1>
+        <p><strong>R69 Sprint</strong>:&#160;6/5/2018&#160;to&#160;6/29/2018. To learn about product features that you may not recognize, contact your Customer Success Manager.</p>
+        <h2>Enhancements</h2>
+        <p>Enhancements groups are Change in Functionality, ClientSpace Premium (ClientSpace with additional modules), Advanced Administration, and General.</p>
+        <h3><i class="fas fa-bell" style="font-family: Font Awesome 5 Free; font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="Change in functionality" alt="Change in functionality"></i> Change in Functionality</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Lookup Admin Conversion </p>
+                        <p class="TableTextLeft">Lookup and Lookup group administration has been converted to our cross browser compatible application.&#160;The dataform action center has also been enhanced with the ability to manage the lookups specific to the dataform you are using through the Show Lookups action.&#160; </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Schedule Process Error Threshold </p>
+                        <p class="TableTextLeft">The scheduled process architecture has been enhanced to allow for configuration of an error count threshold - an upper limit past which the system will no longer log the errors.&#160; This helps to insure errors are consistently logged without a repetitive system error causing performance issues due to increased error logging.</p>
+                        <ul>
+                            <li>A Failure Count (read-only) has been added to store the count of errors thrown by a give scheduled process.</li>
+                            <li>A Threshold field has been added which allow sadmins to configure an upper threshold.&#160; When the failure count meets this threshold, exception logging for that scheduled process will cease.</li>
+                            <li>The first time the Scheduled process is again successful, the Failure count is reset to zero.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Adding Workspaces</p>
+                        <p class="TableTextLeft">Create Workspace functionality has been added to the workspace search and secured using the "Can Create Workspace" option on the user profile.&#160;&#160;</p>
+                        <ul>
+                            <li>On "Add" the system will prompt the user for a workspace name (required), template (not required), and organization (not required)</li>
+                            <li>The new workspace is created through a web service</li>
+                            <li>The Add button has been removed from the classic interface</li>
+                            <li>The workspace group is set from the selected template.&#160;&#160; If no template is selected this value is left blank.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">WFC: Set Field to pk of Triggering Form</p>
+                        <p class="TableTextLeft">Workflow channels have been enhanced, adding the ability to clone Parent form fields, so that the foreign key relationship between forms based on Parent form fields can be preserved.&#160; An example of this could be as follows:</p>
+                        <ul>
+                            <li>The status on an employee changes to "Terminated"</li>
+                            <li>This could trigger workflow which creates an "Employee Termination" case with the Employee field set to the employee which triggered it.&#160;</li>
+                            <li>Creation of the employee termination case could trigger the creation of an Unemployment Dataform linked to the same Employee using the fkEmployeeID from the case.&#160;</li>
+                            <li>Generation of that dataform could trigger a task and so on.&#160;</li>
+                        </ul>
+                        <p class="TableTextLeft">Previously Parent Form fields were not workflow cloneable in this way and did not appear in the selection list.</p>
+                        <p class="TableTextLeft">FkParentform fields (such as the Employee field in the case) will be available as "Parent field on a form"&#160;</p>
+                        <p class="TableTextLeft">Primary key fields such as the key of the Employee record which triggered the case will be available to select as "The Source Form".&#160; For more information about foreign key relationships and how to configure workflow channels, contact support.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">WFC: Misc Enhancements</p>
+                        <p class="TableTextLeft">Workflow Channels has been enhanced to make it more robust and easier to use, including:</p>
+                        <ul>
+                            <li>Hyper-linking has been added to the visualization, allowing you to jump to any point on the workflow with the click of a mouse.</li>
+                            <li>Previous restrictions on continuing a workflow once a dataform is created have been lifted, allowing you to create workflows which generate a dataform and that workflow items may also generate a dataform.&#160;</li>
+                            <li>Workflow items also now include a descriptive header which contains<ul><li>The workflow channel name</li><li>The parent Workflow which triggered this item</li><li>The Triggering Form</li></ul></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">WFC/Email Templates: Triggering on Uploaded Files datatype</p>
+                        <p class="TableTextLeft">The Workflow Channels system has been enhanced to trigger workflows based on File Upload type fields.&#160; Previously these fields were not available as a triggering field.&#160;</p>
+                        <ul>
+                            <li>File upload type fields on the triggering form are available to trigger workflow tasks and dataforms.</li>
+                            <li>The operators available&#160;are limited to&#160;Empty, Not Empty, and Is Dirty.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">DocuSign Enhancements</p>
+                        <p class="TableTextLeft">Added the ability to merge all DocuSign files (returned from DocuSign) into a SINGLE file or to be left as individual files</p>
+                        <ul>
+                            <li>In "DocuSign Settings", a new Parameter has been added "Merge All Documents".&#160; Valid values are "Yes" or "No".&#160;&#160;</li>
+                            <li>If Merge All Documents is not specified or doesn't equal "Yes", it will be treated as "No" and files will be retrieved and saved into the destination field as&#160;individual files</li>
+                            <li>If "Yes" files are merged, a single&#160;pdg&#160;file containing all merge and attachments will be uploaded to the "DocuSign Settings", LinkTable and LinkColumn field</li>
+                        </ul>
+                        <p>Email Template Configuration (System Admin | Advanced | Email Templates)</p>
+                        <ul>
+                            <li>Attachments<ul><li>&#160; Select the Source Dataform and Source Field from which to retrieve the file to be attached to the DocuSign envelope</li><li>&#160;&#160;TheSource Dataform and&#160;Source Field will be used to upload the attached Documents after signing</li><li>&#160;&#160;Existing DocuSign configurations are not affected, the Destination Form/Field will be defaulted to the Source Form/Field</li></ul></li>
+                            <li>Uploaded Files Queue<ul><li>When sending to Docusign, only the Merged document will appear in the 'Attachments' list</li><li>after signing, the Merge Document and all Attachments will appear in the 'Attachments' list</li><li>all files returned from DocuSign are converted to PDF</li><li>all files returned from DocuSign will be named 'COMPLETED_&lt;filename&gt;' or '&lt;status&gt;_&lt;filename&gt;'</li></ul></li>
+                            <li>Document signed<ul><li>Attachments will be uploaded to the Form/Field specified in the Email Template Attachments configuration</li></ul></li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>General Enhancements</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Employee Onboarding - Import Codes via API </p>
+                        <p class="TableTextLeft">The PrismHR API has been enhanced with&#160;INITIAL and ONGOING Client Code Import processes for Client&#160;Job, Department, Division and Shift</p>
+                        <p><strong>Import Maps (Configure Import)</strong>
+                        </p>
+                        <p><strong>Initial:</strong>
+                        </p>
+                        <ul>
+                            <li>HRPAPI_initial_codes_job/department/division/shift*.csv</li>
+                            <li>HRPAPI_codes_job/department/division/shift*.csv</li>
+                            <li>Import Map Source File must begin with "HRPAPI_initial_codes_" or "HRPAPI_codes_"</li>
+                            <li>Field API path must be "Class/codepath/codefield", as in "Job/jobCode/id"</li>
+                        </ul>
+                        <p><strong>Classes of Data, Import API mapping</strong>&#160;</p>
+                        <ul>
+                            <li>Job: "Job/jobCode/*"</li>
+                            <li>Department: "Department/departmentCode/*"</li>
+                            <li>Division: "Division/divisionCode/*"</li>
+                            <li>Shift: "Shift/shiftCode/*"</li>
+                        </ul>
+                        <p><strong>Ongoing:</strong>
+                        </p>
+                        <ul>
+                            <li>
+                                <p>Ongoing imports will create queue records for available Events.</p>
+                            </li>
+                            <li>
+                                <p>Ongoing Events are monitored, PrismHR Subscription forms must be updated to include these Client Codes.<br /></p>
+                            </li>
+                        </ul>
+                        <p>On the&#160;Client Master Subscription, add the following classes:</p>
+                        <ul>
+                            <li>"Client Job Code"</li>
+                            <li>"Client Division"</li>
+                            <li>"Client Department"</li>
+                            <li>"Client Shift"</li>
+                        </ul>
+                        <p>When configuring the Import Detail API path mappings use the following formats:</p>
+                        <ul>
+                            <li><strong>Job</strong>: "Job/jobCode/*"&#160;&#160;</li>
+                            <li><strong>Department</strong>: "Department/departmentCode/*"&#160;&#160;</li>
+                            <li><strong>Division</strong>: "Division/divisionCode/*"&#160;&#160;</li>
+                            <li><strong>Shift</strong>: "Shift/shiftCode/*"</li>
+                        </ul>
+                        <p class="TableTextLeft">These import configurations will be pushed as Inactive and must be activated before use.&#160; For help configuring the subscriptions,<a href="mailto:clientspace@netwisetech.com?Subject=PrismHR%20API%20question:" class="external-link" rel="nofollow"> contact Support</a></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Admin Comp Code Rate Timing Out </p>
+                        <p class="TableTextLeft">The Workers' Comp Policy system has been enhanced. Policy comp codes Active status is now tied to the policy to which they are associated. When the policy is inactivated upon renewal the associated codes are also inactivated. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Add Help Links for Non-Dataform Target Types</p>
+                        <p class="TableTextLeft">Help links have been configured for a number of non-dataform target types, including</p>
+                        <ul>
+                            <li>Activities</li>
+                            <li>Email Templates&#160;</li>
+                            <li>Workspace Landing Page</li>
+                            <li>Calendar Contacts</li>
+                            <li>Organization Detail&#160;</li>
+                            <li>Workflow Channels</li>
+                        </ul>
+                        <p class="TableTextLeft">Help for each of these items in now available from the help icon in the header.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Fixes</h2>
+        <table class="TableStyle-Standard_Table" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" cellspacing="0">
+            <col style="width: 76px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 323px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 627px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Issue summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableTextLeft">Resolution</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">32393</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Salesforce Lead Remediation</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Lead data mapped to an Organization will be updated if the Lead is modified in Salesforce (prior to this change the Org would not be updated until the Lead was converted to an Account).</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">32676</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Employee Type Ahead Display &amp; Inactive Employee Searching</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where when entering data in an Employee Type Ahead field only the last name was displaying instead of the selection text. The system now shows the same information that is shown in the drop down list so that you know exactly which employee is selected. This was especially a problem, when more than one employee has the same last name which is common.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Enhanced the system for the Employee Type Ahead field type to add the ability to search for inactive employees using the tiled (~) as a prefix, avoiding the issue of temporarily activating the employee record to select it then having to remember to inactivate it again.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33425</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">PrismHR Client Team Initial Imports</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where the Initial Client Team import could cause some importid's to be improperly generated.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">33451</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">PrismHR Queue Intial Clients</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where when processing Client initial data, if a Client failed the getClientMaster call, it would cause all clients after that to fail. Now if an individual Client fails, that Client will be logged in the PrismHR API Log report, ignored, and the next Client will be processed (prior to this change the entire Client import process would abort).</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">31760</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Recurring Calendar Message Display Issue</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where viewing a recurring calendar message in the inbox or email admin dashboard would display the raw vcalendar file. The system now displays the nicely formatted message as it does for non-recurring calendar items.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">31951</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">WFC: Add Default User on Assigned To option</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where workflow tasks that were triggered from the API/Import,&#160; when the Task was triggered that it would be assigned to the "Public Anonymous" user.&#160; If no user is available such as at time of import the user fields will be set to the owner of the Triggered Workflow.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33091</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Recurring Tasks available from Template Workspaces</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where recurring tasks were configurable on Template Workspaces, allowing the potential for these recurring tasks to be cloned inadvertantly.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">33103</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">WFC - Initial Task does not email Assigned to User</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where workflow tasks would not email the Assigned to user if the current user who triggered the workflow was being set as the assigned to.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33123</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">New Template Task Manager Showing all tasks</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue in template workspaces where the task list would not pass the fkProjectID parameter and return a list of tasks for all workspaces, instead of the template. Template task manager now passes the appropriate Template fkProjectID, returning only those tasks for that template.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">33178</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Upload Merge Documents Scheduled Process</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue with the merge upload process where Excel files would have a different file byte size after save, causing issues with Excel.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33189</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Workflow generated Task not setting appropriate Start Date</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue with Workflow tasks where the Start Date of the Workflow task was not being set properly if the field was configured to use "A field on a form", but always being set to the Create Date of the task. Start date is now properly set based on the configured method.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">33191</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Scheduled Process, post run update</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where a scheduled process with a next run date in the past would not correctly update the "Running" flag to "No" when completed, causing this flag to have to be manually reset before running the process again. "Running" flag is now appropriately set when the scheduled process completes.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33283</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Email Template Recipient</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where if a recipient stored procedure is selected as the Source for Email Template addresses, the Type field would not be filled in, but it was required to move forward and save the email template configuration. The system now allows the configuration to be saved when recipient stored procedures are used.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">33362</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Merge admin Save &amp; new not sending user to add page</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where during the add/edit of a merge admin record the Save and New button would simply close the dialog and not proceed to the "Add New" dialog.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33419</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">"File Not Found" when running Merges on Production</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where some files were saved with bad references to the Incident table instead of tblMailMerge, causing the system to see them as missing when it attempted to use the template files in a merge.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">33443</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">Error on save - Department Description Field</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">Resolved an issue where if any of the non-required fields on the Department record were left blank an error would occur as the database did not allow NULL values to be saved into the fields. System now allows the Department records to be saved without these non-essential fields.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

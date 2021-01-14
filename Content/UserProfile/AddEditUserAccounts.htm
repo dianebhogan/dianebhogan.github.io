@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="User Profile" />Adding and editing user accounts</h1>
+        <p>
+            <img src="../Resources/Images/User/Add-User.png" class="thumbnail_right" />
+        </p>
+        <p>All <MadCap:variable name="MyVariables.ProductName" /> users have a user profile. For some clients, the user profile automatically imports from PrismHR or Salesforce. And administrators can manually add user profiles. The user profile record contains the username that you use to access <MadCap:variable name="MyVariables.ProductName" />, along with a few identification fields, such as Name, Department, Job Title, Phone, and Email. Additionally, the user profile has a few administrative and out of office settings. </p>
+        <p>You can edit your user profile for some demographic information, enable out of office notifications, and add modules to the topmost banner bar. Administrators perform other edits, such as role assignments and managing licenses. Roles control user access (view, add, edit, delete, and admin) to various entities. And licenses determine the available ClientSpace modules.</p>
+        <p>This topic guides you through adding and editing a user account.</p>
+        <p class="ProcedureIntro">To add or edit a user account:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Users</b>.<br />The Users dashboard opens.<br /></li>
+            <li>To add a user account, click <b>Add</b>.<br />The User Details form opens.</li>
+            <li>To  edit a user account, highlight the row and click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Open</span>) or <b>Edit</b>.<br />The User Details form opens.</li>
+            <li>Complete the form.</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 206px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Procedure-Head-Header1">
+                    <th class="TableStyle-Procedure-HeadE-Column1-Header1">
+                        <p class="TableHead">Fieldset</p>
+                    </th>
+                    <th class="TableStyle-Procedure-HeadE-Column1-Header1">
+                        <p class="TableHead">Field</p>
+                    </th>
+                    <th class="TableStyle-Procedure-HeadD-Column1-Header1">
+                        <p class="TableHead">Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">General</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Template User</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">From the list,
+ select a user account to auto-fill values for the account you are adding. The following values are auto-filled from
+ the selected template user:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Department</p>
+                        <p class="TableBullet" MadCap:autonum="• ">User Type</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Company</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Can Create Workspaces</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Workspace</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Modules</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Security</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Username</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Company</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Auto-filled when
+ using a Template User.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">First, Middle,
+ Last</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required: First and
+ Last.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Prefix, Suffix</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Provide
+ appropriate prefix or suffix to the account. Optional.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Job Title</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Type the user's
+ job title.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Phone</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Type the user's
+ phone number. You can call the user directly from ClientSpace by clicking the
+ phone icon.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Email</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required.&#160;When
+ you change an Active user to Inactive, the user's email is also inactivated
+ to ensure that system emails are not sent to inactive user accounts. If an
+ account is re-activated, the inactive status is removed from the email
+ address.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">SMS Email</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Used for Two
+ Factor Authentication Notification.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Department</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Auto-filled when
+ using a Template User. Select a department from the list.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Workspace Search</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Auto-filled when
+ using a Template User. For Internal users, sets the Search Type for the
+ Workspace Widget.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Immediate
+ Supervisor</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select a user
+ from the list.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">User Settings</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Enable Email for
+ this account</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Default is
+ enabled. Enables email notifications to external email, such as Gmail or Outlook.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Enable Time
+ Tracking</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When selected, this
+ setting displays the Time Tracker panel on dataforms that allow Time Tracking
+ for this user.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Load Home Page by
+ Default</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Default is
+ enabled (selected).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Adjust for DLS</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Adjust the clock
+ for daylight savings time (DLS).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Time Zone</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select the user's
+ time zone.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Upload Email
+ Attachments</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Default is Yes.
+ Determines if attachments can be uploaded when attaching Activities from the
+ Email Add-In. <MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">See <MadCap:xref href="../AddIns/Create_ActCasesTasks.htm" title="Creating activities, cases, and tasks from Outlook" alt="Creating activities, cases, and tasks from Outlook">Creating activities, cases, and tasks from Outlook</MadCap:xref>.</MadCap:conditionalText></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">External Calendar
+ URL</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Exposes external
+ calendar events on the <MadCap:variable name="MyVariables.ProductName" /> calendar. Provide the URL to a shared
+ calendar. <MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">See <MadCap:xref href="AddExtCalEvents.html" title="Adding external calendar events" alt="Adding external calendar events">Adding external calendar events</MadCap:xref>.</MadCap:conditionalText></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Signature</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Adds a custom
+ signature message to Email Activities.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Administrator
+ Settings</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Global Admin</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select to
+ establish the user with admin rights to ClientSpace.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Change Password
+ Next Login</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select this option to require
+ the user to change their password on the next login.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Can Create
+Workspaces</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select this option to allow
+ the user to create workspaces.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Send Escalation Email</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Enables users to select whether to receive escalation notices for tasks in the system.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Send Account Info
+ Email</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When this field
+ is selected, the user receives an email with their username and login
+ instructions.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">User Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Auto-filled when
+ using a Template User.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Default Workspace</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Available when
+ User Type = External. Determines the workspace an external user will be
+ directed to after logging in.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Date to Expire</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Set a date to
+ expire the user account.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Authentication
+ Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Auto-filled when
+ using a Template User.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Domain</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This field is available when Authentication Type = Active Directory. Select an Active Directory Domain for this user.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Reporting Profile</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Auto-filled when
+ using a Template User. Used for Business Intelligence reports. See <MadCap:xref href="../Security/ConfigSecBIRpt.html" title="Configuring security in Business Intelligence reporting" alt="Configuring security in Business Intelligence reporting">Configuring security in Business Intelligence reporting</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Notes</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Auto-filled when
+ using a Template User.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Out of Office</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Enable Out of
+ Office</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Default is
+ disabled. When you select this option, the other fields in the fieldset
+ become available. <MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">See <MadCap:xref href="EnableOutOfOffice.html" title="Enabling Out of Office option" alt="Enabling Out of Office option">Enabling Out of Office option</MadCap:xref>.</MadCap:conditionalText></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Back Up User</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required
+ when&#160;Enable Out of Office&#160;is selected. Select the user account to receive
+ notifications on behalf of the primary user while the primary user has the
+ Out of Office settings enabled. Notifications are sent for the time range
+ specified by Start Date and End Date.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Start Date</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required
+ when&#160;Enable Out of Office&#160;is selected. Select a start date
+ for the out of office notifications.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">End Date</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required
+ when&#160;Enable Out of Office&#160;is selected. Select an end date
+ for the out of office notifications.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f5f5f5;border-top-style: solid;border-top-width: 0.25px;border-top-color: #c0c0c0;border-bottom-style: solid;border-bottom-width: 0.025px;border-bottom-color: #c0c0c0;padding-left: 4px;padding-right: 4px;padding-top: 4px;padding-bottom: 4px;">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f5f5f5;border-top-style: solid;border-top-width: 0.25px;border-top-color: #c0c0c0;border-bottom-style: solid;border-bottom-width: 0.025px;border-bottom-color: #c0c0c0;padding-left: 4px;padding-right: 4px;padding-top: 4px;padding-bottom: 4px;">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" style="background-color: #f5f5f5;border-top-style: solid;border-top-width: 0.25px;border-top-color: #c0c0c0;border-bottom-style: solid;border-bottom-width: 0.025px;border-bottom-color: #c0c0c0;padding-left: 4px;padding-right: 4px;padding-top: 4px;padding-bottom: 4px;">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Active</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1" style="background-color: #f5f5f5;border-left-style: solid;border-left-width: 0.25px;border-left-color: #c0c0c0;border-right-style: solid;border-right-width: 0.025px;border-right-color: #c0c0c0;padding-left: 4px;padding-right: 4px;padding-top: 4px;padding-bottom: 4px;">&#160;</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Default is
+ Active. </p>
+                        <ul>
+                            <li>When selected, the user profile is active. </li>
+                            <li>When
+cleared, the user is inactive. </li>
+                        </ul>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">When you change an active user to
+inactive, the user's email is also inactivated to ensure that system emails
+ are not sent to inactive user accounts. If an account is re-activated, the
+ inactive status is removed from the email address.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <b>Save</b>.</li>
+        </ol>
+    </body>
+</html>

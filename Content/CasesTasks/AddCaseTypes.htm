@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Adding Case Types</h1>
+        <p>You can add case types with default values so that when your users add cases, you can set default values for some fields. You must be a Global Admin and be assigned a role with Edit rights to the <b>gen_AdminCaseTypes</b> form to add client service case types.</p>
+        <p class="ProcedureIntro">To add client service case types:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>Admin Workspace</b>.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Search for <i>Client Service Case Type</i> or select <b>Client Service</b> &gt; <b>Client Service Case Type</b>.<br /></p>
+        <p class="StepResult">The Client Service Case Type dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Click <b>Add</b>.<br /></p>
+        <p class="StepResult">The Client Service Case Type Add form opens.</p>
+        <p class="L1Num" MadCap:autonum="4. ">Complete the form as required.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 164px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Default Subject</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The <b>Default Subject</b> field can be used to set the Subject line for the Case Type in question on create.  After this field is filled, the subject line no longer defaults. This is by design because we want to preserve any additional information that may have been added.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Default Issue</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The <b>Default Issue</b> field can be used to set the Issue field for the Case Type in question on create.  After this field is filled, the Issue field <b>no longer defaults</b>. This is by design because we want to preserve any additional information that may have been added.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Default Assignment</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When you assign a case, you can specify the Default Assignment as Creator, Single User, or Client Role.</p>
+                        <p class="Bullet1" MadCap:autonum="• "><b>Creator</b>: Defaults to the <b>Assigned To</b> user on the case, the person that creates the case</p>
+                        <p class="Bullet1" MadCap:autonum="• "><b>Single User</b>: Defaults to the user selected in <b>Assigned To User</b> (fields change depending on the selection in Default Assignment).</p>
+                        <p class="Bullet1" MadCap:autonum="• "><b>Client Role</b>: Enables <b>Assigned To Field</b> and <b>Backup Assigned To</b>. </p>
+                        <p>When you select Client Role, Assign To Field and Backup Assigned To are required.</p>
+                        <p class="Bullet1" MadCap:autonum="• ">Backup Assigned To ensures that if the selected client role is not completed on the Client Team dataform, the case type defaults to a meaningful value. </p>
+                        <p class="Bullet1" MadCap:autonum="• ">If the Client Team field is empty and the Backup Assigned To has not been set, the Default Assignment reverts to the Manager of the Responsible Department field on the Client Service Case Category metadata associated with the case type.</p>
+                        <p>The system dynamically selects the targeted user based on the Client workspace settings.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Due Date Offset</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The Case field, Due Date, can be set automatically using the Due Date Offset value on the Case Type form. Business logic looks up this due date offset based on the Case Type and set the date automatically on save if the Due Date field is currently empty.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Generates Distress Call</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Configured  Client Service Case Types that have the Generates Distress Call option selected automatically creates a Client Rescue record and relate it to the case.</p>
+                        <p>The Owner of the Client Rescue record is determined by the user who is defined in the Distress Call Owner role. This role should only contain one user.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Case Type Visible to External Users</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Exposes the case type to the user for the purpose of Case creation.  If this option is not selected, external users do not have this case type as an option when creating a case.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Allow External Access to This Case Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Allows External users that are involved in the Case (CreatedBy, AssignedTo, or Owner) access to see and open the Case from the External Case Dashboard.</p>
+                        <p>External Case Creators always have access to view the cases they create, if the Case Type remains one which is exposed to external users.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="5. ">Click <b>Save</b>.</p>
+    </body>
+</html>

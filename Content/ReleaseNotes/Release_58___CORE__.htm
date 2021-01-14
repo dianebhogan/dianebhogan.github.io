@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 58 ( CORE )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;07/18/2017&#160;&#160;&#160;&#160;&#160;<strong>Sprint Ended:</strong>&#160;08/11/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-SubscriberEmailTemplate-ENHANCEMENT"><span style="color: rgb(51,153,102);">Subscriber Email Template - &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Dataform properties have been enhanced with an added checkbox 'Disable Subscription Email' to dataform properties configuration page</p>
+                        <ul>
+                            <li>When unchecked {default}, standard core dataform notifications will be sent to dataform Subscribers (current functionality)</li>
+                            <li>When checked, standard core dataform notifications will not occur</li>
+                            <li>Email Templates can be used in place of the dataform notifications</li>
+                        </ul>
+                        <p style="margin-left: 30.0px;">&#160; - Select "Dataform Subscribers" as Recipients&#160;(may only be selected once)<br />&#160; - If a Trigger Field is selected, notification will be sent only if that field has been changed prior to &#160;dataform save<br />&#160; - If a Trigger Field is not selected, notification will be sent on every save of the dataform<br />&#160; - Dataform Notifications special attributes will NOT be available</p>
+                        <p>For more information on configuring triggered email template notifications in ClientSpace, reference <span style="color: rgb(51,0,255);"><a href="https://clientspace.atlassian.net/wiki/display/KNOW/Configuring+Email+Template+Triggering+in+ClientSpace" rel="nofollow"><strong>Configuring Email Template Triggering in ClientSpace</strong></a></span></p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-MergeProcList-ENHANCEMENT"><span style="color: rgb(51,153,102);">Merge Proc List -&#160;&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Merge Stored Procedure list has been enhanced to show anything configured on another row or any stored procedures that have a name like 'peo_merge' or like 'z_%merge' (% is a wildcard).&#160;This will allow all merge stored procedures to be displayed in the list whether or not they are currently in use by a merge.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-WidgetIssues"><span style="color: rgb(51,153,102);">Widget Issues&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved a number of issues with Widgets in NEXT including:</p>
+                        <ul>
+                            <li>Workspace field list is empty in field/value trigger condition dropdown</li>
+                            <li>Workspace fields form template ID and group ID need to be eligible for conditions</li>
+                            <li>BI widget "open" link in widget header is broken</li>
+                            <li>Widget continuously reloads on an iPad</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-RemoveiTextSharpfrompdfmergecode-ENHANCEMENT"><span style="color: rgb(51,153,102);">Remove iTextSharp from pdf merge code -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The iTextSharp library that&#160;ClientSpace was&#160;using for PDF merges has been removed, and replaced with the Aspose library that we already use for&#160;Word merges. The iTextSharp library has been removed from all code that directly performs PDF merges as well as the&#160; classic admin functionality that generates the SQL with the PDF field names, and the "Get Field Info" link.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-EmailtoCase-ENHANCEMENT"><span style="color: rgb(51,153,102);">Email to Case -&#160;&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A new "IsDefaultAlias" checkbox has been added to the API configuration area.</p>
+                        <p>When processing emails, if a matching Alias record cannot be located,&#160;the system will now use&#160;the API configuration to locate an Alias with "IsDefaultAlias" checked to define the workspace.&#160;</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-MoveActiveReportsintoSeparateWeb-ENHANCEMENT"><span style="color: rgb(51,153,102);">Move ActiveReports into Separate Web -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The ActiveReports engine which runs Classic - non-BI reporting has been moved&#160;into a&#160;Separate Web so that in the future we will be able to change the classic app pool to x64.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-GoogleMapsButton-ENHANCEMENT"><span style="color: rgb(51,153,102);">Google Maps Button -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Google "Map It" functionality has been added to a button in the Org and Contact action center. This uses the Address fields from the Org/Contact record and searches&#160;<a href="http://maps.google.com" class="external-link" rel="nofollow">maps.google.com</a> in a new window.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-Quick&quot;ShareWorkspace&quot;Button-ENHANCEMENT"><span style="color: rgb(51,153,102);">Quick "Share Workspace" Button -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A new button has been added to the Action Center on Workspace landing pages to "Copy Link to Clipboard". This copies the "linkto" url for that workspace directly to the clipboard of the local computer.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-Secure&quot;SaveAnyways&quot;buttononPotentialDups-NEXT-ENHANCEMENT"><span style="color: rgb(51,153,102);">Secure "Save Anyways" button on Potential Dups - NEXT -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Security has been added to the "Save Anyway" button on the Organization potential Dupe screen:&#160; Security will be set by checking if the user has View rights to the "CRM_CanSaveDuplicates" security entity.&#160; This gives the Global Admin the ability to secure whether duplicate organizations may be saved or not. &#160;A script will need to be run on the installation to insert the custom Security entity - if you are interested in this functionality contact your account manager.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-UpgradeIzendaBIdlltolatestversion-6.10.0.20-ENHANCEMENT"><span style="color: rgb(51,153,102);">Upgrade Izenda BI dll to latest version - 6.10.0.20 -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The business intelligence dll from Izenda has been updated to their latest release - for more detailed information about this version update, review the <a href="http://wiki.izenda.us/Release-Notes#6.10.0.20" class="external-link" rel="nofollow">Izenda Release Notes.</a></p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-MultipleWorkspaceIssue-SelectingDesiredWorkspace"><span style="color: rgb(51,153,102);">Multiple Workspace Issue - Selecting Desired Workspace&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Fixed an issue where in the Chrome browser &#160;when selecting items in a dropdown (a workspace selector for example), and you had two items in the dropdown that have the same Decode value, or the same Decode value but only differing by case, but these items have different Code values, when you attempted to select the second of the duplicate items in the list, it would end up reverting the original selection once you tabbed off of the field.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-UserDatatypes-ENHANCEMENT"><span style="color: rgb(51,153,102);">User Datatypes -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>All user datatypes have been enhanced to include Middle Initial in all User type ahead stored procedures.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-ExternalCalendarSyncingErrors"><span style="color: rgb(51,153,102);">External Calendar Syncing Errors&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where external calendar events with a date outside of acceptable ranges would cause the entire calendar sync operation to fail.&#160; System now will replace the bad values recurrence ids coming in the external calendar provided by the user.&#160; Allowing the rest of the external calendar to sync normally.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-ZipCodeDatatypeError"><span style="color: rgb(51,153,102);">Zip Code Datatype Error&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where typing a plus sign (+) into a zipcode field would cause the system to generate an exception.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-Addcontactbug"><span style="color: rgb(51,153,102);">Add contact bug<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where the Contact Action Center was not properly handing the case of receiving an OrganizationID of zero. This can happen when attempting to add a Contact from the Contacts module, there is no Organization in this case.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-TypeAheadDecode"><span style="color: rgb(51,153,102);">Type Ahead Decode&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Fixed an issue where if the value stored in a type ahead lookup field does not have a valid decode, the system shows a blank field even though there is data stored in the field.&#160; For that field the system will now display what is stored in the field as well as the Valid lookup values for that field.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-EternalLoadingScreenIssue"><span style="color: rgb(51,153,102);">Eternal Loading Screen Issue&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where&#160;when attempting to add a new comp claim in NEXT and you click ADD and select a workspace&#160;&#160;you could get a&#160;broken loading screen (unmoving swirly) that doesn't go away if there was a security rights issue on a tabbed dataform.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-MakeEmailaHyperlinkonContactSearchModule-ENHANCEMENT"><span style="color: rgb(51,153,102);">Make Email a Hyperlink on Contact Search Module - <span style="color: rgb(255,0,0);">ENHANCEMENT</span>&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>The email column in the Contacts dashboard list has been enhanced as a clickable link.&#160; Clicking this link will open the system default mail application, filling in the "To" field on the email with the email address that was clicked.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-DefaultActiveCheckboxonImportMap-ENHANCEMENT"><span style="color: rgb(51,153,102);">Default Active Checkbox on Import Map&#160;&#160;-&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span>&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>The Import map detail configuration has been enhanced to make it easier to use:</p>
+                        <ul>
+                            <li>The Active checkbox now defaults to 'checked' when adding a new column</li>
+                            <li>The Project Type selector now defaults to the Import Map Header dataform selection when adding new column (add or from Save and New)</li>
+                            <li>The Map Header Detail Project Type and Field selection have been Refactored to make them simpler dataform and field selectors instead of the annoying complicated dialog.</li>
+                            <li>The Import Map Header Detail tab displays and sorts based on the Dataform Field Label (not Attribute Name)</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-OutlookEventsinthepast"><span style="color: rgb(51,153,102);">Outlook Events in the past&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Previously calendar syncing deletes all events and then pulls the new external calendar file.&#160; The system has been updated to only delete external calendar items more than 30 days old.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-UserProfilePermissionsforExternalUsers"><span style="color: rgb(51,153,102);">User Profile Permissions for External Users&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>The following items have been hidden from External Users when accessing their User Profile in Next:</p>
+                        <ul>
+                            <li>Default Workspace Search</li>
+                            <li>All fields in the Settings Fieldset with the exception of the time zone ones. We might need to rearrange some thing.</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-Expose&quot;IsFlattened&quot;throughUI"><span style="color: rgb(51,153,102);">Expose "IsFlattened" through UI<br /></span>
+                        </h4>
+                        <hr />
+                        <p>The "IsFlattened" setting for PDF merges has been added as an option in Merge Admin.&#160; This defaults on new merges to unchecked, allowing for form fields to be completed or data overwritten.&#160; Checking the "IsFlattened" box will merge produce a merged form that is read-only</p>
+                        <h4 id="Release58(CORE)-"><span style="color: rgb(51,153,102);"><br /></span>
+                        </h4>
+                        <h4 id="Release58(CORE)-Add&quot;Save&amp;New&quot;optionwhenaddingdataformfields-ENHANCEMENT"><span style="color: rgb(51,153,102);">Add "Save &amp; New" option when adding dataform fields</span>&#160; -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></h4>
+                        <hr />
+                        <p>A 'Save &amp; New' button has been added when adding dataform fields, making it easier than ever to add multiple new fields to a dataform.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(CORE)-NewNextExceptionLog-ENHANCEMENT"><span style="color: rgb(51,153,102);">New Next Exception Log</span>&#160; -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></h4>
+                        <hr />
+                        <p>The Exception log from Admin Settings has been converted to ClientSpace NEXT &#160;this exception log can be found under System Admin in the user name drop down displayed in the upper right corner in NEXT.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

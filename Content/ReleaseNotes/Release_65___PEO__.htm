@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 65 ( PEO )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" width="250" src="https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50" srcset="https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50 2x, https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50 1x" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;2/1/2018&#160; &#160;&#160;<strong>Sprint Ended:</strong>&#160;3/5/2018</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(PEO)-COIPolicyDropdown-ENHANCEMENT"><span style="color: rgb(51,153,102);">COI Policy Drop down -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The policy selector on the Certificate of Insurance has been updated to match the functionality of other areas in the system which currently use the "~".</p>
+                        <ul>
+                            <li>By default, the policy selector will show only active records. Primary sort for this list will be on Policy Title with a secondary sort of Effective Date of policy.</li>
+                            <li>The tilde ("~") may be used to include inactive policies - so if the user types “~A”, the drop down would show active &amp; inactive policies where the policy title starts with the letter A.</li>
+                        </ul>
+                        <p>The list for active records will display “Policy Title – Eff Date (Policy#)”. <br />The list for inactive records will display “Policy Title – Eff Date (Policy#) (inactive)”.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(PEO)-WCPolicyFilter-ENHANCEMENT"><span style="color: rgb(51,153,102);">WC Policy Filter -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Workers Comp Claim dashboard has been enhanced -</p>
+                        <ul>
+                            <li>A filter has been added for "Coverage State" allowing you to filter for policies by State</li>
+                            <li>The&#160;"Coverage State" column has been added as a hidden column available on the list&#160;</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(PEO)-WCClaimDelete"><span style="color: rgb(51,153,102);">WC Claim Delete</span>
+                        </h4>
+                        <hr />
+                        <p>The Workers' Comp Claim deletion function has been updated to include all dataforms with a direct foreign key relationship to the comp claim, including such records as Financials and Claim Deductible Bill records. As long as there are no active Claim Notes, or any attachments on the claim, it can be deleted using the Delete button on the Comp Claims dashboard.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(PEO)-PricingConsoleOverallPricingMatrixwidgetexception"><span style="color: rgb(51,153,102);">Pricing Console Overall Pricing Matrix widget exception&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Corrected an issue in the Pricing Matrix Widget controller where the "use custom pricing and client code" properties were not being populated. This would happen only when the matrix was opened from the pricing console.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(PEO)-OrgPrimaryProjectnotset"><span style="color: rgb(51,153,102);">Org Primary Project not set</span>
+                        </h4>
+                        <hr />
+                        <p>Fixed a bug that was causing the Org Primary Project to not be set during imports. The effect of this was that Contact matching in email integration was not working as it should, and generated cases would be attached to the default workspace for the affected Organization records.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(PEO)-ClientScorecardMergeError"><span style="color: rgb(51,153,102);">Client Scorecard Merge Error</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where the PEO Client Scorecard Merge would fail due to improper decoding of the Carrier Claims Adjuster field.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(PEO)-RemoveAddButtonFromCalendarQuadrantonchocolatehomepage"><span style="color: rgb(51,153,102);">Remove Add Button From Calendar Quadrant on chocolate home page&#160; &#160;</span>
+                        </h4>
+                        <hr />
+                        <p>The add button has been removed from the calendar quadrant of the Classic home page. Calendar events may still be added through activities, from the calendar dashboard in NEXT.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(PEO)-EmployeeDocumentSearchFileLimit"><span style="color: rgb(51,153,102);">Employee Document Search File Limit&#160; &#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue with the Employee Document Search dashboard where the record counts and page counts were incorrect, showing a maximum of 200 records regardless of the actual number.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

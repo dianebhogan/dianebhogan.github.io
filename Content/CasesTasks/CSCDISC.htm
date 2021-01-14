@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Case Discussion Email Templates" />CSCDISC: Case Discussion Template</h1>
+        <MadCap:microContent id="microcontent1">
+            <p>CSCDISC is the wrapper for the outgoing message to the recipients indicated on the Discussion Message. In a Discussion Message, the user can type their message in the Body section, and that content is then merged in as the Comments of this email template. Alternatively, users can select a pre-populated message from a list of CSCRPLY email templates. If one of those is selected, the body is automatically populated and then merged into the Comments of the CSCDISC email template.</p>
+        </MadCap:microContent>
+        <p>
+            <img src="../Resources/Images/Case/CSCDISC.png" class="thumbnail" />
+        </p>
+        <p>The CSCDISC template is included as part of the PEO&#160;installation. The only required configuration is to customize the Body and set the value in From Email Override if you are using reply above the line functionality. See <MadCap:xref href="Config_CaseDiscAboveLine.htm" title="Configuring Case Discussion: Reply Above This Line" alt="Configuring Case Discussion: Reply Above This Line">Configuring Case Discussion: Reply Above This Line</MadCap:xref>.</p>
+        <p class="ProcedureIntro">To configure the email template for CSCDISC:</p>
+        <ol>
+            <li>Complete the form fields. </li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 166px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Template Code</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Use&#160;<b>CSCDISC</b>&#160;for this
+ template.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Template Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Use <b>Client Service Case Discussion</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Use <b>Client Service Case Discussion, wrapper for outgoing discussion, sent to external recipient</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">From Email Override</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Specify an email address to override the default noreply address commonly used by the system. The default Admin Email configuration is stored in App Settings. For help configuring this setting, log an Extranet case.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Subject</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Can configure using replacement fields.  Is formatted as <b>WorkspaceName -  CSC Subject Line {Subject}</b>. Any additional text can also be configured on this line up to the limits of the field. See <MadCap:xref href="CSC_FieldReplacement.htm" title="Client Service Case field replacement" alt="Client Service Case field replacement">Client Service Case field replacement</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Body</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Body uses a rich text editor and supports font styling, embedded images, hyperlinks, lists, and tables. For best results, we recommend embedding .jpg or .jpeg images.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Body contains a custom HTML table that holds appropriate field replace characters from the generated Discussion dataform and can include:</p>
+                        <ul>
+                            <li><span class="UXElement">Discussion</span>: Contents of the discussion Comments field.  This can be dynamically altered using field replacement in the selected email template.</li>
+                            <li><span class="UXElement">Last Discussion</span>: Previous discussion threads comments area.</li>
+                            <li><span class="UXElement">Reply To Url</span>:  Direct URL link to the Discussion page.</li>
+                            <li><span class="UXElement">Reply To Link</span>: This link automatically signs in the user using the API configuration and opens the appropriate discussion.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <b>Save</b>.</li>
+        </ol>
+    </body>
+</html>

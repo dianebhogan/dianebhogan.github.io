@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Exporting to PrismHR</h1>
+        <p>Clients and Employees can be exported from ClientSpace to Prism.  The export is performed on-demand using Client Master and Employee header links and business rules.
+
+The Client Master must be exported first  to create a container in Prism in which to collect the Employees.  This process consists of gathering Prism required information in ClientSpace and (automatically) creating that Client in Prism.  After the Client passes the required data validation, it is flagged as ready for Export.  </p>
+        <p>A set of ClientMaster Header links facilitate the Export of Client and Employees.
+
+When successful, Prism provides a Client Number that is inserted on the Client Master for that Client.  At this point, there may be additional Prism configuration requirements before the Client is fully configured and ready to accept employees.
+
+After the Prism Client is completely configured in Prism, ClientSpace Employees can then be exported.
+</p>
+        <p>When properly configured, ClientSpace reports any missing data fields, including ImportID information where required. When creating (exporting) a Client  from ClientSpace to PrismHR, all active Contacts associated with the Org that is related to the Workspace are created in PrismHR. Additionally, the export process updates the Contact ImportID with ClientNumber-PrismHRContactID.</p>
+        <h2>Exporting Clients and Employees on-demand from the Client Master</h2>
+        <p class="Body">Two links are available for on-demand exporting. The <span class="UXElement">Export Client to PrismHR</span> link creates a Client entry in Prism.  If successful, a subsequent link <span class="UXElement">Export Employees to PrismHR</span> appears. The following screenshot shows the links in the Action Center.</p>
+        <p class="Body">
+            <img src="../Resources/Images/Exports/ContractStatus_WorkflowLink.png" alt="" title="" class="thumbnail" />
+        </p>
+        <p class="TopicsList" MadCap:conditions="ClientSpace.Screen" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">Topics in this section</p>
+        <MadCap:miniTocProxy MadCap:conditions="ClientSpace.Screen" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    </body>
+</html>

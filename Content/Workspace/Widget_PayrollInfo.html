@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />Widget: Payroll Info
+    </head>
+    <body>
+        <h1>Widget: Payroll Info
+                        </h1>
+        <p>
+            <img src="../Resources/Images/Widget/Widget_PayrollInfo.png" class="right" />
+        </p>
+        <p>The Payroll Info widget is on the Workspace Landing Page when the Client Master Status is Client, Pending Termination, or Terminated. This widget provides insight into the variance of the proposed payroll from the Pricing Batch concerning actual payroll. Payroll numbers may appear skewed in specific scenarios where the client is seasonal or in cases where there are gaps in pay for employees.</p>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col style="width: 132px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 88.4651%;" class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1" colspan="2"><strong>Widget Definition</strong>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Gross (90 days)              </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">The sum of Gross Payroll values from Payroll Statistics for the last 90 days based on the Pay Date.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Annualized         </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">An annualization factor times the known Gross Payroll from Payroll Statistics. The annualization factor is calculated by taking the count of days between the oldest known Pay Date from Payroll Statistics and today’s date and dividing 360 by this count. If the workspace has Payroll dates older than 90 days, this defaults to 4. Because this is a calculated factor, annualization factors can be skewed if the workspace contains limited payroll records. For example, if the oldest PayDate in the workspace is from 6 days ago, the annualization factor is 60 (360/6).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Average Wages              </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">The Annualized Payroll divided by a count of distinct Employees payed in the last 90 days.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Contract      </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">The sum of Gross Payroll for each WC Code on the current activated Pricing Batch.&#160; If not, a client it would then use the Gross Payroll sum from the RFP Batch.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Variance           </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">The difference between the Annualized Payroll and the Contract Payroll.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

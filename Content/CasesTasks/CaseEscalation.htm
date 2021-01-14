@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Case escalation</h1>
+        <p>Case Escalation Level 1 and 2 dates and times are set when the case is first saved. Escalation dates get re-set if Priority, Category, or Case Type is changed as this can affect the valid escalation parameters. </p>
+        <p>These fields are read-only by default but can be editable and secured for more flexibility. As long as the case is open and there are escalation dates and time filled in, this case is found on the Case Escalation Email. Inactivating an Escalation record has no impact on whether the Escalation dates based on that record are set or not. 
+
+</p>
+        <p class="ProcedureIntro">When the Escalation Notification is sent, the following users are included:
+
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">Level 1 Escalation (only if <b>Include In Case Escalation Email</b> is cleared)
+</p>
+        <p class="Bullet2" MadCap:autonum="• ">The Assigned To user on the case
+</p>
+        <p class="Bullet2" MadCap:autonum="• ">Members of the Notification Role configured on the associated Case Type
+</p>
+        <p class="Bullet2" MadCap:autonum="• ">Members of the Level 1 Escalation Role on the associated Case Type
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">Level 2 Escalation (only if <b>Include In Case Escalation Email</b> is cleared)
+</p>
+        <p class="Bullet2" MadCap:autonum="• ">All users included with Level 1 Escalation
+</p>
+        <p class="Bullet2" MadCap:autonum="• ">Members of the Level 2 Escalation Role on the associated Case Type</p>
+    </body>
+</html>

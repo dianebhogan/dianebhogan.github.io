@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Installing from outlook.live.com</h1>
+        <p>This section describes how to configure the add-in from outlook.live.com. </p>
+        <p class="ActionTip">Keep <MadCap:variable name="MyVariables.ProductName" /> and Outlook open during the installation procedure. You will need to toggle between your <MadCap:variable name="MyVariables.ProductName" /> site and Outlook session. The procedure requires that you keep the sessions open while gathering the various pieces of information.</p>
+        <p class="ProcedureIntro">To install the email add-in for Outlook:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Sign in to your Outlook account.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Open an existing email.</p>
+        <p class="L1Num" MadCap:autonum="3. ">At the top of the email message, on the right side, click <b>. . .</b> (<b>More actions</b>).<br /></p>
+        <p class="StepResult">A list of options is displayed.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Email/GetAddIns.png" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="4. ">Click <b>Get Add-ins</b>.<br /></p>
+        <p class="StepResult">The <b>Add-Ins for Outlook</b> dialog opens.</p>
+        <p class="L1Num" MadCap:autonum="5. ">Click <b>My add-ins</b>.</p>
+        <p class="L1Num" MadCap:autonum="6. ">Under <b>Custom add-ins</b>, click <b>Add a custom add-in</b> &gt; <b>add from URL</b>.<br /></p>
+        <p class="StepResult">The <b>Add private add-in from a URL</b> dialog opens.</p>
+        <p class="L1Num" MadCap:autonum="7. ">In <b>Enter the URL of the add-in's manifest file</b>, paste the following URL:  <code>https://shared.clientspace.net/Content/Manifest/OfficeManifest2.xml</code></p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Email/AddPrivateAddInFromURL.png" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="8. ">Click <b>OK</b>.<br /></p>
+        <p class="StepResult">A Warning message is displayed: "This custom add-in may access your personal data and send it to a third-party service. It hasn't been verified by Microsoft. Make sure you trust the source of the add-in."</p>
+        <p class="L1Num" MadCap:autonum="9. ">Click <b>Install</b>.<br /></p>
+        <p class="StepResult">The ClientSpace for Outlook add-in is added and displayed in the Custom add-ins area.</p>
+        <p class="L1Num" MadCap:autonum="10. ">Click <b>X</b> to close the dialog.</p>
+        <p>The next few steps configure the settings: URL, Username, and Mail Key.</p>
+        <h3>Next: Check your email address in <MadCap:variable name="MyVariables.ProductName" /></h3>
+        <p class="ProcedureIntro">To ensure that your email address is added to your <MadCap:variable name="MyVariables.ProductName" /> User Details:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">From <MadCap:variable name="MyVariables.ProductName" />, click <img src="../Resources/Images/ICONS/ICON_MyProfile.png" /> <b>&lt;username&gt;</b> &gt; <b>My Profile</b>.<br /></p>
+        <p class="StepResult">The User Details form opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">In <b>Email</b>, ensure that the appropriate email address is recorded. This email should be the same email address as the one you use for Outlook (for example jsmith@outlook.com).</p>
+        <p class="L1Num" MadCap:autonum="3. ">Update the information in <MadCap:variable name="MyVariables.ProductName" /> if required and click <b>Save</b>.</p>
+        <h3>Next: Obtain Mail Key from <MadCap:variable name="MyVariables.ProductName" /></h3>
+        <p class="ProcedureIntro">To obtain the Mail Key:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">In <MadCap:variable name="MyVariables.ProductName" />, from your <b>User Details</b> page, in the <b>Action Center</b>, select <b>More Options</b> &gt; <b>Manage Mail Key</b>.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Email/ManageMailKey.png" />
+        </p>
+        <p class="Indent1">The <b>Your Mail Key</b> form opens.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Email/YourMailKey.png" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="2. ">If no Mail Key is set up, click <b>Generate</b> to create one.<br /></p>
+        <p class="StepResult">Your Mail Key is displayed so that you can copy and use it for connecting to your external mail system to <MadCap:variable name="MyVariables.ProductName" />.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Click the key to copy it to your clipboard.<br /></p>
+        <p class="StepResult">The Clipboard opens showing the key.</p>
+        <p class="L1Num" MadCap:autonum="4. ">Click <b>Ok</b>.</p>
+        <p class="L1Num" MadCap:autonum="5. ">Click <b>Close</b>.</p>
+        <p>At this point, the key is copied to your clipboard and you are ready to paste the Mail Key in the Outlook configuration pane.</p>
+        <h3>Next: Back to Outlook</h3>
+        <p class="ProcedureIntro">To continue the configuration:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">In Outlook, from the previously opened email, click <b>. . .</b> <b>(More actions</b>).</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Email/OutlookOnline.jpg" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="2. ">From the list of options, click <b>ClientSpace for Outlook.</b><br /></p>
+        <p class="StepResult">The <MadCap:variable name="MyVariables.ProductName" /> for Outlook pane opens beside the open email. You must open this pane for every Outlook email that you want to post to <MadCap:variable name="MyVariables.ProductName" />.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Email/ClientSpaceForOutlook_pane.png" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="3. ">In the <MadCap:variable name="MyVariables.ProductName" /> for Outlook pane, if you do not see fields for URL, Username, and Mail Key, click <b>Settings</b>.<br /></p>
+        <p class="StepResult">The fields are now displayed.</p>
+        <p class="L1Num" MadCap:autonum="4. ">In <b>Mail Key</b>, paste the key that you just copied. Let's fill this field first so that you retain what you just copied to the clipboard.</p>
+        <p class="L1Num" MadCap:autonum="5. ">Go to your <MadCap:variable name="MyVariables.ProductName" /> site and copy the <MadCap:variable name="MyVariables.ProductName" /> URL (for example, <code>https://yoursite.clientspace.net</code>). <b>Note</b>:&#160;DO NOT append <code>/next</code> to the end of the URL.</p>
+        <p class="L1Num" MadCap:autonum="6. ">In <b>URL</b>, paste the URL of your <MadCap:variable name="MyVariables.ProductName" /> site.</p>
+        <p class="L1Num" MadCap:autonum="7. ">In <b>Username</b>, type your <MadCap:variable name="MyVariables.ProductName" /> username (for example, <i>jsmith</i>).</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Email/URLUsernameMailKey.png" />
+        </p>
+        <p class="Indent1">Now you are ready to post the opened email message to <MadCap:variable name="MyVariables.ProductName" />.</p>
+        <p class="L1Num" MadCap:autonum="8. ">Click <b>Post to ClientSpace</b>. <br /></p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Email/PostToClientSpace_button.png" />
+        </p>
+        <p class="Indent1">This action logs you into <MadCap:variable name="MyVariables.ProductName" /> displaying the email message from Outlook, which is now visible in <MadCap:variable name="MyVariables.ProductName" />. </p>
+        <p class="L1Num" MadCap:autonum="9. ">If pop-ups are blocked, click the Pop-up blocker and select <b>Always allow pop-ups and redirects from https://outlook.live.com</b>.</p>
+        <h4>What's next?</h4>
+        <p>When you click <b>Post To ClientSpace</b>, you are then logged into <MadCap:variable name="MyVariables.ProductName" />. The Post To <MadCap:variable name="MyVariables.ProductName" /> page appears.</p>
+        <p>From the Post To <MadCap:variable name="MyVariables.ProductName" /> page,  you can:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Attach the email to a dataform (record)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Create an activity</p>
+        <p class="Bullet1" MadCap:autonum="• ">Create a case</p>
+        <p class="Bullet1" MadCap:autonum="• ">Create a task</p>
+        <p>
+            <img src="../Resources/Images/AddIns/PostToPulse_page.png" />
+        </p>
+        <p>Additionally, Global Admins can post Help topics for this page and make them available to your users<MadCap:annotation MadCap:createDate="2019-08-20T10:56:15.4842649-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="replace screenshot when the UI changes" MadCap:editor="dhogan" MadCap:editDate="2019-08-20T10:56:24.8685134-04:00">. You are now logged into <MadCap:variable name="MyVariables.ProductName" />, ready for the next action. </MadCap:annotation></p>
+        <p MadCap:conditions="ClientSpace.Screen">For the procedure on how to create activities, cases, and tasks from the Post To <MadCap:variable name="MyVariables.ProductName" /> page, see <MadCap:xref href="Create_ActCasesTasks.htm" title="create activities cases, tasks from email" alt="create activities cases, tasks from email" class="Heading">Creating activities, cases, and tasks from your Outlook email</MadCap:xref>.</p>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1 MadCap:autonum="Chapter 1 ">How annualized wages are calculated</h1>
+        <p>This topic summarizes how Annualized wages are calculated.</p>
+        <p>The short answer to this question is – it's complicated.  The long answer depends on whether there is more than a year's worth of Payroll Statistics records in the system.</p>
+        <p class="Bullet1" MadCap:autonum="• ">If the Client has more than a year's worth of wages in the Payroll Statistics table, the Annualized wages are simply the sum of the Gross Payroll amounts from Payroll Statistics.</p>
+        <p class="Bullet1" MadCap:autonum="• ">However, if the client has less than a year in Statistics, then annualized gross pay is calculated like this:</p>
+        <p class="Bullet2" MadCap:autonum="• ">AnnualGrossPayroll = (360.00/DATEDIFF(d,FirstStatStart,MostRecentStatEnd))* ISNULL(PeriodGrossPayroll,0)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Roughly translated Annual gross pay  = (360.0/ number of days between the first pay period start and most recent period end) * SUM(Gross payroll on statistics)</p>
+        <p class="Bullet2" MadCap:autonum="• "><b>360/difference</b> gives you what percentage daily of the year for which payroll has been submitted.</p>
+        <p class="Bullet2" MadCap:autonum="• ">Multiplying this by the sum of the actual wages gives an estimated total of what wages should be at the end of the year.</p>
+        <p class="Bullet2" MadCap:autonum="• ">The <b>30/360 method</b> is a commonly accepted practice used in calculations that divide the year into periods, such as mortgage amortization schedules because it rounds more cleanly.</p>
+        <p class="Bullet2" MadCap:autonum="• ">It works as well as 365 when estimating possible payroll and leaves less chance for trailing decimals</p>
+    </body>
+</html>

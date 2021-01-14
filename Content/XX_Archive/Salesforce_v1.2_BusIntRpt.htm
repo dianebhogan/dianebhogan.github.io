@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1 MadCap:autonum="Chapter 1 ">Business Intelligence report</h1>
+        <p>A report should be constructed to view records in tblScheduledProcessHistory.  Join to the tblScheduledProcess table (SPH.fk = SP.pk) and include SPH.ProcessStartDate, SPH.LogData and SPH.ProcessEndDate, sort on SPH.ProcessStartDate descending, filter on SP.Method = “SalesForceUpdate”</p>
+        <p class="ProcedureIntro">Required Fields Mapping Table</p>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Type</th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">CS Table.Field</th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">API Mapping</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Data Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Export</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Import</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Do not select</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Opportunity/RecordType/Name</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Text</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">tblOrganization.Name</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Account/Name</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Text</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">tblContact.FirstName</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact/FirstName</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Text</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">tblContact.LastName</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact/LastName</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Text</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">tblContact.fkAssignedTo</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">Contact/OwnerId</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">Foreign Key</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

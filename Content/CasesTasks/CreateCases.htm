@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Case creation methods</h1>
+        <p>Did you know that you can create cases through multiple methods within <MadCap:variable name="MyVariables.ProductName" />? Cases can be added directly from your Home page in the Client Service Cases widget bar, from the Case Search dashboard, from the Client Workspace, in the Client Services Cases widget bar, and from many dataforms through the Action Center.  Additionally, you can create a case manually, from an email, from the Employee Support Center, and Workflow Channels.</p>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css'); margin-left: 0; margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 190px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Method</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Manually</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">You can create a case manually from within a client workspace. See <MadCap:xref href="AddCases.htm" title="Adding cases" alt="Adding cases">Adding cases</MadCap:xref>.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Client Service Cases </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Directly from your Home page, in the <b>Client Service Cases</b> widget bar.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Case Search dashboard</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">From the <b>Case Search</b> dashboard, click <b>Add</b>.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Client Workspace</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">From the <b>Client Workspace</b>, in the <b>Client Service Cases</b> widget bar, click 
+<img src="../Resources/Images/ICONS/ICON_Add.png"></img> (Add).</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Action Center</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">From many dataforms through the <b>Action Center</b>.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Workspace landing page</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">From the Case dataform at the bottom of the Workspace landing page.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">From an email</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Email Add-in</p>
+                        <p class="TableTextLeft">From an email using the Email Add-in. The subject and body of the email translate to the subject and issue of a case.  Cases created from Email Add-in  show the <span class="UXElement">Communication Method</span> as <span class="UXElement">Email Add In</span>. See <MadCap:xref href="../AddIns/Create_ActCasesTasks.htm" title="Creating activities, cases, and tasks from your Outlook email" alt="Creating activities, cases, and tasks from your Outlook email">Creating activities, cases, and tasks from your Outlook email</MadCap:xref>.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeftBold">Email Integration</p>
+                        <p class="TableTextLeft">From a client sending an email to a specific address. A case can be created when an email is sent to an address that is configured for Email Integration with <MadCap:variable name="MyVariables.ProductName" />. The subject and body translate to the subject and issue of the case. Cases created from Email Integration  show the <span class="UXElement">Communication Method</span> as <span class="UXElement">Email Integration</span>. The Communication Method field, unless filled in <MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">(see <MadCap:xref href="../Integrations/EmailInteg_FieldMap.htm" title="Step 3: Field Mapping" alt="Step 3: Field Mapping">Step 3: Field Mapping</MadCap:xref>)</MadCap:conditionalText>, defaults to Email Integration. The field must be marked as Cloneable on field properties under Dataform management. See <MadCap:conditionalText MadCap:conditions="ClientSpace.Print">the topic <i>Email Integration</i> in <i>ClientSpace Setup &amp;&#160;Administration</i></MadCap:conditionalText><MadCap:conditionalText MadCap:conditions="ClientSpace.Screen"><MadCap:xref href="../Integrations/EmailIntegration.htm" title="Email integration" alt="Email integration">Email Integration</MadCap:xref></MadCap:conditionalText> and the corresponding sub-topics.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeftBold">Forward an email with Client Number</p>
+                        <p class="TableTextLeft">From a PEO employee forwarding an email with the client number (as CLID=XXX), which routes the email to the client. This approach enables Service Provider users to send an email to an address by including CLID = XXX in the body of the email. This action creates a case in the appropriate client workspace. <MadCap:conditionalText MadCap:conditions="ClientSpace.Print">For more details about using CLID, see <i>Action Step</i>, <i>Creating Email integration aliases</i>, and <i>Email Processing</i> in <i>ClientSpace Setup &amp;&#160;Administration</i>.</MadCap:conditionalText> <MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">For more details about using CLID, see <i>Action Step</i> in <MadCap:xref href="../Integrations/EmailInteg_Aliases.htm" title="Creating Email Integration aliases" alt="Creating Email Integration aliases">Creating Email Integration aliases</MadCap:xref> and <MadCap:xref href="../Integrations/EmailProcessing.htm" title="Email processing" alt="Email processing">Email Processing</MadCap:xref>.</MadCap:conditionalText></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Employee Support Center</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">You can configure an email template to send an email to the related employee on a case. For example, you can send notifications to external employees who submit an inquiry through the Employee Support Center. Cases created from the Employee Support Center show the <span class="UXElement">Communication Method</span> as <span class="UXElement">Employee Portal</span>. <MadCap:conditionalText MadCap:conditions="ClientSpace.Print">See the topic <i>Configuring email templates to notify external employees</i> in the <i>ClientSpace Setup &amp;&#160;Administration Guide</i>.</MadCap:conditionalText><MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">See <MadCap:xref href="../EmailTemp/NotifyExtEmp_Case.htm" title="Configuring email templates to notify external employees" alt="Configuring email templates to notify external employees">Configuring email templates to notify external employees</MadCap:xref>.</MadCap:conditionalText></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Workflow Channels</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">You can create cases through Workflow Channels when specific conditions are met, such as a link is clicked or a field has changed. Cases created from a workflow  show the <span class="UXElement">Communication Method</span> as <span class="UXElement">Workflow Channel</span>. <MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">See <MadCap:xref href="../WFC/Introduction.htm" title="Workflow Channels" alt="Workflow Channels">Workflow Channels</MadCap:xref>.</MadCap:conditionalText><MadCap:conditionalText MadCap:conditions="ClientSpace.Print">See the topic <i>Workflow Channels</i> in <i>ClientSpace Setup &amp;&#160;Administration</i>.</MadCap:conditionalText></td>
+                </tr>
+            </tbody>
+        </table>
+        <p MadCap:conditions="ClientSpace.Screen"> <i class="fas fa-play-circle" style="font-size:24px;color:var(--BrandPrimary2);"></i> To learn more, watch the video <MadCap:xref href="Video_CreateCase.htm" title="Learning how" alt="Learning how">Learning how</MadCap:xref>.</p>
+        <p MadCap:conditions="ClientSpace.Print">
+            <img src="../Resources/Images/ICONS/ICON_ViewVideo-pdf.png" /> To learn more, watch the video <a href="https://prismhr.wistia.com/medias/t17f6s6kys" target="_blank" title="Many ways to create a case" alt="Many ways to create a case">Learning how</a>.</p>
+    </body>
+</html>

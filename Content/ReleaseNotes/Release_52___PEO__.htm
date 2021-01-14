@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 52 ( PEO )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;4/17/2017&#160;&#160;&#160;&#160;&#160;<strong>Sprint Ended:</strong>&#160;5/5/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release52(PEO)-SecuredCaseTypesENHANCEMENT"><span style="color: rgb(51,153,102);">Secured Case Types&#160;</span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></h4>
+                        <hr />
+                        <p>Case Type security in NEXT has been enhanced to be more discrete - if the "<strong>Secure</strong>" checkbox on the Case Type dataform is checked the system will automatically generate a security entity with the format of <strong>CaseType_TypeTitle</strong> with TypeTitle being the title of the Case Type in question. Unchecking the Secure checkbox will delete the security entity, removing it from all roles in which it has been applied.</p>
+                        <p><strong>View | Add | Edit </strong>rights on the case type entity exhibit the same behavior as other role security -</p>
+                        <ul>
+                            <li>If a user does not have View rights to the secured case type then cases of this type will not be visible in the list and the case type will not be an available option when creating cases.</li>
+                            <li>Giving View rights will allow the user to view cases of this type if standard case type security would allow them to view these cases. View rights are necessary if Add and Edit rights are to be added to the role.</li>
+                            <li>Giving Add rights will allow the user to add new cases of this type, but not allow them to edit existing cases of this type.</li>
+                            <li>Giving Edit rights will allow the user to edit existing cases of this type, but not allow them to Add new cases of this type.</li>
+                        </ul>
+                        <h4 id="Release52(PEO)-EnhanceClientTeamWidgetonWSLP(NEXT)"><span style="color: rgb(51,153,102);">Enhance Client Team Widget on WSLP (NEXT)<br /></span>
+                        </h4>
+                        <hr />
+                        <p>The Workspace Landing Page in NEXT has been enhanced with a new Configurable Widget for the Client Team.</p>
+                        <p>This Widget supports up to 10 Client team member fields, displaying the <strong>Sales Rep, Payroll Specialist, Benefits specialist and Human Resource consultant </strong>by default. Other team members (up to the limit of 10) may be configured to display when the panel is expanded. For configuration instructions see "<a href="https://clientspace.atlassian.net/wiki/x/6JSLBQ" rel="nofollow">Configuring the Client Team Widget</a>".&#160;</p>
+                        <h4 id="Release52(PEO)-DisplayTimeonDiscussionMessages(NEXT)"><span style="color: rgb(51,153,102);">Display Time on Discussion Messages (NEXT)<br /></span>
+                        </h4>
+                        <hr />
+                        <p>The Case discussion time stamps have been enhanced to display based on time stamp which is&#160;stored in the threads,&#160;displaying time in the time zone selected under <strong>App Settings | Miscellaneous | Time Zone Name</strong>.</p>
+                        <h4 id="Release52(PEO)-AddButtononExtClientServiceCaseDashboard(NEXT)"><span style="color: rgb(51,153,102);">Add Button on Ext Client Service Case Dashboard (NEXT)<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where external users would have access to an Add button without Add Rights on the External Client Service Case dashboard. Previously clicking "Add" for these users would cause a spinning load meter and produce an error. Users without add rights now do not see the add button.</p>
+                        <h4 id="Release52(PEO)-WidgetizetheClientInformationsectionoftheWorkspaceLandingPage(NEXT)"><span style="color: rgb(51,153,102);">Widgetize the Client Information section of the Workspace Landing Page (NEXT)<br /></span>
+                        </h4>
+                        <hr />
+                        <p>The Client Info panel on the Client Workspace Landing Page (Client or Terminated status) has been re-engineered as a widget. This standardizes the modular design, allowing for more flexibility of future development.</p>
+                        <h4 id="Release52(PEO)-TheReports|CaseDetailbuttoninthecaseformresultsinanerror(NEXT)"><span style="color: rgb(51,153,102);">The Reports | Case Detail button in the case form results in an error (NEXT)<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Fixed an issue in NEXT where the Case Detail report from the from the Client Service Case would throw an error when run from NEXT stating "This link type is not supported at this time." Link now produces the case detail report.</p>
+                        <h4 id="Release52(PEO)-EnhanceEmployeeInfoWidgetonWSLP(NEXT)"><span style="color: rgb(51,153,102);">Enhance Employee Info Widget on WSLP (NEXT)<br /></span>
+                        </h4>
+                        <hr />
+                        <p>The Employee Info panel on the Client Workspace Landing Page (Client or Terminated status) has been re-engineered as a widget. This standardizes the modular design, allowing for more flexibility of future development.</p>
+                        <h4 id="Release52(PEO)-EnhancePayrollInfoWidgetonWSLP(NEXT)"><span style="color: rgb(51,153,102);">Enhance Payroll Info Widget on WSLP (NEXT)<br /></span>
+                        </h4>
+                        <hr />
+                        <p>The Payroll Info panel on the Client Workspace Landing Page (Client or Terminated status) has been re-engineered as a widget. This standardizes the modular design, allowing for more flexibility of future development.</p>
+                        <h4 id="Release52(PEO)-EnhanceCaseSearchonWSLPtoWidget(NEXT)"><span style="color: rgb(51,153,102);">Enhance Case Search on WSLP to Widget (NEXT)<br /></span>
+                        </h4>
+                        <hr />
+                        <p>The workspace landing page in NEXT has been enhanced for workspaces in Client, Terminated or Implementation status.</p>
+                        <p>The case panel has been re-engineered as a widget to allow for future customization. Drill down functionality on the case widget from a Workspace in Client or Terminated status will take you to the Client Service Case multiform search for that workspace.</p>
+                        <p>Drill down functionality on the case widget from a workspace in Implementation status will take you to the Case Search dashboard</p>
+                        <h4 id="Release52(PEO)-PricingConsolelocking"><span style="color: rgb(51,153,102);">Pricing Console locking<br /></span>
+                        </h4>
+                        <hr />
+                        <p>The pricing console has been enhanced to set the PricingBatch.Reprice flag during Quick Create to "true", essentially locking pricing while the Quick Create save is happening. This is to eliminate unexpected behavior that can occur during a long running Quick Create where the user attempts to refresh the page or change pricing while the save is occurring,</p>
+                        <p>After Quick Create save is complete the Reprice flag is cleared.</p>
+                        <h4 id="Release52(PEO)-ClientTeamRoleTablenotUpdating"><span style="color: rgb(51,153,102);">Client Team Role Table not Updating<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where changing Client Team members from certain areas in the system was not appropriately updating the Client Team Roles dataform. System will now appropriately Add/Update team roles as Client Team Members change.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

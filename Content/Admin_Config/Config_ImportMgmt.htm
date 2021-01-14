@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring import management for non-Global Admins</h1>
+        <p>You can allow users to upload and run imports without giving them the Global Admin rights. The SYS_ImportManager entity provides access to manage imports through the Import Management module.</p>
+        <p>The steps to do this include:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Configure a new Import Management module. (Global Admins must perform this step.)</p>
+        <p class="L1Num" MadCap:autonum="2. ">Add the <b>SYS_ImportManager</b> entity to an existing role or add a new role. Ensure the appropriate users are assigned to the role. (Global Admins must perform this step.)</p>
+        <p class="L1Num" MadCap:autonum="3. ">Add the Import Management module to your user profile. (Non-Global Admin users can perform this step.)</p>
+        <h2>Step 1: Configure Import Management module</h2>
+        <p>You need to be a Global Admin to perform this step.</p>
+        <p class="ProcedureIntro">To configure the Import Management module:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Modules</b>.<br />The Modules dashboard opens.<br /></li>
+            <li>Click <b>Add</b>.<br />The Module Details form opens.<br /></li>
+            <li>Complete the form fields as specified.</li>
+        </ol>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 117px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Enter the recommended name <b>Import Management</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Category</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <b>Admin</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Enter the recommended description <b>View and manage import files</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Target</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <b>Main Window</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <b>NEXT</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">URL</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Type <code>/Next/Admin/ManageImport/Index</code>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <b>Save</b>.</li>
+        </ol>
+        <div class="NoPageBreak">
+            <h2>Step 2: Create a new role (optional) or use an existing role</h2>
+            <p>Determine if you need to create a new role or use an existing role. You need to be a Global Admin to perform this step.</p>
+            <p class="ProcedureIntro">To begin:</p>
+            <ol>
+                <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Security</b> &gt; <b>Roles</b>.<br />The Security Roles dashboard opens.<br /></li>
+            </ol>
+        </div>
+        <p class="ProcedureIntro">To create a <b>new</b> role:</p>
+        <ol>
+            <li>Click <b>Add</b>.<br />The New Security Role form opens.<br /></li>
+            <li>Complete the fields as specified.</li>
+        </ol>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 118px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Title</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Type <b>Can Manage Imports</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Type <b>Users in this role can manage imports</b>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <b>Apply</b>.</li>
+            <li>Go to <b>Step 3</b>.</li>
+        </ol>
+        <p class="ProcedureIntro">To use an existing role:</p>
+        <ol>
+            <li>Select and open a role from the list.</li>
+            <li>In the <span class="UXElement">Action Center</span>, select <b>Entities</b>.<br />The Security Role Entities dashboard opens.<br /></li>
+            <li>Click <b>Add</b>.<br /></li>
+            <li>The Add Role Entities dialog opens.</li>
+            <li>Select <b>SYS_ImportManager</b> and click <b>Ok</b>.<br />You are returned to the Security Role Entities dashboard with the newly added Entity Name.<br /></li>
+            <li>On the <b>SYS_ImportManager</b> row, select the <b>Admin</b> permission.</li>
+            <li>Click <b>Close</b>.<br />You are returned to the opened role.<br /></li>
+            <li>In the <b>Action Center</b>, select <b>Users</b>.<br />The Security Role Users dashboard opens.<br /></li>
+            <li>Click <b>Add</b>.<br />The Add Role Users form opens.<br /></li>
+            <li>Select the applicable users and click <b>Ok</b>.<br />he newly added users appear in the Security Role Users list.<br /></li>
+            <li>Click <b>Close</b>.<br />You are returned to the role form.<br /></li>
+            <li>To close the form, click <b>Cancel</b>.</li>
+        </ol>
+        <h2>Step 3: Add the new module to your user profile</h2>
+        <p>Now that the Import Management module is available and the new security entity has been added to a role, users assigned to the new role can add the new Import Management module to their user profile.</p>
+        <MadCap:snippetBlock src="../Resources/Snippets/AddingUserModules.flsnp" />
+    </body>
+</html>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+    </head>
+    <body>
+        <h1 MadCap:autonum="Chapter 1 ">Process overview</h1>
+        <p>The Salesforce API Integration is a PEO process that maintains data synchronization between a client’s <MadCap:variable name="MyVariables.ProductName" /> installation and their respective Salesforce system.&#160;</p>
+        <p>During the life cycle of a Deal, either Salesforce or ClientSpace is responsible for the data. Typically, when in the Lead Discovery cycle, Salesforce owns the data. As changes are made in Salesforce, ClientSpace is updated with those changes. When the Deal has reached a certain level, ClientSpace will no longer accept changes from Salesforce but will keep Salesforce up to date with certain data as changes are made in ClientSpace.&#160;</p>
+        <p>Although this is a PEO process, custom fields in both ClientSpace and Salesforce can be Exported/Imported. Configuration handles the specific fields to be managed. The exchange of data between the systems is highly configurable.  Data elements are mapped at the field level for each system using standard ClientSpace Import Map Headers and Details. In addition to using Import Map Details to describe the relationships between ClientSpace and Salesforce data objects, three Custom stored procedures can be created to customize when data should be exported to Salesforce (csupdateproc), the source of the ClientSpace data to be exported (csworkspacedataproc), and which ClientSpace field changes should cause an export to occur (csavailableupdates).</p>
+        <p>When ClientSpace dataforms (<strong>gen_</strong>) are updated from Salesforce, they are saved via Dataform Pipeline Logic to allow business rules to be executed, and template tasks and email templates to be triggered.</p>
+        <p class="ProcedureIntro">Data Relationships for v1.2   </p>
+        <p>The following diagram shows the relationships between Salesforce and <MadCap:variable name="MyVariables.ProductName" /> objects. Only one Opportunity can be mapped to ClientSpace per Organization, even though there can be multiple Opportunities associated with an Account. Use the Opportunity <strong>RecordType.Name</strong> to identify the correct Opportunity (see ClientSpace Configuration section).</p>
+        <p>
+            <img src="../Resources/Images/Integrations/DataRelationships_v1.2.jpg" />
+        </p>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Importing the Comp Code Master record<MadCap:annotation MadCap:createDate="2019-08-15T11:20:23.3812946-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="This topic needs SME review. I added some procedures to the content, but cannot figure out all the detail.\r\n\r\nWhat is the content about Import Mapping Report? It just jumps in with no context as to what it is and what to do with it.\r\n\r\nAssume it relates to editing the fields - but how?" MadCap:editor="dhogan" MadCap:editDate="2019-08-15T11:27:31.7638830-04:00">s</MadCap:annotation></h1>
+        <p>Often during the initial setup of ClientSpace, you will need to import Comp Code master records, the individual Code, and title description pairs. This document describes how to automate that process using an import.</p>
+        <p class="ProcedureIntro">To automate the import process:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Configure Import</b>.<br /></p>
+        <p class="StepResult">The Import Map Header Search dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Open the comp code master entry.<br /></p>
+        <p class="StepResult">The Import Map Header Detail form opens.<br /></p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Imports/ImportMapHeaderDetail_ImportCompCodeMasterRecords.png" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="3. ">Click <b>Fields</b>.<br /></p>
+        <p class="StepResult">The Import Map Search list displays, showing the fields. </p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Imports/ConfigImport_2textdatatypes.png" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="4. ">To configure the two text data types, select an entry and click <b>Edit</b>.</p>
+        <h2>Import Mapping Report</h2>
+        <p><b>IMPORTANT NOTES</b>: Your import must conform to the following standards:</p>
+        <p class="Bullet2" MadCap:autonum="• ">Comma-delimited files must have all values surrounded by quotation marks.</p>
+        <p class="Bullet2" MadCap:autonum="• ">Data cannot contain crlfs (char(10) and char(13)).</p>
+        <p class="Bullet2" MadCap:autonum="• ">File names, column headers, and column order must match the values contained in this report exactly.</p>
+        <p class="Bullet2" MadCap:autonum="• ">The first row of the file must contain the column headers described in this report.</p>
+        <p class="Bullet2" MadCap:autonum="• ">The column headers must also be surrounded by quotation marks.</p>
+        <p class="Bullet2" MadCap:autonum="• ">This import is used to load the comp codes that are missing from the Comp Code Master List.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p>Required</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p>Column</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p>Data Type</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">XXX</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Code</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Text</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">XXX</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">DefaultInfoImportID</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">XXX</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">ImportID</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Title</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Text</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="ProcedureIntro">Example Import file</p>
+        <p class="Code">"ImportID","DefaultInfoImportID","Code","Title"</p>
+        <p class="Code">"2150","1046","8810","Clerical"</p>
+        <p class="Code">"2576","1046","8742","Outside Salesperson"</p>
+        <p class="ProcedureIntro">DefaultInfoImportID = Identifier in the Admin Workspace URL = 1046</p>
+        <p style="font-weight: bold;">
+            <img src="../Resources/Images/Imports/CC_Master3.png" />
+        </p>
+        <p>Be sure to set the ImportID field on the Default Info dataform to 1046.</p>
+    </body>
+</html>

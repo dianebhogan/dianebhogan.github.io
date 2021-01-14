@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Email Integration" />Email Integration</h1>
+        <MadCap:microContent id="microcontent1">
+            <p>With Email Integration you can streamline  communication in ClientSpace from a designated mailbox outside ClientSpace. Email integration is a <MadCap:variable name="MyVariables.ProductName" /> component that provides automated dataform creation (Client Service Case) from email requests. The integration accesses an email account from a third-party email provider and creates dataforms based on the email account or a specific email alias. After the request processes, an email notification is generated from a configurable template and transmitted as a response back to the sender of the originating email.</p>
+        </MadCap:microContent>
+        <p>Before you configure Email Integration, you need to gather some necessary components for configuration:</p>
+        <ul style="list-style-type: square;">
+            <li><span class="UXElement">Email address of the mailbox</span> to be integrated. The email address cannot be an alias; it must be the actual mailbox email address.</li>
+            <li><span class="UXElement">Password</span> to access the mailbox.</li>
+            <li><span class="UXElement">Host URL</span> of the email address (for example, outlook.office.com, or payroll.gmail.com).</li>
+            <li>The <span class="UXElement">IMAP connections port</span>  to the mailbox. The default port is 993, but this can be changed at the firewall.</li>
+        </ul>
+        <p>Email Integration supports the following email providers that support the IMAP protocol:</p>
+        <ul style="list-style-type: square;">
+            <li>Aol.com</li>
+            <li>Aim.com</li>
+            <li>Gmail.com:            Currently does not support SaslOAuth</li>
+            <li>iCloud.com</li>
+            <li>Outlook.com:            Before you configure for Outlook, see <MadCap:xref href="../AddIns/ConfigDistGroups_Off365.htm" title="configure distribute groups for email integration with Office 365" alt="configure distribute groups for email integration with Office 365" class="Heading">Configuring distribution groups for email integration with Office 365</MadCap:xref>.</li>
+            <li>Hotmail.com</li>
+            <li>Yahoo.com</li>
+        </ul>
+        <p>The following topics guide you through the Email Integration configuration steps.</p>
+        <p class="TopicsList" MadCap:conditions="ClientSpace.Screen">Topics in this section</p>
+        <MadCap:miniTocProxy MadCap:conditions="ClientSpace.Screen" />
+    </body>
+</html>

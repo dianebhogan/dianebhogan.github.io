@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1 MadCap:autonum="Chapter 1 ">Continuing the Approval process after an Approval has been ‘Declined’</h1>
+        <p>The Client Master Status will be ‘Prospect’ and the Pricing Batch Status will be ‘New’.  All Approvals will be in the state they appeared when the Approval was declined (e.g. Approved, Declined, Pending, or Waiting) and IsActive = True.  The Batch could then be ‘Submitted’.  At this point, the ‘Accept’ workflow will take effect.</p>
+        <p>Since new Underwriting Definitions are retrieved for each pass through the Approvals process, any changes to the client information are re-evaluated and Approvals are fully synchronized to the business.  Contract Type, Comparison Batch conversion to RFP Batch, Approval Assigned To, are examples of changes that will have an impact on the types of Approvals that will be used.</p>
+        <h3>Submitting a Renewal Batch</h3>
+        <p>After the RFP Batch has become ‘Activated’, the RFP batch is ‘retired’ (i.e. no further changes can be made) and Renewal Batches are in effect.  The Approval Process is similar to the RPF process, but with minor changes.  Note: for all actions, the Approval or Underwriting Definition Approval Type must be ‘Renewal’</p>
+        <p class="Bullet1" MadCap:autonum="• ">‘Submit’ the Renewal batch</p>
+        <p class="Bullet2" MadCap:autonum="• ">The Renewal batch status is progressed to ‘Underwriting’</p>
+        <p class="Bullet2" MadCap:autonum="• ">Any existing Approvals are set to ‘Reprocess’ [Db]</p>
+        <p class="Bullet2" MadCap:autonum="• ">All existing Approvals are set to IsActive = False [Db]</p>
+        <p class="Bullet2" MadCap:autonum="• ">Approval Dependencies are created [Db]</p>
+        <p class="Bullet2" MadCap:autonum="• ">Underwriting Definitions are located</p>
+        <p class="Bullet2" MadCap:autonum="• ">Underwriting Approval Records that exist and match an Underwriting Definition are set IsActive = True, Status = ‘Pending’ (or ‘Waiting’ if it is a dependent) [Db]</p>
+        <p class="Bullet2" MadCap:autonum="• ">Underwriting Approval Records that do not match an Underwriting Definition are created [Pipeline] and [Clone Task]</p>
+        <p class="Bullet1" MadCap:autonum="• ">Approve’ an Approval</p>
+        <p class="Bullet2" MadCap:autonum="• ">Similar to the RPF Approval ‘Approve’ process, but the Batch status is progressed to ‘Approved’ when all Approvals are ‘Approved’.</p>
+        <p class="Bullet1" MadCap:autonum="• ">‘Decline’ the Renewal batch</p>
+        <p class="Bullet2" MadCap:autonum="• ">Individual Approval records cannot be Declined, the entire Batch must be Declined</p>
+        <p class="Bullet2" MadCap:autonum="• ">When Declined, all active existing Approval records are set to Status = Reprocess [Db]</p>
+        <h3>Changing Contract Types</h3>
+        <p>Contract Type changes affect the types of Approvals that must be in place for this client.</p>
+        <p class="Bullet1" MadCap:autonum="• ">RFP Batch, Client Master Contract Type Change</p>
+        <p class="Bullet2" MadCap:autonum="• ">The Contract Type cannot be changed from the Client Master once the Contract Status = Submitted. The Batch will have to be Reprocessed to facilitate a Contract Type change</p>
+        <p class="Bullet2" MadCap:autonum="• ">After ‘Reprocess’, all Approvals are set to Status = ‘Reprocess’ [Db].  Those Approvals that applied to the current Contract Type are left IsActive = True</p>
+        <p class="Bullet2" MadCap:autonum="• ">While in ‘Prospect’ status, after the Contract Type change is saved from the Client Master, the Batch is saved [Pipeline] causing Pricing Batch business logic to execute.</p>
+        <p class="Bullet2" MadCap:autonum="• ">As described in the ‘Accept’ process, Underwriting Definitions are re-evaluated based on the Contract Type.  New Approvals are generated as needed and existing Approvals which match the Contract Type (or have an empty Contract Type) are recycled.  The status of all Approvals is reset to ‘Pending’ or ‘Waiting’ (based on dependencies)</p>
+        <p class="Bullet1" MadCap:autonum="• ">RFP Batch, Pricing Batch Contract Type Change</p>
+        <p class="Bullet2" MadCap:autonum="• ">The Contract Type on the Pricing Batch is Read-Only for RFP batch types.  This will prevent Pricing Batch Contract Type changes from occurring from the Pricing Batch.  The deal will have to be ‘Reprocessed’ before the Contract Type can be changed (from the Client Master)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Renewal Batch</p>
+        <p class="Bullet2" MadCap:autonum="• ">The Contract Type cannot be changed once the Batch Status = Activated</p>
+        <p class="Bullet2" MadCap:autonum="• ">While the Batch Status = Underwriting, valid Approvals are in place.  If the Contract Type is changed at this point:</p>
+        <p class="Indent2">Those Approvals are inactivated and set Status = Reprocess [Db]</p>
+        <p class="Indent2">New Underwriting Definitions are retrieved based on the Contract Type and new Approval records are created and existing Approval records which match the Contract Type (or have an empty Contract Type) are recycled.</p>
+        <h3>Client Master RFP actions</h3>
+        <p>The following RFP Actions affect Approvals.  It should be noted that once the RFP batch is ‘Accepted’, Approvals are recycled or created based on the criteria outlined above.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Decline</p>
+        <p class="Bullet2" MadCap:autonum="• ">Sets Approval Status = Reprocess [Db]</p>
+        <p class="Bullet2" MadCap:autonum="• ">Approval remains IsActive = True [Db]</p>
+        <p class="Bullet1" MadCap:autonum="• ">ReActivate</p>
+        <p class="Bullet2" MadCap:autonum="• ">Approval Status is not changed</p>
+        <p class="Bullet2" MadCap:autonum="• ">Sets Approval IsActive = False [Db]</p>
+        <h3>Renewal batch actions</h3>
+        <p>The following Renewal Batch Actions are included to give the reader an understanding of the process as it applies to Approvals</p>
+        <p class="Bullet1" MadCap:autonum="• ">Kill</p>
+        <p class="Bullet2" MadCap:autonum="• ">No effect on Approvals</p>
+        <p class="Bullet2" MadCap:autonum="• ">Approvals that were in place prior to ‘Kill’ are unchanged</p>
+        <p class="Bullet2" MadCap:autonum="• ">When the Renewal Batch is Submitted, Approvals will be created or recycled as necessary</p>
+        <p class="Bullet1" MadCap:autonum="• ">Clone</p>
+        <p class="Bullet2" MadCap:autonum="• ">No effect on Approvals</p>
+        <p class="Bullet2" MadCap:autonum="• ">Approvals that were in place prior to ‘Clone’ are unchanged and left attached to the Batch that was cloned</p>
+        <p class="Bullet2" MadCap:autonum="• ">When the Cloned Renewal Batch is Submitted, Approvals will be inactivated, created or recycled as necessary.</p>
+        <h3>Comparison batches</h3>
+        <p>Approvals that are attached to the RFP Batch at the time of ‘Accept’ are the only Approvals that will need to be processed (Approved or Declined).  As the RFP Batch is ‘Reprocessed’, it is possible that a Comparison Batch could be converted to an RPF Batch.  A workspace could end up with many sets of Approval records attached to the various Batches that were cycled through the Comparison/RPF/Comparison conversion.  The following process is implemented during this conversion:</p>
+        <p class="Bullet1" MadCap:autonum="• ">The current RPF Batch is changed to a Comparison Batch type [Db]</p>
+        <p class="Bullet1" MadCap:autonum="• ">The current RPF Batch Approvals are set IsActive = False, Status = “”[Db]</p>
+        <p class="Bullet1" MadCap:autonum="• ">Any existing Approvals which are attached to the Comparison Batch that will now become the RPF Batch are set IsActive = True, Status = “”[Db]</p>
+        <p class="Bullet1" MadCap:autonum="• ">The Comparison Batch type is changed to RFP [Db]</p>
+        <p>As in other processes, the new RFP Batch can be ‘Submitted’, then ‘Accepted’, and the ‘Accepted’ process described above will be implemented.</p>
+    </body>
+</html>

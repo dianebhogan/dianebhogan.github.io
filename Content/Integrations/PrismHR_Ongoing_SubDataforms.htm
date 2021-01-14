@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>HRP Subscription Dataforms</h1>
+        <p>In the Admin workspace, there will typically be three of these Dataforms:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Client Schema</p>
+        <p class="Bullet1" MadCap:autonum="• ">Employee Schema</p>
+        <p class="Bullet1" MadCap:autonum="• ">Payroll Schema</p>
+        <p class="Bullet1" MadCap:autonum="• ">Security Schema</p>
+        <p class="Bullet1" MadCap:autonum="• ">Voucher Schema</p>
+        <p>Each form contains:</p>
+        <table class="TableStyle-Procedure" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 206px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Schema</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">For Import Ongoing only, defines the type of data this particular Subscription ID evaluates</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Subscription ID</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">The HRP ID of the registered Subscription for this <MadCap:variable name="MyVariables.ProductName"></MadCap:variable> installation.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Replay ID</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">The last Event marker processed from the last time the Ongoing Scheduled Process successfully ran.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Voucher Last Process Date</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">The last date the Voucher Scheduled Process successfully ran.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Notes</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">General information such as the date and time the scheduled process ran, the Replay ID used.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The Client, Employee, Payroll, and Security records are AUTOMATICALLY populated by the HRP Import Ongoing Scheduled Process.</p>
+        <p>For the system to auto-populate the record, you will need to create stub records for the Client and Employee imports.</p>
+        <p class="ProcedureIntro">To create stub records:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Create semi-blank HRP Subscription dataforms, one for Client, Employee, Payroll, and Security.  On these forms, all you have to do is select the Schema and Classes (Client-Master,Location; Employee-Person,Client,Compensation).</p>
+        <p class="L1Num" MadCap:autonum="2. ">On those dataforms leave all other fields empty (no subscription id, no replay id, etc.).</p>
+        <p class="L1Num" MadCap:autonum="3. ">Run the Import Ongoing scheduled process.</p>
+        <p class="L1Num" MadCap:autonum="4. ">If the connection info is correct and PrismHR has properly configured our user account, the process will:</p>
+        <p class="Bullet2" MadCap:autonum="• ">acknowledge that two new subscriptions must be created in HRP</p>
+        <p class="Bullet2" MadCap:autonum="• ">create the new subscriptions in HRP</p>
+        <p class="Bullet2" MadCap:autonum="• ">update our subscription dataforms with the new information</p>
+        <p class="Bullet2" MadCap:autonum="• ">check for any new events (most likely there will not be any since we grab the highest event replay id when the subscription is created)</p>
+        <p class="Bullet2" MadCap:autonum="• ">exit</p>
+        <p class="L1Num" MadCap:autonum="5. ">Review the HRP API Import Ongoing log ad hoc report to see if the process was successful.</p>
+        <p class="L1Num" MadCap:autonum="6. ">The Voucher record must be manually generated:</p>
+        <p class="Bullet2" MadCap:autonum="• ">Schema: Voucher</p>
+        <p class="Bullet2" MadCap:autonum="• ">Voucher Last Process Date: enter the date from which you wish to Import Vouchers.  After this field is populated and the Import Voucher Scheduled Process runs, the process will update this field</p>
+        <p class="Bullet2" MadCap:autonum="• ">No other fields need to be configured</p>
+    </body>
+</html>

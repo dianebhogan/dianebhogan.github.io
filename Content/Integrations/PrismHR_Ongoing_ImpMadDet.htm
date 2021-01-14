@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditionTagExpression="include[SnippetConditions-Imports.Ongoing]">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring the API for Import Map Details</h1>
+        <p>Configure the parameters for the import file.</p>
+        <p>
+            <img src="../Resources/Images/Integrations/PrismAPI.png" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">To configure the API:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>API&#160;Configuration</b>.<br />The API&#160;Configuration dashboard opens.</li>
+            <li>On the  <b>PrismHRAPI</b> item, click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<b>Open</b>).</li>
+            <li>Configure as appropriate for your organization.  The API Configuration fieldset  connects the specific PrismHR installation for the client.</li>
+        </ol>
+        <MadCap:snippetBlock src="../Resources/Snippets/PrismHRAPI_Imports.flsnp" />
+        <ol MadCap:continue="true">
+            <li>
+                <p>Click <span class="UXElement">Save</span>.</p>
+            </li>
+        </ol>
+        <p class="ActionTip">For GetPayrollBatchCutoffDate, ensure that the correct version of the PrismHR API is reflected in the Endpoint URL. After the scheduled process runs, review the API&#160;log for any errors.</p>
+    </body>
+</html>

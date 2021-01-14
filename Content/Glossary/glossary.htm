@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <script src="Resources/ScriptGlossary/glossary.js">
+        </script>
+        <link href="../Resources/Stylesheets/ClientSpace.css" rel="stylesheet" type="text/css" />
+        <link href="../Resources/Stylesheets/Glossary.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <script> 			
+			$(document).ready(function() {
+			$('.GlossaryPageTerm').click(function() {
+			$(this).next().toggle(10);
+			return false;
+			});
+			});
+		</script>
+        <h1>Glossary</h1>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filter glossary terms" title="Type a term" />
+        <MadCap:glossaryProxy />
+    </body>
+</html>

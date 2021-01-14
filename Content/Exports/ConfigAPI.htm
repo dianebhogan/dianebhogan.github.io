@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html>
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    </head>
+    <body>
+        <h1 xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">Configuring the API account information</h1>
+        <p>The API Configuration contains the information to connect to the specific PrismHR installation for the client.</p>
+        <p class="ProcedureIntro">To configure the API:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Advanced</span> &gt; <span class="UXElement">API&#160;Configuration</span>.<br />The API&#160;Configuration dashboard opens.</li>
+            <li>Click <span class="UXElement">Add</span>.<br />The New API&#160;Configuration form opens.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Exports/PrismHRAPIConfiguration.png" alt="" title="" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+            <li>Complete the form.</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 140px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">API Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select <span class="UXElement">PrismHR&#160;API</span>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Application Code</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select <span class="UXElement">PrismHRAPI</span> as the Primary PrismHR&#160;server. There can be multiple instances of this API configuration type for multiple PrismHR servers.  Name them <em>PrismHRAPIx</em>.  The scheduled process will iterate through every API Configuration where Application Code starts with <code>PrismHRAPI%</code>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Application Name</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Type a description. This name is displayed in the ClientSpace lists. Use <span class="UXElement">PrismHR&#160;API</span>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">UserName</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">This is the username registered with PrismHR.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Password </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Provide the password associated with the account username.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Description </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Provide a brief description of the API.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Endpoint</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Type a formatted URL that points to PrismHR, such as <code>https://api.prismhr.com/api-1.18/services/</code>. Must include the trailing <span class="UXElement">/</span> character.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Secondary ID</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">An identifier used to enable the monitoring of all Prism Clients at an installation.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Logging Level</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select a logging level:</p>
+                        <ul>
+                            <li><span class="UXElement">Level 0 (None)</span>: No log data is produced.</li>
+                            <li><span class="UXElement">Level 1 (Errors):</span> Only errors are logged to the Scheduled Process History Table.</li>
+                            <li><span class="UXElement">Level 2 (Verbose)</span>: All log data is stored in the Scheduled Process History Table. This includes entry/status/exit entries for every Prism API call and ClientSpace action (up to the Import Phase). Errors and Information entries are created.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Active</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">When this option is selected, the configuration is active (enabled).</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+    </body>
+</html>

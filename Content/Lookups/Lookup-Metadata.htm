@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Lookups with metadata</h1>
+        <p>Metadata is data about data and provides even more flexibility for lookup use, enabling data associated directly with a particular lookup selection. When adding a lookup group, you can select a dataform to act as the metadata form for that group (see <MadCap:xref href="../Admin_Config/Lookups.html#1." title="1. Add a Lookup Group" alt="1. Add a Lookup Group">1. Add a Lookup Group</MadCap:xref> in Configuring lookups). These are ordinarily custom forms created to store information related to the lookup values used with the lookup group. When a metadata form is associated with a lookup group, the lookups for that group indicate metadata, as shown.</p>
+        <p>
+            <img src="../Resources/Images/Lookups/Lookup-HasMetadata.png" class="thumbnail" />
+        </p>
+        <h2>Examples</h2>
+        <p>The <span class="UXElement">Contract Type</span> lookup in ClientSpace PEO has associated metadata that can determine:</p>
+        <ul>
+            <li>What Template is associated with the contract type?</li>
+            <li>What Legal Entity / SUTA defaults are available when that contract type is selected?</li>
+            <li>Default Workers' Comp Configuration for a workspace.</li>
+        </ul>
+        <p class="StepResult">&#160;</p>
+        <p>The <span class="UXElement">Pay Frequency</span> in ClientSpace PEO has metadata associated that can determine:</p>
+        <ul>
+            <li>How many pay cycles per year  for that frequency, such as Weekly = 52, SemiMonthly = 24, Bi-Weekly = 26.</li>
+            <li>Minimum per check fee to ensure a certain amount of administrative costs are submitted for the year.</li>
+        </ul>
+        <p class="StepResult">&#160;</p>
+        <p class="ActionTip">Before you configure lookup metadata, please log an Extranet case.</p>
+    </body>
+</html>

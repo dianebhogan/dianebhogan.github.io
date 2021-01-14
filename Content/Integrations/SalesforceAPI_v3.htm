@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Salesforce API v3</h1>
+        <p>Salesforce must be configured to use this API.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">The Salesforce API v3 requires a Connected App to be configured (named <span class="UXElement">ClientSpace Integration</span>). If this does not exist, the client must work with their Salesforce expert to create this in their instance of Salesforce.</p>
+        <p class="ProcedureIntro">To modify the existing API Configuration:</p>
+        <ol>
+            <li>Endpoint must be the base OAUTH server. Example: <code>https://test.salesforce.com/services/</code></li>
+            <li>UserName and Password should be the same as the V2 configuration.</li>
+            <li>Apply the following parameter settings:</li>
+        </ol>
+        <div class="indent">
+            <ul style="list-style-type: square;">
+                <li>version = 3</li>
+                <li>consumerkey (new), enter from Connected App configuration</li>
+                <li>consumersecret (new), enter from Connected App configuration</li>
+                <li>restversion (new), Client must determine which version they are using</li>
+            </ul>
+        </div>
+        <p class="ProcedureIntro">To find the Consumer Key and Consumer Secret in Salesforce:</p>
+        <p>After the Connected App is configured, obtain the Consumer Key and Consumer Secret tokens for that App. The following sub-sections explain how to obtain the tokens.</p>
+        <p class="SubHdr">Using Salesforce Classic Experience</p>
+        <ol>
+            <li>In Setup, click <span class="UXElement">Build</span> &gt; <span class="UXElement">Create</span> &gt;&#160;<span class="UXElement">Apps</span>.</li>
+            <li>Click  the Connected App Name (NOT Edit. NOT Manage.). You can also click on Edit and then Save. This takes you to the same place.</li>
+        </ol>
+        <p class="SubHdr">Using Salesforce Lightning Experience:</p>
+        <ol>
+            <li>In Setup, navigate to <span class="UXElement">Apps</span> &gt; <span class="UXElement">App Manager</span>.</li>
+            <li>Find your Connected App in the list and select <span class="UXElement">View</span> from the associated  list (on the far right of the list 	view). You can also select <span class="UXElement">Edit</span> and <span class="UXElement">Save</span>.</li>
+            <li>Obtain the Callback URL (endpoint) from the same place.</li>
+        </ol>
+    </body>
+</html>

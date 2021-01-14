@@ -1,0 +1,660 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Massive_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Salesforce API overview</h1>
+        <p>ClientSpace provides a customizable Salesforce integration through the Salesforce API, enabling you to connect standard (as well as custom) Salesforce fields to <MadCap:variable name="MyVariables.ProductName" />. This basically creates a synchronization that keeps your Salesforce and <MadCap:variable name="MyVariables.ProductName" /> data on the same page automatically. Customizable triggering fields can be set to only sync up the data when it fits your business need. </p>
+        <p>This topic provides an overview of the functionality.  Any Salesforce API implementation would be customized for you by PrismHR. If you have specific questions about the Salesforce API or would like to work with us to create a custom Salesforce integration, log an Extranet case.</p>
+        <p>The following table presents a typical Salesforce API integration, which data is synchronized, and when that occurs would be customized by PrismHR to suit your business needs.</p>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Massive_Table.css');" class="TableStyle-Massive_Table" cellspacing="0">
+            <col class="TableStyle-Massive_Table-Column-Column1" />
+            <col class="TableStyle-Massive_Table-Column-Column1" />
+            <col class="TableStyle-Massive_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Massive_Table-Head-Header1">
+                    <th class="TableStyle-Massive_Table-HeadE-Column1-Header1" colspan="2">Salesforce</th>
+                    <th class="TableStyle-Massive_Table-HeadD-Column1-Header1" colspan="2">ClientSpace</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p><span class="UXElement">Technical Field Name</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p><span class="UXElement">Salesforce API Path object</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2" style="border-right-style: solid;border-right-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 4pt;padding-right: 2pt;padding-top: 2pt;padding-bottom: 2pt;">
+                        <p><span class="UXElement">Field Label</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p><span class="UXElement">Field Name</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2" style="background-color: #c3ffbe;border-right-style: solid;border-right-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 4pt;padding-right: 2pt;padding-top: 2pt;padding-bottom: 2pt;">
+                        <p>Organization</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfAcct.Name</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Account/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2" style="border-right-style: solid;border-right-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 4pt;padding-right: 2pt;padding-top: 2pt;padding-bottom: 2pt;">
+                        <p>Name</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>Name</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfAcct.Owner</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Account/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2" style="border-right-style: solid;border-right-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 4pt;padding-right: 2pt;padding-top: 2pt;padding-bottom: 2pt;">
+                        <p>Assigned To</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>flUserIDOwner</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfAcct.Phone</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Account/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2" style="border-right-style: solid;border-right-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 4pt;padding-right: 2pt;padding-top: 2pt;padding-bottom: 2pt;">
+                        <p>Phone</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>Phone</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfAcct.Fax</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Account/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2" style="border-right-style: solid;border-right-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 4pt;padding-right: 2pt;padding-top: 2pt;padding-bottom: 2pt;">
+                        <p>Fax</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>Fax</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfAcct.Website</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Account/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2" style="border-right-style: solid;border-right-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 4pt;padding-right: 2pt;padding-top: 2pt;padding-bottom: 2pt;">
+                        <p>Website</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>Website</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfOpptyty.LeadSource</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Opportunities/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2" style="border-right-style: solid;border-right-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 4pt;padding-right: 2pt;padding-top: 2pt;padding-bottom: 2pt;">
+                        <p>Source</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>crSource</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfAcct.Industry</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Account/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2" style="border-right-style: solid;border-right-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 4pt;padding-right: 2pt;padding-top: 2pt;padding-bottom: 2pt;">
+                        <p>Business Type</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>crBusinessType</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfAcct.BillingStreet</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Account/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2" style="border-right-style: solid;border-right-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 4pt;padding-right: 2pt;padding-top: 2pt;padding-bottom: 2pt;">
+                        <p>Address1, Address2</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>Address1</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfAcct.BillingStreet</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Account/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2" style="border-right-style: solid;border-right-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 4pt;padding-right: 2pt;padding-top: 2pt;padding-bottom: 2pt;">
+                        <p>Address2</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>Address2</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfAcct.BillingCity</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Account/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2" style="border-right-style: solid;border-right-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 4pt;padding-right: 2pt;padding-top: 2pt;padding-bottom: 2pt;">
+                        <p>City</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>City</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>SfAcct.BillingState</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Account/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2" style="border-right-style: solid;border-right-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 4pt;padding-right: 2pt;padding-top: 2pt;padding-bottom: 2pt;">
+                        <p>State</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>State</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfAcct.BillingPostalCode</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Account/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2" style="border-right-style: solid;border-right-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 4pt;padding-right: 2pt;padding-top: 2pt;padding-bottom: 2pt;">
+                        <p>Postal Code</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>PostalCode</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfAcct.BillingCountry</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Account/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2" style="border-right-style: solid;border-right-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 4pt;padding-right: 2pt;padding-top: 2pt;padding-bottom: 2pt;">
+                        <p>Country</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>Country</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfAccountID</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Account/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2" style="border-right-style: solid;border-right-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #000000;padding-left: 4pt;padding-right: 2pt;padding-top: 2pt;padding-bottom: 2pt;">
+                        <p>ImportID</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>ImportID</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2" style="background-color: #c3ffbe;">
+                        <p>Org
+ Other Info</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfOppty.CloseDate</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Opportunities/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Expected Close Date</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>ExpectedCloseDate</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfOppty.Type</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Opportunities/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfOppty.Lead Source</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Opportunities/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfOppty.Probability (%)</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Opportunities/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Probability of Close</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>ProbabilityofClose</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfOppty.ID</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Opportunities/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2" style="background-color: #c3ffbe;">
+                        <p>Contact</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfContact.AccountId</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>
+  Contacts/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Organization</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>fkOrganizationId</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfContact.Owner</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Contacts/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Assigned To</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>fkAssignedToUserID</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfContact.FirstName</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Contacts/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>First</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>FirstName</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfContact.LastName</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Contacts/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Last</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>LastName</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfContact.Title</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Contacts/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Job Title</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>Title</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfContact.Phone + Ext</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Contacts/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Business Phone</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>BusinessPhone</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfContact.Email</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Contacts/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Primary Email</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>Email1</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfContact.MobilePhone</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Contacts/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Mobile</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>CellPhone</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfContact.Fax</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Contacts/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Fax</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>Fax</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfContact.MailingStreet</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Contacts/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Address 1</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>Address1</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfContact.MailingCity</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Contacts/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>City</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>City</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfContact.MailingState</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Contacts/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>State</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>State</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfContact.MailingPostalCode</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Contacts/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>PostalCode</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>PostalCode</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfContact.MailingCountry</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Contacts/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Country</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>Country</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfContactID</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Contacts/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Import ID</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>ImportId</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2" style="background-color: #c3ffbe;">
+                        <p>Client&#160;Master</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>SIC Code</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>luAltIndustryCode</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Activation Date</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>StartDate</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfAcct.ParentId</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Account/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Parent Company</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>fkParentCompanyID</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Kill Reason</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>luKillReason</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>sfOppty.Descriptions</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Opportunities/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">
+                        <p>Description of Operations</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">
+                        <p>DescriptionofOperations</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>sfOppty.StageName</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Opportunities/</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>Status</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">
+                        <p>Status</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Massive_Table-BodyE-Column1-Body2">
+                        <p>gen_ClientTeam</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Massive_Table-Body-Body2">
+                    <td class="TableStyle-Massive_Table-BodyB-Column1-Body2">
+                        <p>sfOppty.Owner</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyB-Column1-Body2">
+                        <p>Opportunities/&#160;</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyB-Column1-Body2">
+                        <p>Sales Respresentative</p>
+                    </td>
+                    <td class="TableStyle-Massive_Table-BodyA-Column1-Body2">
+                        <p>fkSalesRepUserID</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The Salesforce API integration allows you to connect custom Salesforce fields (where the technical name ends in <b>_c</b>) to fields in ClientSpace, allowing you to implement an API unique to your business.</p>
+    </body>
+</html>

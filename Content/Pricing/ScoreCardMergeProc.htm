@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Client profitability</h1>
+        <p>You can run a Client Profitability report from a link on the Client Master. <MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">For details about the report, see <MadCap:xref href="../Profit/Intro.htm" title="Client Profitabilty report" alt="Client Profitabilty report">[%=MyVariables.ProductName%] Profitability Report</MadCap:xref>.</MadCap:conditionalText> <MadCap:conditionalText MadCap:conditions="ClientSpace.Print">For details about the report, review the <i>Client Profitability Guide</i>.</MadCap:conditionalText></p>
+        <p>A stored procedure for the Client Scorecard merge, <b>peo_merge_client_profitability</b>,  includes scorecard fields and the following additions. To implement this feature, you need a merge template. For assistance, please log a case in the Extranet. </p>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 204px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Payroll tab</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Returns the following</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">The merge date range applies to all results and returns the following:</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">Count of payroll batches in date range (integer)
+</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Count of paychecks (employees paid) in date range </p>
+                        <p class="TableBullet" MadCap:autonum="• ">
+Bill Amount, Cost Amount, Bill Code, and metadata value on Bill Code (Billing Voucher)
+</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Total count of payroll batch dataforms by batch type in date range (integer)  R, S, M, Other</p>
+                        <p class="TableBullet" MadCap:autonum="• ">TotalWSEPaid by: TotalR, TotalS, TotalM, TotalOther
+</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Total Checks Processed equal to the sum of Employee Count field on all batches in the date range
+</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Average EE Count: Total Employee Count divided by count of batches in the date range</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 205px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Contract Info</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Current batch returns</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Surcharge list data associated with current batch returns:</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">fkSurchargeTypeID (decoded)
+</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Surcharge
+</p>
+                        <p class="TableBullet" MadCap:autonum="• ">SurchargeDescription</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 205px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Commission list data</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Current batch returns</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Commission list data associated with current batch returns:</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">fkSalesEntityID (decoded)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">luCommissionMethod (decoded)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">SalesCreditPct</p>
+                        <p class="TableBullet" MadCap:autonum="• ">PercentProfit</p>
+                        <p class="TableBullet" MadCap:autonum="• ">PercentPayroll</p>
+                        <p class="TableBullet" MadCap:autonum="• ">FlatCommission</p>
+                        <p class="TableBullet" MadCap:autonum="• ">PerHeadCommission</p>
+                        <p class="TableBullet" MadCap:autonum="• ">SurchargePercent</p>
+                        <p class="TableBullet" MadCap:autonum="• ">PercentPremium</p>
+                        <p class="TableBullet" MadCap:autonum="• ">PercentAdmin</p>
+                        <p class="TableBullet" MadCap:autonum="• ">EffectiveDate</p>
+                        <p class="TableBullet" MadCap:autonum="• ">ExpirationDate</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 205px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Client Service</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Column</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p>&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">HourlyCost by Department (Client Visit Type Metadata)
+</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 205px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Unemployment</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Column</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p>&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">Returns the Latest Value as of value.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Returns a sum of all of the active benefit charges. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

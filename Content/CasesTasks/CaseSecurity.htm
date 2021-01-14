@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Case security</h1>
+        <p>Case types can be secured on the case type form <b>Admin Workspace</b> &gt; <b>Case Types</b>.</p>
+        <p class="Bullet1" MadCap:autonum="• ">The <b>Assigned To</b> user as well as Users in the <b>Notification</b> role,  <b>Escalation Level 1</b> or <b>Escalation Level 2</b> roles always have rights to the case regardless if it is a secure case type.</p>
+        <p class="Bullet1" MadCap:autonum="• ">If the Secure option is cleared on the Case Type, then any Internal User with access to cases has access to that Case Type.  If it is selected, only those users and Global Admins have access to that Case Type.</p>
+        <p class="Bullet1" MadCap:autonum="• ">When the Case Type is secured, the system generates a CaseType_#TypeName# security entity that can then be used to provide secure case type access to users other than those directly associated with the case type (see above). So, if the Case Type of Client Payrolls was secured, the system would generate a CaseType_ClientPayrolls entity that could then be added to a role to provide secure access to cases of that type.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Secured Case Types implement Row (or record) Level Security, meaning that when the case is generated, security roles are generated for the user roles mentioned previously, for that individual case using the role values on the case type at the time.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Making a Case Type secured, or changing the roles associated with that security <b>will only affect newly created cases going forward from the time of the change</b>. Likewise, removing case type security does not remove security on the previously created cases of that type.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Global Admins can click the padlock icon in the header of an individual Case to remove record level security for individual cases.</p>
+    </body>
+</html>

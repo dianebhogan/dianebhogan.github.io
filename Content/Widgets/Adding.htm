@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Adding widget layouts</h1>
+        <p>This procedure involves adding the widget layouts, browsing the library, configuring the widget and widget layouts, and publishing.</p>
+        <p class="ProcedureIntro">To add widget layouts:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png"></img>  &gt; <b>Widget Layouts</b>.</p>
+        <p class="StepResult">The Widget Layouts dashboard opens. From here, you can add and manage widget layouts for your <MadCap:variable name="MyVariables.ProductName"></MadCap:variable> installation.</p>
+        <p class="L1Num" MadCap:autonum="2. ">From the Widget Layouts list, you can do the following:</p>
+        <div class="indent">
+            <ul style="list-style-type: square;">
+                <li><strong>Search / More</strong>: Works as the standard <MadCap:variable name="MyVariables.ProductName" /> searches. By default, the list only displays published widgets.</li>
+                <li><strong>Add</strong>: Click to add a new widget layout.</li>
+                <li><strong>Edit</strong>: Select a widget from the list and click to edit an existing widget layout.</li>
+                <li><strong>Delete</strong>: Delete a selected widget layout.</li>
+            </ul>
+        </div>
+        <p class="L1Num" MadCap:autonum="3. ">To add a new widget layout, click <b>Add</b>.</p>
+        <p class="StepResult">The Widget Layout Details form opens.</p>
+        <p class="L1Num" MadCap:autonum="4. ">Complete the form:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 125px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Name</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Name of your new layout. This should be descriptive of layout type and audience, for example, <i>Payroll Home</i>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Target Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Target Type determines where the configured widget layout is displayed within the <MadCap:variable name="MyVariables.ProductName"></MadCap:variable> application, as well as what display conditions are available for use:</p>
+                        <ul>
+                            <li><b>Workspace</b>: Adds the widget to the Workspace Landing page based on the assigned Weight and Conditions set.</li>
+                            <li><b>Home</b>: Creates a Home page that displays based on the assigned Weight and Conditions set.</li>
+                            <li><b>Dataform</b>:&#160;Creates a dataform header widget layout that displays when that dataform opens based on the assigned Weight and Conditions set.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Weight</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Determines the priority with which layouts are presented to the <MadCap:variable name="MyVariables.ProductName"></MadCap:variable> user, meaning their placement in the list. All things being equal (conditions), the weight given the layout determines what is presented. The greater the weight number, the more likely the dashboard is selected. For example, a weight of 20 is more likely to be selected than 15.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Add Widgets</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select and add widgets from the widget library  to your widget layout.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Set Conditions</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">Use Set Conditions after you have added a widget layout to determine the conditions under which a layout is displayed. These conditions range from departmental or role-based to field value expressions, such as the status of a client. The conditions that are available for use will vary based on the selected Target Type.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Browsing the widget library</h2>
+        <p>Next, let's browse the widget library, which is the current list of available widget types that you can add to layouts. You can view the widget library from the Add Widgets action in the Widget Layout Details form. This procedure continues from the previous steps.</p>
+        <p class="ProcedureIntro">To view the widget library:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">From the <b>Widget Layout Details</b> form, click <b>Add Widgets</b>.</p>
+        <p class="StepResult">The Widget Library is displayed showing the current list of widget types that are available, accompanied by a brief description of what the widgets display.</p>
+        <div class="indent">
+            <ul style="list-style-type: square;">
+                <li><strong>Search</strong>: While the widget library is currently small and easily manageable, we envision the list will grow to the point you may need to search to find the widget type you want to add.</li>
+                <li><strong>Add Widgets</strong>:  Select one (or more) widgets and click to add the widget(s) to your layout. You can then re-arrange the widgets to your liking.</li>
+            </ul>
+        </div>
+        <p class="L1Num" MadCap:autonum="2. ">After you add widgets, you are returned to the Widget Layout Details form. The newly added widget appears in the grid.</p>
+        <h2>Configuring the widget and widget layouts</h2>
+        <p class="ProcedureIntro">To configure the widgets and widget layouts:</p>
+        <p class="L1Num1" MadCap:autonum="1. "> From the grid, the Global Administrator can determine the size and placement of the selected widgets.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Widget/AddWidget_grid.png">
+            </img>
+        </p>
+        <p class="L1Num" MadCap:autonum="2. ">Follow the numbers in the image and table.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 112px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">1. Settings</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">The settings control allows you to add settings to Widget Types that require additional configuration. If the Widget type does not require configuration, the settings control does not appear.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">2. Delete</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Remove this widget from the layout.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">3. Re-size</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Drag the arrow in the lower right corner of the widget to re-size the widget control. The system automatically snaps to the nearest grid line when you release it. Some widget types cannot be re-sized, such as Notifications and Watch. Attempts to re-size these widget types in your layout will lead to unexpected behavior in the application.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">4. Grid area</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">The grid area represents the white space on the page for adding widgets to your layout. To change your Widget Layout,  drag widgets to this grid area.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Publishing the widget layout</h2>
+        <p>Next, you are ready to publish the new widget layout. You can publish the widget layout after it is saved.</p>
+        <p class="ProcedureIntro">To publish the new widget layout:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">After you have configured your widget layout, click <b>Save</b>.</p>
+        <p class="StepResult">You are returned to the Widget Layouts list. Your new Widget Layout is displayed in the list as unpublished. The newly added entry is displayed in italics and bold – meaning it is unpublished.</p>
+        <p class="L1Num" MadCap:autonum="2. ">To publish the new widget layout, select the <span class="UXElement">Published</span> option (far right column).</p>
+        <p class="L1Num" MadCap:autonum="3. ">To unpublish, clear the <span class="UXElement">Published</span> option.</p>
+    </body>
+</html>

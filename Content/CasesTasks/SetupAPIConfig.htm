@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring the API&#160;</h1>
+        <p>First, you need to set up an API configuration to allow the external discussion thread replies to attach to <MadCap:variable name="MyVariables.ProductName" /> and create the Client Service Case Discussion message. The purpose of the API&#160;record is to sign in the external user for access to the case discussion threads.</p>
+        <p>
+            <img src="../Resources/Images/Case/CSCDiscsuss.png" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">To configure the API fields:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>API Configuration</b>.<br />The API Configuration dashboard opens.</li>
+            <li>Click <b>Add</b>.<br />The New API Configuration form opens.</li>
+            <li>Complete the form fields required to configure Client Service Case Discussions.</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 140px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">API Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select <b>Web Service</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Application Code</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select <b>CSCDiscuss</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Application Name</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Type <b>Client Service Case Discussion</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">UserName</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Provide a username.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Password </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Provide an appropriate password.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Description </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">Suggested description:&#160;Used by the Client Service Case Discussion process to sign in an external user, allowing access to discussion forms and attached files. </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+    </body>
+</html>

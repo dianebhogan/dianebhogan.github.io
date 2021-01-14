@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Workflow Channels" />Cloning Surcharges with Workflow Channels</h1>
+        <p>You can clone Surcharges with Workflow Channels with some simple setup configurations.  First, you must update the business rules on Surcharges. Next, you must configure a Workflow Channel to clone the Surcharge. This topic guides you through the configuration.</p>
+        <p>The surcharges clone when you click <span class="UXElement">Generate Quote</span> on the Pricing Console. 
+
+If there is more than one Surcharge to clone, just add it as another item on the same Workflow Channel. 
+
+Also, you may want to restrict Surcharges to clone for only certain Contract Types.  If so, just configure additional condition<MadCap:annotation MadCap:createDate="2020-03-13T17:35:18.7494954-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="Where to add this content? Seems that I need to add a section for the Pricing Console? Please provide guidance. Thank you!" MadCap:editor="dhogan" MadCap:editDate="2020-03-13T17:45:42.0126255-04:00">s.</MadCap:annotation></p>
+        <h2>Configure the Business <MadCap:annotation MadCap:createDate="2020-03-13T17:36:56.0605220-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="How many business rules? Just the one for Add Surchage?" MadCap:editor="dhogan" MadCap:editDate="2020-03-13T17:37:10.5558554-04:00">Rules</MadCap:annotation></h2>
+        <p>In this step, you want to update Business Rules on Surcharges to run on the Quick Create and Default pipelines. You must configure the following rules: SetSurchargePricingBatchID, SetBillRate, UpdateProfitability, AddSurcharge, RecalPayPeriodSurcharge.  </p>
+        <p>
+            <img src="../Resources/Images/Workflow/BizLogic_Dataform_Surcharge.png" alt="" title="" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">To configure the business rules:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Advanced</span> &gt;&#160;<span class="UXElement">Manage Rules</span>.<br />The Custom Logic Rules display.</li>
+            <li>In <b>More</b>, search for Rule Type &gt; Biz Logic, Dataform &gt; Surcharge, to locate the methods (see screenshot).</li>
+            <li>Open (<img src="../Resources/Images/ICONS/ICON_Jump.png" /> <span class="UXElement">Jump</span>) a Method Name, such as <span class="UXElement">SetSurchargePricingBatchID</span>.<br />The Rule Details form opens.</li>
+            <li>In <span class="UXElement">Execution Pipeline</span>, add <span class="UXElement">Default</span> and <span class="UXElement">QuickCreate</span> (if not present).</li>
+            <li>Click <span class="UXElement">Save</span>.</li>
+            <li>Repeat this procedure for all 5 rules.</li>
+        </ol>
+        <h2>Configure a Workflow Channel to clone the Surcharge</h2>
+        <p>In this section, you will configure a Workflow Channel with Triggering Form = Pricing Batch and Execution Pipeline = QuickCreate. If there is more than one Surcharge to clone, add it as another item on the same Workflow Channel.</p>
+        <h3>Step 1: Initial</h3>
+        <p>In this step, we create the Channel descriptor. In the top section, we define the Channel name and the Dataform from which the Workflow will be triggered, as well as who owns the Channel. The Workflow Action configures the triggering action for the first workflow as well as what form or task will be generated.</p>
+        <p>
+            <img src="../Resources/Images/Workflow/Step1_Surcharge.png" alt="" title="" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">To configure a Workflow Channel:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Workflow Channels</span>.<br />The Workflow Channels dashboard opens.</li>
+            <li>Click <span class="UXElement">Add</span> to begin creating your new workflow.<br />The Choose Workflow Triggering Type dialog opens with "What type of triggering will the new Workflow use?".</li>
+            <li>Select <span class="UXElement">Real Time</span>.</li>
+            <li>Complete the form fields.</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 169px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Channel Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Provide a unique Channel Name.  For example, <i>Surcharge Clone from Pricing Batch during Quick Create</i>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Triggering Form</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Pricing Batch</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Execute On </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Update</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Execution Pipeline</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">QuickCreate</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Workspace Template</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Keep the default: All Templates.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Channel Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Provide a brief description of
+ this channel.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Channel Owner</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Defaults to the current user.
+ Set it to the owner of this process.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1"><b>Workflow Action</b>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">This section is dedicated to
+ the primary triggering condition for the channel.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">No Primary Trigger</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select this option.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Triggered Form</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Select <b>Surcharge</b>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The wizard progresses to Step 2 Content.</p>
+        <h3>Step 2: Content</h3>
+        <p>Information entered into the fields is copied to each cloned object created by this channel.</p>
+        <p class="ActionTip">Let the Business Rules manage the default values on the Surcharge. Ensure that only the Surcharge Type fields are visible on this step. If other fields are exposed, they will be cloned as shown and override the default values usually handled by the Business Rules. To remove the visibility of these extra fields, on Field Properties, set the fields as not triggerable.</p>
+        <ol>
+            <li>In <span class="UXElement">Item Name</span>, enter a brief description of what this workflow does.</li>
+            <li>In <span class="UXElement">Surcharge Type</span>, click the link <span class="UXElement">None</span>.<br />The Surcharge Type Options dialog box opens.</li>
+            <li>Select <span class="UXElement">Admin Workspace</span>.</li>
+            <li>In <span class="UXElement">Record</span>, select an appropriate Surcharge, such as <span class="UXElement">Client Setup</span>.</li>
+            <li>Click <span class="UXElement">Ok</span>.<br />You are returned to the wizard.</li>
+            <li>Click <span class="UXElement">Next</span>.</li>
+        </ol>
+        <h3>Step 3: Notifications</h3>
+        <ul>
+            <li>Click <span class="UXElement">Next</span>. You can skip this step.</li>
+        </ul>
+        <h3>Step 4 <MadCap:annotation MadCap:createDate="2020-03-13T17:37:46.1170153-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="This is repeated under Workflow Item seciton. Where should it be?" MadCap:editor="dhogan" MadCap:editDate="2020-03-13T17:38:02.8018325-04:00">Conditions</MadCap:annotation></h3>
+        <p class="Body">This is where you add conditions. A Workflow Channel requires at least one condition. A Pricing Batch is always added with the Status set to New, so this is a safe assumption. This is where you configure Pricing Batch = New and any other additional conditions that may be applicable such as Contract Type = X.</p>
+        <ol>
+            <li>Select <span class="UXElement">Only trigger this workflow once</span>.</li>
+            <li>Select <span class="UXElement">Publish</span>.</li>
+            <li>Click <span class="UXElement">Add</span>.<br />A row opens to add a condition.</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Source</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Pricing Batch</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Status (luBatchStatus)</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Operator</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Equals</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">New</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Label</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Leave empty or provide a Label if you need to use Condition Expression.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Finish</span>.</li>
+        </ol>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">In Step 1, we do not use a Primary Trigger Condition because a field must be dirty. A Stored Procedure creates the Pricing Batch outside of Biz Logic; therefore, it is not dirty. After created, the Pricing Batch is then saved back through the Dataform Pipeline as an Update and run through Biz Logic. When this happens, the Batch Status is not evaluated as dirty.</p>
+        <ol MadCap:continue="true">
+            <li>Publish and test your workflow.</li>
+        </ol>
+    </body>
+</html>

@@ -1,0 +1,831 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Using replace fields</h1>
+        <p>Replace fields must be properly formatted and wrapped in curly braces { } to be recognized by <MadCap:variable name="MyVariables.ProductName" /> as data that you want to replace.  Fields available for use as replace fields are from the calendar event, from the related Organization, and from the Contact related to the calendar event.  When adding replacement fields, follow these guidelines.</p>
+        <p class="ProcedureIntro">Event Fields</p>
+        <p class="Bullet1" MadCap:autonum="• ">Only the field name is required: {EventBody}</p>
+        <p class="ProcedureIntro">Organization and Contact fields</p>
+        <p>The type and field name are required, separated by a period (<b>.</b>).</p>
+        <p class="Bullet1" MadCap:autonum="• ">{Organization.Name}</p>
+        <p class="Bullet1" MadCap:autonum="• ">{Contact.LastName}, {Contact.FirstName}</p>
+        <p>The following list contains a complete list of available fields. </p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 192px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Object</th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Field Name</th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Field Description</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Sample</th>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Event</th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Subject</th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Event Subject text</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">This is the Subject</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Enter the field name without a prefix, <b>{Subject}</b></td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">EventBody</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Event Body text</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">This is the Body</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">ShortStartDate</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Event Start Date (short)</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">5/30/2017</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">ShortEndDate</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Event End Date (short)</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">5/30/2017</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">FormattedDate</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Event Duration (formatted)</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">5/30/2017 2:00 PM-2:30 PM</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">ProjectName</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Event Workspace Name</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Jim's Testing Workspace</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">OrganizerUserName</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Event Organizer User Name</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Developer User</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">CreatedByUser</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Event Created By UserID (decoded)</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">User, Developer</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">DateCreated</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Event Create Date (short)</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">5/29/2017</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">OrganizationName</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Associated Organization Name</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">415 Group</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Location</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Event Location text</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Jim's Office</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">DisplayStartDate</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Event Start Date (formatted)</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Tuesday, May 30 2017 11:00 AM</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">DisplayEndDate</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Event End Date (formatted)</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Tuesday, May 30 2017 11:30 AM</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">MeetingTypeDecode</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Event Meeting Type (Decode value)</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Standard Meeting</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">MeetingStatusDecode</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Event Status (Decode value)</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Pending</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">MeetingCategoryDecode</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Event Category (Decode value)</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Sub Meeting 1</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">OrganizerEmail</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Event Organizer User Email</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">DateCreatedUtc</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Event Create Date in UTC</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">2017-05-30T14:22:40.43-04:00</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">DateUpdatedUtc</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Event Update Date in UTC</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">2017-05-30T14:22:40.43-04:00</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">StartDate</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Event StartDate (raw)</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">2017-05-30T14:00:00-04:00</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">EndDate</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Event EndDate (raw)</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">2017-05-30T14:30:00-04:00</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">OriginalStartDate</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Event Original Start Date (raw)</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">2017-05-30T14:00:00-04:00</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">OriginalEndDate</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Event Original End Date (raw)</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">2017-05-30T14:00:00-04:00</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">UtcStartDate</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Event Start Date (UTC raw)</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">2017-05-30T18:00:00-04:00</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">UtcEndDate</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Event End Date (UTC raw)</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">2017-05-30T18:00:00-04:00</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">fkOrganizerUserID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Event Organizer UserID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">5204</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">fkProjectID</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Event ProjectID</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">5218</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">pkCalendarEventID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">The primary key of the Event</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">543</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">CreatedByUserID</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Event Created By UserID</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">5204</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">RowGUID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">The RowGUID of the Event</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">a1505fd6-ddc8-47cf-953f-fdd192287c51</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">IsRecurring</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Recurring Event flag</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">FALSE</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">IsAllDay</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">All Day Event flag</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">FALSE</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">IsPrivate</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Private Event flag</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">FALSE</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">luMeetingType</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Meeting Type (code value)</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Standard</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">luCalendarEventStatus</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Event Status (code value)</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Pending</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">luCalendarEventCategory</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Event Category (code value)</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">SubMeeting1</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">fkContactID</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Associated Contact ID</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">2376</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Sequence</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Event Sequence</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">0</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">fkOrganizationID</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Associated Organization ID</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">3289</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">ParentRowGUID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Parent RowGUID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">OrganizerGUID</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Event Organizer User GUID</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">RecurrenceEditMode</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Recurrence Edit Mode text</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Accepted</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Invitee's who have Accepted</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">User, Developer</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Tentative</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Invitee's who have not yet Accepted</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Dude, Barry</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Declined</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Invitee's who have Declined</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="background-color: #dcdcdc;font-weight: bold;">Organization</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="background-color: #dcdcdc;font-weight: bold;">Name</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="background-color: #dcdcdc;font-weight: bold;">Org Name</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2" style="background-color: #dcdcdc;font-weight: bold;">415 Group</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Enter the field name, beginning with <b>Organization.</b><![CDATA[  ]]><b>{Organization.AKA}</b></td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">EmployerIDNumber</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">FEIN</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">555666-8888</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">AKA</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">DBA</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Jim Test DBA</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Address1</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Address 1</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Address2</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org Address 2</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">City</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org City</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">State</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org State (abbreviated)</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">NE</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">PostalCode</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Postal Code</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Country</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org Country</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">County</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org County</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Phone</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org Phone</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">(303) 221-3155</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Phone2</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Phone 2</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Fax</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org Fax</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">(303) 221-2431</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Website</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Website</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">http://www.netwisetech.com</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">GeneralNotes</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org General Notes</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Zoom Info Company search…</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">OrganizationOwnerName</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Owner Name</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">JA</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">pkOrganizationId</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org primary key</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">fkContactIDPrimary</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Primary Contact primary key</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">fkUserIDOwner</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org Assigned To primary key</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Active</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Active or Inactive Org flag</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">TRUE</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">crCategory</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org Category (code value)</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Cat2</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">crSource</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Source (code value)</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Source1</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">crStatus</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org Status (code value)</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Status1</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">crBusinessType</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Business Type (code value)</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">BusType1</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">HotList</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org Hot List</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Locked</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Locked flag</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">FALSE</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">CreateDate</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org Create Date (raw)</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">2007-08-10T00:00:00-04:00</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">CreateUserId</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Create UserID</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">4656</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">UpdatedDate</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org Update Date (raw)</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">2017-05-15T15:34:14-04:00</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">UpdatedUserId</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Updated By UserID</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">5204</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Lineage</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org Lineage</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">IndustryCode</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org IndustryCode</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">ImportID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org ImportID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">IBMC</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">AllowImport</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Allow Import Flag</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">TRUE</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">OrganizationGUID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">OrganizationGUID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">AuditTrail</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Audit Trail</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">** User, Admin 10/23/2014…</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">DoNotCall</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org Do Not Call Flag</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">FALSE</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Email</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Email</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">jim@nwt.industry</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">fkPrimaryProjectID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org fkPrimaryProjectID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">5218</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">SoundexValue</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Soundex Value</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">0</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">ZoomInfoID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Zoom Info ID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">75759934</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">DateLastZoomSync</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Date Last Zoom Info Sync</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">2017-01-12T00:00:00-05:00</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">luZoomSyncStatus</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org Zoom Info Sync Status (code)</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Complete</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">StatusDecode</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Status (Decode value)</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Status 1</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">CreateUserName</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org Created By User Name</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Kingston1, David</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">AssignedTo</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org  Assigned To User Name</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">User, Admin</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">DepartmentName</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org Department Name</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Sales</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">ContactName</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Contact Name</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Bundy, Al</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="background-color: #dcdcdc;font-weight: bold;">Contact</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="background-color: #dcdcdc;font-weight: bold;">FirstName</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="background-color: #dcdcdc;font-weight: bold;">Contact First Name</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2" style="background-color: #dcdcdc;font-weight: bold;">Al</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Enter the field name, beginning with <b>Contact.</b>  <b>{Contact.LastName}</b></td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">MiddleName</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Middle Name</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">LastName</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact Last Name</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Bundy</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Prefix</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Name Prefix</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Mr.</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Suffix</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact Name Suffix</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Jr.</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Title</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Title</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Manager</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Address1</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact Address1</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">1 Tech Way</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Address2</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Address2</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Suite 101</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">City</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact City</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Bradenton</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">State</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact State (abbreviated)</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">FL</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">PostalCode</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact Postal Code</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">County</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact County</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Manatee</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Country</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact Country</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">US</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">BusinessPhone</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Business Phone</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Ext</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact Phone Ext</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">CellPhone</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Cell Phone</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Email1</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact Email1</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">albundy@nwt.com</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Email2</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Email2</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Pager</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact Pager</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Fax</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Fax</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">GeneralNotes</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact General Notes</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">ContactName</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Full Name</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Bundy, Al</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">OrgName</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact Org Name</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">415 Group</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Organization</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Organization</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">415 Group</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">pkContactId</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact primary key</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">fkOrganizationId</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact's Org ID</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Active</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Active flag</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">TRUE</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">CreateDate</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Create Date (raw)</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">2013-10-28T19:55:06-04:00</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">CreateUserId</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact Created By User ID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">UpdatedDate</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Updated Date (raw)</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">2017-05-08T15:41:02-04:00</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">UpdatedUserId</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact Update By User ID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Category</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Category (code value)</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">ContactGUID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact GUID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">fkAssignedToUserID</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Assigned To User ID</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">SyncWithOrganizationAddress</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Sync With Organization Address flag</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">TRUE</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Nickname</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Name Nickname</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">ImportID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact ImportID</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">ProfileImage</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Profile Image Link GUID</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">CreateUserName</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Created By User Name</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">User, Admin</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">LoginId</td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Contact Login Id</td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

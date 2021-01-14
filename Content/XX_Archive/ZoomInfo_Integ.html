@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+    </head>
+    <body>
+        <h1>ZoomInfo</h1>
+        <p>ZoomInfo is a powerful marketing tool to help you to automate Organization management and marketing. The following document describes the ClientSpace integration of this tool. If you have questions about implementing either of these products with ClientSpace, log an Extranet case.&#160;</p>
+        <p><strong>Purpose</strong>
+        </p>
+        <p>The purpose of this specification is to describe the integration with ZoomInfo, and to provide a guide for configuring the system to properly implement the functionality.</p>
+        <p><strong>Process Overview</strong>
+        </p>
+        <p>ZoomInfo&#160; is a&#160; system focused on collecting and managing industry marketing data.&#160; The ClientSpace integration process is designed to synchronize specific Organization information with this system.</p>
+        <p>This integration utilizes the following ClientSpace functionality:</p>
+        <ul>
+            <li>Scheduled processes that perform the data synchronization</li>
+            <li>API Configuration forms that define the API connection and operational data</li>
+            <li>Organization, Org OtherInfo&#160; forms that are used to store the ZoomInfo data</li>
+            <li>HIGHLY configurable within ClientSpace.&#160; See the Configuration sections below for details</li>
+        </ul>
+        <p>ZoomInfo utilizes Import Map Headers to control what ZoomInfo data will be retrieved and where it will be stored.&#160; Basically the process:</p>
+        <ul>
+            <li>Searches for Organizations and Contacts that have no ZoomInfo ID set in ClientSpace</li>
+            <li>If a match is found in ZoomInfo, detailed information (configurable) is retrieved from ZoomInfo and stored in ClientSpace.&#160; The ZoomInfo ID is set on the Organization and/or Contact</li>
+        </ul>
+        <p>
+            <br />
+        </p>
+        <p><strong><em>Important Note: these services charge for each request and limit the number of API calls allowed in a given timeframe.&#160; Use caution when testing!</em></strong>
+        </p>
+        <p><strong>Prerequisites</strong>
+        </p>
+        <p>Before utilizing these integrations, complete the following items:</p>
+        <ul>
+            <li>ZoomInfo API accounts have to be established and the following information must be available:<ul><li>ZoomInfo<ul><li>Username</li><li>Password</li><li>API Endpoint Url</li></ul></li></ul></li>
+        </ul>
+        <p>
+            <br />
+        </p>
+        <p><strong>ZoomInfo ClientSpace Configuration</strong>
+        </p>
+        <p>The following forms must be configured:</p>
+        <p><strong>API Configuration</strong>
+        </p>
+        <p>
+            <img src="../Resources/Images/Integrations/ActOnConfig.png" />
+        </p>
+        <ul>
+            <li style="list-style-type: none;background-image: none;">
+                <ul>
+                    <li><strong>API Type:</strong> Web Service</li>
+                    <li><strong>App Code:</strong> ZoomInfo (cannot deviate!)</li>
+                    <li><strong>Endpoint:</strong> this is the ZoomInfo API server Url that must end with ‘/’ as in<br /><em><a href="https://partnerapi.zoominfo.com/partnerapi/" class="external-link" rel="nofollow">https://partnerapi.zoominfo.com/partnerapi/</a></em></li>
+                    <li><strong>Username</strong> (from ZoomInfo)</li>
+                    <li><strong>Password</strong> (from ZoomInfo)</li>
+                    <li><strong>SecondaryID</strong>: not used</li>
+                    <li><strong style="text-align: left;">Additional Parameters</strong><span style="color: rgb(9,30,66);">: this is a set of ‘name&#160; value’ pairs&#160; used to configure the process.&#160; Click "Add Parameter to begin adding these:</span>
+                        <br />
+                        <ul>
+                            <li>orgpendingrecordsprocname - <em>stored procedure used to retrieve Organizations that will be updated with ZoomInfo data.&#160; </em>If this field is not present the default core procedure<em> ‘nw_organization_s_pendingzoominforecords’ </em>will be used</li>
+                            <li>contactpendingrecordsprocname - <em>stored procedure used to retrieve Contacts that will be updated with ZoomInfo data.&#160; </em>If this field is not present the default core procedure <em>‘nw_contact_s_pendingzoominforecords’</em> will be used</li>
+                            <li>Company - <em>a comma separated list of fields used to search for a company.</em>&#160; For example, “Company=companyname,state” will search for companies matching the Organization’s Name and State</li>
+                            <li>Person - <em>a comma separated list of fields used to search for a person.</em>&#160; For example, “Person=firstname,lastname” will search for persons matching the Contact’s first name and last name</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p>
+            <br />
+        </p>
+        <p><span style="color: rgb(9,30,66);">An example of Additional Parameters can be found below (you would need to fill in the blank "Value" fields):</span>
+        </p>
+        <p>
+            <img src="../Resources/Images/Integrations/ZoomInfoParams.png" />
+        </p>
+        <p><strong>Import Map Headers field mappings</strong>
+        </p>
+        <p>
+            <img src="../Resources/Images/Integrations/ImportMap.png" />
+        </p>
+        <p>Import maps are used to insert ZoomInfo data into ClientSpace.&#160; Although Import Maps are used, Imports are not generated.</p>
+        <ul>
+            <li>Organization<ul><li>Source File: ’zoominfo_org*.csv’ <em>(must begin with zoominfo_org)</em></li><li>Dataform: Import_Organization</li><li>Key Fieldset: ‘Special Import’ checked</li><li>Field Mappings<ul><li>Source Field: should match field label</li><li>Field: select a field from Import_Organization or OrgOtherInfo forms</li><li>Data Type: Text (regardless of the actual field datatype, ‘Text’ must always be selected)</li><li>Active: checked</li><li>API Path: this is the location of the data within the ZoomInfo data structure.&#160; Consult the document ‘zoominfo_field_mappings.xlsx’ for available fields<ul><li>Examples:<ul><li>CompanyAddress/City</li><li>CompanyName</li><li>Employees</li></ul></li></ul></li></ul></li></ul></li>
+            <li>Contact<ul><li>Source File: ’zoominfo_contact*.csv’ <em>(must begin with zoominfo_contact)</em></li><li>Dataform: Import_Contact</li><li>Key Fieldset: ‘Special Import’ checked</li><li>Field Mappings<ul><li>Source Field: should match field label</li><li>Field: select a field from Import_Contact or ContactOtherInfo forms</li><li>Data Type: Text (regardless of the actual field datatype, ‘Text’ must always be selected)</li><li>Active: checked</li><li>API Path: this is the location of the data within the ZoomInfo data structure.&#160; Consult the document ‘zoominfo_field_mappings.xlsx’ for available fields<ul><li>Examples:<ul><li>Email</li><li>WebReference/Description</li><li>LastName</li></ul></li></ul></li></ul></li></ul></li>
+        </ul>
+        <p><strong>Security Entities</strong>
+        </p>
+        <p>The Organization and Contact ZoomInfo fields can be secured Security Entities.&#160; The entities may have to be added to ClientSpace (by a developer) to take effect.&#160; Since the ZoomInfo fields on both tables are named the same, the entities for those fields are identical and cannot be controlled independently (marked by ‘*’ below):</p>
+        <ul>
+            <li>Organization.ZoomInfoID = CRM_ZoomInfoID *</li>
+            <li>Organization.DateLastZoomSync = CRM_DateLastZoomSync *</li>
+            <li>Organization.luZoomSyncStatus = CRM_luZoomSyncStatus *</li>
+            <li>Contact.ZoomInfoID = CRM_ZoomInfoID *</li>
+            <li>Contact.DateLastZoomSync = CRM_DateLastZoomSync *</li>
+            <li>Contact.luZoomSyncStatus = CRM_luZoomSyncStatus *</li>
+        </ul>
+        <p style="font-weight: bold;">ZoomInfo Process<br /></p>
+        <div id="expander-1870006514" class="expand-container">
+            <div id="expander-content-1870006514" class="expand-content">
+                <p>The ZoomInfo integration process operates as follows:</p>
+                <ul>
+                    <li>Scheduled Process “Process Pending ZoomInfo” executes</li>
+                    <li>Retrieve list of Organizations to process based on the “orgpendingrecordsprocname” value specified in the API Configuration Additional Parameters field.&#160; The default stored procedure filters on Organization data as follows:<ul><li>luZoomSyncStatus = 'Pending' (Organizations will default to ‘Pending’ on add)</li><li>Active = true</li><li>for each Organization returned<ul><li>retrieve existing Organization data</li><li>retrieve existing Org Other Info data.&#160; If none exists, a new record will be created assuming the process is successful</li><li>if Organization.ZoomInfoID is empty<ul><li>perform a ZoomInfo Company Search (based on search parameters)</li><li>if no data is returned from search, this is an error, skip this Organization, log error in exception log</li><li>if an error message is returned from search, this is a severe error, exception is logged, scheduled process aborts</li><li>the number of search results is examined<ul><li>if no matches Organization is updated:<ul><li>DateLastZoomSync = now</li><li>luZoomSyncStatus = 'FailNoMatch'</li><li>Organization is saved (database save)</li><li>if multiple matches Organization is updated:<ul><li>DateLastZoomSync = now</li><li>luZoomSyncStatus = 'FailMultiple'</li><li>GeneralNotes = each matching ZoomInfoID&lt;crlf&gt; is appended to existing GeneralNotes with 'Multiple ZoomInfo ID's found...'</li><li>Organization is saved (database save)</li></ul></li></ul></li></ul></li></ul></li></ul></li><li>if single match<ul><li>using the ZoomInfoID found, check for existing ClientSpace Organizations with that ZoomInfoID<ul><li>if duplicate is found, Organization is updated:<ul><li>DateLastZoomSync = now</li><li>luZoomSyncStatus = 'FailNoMatch'</li><li>GeneralNotes = 'Existing ClientSpace Organization ID found with this Zoom Info ID' is appended to existing GeneralNotes</li><li>Organization is saved (database save)</li><li>&#160;if no duplicate is found, continue with Company Detail request</li></ul></li></ul></li></ul></li></ul></li>
+                    <li>Company Detail Request: perform a ZoomInfo Company Detail Request on the ZoomInfoID<ul><li>if no data is returned from request, this is an error, skip this Organization</li><li>if an error message is returned from search, this is a severe error, exception is logged, scheduled process aborts</li><li>No errors, retrieve the import mappings for this process</li><li>for each field map<ul><li>retrieve the ZoomInfo detail value based on the API Path of the field mapping</li><li>if the detail value has multiple instances, append them together separated by &lt;crlf&gt;</li><li>set the detail values on the Organization and Org Other Info datasets based on the Import_Organization.FieldMappingField</li><li>Organization is saved (database save)</li><li>Org Other Info is saved (database save)</li><li>Next Organization…</li><li>Organizations Complete</li><li>Retrieve list of Contacts to process based on the “contactpendingrecordsprocname” value specified in the API Configuration Additional Parameters field.&#160; The default stored procedure filters on Contact data:<ul><li>luZoomSyncStatus = 'Pending'</li><li>Contact is the Primary Contact on an Organization</li><li>Active</li><li>for each Contact returned<ul><li>retrieve existing Contact data</li><li>retrieve existing Contact Other Info data.&#160; If none exists, a new record will be created assuming the process is successful</li><li>if Contact.ZoomInfoID is empty<ul><li>perform a ZoomInfo Person Search (based on search parameters)</li><li>if no data is returned from search, this is an error, skip this Contact, log error in exception log</li><li>if an error message is returned from search, this is a severe error, exception is logged, scheduled process aborts</li><li>the number of search results is examined<ul><li>if no matches Contact is updated:<ul><li>DateLastZoomSync = now</li><li>luZoomSyncStatus = 'FailNoMatch'</li><li>Contact is saved (database save)</li><li>if multiple matchesContact is updated:<ul><li>DateLastZoomSync = now</li><li>luZoomSyncStatus = 'FailMultiple'</li><li>GeneralNotes = each matching ZoomInfoID&lt;crlf&gt; is appended to existing GeneralNotes with 'Multiple ZoomInfo ID's found...'</li><li>Contact is saved (database save)</li></ul></li><li>&#160;if single match<ul><li>using the ZoomInfoID found, check for existing Contacts with that ZoomInfoID</li><li>if duplicate is found Contact is updated:<ul><li>DateLastZoomSync = now</li><li>luZoomSyncStatus = 'FailNoMatch'</li><li>GeneralNotes = 'Existing ClientSpace Contact ID found with this Zoom Info ID' is appended to existing GeneralNotes</li><li>Contact is saved (database save)</li></ul></li><li>&#160;if no duplicate is found, continue with Person Detail request</li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+                    <li>Person Detail Request: perform a ZoomInfo Person Detail request on the ZoomInfoID<ul><li>if no data is returned from request, this is an error, skip this Contact, log error in exception log</li><li>if an error message is returned from request, this is a severe error, exception is logged, scheduled process aborts</li><li>no errors, retrieve the mappings for this process</li><li>for each field map<ul><li>retrieve the ZoomInfo detail value based on the API Path of the field mapping</li><li>if the detail value has multiple instances, append them together separated by &lt;crlf&gt;</li><li>set the detail values on the Contact and Contact Other Info datasets based on the Import_Contact.FieldMappingField</li></ul></li><li>Contact is saved (database save)</li><li>Contact Other Info is saved (database save)</li><li>Next Contact…</li><li>Process Complete</li></ul></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

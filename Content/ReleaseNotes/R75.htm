@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\Resources\MasterPages\ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Release Notes" />Release 75 Notes</h1>
+        <p><strong>R75 Sprint</strong>:&#160;12/1/2018&#160;to&#160;1/2/2019. To learn about product features that you may not recognize, contact your Customer Success Manager.</p>
+        <h2>Enhancements</h2>
+        <p>Hover on the icons to discover the level of product enhancements:   <i class="fas fa-bell" style="font-family: Font Awesome 5 Free; font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="Change in functionality" alt="Change in functionality"></i><i class="fas fa-plus-circle" style="font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="ClientSpace Premium (ClientSpace with additional modules" alt="ClientSpace Premium (ClientSpace with additional modules"></i><i class="fas fa-cog" style="font-size:32px;color:var(--BrandPrimary2);padding:1px 6px 6px;" title="ClientSpace Advanced Administration" alt="ClientSpace Advanced Administration"></i><br /></p>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 69px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 88px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1" style="text-align: center;">
+                        <p class="TableHead">Level of change</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">26136</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;"><i class="fas fa-bell" style="font-family: Font Awesome 5 Free; font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="Change in functionality" alt="Change in functionality"></i>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Converted AdHoc Profile users</p>
+                        <p class="TableTextLeft">The System Admin control panel for Ad Hoc profiles has been converted to our cross-browser compatible application. This control panel allows the admin to create new Business Intelligence reporting profiles to control the tables/views available to the user of the profile as well as control whether that user can create new reports. Additionally, a new feature allows the administrator to manage the users associated with the Ad Hoc Profile in mass from the profile itself, instead of adding the profile to individual user profiles one by one. For more information about configuring security for Business intelligence, read <MadCap:xref href="../Security/ConfigSecBIRpt.html" title="Configuring security in Business Intelligence reporting" alt="Configuring security in Business Intelligence reporting">Configuring security in Business Intelligence reporting</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">30809</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;"><i class="fas fa-bell" style="font-family: Font Awesome 5 Free; font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="Change in functionality" alt="Change in functionality"></i>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Enabled To, CC, and From options for recipient procs</p>
+                        <p class="TableTextLeft">The Email Template system has been enhanced to allow individual users to be selected from the recipient proc and set as either To or CC recipients. Previously this selection was a pre-designated group of To or CC users and did not allow individual custom configuration of recipients.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">36387</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">
+                        <p class="TableTextLeft" style="text-align: center;"><i class="fas fa-bell" style="font-family: Font Awesome 5 Free; font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="Change in functionality" alt="Change in functionality"></i>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Converted PEO procs to return discrete recipients</p>
+                        <p class="TableTextLeft">The following existing PEO procs have been converted to return discrete recipients:</p>
+                        <ul>
+                            <li>peo_clientservicecase_external_emailtemplate_recipient_proc</li>
+                            <li>peo_clientservicecase_internal_critical_emailtemplate_recipient_proc</li>
+                            <li>peo_clientservicecase_internal_emailtemplate_recipient_proc</li>
+                            <li>peo_directdeposit_emailtemplate_recipient_proc</li>
+                            <li>peo_employee_emailtemplate_recipient_proc</li>
+                        </ul>
+                        <p class="TableTextLeft">Previously these stored procedures would return the From, To, and CC recipients as a block of email addresses instead of individual recipients.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">35722</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">
+                        <p class="TableTextLeft" style="text-align: center;"><i class="fas fa-bell" style="font-family: Font Awesome 5 Free; font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="Change in functionality" alt="Change in functionality"></i>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Removed unused application variables</p>
+                        <p class="TableTextLeft">Older, infrequently used application variables have been removed from the system and their functionality deprecated. The affected variables are:</p>
+                        <ul>
+                            <li>app-bln-server-side-merge (System will always perform server-side merges)</li>
+                            <li>app-bln-file-versioning (System will always perform file versioning)</li>
+                            <li>app-bln-cloneowner (Workspaces no longer have an owner)</li>
+                            <li>app-bln-archiveclosedincidents (System will always archive incidents when the task is closed)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">35094</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2" style="text-align: center;">
+                        <p class="TableTextLeft" style="text-align: center;">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Direct Deposit Notice Email Template</p>
+                        <p class="TableTextLeft">A Direct Deposit Notice Email Template is now available. This template is a base template, which can be customized by each client to alert an employee of a direct deposit change in PrismHR. The template (template code <strong>PHRDDNotice</strong>) is unpublished and must be published before use.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Fixes</h2>
+        <table class="TableStyle-Standard_Table" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" cellspacing="0">
+            <col style="width: 123.0px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 340px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 580px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Issue summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Resolution</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33717
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Remove the Configure Export and Manage Exports Links from the Advanced Section</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">The Configure Export and Manage Export links have been removed from the Advanced section of the System Admin area.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">34704, 34705, 34706, 34707, 34708, 34709</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Remove enterprise libraries</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Removed enterprise libraries and replaced with more efficient code to optimize system performance.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="vertical-align: sub;">35238
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Record count widget issues</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where the magnifying glass icon on Claim and the Workflow Channel Claim link were not working, breaking the "jump to" functionality.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">35850
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Clone active pricing batch issue</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where the pricing batch clone process would only look at the default Legal Entity on the State Master, which&#160;was not always correct. If there is not a matching SLE, the system would not clone that state without an error creating confusion about how this should work. The system now properly uses the Contract Type metadata to set the Legal Entity during pricing.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">35866
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Entity filter on dataform Subscribers "More" search does not work</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">The Entity filter on dataform subscribers More filtering has been replaced with a much more useful Department filter, allowing you to filter available dataform subscribers by the default department set on the user record.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">36029
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">User Audit Trail: Quick Search LoginID</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved a problem with the User Audit Trail Quick Search using the LoginID (user) search parameter.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">36030
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Condition expressions do not recognize underscore (_) values in condition label names</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved a problem in which condition expressions would not recognize a condition if the condition label contained an underscore (_) character.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">36031
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Update Two Factor Authentication template&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved the Two Factor Authentication process that caused the authorization code to improperly format the validation email sent to the user after an attempted login to a&#160;Two Factor Authentication enabled system.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">36043
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Client service case category metadata not saving correctly</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved a problem when adding a metadata record after returning to the lookup, and then clicking Open Metadata link. An Add dialog would open instead of opening the metadata record you just created.</p>
+                        <p class="TableTextLeft">The system will display the normal "unsaved changes"&#160;warning if you close the lookup record without saving; this action orphans the metadata record. You must save the lookup record to maintain the metadata record. &#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">36072
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Jump icon in Inbox for triggered emails</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where embedded links in notification emails were not being properly linked to the triggering dataform.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">36075
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Initial data on a company ongoing insert of client</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue with PrismHR_API_ongoing imports where dataforms associated with newly created client workspaces and created in the same import would fail with the error: "The value (####) in the "ClientNumber" column did not produce a valid lookup for data row ###."&#160;&#160;This would happen because&#160;inserts of workspace related data such as location or employee data would&#160;try to process at the same time the client information was processing, and the client workspace had not yet been created. The system will now check to see if client data is processing and if so, utilize the client data when validating the presence of the client.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">36119
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Salesforce API v2.0 Default Value mapping</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue in the Salesforce API that would cause Salesforce imports to ignore the Default Value configuration of the import map detail record, and instead insert a blank value.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">36130
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Payroll audit workflow channel triggering Issues</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue with workflow triggering when the triggering field being used is a parent form field with hundreds of child form options and the system would only return the first 100 options. The system will now return the first 1000 options.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">36244
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Error when clicking email templates</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Removed a deprecated link to the classic email templates admin control panel (System Admin &gt; Advanced).</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">36250
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Workflow channel not generating case notification</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where email template triggering would not properly fire if the triggering field was an&#160;empty checkbox on a dataform that was auto-generated&#160;by a workflow channel.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">36255
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Import Map Search chiclet being cleared</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue when adding or editing import map configurations. If a filter (such as “Show All”) was applied to the import map detail list and a record was edited, then when you returned to the list, the filter was removed. This action required you to reapply the filter each time. The selected filter is now preserved through record adds and edits.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">36283
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Legal Entity form cannot be opened</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where the link to jump to a legal entity form from one of the following system areas produced an error when clicked and did not open the legal entity form:<ul><li>Certificate of Insurance</li><li>Client Master</li><li>Contract Type metadata</li><li>State Master</li><li>Pricing State</li><li>Unemployment Claim</li></ul></td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">36346
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Removed Saved Search</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Saved searches were removed from the Surcharges dashboard because this functionality was causing issues when a user would inadvertently save a search, which would later hide records they needed to see.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">36382
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">New field sets added</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">The following new fields have been added to all installs. All fieldsets are hidden by default:</p>
+                        <ul>
+                            <li>OrgOtherInfo.fsHiddenFields</li>
+                            <li>ContactOtherInfo.fsHiddenFields</li>
+                            <li>PricingBatch.fsWCInformation</li>
+                            <li>PricingCompCode.fsHiddenFields</li>
+                            <li>PricingState.fsRenewalInformation</li>
+                            <li>PricingCompCode.fsRenewalInformation</li>
+                            <li>StateLegalEntity.fsSelectionCriteria</li>
+                            <li>CompClaimClaimant.fsHiddenFields</li>
+                            <li>CompClaimInjury.fsAccidentLocation</li>
+                            <li>CompClaimInjury.fsHiddenFields</li>
+                            <li>CompClaimLegal.fsHiddenFields</li>
+                            <li>CompClaimLegal.SettlementDetails (this is an actual fieldset)</li>
+                            <li>Collateral.fsClientDocuments</li>
+                            <li>PEOConfigurtion.fsSalesActivityManagement</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2"><strong>36405</strong>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Checkbox condition criteria</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Updated the system to allow 0 (unchecked) or 1 (checked) to be used as valid triggering conditions when using a checkbox to trigger an email template.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2"><strong>36435</strong>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">Dataform security removed on form Name Change through Beta interface</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">Resolved an issue when changing the dataform name of a secured dataform removes form level security from the dataform. The system will now maintain any dataform level security through a dataform name change.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

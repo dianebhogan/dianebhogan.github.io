@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<reltable xmlns="http://docs.oasis-open.org/dita/v1.1/schema/ditabase.xsd" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Screen">
+    <relheader>
+        <relcolspec type="concept" />
+        <relcolspec type="task" />
+        <relcolspec type="reference" />
+    </relheader>
+    <relrow class="user profile2">
+        <relcell>
+            <topicref href="/Content/UserProfile/UserProfile.htm" />
+        </relcell>
+        <relcell>
+            <topicref href="/Content/UserProfile/EnableOutOfOffice.html" />
+        </relcell>
+        <relcell />
+    </relrow>
+    <relrow class="user profile1">
+        <relcell>
+            <topicref href="/Content/UserProfile/UserProfile.htm" />
+        </relcell>
+        <relcell>
+            <topicref href="/Content/UserProfile/PersonalizeUserProfile.html" />
+        </relcell>
+        <relcell>
+        </relcell>
+    </relrow>
+    <relrow class="user profile3">
+        <relcell>
+            <topicref href="/Content/UserProfile/UserProfile.htm" />
+        </relcell>
+        <relcell>
+            <topicref href="/Content/UserProfile/AddingUserModules.htm" />
+        </relcell>
+        <relcell />
+    </relrow>
+    <relrow class="user profile4">
+        <relcell>
+            <topicref href="/Content/UserProfile/UserProfile.htm" />
+        </relcell>
+        <relcell>
+            <topicref href="/Content/UserProfile/AddExtCalEvents.html" />
+        </relcell>
+        <relcell />
+    </relrow>
+    <relrow class="ConfigImport">
+        <relcell>
+            <topicref href="/Content/ImportsUploads/ConfigNightImports.html" />
+        </relcell>
+        <relcell>
+            <topicref href="/Content/ImportsUploads/ConfigMapHeader.htm" />
+        </relcell>
+        <relcell />
+    </relrow>
+    <relrow class="ConfigImport2">
+        <relcell>
+            <topicref href="/Content/ImportsUploads/ConfigMapHeader.htm" />
+        </relcell>
+        <relcell>
+            <topicref href="/Content/ImportsUploads/ConfigMapDetail.htm" />
+        </relcell>
+        <relcell />
+    </relrow>
+    <relrow class="ConfigImport3">
+        <relcell>
+            <topicref href="/Content/ImportsUploads/ConfigNightImports.html" />
+        </relcell>
+        <relcell>
+            <topicref href="/Content/ImportsUploads/ConfigMapDetail.htm" />
+        </relcell>
+        <relcell />
+    </relrow>
+</reltable>

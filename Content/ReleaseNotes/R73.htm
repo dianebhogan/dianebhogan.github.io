@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\Resources\MasterPages\ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Release 73 Notes</h1>
+        <p><strong>R73 Sprint</strong>:&#160;10/1/2018&#160;to&#160;10/31/2018. To learn about product features that you may not recognize, contact your Customer Success Manager.</p>
+        <h2>Enhancements</h2>
+        <p>Enhancements are grouped as Change in Functionality, ClientSpace Premium (ClientSpace with additional modules), Advanced Administration, and General.</p>
+        <h3><i class="fas fa-bell" style="font-family: Font Awesome 5 Free; font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="Change in functionality" alt="Change in functionality"></i> Change in Functionality</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Workflow Channels: Do not require Primary Condition </p>
+                        <p class="TableTextLeft">Several admin systems have been enhanced to remove the need for primary triggering conditions, including workflow channels, email templates and custom links as well as widget layouts. Workflow channels may be configured in this way using the "No Primary Trigger" checkbox on the triggering tab of the channel layout. For other administrative configurations the Primary triggering field is no longer a requirement, allowing you to configure all of the triggering using condition expressions.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert API Configuration To NEXT </p>
+                        <p class="TableTextLeft">API Configuration has been converted to work in our cross browser application.&#160; API configuration allows you to map a login and connection to outside third party applications such as Act-On, DocuSign and PrismHR, providing a conduit through which data can be synchronized.&#160; For more information about API's <a title="Click here to review API's" href="https://clientspace.atlassian.net/wiki/x/Xw6XBQ" rel="nofollow">review the "ClientSpace Integrations" </a>section of&#160;our Knowledge Base, or Create a case for one of our&#160;staff consultants. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert Manage Field Display To NEXT (Beta)</p>
+                        <p class="TableTextLeft">Field display management has been converted to work with our cross browser compatible NEXT application.&#160; For more information about&#160;customizing field display in you installation, read <a title="Click here to open the article..." href="https://clientspace.atlassian.net/wiki/x/ZgBq" rel="nofollow">Configuring Dynamic Field Display</a>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Stop Expiring Users that are set to future dates</p>
+                        <p class="TableTextLeft">Updated the user account expiration logic to ignore users with future expiration dates when expiring user accounts based on last login date. The system will now expire Active, External Users whose last login date is greater than 180 days old and where the expiration date is not set.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert Dataform Admin (Beta)</p>
+                        <p class="TableTextLeft">Dataform properties administration has been converted to work with our cross-browser NEXT application. This development does not include field administration which will be addressed in an upcoming release. For more information about configuring dataform properties, read the dataform properties section of&#160; Dataforms - Workspace Building Blocks.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>General Enhancements</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">CombineUpgrade Prism API to Version 1.14 </p>
+                        <p class="TableTextLeft">The application connectivity has been enhanced to utilize the new 1.14 version of the PrismHR API.&#160;It is important to note that while version 1.14 exposes new methods of working with PrismHR Data, ClientSpace development will be needed to incorporate the new methods in the application code.&#160;For more information about the changes in version 1.14 of the API. <a title="Click here to read the notes..." href="https://picard.fwdco.com/CRCDownloads/Upgrades/API/ServicesAPI-1140_Release-Notes.pdf" class="external-link" rel="nofollow" alt="Click here to read the notes..."><MadCap:concept term="Release Notes" />Read the API release notes.</a> </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Pop Up Blocker Text</p>
+                        <p class="TableTextLeft">Provided a useful tooltip on Help Center | Log a Case button that states "If a new window or tab does not open, please check your pop up blocker settings..." This is to assist users that would click the button and not see the corresponding dialog due to it being blocked by their browsers pop up blocker.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert Custom Links (Beta)</p>
+                        <p class="TableTextLeft">Link Configuration has been converted to work with our cross browser compatible NEXT application.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Attach To Dataform Record Dropdown for email add-in</p>
+                        <p class="TableTextLeft">The activity detail page add to dataform dialog has been enhanced. The dataform dropdown in the dialog has been updated to list all dataforms for the chosen workspace. The CC emails on the dialog have also been added when Posting to ClientSpace.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Info Bubbles missing on new Sys Admin pages </p>
+                        <p class="TableTextLeft">Manage rules and Field Display have been enhanced. Info bubbles have been added to each field to describe the fields function in dataform configuration. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Fixes</h2>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 63px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 269px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Issue summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Resolution</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35091</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Exception on Benefits Plan Effective Date</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where if the Effective Date&#160;was not populated on a Benefit Plan and the plan was saved an unhandled exception was thrown.</p>
+                        <p>Two rules on Benefit plan are&#160;affected by this fix:</p>
+                        <p><strong>HE_BenefitPlanUnique</strong>
+                        </p>
+                        <ul>
+                            <li>If the Effective Date IsDirty (or Unique Plan Code is Dirty) and Effective Date is empty, the Current Date will be used to check for duplicate Effective Date/Plan Code combinations.&#160; Any duplicates will cause a hard error</li>
+                            <li>This rule was refactored to accept an empty Effective Date.&#160;</li>
+                        </ul>
+                        <p><strong>SetImportID</strong>
+                        </p>
+                        <p class="TableTextLeft">If the Effective Date IsDirty (or Unique Plan Code is Dirty) and Effective Date is empty, the Effective Date will be set to the Current Date before the save and will be used to set the BP ImportID and related Offered Benefit Plans ImportID's</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">35273</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Employee SUTA State</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where the Employee SUTA state was sometimes set incorrectly on the Employment record. The system was pulling the State from the State Tax node for the employee - the state for the employee State Income Tax. Most of the time this will align with their SUTA state but not always. The system has been updated to pull the State from the Employee Home Location.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35405</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Assigned To change on Cases</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where when just the Assigned To was changed on a case, the internal and external notifications would not trigger. This has been corrected via an added script.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">35061</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Business Intelligence Link from Module Search Broken</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where modules opened from the module list with a target of new window would instead hang and display a "Loading..." animation.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35143</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Date Uploaded Search filter on Document Search does not work</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Fixed a bug in the Document Search dashboard which caused filters for date uploaded to not work as expected. A paging issue which caused the page count of the data rows returned to be incorrect has also been resolved. Paging works now for everything except keyword searches and quick searches, which are limited to returning the Top 200 records for the criteria and sort order selected.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">35204</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Time Tracking issues</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue with Time Tracking - in which a user with open time records attempted to start the clock on any new record, the start button would be disabled and the user would not receive any feedback that something went wrong.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35208</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Cases Requiring Attention notification</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where report data from the Case and Task requiring Attention reports would be removed when the report HTML was inserted into the notification email. These reports now contain all of the appropriate case and task details.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">35230</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Error Saving Custom Logic Rule</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue that would occur when the method of a logic rule was changed from a method which included parameters to a method with no parameters.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35287</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Import Map Fields - Hard Error</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Corrected an issue where during import configuration, the Dataform and Field mappings on the Import Detail Map were required, causing issues when attempts to alter an existing "Special Import" where some of these field mappings are done in code and so these fields are blank. The fields in question are no longer required.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">35296</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Manage Rules Detail Page Error</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where changing a business rule from one which had parameters to one which did not would cause an Object Reference exception to be thrown.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35332</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Import map save exception</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue on Import Map Detail configuration where Import configurations with a large number of fields (100+) could cause the save process to fail due to the amount of data being passed back on the save.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">35345</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Workflow item cannot be opened</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Fixed a bug that was introduced during R72. An exception was being thrown when opening an existing workflow item with a primary condition based on a parent form field.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35346</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Widgets Broker - DEV</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Fixed a bug where the "Suppress Report Header" setting of Widget management caused an error on save.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">35348</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Legal Name is a required field when adding an Address Source to a DocuSign Template</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Corrected an issue specific to DocuSign email Templates where "Legal Name" was always required. This caused problems where the addressee was being pulled from a dataform field mapping. Legal Name is now marked as 'TBD' in the configuration and filled in later when reading the field data.</p>
+                        <p>Also resolved an issue where fields specific to the DocuSign Merge were not being saved back to the database on save</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35356</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Custom Logic Rule Parameter Issue</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Fixed a bug with custom logic rules where the parameters would save inconsistently.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">35368</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Triggering changes in Workflow causes workflow channel to be unstable.</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where during specific configuration changes the triggering conditions on a workflow channel could be lost during the save, causing the save to fail.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35371</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact Type-Ahead Error</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Fixed a bug where a completed Contact type ahead field on a dataform could cause an error to be thrown on page load if the contact had been deleted from the system, causing the page to not open.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">35394</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Typos in Email Integration and Import Map Detail</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Fixed misspellings in the UI of the Email integration and Import Map Detail sections of the application.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35421</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Email to Case Confirmation Issue</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue with some System templates where the default "FromEmailOverrride" value was stored improperly, causing the Email template system to generate errors.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">35428</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Import Map Header not showing all fields</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where foreign key fields such as user type fields were not being decoded properly into the Import Map Header list.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35524</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Unable to add subscribers to dataform</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where a configured search was saved in the dataform subscribers area which led to it appearing as though subscribers could not be added to a dataform. Saved search functionality has been removed from the dataform subscribers dialog.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">35709</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Dataform Save with Document Index errors</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where file upload and file attachment functionality may cause an exception to be generated when the functionality was added to a dataform and that dataform was then saved.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">33714</td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Deprecate Uploaded Files Module</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">The Uploaded files module which was used to support deprecated functionality has been removed from the system.&#160;Create a case for one of our Staff consultants for questions regarding this.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

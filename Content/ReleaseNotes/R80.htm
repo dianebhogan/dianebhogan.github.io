@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\Resources\MasterPages\ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Release Notes" />Release 80 Notes</h1>
+        <p>The following items have been completed in this release.</p>
+        <div class="cell normal">
+            <div class="innerCell">
+                <p><strong>Sprint Began:</strong>&#160;5/1/2019&#160; &#160; &#160;<strong>Sprint Ended:</strong>&#160;5/31/2019</p>
+            </div>
+        </div>
+        <p class="title">ACTION NEEDED!</p>
+        <p>New licensing functionality introduced in R80&#160;<strong>must</strong> <strong>be configured before your site upgrades to R81</strong>.&#160;You must configure your licenses so that you can retain access to current modules. For more information about licenses and configuration instructions, review the article&#160;<strong><a style="text-decoration: none;" href="https://clientspace.atlassian.net/wiki/spaces/KNOW/pages/944537678/Managing+user+licenses" rel="nofollow">Managing user licenses</a></strong>.</p>
+        <h2>Enhancements</h2>
+        <p>Hover on the icons to discover the level of product enhancements: <img src="../Resources/Images/ICONS/ICON_FunctionalChange.png" title="Change in functionality" alt="Change in functionality" /> <img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" style="width: 29px;height: 29px;" alt="ClientSpace Premium (ClientSpace with additional modules)" title="ClientSpace Premium (ClientSpace with additional modules)" /> <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /><br /></p>
+        <p class="SubHdr">Workflow Channel: Visualize Export (33337)  &#160;</p>
+        <p>The Visualize functionality of Workflow Channels has been enhanced.&#160;On the Workflow Channel search page, in the visualize dialog, <strong>Download as CSV file</strong> functionality is now available.</p>
+        <ul>
+            <li><strong>Download as CSV file&#160;</strong>is only available when the dialog is NOT in drag/drop mode.</li>
+            <li>When you click <strong>Download as CSV file</strong>, the system downloads the visual representation of the workflow channel as&#160;a CSV file to the user's computer.</li>
+            <li>The CSV file name is <em>Workflow Channel &lt;number&gt;-&lt;workflow channel name&gt;.csv</em>. For example, <strong>Workflow Channel 36-Scheduled Test</strong><strong>.csv</strong>.</li>
+            <li>The contents of the downloaded file resemble the visualize dialog contents in terms of layout, with indentation of children workflow items and includes the Workflow channel and child items of the selected channel.</li>
+        </ul>
+        <p>The names of the included items are formatted in the same manner as in the visualizer: #&lt;number&gt;: &lt;name&gt;. See&#160;Viewing and Publishing Workflow Channels.</p>
+        <p class="SubHdr">System-level lookups (34177)  &#160;</p>
+        <p>A system column has been enhanced for Lookups and Lookup Groups. This enhancement allows PrismHR to lock down specific system level lookups that are used in business logic and could produce unexpected system behavior if altered.&#160;If the System flag is set to true, neither Lookups or Lookup Groups can be deleted.&#160;</p>
+        <ul>
+            <li><strong>Lookups</strong>: If is system, the Code, Group, and Filter fields are disabled for Global Admin users.</li>
+            <li><strong>Lookup Groups</strong>: If is system, Group Name, Description, and Metadata Dataform fields are disabled for Global Admin users.<br />This System check box is read-only for non-PrismHR users.</li>
+        </ul>
+        <p class="SubHdr">System performance (36048)  &#160;</p>
+        <p>To further optimize system performance, the scheduled process system has been updated to change the way scheduled processes run. The Run Process button has been changed to Queue Process.&#160;Queue Process sets the Next Run Date to the current date and time so that the process is kicked off as part of a scheduled process run, instead of running immediately.&#160;This change prevents multiple processes from running contiguously and causing performance issues.</p>
+        <p class="SubHdr">Organization Other Info tab (36141)  &#160;</p>
+        <p>A new NAIC (text datatype) field has been added to the Organization Other Info dataform in a new fieldset named <strong>Carrier Details</strong>.&#160;</p>
+        <ul>
+            <li>The Carrier Details fieldset is displayed only when the <strong>Org Category = Carrier</strong>.&#160;</li>
+            <li>The Sales Pipeline fieldset is hidden when the <strong>Org Category = Carrier</strong>.</li>
+            <li>The Prospect Information fieldset is hidden when the <strong>Org Category = Carrier</strong>.</li>
+            <li>The NAIC field is set from the related Carrier's <strong>Org.IndustryCode</strong> field if populated. Going forward the NAIC field will need to be keyed manually.</li>
+            <li>For a Carrier Organization, if an Organization Other Info form does not exist, one will be inserted.</li>
+        </ul>
+        <p>The Certificate of Insurance report has been updated to utilize this new field for all client installations using the standard PEO report.</p>
+        <p>It is important to note that changes to the Organization Category do not affect field display on the Org Other Info form until the Organization record is saved.</p>
+        <p class="SubHdr">Module Licensing (36225)&#160;</p>
+        <p>Licensing has been added as a System Admin function.&#160;&#160;</p>
+        <p>Licenses serve several purposes for Global Administrators:</p>
+        <ol>
+            <li>Determine which areas of Pulse are available by user.</li>
+            <li>Determine if the advanced admin features are available, such as Dataform Admin.</li>
+            <li>Provide easy visibility to know which users are subject to additional billing.</li>
+        </ol>
+        <p>Pulse supports several add-on modules, such as Sales, Risk, Implementation, and Human Resources. Licenses enable a user to access to specific modules.</p>
+        <p>System administrators <strong>must</strong> complete licensing configuration before July 1, 2019. For more information about licenses and configuration instructions, review the article&#160;Managing user licenses.</p>
+        <p class="SubHdr">Contract Type: Pricing approval (36252)&#160;</p>
+        <p>The business rule <strong>HE_ContractTypeChange</strong> locks down changes to the Contact Type within the application that would affect pricing after pricing has been approved.&#160;Service providers that do not utilize the pricing console need the ability to change the Contract Type manually or through an import at any time. The hard error <strong>HE_ContractTypeChange</strong> has been enhanced:</p>
+        <ul>
+            <li>If the Client Master.PEOHROQuote = No, Contract Type is editable at all times with no hard errors. Imports also work properly to change the contract type.</li>
+            <li>If the Client Master.PEOHROQuote = Yes, Contract Type is only editable up to Approved. Afterward, the field locks down and cannot change through an import or at all.</li>
+        </ul>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">On some sites, the PEOHROQuote field has been renamed to "Use Pricing".</p>
+        <p class="SubHdr">Workflow Channels and Email templates: Replacement fields (36438)&#160;</p>
+        <p>Field replacement on email templates and workflow channels has been enhanced, returning better replace field options when configuring bodies of Email Templates and enabling more sensible content.</p>
+        <p>For fields that are of the Contact datatype:&#160;</p>
+        <ul>
+            <li><strong>TableName.FieldName.FirstName</strong>&#160;(blank if empty) example Client Master.PrimaryContact.FirstName</li>
+            <li><strong>TableName.FieldName.LastName</strong>
+            </li>
+            <li><strong>TableName.FieldName&#160;</strong>returns&#160;<strong>LastName, FirstName</strong></li>
+        </ul>
+        <p>For User datatype fields:</p>
+        <ul>
+            <li><strong>TableName.FieldName.FirstName&#160;</strong>example ClientMaster.SalesRep.FirstName</li>
+            <li><strong>TableName.FieldName.LastName</strong>
+            </li>
+            <li><strong>TableName.FieldName&#160;</strong>returns LastName, FirstName</li>
+        </ul>
+        <p>For Text fields:</p>
+        <ul>
+            <li><strong>TableName.FieldName</strong>&#160;returns the first 250 characters (appends "..." if the field contains more than 250 characters)</li>
+            <li><strong>TableName.FieldName.All&#160;</strong>returns entire field</li>
+            <li><strong>TableName.FieldName.&lt;integer&gt;</strong>&#160;returns first ## number of characters (replace &lt;integer&gt; with the numeric character count). If the field contains more than &lt;integer&gt; number of characters, it will append "<strong>...</strong>" For example, Clientmaster.DescriptionOfOps.7 will return the first 7 characters from this field. If the field contains more than 7 characters, these will end with <strong>...</strong> indicating more info is available.</li>
+        </ul>
+        <p>For Lookup: Code, Decode</p>
+        <ul>
+            <li><strong>TableName.FieldName</strong>&#160;returns Decode value displayed in the application</li>
+            <li><strong>TableName.FieldName.Code</strong>&#160;returns Code value stored in the field</li>
+        </ul>
+        <p>For Integer fields:</p>
+        <ul>
+            <li><strong>TableName.FieldName</strong>&#160;returns comma formatted value (##,###)</li>
+        </ul>
+        <p>Decimal or Money fields:</p>
+        <ul>
+            <li><strong>TableName.FieldName</strong>&#160;returns comma formatted value (##,###.##) or 0.00 if blank.</li>
+        </ul>
+        <p class="SubHdr">Default Time Track Category (36956)&#160;</p>
+        <p>Tasks have been enhanced to set the default time tracking category.&#160;The task system has been enhanced to use metadata on the Task Category lookup to set the default time tracking category when adding a time tracking record from a new or existing task as long as the task category has been set.&#160;For more information regarding this functionality, review the document Configuring default time tracking for task categories.</p>
+        <p class="SubHdr">Case email templates (37087)&#160;</p>
+        <p>The Case system has been enhanced to add custom field replacement options that show the contents of specific case fields on a case related email template if those fields have been changed.&#160;If the email template has a triggering from of <strong>Case</strong>, you can add the replace fields of {UpdatedFieldsInternal} and {UpdatedFieldsExternal} to display the fields that have been updated.</p>
+        <p>These Replace field include a designated set of fields to be listed if values have changed:</p>
+        <ul>
+            <li><strong>{UpdatedFieldsExternal}:</strong>&#160;crCategory, fkCaseTypeID, fkUserIDAssignedTo, luStatus, luPriority, Subject, Issue, CaseNotes, Resolution</li>
+            <li><strong>{UpdatedFieldsInternal}:</strong>&#160;crCategory, fkCaseTypeID, fkUserIDAssignedTo, luStatus, luPriority, Subject, Issue, CaseNotes, Resolution, InternalNotes</li>
+        </ul>
+        <p>The Email template will display as Updated Fields: followed by the list of updated fields.&#160;</p>
+        <p class="SubHdr">System performance (37139)&#160;</p>
+        <p>Configuration of scheduled processes can cause an overlap in run-times, leading to poor system performance.&#160;The scheduled process system has been enhanced with an <strong>IsSystem</strong> flag that allows PrismHR to lock down configuration for certain mission critical or high impact scheduled processes. The enhancement avoids performance issues that were previously experienced when these processes were improperly configured.</p>
+        <p>The following Scheduled Process are now flagged as <strong>IsSystem</strong>:</p>
+        <ul>
+            <li>&#160; Archive Benefits Recon Records</li>
+            <li>&#160; CaseTypeRowLevelSecurityUpdate (Update Case Security)</li>
+            <li>&#160; DocuSign Get Doc Status</li>
+            <li>&#160; DocuSign Request Signature</li>
+            <li>&#160; EDV Benefits Recon Conversion</li>
+            <li>&#160; PrismHR Import Auto</li>
+            <li>&#160; PrismHR Import Events</li>
+            <li>&#160; PrismHR Import Initial</li>
+            <li>&#160; PrismHR Import Initial Sync</li>
+            <li>&#160; PrismHR Import Ongoing</li>
+            <li>&#160; PRismHR Import Queue Initial Clients</li>
+            <li>&#160; PrismHR Import Users</li>
+            <li>&#160; PrismHR Import Voucher</li>
+            <li>&#160; Process PlanHub</li>
+            <li>&#160; Seed Client Team Role</li>
+            <li>&#160; Update Act-On contacts</li>
+        </ul>
+        <p class="SubHdr">Email Templates (37368) </p>
+        <p>Email templates have been enhanced. The Primary trigger field has been moved to the Conditions step of the configuration to keep all of the triggering conditions together and make configuring email templates easier. For more information, see<a title="Learn how to administer email templates!" href="https://clientspace.atlassian.net/wiki/x/AgD5Gg" rel="nofollow"> Administering Email Templates</a>.</p>
+        <p class="SubHdr">Salesforce imports (37582)&#160;</p>
+        <p>Updated the way that CRM forms such as the Org Other Info and Contact Other Info are saved in the application during imports. Previously this was accomplished using a server-side save, which could not trigger workflow channels or email templates. This is now accomplished through custom business logic on the Salesforce API pipeline. No business rules are run, only Workflow Channel and Email Template triggering are enabled. <br /></p>
+        <p class="SubHdr">Email administration (37674)&#160;</p>
+        <p>Resolved an issue when an email send failure during the Send Email scheduled process would prevent all other queued emails from sending.&#160;Now, as the Send Email scheduled process handles emails, a failing email does not prevent other emails from being sent.&#160;If an email fails, an exception is logged containing the ID of the Email that failed (use the % search in the Exception log to locate the record).</p>
+        <p><strong>The Email Dashboard has been enhanced:</strong>
+        </p>
+        <ul>
+            <li>Added a <strong>Failed</strong> column (hidden but available).</li>
+            <li>Added a <strong>Failed Only</strong> more search criteria.</li>
+        </ul>
+        <p><strong>The Email Detail has been enhanced:</strong>&#160;</p>
+        <ul>
+            <li>Added the <strong>From</strong> address.</li>
+            <li>If the Email failed to send due to an Exception, a red warning appears at the top of the Email, including the EmailID (to assist in locating the issue in the Exception Log).</li>
+        </ul>
+        <p class="SubHdr">Documentation (37748)  &#160;</p>
+        <p>Updated the product documentation to include the ability to use <strong>NOT</strong> conditions when building condition expressions within the application. An example would be a condition expression such as (Condition1 AND Condition2) OR (Condition3 AND NOT Condition4).</p>
+        <p class="SubHdr">Dataform field admin (37781)  &#160;</p>
+        <p>Enhanced the Dataform field admin system so that inactivated fields display inline in the fields list, set as bold and italicized on a grey background.&#160;The enhancement leaves the fields in place so that dataform configuration is more intuitive and clearly marks them as inactive.</p>
+        <p class="SubHdr">&#160;Dataform field admin (37918)&#160;</p>
+        <p><span style="color: rgb(0,0,0);">Field delete functionality for global admins has been disabled for fields that were created by PrismHR. Admins can delete custom fields that they have created.</span>
+        </p>
+        <p class="SubHdr">Salesforce API Works from Core Layer (38093)&#160;</p>
+        <p>The Salesforce API has been enhanced to work with the core layer of our application, in addition to the PEO layer. A newly scheduled process, Salesforce Sync, has been created to synchronize data between Salesforce and Pulse using the core layer.</p>
+        <p class="SubHdr">Refactored core system (38174)&#160;</p>
+        <p>Core systems have been refactored to use a newer data access function. These systems include:</p>
+        <ul>
+            <li>ExceptionLogRepository</li>
+            <li>FieldAuditRepository</li>
+            <li>FieldDisplayRepository</li>
+            <li>ImplementationGroupRepository</li>
+            <li>HelpRepository</li>
+        </ul>
+        <p class="SubHdr">Business rules (38519)&#160;</p>
+        <p>Business logic rules included as part of the base system are now marked as <strong>IsSystem</strong> rules. While these rule can be inactivated, they can no longer be deleted by global admin users without assistance from PrismHR.</p>
+        <h2>Fixes<br /></h2>
+        <table class="TableStyle-Standard_Table" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" cellspacing="0">
+            <col style="width: 123.0px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 314px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 725px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Issue summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Resolution</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">24525</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Time Tracker Record Type list</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where the time tracker Record Type list would not filter out dataforms that are not actually in the selected workspace.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">36893</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Secure App Settings to IsDeveloper</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Removed access to the App Settings interface. If you require changes to application settings, contact one of our application specialists.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">37230</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Outlook add-In attachment issues</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue in the email add-in for Outlook that stripped attachments from the email before passing the information to Pulse. The bug has been fixed. When creating Activities, Dataforms, or Tasks from Outlook emails, and the user’s profile setting for <strong>Upload Email Attachments</strong> is set to <strong>Yes</strong>, email attachments are included.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">37301</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">DocuSign Info Bubble typo</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue with DocuSign email template types, where the info bubble that documents the recipient validation was incorrect.&#160;The DocuSign email address info bubble has been corrected to contain the following language:</p>
+                        <p><strong>Each Signer's Source, Address, Signature Type, and Signature Anchor must create a unique combination.</strong>
+                        </p>
+                        <p class="TableTextLeft">Other email templates contain language stating that the email address must be unique.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">37343</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Report branding issues</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue when custom branding files were not uploaded. Added default blank image files for the reporting logo and signature file.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">37600</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Data mask for percent fields unavailable in NEXT Dataform Admin</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue in Dataform Field admin when&#160;after adding a percent (or decimal) field to a dataform, the data mask field would be hidden, not allowing the admin to determine how many decimal places are available for the field in our cross-browser compatible application, NEXT.&#160;Following Save, the field would populate for a brief second but then hide, not allowing the admin user to update the mask when saved.&#160;The system has been fixed, allowing for adjustment to the precision after the dataform field is saved.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">37674</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Email admin</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue when an email send failure during the Send Email scheduled process would prevent all other queued emails from sending.&#160;Now, as the Send Email scheduled process handles emails, a failing email does not prevent other emails from being sent.</p>
+                        <p class="TableTextLeft">If an email fails, an exception is logged containing the ID of the Email that failed (use the '%' search in the Exception log to locate the record).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">37747</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Dataform Subscriber Security</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue for dataform subscribers where the Subscribers list would display workspace users who did not have security rights to view the dataform.&#160;The Subscribers list now filters appropriately, only showing a list of workspace users with access to the secured dataform.&#160;When a subscriber user has dataform access revoked, they remain in the Subscribers list until they are removed and the dataform is saved.&#160;&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">37773</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Search on Load flag not followed</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where the <strong>Search on Load</strong> property of multiform lists was not followed, causing all multi-dataform lists to load the list contents every time automatically.&#160;The system now correctly displays the multiform list contents on load if <strong>Search on Load</strong> is <strong>True</strong> (selected), and loads an empty list if the property is <strong>False</strong> (cleared).</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">37842</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Workflow reordering is not saving changes</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue when using the drag and drop visualizer interface to re-arrange workflow items in a channel, the channel would reset, losing the configuration changes.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">38030</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Branding files</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue when switching from default branding to custom branding (or vice versa) in which an error in a branding file prevented the branding refresh. The system now continues to load branding files if an issue is found with any of the files, and skips the affected files.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">38076</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Question on business rules</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where date fields used in #IsDirty triggering would always show a false positive, due to the field storing a date-time value, but the code compared the field triggering on strictly Date (the implied time as 12:00:00 or midnight on that date). Because these fields did not match, the system would interpret this as if the date had changed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">38158</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">NAICS codes are not saving when adding a new deal to the Broker Portal</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where&#160;Broker Portal users were unable to save a NAICS code. When you selected a code, the field would immediately clear and not save the code.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">38168</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Email Integration, loop prevention</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where the system would allow for bad configurations when an email template response from email integration could be sent to a mailbox that was then used in email integration, causing a loop to occur.&#160;The system now includes a unique tag when sending template responses. The tag is recognized by email integration so that the emails are marked as read and ignored.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">38199</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Client Contacts Custom Link function</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where the Client Contacts link was using a deprecated custom function to open the Workspace Contacts list.&#160;The system now opens the related Organization contacts directly.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">38358</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Manage Import Queue issues</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved a list refresh issue when managing import queue records.&#160;Previously if you deleted queue records, on return to the list the records, the delete queue record would still appear to be present in the list.&#160;The system now performs a list refresh upon return to the manage queue list.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">38393</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Another Time Zone issue</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue with time zone conversion&#160;when administering calendar events. The default start date/time for new calendar appointments was changed, affecting the creation of new calendar events. Previously, the server's current date/time was used. Now, the user's time zone (as set in the user profile) is used, which includes their current time zone.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">38397</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Pound sign in form values on the first workflow step</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue if a pound sign (#) was added in any of the fields in Step 1 of creating a workflow. The system would throw an exception when moving to Step 2.&#160;The system now allows this symbol in any of the workflow channel fields.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">38468</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Project User table missing a column</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue&#160;where in some instances the UserFromTemplate flag was not properly set. Also included an update script to set the IsTriggerable flag for any dataform field currently used in triggering on a Workflow Channel or Email template.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">38504</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Report&#160; branding issues</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Corrected an issue with the info bubbles for report branding that describe the allowable file extensions.&#160;The bubbles now appropriately read:&#160;"Supported image types include .jpg, .bmp, and .gif files; .jpg is the recommended format."</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">38529</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Illegal characters in Dataform field name (table column)</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where illegal characters (primarily symbols) could be included in field names when adding a dataform field.&#160;The system now only supports the underscore as a valid character; all other characters are stripped automatically from field names.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">38579</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">Dashboard table default value</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">Resolved an issue with the dashboard modules configuration that could cause an exception when saving changes to a new or existing dashboard.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

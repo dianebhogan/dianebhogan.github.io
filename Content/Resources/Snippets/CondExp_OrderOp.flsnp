@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <p>The order of execution can significantly affect the resulting value. To control order and precedence you use parentheses to group functions.&#160;Everything within the parentheses is evaluated first to yield a single value before that value can be used by any operator outside the parentheses. If an expression has nested parentheses, the most deeply nested expression is evaluated first.</p>
+        <p>When a condition is met, the evaluation ends, using the results of the first successful condition. For&#160;(Condition1 AND Condition2) OR (Condition3 AND Condition4) OR Condition5, if the first set&#160;(Condition1 AND Condition2) is met, then the remaining OR statements are ignored.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">You can only use Labels and the AND, NOT, and OR operators in your Condition Expression. The Condition Expression cannot contain SQL keywords.</p>
+        <p class="ProcedureIntro">Condition expression example</p>
+        <p>The following example illustrates multiple expressions for filtering attributes of a physical property (structure) and user rights:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Is the property owner-occupied?</p>
+        <p class="Bullet1" MadCap:autonum="• ">Is the property located in one of the following states: Georgia, Alabama, Arizona?</p>
+        <p class="Bullet1" MadCap:autonum="• ">Is the property height in the number of stories greater than or equal to 5?</p>
+        <p class="Bullet1" MadCap:autonum="• ">Does the user have the security entity named biz_RequestTypeCategory_Envornmental?</p>
+        <p class="ProcedureIntro">Example</p>
+        <p>Each expression Label is brief and descriptive: OO, GA, AL, SECenv, 5PLUS, AZ.&#160;</p>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1">
+            </col>
+            <col class="TableStyle-Standard_Table-Column-Column1">
+            </col>
+            <col class="TableStyle-Standard_Table-Column-Column1">
+            </col>
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Type</th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Description</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Label</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">FieldValueExpression</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_Property.OwnerOccupied Equals Yes</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">OO</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">FieldValueExpression</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">gen_Property.State Equals GA</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">GA</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">FieldValueExpression</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_Property.State Equals AL</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">AL</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">SecurityEntity</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Security Entity Equals biz_RequestTypeCategory_Environmental</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">SECenv</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">FieldValueExpression</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">gen_Property.NumOfStories Greater Than or Equal 5</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">5PLUS</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">FieldValueExpression</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">gen_Property.State2 Equals AZ</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">AZ</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="ProcedureIntro">Condition expression example</p>
+        <p>The Labels are used in the Condition Expression along with the AND and OR operators. Additionally, grouping and nesting control the evaluation.</p>
+        <p>The following example has two major groupings delineated by sets of parentheses. Within each major group, there is a sub-group, also delineated by a set of parentheses.</p>
+        <p><strong>(OO AND (GA OR AL)) OR (SECenv AND (5PLUS AND AZ))</strong>
+        </p>
+        <table class="TableStyle-Standard_Table" style="margin-left: 0;margin-right: auto;mc-table-style: url('../TableStyles/Standard_Table.css');" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 498px;">
+            </col>
+            <col class="TableStyle-Standard_Table-Column-Column1">
+            </col>
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">First group - the AND</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Parentheses and groupings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">The first grouping has two sets of parentheses:&#160;</p>
+                        <p class="TableBullet" MadCap:autonum="• ">The first group specifies owner-occupied as OO. You need a set of parentheses for OO. Sub-groups are placed inside the parentheses of the major group.</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">
+                            <br>
+                            </br><strong>(OO</strong> AND (GA OR AL)<strong>)</strong></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">Within the owner-occupied group, the location must be GA or AL. You need a second set of parentheses for the locations GA and AL.</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">(OO AND <strong>(GA OR AL)</strong>)</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2"><strong>Second group - the OR</strong>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <br>
+                        </br>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">The second grouping has two sets of parentheses:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">The first group is SECenv. You need a set of parentheses for this major group.</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft"><strong>(SECenv</strong> AND (5PLUS AND AZ)<strong>)</strong></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">The second group is the number of stories and location. Place the sub-group within a set of parentheses.</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">(SECenv AND <strong>(5PLUS AND AZ)</strong>)</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="NoPageBreak">
+            <p>The following diagram explains how the sample condition expression is evaluated.</p>
+            <p>
+                <img src="../Images/Dataform/ConditionExpressions_diagram.png">
+                </img>
+            </p>
+        </div>
+        <p class="ProcedureIntro">Result</p>
+        <p>For the expression&#160;<strong>(OO AND (GA OR AL)) OR (SECenv AND (5PLUS AND AZ))</strong></p>
+        <p class="TableBullet" MadCap:autonum="• ">If the property is owner-occupied and is located in Georgia or Alabama, then the evaluation ends because the condition has been met. The OR portion is ignored.</p>
+        <p class="TableBullet" MadCap:autonum="• ">However, if there are no properties that are owner-occupied in either Georgia or Alabama, then the OR expression is evaluated. The OR portion looks for:</p>
+        <p class="TableBullet2" MadCap:autonum="• ">user view rights to&#160;RequestTypeCategory_Environmental</p>
+        <p class="Bullet2" MadCap:autonum="• "><strong>and</strong> the property must be in Arizona with a minimum height of 5 stories</p>
+        <p class="ProcedureIntro">Summary</p>
+        <p>The examples provided in this topic use nested groupings along with the AND and OR operators. Keep in mind that your needs may vary. Additionally,&#160;plan ahead. Determine your Display Conditions and use brief Labels. After you have defined your Display Conditions, then you are ready to compose the Condition Expression.</p>
+    </body>
+</html>

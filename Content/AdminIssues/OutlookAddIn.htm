@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Troubleshooting" />Outlook add-in and modules issues</h1>
+        <p>Sometimes the most interesting ClientSpace issues aren't in ClientSpace.</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>"No HTTP&#160;resource was found that matches the request URI"</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: When trying to post to ClientSpace, receive an error "No HTTP resource was found that matches the request URI"</p>
+                <p><b>Solution</b>: The workaround solution is to remove the "s" from HTTPS and then add it back.</p>
+                <p class="ActionTip">In your browser settings, ensure that your pop-up blocker is disabled.</p>
+                <p class="ProcedureIntro">To apply the workaround solution:</p>
+                <ol>
+                    <li>In <span class="UXElement">Settings</span>, in the <span class="UXElement">URL</span>&#160;field, remove the "s" from HTTPS.</li>
+                    <li>Tab out of the field.</li>
+                    <li>Click <span class="UXElement">Post to ClientSpace</span>.<br />The error displays.</li>
+                    <li>In the <span class="UXElement">URL</span>&#160;field, add the "s" back to HTTP.</li>
+                    <li>Tab out of the field.</li>
+                    <li>Click <span class="UXElement">Post to ClientSpace</span>.<br />The  problem should be resolved. If you need additional assistance, please log an Extranet case.</li>
+                </ol>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>"Error: pwInternetExplorerRequiredException - Internet Explorer Required" Error when using Create Case or Task from Outlook Add-in</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: A user attempts to create a case or task from the Outlook add in and they receive the error "Error: pwInternetExplorerRequiredException - Internet Explorer Required".  When checked they are on an appropriate version of Internet Explorer and the browser settings appear correct.</p>
+                <p><b>Cause</b>: Microsoft will often push changes to Internet Explorer through Windows updates that can cause unexpected behavior in the browser.</p>
+                <p><b>Solution</b>: Update to the latest version of the browser and check to ensure the update did not overwrite any of the browser configuration settings.  This error is most commonly caused by the compatibility mode settings getting changed.</p>
+                <p>Additional considerations for Internet Explorer 10+: With Internet Explorer 10 and up, Microsoft made some major changes to the way the browser handles JavaScript and other web technologies, which can cause unexpected behavior in the application. To avoid these issues, you should set your browser to use compatibility mode for the ClientSpace application. </p>
+                <p class="ProcedureIntro">Set Compatibility mode  through the following steps:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Open Internet Explorer and go to your ClientSpace login page – some users have reported that the login page does not load under I.E. 10, that is OK, we just need to get the URL from the browsers address bar.</p>
+                <p>
+                    <img src="../Resources/Images/Issues/IE_getURL.png" />
+                </p>
+                <p class="L1Num" MadCap:autonum="2. ">Select the domain portion of the URL. In the example this would be clientspace.net, your install may be different. </p>
+                <p class="L1Num" MadCap:autonum="3. ">In Internet Explorer, go to the tools menu:</p>
+                <p class="Bullet2" MadCap:autonum="• ">If you do not have an Option for Tools, right-click the top of your browser and ensure the Menu Bar is selected. </p>
+                <p class="Bullet2" MadCap:autonum="• ">Then go to <b>Tools</b> &gt; <b>Compatibility View Settings</b>.</p>
+                <p class="Bullet2" MadCap:autonum="• ">Add the domain portion of the URL that you just selected into the <b>Add this website:</b> field (this defaults in some cases) and click <b>Add</b>. This will set the browser to use compatibility mode for any page where the URL ends in that domain (in our example, clientspace.net).</p>
+                <p class="Indent1">
+                    <img src="../Resources/Images/Issues/Compat.jpg" />
+                </p>
+                <p class="L1Num" MadCap:autonum="4. "><b>Save</b> your settings, and you are done.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>"null" Error when using ClientSpace Outlook add-in</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You open Outlook and log into ClientSpace using the outlook add in, but when you attempt to Create a case or task you receive an error that simply says "null".</p>
+                <p>
+                    <img src="../Resources/Images/Issues/OutlookNullError.png" />
+                </p>
+                <p><b>Cause</b>: Older versions of the Outlook Add-In allowed you to store an invalid URL configuration which contained a trailing slash (https://your.clientspace.net/).  This has been corrected with later versions of the application which strip the trailing slash from the URL on save.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Remove the trailing slash from the URL by logging out and logging back in to the ClientSpace Outlook Add-In.** </p>
+                <p>** A best practice would be to uninstall the Outlook Add-In and re-install it from the latest version that can be found in the Admin Workspace in ClientSpace. For Instructions to uninstall / re-install the add-in, see <MadCap:xref href="../AddIns/EmailAdd-in_Outlook.htm" title="install email add-in" alt="install email add-in" class="Heading">Configuring the Email add-in for Outlook</MadCap:xref>.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>404 Error: File or Directory not found when attaching files from Outlook</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You attempt to attach a file using the Outlook Add-In and you receive the error "Server Error:  404 - File or directory not found.  The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+                <p><b>Cause</b>: You have exceeded the maximum file size for attaching through the Outlook Add-in.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: The maximum file size for the Outlook Add-in is 5mb, however you can upload up to a 20mb file through the ClientSpace UI. Try zipping the file to make it smaller then uploading from Outlook, or open ClientSpace and manually attach the file in the UI.</p>
+                <p>This error also occurs if the File attachment size (20 mb) is exceeded anywhere within the application.  Try zipping or reducing the file below the 20mb limit to resolve this issue.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Cannot attach from Outlook add-in</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Unable to attach email or emails with attachments from Outlook Add-In.  No error message is given, you connect to ClientSpace from the add-in and select a dataform/Workspace, but the attachment never happens.</p>
+                <p><b>Cause</b>: Conflicting outlook plugin is causing part of the process (normally the pop-ups for selecting a contact / confirmation message).</p>
+                <p style="font-weight: normal;"><b>Solution</b>:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">In Outlook, go to <b>File</b> &gt; <b>Options</b> &gt; <b>Add-ins</b> &gt; <b>Manage COM Add-ins</b> and click <b>Go</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">In the dialog that opens clear all non-Microsoft Add-ins (other than the ClientSpace Add-in) that are enabled, making note of which add-ins you disable.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Save your changes and return to Outlook</p>
+                <p class="L1Num" MadCap:autonum="4. ">Try attaching a document to ClientSpace.</p>
+                <p class="L1Num" MadCap:autonum="5. ">Open ClientSpace and verify the attachment function worked correctly.</p>
+                <p class="L1Num" MadCap:autonum="6. ">If you are now able to attach into ClientSpace, one of the other Outlook Add-ins is conflicting with the ClientSpace Add-in.  Reverse the process of disabling add-ins one at a time, enabling an add-in, saving the setting, and attempting to attach to ClientSpace.</p>
+                <p class="L1Num" MadCap:autonum="7. ">When you find a conflicting add-in make which stops the attachment process, make note of this, disable it again and continue re-enabling the other add-ins and testing, as there may be several that have conflicts.</p>
+                <p class="L1Num" MadCap:autonum="8. ">When you have a list of conflicting add-ins, contact your local IT department, and discuss the issue.  They may be able to help by either removing the conflicting add-ins or configuring them in such a way that they no longer conflict with the ClientSpace Outlook Add-in.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Contact is defaulted on attaching from Outlook</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: When a client is trying to attach an email from the Outlook add-in, Outlook does not prompt to select the associated contact.  Instead, the Contact is defaulted to an apparently random contact in the system.</p>
+                <p><b>Cause</b>: One of the email addresses on the email is incorrectly associated with a contact record in ClientSpace.  This was most likely caused by a user input mistake.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Update incorrect email address on contact.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Find the contact that is being selected in the system using the Contacts Module.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Replace the incorrect email address on the contact with the appropriate email address for the contact.</p>
+                <p class="L1Num" MadCap:autonum="3. ">The Outlook add-in should now correctly search for related contacts when attaching an email to ClientSpace, providing a list of contacts, or prompting the user to select a contact.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Edit Case or Task missing from Outlook button bar</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: For some ClientSpace emails the Edit Case or Edit Task button appears to be missing when using the Outlook Add-In.</p>
+                <p><b>Cause</b>: Email Header information has been stripped off - likely by the Clients Network security.  The Outlook add-in reads the emails header information to determine if the email has links to an editable element in ClientSpace such as a task or case.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Check the header information for the email in question:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">In Outlook, open the email in a separate window by double clicking the email in the Inbox list.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Go to <b>File</b> &gt; <b>Info</b> &gt; <b>Properties</b> and look at the Internet Headers section.</p>
+                <p class="Indent1">
+                    <img src="../Resources/Images/Issues/email_header.jpg" />
+                </p>
+                <p class="Indent1">This section should contain information about the ClientSpace element that produced the email. It is possible that a firewall or some other Network Security device has removed this header information. If this area has been stripped of information, contact your local IT department to see if it is possible to remove these restrictions.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Edit linked document functionality missing from Outlook add-in</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Previously, when opening an email in Outlook, there was an option to edit the case. That option seems to be missing on some emails.</p>
+                <p><b>Cause</b>: Firewall / Antivirus settings are stripping email header information.  The URL link used by the edit functionality is stored in the header information of the email itself.  Certain Firewall and / or antivirus/malware systems can strip this information from the email, removing the remote edit functionality in the Outlook Add-in.  Check this by opening the email in a separate window (pop-out in MS Outlook), then go to File Properties to see the Internet headers information.  If this is missing or has replaced by a message such as "Removed by Symantec Firewall", the ClientSpace domain needs to be authorized.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Contact your Network security administrator about the problem.  They may be able to add the pertinent ClientSpace domain to your Network security unrestricted list, thereby allowing the header information from ClientSpace to remain on the emails.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Error: 'The MS Interop assemblies are not installed, unable to continue installation.'</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You are attempting to install the Outlook Add-in for ClientSpace when the installer fails with the error 'The MS Interop assemblies are not installed, unable to continue installation.'</p>
+                <p><b>Cause</b>: Insufficient rights on the installing account.  The Installer needs complete access to the Windows system registry, attempting to install with a non-administrator account on the machine can cause the install to fail.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Re-install the Outlook add-in using an account with Administrator access on the machine.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Check the version of Outlook on the machine where you would like to install the Add-in.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Download the appropriate version of the installer to the local machine.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Run the <b>setup.exe</b> file by right clicking the file and choosing <b>Run as Administrator</b>.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Follow the installer step-by-step to complete the installation. </p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Outlook add-in disables each time Outlook restarts
+</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Each time the user opens Outlook, the ClientSpace Outlook Add-In is disabled.</p>
+                <p><b>Cause</b>: Insufficient rights when running Outlook client</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Run Outlook as administrator </p>
+                <p class="L1Num1" MadCap:autonum="1. ">Find the icon used to start Outlook, either on the desktop, Windows Taskbar, or the program menu.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Right-click the icon and go to <b>Properties</b> &gt; <b>Compatibility</b> &gt; and select <b>Run this program as Administrator</b>.</p>
+                <p class="Indent1">
+                    <img src="../Resources/Images/Issues/RunAsAdmin.jpg" />
+                </p>
+                <p class="L1Num" MadCap:autonum="3. "><b>Save</b> the changes.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Outlook add-in disables on Outlook close</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: When you open Outlook the ClientSpace add-in is disabled.  You can re-enable the add-in using the steps Outlined here but when you close Outlook, the add-in is disabled again.</p>
+                <p><b>Cause</b>: Outlook must be run with administrative privileges.</p>
+                <p style="font-weight: normal;"><b>Solution</b>:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Close any instances of Outlook</p>
+                <p class="L1Num" MadCap:autonum="2. ">Find the shortcut icon used to open Outlook.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Right-click the icon and choose <b>Properties</b> &gt; <b>Shortcut</b> &gt; <b>Advanced</b> and select <b>Run as Administrator</b>. </p>
+                <p class="L1Num" MadCap:autonum="4. "><b>Save</b> your changes.</p>
+                <p class="L1Num" MadCap:autonum="5. ">Re-open Outlook.</p>
+                <p class="L1Num" MadCap:autonum="6. ">If the Add-in is not enabled, enable it.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Outlook add-in error: "fnShow: Access Denied"</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You attempt to use the Outlook Add-In to connect to ClientSpace and perform an action, such as creating a case.  The Client Service Case detail form is presented, but when you try to select a Category (or any other lookup) you received the error: "fnShow: Access Denied" and cannot proceed further.</p>
+                <p><b>Cause</b>: Internet Explorer setting is causing windows to default to the 64-bit version of IE when open the browser from the add-in.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Update Internet Explorer settings to disable "Protected Mode"</p>
+                <p style="font-weight: normal;">
+                    <img src="../Resources/Images/Issues/Protected.jpg" />
+                </p>
+                <p class="L1Num1" MadCap:autonum="1. ">Close Outlook on the affected machine.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Go to Internet Options, either through the control panel or by accessing in IE through <b>Tools</b> &gt; <b>Internet Options</b>.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Go to the Security tab</p>
+                <p class="L1Num" MadCap:autonum="4. ">Clear <b>Enable Protected Mode</b> and click <b>OK</b> to save you settings. This will require a re-start of Internet Explorer.</p>
+                <p class="L1Num" MadCap:autonum="5. ">Close all instances of Internet Explorer.</p>
+                <p class="L1Num" MadCap:autonum="6. ">Open Outlook and log in to the ClientSpace Outlook Add-In.</p>
+                <p>Your local IT administrator may have locked these settings down on your machine for security purposes. If you are unable to change these settings, your IT admin will need to perform these actions as an administrator of the machine. More information on this issue may be found in the following Microsoft Article: https://support.microsoft.com/en-us/help/2864914/enhanced-protected-mode-add-on-compatibility</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Outlook add-in error: "Object doesn't support this property or method"</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: While attempting to use the Outlook add-in you click the action button (Create Task, create case etc...) and you receive the error "Object doesn't support this property or method"  you are prompted for whether to continue to run scripts on the page.  Regardless of what answer you provide, canceling the error shows a blank gray screen and the word "Loading..."</p>
+                <p><b>Cause</b>: The ClientSpace site is no longer in the list of sites for which pop-ups are allowed - this commonly happens after a Windows Update.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Add the ClientSpace site domain to the list of allowed sites for pop-ups.</p>
+                <p class="ProcedureIntro">In Internet Explorer:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to <b>Tools</b> &gt; <b>Pop-Up Blocker</b> &gt; <b>Pop-up Blocker Settings</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Add the appropriate domain of the URL (for example, clientspace.net) to the list of allowed sites. You can find this domain at the end of the ClientSpace URL.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Save your settings.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Close and open Outlook.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Outlook add-in error: "Your cached credentials are bad."</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Unable to login to ClientSpace using the Outlook Add-In. When the user attempts to login they receive the error "Your cached credentials are bad".  Uninstalling and re-installing, then re-entering the user's credentials does not resolve the issue.</p>
+                <p><b>Cause</b>: Login credentials that are cached on the machine do not match the current username/password in ClientSpace.  This should be removed and reset with an Uninstall/Reinstall, but in some cases it does not.</p>
+                <p style="font-weight: normal;"><b>Solution</b>:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Try having a different ClientSpace user log in to the Outlook add-in on the affected machine using their credentials.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Then log out and log back in as the affected user.</p>
+                <p class="L1Num" MadCap:autonum="3. ">This will sometimes force the cached credentials to be reset.  If this does not resolve the issue, log an Extranet case for support.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Outlook add-in keeps inactivating</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Outlook software disables the ClientSpace add-in whenever Outlook is closed and reopened.</p>
+                <p><b>Cause</b>: Installation defaults to "everyone" during the install process, but there is a security setting on the machine policy that prevents the logged in user from accessing non-profile specific data.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: </p>
+                <p class="L1Num1" MadCap:autonum="1. ">Uninstall and re-install the Outlook add-in. </p>
+                <p class="L1Num" MadCap:autonum="2. ">Select the option for <b>Just Me</b>, which should install the app with the proper rights.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Outlook add-in will not enable</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Outlook add-in appears to be installed properly, but the Kandu Icon does not appear in the Ribbon bar and no functionality is available.</p>
+                <p><b>Cause</b>: Add-in is disabled</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Re-Install the appropriate Outlook Add-in module</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Uninstall the Outlook Add-in through the Add/Remove programs control panel in Windows.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Re-install the appropriate Add-in for the Outlook version - x86 (32 bit)  or x64 (64 bit). </p>
+                <p class="L1Num" MadCap:autonum="3. ">Open Outlook.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Go to <b>File</b> &gt; <b>Add Ins</b>.</p>
+                <p class="L1Num" MadCap:autonum="5. ">At the bottom of the screen select <b>Disabled -Items</b>.</p>
+                <p class="L1Num" MadCap:autonum="6. ">When the Disabled window opens, select <b>ClientSpace Add-in</b> and click <b>Enable</b>.</p>
+                <p class="L1Num" MadCap:autonum="7. ">ClientSpace Add-in will disappear from the Disabled window.</p>
+                <p class="L1Num" MadCap:autonum="8. ">Choose <b>Com Add-Ins</b> from the bottom left and click <b>Go</b>.</p>
+                <p class="L1Num" MadCap:autonum="9. ">Select the <b>Enable</b> box and <b>Save</b>.</p>
+                <p class="L1Num" MadCap:autonum="10. ">Log the user into ClientSpace.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>PDF active report displays "Garbage" characters instead of report data</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You run an Active Report which outputs to PDF, but when the report opens you find a page full of unreadable "garbage" characters instead of the report data.</p>
+                <p class="ProcedureIntro">Issue 1</p>
+                <p><b>Cause</b>: An unreadable or missing font has been used in the report that Adobe Acrobat is unable to process.  Acrobat provides you the ability to add fonts to the application from your local desktop. If these fonts aren't included in the report set, when the report tries to open the application cannot display the information and the data becomes garbled.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Create a support ticket with <MadCap:variable name="MyVariables.CompanyName" />. We may need to edit the Active report to use a more generic font and re-save the report.</p>
+                <p class="ProcedureIntro">Issue 2</p>
+                <p class="ProcedureIntro" style="font-weight: normal;"><b>Cause</b>: The Active Reports PDF print functionality does not react well when the ClientSpace web environment is extremely active while running large PDF reports.  A bad interaction between the Active Reports PDF distiller application and the ClientSpace Web Application pool can cause the PDF Distiller to generate these types of "Garbage" reports</p>
+                <p class="ProcedureIntro" style="font-weight: normal;"><b>Solution</b>: Create a support ticket with <MadCap:variable name="MyVariables.CompanyName" />. Recycling the Application pool on your site manually will often resolve these intermittent issues.</p>
+                <p class="ProcedureIntro">Persistent PDF Issues</p>
+                <p>On very rare occasions the number of users / report interactions on an install can cause the bad interaction between the PDF Distiller application and the ClientSpace Web application pool to occur frequently.  In these instances, it may be necessary to schedule a more frequent recycle of the ClientSpace application pool for your site.  Create a support ticket with <MadCap:variable name="MyVariables.CompanyName" />. For assistance in determining if this additional step is necessary, log an Extranet case.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Script error when attaching email from Outlook</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: User receives a script error when typing in the Workspace field when trying to Attach Email from the Outlook Add-in.</p>
+                <p>
+                    <img src="../Resources/Images/Issues/outlook script error.png" />
+                </p>
+                <p><b>Cause</b>: There is a slash after the URL stored on the ClientSpace login page.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Log out of the Outlook Add-in.  When logging back in, remove the slash from the end of the URL.***</p>
+                <p>**Current versions of the Outlook add-in resolve this issue by stripping the trailing slash from the URL when saving the login information.  A best practice would be to uninstall and re-install from the latest version on the Admin Workspace.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+    </body>
+</html>

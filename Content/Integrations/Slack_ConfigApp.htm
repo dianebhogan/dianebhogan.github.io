@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring ClientSpace</h1>
+        <p>The next part of the Slack configuration is to configure ClientSpace. The application configuration consists of two parts:</p>
+        <p class="Bullet1" MadCap:autonum="• ">The Third Party Application (TPA) configuration</p>
+        <p class="Bullet1" MadCap:autonum="• ">The user configuration. </p>
+        <p class="ProcedureIntro"> To  begin:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">In ClientSpace, go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Third Party Applications</b>.<br /></p>
+        <p class="StepResult">The Third Party Application Configuration dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Click <b>Add</b>.<br /></p>
+        <p class="StepResult">The New Third Party Application form opens.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/ThirdPartyApplication_form.png" />
+        </p>
+        <p class="L1Num" MadCap:autonum="3. ">Complete the form fields:</p>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 118px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Type <span class="UXElement">Slack</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Private Token</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Paste the Token that was generated during the Slash Command configuration in Slack.  This is what identifies the Slack application as a valid third-party application.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="4. ">Click <b>Apply</b>.<br /></p>
+        <p class="StepResult">The Administration area of the form is auto-filled. Now you are ready to add users to the configuration.</p>
+        <p class="ProcedureIntro">To add users to your third-party application configuration:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">In the <b>Action Center</b>, click <b>Users</b>.<br /></p>
+        <p class="StepResult">The Third Party Application Users dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Click <b>Add</b>.<br /></p>
+        <p class="StepResult">The Add Third Party User dialog box opens. This is where you add user records for each user who will connect through Slack.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Complete the fields:</p>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 152px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">System User</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select the ClientSpace user.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Third Party LoginID</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Type the user's Slack ID.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="4. ">Click <b>Save</b>.<br /></p>
+        <p class="StepResult">The newly added user displays in the Third Party Application Users list.</p>
+    </body>
+</html>

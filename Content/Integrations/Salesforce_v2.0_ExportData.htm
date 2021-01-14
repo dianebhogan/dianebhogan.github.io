@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Exporting data</h1>
+        <h2>Exports allowed
+</h2>
+        <p class="Bullet1" MadCap:autonum="• ">A flag is used to determine whether or not ClientSpace will export data to Salesforce.  This flag is set via the API Configuration form.  It cannot be changed programmatically.</p>
+        <h2>Organization
+</h2>
+        <p class="Bullet1" MadCap:autonum="• ">Update Opportunity and/or Account based on mappings (Org and Org Other Info).</p>
+        <h2>Client </h2>
+        <p>Client Master data is combined with other workspace data using the PEO stored procedure <b>peo_salesforce_org_s_workspace_by_org</b>. </p>
+        <h2>Contact</h2>
+        <p class="Bullet1" MadCap:autonum="• ">Update Contact based on mappings (Contact and Contact Other Info).</p>
+        <p class="Bullet1" MadCap:autonum="• ">Create new contact based on mappings (Contact and Contact Other Info).</p>
+        <p class="Bullet1" MadCap:autonum="• ">Create converts the Org Assigned To to a Salesforce User or Salesforce Account Owner.</p>
+        <p class="ProcedureIntro">To add Client Master Export fields:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Add a custom version of this stored procedure  to your system that includes the additional fields. </p>
+        <p class="Bullet2" MadCap:autonum="• ">update Opportunity and/or Account based on mappings (Client Master) </p>
+        <p class="Bullet2" MadCap:autonum="• ">
+set Opportunity.StageName based on ClientMaster.Status</p>
+        <p class="L1Num" MadCap:autonum="2. ">For  questions or help with this, log an Extranet case.
+</p>
+    </body>
+</html>

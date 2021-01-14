@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Merge<MadCap:annotation MadCap:comment="R90 Case 31131" MadCap:createDate="2020-03-11T13:22:10.330Z" MadCap:creator="Diane Hogan" MadCap:editDate="2020-03-11T13:22:14.029Z" MadCap:editor="Diane Hogan" MadCap:initials="DH" MadCap:creatorCentralUserId="98c66c7b-566c-4028-b287-6a8c4e6d073b">s</MadCap:annotation></h1>
+        <p>With a ClientSpace merge, you can merge specific data from the ClientSpace system dynamically into your business documents and forms. Merges provide options to export data from <MadCap:variable name="MyVariables.ProductName" /> and present the information in a highly organized manner. This functionality removes the need for manual completion of forms, such as a Request for Proposal, or Client Service Agreement.</p>
+        <p>Common uses for merges include marketing tools, proposals, personalized letters, detailed forms, labels, data analysis, and metrics. You can merge data to generate Microsoft Word documents, Microsoft Excel files, and form-fillable PDFs.</p>
+        <p>Merge Admin is where you configure the merge and maintain your documents. The Merge Admin record specifies the:</p>
+        <ul>
+            <li>
+                <p>Stored procedure that gathers the <MadCap:variable name="MyVariables.ProductName" /> data.</p>
+            </li>
+            <li>
+                <p>File template that contains the merge fields and instructions for presenting the data that is retrieved using the stored procedure.</p>
+            </li>
+            <li>
+                <p>Type and Output Type.</p>
+            </li>
+        </ul>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">You cannot delete System merges. This includes <em>isdeveloper</em> user<MadCap:annotation MadCap:comment="new " MadCap:createDate="2020-03-11T13:22:38.708Z" MadCap:creator="Diane Hogan" MadCap:editDate="2020-03-11T13:22:41.792Z" MadCap:editor="Diane Hogan" MadCap:initials="DH" MadCap:creatorCentralUserId="98c66c7b-566c-4028-b287-6a8c4e6d073b">s</MadCap:annotation>.</p>
+        <p class="ProcedureIntro">To access Merge Admin:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Outputs</span> &gt; <span class="UXElement">Merges</span>.<br />The Merge Admin dashboard opens, showing a list of your existing merges. From here, you can Add, Edit (and view), or Delete a Merge record. However, you cannot delete a System merge record.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Merges/MergeAdminDetail_form.png" alt="" title="" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Complete the form fields.</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <colgroup>
+                <col class="TableStyle-Procedure-Column-Column1" style="width: 141px;" />
+                <col class="TableStyle-Procedure-Column-Column1" />
+            </colgroup>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Type a descriptive name for this merge record.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Template File</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is where you upload the template file.</p>
+                        <ol>
+                            <li>
+                                <p>Click <img src="../Resources/Images/ICONS/ICON_upload.png" /> (<span class="UXElement">Upload File</span>).<br />The Upload File dialog box opens.</p>
+                            </li>
+                            <li>
+                                <p>Click <span class="UXElement">Choose File</span>.</p>
+                            </li>
+                            <li>
+                                <p>Locate the file on your computer and click <span class="UXElement">Open</span>.<br />The file name displays.</p>
+                            </li>
+                            <li>
+                                <p>For <b>Version This File?</b>, select one of the options:</p>
+                                <ul style="list-style-type: square;">
+                                    <li>
+                                        <p><span class="UXElement">Yes, Pin New File</span>: Default setting. This option retains all file versions and pins the most recent uploaded file.</p>
+                                    </li>
+                                </ul>
+                                <ul style="list-style-type: square;">
+                                    <li>
+                                        <p><span class="UXElement">No, Replace File</span>: Do not retain file versions. Replaces the current file.</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>For <span class="UXElement">Description</span>, type a description of the uploaded file. Optional.</p>
+                            </li>
+                            <li>
+                                <p>For <span class="UXElement">Category</span>, select an entry from the list. Optional.</p>
+                            </li>
+                            <li>
+                                <p>Click <span class="UXElement">Save</span>.</p>
+                            </li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Type a descriptive title of the merge record.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select a file type: <span class="UXElement">Word</span>, <span class="UXElement">Excel</span>, <span class="UXElement">PDF</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Password</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Optional. Type a password to secure the administration of this Merge record.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Procedure</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select a stored procedure from the list.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Output Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">This field is visible when <span class="UXElement">Type</span> is <span class="UXElement">Word</span>. For Type Word, you can generate a Word doc or a PDF.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SubHdr">Word Merge Proc</p>
+        <p>One of the procedures that you can select from the <span class="UXElement">Procedure</span> list is <span class="UXElement">peo_merge_word_companydata</span>. This procedure includes the following data.</p>
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" class="TableStyle-Standard_Table" cellspacing="0">
+            <colgroup>
+                <col class="TableStyle-Standard_Table-Column-Column1" />
+                <col class="TableStyle-Standard_Table-Column-Column1" />
+            </colgroup>
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Company data</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Related Sales Rep (fkAssignedToUserID from Org) user information</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Email, Phone, Job Title, First Name, Last Name</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Admin per Invoice from gen_PricingBatch</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">FirstCheckSupplement</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">WCCode1State</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Full name of State</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">WCCode1Code</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">State code</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SubHdr">Excel Merge Proc</p>
+        <p>One of the procedures that you can select from the <span class="UXElement">Procedure</span> list is <span class="UXElement">peo_merge_excel_companydata</span>. This procedure includes the following information.</p>
+        <table style="width: 100%; mc-table-style: url('../Resources/TableStyles/Standard_Table.css'); margin-left: 0; margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <colgroup>
+                <col class="TableStyle-Standard_Table-Column-Column1" />
+                <col class="TableStyle-Standard_Table-Column-Column1" />
+            </colgroup>
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th colspan="2" class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Employee information</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">FirstName</p>
+                        <p class="TableBullet" MadCap:autonum="• ">LastName</p>
+                        <p class="TableBullet" MadCap:autonum="• ">CensusID</p>
+                        <p class="TableBullet" MadCap:autonum="• ">luSUTAState</p>
+                        <p class="TableBullet" MadCap:autonum="• ">CompCode</p>
+                        <p class="TableBullet" MadCap:autonum="• ">AnnualPay</p>
+                        <p class="TableBullet" MadCap:autonum="• ">MiddleInitial</p>
+                        <p class="TableBullet" MadCap:autonum="• ">luPayFrequency</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Address1</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Address2</p>
+                        <p class="TableBullet" MadCap:autonum="• ">City State</p>
+                        <p class="TableBullet" MadCap:autonum="• ">ZipCode</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">County</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Phone</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Mobile</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Email</p>
+                        <p class="TableBullet" MadCap:autonum="• ">crGender</p>
+                        <p class="TableBullet" MadCap:autonum="• ">DOB</p>
+                        <p class="TableBullet" MadCap:autonum="• ">crEmploymentStatus</p>
+                        <p class="TableBullet" MadCap:autonum="• ">JobTitle</p>
+                        <p class="TableBullet" MadCap:autonum="• ">crEmploymentType</p>
+                        <p class="TableBullet" MadCap:autonum="• ">StandardHoursPerPeriod</p>
+                        <p class="TableBullet" MadCap:autonum="• ">AnnualPayPctChange</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="2" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableHead">Benefits information</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">HealthWaived</p>
+                        <p class="TableBullet" MadCap:autonum="• ">HealthPlanCode</p>
+                        <p class="TableBullet" MadCap:autonum="• ">luHealthCoverageLevel</p>
+                        <p class="TableBullet" MadCap:autonum="• ">HealthEffectiveDate</p>
+                        <p class="TableBullet" MadCap:autonum="• ">DentalWaived</p>
+                        <p class="TableBullet" MadCap:autonum="• ">DentalPlanCode</p>
+                        <p class="TableBullet" MadCap:autonum="• ">luDentalCoverageLevel</p>
+                        <p class="TableBullet" MadCap:autonum="• ">DentalEffectiveDate</p>
+                        <p class="TableBullet" MadCap:autonum="• ">VisionWaived</p>
+                        <p class="TableBullet" MadCap:autonum="• ">VisionPlanCode</p>
+                        <p class="TableBullet" MadCap:autonum="• ">luVisionCoverageLevel</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">VisionEffectiveDate</p>
+                        <p class="TableBullet" MadCap:autonum="• ">VisionTerminationDate</p>
+                        <p class="TableBullet" MadCap:autonum="• ">LifeEffectiveDate</p>
+                        <p class="TableBullet" MadCap:autonum="• ">LifeTerminationDate</p>
+                        <p class="TableBullet" MadCap:autonum="• ">luDeductionType</p>
+                        <p class="TableBullet" MadCap:autonum="• ">luEnrollmentStatus</p>
+                        <p class="TableBullet" MadCap:autonum="• ">ContributionAmount</p>
+                        <p class="TableBullet" MadCap:autonum="• ">TotalContribution</p>
+                        <p class="TableBullet" MadCap:autonum="• ">WaitingPeriodDate</p>
+                        <p class="TableBullet" MadCap:autonum="• ">EstAnnualWages</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Surcharge code is also part of the pricing data.</p>
+        <h3>Procedure Fields</h3>
+        <p>The stored procedure (prepared SQL&#160;code that can be reused) is the mechanism for retrieving data from <MadCap:variable name="MyVariables.ProductName" />. The stored procedure generates data for the merge fields. You may need to use a custom stored procedure for your merges, or you can use one from the <span class="UXElement">Procedure</span> list. For any selected stored procedure in the <span class="UXElement">Procedure</span> list, you can view the fields. This is helpful if you are not familiar with the procedure names.</p>
+        <p class="ProcedureIntro">To view procedure fields:</p>
+        <ol>
+            <li>
+                <p>From the <span class="UXElement">Merge Admin Detail</span> form, in the <span class="UXElement">Action Center</span>, click <span class="UXElement">Show Procedure Fields</span>.<br />The Fields dialog box opens, showing the fields of the selected procedure in <span class="UXElement">Procedure</span>.</p>
+            </li>
+            <li>
+                <p>To copy the fields, click <b>Copy</b>.<br />The fields are copied to the clipboard.</p>
+            </li>
+            <li>
+                <p>Click <b>Close</b> when done.</p>
+            </li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Merges/ProcedureFields.png" alt="" title="" class="thumbnail" />
+            </p>
+        </div>
+        <h3>Microsoft Word example</h3>
+        <p>The following example shows a statement of work in a Word template. Word inserts your content using variables (placeholders that are replaced by text from the data source, your <MadCap:variable name="MyVariables.ProductName" /> data). In the example, the placeholder syntax is represented as &lt;&lt;sometext&gt;&gt;, such as &lt;&lt;CompanyName&gt;&gt;.</p>
+        <p>
+            <img src="../Resources/Images/Merges/Word_template.png" alt="" title="" class="thumbnail" />
+        </p>
+        <h3>Microsoft Excel example</h3>
+        <p>You can use Excel to pull raw data and perform calculations. The following image illustrates an Excel template for payroll information.</p>
+        <p>
+            <img src="../Resources/Images/Merges/Excel_template.png" alt="" title="" />
+        </p>
+    </body>
+</html>

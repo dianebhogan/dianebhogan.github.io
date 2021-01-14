@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1 MadCap:autonum="Chapter 1 ">Import / Export Mapping Help</h1>
+        <p>The following field mappings are designed to provide you a basic guideline when configuring API Map Header and Map Detail records.  As previously mentioned, Salesforce contains a great many fields, including custom fields which can be mapped through the API to populate or be populated by (in the case of exports) ClientSpace. </p>
+        <h2>Import mappings</h2>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">ClientSpace&#160; Field</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">SalesForce Source Path</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">ClientTeam.SalesRep</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Opportunity/OwnerId</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">CM.DescriptionOfOps</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Opportunity/Description</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">CM.ParentCompany</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Account/ParentId</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact.Address1</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Contact/MailingStreet</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact.AssignedTo</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Contact/OwnerId</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact.BusinessPhone</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Contact/Phone</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact.City</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Contact/MailingCity</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact.Country</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Contact/MailingCountry</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact.Fax</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Contact/Fax</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact.FirstName</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Contact/FirstName</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact.JobTitle</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Contact/Title</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact.LastName</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Contact/LastName</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact.Mobile</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Contact/MobilePhone</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact.PostalCode</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Contact/MailingPostalCode</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact.PrimaryEmail</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Contact/Email</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact.State</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Contact/MailingState</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Discovery.Amount</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Opportunity/Amount</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Discovery.AnnualGrossPayroll</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Opportunity/Amount</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">OOI.ExpectedCloseDate</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Opportunity/CloseDate</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">OOI.PrimaryCampaignSource</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Opportunity/CampaignId</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org.Address</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Account/BillingStreet</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org.AssignedTo</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Opportunity/OwnerId</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org.BusinessType</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Account/Industry</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org.City</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Account/BillingCity</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org.Country</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Account/BillingCountry</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org.Fax</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Account/Fax</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org.LeadSource</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Opportunity/LeadSource</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org.Name</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Account/Name</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org.Phone</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Account/Phone</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org.PostalCode</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Account/BillingPostalCode</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org.Source</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Opportunity/LeadSource</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org.State</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Account/BillingState</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Org.Website</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">Account/Website</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Export mappings</h2>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">ClientSpace&#160; Field</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">SalesForce Source Path</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">CM.DescrOfOps</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Opportunity/Description</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">CM.ParentCompany</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Account/ParentId</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">CM.Status</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Opportunity/StageName</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact.Address1</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Contact/MailingStreet</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact.AssignedTo</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Contact/OwnerId</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact.BusinessPhone</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Contact/Phone</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact.City</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Contact/MailingCity</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact.Country</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Contact/MailingCountry</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact.Fax</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Contact/Fax</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact.FirstName</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Contact/FirstName</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact.LastName</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Contact/LastName</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact.Mobile</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Contact/MobilePhone</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact.PostalCode</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Contact/MailingPostalCode</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact.PrimaryEmail</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Contact/Email</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact.State</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Contact/MailingState</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact.Title</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Contact/Title</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Org.Address</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">Account/BillingStreet</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

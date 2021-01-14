@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Replying to case discussions</h1>
+        <p>When a Case Discussion message is sent, the message is delivered to the recipient's email mailbox, such as Outlook or Gmail. Users could have two options for replying to case discussions:&#160;Send a Reply link or the Reply button. </p>
+        <p class="ActionTip">Using the Reply button requires additional configuration. Consult with your <MadCap:variable name="MyVariables.ProductName" /> administrator.</p>
+        <h2>Reply options</h2>
+        <p>When replying to a case discussion, users can either:&#160;</p>
+        <ul>
+            <li>Click the <span class="UXElement">Send a Reply</span> link within the email message. This functionality is always available.</li>
+            <li>Click the standard <span class="UXElement">Reply</span> button from the email mailbox. This functionality requires additional <MadCap:variable name="MyVariables.ProductName" /> configuration by your <MadCap:variable name="MyVariables.ProductName" /> administrator. </li>
+        </ul>
+        <p>
+            <img src="../Resources/Images/Case/CaseDisc_Reply.png" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">To reply using Send a Reply link:</p>
+        <ol>
+            <li>From the open email, in the email message, click <span class="UXElement">Send a Reply</span>.</li>
+            <li>You are connected to ClientSpace and taken to the case discussion thread.</li>
+        </ol>
+        <p class="ProcedureIntro">To reply using the email mailbox Reply button:</p>
+        <ol>
+            <li>From the open email, click the mailbox <span class="UXElement">Reply</span> button.</li>
+            <li>A reply area opens to type your response and send the email as you would normally do for any email. The reply is captured in the case discussion thread within <MadCap:variable name="MyVariables.ProductName" />. This functionality requires additional <MadCap:variable name="MyVariables.ProductName" /> configuration.</li>
+        </ol>
+        <h3>Replying directly from the email mailbox with Reply</h3>
+        <p>To use the <span class="UXElement">Reply</span> button from your mailbox, <MadCap:variable name="MyVariables.ProductName" /> requires additional configuration using an Email Integration that is explicitly tied to email templates CSCDISC and CSCDISCNEW. <MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">See <MadCap:xref href="Config_CaseDiscAboveLine.htm" title="Configuring Case Discussion Replies Above the Line" alt="Configuring Case Discussion Replies Above the Line">Configuring Case Discussion Replies Above the Line</MadCap:xref>.</MadCap:conditionalText><MadCap:conditionalText MadCap:conditions="ClientSpace.Print">See the topic <em>Configuring Case Discussion Replies Above This Line</em> in the <em>Setup &amp;&#160;Administration Guide</em>.</MadCap:conditionalText></p>
+        <h4>How will you know that you can do this?</h4>
+        <ul style="list-style-type: square;">
+            <li>When you see a ReplyID&#160;along with ATTN: Reply Above This Line (as in the following image), this indicates that Email Integration <span class="UXElement">is</span> enabled. You <span class="UXElement">can</span> use the Reply button to reply to the case discussion, and your message will be added to the case discussion thread.</li>
+        </ul>
+        <p>
+            <img src="../Resources/Images/Case/CaseDisc_ReplyAnnotations.png" class="thumbnail" />
+        </p>
+        <ul style="list-style-type: square;">
+            <li>When you do <span class="UXElement">not</span> see a ReplyID and the text ATTN: Reply Above This Line (as in the following image), this means that Email Integration has <span class="UXElement">not</span> been configured. If you click the Reply button, type a reply, and send, your case discussion reply will <span class="UXElement">not</span> be integrated into the case discussion thread.</li>
+        </ul>
+        <p>
+            <img src="../Resources/Images/Case/CaseDisc_NoReplyID.png" class="thumbnail" />
+        </p>
+        <h2>Case Discussion thread</h2>
+        <p>When you click <span class="UXElement">Send a Reply</span> or the <span class="UXElement">Reply</span> button (requires additional configuration), you are automatically connected to ClientSpace and taken to the case discussion thread. From the Discussion Thread page, you can see  the thread list and also view existing messages. From here, you can reply to the message by selecting a reply template (if applicable), typing in any customized notes, and selecting your recipients. A Reply Template list is available if any are configured for your organization. Templates provide standardized Subject and Message content for specific scenarios, such as payroll responses. Your <MadCap:variable name="MyVariables.ProductName" /> administrator configures email templates.</p>
+        <p>
+            <img src="../Resources/Images/Case/CaseDisc_DiscThread.png" class="thumbnail" />
+        </p>
+        <p>For replies with file attachments, a counter indicates if attachments are present. </p>
+        <p>
+            <img src="../Resources/Images/Case/CSCRPLY_attachment.png" alt="" title="" class="thumbnail" />
+        </p>
+    </body>
+</html>

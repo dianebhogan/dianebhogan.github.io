@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Email Templates" />Configuring email templates to notify external employees</h1>
+        <p>You can configure an email template to send an email to the related employee on a case. For example, you can send notifications to external employees who submit an inquiry through the Employee Portal Submit a Question.</p>
+        <p>The Employee Address stored procedure <b>peo_clientservicecase_external_emailtemplate_recipient_v2_proc</b> contains the employee email address fields <b>EmployeePersonalEmail</b> and <b>EmployeeWorkEmail</b>.  You can add these fields   to the  To or CC Address on Step 3 Addresses.</p>
+        <p>When configuring for external notification, you can configure your own template (making sure Client Service Case is the Triggering Form) and use the recipient proc on Step 3 Addresses.</p>
+        <p class="ProcedureIntro">To configure external employee notification:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Email Templates</b>.</p>
+        <p class="StepResult">The Email Templates dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Open any email template created from a Case dataform.</p>
+        <p class="StepResult">The email template displays.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Select <b>Addresses</b> Step 3.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/EmailTemplates/Addresses_EmpEmail.png" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="4. ">In <b>Address Source Procedure</b>, ensure that <b>peo_clientservicecase_external_emailtemplate_recipient_v2_proc</b> is selected.</p>
+        <p class="L1Num" MadCap:autonum="5. ">Click <b>Add</b>.</p>
+        <p class="StepResult">A new row opens. At this step, you add the employee personal or work email as a To or CC recipient. </p>
+        <p class="L1Num" MadCap:autonum="6. ">Complete the fields:</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 131px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Source</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <b>Address Source Procedure</b>. Ensure that you have specified the correct proc in the previous field Address Source Procedure. When the proc is selected along with Address Source Procedure in <b>Source</b>, then the external email addresses become available in <b>Address</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <b>To</b> or <b>CC</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Address</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Select <b>EmloyeePersonalEmail</b> or <b>EmployeeWorkEmail</b>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="7. ">Repeat Step 5 to add another row as applicable for To or CC.</p>
+        <p class="L1Num" MadCap:autonum="8. ">Click <b>Save</b>.</p>
+        <p>External employees should now be able to receive notifications from Client Service Cases.</p>
+    </body>
+</html>

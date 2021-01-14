@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 67 ( PEO )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" width="250" src="https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50" srcset="https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50 2x, https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50 1x" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;4/1/2018&#160; &#160; &#160;<strong>Sprint Ended:</strong>&#160;4/30/2018</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>he following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release67(PEO)-ImportEDVfileENHANCEMENT"><span style="color: rgb(51,153,102);"><span style="color: rgb(0,128,128);">Import EDV file</span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Employee Deduction Voucher (EDV) Plan Field Logic for Imports&#160;has been enhanced.</p>
+                        <p>This import logic is now Similar to the "DeductionVoucher" import</p>
+                        <ul>
+                            <li>A new import class was created "<strong>ClientSpace.PEO.Import.EmployeeDeductionVoucher</strong>"</li>
+                            <li>A new import map created "<strong>EmployeeDeductionVoucher*.csv</strong>"</li>
+                            <li>The "Plan" column mapped to EDV.fkOfferedPlanID.&#160; Import file column <strong>MUST </strong>contain the "<strong>UniquePlanCode</strong>" value, this will convert to the fkOfferedPlanID</li>
+                            <li>The "<strong>BenefitPlanEffDate</strong>" column (no dataform mapping) is used with <strong>UniquePlanCode </strong>and <strong>EmployeeID </strong>to locate the correct Offered Benefit Plan (OBP)&#160;in the EE's workspace<ul><li>If a single OBP is located, that plan will be set on the EDV</li><li>If multiple OBP's are located, no plan will be set on the EDV (error message will appear in import log file)</li><li>If no OBP is located, no plan will be set on the EDV (error message will appear in import log file)</li></ul></li>
+                        </ul>
+                        <p>Offered Benefit Plan (OBP) selection:</p>
+                        <ul>
+                            <li><strong>&#160;Unique Plan Code </strong>(UPC) and <strong>Effective Date </strong>are used to locate Benefit Plan</li>
+                            <li>&#160;<strong>EEID </strong>areused to locate the Workspace and the EE Benefit Classification ID (Employment.fkBenefitClassificationID)</li>
+                            <li>&#160;Workspace, Benefit Plan and Benefit Classification ID are used to locate OBP</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release67(PEO)-BenefitPlanTierRenewalEnhancementsENHANCEMENT"><span style="color: rgb(51,153,102);"><span style="color: rgb(0,128,128);">Benefit Plan Tier Renewal Enhancements&#160;</span><span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Benefits Plan Tier renewal has been updated to include the Rate Source and Percentage fields on the Plan Tier record during the Tier cloning process. This process sets the cloned Benefit Plan tier record Import ID to Benefit Plan ImportID (from the parent benefit plan) + "-"+Tier</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release67(PEO)-BenefitPlanImportIDENHANCEMENT"><span style="color: rgb(51,153,102);"><span style="color: rgb(0,128,128);">Benefit Plan Import ID&#160;</span><span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Benefit Plan renewal process has been enhanced to set the import ID of the new plan to <strong>Unique Plan Code + YYYYMMDD</strong> where YYYY is the year of the Effective Date of the plan. Prior to setting the importID the system checks to insure there is not already a record with that import ID. If so, the new ImportID will have "-PK of the record" appended ie: BCBS274020180110-1234</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release67(PEO)-ClonedOfferedPlanenhancementsonBenefitPlanRenewalENHANCEMENT"><span style="color: rgb(51,153,102);"><span style="color: rgb(0,128,128);">Cloned Offered Plan enhancements on Benefit Plan Renewal&#160;</span><span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>During Benefit Plan renewal the Offered Benefits&#160;Plans (OBP)&#160;related to the renewing plan are also renewed.&#160; This process has been enhanced with the following changes:</p>
+                        <ul>
+                            <li>A new Parent Offered Plan field has been added to the Offered Benefit Plan&#160;and&#160;which is set to the previous offered plan when cloned.</li>
+                            <li>The "Plan Code" has been renamed to "Carrier Plan Code" on Benefit Plan</li>
+                            <li>The Classification and Category fields are now included as part of the cloning process when creating the new&#160;OBP.</li>
+                            <li>The risk tier or the OBP is now set to the new risk tier&#160;of the new benefits plan that was&#160;created.&#160;&#160;</li>
+                            <li>The import ID of the OBP is set to the Related Plan importID + ClassificationCode</li>
+                            <li>The Total Client Premium fields are set to the rates on the new tier record (if there is one) or Benefit Plan rates (if no tier).</li>
+                        </ul>
+                        <p>During this process:</p>
+                        <ul>
+                            <li>A Unique Plan Code on Benefit Plan is required.</li>
+                            <li>On Benefit Plan "Renew" -&#160;the OBP Client Plan Code is defaulted to the ImportID of the related Benefit Plan record</li>
+                            <li>OBP biz Rule "SetClientPlanCode" logic update&#160; - If empty, it will be set to the related Benefit Plan ImportID</li>
+                            <li>OBP biz rule "SetImportID"&#160; logic has been updated so that&#160;if CPC or Classification fields have been changed then the system will update the import id to (Client # or WSProjectID-CPC-class)<br /><br /></li>
+                        </ul>
+                        <h4 id="Release67(PEO)-PlanGroupPopupENHANCEMENT"><span style="color: rgb(51,153,102);"><span style="color: rgb(0,128,128);">Plan Group Popup&#160;</span><span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The benefits renewal process has been enhanced.&#160; A new link for "Apply Plan Group" has been created on the Benefits Batch dataform.&#160; Clicking this link:</p>
+                        <ul>
+                            <li>Creates new&#160;Offered Benefit Plans&#160;based on the year and plan group</li>
+                            <li>On creation of these plans the Status is set to "New"</li>
+                            <li>The Benefits Batch is filled in with the record from which it was created.</li>
+                        </ul>
+                        <p />
+                        <h4 id="Release67(PEO)-OptimizeProcessClientStatisticsENHANCEMENT"><span style="color: rgb(51,153,102);"><span style="color: rgb(0,128,128);">Optimize ProcessClientStatistics&#160;</span><span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The application code which processes client statistics has been optimized for greater efficiency, this is especially important for installations which have large amounts of Employee Vouchers processed nightly.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release67(PEO)-*Bug*OddBehaviorwithClientServicesCasesWidget"><span style="color: rgb(0,128,128);">*Bug* Odd Behavior with Client Services Cases Widget</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue with the My Cases - Client Service Cases Widget on the Home Page which caused the Case records that should have appeared in the Widget to be removed on load. Widget now properly displays current cases assigned to the logged in user.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release67(PEO)-PHRConversion-PEOBusinessRulestoConvertImportIDsENHANCEMENT"><span style="color: rgb(51,153,102);"><span style="color: rgb(0,128,128);">PHRConversion - PEO Business Rules to Convert ImportIDs</span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The system has been enhanced to allow client workspace conversions at the press of a button.&#160; We have added several new business rules:</p>
+                        <p><strong>Client Master</strong>&#160;-</p>
+                        <p>New Hard Error <strong>"HE_ValidateConvertPayrollSystem"</strong> - Warns you and stops the conversion process if Client Number, Import ID or New Client ID is missing.</p>
+                        <p>New Biz logic&#160;rule "<strong>ConvertPayrollSystem</strong>"&#160;&#160; - Takes in two parameters (ReadyToConvertStatus&#160; &amp; NewPayrollSystem)&#160;and sets the following fields and values</p>
+                        <ul>
+                            <li>&#160;LegacyClientID&#160;- set to the workspace current ClientNumber</li>
+                            <li>&#160;ClientNumber - set to the NewClientID value</li>
+                            <li>&#160;ImportID - set to the NewClientID value</li>
+                        </ul>
+                        <p>The system then kicks off the ImportID setting process to update all standard PEO forms whose ImportID contains the Client Number so that they use the new converted Client Number</p>
+                        <p>New Link <strong>"Ready to Convert"</strong>&#160; - Clicking this runs Client Master conversion process as well as converts Location ID information on the Client Location form and Employee ID's on the Employee form and associated forms.</p>
+                        <p>Added a link condition for the Client Master - "luReadyToConvertIndicator" = ReadyToConvert (used to configure link visibility)</p>
+                        <p>Also added was a security entity <strong>"gen_ClientMaster_ReadyToConvert"</strong>&#160; which is used to secure the Ready to convert link.</p>
+                        <div class="confluence-information-macro confluence-information-macro-note conf-macro output-block">
+                            <div class="confluence-information-macro-body">
+                                <p>PEO Import ID setter proc only runs when Client Master status IN ('UnderContract', 'Client', 'PendingTermination', 'Terminated')</p>
+                            </div>
+                        </div>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release67(PEO)-PHRConversion-BenefitClassificationHardErrorENHANCEMENT"><span style="color: rgb(51,153,102);"><span style="color: rgb(0,128,128);">PHRConversion -</span></span><span style="color: rgb(51,153,102);"><span style="color: rgb(0,128,128);">&#160;Benefit Classification Hard Error</span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A new Hard Error has been added to the Benefits Classification form - <strong>HE_ClassificationCodeUnique</strong>.&#160; This guarantees that the Classifcation code must be unique within the associated workspace and includes inactive records in that workspace.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release67(PEO)-PHRConversion-EmployeeBenefitImportLogicENHANCEMENT"><span style="color: rgb(51,153,102);"><span style="color: rgb(0,128,128);">PHRConversion - Employee Benefit Import Logic</span></span><span style="color: rgb(51,153,102);">&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>New import class ClientSpace.PEO.Import.PrismEmployeeBenefits, uses Unique Plan Code (UPC) and Effective Date to locate an Offered Plan in the EE's workspace<br />Must create new Import Maps using this import class:</p>
+                        <ul>
+                            <li>eebenefits_{plantype}*.csv where {plantype} is 'health', 'dental', etc.</li>
+                            <li>map must contain 'EffectiveDate' and {plantype} Plan fields (e.g. HealthPlan, DentalPlan, etc.). Column naming is not optional</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release67(PEO)-PHRConversion-CarrierInvoice(MBR)ImportLogicENHANCEMENT"><span style="color: rgb(51,153,102);"><span style="color: rgb(0,128,128);">PHRConversion - Carrier Invoice (MBR) Import Logic</span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The plan and employee data is set on the MBR after the Import generates an MBR record and saves it.&#160; A new rule has been created to&#160;validate against the new UniquePlanCode field rather than ClientPlanCode field.</p>
+                        <p>The existing Import.CarrierMBR Import Class that is used to import MBRs has been modified including the following:</p>
+                        <ul>
+                            <li>Point to the new Benefit Classification field on the Employment to determine the Benefit Classification. Determined via the SSN in the file.</li>
+                            <li>Point the "Plan" column to the new Unique Plan Code field on the Benefit Plan</li>
+                            <li>Point the "EffectiveDate" column to the Effective Date field on the Benefit Plan</li>
+                        </ul>
+                        <p>These three values together determine the Offered Plan which will be set in the Plan field ('fkPlanID') on the Master Benefit Record table.</p>
+                        <p>A new hard error <strong>HE_DuplicateUniquePlanCode</strong>&#160; has been added to verify that a SINGLE Offered Plan can be located for Employee, UPC, Effective Date and EEI Classification.&#160; If no offered plans or more than one are found an error will be logged</p>
+                        <div class="confluence-information-macro confluence-information-macro-note conf-macro output-block">
+                            <div class="confluence-information-macro-body">
+                                <p>The rule HE_DuplicateClientPlanCode should be inactivated (or moved to a different pipeline) when using UPC (Prism) instead of CPC (Summit)</p>
+                            </div>
+                        </div>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release67(PEO)-PHRConversion-RuletoensureBenefitPlanAreUniqueENHANCEMENT"><span style="color: rgb(51,153,102);"><span style="color: rgb(0,128,128);">PHRConversion - Ru</span></span><span style="color: rgb(51,153,102);"><span style="color: rgb(0,128,128);">le to ensure Benefit Plan Are Unique</span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A new Hard Error has been created for the Benefits Plan dataform -&#160; <strong>"HE_BenefitPlanUnique"</strong></p>
+                        <p>This rule&#160;runs on change of Effective Date or Unique Plan Code fields requiring the combination of &#160;Effective Date and Unique Plan Code to be distinct.&#160;</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release67(PEO)-SalesforceIntegration,populateOrgfromLeadENHANCEMENT"><span style="color: rgb(51,153,102);"><span style="color: rgb(0,128,128);">Salesforce Integration, populate Org from Lead</span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Lead processing in the Salesforce API has been enhanced to allow (via Import Map configuration) additional Org data such as Address, Assigned To, Phone, Website, EIN, Do Not Call and so on to be populated, instead of creating a simple shell Org as had previously been the case.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release67(PEO)-PEOActivityWidgetError"><span style="color: rgb(51,153,102);"><span style="color: rgb(0,128,128);">PEO Activity Widget Error</span>&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Corrected an issue where the Activity widget, under certain circumstances could fail, throwing a SQL exception.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release67(PEO)-CaseFieldCloningDefaultsENHANCEMENT"><span style="color: rgb(51,153,102);"><span style="color: rgb(0,128,128);">Case Field Cloning Defaults</span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The following PEO Case fields have&#160; been set as Workflow Cloneable by default:</p>
+                        <ul>
+                            <li>Category</li>
+                            <li>Type</li>
+                            <li>Subject</li>
+                            <li>Description</li>
+                            <li>Reported By</li>
+                            <li>Priority</li>
+                        </ul>
+                        <h4 id="Release67(PEO)-AdminWorkspacedisplayingBrokerWidgetLayout"><span style="color: rgb(0,128,128);">Admin Workspace displaying Broker Widget Layout</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where the Workspace Landing Page for the Broker Portal workspace would inadvertently be shown on the Admin Workspace as well. The Broker Portal Workspace is now the only Workspace where this Landing page widget layout will appear.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release67(PEO)-NewWCRatesNotGettingSetonBatchCloning"><span style="color: rgb(0,128,128);">New WC Rates Not Getting Set on Batch Cloning</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue on cloning pricing which used an MCP policy where selecting the option during the Batch Clone process to use the new policy rates, would still produce pricing using the old policy rates amount for the pricing code manual rate. Pricing now uses the appropriate new rates for MCP Batch cloning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Email Templates" />Sending notifications using tabbed dataforms</h1>
+        <p>Tabbed dataforms comprise a parent (home form) and child forms, which are extensions of the parent. Here is an example of the Employee dataform with four tabs: Employee Benefits, Employee 401k, COBRA, and State Continuation. This is a tabbed set of dataforms.</p>
+        <p>
+            <img src="../Resources/Images/EmailTemplates/TabbedDataform.png" class="thumbnail" />
+        </p>
+        <p>When sending notifications using email templates, you have options to include fields from a tabbed set:</p>
+        <p class="Bullet1" MadCap:autonum="• ">On the Addresses step</p>
+        <p class="Bullet1" MadCap:autonum="• ">On the Conditions step</p>
+        <h2>On the Addresses step</h2>
+        <p>On the Addresses step, when adding a new address in the <b>Source</b> list, the recipient source can be:</p>
+        <p class="Bullet1" MadCap:autonum="• ">The triggering dataform selected in Step 1 Initial</p>
+        <p class="Bullet1" MadCap:autonum="• ">Tabbed dataforms that are children of the triggering dataform</p>
+        <p class="Bullet1" MadCap:autonum="• ">Ad-Hoc email address that you type in the Address field</p>
+        <p class="Bullet1" MadCap:autonum="• ">Or an email address selected from the Address Source Procedure. This option only appears if an Address Source Procedure has been selected.</p>
+        <h3>Tabbed dataforms</h3>
+        <p>In the Source column, when a tabbed dataform is selected, the Address field displays a selector for user and email type fields that are on the dataform from the tabbed set. The Source list includes all tabbed forms included in the tabbed set. The tabbed dataforms appear immediately after the triggering form in the list and are preceded by a dash (–). The example shows <code>-Form One</code>, which is a child dataform of the parent, <code>Tony Test Form</code>.</p>
+        <p>
+            <img src="../Resources/Images/EmailTemplates/Addresses_Source.png" class="thumbnail" />
+        </p>
+        <h2>On the Conditions step</h2>
+        <p>Items in the Add section denote more granular triggering conditions. For Field Source, you can choose all active child dataforms included in the tabbed set when the triggering form (Table Name selected in Step 1 Initial) is the parent form. </p>
+        <p>In the example, <code>Employee</code> is the parent form. The child forms display immediately after the parent. The child dataform names are prepended with a dash (<b>–</b>): <code>-Employee Benefits</code>, <code>-Employee 401k</code>, <code>-COBRA</code>, <code>-State Continuation</code>.</p>
+        <p>
+            <img src="../Resources/Images/EmailTemplates/Conditions_tabbedSet.png" class="thumbnail" />
+        </p>
+    </body>
+</html>

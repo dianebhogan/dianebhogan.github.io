@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+    </head>
+    <body>
+        <h1 MadCap:autonum="Chapter 1 ">Internet Explorer issues</h1>
+        <p>Configuring your browser for <MadCap:variable name="MyVariables.ProductName" />?  Look here.</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>ActiveX Controls need to be reinstalled</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Application scope: CORE</p>
+                <p><b>Problem</b>: You are a Global Admin and have installed the ActiveX Controls in IE that are used by some of the admin screens, but each time you access the admin screen you are prompted to re-install the ActiveX controls.</p>
+                <p><b>Cause</b>: Protected Mode is enabled in Internet Explorer.  Originally this was defaulted to unchecked, but at some point, Microsoft started pushing Windows updates which check this box by default.</p>
+                <p><b>Solution</b>: Protected mode was introduced in Internet Explorer 7 and according to Microsoft:</p>
+                <p>Protected Mode is an important step forward in security for Internet Explorer (IE); it helps protect users from attack by running an IE process with greatly restricted privileges on Windows. While Protected Mode does not protect against all forms of attack, it significantly reduces the ability of an attack to write, alter, or destroy data on the user's machine or to install malicious code.</p>
+                <p>The Protected mode of Internet Explorer processes with greatly restricted privileges and also blocks the ability to install and run the <MadCap:variable name="MyVariables.ProductName" /> ActiveX controls to your browser.</p>
+                <p class="Warning" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: Gray;&quot; class=&quot;mcFormatColor&quot;&gt;CAUTION:&lt;/span&gt;&lt;/b&gt; &#160;">Security Warning! Protected mode is enabled for a reason. Malicious code is ubiquitous on the web today, so disabling a security measure in your browser should be thoroughly reviewed with your IT security group before proceeding. There has been some evidence that you may be able to disable this just to install the ActiveX controls, and then re-enable after, but discuss this with your internal IT group before proceeding.</p>
+                <p class="ProcedureIntro">To disable Protected mode in Internet explorer:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Open Internet Explorer.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Go to <b>Tools</b> &gt; <b>Internet Options</b> &gt; <b>Security</b> tab.</p>
+                <p class="Indent1">
+                    <img src="../Resources/Images/Issues/Protected Mode.jpg" />
+                </p>
+                <p class="L1Num" MadCap:autonum="3. ">Clear the <b>Enable Protected Mode</b> option.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Click <b>OK</b>. <br />This saves your settings.</p>
+                <p class="L1Num" MadCap:autonum="5. ">Close all Internet Explorer browser windows.</p>
+                <p class="L1Num" MadCap:autonum="6. ">Re-open Internet Explorer and re-install the ActiveX controls. They should stay permanently installed.</p>
+                <p class="L1Num" MadCap:autonum="7. ">Try reversing the Protected mode process when the controls are installed and see if Internet Explorer allows you to utilize the controls in Protected mode. It really is a good idea to have enhanced security.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Browser slows down or freezes when using <MadCap:variable name="MyVariables.ProductName" /></MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Application scope: CORE</p>
+                <p><b>Problem</b>: Some, but not all users report issues when in <MadCap:variable name="MyVariables.ProductName" /> such as slow performance or windows freezing.</p>
+                <p><b>Cause</b>: Other browser add-ins cause performance issues.</p>
+                <p><b>Solution</b>: Disable unnecessary add-ins and toolbars in the browser.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot><MadCap:variable name="MyVariables.ProductName" /> forces new login when switching workspaces</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Application scope: CORE</p>
+                <p><b>Problem</b>: When switching workspaces, the application drops the user to the login page.</p>
+                <p><b>Cause</b>: A second browser has been opened to the login page, dropping the user session info.</p>
+                <p><b>Solution</b>: When opening a second browser, do not click the Internet Explorer icon again.  Instead, select <b>File</b> &gt; <b>New Session</b>.  This will prevent the session from restarting.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot><MadCap:variable name="MyVariables.ProductName" /> IE&#160;11 configuration</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: We have received reports of Windows updates installing Internet Explorer 11, which overwrites some of the browser configuration settings and causes unexpected behavior in the <MadCap:variable name="MyVariables.ProductName" /> application.  This topic provides step-by-step instructions on configuring the Internet Explorer 11 browser to work with <MadCap:variable name="MyVariables.ProductName" />.</p>
+                <p><b>Solution</b>: When updating to Windows 8.1 or with recent Windows Updates, Internet Explorer 11 is also installed.  There are a few steps to take to make IE 11 compatible with <MadCap:variable name="MyVariables.ProductName" />.</p>
+                <p style="font-weight: bold;">Compatibility Mode</p>
+                <p>When IE 11 is installed, it clears any current compatibility mode settings.  The following error appears when attempting to login to <MadCap:variable name="MyVariables.ProductName" />:&#160;</p>
+                <p class="Code">Error: pwInternetExplorerREquiredException - Internet Explorer Required. The page you are attempting to navigate to requires Internet Explorer.</p>
+                <p class="ProcedureIntro">To add ClientSpace to the Compatibility View Setting:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Click <b>Tools</b> &gt; <b>Compatibility View Settings</b>. </p>
+                <p class="L1Num" MadCap:autonum="2. ">Then add clientspace.net or your domain name to access <MadCap:variable name="MyVariables.ProductName" />.</p>
+                <p style="font-weight: bold;">Policy Editor</p>
+                <p>IE 11 also removes the Policy Editor registry settings that allow Word and Excel merges in <MadCap:variable name="MyVariables.ProductName" />.  </p>
+                <p class="ProcedureIntro">To fix the settings for the Policy Editor:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to the <b>Admin Workspace</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Open <b>Active X Install</b>.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Click the <b>here</b> link at the top of the page and it will ask to Repair or Remove.  Leave the setting on repair and click next until it asks for the site name.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Add *.clientspace.net (or your appropriate domain) and click <b>Create Policy</b>.  </p>
+                <p>The browser will now allow Word and Excel Merges in <MadCap:variable name="MyVariables.ProductName" />.</p>
+                <p>Clients who experience this issue on the Extranet may see their screen filled with gibberish, such as a repeating list of Contact Names or other scrambled data.  The resolution is to enable compatibility mode for the site.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Dialog windows are blank when opened</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Application scope: CORE</p>
+                <p><b>Problem</b>: Open a dataform such as a multi-form in a dialog or pop out window and when you attempt to open another dialog from that page, such as adding an attachment or using the calendar dialog the second window appears blank.</p>
+                <p><b>Cause</b>: Windows Automatic update for Internet Explorer (Security Update for Microsoft Windows (KB3008923): December 9, 2014) has caused the dialog arguments to not be passed when a dialog is opened from within an existing modeless dialog.  Microsoft pushed an automatic update to resolve a dialog box issue which caused issues in ClientSpace when launching a dialog box from within a dialog box.  This issue has been reported to Microsoft.</p>
+                <p><b>Solution</b>: Until Microsoft provides an updated security fix, the software update that causes the issue must be uninstalled to allow for multiple dialog function in <MadCap:variable name="MyVariables.ProductName" />.</p>
+                <p class="ProcedureIntro">To uninstall the Windows update:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to the Control panel and select <b>Uninstall a Program</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Select <b>View Installed Updates</b> to display all installed Windows Updates.</p>
+                <p class="L1Num" MadCap:autonum="3. ">In the <b>Uninstall an Update</b> window, find the article in question - Security Update for Microsoft Windows (KB3008923).</p>
+                <p class="L1Num" MadCap:autonum="4. ">Right-click the article and choose <b>Uninstall</b>.</p>
+                <p>After this update has been uninstalled, you will need to re-boot your machine for the process to complete.</p>
+                <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">This security update is classed by Microsoft as a required Windows Update.  Unless your system us specifically set to 'Hide this update' it will likely be re-downloaded and installed in the course of the Windows update process.  Microsoft has provided instructions on how to hide updates here: http://technet.microsoft.com/en-us/magazine/ff382716.aspx - unfortunately to hide an update you need to catch it before it is installed, so if you have already installed the update you will need to uninstall it and re-download it prior to following these instructions.    <MadCap:variable name="MyVariables.CompanyName" /> recommends communicating with your local IT department regarding the best method for insuring you will not need to repeat this process.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Internet Explorer compatibility mode keeps resetting
+</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Client reports that they are using Internet Explorer and have set the browser to compatibility mode using the URL button, but when they close the browser and re-open to log into ClientSpace, unexpected behavior results, and compatibility mode has been turned off.</p>
+                <p><b>Cause</b>: Incompatible browser settings.  It appears Microsoft has linked the "Clear History" setting to compatibility mode, so clearing the browser history will clear all the compatibility mode settings.</p>
+                <p><b>Solution</b>: Correct the browser settings.</p>
+                <p class="ProcedureIntro">To correct the browser settings:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">If client needs to have browser history cleared on close, try adding compatibility view:</p>
+                <p class="Bullet2" MadCap:autonum="• ">Go to <b>Tools</b> &gt; <b>Compatibility View settings</b> &gt; <b>Add</b> instead of using the URL link. (Does not work in version 11 or higher)</p>
+                <p class="Bullet2" MadCap:autonum="• ">Otherwise, simply go to <b>Tools</b> &gt; <b>Internet options</b> and clear the <b>Delete browsing history on exit</b> option.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Alternatively, you can retain the <b>Delete browsing history on exit</b> setting but clear the option to clear browsing history under Delete settings. From Internet Options, click <b>Delete...</b> and clear <b>History</b>.</p>
+                <p class="Indent1">
+                    <img src="../Resources/Images/Issues/Compat-History.jpg" />
+                </p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Login values automatically cleared - System will not log in</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Application scope: CORE</p>
+                <p><b>Problem</b>: You attempt to log into <MadCap:variable name="MyVariables.ProductName" />, but when you click the login button the Username and Password fields are cleared, and you are returned to the login screen.</p>
+                <p><b>Cause</b>: Cookies have been disabled in the browser.</p>
+                <p><b>Solution</b>: Re-enable cookies in the browser.</p>
+                <p class="ProcedureIntro">To check cookie settings:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">In IE 11 go to <b>Tools</b> &gt; <b>Internet Options</b> &gt; <b>Security</b> tab.</p>
+                <p class="L1Num" MadCap:autonum="2. ">For <b>Trusted Sites</b>, check to make sure the Privacy slider is not all the way up.  This blocks all cookies.</p>
+                <p class="L1Num" MadCap:autonum="3. ">If this is not the case, click <b>Advanced</b> and check the cookie settings there. These should be set to accept both Third party and First party cookies.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Merge links not working</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Application scope: CORE</p>
+                <p><b>Problem</b>: Clicking a dataform link to run a merge produces the error: An error has occurred in the script on the Page ...Object doesn't support this property or method code: 0 URL: ...Do you want to continue running scripts on this page? Yes or No</p>
+                <p><b>Cause</b>: Pop-up blocker settings are preventing merge window from opening.</p>
+                <p><b>Solution</b>: Perform the following steps to properly set pop-up blocker settings to work with <MadCap:variable name="MyVariables.ProductName" />:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">In Internet Explorer, go to <b>Tools</b> &gt; <b>Internet Options</b> &gt; <b>Privacy</b> tab.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Click <b>Settings</b>.</p>
+                <p class="L1Num" MadCap:autonum="3. ">In the <b>Address of Website to allow</b> box, type <code>*.clientspace.net</code> (or whatever domain your site uses for hosting).</p>
+                <p class="L1Num" MadCap:autonum="4. ">Click <b>Add</b> and then close the dialog box.</p>
+                <p class="L1Num" MadCap:autonum="5. ">Click <b>OK</b>.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Save, Apply, and Cancel buttons missing when creating a calendar event</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Application scope: CORE</p>
+                <p><b>Problem</b>: Save, Apply, and Cancel buttons missing when creating a calendar event.</p>
+                <p><b>Cause</b>: <MadCap:variable name="MyVariables.ProductName" /> is not a trusted site.</p>
+                <p><b>Solution</b>: Follow the steps in the topic <MadCap:xref href="IESettingsClientSpace.htm" title="IE settings for Clientspace" alt="IE settings for Clientspace" class="Heading">Internet Explorer settings for [%=MyVariables.ProductName%]</MadCap:xref> to make <MadCap:variable name="MyVariables.ProductName" /> a trusted site.  </p>
+                <MadCap:dropDown>
+                    <MadCap:dropDownHead class="ErrMsg">
+                        <MadCap:dropDownHotspot>Security policy editor issue</MadCap:dropDownHotspot>
+                    </MadCap:dropDownHead>
+                    <MadCap:dropDownBody>
+                        <p>Application scope: CORE</p>
+                        <p><b>Problem</b>: The Security Policy Editor is returning an error or appearing as if it is not installed.  When you check your programs menu, the Editor seems to be installed properly.</p>
+                        <p><b>Cause</b>: Internet Explorer has not been completely configured for <MadCap:variable name="MyVariables.ProductName" /> use.</p>
+                        <p><b>Solution</b>: The first step to take is to be sure that the correct site has been added to the Policy Editor. Open the policy editor and when prompted insert the appropriate domain for your <MadCap:variable name="MyVariables.ProductName" /> install. This domain should be your site name with the protocol (http://, https://) stripped off.  For example, if your site name is http://knowledgespace.clientspace.net, you need to configure the policy editor for knowledgespace.clientspace.net OR *.clientspace.net as your Site Name.  If it still does not work, follow these instructions to configure your browser for ClientSpace use.</p>
+                        <p>In certain machine configurations, *.clientspace.net does not work, and you will be prompted to re-install the security policy editor. If this happens, do not re-install, but run the configuration tool and insure that you use the full domain name qualifier of the URL (e.g.,  knowledgespace.clientspace.net ).</p>
+                        <p>Follow the steps in the topic <MadCap:xref href="IESettingsClientSpace.htm" title="IE settings for Clientspace" alt="IE settings for Clientspace" class="Heading">Internet Explorer settings for [%=MyVariables.ProductName%]</MadCap:xref> to make <MadCap:variable name="MyVariables.ProductName" /> a trusted site.  This normally indicates that other browser settings may be wrong, so take the time to complete all the steps.</p>
+                    </MadCap:dropDownBody>
+                </MadCap:dropDown>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>SSO Error: "Invalid Login" when using Extranet module</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Application scope: CORE</p>
+                <p><b>Problem</b>: Client attempts to log in to Extranet using Single Sign On (SSO) via the Extranet Module and receives a message stating they are authenticated, then immediately receives an "Invalid Login" message.</p>
+                <p><b>Cause</b>: Extranet is not a trusted site.</p>
+                <p><b>Solution</b>: Add the Extranet URL as a trusted site.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to <b>Tools</b> &gt; <b>Internet Options</b> &gt; <b>Security</b> tab</p>
+                <p class="L1Num" MadCap:autonum="2. ">Select <b>Trusted Sites</b>.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Then click <b>Sites</b>.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Add the URL for Extranet: <code>https://extranet.clientspace.net</code> to the trusted sites list (this normally happens when the <b>Require server verification</b> option is enabled).</p>
+                <p class="L1Num" MadCap:autonum="5. ">Save your settings.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Stuck in loading when trying to add case or task</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Application scope: CORE</p>
+                <p><b>Problem</b>: When trying to add a case, task, or other item in <MadCap:variable name="MyVariables.ProductName" />, it will be stuck in Loading or it will show a Script Error.</p>
+                <p><b>Cause</b>: There is a pop-up trying to open prompting you to select a Workspace.  The Pop-up Blocker is preventing <MadCap:variable name="MyVariables.ProductName" /> from opening Popups.</p>
+                <p><b>Solution</b>: You can allow pop-ups in <MadCap:variable name="MyVariables.ProductName" /> by following these steps:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">In the Menu Bar, click <b>Tools</b> &gt; <b>Pop-up Blocker</b> &gt; <b>Pop-up Blocker Settings</b>. If the Menu Bar does not appear, right-click the header of Internet Explorer and click <b>Menu Bar</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Add <b>*.clientspace.net</b> to the Pop-up Blocker Settings page (or your site URL).</p>
+                <p>&#160;</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+    </body>
+</html>

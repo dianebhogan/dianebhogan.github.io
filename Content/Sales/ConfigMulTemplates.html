@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Creating Workspaces using different templates from Organizations</h1>
+        <p><MadCap:variable name="MyVariables.ProductName" /> has the ability to allow Template level customization, with multiple workspace templates, each with unique dataforms and configuration. Template workspaces help you to maintain a consistent set of dataforms and workspace tools.&#160;</p>
+        <p>This topic describes how to enable multiple templates within <MadCap:variable name="MyVariables.ProductName" /> so that when using the Generate Quote link from the Organization, you can choose a template when generating the new workspace. </p>
+        <p class="ProcedureIntro">To create workspaces using different templates:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Custom Links</b>.<br />The Configure Links dashboard opens.</li>
+            <li>
+                <p>Click <b>Add</b> and use the following configuration:</p>
+            </li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 178px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Location</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select <b>tblOrganization</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Group</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select <b>Action</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Display Action</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select <b>Custom Function.</b></td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Custom Function </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Insert <b>organization.generateQuote.</b></td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Custom Function Data</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p>This is a comma-separated list of Names and Values, surrounded by curly braces and comma delimited. Should contain at least TemplateGUID and TemplateType. To find the TemplateGUID, expand the workspace settings on the template workspace for which you are creating the link.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Pinned Open</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">When selected, <b>Pinned Open</b> displays the Link by default on the right nav pane without having to open the More menu.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Link Display Conditions</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">Use this area to add triggers for link display.</td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>
+                <p>Click <span class="UXElement">Save</span>.</p>
+            </li>
+        </ol>
+        <p>Next, go to Workspace Templates.</p>
+        <ol>
+            <li>
+                <p>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Workspace Templates</b>.</p>
+            </li>
+            <li>
+                <p>Open the template in question.</p>
+            </li>
+            <li>
+                <p>In the <b>Action Center</b> toolbar, click <img src="../Resources/Images/ICONS/ICON_MoreOptions.png" /> (<span class="UXElement">More Options</span>), and select <img src="../Resources/Images/ICONS/ICON_Settings.png" /> <b>Settings</b>.<br />The Workspace Settings form opens.</p>
+            </li>
+            <li>
+                <p>Select a <span class="UXElement">Related Organization</span>.</p>
+            </li>
+            <li>
+                <p>Click <span class="UXElement">Save</span>.</p>
+            </li>
+        </ol>
+        <p>Create Prospect links in ClientSpace are configured much like other links in the system. After a workspace has been created, the Generate Quote link changes to a Go to Workspace link unless special metadata has been configured on the Client Master Status (ContractStatus) and the Organization Status (CRMOrganizationStatus) Lookup values. When you select the Enable Additional Workspace Creation option on both these lookup metadata forms, it enables the Create Prospect link even after a Workspace has been created for the Organization.</p>
+    </body>
+</html>

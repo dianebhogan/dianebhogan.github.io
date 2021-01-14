@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Managing attachments</h1>
+        <p>When managing attachments, you can upload new file versions and also change the primary file from within the version list. Files uploaded to ClientSpace as attachments or assigned to dataform fields can have a hierarchy of several files, all associated with a primary file. The primary file is considered the currently in-use file. Other files associated with the primary file are versions or versioned files. Versioned files can be updated to be the primary file (known as Pinning). This enables an historical record of file management activity.
+A logical version number is displayed next to each file name. The number is derived from the order in which associated files were uploaded to the system, with v1 as the earliest.
+</p>
+        <p>On Attachment lists or Dataform Fields, only the primary file is displayed. Using  Upload File, you can manage versions. There is no technical limit to the number of files that can be included in the hierarchy, but only one file is designated as the primary file at any time. You can also browse the list of uploaded versions, pin them as the new current version, open the file, and removed the file.</p>
+        <p><span class="UXElement">Protected versus unProtected</span>: If files are shared over multiple locations in ClientSpace, they can be managed as individual sets of files (Protected) or as a synchronized set (unProtected).  This implementation in ClientSpace is limited to Orgs, Contacts, and Activity attachments. For a description of this methodology, see <MadCap:xref href="FileVersion-Consider.htm" title="File version considerations for dataforms" alt="File version considerations for dataforms">File version considerations for dataforms</MadCap:xref>.</p>
+        <p class="ProcedureIntro">To add file versions:</p>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Attachments/FileVersions-1.png" class="thumbnail_right" />
+            </p>
+        </div>
+        <ol>
+            <li>From the <span class="UXElement">Action Center</span>, expand <span class="UXElement">Attachments</span>.<br />The existing attachments are listed.</li>
+            <li>Locate the targeted file that you want to manage, and click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Open</span>).<br />Our example shows a file named How-People-Read-Online.docx.</li>
+        </ol>
+        <div class="indent">
+            <p>The Upload File dialog box opens.</p>
+        </div>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Attachments/FileVersion-2.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol start="3">
+            <li>
+                <p>To upload a new version, click <span class="UXElement">Choose File</span>.</p>
+            </li>
+            <li>
+                <p>Locate the file on your computer and click <span class="UXElement">Open</span>.<br />You are returned to the Upload File dialog box showing the selected file name.</p>
+            </li>
+            <li>
+                <p>For <b>Version This File?</b>, select one of the options:</p>
+                <ul style="list-style-type: square;">
+                    <li>
+                        <p><span class="UXElement">Yes, Pin New File</span>: Default setting. Retains all file versions and pins the most recent uploaded file.</p>
+                    </li>
+                </ul>
+                <ul style="list-style-type: square;">
+                    <li>
+                        <p><span class="UXElement">No, Replace File</span>: Do not retain file versions. Replaces the current file.</p>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Attachments/FileVersion-3.png" class="thumbnail" />
+            </p>
+        </div>
+        <div class="indent">
+            <p>When a new file is uploaded using the default version setting, the Current File moves to the versions list, and sets the newly uploaded file as the primary.</p>
+        </div>
+        <ol start="3" MadCap:continue="true">
+            <li>
+                <p>For <span class="UXElement">Description</span>, type a description of the uploaded file. Optional.</p>
+            </li>
+            <li>
+                <p>For <span class="UXElement">Category</span>, select an entry from the list. Optional.</p>
+            </li>
+            <li>
+                <p>Click <span class="UXElement">Save</span>.</p>
+            </li>
+        </ol>
+        <p class="ProcedureIntro">To manage versions:</p>
+        <ol>
+            <li>From the <span class="UXElement">Action Center</span>, expand <span class="UXElement">Attachments</span>.<br />The existing attachments are listed.</li>
+            <li>Locate the targeted file that you want to manage and click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Open</span>).<br />Our example shows a file named How-People-Read-Online.docx (v3) as the current file, and is now version 3.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Attachments/FileVersion-4.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Manage Versions</span>.<br />The list of file versions displays. Our example shows there are two older versions: v1 and v2.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Attachments/FileVersion-5.png" class="thumbnail" />
+            </p>
+        </div>
+        <p>
+            <img src="../Resources/Images/Attachments/FileVersion-6.png" class="thumbnail_right" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>From here you can:<ul MadCap:continue="true" style="list-style-type: square;"><li>Open a file: Select the file.</li><li>View file properties:&#160;Click <img src="../Resources/Images/ICONS/ICON_FileProps.png" />.<br />Properties provide File Name, Version, Desc, Uploaded date, Modified date, and Size.</li></ul><ul MadCap:continue="true" style="list-style-type: square;"><li>Pin file as current version: Click <img src="../Resources/Images/ICONS/ICON_Pin.png" />.<br />You must be a global admin or have the FileMan_Pin entity. Pinning a versioned file takes effect immediately, no save is needed. For details about security entities, see <MadCap:xref href="Security.htm" title="Security entities" alt="Security entities">Security entities</MadCap:xref>.</li><li>Remove: Click <img src="../Resources/Images/ICONS/ICON_remove.png" />. <br />Removing a versioned file takes effect immediately, no save is needed (a confirmation message is presented before the delete is executed). Remove is available if you are a global admin or have the FileMan_Delete entity. Additionally, the file cannot be in use in another location. For details about security entities, see <MadCap:xref href="Security.htm" title="Security entities" alt="Security entities">Security entities</MadCap:xref>.</li></ul></li>
+        </ol>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+    </body>
+</html>

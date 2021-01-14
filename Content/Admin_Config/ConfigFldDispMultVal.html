@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Configuring field display with multiple values</h1>
+        <p>Sometimes, there may be a need to display a field conditionally when a field equals more than one value. The system does not allow the creation of a separate Field Display rule for the same fieldset (target table). However, a comma-separated list of values can be used instead. </p>
+        <p class="ProcedureIntro">To configure Field Display:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Advanced </span>&gt; <span class="UXElement">Manage Field Display</span>.<br />The Field Display Rule Search dashboard opens.</li>
+            <li>Open the targeted field display rule.</li>
+            <li>Enter the targeted value in the <span class="UXElement">equals this value</span> field.</li>
+        </ol>
+        <p>The following example, shows <span class="UXElement">When this field</span> is Case Type with <span class="UXElement">equals this value</span> as 251 or 278.</p>
+        <p>
+            <img src="../Resources/Images/Dataform/multitrigger.png" class="thumbnail" />
+        </p>
+        <p>Additionally, you can include multiple values for a multi-lookup field. In the following example, the field <span class="UXElement">When this field</span> can have multiple values. The field <span class="UXElement">equals this value</span> is where you specify the rule values. Separate the values with a comma-delimited list.</p>
+        <p>
+            <img src="../Resources/Images/Dataform/Display_mult-values.png" class="thumbnail" />
+        </p>
+        <h2>How to determine values for a specific use case</h2>
+        <p>Often System Admins will want to use field display on the Client Service Case form, and that field display could be driven from Case Types. In the <span class="UXElement">equals this value</span> field, the primary key (Case Type ID, which is referenced) of the Case is what you would reference, and, you use a number rather than the display value of a Case. Ultimately, it is not intuitive which Case Type you're picking unless you know. Use this procedure as navigational help for when configuring field display for a specific use case (Case Types). </p>
+        <p class="ProcedureIntro">To determine the Case Type ID:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<b>Administrative Data</b> &gt; <b>Client Service Case Type</b>.<br />The Client Service Case Type dashboard opens.<br /></li>
+            <li>Open the Type in question.<br />For our example, we selected <em>Client Name Change</em>.</li>
+        </ol>
+        <div class="indent">
+            <p MadCap:autonum="">
+                <img src="../Resources/Images/Dataform/FieldDisplay_SpecUse.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>In the <b>Administrative Fields</b> fieldset, look for the <b>ID</b>&#160;of the record in question.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Dataform/AdminFields_ID.png" />
+            </p>
+            <p>Use this number in the Field Display Rule.</p>
+        </div>
+    </body>
+</html>

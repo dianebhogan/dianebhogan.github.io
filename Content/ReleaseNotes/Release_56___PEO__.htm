@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 56 ( PEO )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;6/5/2017&#160;&#160;&#160;&#160;&#160;<strong>Sprint Ended:</strong>&#160;6/26/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release56(PEO)-Auto-createnextClientVisit(NEXT)-ENHANCEMENT"><span style="color: rgb(51,153,102);">Auto-create next Client Visit (NEXT) -&#160;&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A&#160;new business rule has been created to auto-generate a new Client Visit record.&#160; This is determined via metadata on the "TypeOfVisit" lookup (see below). This rule will get triggered when the Visit status =&#160; "Completed".</p>
+                        <p>The following fields are set&#160;on the new record as follows:</p>
+                        <ul>
+                            <li>Visit Type, default from the Client Visit record that is getting cloned.</li>
+                            <li>Visit Department, default from the Client Visit record that is getting cloned.</li>
+                            <li>Visited By, default from the Client Visit record that is getting cloned.</li>
+                            <li>Visit Status, default to "Planned".</li>
+                            <li>Client Contact, default from the Client Visit record that is getting cloned.</li>
+                            <li>Location,default from the Client Visit record that is getting cloned.</li>
+                            <li>Appointment Date, defaults to X number of days out from cloned visit date&#160;based on the Visit Frequency field specified in the rule. If value can't be determined then do not create the new record.</li>
+                        </ul>
+                        <p>TYPE OF VISIT METADATA<br />3 new fields have been added&#160;to the existing metadata on the "TypeOfVisit" lookup to specify whether the next Visit record should get auto-created. If so, which Dataform and Field should be used to retrieve the Next Visit Frequency.</p>
+                        <ul>
+                            <li>Auto-create Next Visit has been added as a Yes, No lookup with a Default of&#160;No. If Yes, then the system will display the next 2 fields.</li>
+                            <li>In a new fieldset called "Next Visit Setting"&#160;the following fields have been added:<ul><li>Dataform for Frequency, Enable field and require if Create Next Visit = Yes</li><li>Field for Frequency, Enable field and require if Create Next Visit = Yes.</li></ul></li>
+                        </ul>
+                        <p>A&#160;new business rule has been created to ensure the Dataform for Frequency that is selected is a single dataform and ensure the Field for Frequency that is selected is using the existing "Visit Schedule" lookup group.</p>
+                        <p>VISIT SCHEDULE METADATA<br />A&#160;new metadata form&#160;has been added&#160;to the Visit Schedule Lookup Group to capture the number of days for given period.&#160;The field&#160;"Days per Frequency" has been added to this form and&#160;the following values and set day added as follows:</p>
+                        <ul>
+                            <li>Monthly (30)</li>
+                            <li>Quarterly (90)</li>
+                            <li>Annually (365)</li>
+                        </ul>
+                        <p>VISIT DATAFORM CHANGES<br />A&#160;"Visit Complete Date"&#160; field has been added to the Client Visit form.&#160; It is read-only and&#160;is set to the date that the Status is changed to Completed.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release56(PEO)-ServerDataProc1forClientLocation-ENHANCEMENT"><span style="color: rgb(51,153,102);">Server Data Proc 1 for Client Location -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A&#160;PEO Server data proc for Client Location to return the following fields from the Client Master:<br />(All lookup values are decoded)</p>
+                        <ul>
+                            <li>ClientNumber</li>
+                            <li>ClientStatus (ContractStatus)</li>
+                            <li>ContractType</li>
+                            <li>PayFrequency</li>
+                            <li>LegalEntity</li>
+                            <li>ProcessingCenter</li>
+                            <li>SalesRegion</li>
+                            <li>ContractEffectiveDate</li>
+                            <li>DateofIncorporation</li>
+                        </ul>
+                        <p>With configuration these fields are available wherever server data procs may be used such as Template Task Triggering</p>
+                        <h4 id="Release56(PEO)-CaseSearchRefactoring"><span style="color: rgb(51,153,102);">Case Search Refactoring&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where the Case Search dashboard would time out occasionally if presented with large record counts.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release56(PEO)-ClientTeamRoleUpdates(NEXT)"><span style="color: rgb(51,153,102);">Client Team Role Updates (NEXT)</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue on the Client Team dataform&#160;where the&#160;Client Team Role table&#160;had instances of being out of sync with the Client Team.<br />The following items were updated:</p>
+                        <ol>
+                            <li>Only insert a new role record if the field name does not currently exist.</li>
+                            <li>Delete the record if the field is made empty</li>
+                        </ol>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release56(PEO)-CriticalCaseNotificationsforActiveUsersOnly-ENHANCEMENT"><span style="color: rgb(51,153,102);">Critical Case Notifications for Active Users Only -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Critical Case Notification scheduled process has been updated to ignore inactive users when compiling the recipient list.&#160; Previously this scheduled process would continue to send emails to user accounts present in the notify list, even if those accounts were inactive.&#160; The system now checks to see if a notification user account is active or not prior to adding the email address to the list of notified users.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release56(PEO)-SalesMarketnotgettingset"><span style="color: rgb(51,153,102);">Sales Market not getting set</span>
+                        </h4>
+                        <hr />
+                        <p>Client Master Business Logic has been updated to set defaults when creating workspaces based on the ID of the user assigned to the related organization and not based on a sales entity associated with the logged in user.&#160;</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release56(PEO)-SecureCaseTypesnotworking"><span style="color: rgb(51,153,102);">Secure Case Types not working&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue with secure case types where the security entity that was created when selecting the case type as "secured" would get ignored during the security check.&#160; This also resolves issues in the application where the row level security created when securing a case type was handled inconsistently across all methods of accessing cases.&#160; For more information on Secured Case Types and how they work, review the SECURITY section of &#160;<span style="color: rgb(102,153,255);"><strong><a href="https://clientspace.atlassian.net/wiki/display/KNOW/Client+Service+Case+-+General+Information" rel="nofollow">Client </a></strong></span><span style="color: rgb(102,153,255);"><strong><a href="https://clientspace.atlassian.net/wiki/display/KNOW/Client+Service+Case+-+General+Information" rel="nofollow">Service Case - General Information</a>.</strong></span></p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release56(PEO)-StateDefaultClearingOut"><span style="color: rgb(51,153,102);">State Default Clearing Out&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>The 'SetEmployeeRelatedFields' rule method has been modified on the Comp Claim&#160;so it will not clear out the State or Claimant Comp Code if it has already been filled out or defaulted.&#160; If either the Claimant CompCode or luJurisdictionState fields have been populated, these fields will not be overwritten.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release56(PEO)-CaseSearchDashboardappearstobeignoringCaseswithRowLevelSecurity"><span style="color: rgb(51,153,102);">Case Search Dashboard appears to be ignoring Cases with Row Level Security</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue with Row level security where row level security was not being respected consistently across the application</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release56(PEO)-Updatepeo_cs_datatype_s_wc_policy_type_aheadtoincludeExpiredandNon-Renew-ENHANCEMENT"><span style="color: rgb(51,153,102);">Update peo_cs_datatype_s_wc_policy_type_ahead to include Expired and Non-Renew -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The code which populates the Policy on the Workers' Comp Claim has been updated to include Expired and non-renew policies.&#160; Previously this list would only show policies where the status did not include 'Expired' or 'Non-Renew'.&#160; List now returns top 100 policies with type ahead functionality if the policy count exceeds 100.&#160; Active policies are returned first, by effective date and name, then expired and non-renew policies are returned sorted the same way.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

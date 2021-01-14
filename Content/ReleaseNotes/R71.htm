@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('../Resources/MasterPages/ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Release 71 Notes</h1>
+        <p><strong>R71 Sprint</strong>:&#160;8/1/2018&#160;to&#160;8/31/2018. To learn about product features that you may not recognize, contact your Customer Success Manager.</p>
+        <h2>Enhancements</h2>
+        <p>Enhancements are grouped as Change in Functionality, ClientSpace Premium (ClientSpace with additional modules), Advanced Administration, and General.</p>
+        <h3><i class="fas fa-bell" style="font-family: Font Awesome 5 Free; font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="Change in functionality" alt="Change in functionality"></i> Change in Functionality</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Auto Number Claims for OSHA 300/301</p>
+                        <p class="TableTextLeft">The Workers' Comp Claim system has been enhanced to add a OSHA Case Number that is now used when producing the OSHA 300 reports, ordering the claims by OSHA Case number.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">An integer field has been added to the Comp Claim dataform for OSHA Case Number. This field is read-only and is set via auto-numbering business logic on insert of the claim form. This Auto-numbering begins at 1 at the beginning of each calendar year based on the Date of Injury (DOI) year of the claim within the Workspace. The rule is configured to run on the Default and Imports pipelines. If the Injury Date of a claim changes, a warning will be triggered to notify the user that the OSHA Case Number will be re-generated. The case will then be Auto-Numbered based on the New Injury Date. The Case Number will then be set based on the next available case number for that year.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">The OSHA 300 report has been enhanced to show the Case Number and is sorted by this number. Smallest to Largest<br />The Case Number will be shown if present, otherwise, show "Carrier's Claim Number"<br />The OSHA 301 Merge (Run from Comp Claim) has been enhanced to show the Case Number and is sorted by this number, Smallest to Largest. The Case Number will be shown if present, otherwise, show "Carrier's Claim Number"</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Case notifications as triggered Email Templates - Phase II</p>
+                        <p class="TableTextLeft">We have further enhanced the system so that case notifications are done via triggered email templates, making them more configurable.&#160; Some of the enhancements include: </p>
+                        <p class="TableTextLeft">New email templates:</p>
+                        <ul>
+                            <li>
+                                <p>CaseExternalNotify</p>
+                            </li>
+                            <li>
+                                <p>CaseInternalNotify</p>
+                            </li>
+                            <li>
+                                <p>CaseInternalNotifyCritical</p>
+                            </li>
+                        </ul>
+                        <p class="TableTextLeft">A new merge stored procedure for these templates: peo_clientservicecase_emailtemplate_merge_proc</p>
+                        <p class="TableTextLeft">Three new recipient stored procedures for these email templates:</p>
+                        <ul>
+                            <li>
+                                <p>peo_clientservicecase_external_emailtemplate_recipient_proc - "To" recipients include: Case subscribers, and users with the role for the case type</p>
+                            </li>
+                            <li>
+                                <p>peo_clientservicecase_internal_emailtemplate_recipient_proc</p>
+                            </li>
+                            <li>
+                                <p>peo_clientservicecase_internal_critical_emailtemplate_recipient_proc - "To" recipients include Case subscribers, department heads, and users with the role for the case type</p>
+                            </li>
+                        </ul>
+                        <p class="TableTextLeft">The recipient stored procedures return the following:</p>
+                        <p class="TableTextLeft">TO:<br />Case Assigned To<br />Case Contact<br />Case Employee</p>
+                        <p class="TableTextLeft">CC:<br />Case Assigned To's Manager (this would be the Assigned To's department manager)<br />Case Notify User<br />Case Type Notify Role<br />Case Subscribers</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Files table view</p>
+                        <p class="TableTextLeft">A View has been created (&#160;<strong>nw_vwUploadedFiles</strong> ) to expose file data for business intelligence reporting.&#160; This view contains the following file related columns:</p>
+                        <ul>
+                            <li>FileName</li>
+                            <li>DateCreated</li>
+                            <li>DateUpdated</li>
+                            <li>CreatedBy</li>
+                            <li>UpdatedBy</li>
+                            <li>ContentLength</li>
+                            <li>Description</li>
+                            <li>MetaTags</li>
+                            <li>ColumnName</li>
+                            <li>luCategory</li>
+                            <li>DateValidated</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Email Templates: DocuSign</p>
+                        <p class="TableTextLeft">The DocuSign administration functionality of the Email Template system has been converted for use in the cross browser application. Previously this administration had relied on older, IE only technology. The system now provides the ability to add a contact or user or email field or hardcoded email address to receive a copy of the DocuSign document, instead of having to be a signer of the document.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Smooth out user creation</p>
+                        <p class="TableTextLeft">The contact user creation process has been streamlined, making it more intuitive,&#160; The create user checkbox and Text field have been converted to a Create User Action item. Clicking Create User from the contact will create a new user account from the contact information available using the designated Contact Template user.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert Manage Import To NEXT</p>
+                        <p class="TableTextLeft">System Administration functionality for "Manage Imports" has been converted to our cross browser compatible application.&#160; This functionality allows you to upload and import data directly into the system using .csv files and matching&#160;configured import mappings (create an Extranet case for a staff consultant if you have questions).&#160; </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert Module Admin To NEXT</p>
+                        <p class="TableTextLeft">The module admin system has been converted to our cross browser compatible application.&#160;</p>
+                        <p class="ProcedureIntro">Searching</p>
+                        <ul>
+                            <li><strong>Quick Search</strong>: Module Name (starts with and contains), Category (starts with)</li>
+                            <li><strong>More Search</strong>: Name, Category (drop down), Role, User, Dropdown to replace checkboxes (Classic, Next, Outlook, BI - no need for Module and Dashboard Module options)</li>
+                        </ul>
+                        <p class="TableTextLeft">The returned list results contain Name, Category, Type, Description and Target</p>
+                        <p class="ProcedureIntro">Module Detail page</p>
+                        <p class="TableTextLeft">Category: Dropdown&#160;includes Classic, Next, Outlook, BI.&#160; This will Default to Next on an add.&#160;</p>
+                        <ul>
+                            <li><strong>Target</strong>:&#160;&#160; Main and New are valid values.</li>
+                            <li><strong>Type</strong>:&#160;(Classic, Next, Outlook, BI)</li>
+                        </ul>
+                        <p class="TableTextLeft">Security roles may be added to modules through an action item on the right.</p>
+                        <p class="TableTextLeft">If&#160;a Type of Business Intelligence&#160;is chosen, a&#160;Report field&#160;allows you to select the associated BI report.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert Time Tracker Categories To NEXT</p>
+                        <p class="TableTextLeft">Time tracker categories have been converted to work in our cross browser compatible application.&#160;If you need help configuring Time Tracker categories, create a case for one of our Staff Consultants.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Manage Import Queue</p>
+                        <p class="TableTextLeft">The "Manage Import Queue" system admin function has been converted to our cross browser compatible application and published as an option on the "Imports" tile. The buttons for Delete, Reset and mark complete have been combined into a single Mass Update function.&#160;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>General Enhancements</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Enhanced Org and Contact Imports for Other Info Tabs </p>
+                        <p class="TableTextLeft">Organization and contact imports (CRM_org.csv and CRM_contact*.csv) have been enhanced to include Org other info and Contact Other info fields in the import. When added to the imported file as well as to the import data map the Other Info dataform will be filled and properly attached to the appropriate Organization or Contact.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Prompt for next status on RTW updates </p>
+                        <p class="TableTextLeft">The Comp Claim Return to Work (<strong>RTW</strong>) system has been enhanced to help automate the creation of new RTW records when the Employee work status changes. Clicking the "Change Status" link on an RTW record will open a dialog allowing you to select a change date as well as a new status. On save of this dialog, the End date of the existing RTW record is set and a new RTW record is generated.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Add Employee Column to Case Search</p>
+                        <p class="TableTextLeft">The employee name (last, first) has been as a column on the case search dashboard results.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">OOI Fields to CM through Business Rules</p>
+                        <p class="TableTextLeft">A new business rule "<strong>DefaultPrimaryBrokerAndAgent</strong>" has been added to the Client Master which fires on workspace creation. When the workspace is initially created, the value from the Organization Other Info (OOI) "Referred By" field is copied into the Client Master "PEO Broker" field. At the same time the value from the OOI "Referral Agent" field is copied into the Client Master "Primary Agent" field. This rule is inactive by default, for help with activating this rule, create a case for on of our Staff Consultants.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Imports ID Setter Rules for Pricing Dataforms</p>
+                        <p class="TableTextLeft">A series of new business rules have been created to validate and set the ImportID fields on pricing forms.&#160; The forms and updates in this development include:</p>
+                        <p class="TableTextLeft">***For each of the following Set Import ID rules, if all of the required data is not available for the system to construct a valid ImportID the ImportID will be set to a unique identifier based on the form.***</p>
+                        <p><strong>State Master</strong>:</p>
+                        <ul>
+                            <li>
+                                <p><strong>Validate State Change</strong>: This Soft Error validates the State field is unique and is not being set to a duplicate value of an existing record.&#160; This rule is inactive by default.</p>
+                            </li>
+                            <li>
+                                <p><strong>SetImportID</strong>: This biz logic rule sets the ImportID on the State Master form equal to the State field on the same form.</p>
+                            </li>
+                        </ul>
+                        <p class="TableTextLeft">The ImportID will be refreshed if the State is updated.</p>
+                        <p><strong>Legal Entity (LE)</strong>:</p>
+                        <ul>
+                            <li>
+                                <p><strong>Validate Short Name Change</strong>: This soft error validates that the LE Short Name field is unique, also warns that updating the Legal Entity may effect other system forms.</p>
+                            </li>
+                            <li>
+                                <p><strong>Set Import ID</strong>: This biz logic rule sets the ImportID on the Legal entity form equal to the Short Name field on the same form.</p>
+                            </li>
+                        </ul>
+                        <p class="TableTextLeft">The ImportID will be refreshed if the Short Name is updated.</p>
+                        <p><strong>Workers' Compensation Policy</strong>:</p>
+                        <ul>
+                            <li>
+                                <p><strong>Validate Short Name Change</strong>: This soft Error validates that the Short Name on the Workers' Comp policy must be unique and warns that updating the Policy may effect other system forms.</p>
+                            </li>
+                            <li>
+                                <p><strong>Set ImportID</strong>: This biz logic rule sets the ImportID of the policy to the value of the Short Name field on the same form.</p>
+                            </li>
+                        </ul>
+                        <p class="TableTextLeft">The ImportID will be refreshed if the Short Name of the Policy is updated.</p>
+                        <p><strong>Surcharge Type</strong>:</p>
+                        <ul>
+                            <li>
+                                <p><strong>Set ImportID</strong>: Sets the ImportID of the Surcharge Type to the Surcharge Code on the same form<br />The ImportID is refreshed if the Surcharge Code is changed.</p>
+                            </li>
+                            <li>
+                                <p class="TableTextLeft">Any Biz logic or Hard Errors have been configured on both the Default and Imports pipeline. Soft Errors only occur on the Default pipeline.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">ImportID Setter Proc Update for Client Lists</p>
+                        <p class="TableTextLeft">The ImportID setter has been enhanced to set a standardized ImportID for the following dataforms:</p>
+                        <ul>
+                            <li>
+                                <p>Shifts</p>
+                            </li>
+                            <li>
+                                <p>Departments</p>
+                            </li>
+                            <li>
+                                <p>Divisions</p>
+                            </li>
+                            <li>
+                                <p>Job Codes</p>
+                            </li>
+                            <li>
+                                <p>Benefit Classification</p>
+                            </li>
+                            <li>
+                                <p>Pay Groups</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Show Location Name on OSHA 300</p>
+                        <p class="TableTextLeft">The OSHA 300 report has been updated to display the Location Name on the Establishment line, when running the report by location just as we do for the OSHA 300A already.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Inactive Locations for OSHA Logs</p>
+                        <p class="TableTextLeft">The OSHA Log reports (300, 300A) previously included inactive locations in the report. As some clients have a business need for inactive locations and there is no way to delete these locations through the user interface we have enhanced the Client Location form with an Obsolete Date field. The OSHA 300/300A logic has been modified to include active Client Location records and inactive Client Location records where the Obsolete Date (the new field on the Client Location) is within the OSHA Year selected. Inactive records that do not have an Obsolete Date are excluded.</p>
+                        <p class="TableTextLeft">We have also included a script to add the Obsolete date to the HRPAPI_Location initial and ongoing mappings. The API Path included with this script is Location/locationCode/obsoleteDate</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">OSHA 300A Filter Options for Location with or without Claims</p>
+                        <p class="TableTextLeft">A filter parameter has been added to the OSHA 300A report allowing it to be run from the Admin workspace for all clients:</p>
+                        <ul>
+                            <li>With Claims</li>
+                            <li>Without Claims</li>
+                            <li>With and Without Claims</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Privacy Consideration Logic for OSHA 300</p>
+                        <p class="TableTextLeft">Updated the OSHA 300 report logic. When the Privacy Concern option is selected, only the employee name will be marked as "Private" - all other claim data will be represented.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Run OSHA Logs for Termed Clients</p>
+                        <p class="TableTextLeft">A filter option has been added to include Terminated Clients when running for all workspaces (i.e. the Client filter is left blank when running from the Admin Workspace). For a termed client to be included, the Term Date needs to be in the same year as selected on the OSHA Year filter. This applies to both the 300 and 300A reports.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Updated Logic for Sales Entity SE on Org</p>
+                        <p class="TableTextLeft">A PEO Configuration setting named "Disable Sales Entity Warning" has been added that allows the a System Admin to turn off the rule which checks for a Sales Entity record of the organization creator when creating a prospect workspace. Select this option to disable the soft error that is produced when the Assigned To on the Organization does not have a Sales Entity record configured.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Adjust Icon on Case Discussion to be more visible</p>
+                        <p class="TableTextLeft">The attachment icon on the case discussion detail has been adjusted to make it more visible and recognizable. Icon now appears as a paperclip on the discussion detail form.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Employee Server Data Proc, Inserts</p>
+                        <p class="TableTextLeft">The Employee Server Data Proc 'peo_server_data_employee' has been modified to return workspace-related data when the Employee is added.&#160;&#160;The following data will be returned:</p>
+                        <ul>
+                            <li>
+                                <p>EmploymentStatus</p>
+                            </li>
+                            <li>
+                                <p>EmploymentType</p>
+                            </li>
+                            <li>
+                                <p>HireDate</p>
+                            </li>
+                            <li>
+                                <p>ClientNumber</p>
+                            </li>
+                            <li>
+                                <p>ContractType</p>
+                            </li>
+                            <li>
+                                <p>ContractEffectiveDate&#160;</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Beef Up Watch Widget</p>
+                        <p class="TableTextLeft">The Watch widget has been enhanced to allow for a custom decode function based on record id of the watched item. Previously this widget shared the decode function used by the left hand Work items. This standard decode function will still be used if no Watch decode function is present. If neither are present the system will display the defined "default attribute" on the form, and if this is not set, the dataform name will be displayed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Option To Hide Report Title</p>
+                        <p class="TableTextLeft">An option has been added to BI Widget Settings when configuring BI report widgets (Suppress Report Title). When checked the title of the associated report will be hidden on the BI report widget.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Triggering Form list on WFC and Email Templates</p>
+                        <p class="TableTextLeft">An <strong>IsTriggerEnabled </strong>flag has been added to the&#160;Dataform table and exposed&#160;through the Form Properties user interface.&#160;This flag now&#160;drives the "Triggering Form" dataform selector in Workflow Channel config and the Email Templates, determining which dataforms are available as triggering forms.&#160; Forms previously configured as Triggering, but that are currently not configured as valid triggering forms will still appear in the list and the configured WFC/Email templates will function, but users will not be able to add new configurations using these forms. Templates configured in this way will display&#160;a warning message that states:</p>
+                        <p class="TableTextLeft">The triggering form is no longer enabled. If you still wish to use this as your triggering form, go to Dataform admin and select the Trigger Enabled option.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Search Work Items Inactivation</p>
+                        <p class="TableTextLeft">The Work Items list has been enhanced to allow for multiple work items to be opened from a multi-form list. Previously opening a Client Service case within a workspace for example would lock the Client Service Case list, not allowing you to open another case without opening another instance of the list.</p>
+                        <p class="TableTextLeft">The system has been enhanced so that multiple Parent level work items (cases in the previous example) may now be opened from a list. If a child of this dataform is opened (such as opening a task from the case) the parent form is locked and may not be edited due to concerns that changes to the parent may affect the child through business logic. Other parent forms in the work items list however may now be edited.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Unable to use % as a variable</p>
+                        <p class="TableTextLeft">The dataform system has been enhanced to allow wildcard searches using the "%" wildcard when searching for a user by first, last or full name.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Script tags in text fields</p>
+                        <p class="TableTextLeft">Fixed a bug where including script tags in a text field could cause the system to throw an exception when you saved the form. These types of tags are now stripped from the field content on save, leaving a blank.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Ensure ImportIDs are Unique</p>
+                        <p class="TableTextLeft">Additional logic has been added to the system so that when a form is saved the ImportID will be unique within the workspace.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Bug With Sales Activity View</p>
+                        <p class="TableTextLeft">Resolved an issue with the Sales Activity module on Mobile devices where backspacing in a date field to remove a date would cause the date to spontaneously reset to the original value, making it difficult to change dates.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Deprecate "From Email Override"</p>
+                        <p class="TableTextLeft">The Email template system has been enhanced.&#160; The older "From Email Override" functionality has been removed in favor of an email selector control which allows you to use the default Admin Email address, a typed Ad hoc email address to define a specific "From" user, the email can be derived from any user in the system, from the recipient stored procedure or from a user field on any single form in the system.&#160; This allows for a dramatic increase in flexibility when defining email templates.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">List widget issue</p>
+                        <p class="TableTextLeft">Fixed a bug with Widget padding at the bottom of the container being too tight and cutting off part of the widget.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Fixes</h2>
+        <table class="TableStyle-Standard_Table" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" cellspacing="0">
+            <col style="width: 83px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 316px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 644px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Issue summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableTextLeft">Resolution</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">31059
+                                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Recurring Import Error - 'Out of sync status'&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where Company imports would consistently throw "Out of sync status" error because the payroll system status and the application status did not match.&#160; Two flags on the PRO Configuration page in the Admin Workspace affect how these disparate statues are now handled.&#160;</p>
+                        <p class="TableTextLeft"><strong>Allow Termination from Payroll System</strong>: If checked (true), when a client is "Terminated" in the Payroll System the termination workflow will be triggered by the nightly import, creating a termination record and setting the Client Status to "Pending Termination".&#160; If unchecked (false), the system will ignore the import status, preserving the Client Master status without throwing an error.</p>
+                        <p class="TableTextLeft"><strong>Allow Any ClientMaster Status During Import</strong>: If checked (true), when a company import is processed the status of the Client Master will be set to the status of the import file.&#160; This status change will only affect the Client Master status and not trigger termination workflow unless the "Allow Termination" flag is also set to true.&#160;If unchecked (false) the import status will be ignored and the import will continue without throwing an error.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">34354
+                                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Benefit Batch Renewal Calculating Premiums from Incorrect Benefit Plan
+                                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Fixed a bug found when setting the Plan Tier ID for Offered Benefits Plans.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">34496
+                                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Lookup Metadata JavaScript<![CDATA[
+                                        ]]></p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Fixed a bug in the Contract Type lookup metadata that caused the meta for UseOnTemplates to throw errors on page load</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">33134
+                                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Smooth out user creation
+                                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Fixed some issues with Contact User creation that would cause multiple user security entities to be generated when a contact user was created.&#160; Replaced the Create User checkbox and text field with an Action link to Create User.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33918
+                                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Error when trying to access organization</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where dataforms that had a bogus Link GUID would cause the form to error when rendering.&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">34010
+                                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">List widget issue</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Fixed a bug with Widget padding at the bottom of the container being too tight and cutting off part of the widget.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">34170
+                                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Email Templates, Address Stored Procedure Preview error</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue with Email Templates where if an Address Stored Procedure is selected and the link for "Address Stored Procedure" is clicked an exception would be thrown. The system will now appropriately display the fields that will be returned by the Address Stored Procedure.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">34211
+                                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Default Assigned To on Dependent Tasks</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue which affected Assigned To/Owner/Start Date Source/End Date Source field replacement on dependent tasks within a workflow channel, as well as dataform user and date field replacement on dependent dataforms.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">34333
+                                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Email Templates Replace Fields preview</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Fix a bug that would cause Email Templates Replace Fields preview to not render.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">34341
+                                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Email Templates, From Email address bug</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Fixed a bug on existing email templates that use the 'From' address from the Address Source Procedure. This bug would cause that address to sometimes be ignored when editing the template and tabbing through the 'Address' tab causing the system to throw the error 'From address is required'</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">34395
+                                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">WFC Primary and Secondary conditions, Trigger Source
+                                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue in Workflow channels where the Primary and secondary trigger source may not be properly defined on save of workflow. Also resolved an issue where Dependant workflow items may not fire properly if the Workflow trigger source was a Server Data proc field.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">34113
+                                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">nw_import_s_ready problem
+                                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue in import logging where the system would use the database table name instead of the friendly name for the destination table when logging errors during import.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">34624
+                                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">Remove External users ability to Add modules to user profile
+                                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">Previously the system did not support External users accessing system modules, but they still had the ability to add those modules to their user profile.&#160; We have removed the ability for external users to add modules to their profile to avoid confusion.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+    </head>
+    <body>
+        <h1>Process flow example</h1>
+        <ul>
+            <li>External person sends an email to an email integrated mailbox (Example: n3twise.test@gmail.com in API configuration).</li>
+            <li>A new Client Service Case is Created from Email Alias 1 and saved using the EmailIntegration pipeline (no change to the current process).</li>
+            <li>Attachments are attached to the Case.</li>
+            <li>After the save, a new Discussion is started using the ClientSpace.PEO.Business.EmailIntCaseDiscussion object.  This Discussion is related to the new Case.</li>
+            <li>The destination workspace is determined using the existing email integration logic described in <MadCap:xref href="../Integrations/EmailInteg_Aliases.htm" title="Creating Email Integration aliases" alt="Creating Email Integration aliases">Creating Email Integration aliases</MadCap:xref> and <MadCap:xref href="../Integrations/EmailInteg_ActionStep.htm" title="Action step" alt="Action step">Action step</MadCap:xref>.</li>
+            <li>The External email address is used to search for a matching recipient in ClientSpace in the following order:<ul><li>Contacts in the same workspace (via Org)</li><li>Any Contact with the same email</li><li>Employees in the same workspace</li><li>Any Employee with the same email</li><li>Any User with the same email</li></ul></li>
+            <li>If a match is found, that Contact/Employee/User is used to create a Discussion Recipient record attached to the Message.</li>
+            <li>If a match is not found, a new Contact is created and is the Discussion Recipient attached to the Message.<ul><li>Attached to the Org associated with the workspace</li><li>FirstName: "Email-Integration"</li><li>LastName: "Discussion"</li><li>Email: the incoming Email address</li><li>General Notes: "Created from Email Integration, Discussion"</li><li>If the source of the external person sending the email is "Contact", a new Activity will be created</li><li>Attached to the Org associated with the workspace</li><li>Subject will be the Subject of the original Email</li></ul></li>
+            <li>A new Discussion Thread record is created (related to the new Case) via Dataform Save Pipeline.</li>
+            <li>BizLogic only</li>
+            <li>EmailIntegration pipeline (no rules are currently available on this form at this time). <ul><li>A new Discussion Recipient record is created for the external person, through the Dataform Save Pipeline.</li><li>A new Discussion Recipient record is created for the Case Assigned To (if available), through the Dataform Save Pipeline.</li><li>A new Discussion Message record is created (related to the Thread).</li><li>Any attachments received is attached to this Message.</li><li>Saved through the Dataform Save Pipeline.</li></ul></li>
+            <li>EmailIntegration pipeline<ul><li>SendEmailIntegrationReply rule fires.</li><li>Internal Notification is sent to the Assigned to the person using CSCDISCNEW template.</li><li>External notification uses the Email Template specified in the rule's parameter.</li><li>External notification is sent to the user with the Template's From Email Override as the From address. This is configured as the Email Alias 2 address.</li><li>External notification has [ReplyID:] automatically added to the Subject.</li><li>External notification has ATTN: Reply Above This Line automatically added to the body, first line.</li><li>Replace fields are added to the original Case, used by the Email Alias Reply Template.</li><li>{MessageGUID} and {RecipientGUID} for use in the Subject [ReplyID] formatting.</li><li>{ReplyToURL} for use in the Body (gives the external person the option of clicking a link).</li><li>Notification is sent to the external person using the Reply Template on Email Alias 1.</li></ul></li>
+            <li>Subject and Body formatting are critical! (see Email Alias 1 Reply Template).</li>
+            <li>The From Email Override is the From address for that email, allowing a direct Reply to continue the discussion thread.</li>
+            <li>In this example, the Reply goes to n3t.wise.test@gmail.com</li>
+            <li>Internal user sends new message from Next in this Thread.</li>
+            <li>The Rule SendEmailIntegrationReply fires on the Default pipeline.</li>
+            <li>External user receives a message to which they can Reply To or click a link to open the current discussion.</li>
+        </ul>
+    </body>
+</html>

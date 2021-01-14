@@ -1,0 +1,15 @@
+//Quick Create Pre-load File Template
+//
+//06-APR-2017
+//
+//File must be a .CSV, columns separated by commas
+//Lines starting with '//' are comment lines and are ignored
+//Lines starting with 'State' are ignored
+//Quotes around values are optional
+//CurrentEffectiveCompRate column is optional
+//
+//First valid line MUST be exactly:
+State,Code,PayFrequency,GrossPayroll,FullTimeEmployees,PartTimeEmployees,SUTA,CurrentEffectiveCompRate
+FL,8810,Weekly,100000,2,1,.7,1.1
+//Comments can be inserted on any line but must not be mixed with data
+FL,8742,Weekly,200000,3,2,.7,1.1

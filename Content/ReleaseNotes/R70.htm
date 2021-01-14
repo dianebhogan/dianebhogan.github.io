@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('../Resources/MasterPages/ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Release 70 Notes</h1>
+        <p><strong>R70 Sprint</strong>:&#160;7/1/2018&#160;to&#160;7/31/2018. To learn about product features that you may not recognize, contact your Customer Success Manager.</p>
+        <h2>Enhancements</h2>
+        <p>Enhancements groups are Change in Functionality, ClientSpace Premium (ClientSpace with additional modules), Advanced Administration, and General.</p>
+        <h3><i class="fas fa-bell" style="font-family: Font Awesome 5 Free; font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="Change in functionality" alt="Change in functionality"></i> Change in Functionality</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Client Search with %</p>
+                        <p class="TableTextLeft">The Client Search module has been enhanced.&#160;The Quick Search % search now includes Organization Name, DBA and Workspace Name.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Lock down access to all of Classic </p>
+                        <p class="TableTextLeft">A new application variable has been added to App Settings to lock down access to the older Classic interface. This setting affects non-admin users, effectively locking them out of the classic interface (this overrides the Default to Next user profile behavior.)&#160;With the App setting for "<strong>Allow Classic Access</strong>" disabled, all logins are re-directed to the new cross browser compatible NEXT interface. Global Admin users will still be allowed access to classic by editing the browser URL.&#160;Non-admin users will require a special security entity to allow this function.&#160;</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">A Security Entity (<strong>Allow_Classic_Access</strong>)&#160;has been added to the system.&#160; This allows non-admin users access to the classic interface by editing the browser URL.&#160; View rights are required to enable this functionality.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Unconverted classic interfaces, such as the import management module and system management control panels (for admins) will not be affected by this change.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Inactivating Workflow Channels</p>
+                        <p class="TableTextLeft">Workflow Channels have been enhanced to allow them to be published and unpublished by using the <strong>"Publish"</strong> button, effectively inactivating the channel and causing it to be ignored.&#160; Newly created workflow channels are created as <strong>"Unpublished" </strong>and must be deliberately published before use.&#160;You can also search available workflow channels for Published, Unpublished or All</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert Role Admin to Next</p>
+                        <p class="TableTextLeft">The Role Administration control panel that is used to set and modify security throughout the application has been converted to the cross browser compatible NEXT interface.&#160; This allows you to configure granular security in the application by adding security entities to roles which may then be assigned users either individually through the users profile or in a group through the role administration control panel.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert Email Integration</p>
+                        <p class="TableTextLeft">Email integration is a component that provides automated dataform creation (Client Service Case)&#160;via email requests. It allows the creation of an email account from a Third-party email provider to be accessed and data forms created based on the email account or a specific email alias of that account.&#160;Once the request has been processed, an email notification will be generated from a configurable template and transmitted as a response back to the sender of the originating email.&#160;This functionality has been converted to our cross browser compatible application as&#160;a&#160;system admin tile.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert Audit Trail</p>
+                        <p class="TableTextLeft">Audit trail functionality has been converted to our cross-browser compatible application.&#160; A new Audit Trail tile has been added to provide access to both the Field Audit Trail (previously converted) and the User Audit Trail.&#160; User audit trail search contains the following:</p>
+                        <p><strong>Columns:</strong>
+                        </p>
+                        <ul>
+                            <li>User Date</li>
+                            <li>Action</li>
+                        </ul>
+                        <p><strong>Quick Search:</strong>
+                        </p>
+                        <ul>
+                            <li>Last Name (starts with)</li>
+                            <li>loginid (starts with)</li>
+                        </ul>
+                        <p><strong>More Search:</strong>
+                        </p>
+                        <ul>
+                            <li>User</li>
+                            <li>Activity Date</li>
+                            <li>Action</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert Workspace Groups To NEXT</p>
+                        <p class="TableTextLeft">Workspace Groups have been converted to our cross-browser compatible application as an Admin Tile.&#160; This system function allows you to create unique groups that can then be used to categorize types of workspaces, allowing you to search on the associated group in the Workspace Search</p>
+                        <p><strong>Search Page</strong>
+                        </p>
+                        <p><strong>Columns:</strong>
+                        </p>
+                        <ul>
+                            <li>Name</li>
+                            <li>Description</li>
+                        </ul>
+                        <p><strong>Quick Search:</strong>
+                        </p>
+                        <ul>
+                            <li>Name (Starts With)</li>
+                        </ul>
+                        <p><strong>More Search:</strong>
+                        </p>
+                        <ul>
+                            <li>Name</li>
+                            <li>Description (should be a wildcard search)</li>
+                        </ul>
+                        <p class="TableTextLeft">Add, Edit, Delete Buttons are available - the delete function will check to insure no workspaces are using a group prior to delete - if this validation finds workspaces in the group you will receive a message:</p>
+                        <p class="TableTextLeft"><strong>Detail Page:</strong>
+                            <br />Includes a General Fieldset&#160;containing the Name and Description fields</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert Manage Import Queue</p>
+                        <p class="TableTextLeft">The interface for managing import queue records has been updated to work with our cross browser compatible application and is available through <strong>System Admin &gt; Imports &gt; Manage Import Queue</strong>.</p>
+                        <p class="TableTextLeft"><strong>Columns</strong>: Same as classic</p>
+                        <p class="TableTextLeft"><strong>Quick Search</strong>: Identifier (Starts With)</p>
+                        <p><strong>More Search</strong>:</p>
+                        <ul>
+                            <li>Status</li>
+                            <li>Type</li>
+                            <li>Reason</li>
+                            <li>Map</li>
+                            <li>Identifier</li>
+                            <li>Created (date range)</li>
+                            <li>API Configuration</li>
+                            <li>File (import file name)</li>
+                        </ul>
+                        <p class="TableTextLeft"><strong>Mass Update</strong> button allows update of &#160;selected items:&#160;<strong>Delete</strong>, <strong>Mark Complete</strong>, and <strong>Reset Status</strong>.&#160;</p>
+                        <p class="TableTextLeft"><strong>View</strong>&#160;button on the right side opens a dialog to view the contents of the Queue item, paging between items is enabled in this interface.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert Org Category Security</p>
+                        <p class="TableTextLeft">The Organization Category security interface has been updated to work with our cross-browser compatible NEXT application and added as a System Admin tile. For more information about Organization category security read Organization and Workspace Security.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>General Enhancements</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Email to Case Employee Search </p>
+                        <p class="TableTextLeft">The email integration system has been enhanced to include an employee search as part of it's workspace matching criteria as well as to determine the related employee on the case. When a case is logged, the case code will attempt to see if the <strong>FROM</strong> address is an employee (selects top 1 most recently updated by email address) and if so, sets the related employee on the case. The system will then use this employee to determine the workspace where the case should be created. If no matching employee is found, email integration will search for a contact with an email address match, then an organization with a matching web domain, then if no match is found will fall back to the default email alias workspace.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Send Notifications To User-based Fields </p>
+                        <p class="TableTextLeft">The email template system has been updated to allow recipients to be selected from any single form in the workspace, if the form contains either a User, Contact and/or Email datatypes. Admins now have the option to choose any single dataform and a filter list if field is based on User (or other data types mentioned above) for including in notifications. You may now configure numerous user-based field for notifications and the User in the selected field will receive the message just as though a specific user had been chosen.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Allow SDP1/2 to be used for field replacement</p>
+                        <p class="TableTextLeft">Email Templates and Workflow Channels have been enhanced with the ability to merge Dataform fields from forms other than the triggering Dataform and associated tabbed forms using server data procs SDP1 and SDP2.&#160;&#160;</p>
+                        <p><strong>Workflow Channels (WFC)</strong>
+                        </p>
+                        <ul>
+                            <li>Added Replace Field copy to clipboard functionality; select field(s), click Copy and the system&#160;&#160;will copy the selected&#160;field(s) to clipboard, for use in dataform and tasks generation.</li>
+                        </ul>
+                        <p><strong>Email Templates</strong>
+                        </p>
+                        <ul>
+                            <li>We have converted the Replace Field selector to match WFC Replace field selected</li>
+                            <li>Includes Base Dataform fields, Organization/OrgOtherInfo, SDP1, SPD2 and Merge Proc fields</li>
+                            <li>Added Replace Field copy to clipboard functionality; select field(s), click Copy and the system&#160;&#160;will copy the selected&#160;field(s) to clipboard, for use in dataform and tasks generation.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Contact fields on Email Templates</p>
+                        <p class="TableTextLeft">Added the ability to use User and Contact type dataform fields in email Templates when selecting the recipient of an email template.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert Datatypes</p>
+                        <p class="TableTextLeft">Two datatypes were converted to work with our cross browser compatible application:</p>
+                        <ul>
+                            <li>
+                                <p><strong>Workspace Type Multiple Select</strong>- allows you to multi-select options for a workspace</p>
+                            </li>
+                            <li>
+                                <p><strong>Time Tracker Category </strong>- used by our time tracker function in the application to group time records together.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Sales Pipeline/Forecast Logic</p>
+                        <p class="TableTextLeft">The lead management system has been enhanced with the ability to perform some sales forecasting using probability of close percentages attached to the Organization Status through metadata.&#160; The following new fields on the Org Other Info will be used to manage this:</p>
+                        <ul>
+                            <li><strong>Next Actions</strong>: text - used to describe the expected next actions for this sale.</li>
+                            <li><strong>Potential Value</strong>:&#160;money - estimated / assessed gross payroll</li>
+                            <li><strong>Probability of Close%</strong>: percentage - based on sales progress what is the potential the sale will be completed&#160;(auto based on Org Status,&#160;may be overridden)</li>
+                            <li><strong>Override Probability of Close %</strong>: checkbox - Allows Prob of Close% to be manually set.</li>
+                            <li><strong>Expected Revenue</strong>: money - calculated field based on Potential Value * Probability of Close %.&#160;</li>
+                        </ul>
+                        <p>Users can enter a 'Potential Value' money value at any state - including during the early prospecting stages.</p>
+                        <p class="TableTextLeft">Logic will keep an Expected Revenue money value up to date when ever the Potential Value changes or Org Status is changed; including when the Client Master / Pricing&#160;logic causes the Org Status to change.</p>
+                        <p class="TableTextLeft">Logic will keep the Probability of Close % percentage value up to date whenever the Org Status changes.</p>
+                        <p class="TableTextLeft">When a Workspace has an RFP Pricing Batch, the Potential Value will be kept current from the Total Gross Profit of the RFP Batch.</p>
+                        <p class="TableTextLeft">User may enter the Next Actions text freely at any time.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Enhance the Client Export to Prism to pass the client number from Pulse</p>
+                        <p class="TableTextLeft">New functionality has been added to allow&#160;the application&#160;to provide the Client Number to PrismHR when creating a Client in PrismHR through the "<strong>Export to PrismHR</strong>" function.&#160;&#160;If a collision with existing Client Numbers in PrismHR occurs the Client Master Export log field will identify any faults encountered when creating the Client in PrismHR.</p>
+                        <p class="TableTextLeft">New PEO Default Info configuration setting (<strong>Admin Workspace | PEO Default Configuration</strong>):</p>
+                        <p><strong>Third Party Application/PrismHR Assigns Client Number</strong>
+                        </p>
+                        <ul>
+                            <li>MUST match the Auto Assign setting in PrismHR</li>
+                            <li>Unchecked: ClientSpace provides the Client Number</li>
+                            <li>Checked: PrismHR provides (auto generates) the Client Number</li>
+                        </ul>
+                        <p><strong>New rule HE_ValidateExportClient</strong>
+                        </p>
+                        <ul>
+                            <li>Fires when the Export to PrismHR link is clicked</li>
+                            <li>Based on PrismHR Assigns Client Number setting (see above)</li>
+                            <li>Unchecked:&#160;The rule will&#160;throw a&#160;Hard Error if CM.ClientNumber is empty</li>
+                            <li>Checked: this rule throws Hard Error if CM.ClientNumber is populated</li>
+                        </ul>
+                        <p><strong>Export Client To PrismHR</strong> link visible if:</p>
+                        <ul>
+                            <li>A&#160;PrismHRAPI App Code is present in the system</li>
+                            <li>Client Master Status is <strong>UnderContract</strong>, <strong>PendingActivation</strong>, <strong>Client</strong>, <strong>PendingTermination</strong></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Responsible Department Field on Case Category Metadata</p>
+                        <p class="TableTextLeft">The Case system has been enhanced to auto assign cases to the case category department manager should the automatic case assignment by case type not work properly, such as due to missing data in a field that would receive case assignment.</p>
+                        <p class="TableTextLeft">A <strong>Responsible Department</strong> field has been added to the Case Category Metadata as a&#160;required field.&#160;This field contains&#160;a list of departments.</p>
+                        <p class="TableTextLeft">If for whatever reason the Assigned To is not populated on the case when getting saved the system will set the Manger of the Department that is configured on the Case Category Metadata as the assigned to user.&#160;Department manager is set via the Department Tile under <strong>System Admin &gt; Departments</strong>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Setting ImportID for Offered Plans</p>
+                        <p class="TableTextLeft">Previously the Offered Benefit Plan had logic that included the Client Number in the ImportID, even&#160;if there is no Client Number on the associated workspace. To correct this the code which sets the ImportID of the Offered Plan has been updated in the following way:</p>
+                        <p class="TableTextLeft">If the ClientNumber is changed while the Client is in 'UnderContract', 'Client', 'PendingTermination', 'Terminated' status:</p>
+                        <p class="TableTextLeft">The ImportID of all active or inactive Offered Benefit Plans in the workspace will be updated to "CM.ClientNumber-BenefitPlanImportID-OPC.ClassificationCode", unless:</p>
+                        <ul>
+                            <li>
+                                <p><strong>ClientMaster.ClientNumber</strong> is&#160;empty, then will use WSxxxxx instead of CM.ClientNumber ('xxxxx' = ProjectID)</p>
+                            </li>
+                            <li>
+                                <p><strong>Offered Plan.eeClassification</strong> is&#160;empty, then will use "ClientNumber-BenefitPlanImportID"</p>
+                            </li>
+                            <li>
+                                <p><strong>Offered Plan Classification</strong>.<strong>ClassificationCode</strong> is empty, then will use "ClientNumber-BenefitPlanImportID"</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Fixes</h2>
+        <table class="TableStyle-Standard_Table" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" cellspacing="0">
+            <col style="width: 69px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 334px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 643px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Issue summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableTextLeft">Resolution</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">33184</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Exception logged if BI widget not configured but present on widget layout</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where a Business Intelligence widget that was added to a layout, but not configured would cause the application to throw an exception when the page containing the layout attempted to load. In this situation the system will now display the friendly error:</p>
+                        <p class="TableTextLeft">"This widget is configured incorrectly. Please contact your local administrator."</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">33423</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Fix performance issues when loading the Home page</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Issues with the Query governor could cause long load times on the Home pages of some of our clients.&#160; This has been resolved.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">33433</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Cannot Access Classic Template Task Manager</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where the Classic Template task manager would open an unfiltered list of tasks when the link was clicked from a Template workspace. The list now opens as properly filtered for the workspace from which it was launched.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">33449</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Update Outlook Addin to remove CanViewList requirement</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Removed an unnecessary security check on the Create Case and Create Task modules that could, under certain circumstances cause the Outlook add-in to restrict some functionality. This would cause the user to receive the error "No options available" when attempting to Create Case or Dataform Record through the Outlook Add-in. despite having both the Create Case and Create Task modules configured.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33490</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Password Reset Error</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where an invalid mail token in a forgotten password email would cause the system to throw an exception and not return a usable error to the user. The system has been updated and will now display: The key you are using to change your password is no longer valid. Please make a new forgotten password request and you will be sent a new key.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">33665</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Workflow Channel: Task triggering off Case</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where tasks triggered from dataforms in Workflow were not being properly linked to the triggering dataform. A task that is triggered from a workflow cloned dataform will not be appropriately linked to the dataform from which it was triggered.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33783</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">nw_filemanagement_validate_links Error</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Fixed a bug where Converted file management database files related to merges were not being properly recognized by the system in some cases and getting removed by the Cleanup process.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">33804</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">WFC Notification users</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where the dataform property to <strong>Disable Subscription Email</strong> was overriding the notification behavior of notification users from a triggered email template that was triggered by Workflow channels as these email addresses were considered CC users and removed before the email was generated. The Disable Subscription Email now only affects users directly subscribed to the email, and not notification users from workflow triggered automated email generation.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33822</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Email Template Primary Trigger</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where email templates that were triggered by evaluating money fields could be improperly triggered due to an error in the evaluation.&#160; Money fields now evaluate to trigger conditions properly.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">33889</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Exception Monitoring - File cleanup process error</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Fixed an issue in file management cleanup</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33922</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Ad Hoc Profile not working correctly</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue with Ad-Hoc report profile settings and creation of new reports.&#160;AdHoc Profile <strong>Allow creation of new reports</strong> setting is now respected both by removing the New Report/dashboard function as well as the ability to Save and New on a report. If unchecked, the New report/dashboard nav button will not appear and report design is not allowed. External Users&#160;are not&#160;allowed to create a new report, regardless of AdHoc Profile configuration on that users profile.&#160;This works in conjunction with the BI App setting for <strong>External Users View Reports</strong>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">33951</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Branding Page Error</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Defensive code was added to prevent a file from being mis-linked when the option to "replace file" is selected while uploading files to a file upload manager - database field.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33977</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">External Users issue</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Correct Notification widget bug for external users (access to work items)</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">34060</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Server Data Procs on non-Default Pipeline</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Updated the system so that when a dataform is saved, Server Data Proc 1 and 2 will always be retrieved from the 'Is Selected' Pipeline (typically the Default Pipeline) and supplied to WFC and Email Templates.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">34066</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Task Format - Creation</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where task page formatting would be off under certain conditions on Add which would cause all of the columns to stack as if in responsive design mode on a mobile device.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">32481</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Benefit Plan Update Should Set OBP ImportID</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">The Benefits system has been enhanced to keep the offered plans and benefits plans in sync:</p>
+                        <p class="TableTextLeft">Changing the Unique Plan Code (UPC) or the Effective Date on the Benefit Plan will trigger an update to the ImportID of that plan and any related Offered Plan regardless of the workspace they may be in. Inactive Offered Benefit Plans should be updated too. The BP.ImportID should be the BP.UPC-BP.EffectiveDate. Date should be formatted YYYYMMDD. Changing the Benefit Plan or ClassificationCode on the OBP should also update the ImportID on that Offered Benefit Plan.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33063</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Prism API Initial Sync Scheduled Process</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where if there is more than one API for PrismHR configured (i.e. Corp and a non-Corp db), the system will only run the initial sync for one of the configurations. During the sequence of running, the API records would get processed out of order. The system would try to match the client but not find the Client Number so the workspace was skipped and the system would then uncheck the Sync with PrismHR checkbox on the Client Master. Since the box was unchecked, when the workspace was processed for the second configuration it would not synchronize. The issue has been corrected.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">33108</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Exception Legal Entity not matching throwing error</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where an exception would be throw because the Pricing Batch <strong>HE_ValidateStateLegalEntity </strong>rule was configured twice with the same HdrAction (Submit).&#160; One rule should have been configured with HdrAction (Approve).&#160; This change has been made and pushed to our PEO systems.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33137</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Rounding logic when applying risk factor to benefit plans</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue&#160;caused by the Benefit Tier calculation being truncated to 2 decimal places.&#160;The calculation is now performed with 4 decimal place precision and rounded to the cent before inserting into the Tier field (prior, it was truncating the value to 2 places, thus losing the rounding calculation)</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">33260</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Exception key not found</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where system widgets could throw exceptions due to missing data.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33276</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Case Dashboard doesn't resize hide columns appropriately</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Fixed a bug where in dynamic environments the Case Dashboard would not resize to hide columns appropriately, such as on a mobile device.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">33499</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Pricing Comp Code reprice</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Fixed a bug where when adding a Code to a State the repricing calculations may not execute, causing the pricing to not reflect the additional code. Pricing now correctly reflects all included, active codes.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">33835</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Responsible Department Field on Case Category Metadata</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">The Case system has been enhanced to auto assign cases to the case category department manager should the automatic case assignment by case type not work properly, such as due to missing data in a field that would receive case assignment.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">A <strong>Responsible Department</strong> field has been added to the Case Category Metadata as a&#160;required field.&#160;This field contains&#160;a list of departments. If for whatever reason the Assigned To is not populated on the case when getting saved the system will set the Manger of the Department that is configured on the Case Category Metadata as the assigned to user.&#160; Department manager is set via the Department Tile under <strong>System Admin &gt; Departments</strong>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">33839</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">API Term Reason</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Scripted a fix to an improper Import Map &gt; Source Path configuration for Term Reason on the Employee Import from PrismHR</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">33854</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">New Business Rule - gen_ImportUser</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">Fixed a bug where an existing imported user would get updated from the template user if template user was completed on the import file for the user, overwriting any settings changes made after the initial user creation from template. Imported users will now only inherit settings from a template user on initial add - not on update.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

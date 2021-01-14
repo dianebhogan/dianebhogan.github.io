@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Claim financial form and calculation rule<MadCap:annotation MadCap:comment="R90 Case 40846" MadCap:createDate="2020-03-11T13:20:07.923Z" MadCap:creator="Diane Hogan" MadCap:editDate="2020-03-11T13:20:12.416Z" MadCap:editor="Diane Hogan" MadCap:initials="DH" MadCap:creatorCentralUserId="98c66c7b-566c-4028-b287-6a8c4e6d073b">s</MadCap:annotation></h1>
+        <p>Risk administration is part of managing workers' comp claims. In addition to the standard workers' comp fields, you can track legal expenses.</p>
+        <p class="ProcedureIntro">To access the claim financial form:</p>
+        <ol>
+            <li>On the modules bar, select <b>WC Claims</b>.<br />The WC Claims dashboard opens.</li>
+            <li>Open a claim.<br />The Comp Claim form opens.</li>
+            <li>In the <b>Action Center</b>, expand <b>Links</b> and select <b>Claim Financials</b>. <br />The Comp Claim Financial form opens.</li>
+        </ol>
+        <p class="Indent1">
+            <img src="../Resources/Images/WorkComp/ClaimDetails.png" class="thumbnail" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>The following legal fields are part of the Claim Financials form:</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <colgroup>
+                <col class="TableStyle-Procedure-Column-Column1" style="width: 157px;" />
+                <col class="TableStyle-Procedure-Column-Column1" />
+            </colgroup>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">
+                            <MadCap:annotation MadCap:comment="new row" MadCap:createDate="2020-03-11T13:20:33.490Z" MadCap:creator="Diane Hogan" MadCap:editDate="2020-03-11T13:20:37.596Z" MadCap:editor="Diane Hogan" MadCap:initials="DH" MadCap:creatorCentralUserId="98c66c7b-566c-4028-b287-6a8c4e6d073b">VAO</MadCap:annotation>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Value As Of (VAO) date. For duplicate VAO dates (multiple records related to the same claim), the stored procedure <span class="UXElement">peo_claimfinancialdetails_s_bykey</span> updates the appropriate financial record by date created (create date descending, to present the most recent create date first<MadCap:annotation MadCap:createDate="2020-03-11T10:07:11.5986875-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="clarify this is create date descending, which I think is most recent create date" MadCap:editor="dhogan" MadCap:editDate="2020-03-11T10:07:13.2092463-04:00">).</MadCap:annotation></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Paid Total</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">PaidIndemnity+PaidMedical+PaidExpense+PaidLegal</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Reserved Total</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">ReservedIndemnity+ReservedMedical+ReservedExpense+ReservedLegal</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Incurred Indemnity</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">PaidIndemnity+ReservedIndemnity</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Incurred Medical</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">PaidMedical+ReservedMedical</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Incurred Expense</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">PaidExpense+ReservedExpense</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Incurred Legal</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">PaidLegal+ReservedLegal</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Incurred Total</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">IncurredIndemnity+IncurredMedical+IncurredExpense+IncurredLegal</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Total This Claim</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">IncurredTotal-SubrogatedAmount</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>
+        <p>Certain companies or employees should not be imported into ClientSpace (for example, the PEO itself). The <strong>HRP Configuration tool</strong> contains a Web Services Access Control interface.&#160;Companies that should <b>not</b> be imported into ClientSpace should be listed as <strong>Deny</strong> on the <strong>Company List</strong> form.&#160; </p>
+        <p class="ProcedureIntro">Perform the following steps in the HRP Configuration tool:</p>
+        <ol>
+            <li>Go to <strong>System</strong> &gt; <strong>System Parameters</strong> &gt; <strong>Action Menu</strong> &gt; <strong>Web Service User</strong> and open the CLIENTSPACE user.</li>
+            <li>Select <b>Grant Access by Default, Deny Access to Specified</b>. Specify which clients will be denied access.</li>
+            <li>Under <b>Company Access</b>, in <b>Company ID</b>, type the company IDs that you do <b>not</b> want the ClientSpace API to access.</li>
+            <li>
+                <strong>Save</strong> the record.<br></br>This prevents <MadCap:variable name="MyVariables.ProductName"></MadCap:variable> from accessing the company data from the listed clients.<br></br></li>
+        </ol>
+        <div class="indent">
+            <p class="ProcedureIntro" style="font-weight: normal;">
+                <img src="../Images/Integrations/blacklist.jpg" class="thumbnail" />
+            </p>
+        </div>
+    </body>
+</html>

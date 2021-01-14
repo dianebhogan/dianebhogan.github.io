@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Business Intelligence" />Building a new report</h1>
+        <p>Before you begin - a word about JOINS: To connect the data in your <MadCap:variable name="MyVariables.ProductName" /> installation for use in a report, the tables must be joined together. The following image describes common joins used in SQL server to connect tables.</p>
+        <p>
+            <img src="../Resources/Images/BI/Joins.jpg" />
+        </p>
+        <p>For the purposes of BI reporting in <MadCap:variable name="MyVariables.ProductName" />, we will only deal with a few of these.</p>
+        <p>
+            <img src="../Resources/Images/BI/JoinTypes.jpg" />
+        </p>
+        <p><b>Inner (Direct) Join</b>:  Selects rows from two tables such that the value in one column of the first table also appears in a column of the second table.  This is one of the most common joins used in reporting.</p>
+        <p><b>Cross Join</b>: A cross join returns a result table where each row from the first table is combined with each row from the second table.</p>
+        <p><b>Left (First Exists) Join</b>: The Left Outer Join known also as Left Join returns all rows from the left table in the Left Outer Join clause, no matter if the joined columns match.  A field in a result row is null if the corresponding input table did not contain a matching row. This is the second most common join used - Inner and left joins make up most of the joins necessary to connect <MadCap:variable name="MyVariables.ProductName" /> data.</p>
+        <p><b>Right Join</b>: The Right Outer Join known also as Right Join returns all rows from the right table in the Right Outer Join clause, no matter if the joined columns match.  A field in a result row is null if the corresponding input table did not contain a matching row.</p>
+        <p><b>Full Join</b>: The Full Outer Join known also as Full Join returns all rows from Both the Right Outer Join and Left Outer Join.  A field in a result row is null if the corresponding input table did not contain a matching row.</p>
+    </body>
+</html>

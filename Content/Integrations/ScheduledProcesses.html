@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Scheduled processes <i class="fas fa-cog" style="font-size:32px;color:var(--BrandPrimary2);padding:1px 6px 6px;" title="ClientSpace Advanced Administration" alt="ClientSpace Advanced Administration"></i></h1>
+        <MadCap:microContent id="microcontent1">
+            <p>Scheduled processes are executable code that runs on a schedule, such as contact syncing or polling the DocuSign system to retrieve document status. Processes are scheduled based on frequency, frequency type, and valid days. Access to the Scheduled Processes Admin dashboard is only available to system admins and users with access to the Advanced settings.</p>
+            <p class="ProcedureIntro">To view your scheduled processes:</p>
+            <ol>
+                <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Advanced </span>&gt; <span class="UXElement">Scheduled Processes</span>.<br />The Scheduled Processes Admin dashboard opens.</li>
+                <li>To  view the configuration, double-click the selected row or click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Open</span>).</li>
+            </ol>
+        </MadCap:microContent>
+        <h2>Queuing your processes</h2>
+        <p>Scheduled processes are Advanced Administration functions. Global administrators can queue scheduled processes from the Scheduled Processes Admin list from the Queue Process function. When you queue a process, it sets the Next Run Date to Now and updates the Queued column to 1. If you try to queue a process that is currently running, you receive an alert to wait for the process to finish running before queuing it again. In some cases, processes inactivate after they have run. However, many processes stay active all of the time.</p>
+        <p class="ProcedureIntro">To queue a scheduled process:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Scheduled Processes</b>.<br />The Scheduled Processes Admin dashboard opens.<br /></li>
+            <li>To queue a process, select an entry, and click <b>Queue Process</b>.<br />Queue Process sets the Next Run Date to the current date and time so that the process initiates as part of a scheduled process run, instead of running immediately.</li>
+            <li>To edit the frequency of a process, select the entry, and click <b>Edit</b>.<br />The scheduled process form opens, ready for your edits.</li>
+            <li>To save your changes, click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <h2>List of scheduled processes</h2>
+        <p>The following list comprises both CORE and PEO level scheduled processes, with CORE processes marked with (CORE).
+</p>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 280px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Scheduled process name</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">ActivatePending
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Find all Client workspaces with Pending Activation status that have an activation date equal to or less than today’s date.&#160;Change their status to Client and their Pricing Batch Status to Activated if using pricing.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Approval Expirations
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Compare the Date Approved field of the pricing batch to today’s date and the Approval Expiration # of Days on the Default Info form of the Admin workspace. If the difference exceeds the default, expire the pricing batch.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Benefit Renewals
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Compare the Benefits Plan expiration date to the Default Benefits Renewal Lead Time setting on Admin Workspace &gt; Default settings.&#160;If the plan (Expiration Date - Default Lead time) is &gt;= Now, clone any Benefit Plan template tasks with a trigger object of BenefitsRenewal.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">BenefitActivations
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Activates Benefits Plans and associated Offered Plans that are in Pending Activation status and Effective Date is on or before the day this process executes.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p>Bidirectional Contact Sync</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">HRPBiDirectionalContactsSync. For Initial Imports, it only retrieves ClientSpace Clients in Client, Terminated, and PendingTermination status.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">BrokerOutstandingProposalsEmail
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Generates and sends an email to&#160;the primary&#160;contact of Broker Orgs that have associated client workspaces&#160;with a&#160;Client Master&#160;status of Submitted&#160;with a&#160;subject line of Outstanding PEO Proposals with XXXX - XXXX being the name of the <MadCap:variable name="MyVariables.ProductName" /> PEO organization.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">CaseTypeRowLevelSecurityUpdate
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Find missing row level security settings for Client Service Cases with secured Case Types and inserts or updates as needed. Deletes row level security when case type security has been removed for a role.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">ClientSpace Digest Daily (CORE)
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Sends daily digest of follow-ups.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">ClientSpace Digest Weekly (CORE)
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Sends weekly digest.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">CriticalCaseNotification
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Sends Critical Case notification email with case list. Case priority must be critical – sends emails to members of Admin roles.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Delete Email (CORE)
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Delete all emails and associated attached files older than 30 days from today.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Delete Marked Task (CORE)
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Find all incidents marked for deletion and delete the following: Incident Users, Template Triggers, templates marked for delete, Incident Contacts, Uploaded files attached to incidents, binary files attached to incidents and finally, incidents.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Delete Orphaned Time Records (CORE)
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Deletes time records that are &gt; 1 day old and have no associated record or workspace.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">DocuSign Get Docs Status (CORE)
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Polls the DocuSign system using an API to find documents matching Queue records and retrieves current status of those docs. Requires a DocuSign account.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">DocuSign Request Signature (CORE)
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Polls the Uploaded File Queue for docs in New status then post the records to DocuSign using an API to request signatures of the addressees of those docs.&#160;Requires a DocuSign account.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Expire Passwords (CORE)
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Automatically Expires user passwords based on Install Security setting and Password Change Date on the user account.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Expire Sessions (CORE)
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Automatically Expires user sessions after a set amount of inactivity based on Install Security Setting.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">External Source Linking Cleanup</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">When deleting dataforms and workspaces, External Source Linking Cleanup deletes any associated external source linking records to prevent orphaned entries. A warning message is displayed when deleting dataforms and workspaces with External Source Linking records.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">FileManagement Cleanup (CORE)
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Interrogates the file linking table for unprocessed links, determines if they are not orphaned, removes the link if orphaned and marks the associated file for deletion. Then finds all files marked for deletion in uploaded files binary and uploaded files tables and delete them.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Generate Recurring Tasks (CORE)
+                        </p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Evaluates a recurrence table to identify the tasks to be generated.&#160;This only functions on non-template&#160;recurring&#160;tasks. The task that is configured to generate recurring tasks is the Primary task; those generated from this task's configuration information are Recurring tasks.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Generate Scheduled Tasks (CORE)
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Find all scheduled incidents from the Incident template table and generate scheduled tasks for each based on Date offset and grace period.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Generate Scheduled Workflow
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Find all scheduled workflow from the Workflow Item table and trigger scheduled workflows for each based on Date offset and grace period.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Import Cleanup (CORE)
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Deletes completed import files that are marked ImportComplete and greater than 5 days old. Deletes completed import queue records that are Completed and greater than 1 day old.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Manage Non-Active Users (CORE)
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Internal and External users who have not logged in during the last 30 days are hibernated. External users who have not logged in the last 180 days are expired.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p>Marketing Notification (CORE)
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Iterate through the list of marketing campaigns that are active and have not been sent. Generate emails and CRM notes for associated marketing campaigns.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Marketo Leads (CORE)
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Polls the Marketo system using a configured API to synchronize Lead data. Requires a Marketo account.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Move Queued Files (CORE)
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Get all files that need to be moved. Create an uploaded file object for each. Move each file and delete the binary file if successful.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Offered Benefits Plan Summary Update
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Insert Offered Benefit Plan Summary records on a nightly scheduled process replicates the data grid from the header of Offered Benefits Plan dataform for cross workspace reporting purposes.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">PrismHR Employee Sync With Prism</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">This process synchronizes <MadCap:variable name="MyVariables.ProductName" /> Employees with PrismHR. It validates that Employees in ClientSpace (for Companies that have Client Numbers in PrismHR) are in PrismHR. If the Employee record is not in PrismHR, it sets the Employment status to Deleted and inactivates the Employee record. This process is scheduled to run once and then inactivates.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">PrismHR Import Initial Locations</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">This scheduled process uses the <span class="UXElement">HRPAPI_initial_location*.csv</span> import configuration (must be active) to retrieve a list of Active ClientMaster records where Client Number is not empty.  These Client Numbers are then matched in PrismHR and used to create a list of locations for each client. If the client number cannot be matched in PrismHR, the client is ignored. For Initial Imports, it only retrieves ClientSpace Clients in Client, Terminated, and PendingTermination status.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p>PrismHR Import Initial Sync</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">This  processes the Clients to Sync and import remaining active Import Map data (employee, employment, location).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p>PrismHR Import Ongoing</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Only imports ongoing data for Clients that  exist in ClientSpace.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p>PrismHR Import Queue Initial Clients</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">This scheduled process obtains a list of all clients available through the PrismHR&#160;API, creates Import records for each, and sets the Sync with PrismHR flag on the Client Master for each Client imported (company initial import map <span class="UXElement">HRPAPI_initial_company*.csv</span> MUST be active). The company initial import map contains the Sync with PrismHR column (scripted out as active) to allow the setting of that flag on the Client Master.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p>PrismHR Import OSHA Location Data</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">This scheduled process obtains data for the previous year and populates the dataform Location OSHA&#160;Totals. The process obtains Total Hours Worked and Average Employee&#160;Count by Location from PrismHR. This data is then available to run the OSHA 300A report. The process runs for all PrismHR clients in the status Under Contract, Client, Pending Term, and Term.</p>
+                        <p class="TableTextLeft">
+                            <MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">See <MadCap:xref href="../Risk/OSHA_300ARpt.htm" title="OSHA 300A Report Details" alt="OSHA 300A Report Details">OSHA 300A Report Details</MadCap:xref>.</MadCap:conditionalText>
+                        </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">PrismHR Initial Employee Sync</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">This scheduled process uses the <span class="UXElement">HRPAPI_initial_employee*.csv</span> and <span class="UXElement">HRPAPI_initial_employment*.csv</span> import configurations (must be active, See <MadCap:xref href="../ImportsUploads/Activate_ImportMapHdr.htm" title="Activating Import Map Headers" alt="Activating Import Map Headers">Activating Import Map Headers</MadCap:xref>) to retrieve a list of active ClientMaster records where Client Number is not empty. </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">The Client Numbers are then matched in PrismHR to create a list of Employee and Employment records for each client. If the Client Number cannot be matched in PrismHR, the client is ignored. The Employee and Employment records are then mapped into an import file for the <em>nn</em> number of clients, with the number of clients (<em>nn</em>) set from the InitialImportClients parameter (numeric value) of the relevant API configuration. The import files are based on the initial_employee and initial_employment import configurations. When all records for the first <em>nn</em> clients are retrieved, the import begins. </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">This process seeds the system with any missing or new Employee and Employment records, batching these records based on the number previously retrieved until all Employee and Employment records for the designated clients are synchronized. At the end of this process, the scheduled process inactivates itself. For Initial Imports, it only retrieves ClientSpace Clients in Client, Terminated, and PendingTermination status.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">The process inactivates when all generated records are processed. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Process Case Escalations&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Checks Case Escalation records. Records with escalation date and time scheduled prior to NOW() are then processed, including (where applicable) updating priority, updating the assigned to user, and notifying the selected user or role.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Process Client Statistics</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Runs once a month to create new entries and updates the Client Statistics Table. When this process runs, the procedure aggregates each of the types by month. It searches for all Employee Vouchers or UIBenefitCharges that are not yet processed, then sums the totals and creates new Client Statistics records. Each client has one record per month and type. If an unprocessed record is found for an already existing month and type, the process  updates the totals on that Statistics record. When the scheduled process completes, it enables the IsProcessed option on any records that are used in creating a Client Statistics record.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Process Email Integration (CORE)
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">The Email Integration feature uses this process to check the designated mailbox for new entries and generate dataform records from these emails.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Process Scheduled Imports</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Imports any uploaded import file whose matching map header is Import Type = Scheduled Process.  The import file status must be Ready for Import or Validated.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Purge I9 Records
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Check the date of all I9 records pending purge in the system against the business rules, and mark all appropriate records as purged.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Salesforce Sync</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Synchronizes data between Salesforce and ClientSpace.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Seed Client Team Role</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">The Seed Client Team Role scheduled process deletes all Client Team Role rows before recreating Client Team Role forms.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Send Email (CORE)
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Collect all unsent mail in the system, send them, and mark them as sent.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">ServiceCaseNotification
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Checks Client Service case records for cases with escalation date and time prior to NOW().&#160;Sends an escalation case report with the subject&#160;"Cases requiring attention" to users in escalation roles on the case type.&#160;Includes&#160;any role that has the biz_email_ClientServiceCase_notifications entity.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Task Escalation (CORE)
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Get all the incidents that have passed their due date. Sends email notifications with the Subject "Tasks requiring attention" with a list of these tasks to the associated user email accounts. Notifications are sent to the Assigned To and Owner users, users with the Send Escalation Email option enabled in their user profile, as well as anyone in the task category notification role.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">TerminatePending
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Find all Client workspaces with Pending Termination status that have a termination date equal to or less than today’s date.&#160;Change their status to Terminated.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Update Act-On contacts (CORE)
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Polls the Act-On system using a configured API to synchronize contact data. Requires an Act-On account.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Update Client Teams
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Finds Default Client Team records in Pending status and updates Client Team records for workspaces with the same Sales Region.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Update User Time Notifications (CORE)
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">Find all new time tracker users and insert their records into the Notification and notification users table.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Find all users with open time records over the preset threshold and notify them: "You have not updated your time in X minutes."</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Find all users without open time records and notify them: "You currently have no open time records."</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Upload Merge Documents</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Uploads existing merge documents to the database and sets the uploaded file link GUID on the respective merge record. Only processes merge records that do not have an associated uploaded file. If a merge document does not exist in the web directory, the merge record is marked inactive.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Vouchers</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">HRPImportVoucher. For Initial Imports, it only retrieves ClientSpace Clients in Client, Terminated, and PendingTermination status.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

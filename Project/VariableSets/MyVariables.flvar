@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet>
+  <Variable
+    Comment=""
+    Name="CompanyName"
+    EvaluatedDefinition="PrismHR">PrismHR</Variable>
+  <Variable
+    Name="DocumentTitle"
+    Comment=""
+    EvaluatedDefinition="ClientSpace User Guide">ClientSpace User Guide</Variable>
+  <Variable
+    Name="VersionNumber"
+    Comment=""
+    EvaluatedDefinition="R98">R98</Variable>
+  <Variable
+    Name="CopyrightYear"
+    Comment=""
+    EvaluatedDefinition="2020">2020</Variable>
+  <Variable
+    Name="ProductName"
+    Comment=""
+    EvaluatedDefinition="ClientSpace">ClientSpace</Variable>
+  <Variable
+    Name="RevID"
+    Comment=""
+    EvaluatedDefinition="2019-12-31">2019-12-31</Variable>
+  <Variable
+    Name="CopyrightMonth"
+    Comment=""
+    EvaluatedDefinition="December">December</Variable>
+  <Variable
+    Name="DocumentTitle"
+    Comment=""
+    EvaluatedDefinition="ClientSpace Sales Management Guide">ClientSpace Sales Management Guide</Variable>
+  <Variable
+    Name="DocumentTitle"
+    Comment=""
+    EvaluatedDefinition="ClientSpace Setup &amp; Administration">ClientSpace Setup &amp; Administration</Variable>
+  <Variable
+    Name="DocumentTitle"
+    Comment=""
+    EvaluatedDefinition="ClientSpace Risk Management">ClientSpace Risk Management</Variable>
+  <Variable
+    Name="LastUpdated"
+    Comment=""
+    Type="DateTimeFileSaved"
+    LastUpdated="2019-06-06T15:24:47.4581089-04:00"
+    EvaluatedDefinition="dd MMMM, yyyy">dd MMMM, yyyy</Variable>
+  <Variable
+    Name="DocumentTitle"
+    Comment=""
+    EvaluatedDefinition="ClientSpace Client Profitability">ClientSpace Client Profitability</Variable>
+  <Variable
+    Name="DocumentDescription"
+    Comment="Client Profitability"
+    EvaluatedDefinition="How your clients contribute to your bottom line">How your clients contribute to your bottom line</Variable>
+  <Variable
+    Name="DocumentDescription"
+    Comment="User Guide"
+    EvaluatedDefinition="A guide to service SMBs and manage the day-to-day business processes">A guide to service SMBs and manage the day-to-day business processes</Variable>
+  <Variable
+    Name="DocumentDescription"
+    Comment="Sales"
+    EvaluatedDefinition="A guide to manage prospects and produce proposals">A guide to manage prospects and produce proposals</Variable>
+  <Variable
+    Name="DocumentDescription"
+    Comment="Setup &amp; Admin"
+    EvaluatedDefinition="A guide for configuring ClientSpace">A guide for configuring ClientSpace</Variable>
+</CatapultVariableSet>

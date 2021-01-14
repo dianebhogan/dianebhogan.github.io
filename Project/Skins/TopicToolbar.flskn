@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultSkin
+  Version="3"
+  SkinType="Component"
+  Comment="HTML5 Toolbar skin"
+  ComponentType="TopicToolbar"
+  EnableResponsiveOutput="True">
+  <Stylesheet>
+    <Styles>
+      <Style
+        Name="Toolbar">
+        <Properties>
+          <Property
+            Name="Float">right</Property>
+        </Properties>
+      </Style>
+      <Style
+        Name="ToolbarItem">
+        <Classes>
+          <StyleClass
+            Name="NextTopic">
+            <Properties>
+              <Property
+                Name="BackgroundImage">url('icon-forward.png')</Property>
+            </Properties>
+          </StyleClass>
+          <StyleClass
+            Name="PreviousTopic">
+            <Properties>
+              <Property
+                Name="BackgroundImage">url('icon-back.png')</Property>
+            </Properties>
+          </StyleClass>
+          <StyleClass
+            Name="RemoveHighlight">
+            <Properties>
+              <Property
+                Name="BackgroundImage">url('icon-edit.png')</Property>
+            </Properties>
+          </StyleClass>
+          <StyleClass
+            Name="Print">
+            <Properties>
+              <Property
+                Name="BackgroundImage">url('icon-print.png')</Property>
+            </Properties>
+          </StyleClass>
+          <StyleClass
+            Name="ExpandAll">
+            <Properties>
+              <Property
+                Name="BackgroundImage">url('icon-expand.png')</Property>
+            </Properties>
+          </StyleClass>
+        </Classes>
+      </Style>
+    </Styles>
+    <Resources>
+      <Resource
+        Name="icon-forward.png">H4sIAAAAAAAEAAGrAVT+iVBORw0KGgoAAAANSUhEUgAAAAoAAAAQCAYAAAAvf+5AAAAABGdBTUEAALGPC/xhBQAAAWJJREFUKBV9kbFLQlEUxr9ztTISomhpTAgC25sblJIwfNnW0NzQYv4VokJNTU0tgkZlryRwqWhoCIICocWxCMNIstRu5953DRXrDe+d7zu/c+/37gUy0oVENoLd81H88wiUc3uQyKH6doV0dvIvVkDSmGn60cAl0nlfP1jA44mC6NQ0fWh8XSB15O+FSRvb9hDqHzmuQ1oTKiAsYGvlpj0gdLEZ+oRn2OLa1lpinHMXkTyc7waVasNEJwb2otW0kcyGlXa21h3zytwPolw6hpRBx6EmYzPO1p3g0+MEIKc7rGd4ByrdYOpsHPVWgfNNaZDoBUIEsLH06v6dTBRG0Hq3GZo1XhXCFURs+UFpZ0WVS9YOGJrTEKHGZ7vI0K0ZYlDddbm0z7kCxqxz+DDi1nUbUl833/UOrxTVJvElClpFzCp2Qg4IRIz5zUnWEIvkeyGlOSNZfJp3/HfriEcy/SDl/QBwnGVxLFLaYAAAAABJRU5ErkJggq0qac2rAQAA</Resource>
+      <Resource
+        Name="icon-back.png">H4sIAAAAAAAEAAGwAU/+iVBORw0KGgoAAAANSUhEUgAAAAoAAAAQCAYAAAAvf+5AAAAABGdBTUEAALGPC/xhBQAAAWdJREFUKBV1kc8rRFEUx7/3zk8pNcPbIELKrBQrMRmbKT+mJgv+BVmYxJ+hkVkoa+sZZaZpsJBIKSkL+bEgMxtFiZoab+I49z7ezGu49U7nnO/n9r7nXOC/QySxthNHshBUiPiT2zr34O1xm7V5/q7Q6h5xN4DJ0ya8F9Pcn7Q00Yyyx+8EU/kWVJ5yAIU1JPAA4ZvA0tRzDUzlDVQqBYaGbMjrjSAxXVS15TGV7sQHDkAYcEIxDamexEa2n6ETGwLuIV3jSNQgBbphmnsMdasCQpQgZQQr8ZKu64Jk9dauiQx8UZ9d1yUSQdccOz376flBtMuLHq5jdGoNs5kLoGweMjRodcULhCeM1djN7wX+NZ/FmVeOUdsGURuous+Ddmmdg/MJk9kOfJrHPFyPBoS4g88/phbuBJW6nutFlWFQu4YhLmAERhtBDWdCqNIRp4aGpTdkebSu1uLy7DW/RZT3esnmFtRQ30zYaAQyk6iKAAAAAElFTkSuQmCCnGM70rABAAA=</Resource>
+      <Resource
+        Name="icon-edit.png">H4sIAAAAAAAEAAFSAa3+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAQlJREFUOBFjZCAF9KwrZPjHUATUsoOBgyOHIc/rJyPR+rvXNjD8Z6iHq2dk3M7AzhHIDBfAx5i6n4fh1/c+oBIxJGWqDH/+ShB2AcRmDQZWhkKG3wy7gQZoIwxhfMKC4GBhITv7N1CelcEVxRAmhj7cBiBrhpgdDtSMMISRYQ1DSVA/dgMwNcOcBzFEmMWSIdn/M0iQCSYDp3FrhihhZLgB0wwSQA1EwpobGUqDGyAmQUiEAWRoBhkBMYBMzRADutbmAhmTQBysgJEBw9nI6oCByOiGLIDCJqAZpJYJ6AkZFE0wDhGaIQYwYDGASM0gA0AJ6QkDIzgsnwBzG5ANTO+lQbjDBKQLCQAA1oJQ/3H8Mj4AAAAASUVORK5CYIKet5IEUgEAAA==</Resource>
+      <Resource
+        Name="icon-print.png">H4sIAAAAAAAEAAGOAXH+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAUVJREFUOBGNUr0vBFEQ/83eRSMUVDqt/0EQEa37KFWiRSHuOrEiUXhCIlqJRrnrtCpy/gcllQqNQrX7zOze+7iVy71pZuY3v3nz8YZgRPXWgKwHjUkDDWmiTxBOcdC69PG6c7LFIpmi2GGepfOY4xdQ99PoNI9NhIwBlQjhCN22w2yQjbNEW7deW8J+oy9+ZMGxRrTFI5SVM71q6OEPdJu36LTjMjG3XZbGeSrzH0LrdVvFlKhqGZPokXknvNAX4tl2mXNV5QX6ewSVfjD5FTO1BrY3foISbx6m8M1fDixE3PYcoPtBydfpLP/WHX6ziSKHc8OXOKI175BGMHx4p/XF7mYBqaRQskR3ID450OYO5EDyeWha4bmWg74R9AzST9DRu6sjpxzSjXCEO5D/O/CChjSkKwO7B4je+Et5Cr60cSLcgfwBWn9jQYUJ6CwAAAAASUVORK5CYIK0w4KXjgEAAA==</Resource>
+      <Resource
+        Name="icon-expand.png">H4sIAAAAAAAEAOsM8HPn5ZLiYmBg4PX0cAkC0gJAzMXBBiT37rs3B0hxFnhEFjMw8B0BYcap2nzSQEH2Ek9fV/Yn7CJiLHKrJp3wBAu5RpQ4lpZk5BcxrFx3xgMoxAMSckktTi7KLCjJzM9jEOZUVAaZDxJ3zi+oLMpMzyhhWMN/xgooygcWLUpNBClVKMnMTWUw/c7PCXICSCY4P62kPLEolSG24D9IOTfY8Mzi5JxEoNIihu0HtvQDhTlAwuGJRXmZeekMB6SftcOcFpxfWpScyvD1f/NrmDLn/Nzc1LwShm9npu0HirGBxEIyS3JSGVa8u6TOwMDo6OniGKIxsbbf3rspUOJo/fnsaQoSnhdeCLHwOi52Zp3kGqU0ycVk6xbWpV80p0hJ/WLondkkMimgtqGNo2jCiazCLiWBqtNfMiviVf6Xbq8+93Nudf+EU78cNzvwxedEPzb58fxEYiLH5TMKv/r0t2ku8XsfsEwn3OiHmpmJ3c+74v+MilfoRTIZMhtechBmuBo673T6JL1d1fv/zMw9GHDo8U4jE0lbt57Sll1LswWyphcVPHzbpJjiLTqHpTT7n3PIVa63z6dlvuB8sOn5ncdFOkZm/055W3Zn3Vi3+pHMnItzC1gXhDIovIxhMOl/tM3crtFmwa6E+/cLLNJLy5deSfondkO1LoT7QMFuR17FBSdv+M6+E5lw9qT/5RyRQNmtqsLHHTyEJ74+t+aiK/OsjjtKx2Q8RJ+ws2fvfbDPPmOm+3PlK6/i7nbbfTv9h+nQpBbv4B1if4HBy+Dp6ueyzimhCQAPq6F5dgIAAA==</Resource>
+    </Resources>
+  </Stylesheet>
+  <Strings />
+  <TopicToolbar
+    EnableCustomLayout="true"
+    Buttons="PreviousTopic|NextTopic|ExpandAll|Print|RemoveHighlight" />
+</CatapultSkin>

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Server Data Proc 1 for workflow tasks triggered from Client Service Case dataform</h1>
+        <p>
+            <MadCap:concept term="Workflow Channels" />There are times in Workflow Channel triggering when configuring a trigger condition,  triggering data is not on the Client Service Case dataform. You can use Server Data Proc 1  to configure the Trigger Condition on Workflow Channels for Client Service Cases. </p>
+        <p>Server data procs provide a methodology for retrieving relational data for dataforms of a client workspace. Format server data field replacement  as {SDP1.Fieldname} or {SDP2.Fieldname}.</p>
+        <p>Server Data Proc 1 returns the following data from the Client Master dataform.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th colspan="1" class="TableStyle-Standard_Table-HeadE-Column1-Header1">&#160;Field</th>
+                    <th colspan="1" class="TableStyle-Standard_Table-HeadD-Column1-Header1">Field name&#160;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Client Number</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;ClientNumber</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Contract Type</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;ContractType</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Pay Frequency</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;PayFrequency</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Legal Entity</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;LegalEntity</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Processing Center</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;ProcessingCenter</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Sales Region</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;SalesRegion</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Workflow Group</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">&#160;WorkflowGroup</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>If an Employee is selected, Server Data Proc 1 also returns the following data from the Employment dataform.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th colspan="1" class="TableStyle-Standard_Table-HeadE-Column1-Header1">&#160;Field</th>
+                    <th colspan="1" class="TableStyle-Standard_Table-HeadD-Column1-Header1">Field name&#160;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Employment Status</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;EmploymentStatus</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">SUTA State</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;SutaState</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Employment Type</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">&#160;EmploymentType</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Job Code</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">&#160;JobCode</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Comp Code</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">&#160;CompCode</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The Client Service Case dataform is provided for the PEO systems with a Server data proc.   More information about the default Server Data Procs is in <MadCap:xref href="../Admin_Config/DefaultServerDataProcs.htm" title="default data server data procs" alt="default data server data procs" class="Heading">Default Server Data Procs</MadCap:xref>.</p>
+    </body>
+</html>

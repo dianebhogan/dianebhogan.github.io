@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Business Intelligence" />CORE view listing
+                       
+        </h1>
+        <p>PrismHR provides&#160;a series of Core views in Ad-hoc reporting that are pre-formatted to give you easy access to commonly used data.&#160;Descriptions of these views are as follows.</p>
+        <h2>Core&#160;views</h2>
+        <table class="TableStyle-Standard_Table" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 221px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">VIEW NAME</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p>DESCRIPTION</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">nw_vwAppointments
+                        </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">This view brings back any appointment information across all workspaces. The only condition is with the OrgID &amp; Org Name. It first looks to pull that information from the “Project”, if no project then it is pulled from tblCRMCalendarEvent.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">nw_vwOrganization_Activities</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">This view brings back ALL Appointments, Tasks, and Calls/Emails that exist. No filter criteria specified.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Appointments: Returns all Appointments in system
+                        </p>
+                        <p class="TableBullet" MadCap:autonum="• ">Tasks: Returns all Tasks in system                   </p>
+                        <p class="TableBullet" MadCap:autonum="• ">Calls/Emails: Returns all Calls and Emails in system</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">nw_vwImportQueue</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">This view brings back Import Queue information (PrismHR API Imports) Including file name and import Status.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">nw_vwLookups_Field Labels</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">This view brings back a listing of all lookup datatype fields in the application and their associated Lookup Group.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">nw_vwLookups
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">This view brings back the Group Name, Code, &amp; Decode for&#160;ALL&#160;Lookups.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">nw_vwOrganization_Activities
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">This view brings back all organization activities and related OrgID and ProjectID</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">nw_vwTimeTracker_By_User</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">This view brings back Time tracker data</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <div>nw_vwUploaded_Files_GUIDS_To_Varchar</div>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">This view brings back Uploaded file data</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">nw_vwUser
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">This view brings back User data and related departmental data</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">nw_vwWorkspaceTemplates</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">This view brings back all Template Workspaces (Active or Inactive) along with their Group Name and Template Name.&#160; Can be used to filter results to certain template workspaces.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/HOME/PrintSamples.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <TocEntry
+      Title="User Guide"
+      Link="/Content/Resources/PDFs/OpenText Legal User Guide.pdf"
+      FrameName="_blank"
+      ReplaceMergeNode="true"
+      StartSection="false"
+      SectionNumberReset="continue"
+      VolumeNumberReset="same"
+      ChapterNumberReset="continue"
+      ComputeToc="false" />
+    <TocEntry
+      Title="Sample User Guide"
+      Link="/Content/Resources/PDFs/Sample-Writing-Design_UserGuide.pdf"
+      ReplaceMergeNode="true"
+      FrameName="_blank" />
+    <TocEntry
+      Title="Client Profitability Guide"
+      Link="/Content/Resources/PDFs/ClientSpace Client Profitability.pdf"
+      FrameName="_blank"
+      ReplaceMergeNode="true" />
+  </TocEntry>
+</CatapultToc>

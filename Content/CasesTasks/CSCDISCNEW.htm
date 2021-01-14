@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Case Discussion Email Templates" />CSCDISCNEW: Case Discussion New Template</h1>
+        <MadCap:microContent id="microcontent1">
+            <p>CSCDISCNEW is used when a recipient replies to the Case Discussion. CSCDISCNEW is the email template and wrapper that is used for the <span class="UXElement">response</span> to the Assigned To user's mailbox. CSCDISC is the template that acts as a wrapper for the <span class="UXElement">discussion recipients</span>. Both templates can either:</p>
+            <ul>
+                <li>Act as the email content if no reply template is selected in the discussion OR</li>
+                <li>Act to wrap the content of the selected reply template should the user completing the discussion select a reply template </li>
+            </ul>
+        </MadCap:microContent>
+        <p>
+            <img src="../Resources/Images/Case/CSCDISCNEW.png" class="thumbnail">
+            </img>
+        </p>
+        <p>CSCDISCNEW is included with a standard PEO installation.</p>
+        <p class="ProcedureIntro">To configure the email template for CSCDISCNEW:</p>
+        <ol>
+            <li>Complete the form fields.</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 160px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Template Code</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Use&#160;<b>CSCDISCNEW</b>&#160;for this
+ template.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Template Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Use  <b>CSC Discussion New Reply Notification</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Use <b>When external recipient sends a message,
+ this is sent to the AssignedTo user</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">From Email Override</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Specify an email address to override the default noreply address commonly used by the system. The default Admin Email configuration is stored in App Settings. For help configuring this setting, log an Extranet case.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Subject</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Use  <b>New Discussion Created</b>. This is the subject
+ line of the inbound email, which can be configured.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Body</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">This is the contents of the inbound message. Body can be
+ configured using field replacement of {LASTREPLY_Comments} and should be included
+ to capture the response from the external user in the discussion.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Body uses a rich text editor and supports font styling, embedded images, hyperlinks, lists, and tables. For best results, we recommend embedding .jpg or .jpeg images.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <b>Save</b>.</li>
+        </ol>
+    </body>
+</html>

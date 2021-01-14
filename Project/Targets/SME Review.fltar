@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="2"
+  Comment="SME Review"
+  Type="MsWord"
+  Destinations=""
+  ShowMadCapBacklink="true"
+  GlossaryTermConversion="marked"
+  MasterToc="/Project/TOCs/Review.fltoc"
+  MasterStylesheet="/Content/Resources/Stylesheets/ClientSpace.css"
+  MasterPageLayout="/Content/Resources/PageLayouts/Content.flpgl"
+  PatchHeadingLevels="true"
+  EmbedImages="true"
+  ConditionTagExpression="include[ClientSpace.Print or ClientSpace.SME_Review], exclude[ClientSpace.Exclude or ClientSpace.Screen]"
+  DisableAutoSync="true"
+  OutputFile="R99 SME Review for Case 48935 Employee Termination Date.docx"
+  GetLatestBeforeCompile="false"
+  MasterStylesheetOverride="true">
+  <PrintedOutput
+    CollapseMargins="true"
+    GenerateTOCProxy="false"
+    GenerateIndexProxy="false"
+    GenerateGlossaryProxy="false"
+    OutputFormat="docx"
+    EnableTrackedChanges="false" />
+</CatapultTarget>

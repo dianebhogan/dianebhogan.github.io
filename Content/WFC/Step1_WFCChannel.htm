@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Workflow Channels" />Step 1:&#160;Channel</h1>
+        <p>From the Add Workflow Channel form:</p>
+        <ul style="list-style-type: square;">
+            <li>Define your channel by giving it a name.</li>
+            <li>Select which workspace template it affects.</li>
+            <li>Determine how it triggers.</li>
+        </ul>
+        <p>
+            <img src="../Resources/Images/Workflow/AddWorkflow_Step1_Channel.png" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">To configure the channel:</p>
+        <ol>
+            <li>From the Add Workflow Channel form, complete the form fields.</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 153px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Channel Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Provide a unique Channel Name. This should be descriptive and short.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Triggering Form</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the form that triggers the workflow.  Select a
+ form or add a triggering form that is not in the list. The list also includes single dataforms that do not already exist in a workspace when triggering occurs. Selecting a single form is best for custom created single dataforms.</p>
+                        <p class="ProcedureIntro">To add a dataform that is not in the list:</p>
+                        <ol>
+                            <li>In <b>Triggering Form</b>, go to the end of the list and select <b>Add
+ Untriggered Form</b>.<br />The Select an Untriggered Form dialog opens. <br /></li>
+                            <li style="font-weight: normal;">In <b>Table Name</b>, select a dataform from the list.</li>
+                            <li>Click <b>Ok</b>.<br />The selected dataform is marked as triggerable and now appears in
+ the Table Name list.</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Execute On </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• "><b>Update</b>: Would you like this to happen on dataform save?</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Insert</b>: Would you like this to happen during an import?</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Insert/Update</b>: Or both?</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Execution Pipeline</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Choose a pipeline. Ensure that anything connected to the workflow (dataforms or imports) is configured to use one
+ of the pipelines configured on the workflow. For questions or help with this
+ configuration, log an Extranet case.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Workspace Template</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select a template to apply to
+ workspaces that will use this workflow. The Workspace Templates field is a
+ multi-select, which allows you to apply a workflow channel across multiple
+ workspace templates. If no specific templates are selected, the Workspace
+ Templates field defaults to All Templates.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Channel Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Provide a brief description of
+ this channel.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Channel Owner</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Defaults to the current user.
+ Set it to the owner of this process.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1"><b>Workflow Action</b>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">This section is dedicated to
+ the primary triggering condition for the channel.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">No Primary Trigger</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">When selected, indicates no single condition must
+ be met to trigger the Workflow. If this option is selected, at least one condition must be provided on
+ the Conditions step. When you select No Primary Trigger, Field, Operator, and Value are not available because they are not applicable.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">What field on the triggering form (or HdrAction configured on
+ a link) will fire this workflow? This field must have been changed to the
+ triggering value for the trigger to fire. You can also add a trigger field.</p>
+                        <p class="ProcedureIntro">To add a trigger field:</p>
+                        <ol>
+                            <li>In <b>Trigger Field</b>, go to the end of the list and select <b>Add
+ Untriggered Field</b>.<br />The Select an Untriggered Field dialog opens. <b>Field</b>
+ contains a list of fields currently not marked as Triggerable.</li>
+                            <li>In <b>Field</b>, select an entry</li>
+                            <li>Click <b>Ok</b>.<br />The selected field is marked as triggerable and appears in
+ the Trigger Field list.</li>
+                        </ol>
+                        <p class="TableTextLeft" style="font-weight: bold;">Scheduled Workflows</p>
+                        <p class="TableTextLeft">For scheduled workflows, when the triggering form is the home form in a tabbed set, <b>Field</b> returns all Date fields across the tabbed form set. <b>Field</b> points to a date field on the triggering form.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Operator</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Comparison type used to
+ determine if the trigger condition is met. (Contains, Equals, Does Not Equal)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The value evaluated to ensure
+ the trigger condition is met. For system selectors such as lookups, or for
+ Header actions, this is a select list.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Triggered Form</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Can be a dataform (with
+ Workflow Cloneable fields) or a task. The selected dataform affects the displayed fields in Step 2 Contents.</p>
+                        <p class="ActionTip">If the triggered form field is no longer cloneable, a warning message displays: Workflow channel cloning is no longer enabled for this triggered form. If you still wish to use this as your triggered form, go to Dataform admin and check the 'Enable WFC Cloning' checkbox.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>When done, click <b>Next</b>. <MadCap:xref href="Step2_WFC_Content.htm" title="Step 2: Content" alt="Step 2: Content">Step 2: Content</MadCap:xref> opens.</li>
+        </ol>
+    </body>
+</html>

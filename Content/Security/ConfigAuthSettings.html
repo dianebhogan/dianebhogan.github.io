@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring your <MadCap:variable name="MyVariables.ProductName" /> authentication settings</h1>
+        <p>
+            <MadCap:concept term="Security" />Application security, password settings, and account lockouts are configured in Authentication Settings. Global admins can administer password and two factor authentication settings.</p>
+        <h2>Password settings</h2>
+        <p>Passwords are required to access <MadCap:variable name="MyVariables.ProductName" /> and are hashed with one-way encryption. The site uses 2048 SSL encryption. When the password is changed, the system records the time and date of this event in the DatePasswordSet field on the User table.  The system can then be optionally set to run a scheduled process regularly to check the current date against this field and require the user to reset the password if it exceeds a set threshold. Security configurations are stored in an Install Security table within the database.</p>
+        <p>Password and account security options are as follows:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Minimum password length (default is 7 characters)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Password complexity (default requires at least two types of characters, such as alpha-numeric)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Number of failed attempts before account lockout (default is 5 attempts)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Lockout duration (default is 30 minutes)</p>
+        <p>Additionally, the system can be configured so that <MadCap:variable name="MyVariables.ProductName" /> sessions timeout after a set amount of inactivity using the Session Expiration setting, essentially logging the user out of the system.  When this occurs, the user receives a  Session Expired message in the browser.</p>
+        <h2>Two factor authentication settings</h2>
+        <p>In the two factor authentication (2FA) fieldset, you enable and configure 2FA&#160;for your <MadCap:variable name="MyVariables.ProductName" /> installation. The information is used to generate a code that is sent to users as a second form of authentication. </p>
+        <p class="ProcedureIntro">To access your settings:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Security</b> &gt; <b>Authentication Settings</b>.<br />The Authentication Settings form opens.</li>
+            <li>In the <b>Password Settings</b> fieldset, configure the following settings:<br /></li>
+        </ol>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 221px;" />
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 849px;" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Password Length</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Minimum length of a user password.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Password Complexity</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Minimum complexity of a user password (up to 3 levels). You can require up to 3 levels (of 4 options) of password complexity, which is stored in the Install Security table.  The 4 options for password complexity are:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Letters required</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Numbers required</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Mixed Case (upper and lower) required</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Special Characters required</p>
+                        <p class="TableTextLeft">For help in configuring the password complexity, log an Extranet case. Support can help you configure the password complexity level of your installation for up to <b>3 levels of complexity</b>.  The system then checks each of the complexity options and allows authentication if the password meets the required levels.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Password Reset</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Amount of time in days from the last password reset before a user is forced to change password (unless <b>Password Never Expires</b> is selected).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Login Attempts before lockout</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Number of failed login attempts before a user account is locked.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Lockout Duration</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Amount of time in minutes before a locked user account automatically unlocks.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Session Expiration</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Number of minutes of activity allowed before a session is automatically expired.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>In the <span class="UXElement">Two Factor Authentication Settings</span>, configure the following settings:</li>
+        </ol>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 221px;" />
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 849px;" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Enable TFA</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select this option to enable two factor authentication. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">TFA Valid Characters</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The valid characters that are allowed when constructing the Authentication Code. Example:&#160;abcdefghijklmnopqrstuvwxyz1234567890</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">TFA Code Length</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The length of the 2FA authentication code for the user.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">TFA Code Expiration Minutes</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Number of minutes after which the delivered Authentication Code expires.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">TFA Code Expiration Days</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Number of days after which the delivered Authentication Code expires.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <p>For help or changes to these configurations, log an Extranet case.</p>
+    </body>
+</html>

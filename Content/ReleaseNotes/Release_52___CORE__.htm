@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 52 ( CORE )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;4/17/2017&#160;&#160;&#160;&#160;&#160;<strong>Sprint Ended:</strong>&#160;5/5/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release52(CORE)-CRMActivitySummaryFeed(NEXT)ENHANCEMENT-Videocomingsoon..."><span style="color: rgb(51,153,102);">CRM Activity Summary Feed (NEXT) <span style="color: rgb(255,0,0);">ENHANCEMENT</span> - Video coming soon...<br /></span>
+                        </h4>
+                        <hr />
+                        <p>A client activity summary may has been added to the Organization and Contact search dashboards in NEXT - this allows you to see a summarized list of activities from either the dashboard list, or the Activities Panel.</p>
+                        <p>You can&#160;also filter activities for specific workspaces or assigned users.</p>
+                        <p>Clicking the individual summary items will display more information in a preview pane to the right.</p>
+                        <h4 id="Release52(CORE)-ClientSpaceBranding(NEXT)ENHANCEMENT-Videocomingsoon..."><span style="color: rgb(51,153,102);">ClientSpace Branding (NEXT)&#160;</span><span style="color: rgb(255,0,0);">ENHANCEMENT</span>- Video coming soon...</h4>
+                        <hr />
+                        <p>The app settings in ClientSpace next have been enhanced to allow configuration of custom graphics. &#160;An App Setting checkbox has been added to "Enable Custom Branding"</p>
+                        <p>When this is checked, the system will display four File Upload fields. The description for these fields provides the recommended sizes:</p>
+                        <ul>
+                            <li>Logo</li>
+                            <li>Logo_Small</li>
+                            <li>Login_Logo</li>
+                            <li>Login_Banner</li>
+                        </ul>
+                        <p>When <strong>"Enable Custom Branding</strong>" is checked:</p>
+                        <ul>
+                            <li>The ClientSpace logo (csLogo) above the left nav changes to the client's uploaded image.</li>
+                            <li>The ClientSpace logo (csLogoSmall) above the left nav changes to the client's uploaded image.</li>
+                            <li>The ClientSpace login logo changes to the client's uploaded image.</li>
+                            <li>The ClientSpace login logo_banner changes to the client's login_banner that is uploaded.</li>
+                        </ul>
+                        <p><span style="color: rgb(255,0,0);">!Note:&#160; Graphics are loaded on application pool start of the ClientSpace site - after uploading and saving your custom graphics you will need to <a title="Click here to create a case via email" href="mailto:clientspace@netwisetech.com?Subject=AppPool%20Recycle" class="external-link" rel="nofollow">create a case for you NetWise Account manager </a>to restart the application pool on your site before the new graphics will be visible.</span>
+                        </p>
+                        <h4 id="Release52(CORE)-DocuSign-VoidRuleENHANCEMENT"><span style="color: rgb(51,153,102);">DocuSign - Void Rule&#160;</span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></h4>
+                        <hr />
+                        <p>The DocuSign process has been enhanced to better handle void documents, allowing the user to void a document that has already begun processing through the DocuSign system.&#160; This enhancement includes:</p>
+                        <ul>
+                            <li>A new biz rule (core) _VoidDocuSignDocument which updates the Uploaded Files Queue record status to 'voided'. The&#160;scheduled process "DocuSign Request Signature" will void the envelope(s) in DocuSign.&#160; The Scheduled process "DocuSign Get Docs Status" will retrieve any voided documents and attach to the dataform if configured to attach (otherwise the voided document will be attached only to the Uploaded Files Queue record)</li>
+                            <li>A&#160;new soft error (core) _SE_VoidDocuSignDocument, which warns user that documents (envelopes) will be voided.&#160; This rule will also identity the quantity of 'envelopes' that are affected.</li>
+                        </ul>
+                        <p>Both rules are configurable with the following parameters:</p>
+                        <ul>
+                            <li>DataformOnly (checkbox).&#160; When checked, will only void envelopes (and thereby documents) associated with the Dataform on which the rule is configured.&#160; When unchecked, will void all envelopes in the Workspace associated with the Dataform on which the rule is configured.</li>
+                            <li>AllowVoidStatus (comma delimited string).&#160; Provide the statuses of Uploaded Files Queue records that can be voided.&#160; See the 'Signature Status' lookup group for valid statuses and use the CODE in this parameter, separated by comma, with no spaces.</li>
+                        </ul>
+                        <h4 id="Release52(CORE)-EmailTemplateConfigurationErrors"><span style="color: rgb(51,153,102);">Email Template Configuration Errors<br /></span>
+                        </h4>
+                        <hr />
+                        <p>We have enhanced the Email Template configuration so that on save of the configuration or when retrieving the merge field information from the custom stored procedure, &#160;the system will perform basic validation of the stored procedure to insure it can be run from the configured triggering dataform. If the merge procedure cannot be triggered properly from the dataform the user will receive an error, stating the issue.</p>
+                        <h4 id="Release52(CORE)-SetupTableRelationships"><span style="color: rgb(51,153,102);">Setup Table Relationships<br /></span>
+                        </h4>
+                        <hr />
+                        <p>&#160;A scheduled process was created to seed the foreign key relationships between dataforms linked with a parent form field, This will help when creating business intelligence reports by automatically recognizing and populating the relationships between tables when choosing a data source.</p>
+                        <h4 id="Release52(CORE)-FilterFieldsbyFieldLabelA-ZwhenaddingtoanImportMappingENHANCEMENT"><span style="color: rgb(51,153,102);">Filter Fields by Field Label A-Z when adding to an Import Mapping&#160;</span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></h4>
+                        <hr />
+                        <p>Import configuration has been updated to sort dataform fields alphabetically when adding new fields to the import, making field selection easier.</p>
+                        <h4 id="Release52(CORE)-UpdateManageRulesAdmintosearchbyDatafromName"><span style="color: rgb(51,153,102);">Update Manage Rules Admin to search by Datafrom Name<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue in Rules configuration where you had to use Table Name (gen_ClientMaster) instead of dataform name (Client Master) as in other configuration dialogs. Rules management now works like other configuration modules.</p>
+                        <h4 id="Release52(CORE)-ActivitySummary(Next)ENHANCEMENT"><span style="color: rgb(51,153,102);">Activity Summary (Next)&#160;</span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></h4>
+                        <hr />
+                        <p>The Activity summary has been enhanced, allowing it to be toggled on and off by the user.&#160; When hidden, the Preview Panel can be used to scroll through the list of summary activities in the same order as they would appear in the summary list.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

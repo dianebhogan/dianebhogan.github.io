@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <div MadCap:targetName="AddUserModules">
+            <p>User modules are selectable modules that you can configure by adding modules that you use most often to the modules bar. The modules bar is located at the top of the workspace, providing quick access to your favorite modules.</p>
+            <p>
+                <img src="../Images/Navigating/ModulesBar3.png" />
+            </p>
+            <p class="ProcedureIntro">To add modules to your user profile:</p>
+            <ol>
+                <li>On the modules bar, on the right side, click <b>&lt;username&gt;</b> &gt; <b>My Profile</b>.<br />The User Details form opens along with the Action Center panel on the right.<br /></li>
+                <li>In the <b>Action Center</b>, click <b>Modules</b> &gt; <b>Select Modules</b>.<br />The Select Modules dashboard opens.<br /></li>
+                <li>Locate the module and in the <b>Select</b> column, select the check box.</li>
+                <li>Click <b>Ok</b>.<br />You are returned to the User Details screen. Your new module is listed in the Action Center, in the Modules group.</li>
+                <li>Click <span class="UXElement">Save</span>.<br /></li>
+                <li>To see the new module in the modules bar, refresh your screen (press <b>F5</b>).</li>
+            </ol>
+        </div>
+        <div MadCap:targetName="AddUserModules">
+            <p class="ProcedureIntro">To manage the order of modules:</p>
+            <ol>
+                <li>In the <b>Action Center</b>, in <b>Modules</b>, use the arrows to control the order. Overflow modules that do not fit in the modules bar appear in the <b>View</b> list.</li>
+            </ol>
+            <p class="Indent1">
+                <img src="../Images/Navigating/ModuleOrder.png" />
+            </p>
+            <ol MadCap:continue="true">
+                <li>Click <b>Save</b>.</li>
+                <li>To see the new module in the modules bar, refresh your screen (press <b>F5</b>). </li>
+            </ol>
+        </div>
+    </body>
+</html>

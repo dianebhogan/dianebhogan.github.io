@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Business Intelligence" />Reporting with Business Intelligence</h1>
+        <p>Business intelligence, or BI, is an umbrella term that refers to a variety of software applications used to analyze an organization's raw data. For <MadCap:variable name="MyVariables.ProductName" />, BI specifically refers to the embedded Izenda Business Intelligence module that allows you to create on-demand reports from your <MadCap:variable name="MyVariables.ProductName" /> data using a simple interface. </p>
+        <p>Business Intelligence provides the following:</p>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css'); margin-left: 0; margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 126px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft"><b>Dashboards</b>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Dashboards are a dynamic and interactive tool for viewing critical information from multiple sources in a single view. Users can hover over a report to get details or drill down into it for greater insight. Users can create and customize their own BI dashboards, then use them to print, save, share and send reports. Security options let you decide who can view or make edits.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft"><b>Data Source</b>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Data Source is the table, view, or data source report that provides data for your Report. Data sources may be joined using Foreign Key relationships to aggregate data.  In Business Intelligence, data sources are configured on the Data Sources tab.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft"><b>Fields</b>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Fields  are the individual data points available from a data source in Business Intelligence.  An example is tblOrganization, which is the datasource, and Name, Address1, and City, would be fields from that datasource.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft"><b>Filters</b>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">In the Filters tab, the fields of the table/view chosen in the Data Sources tab can be filtered so that only pertinent entries appear in the table.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft"><b>Exporting</b>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">You can save the report to your list of reports. Keep in mind that the lists of categories are global, so please do not add new unless it is a must. Please use the ones already there.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft"><b>Scheduling</b>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Using Izenda BI, you can schedule and email reports and dashboards to a recipients list.  Care should be taken when scheduling reports or dashboards, because the schedule has no way of adhering to the #CurrentUser or #CurrentWorkspace options for filtering, so each recipient of the report receives all of the data contained within the report based on any static filters that are saved on the report.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Why the IZENDA reporting engine?
+
+Izenda is a rich, flexible reporting tool that provides self-service reports and dashboards delivered over a browser including:
+
+ </p>
+        <ul>
+            <li>100% browser-based AJAX Design Environment</li>
+            <li>Rich reports and dynamic dashboards</li>
+            <li>
+Great looking 3D charts, flexible grids, visual grouping</li>
+            <li>
+
+Summaries, subtotals, calculations, formats</li>
+            <li>
+
+Flexible and dynamic smart filters</li>
+            <li>
+Interactive linking and drill-down</li>
+            <li>
+Exports to all popular file formats</li>
+            <li>
+
+Native speed execution
+</li>
+        </ul>
+        <p>Business Intelligence enables your organization to  access data and manage it in the <MadCap:variable name="MyVariables.ProductName" /> system. For a ClientSpace user to access data from BI reports, the user must have a Reporting Profile.  <MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">For details on configuring security for Reporting Profiles for Business Intelligence, see <MadCap:xref href="../Security/ConfigSecBIRpt.html" title="Configuring security in Business Intelligence reporting" alt="Configuring security in Business Intelligence reporting">Configuring security in Business Intelligence reporting</MadCap:xref>.</MadCap:conditionalText><MadCap:conditionalText MadCap:conditions="ClientSpace.Print">For details on configuring security for Reporting Profiles for Business Intelligence, see the topic <em>Configuring security in Business Intelligence reporting</em> in the <em>ClientSpace Setup &amp;&#160;Administration Guide</em>.</MadCap:conditionalText></p>
+        <h2>User Guides</h2>
+        <ul style="list-style-type: square;">
+            <li>For in-depth information on Izenda reporting, see the <a href="http://wiki.izenda.us/Guides/ReportDesign" target="_blank" title=" Izenda reports wiki" alt=" Izenda reports wiki">Izenda reports wiki</a>.</li>
+            <li>For a quickstart, review the guide <a href="../Resources/PDFs/Business Intelligence User Guide.pdf" target="_blank" title="Business Intelligence User Guide" alt="Business Intelligence User Guide">Business Intelligence User Guide</a>.</li>
+        </ul>
+        <p class="TopicsList" MadCap:conditions="ClientSpace.Screen">Topics in this section</p>
+        <MadCap:miniTocProxy style="mc-toc-depth: 1;" MadCap:conditions="ClientSpace.Screen" />
+    </body>
+</html>

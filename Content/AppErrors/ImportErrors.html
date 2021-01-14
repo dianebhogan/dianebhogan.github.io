@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Common import errors</h1>
+        <p>Application Scope: CORE</p>
+        <p style="font-weight: bold;">Problem</p>
+        <p>Nightly data import has failed, generating an error log.</p>
+        <p style="font-weight: bold;">Cause</p>
+        <p>Multiple possible issues - error describes the problem.</p>
+        <p style="font-weight: bold;">Solution</p>
+        <p>Errors can occur from a discrepancy between the Payroll system you are importing from and the state of the data in <MadCap:variable name="MyVariables.ProductName" />. Some of the most common errors are as follows.</p>
+        <div class="NoPageBreak">
+            <p><strong>Company / Client Import</strong>
+            </p>
+            <p>Error on data row ###: ClientSpace.PEO.Import.ClientMaster.GetOtherData(): Data cannot be imported for Client Number #### because the status in the import file status (Client) is different than the status in ClientSpace (Terminated).</p>
+        </div>
+        <ul>
+            <li>Most commonly occurs when the Client record is terminated in the Payroll system prior to being terminated in ClientSpace. A best practice is to begin the termination process in <MadCap:variable name="MyVariables.ProductName" /> to utilize the workflow within the application.</li>
+        </ul>
+        <p>Error on data row ###: ClientSpace.PEO.Import.ClientMaster.GetOtherData(): No record found for ClientNumber ####.</p>
+        <ul>
+            <li>After the initial Company import, the process merely updates records and will not insert new records. This error means a Client Number exists in the payroll system that does not exist in ClientSpace.&#160; Set up a stub Org/Workspace record for this Client Number and the next import will synch up the data.</li>
+        </ul>
+        <p>Error on data row ###:&#160; ProjectID #### is associated with a workspace that does not allow imports.</p>
+        <ul>
+            <li>During pricing when the Contract Status changes to "Client" as part of the normal workflow, many things are updated behind the scenes by business logic. One of these is a flag on the Projects table&#160;to "AllowImport".&#160;This error occurs because the Client has been moved to Client Status in Summit/APEX but still has not been completely processed through Pricing in ClientSpace.&#160; It is recommended that you move each of these workspaces through Pricing to allow the AllowImport flag to be properly set. If due to the sheer number of records in this state this solution is not practical, log an Extranet case to see if a scripted solution can be created to place the records in a state where the import can be processed.**<br /></li>
+        </ul>
+        <p class="Warning" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: Gray;&quot; class=&quot;mcFormatColor&quot;&gt;CAUTION:&lt;/span&gt;&lt;/b&gt; &#160;">Repercussions ** There <strong>will</strong> be repercussions if Workspaces are not allowed to proceed through the normal pricing process.&#160;When a workspace is in "Client" Status, the system assumes that any pricing generated is a <strong>Re-price and not an RFP</strong>.&#160;This means that workflow and functionality associated with RFP pricing such as Underwriting Approval workflow and other pricing functionality such as comparison batches are likely affected.&#160;To discuss the downstream effects of making scripted changes, log an Extranet case before requesting such changes.&#160;</p>
+        <p><strong>Location Import</strong>
+        </p>
+        <p>Business Logic Errors for data row ###: &#160; - There is already a Primary location for this client</p>
+        <ul>
+            <li>Two Location records on the import file for the same Client Workspace are being set as the Primary location.&#160;This normally happens if the Primary flag is set on more than one record, or multiple locations share the same address as the main Client Address.&#160;Update the payroll system to correct this issue and re-run the import.</li>
+        </ul>
+        <p class="ProcedureIntro">Employee/Employment Import</p>
+        <p>The value (##-#######) in the "EmployeeID" column did not produce a valid lookup for data row #. The value (##-#) in the "ClientLocationID" column did not produce a valid lookup for data row #.</p>
+        <ul>
+            <li>Both these errors are commonly caused by a failure in the Company Import, as the ClientNumber doesn't exist, causing a snowball effect on the downstream imports such as Contact, Location, Employee, Employment and Voucher.</li>
+        </ul>
+        <p align="left">The following error(s) were found in your submission: An active Employee record already exists for this Identifier.<strong>(PrismHR API)</strong></p>
+        <ul>
+            <li>This error only occurs with employees who work in multiple client companies. The PrismHR system stores the Employee ID at the person level, so an employee can have the same Employee Identifier associated with multiple Client IDs. ClientSpace handles this by concatenating the Client Number and EmployeeID on the ImportID for the employee record - so 00395-Y14526. If this ImportID was not properly set for some reason the system will be unable to find a unique match and will throw this error.</li>
+        </ul>
+        <p align="left">Unable to include Queue Record in Import file, Employee 'R40816-000386' cannot be located in HRP /PrismHR (HRP error - Employee import PrismHR error - Employment import) <strong>(<strong>PrismHR </strong>API)</strong></p>
+        <ul>
+            <li>This error commonly occurs due to bad data in the PrismHR system - often the data does not appear bad, but when viewed by PrismHR directly in the database there are bad values stored in one of the fields - this most often occurs with date fields or specialty fields such as SSN. Contact PrismHR and create a support case. Make sure to include the record information such as Client ID and employee ID when logging your case with PrismHR.</li>
+        </ul>
+        <p class="ProcedureIntro">Errors common to all imports
+        </p>
+        <p>The value (####) in the "ClientNumb" column did not produce a valid lookup for data row ###.</p>
+        <ul>
+            <li>This error means a Client Number exists in the payroll system that does not exist in ClientSpace.&#160; Set up a stub Org/Workspace record for this Client Number and the next import will synch up the data.</li>
+        </ul>
+        <p>Error on data row #: Row #: ProjectID #### is associated with a workspace that does not allow imports.&#160;</p>
+        <ul>
+            <li>'AllowImport' flag is set to 'No'. By default, after workspace creation the 'AllowImport' flag is set to 'No' until the Workspace achieves 'Client' status at which time it flips to 'Yes'.&#160; The Client exists in the payroll system, but the Client Workspace is not yet a Client.&#160; Update the Client workspace to 'Client' status and re-run the import to synch up the data.</li>
+        </ul>
+        <p>ERROR: Row column count is not equal to the expected count for data row ####</p>
+        <ul>
+            <li>The report that produces the import file is not properly quote wrapping empty values, resulting in less columns in the data row than are expected from the header column count.&#160;Fix the report to properly quote warp and comma separate the NULL data.</li>
+        </ul>
+        <p>&#160;ERROR: &#160;Object reference not set to an instance of an object. For any other questions regarding Import configuration and errors, log an Extranet case.</p>
+        <ul>
+            <li>One of the key data values used to match the record in <MadCap:variable name="MyVariables.ProductName" /> such as ImportID does not match the expected value - the system found a workspace, but not the ImportID that your file has associated hence the invalid object reference.&#160; Fix the report to properly match the key data value to the expected value.</li>
+        </ul>
+        <p>- Rows Skipped - Dataform Insert or Update not Allowed:&#160; ####</p>
+        <ul>
+            <li>The number or rows (####) were skipped because they did not meet the Insert/Update/Both criteria - for example you have 2000 records in the file, but 1800 of them exist in <MadCap:variable name="MyVariables.ProductName" /> and the import is configured as Insert Only - the error message would read - Rows Skipped - Dataform Insert or Update not Allowed:&#160; 1800</li>
+        </ul>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">** There is a known issue with the Error logging on Contact Imports.&#160;This error log reports '0 Records updated' even though updates are occurring. Records with errors are reported correctly in this log. This issue is scheduled to be fixed in an upcoming sprint.&#160;Until this time, you should spot-check the Contact records after import to ensure&#160;records that do not show as having import errors are being updated correctly.</p>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Default Server Data Procs</h1>
+        <p>Server Data procs are designed to return data from elsewhere in the system which can then be used for field replacement or trigger conditions.</p>
+        <p class="Bullet1" MadCap:autonum="• ">When using Server Data Proc data for field replacement, the standard format of the field replacement code is <b>{SDP#.FieldName}</b> - with the number indicating the layer to which the server data proc is attached. </p>
+        <p class="Bullet1" MadCap:autonum="• ">For CORE and PEO server data procs, this would be <b>SDP1</b>. </p>
+        <p class="Bullet1" MadCap:autonum="• ">For Custom Server Data procs this would be <b>SDP2</b>. (For example - {SDP1.ClientNumber) would be the ClientNumber field returned from the stored procedure configured in Server Data Proc 1 position of that dataforms default pipeline configuration).</p>
+        <p> The following worksheets provide the default server data procs that come with the ClientSpace PEO system, the dataforms on which they are configured, a list of the field names returned, and the adjoining dataform fields from which the data is mined. In all cases the replacement precursor was taken from the default configuration of the dataform in our PEO system.</p>
+        <p class="TopicsList" MadCap:conditions="ClientSpace.Screen">Topics in this section</p>
+        <MadCap:miniTocProxy MadCap:conditions="ClientSpace.Screen" style="mc-toc-depth: 1;" />
+    </body>
+</html>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+    </head>
+    <body>
+        <h1>Salesforce configuration</h1>
+        <p>You must configure Salesforce before implementing this process. The Salesforce Partner WSDL is used because it is generic across Salesforce systems. The Client’s Salesforce account must support this API.
+
+</p>
+        <p>Request the following from the Client:
+
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">API Username
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">API Password
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">API Integration key
+Partner </p>
+        <p class="Bullet1" MadCap:autonum="• ">WSDL Url
+</p>
+        <p class="Bullet2" MadCap:autonum="• ">Sandbox API </p>
+        <p class="Bullet2" MadCap:autonum="• ">Url
+Production API Url
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">Salesforce Web Interface login credentials (for testing and configuration)</p>
+        <p>The Client must create a <b>Work_Queue__c</b> object with at least <b>Id</b>, <b>Opportunity__c</b> and <b>Complete__c</b> fields.  This object will be populated with records containing Opportunity IDs for Opportunities that will be imported into ClientSpace.  It is up to the Client to determine when a Work Queue record will be created, typically based on a set of rules in Salesforce.</p>
+    </body>
+</html>

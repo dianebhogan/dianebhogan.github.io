@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>
+        <p class="ProcedureIntro">To use replacement fields:</p>
+        <ol>
+            <li>For <em>Email Templates</em>, in the <b>Content</b> step, click <b>See Replace Fields</b>. For <em>Workflow Channels</em>, in the <span class="UXElement">Content</span> step, click <span class="UXElement">Get Replace Fields</span>.<br />The Replace Fields dialog box opens, displaying fields grouped by source section and expanded.</li>
+            <li>Collapse the source sections to view the count.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Images/EmailTemplates/ReplaceFields-badgecount.png" class="thumbnail" />
+                <br />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>To search for fields, in the <span class="UXElement">Filter by name</span> box, start typing your keyword. As you type, the matching fields display. For example, type <span class="UXElement">name</span> and all entries with <em>name</em> are displayed.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Images/EmailTemplates/ReplaceFields-Filter.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Select as many fields as applicable and then click <span class="UXElement">Copy</span>.<br />The Clipboard dialog box opens with the selected fields.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Images/EmailTemplates/ReplaceFields-Clipboard.png" class="thumbnail" />
+                <br />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Click <b>Ok</b>.</li>
+            <li>On the Email Template or Workflow Channel, click in the field (Subject, Body, or Text Area) where you want to insert the replacement fields.</li>
+            <li>Paste the copied fields (<b>Ctrl+V</b>).</li>
+            <li>You can move the fields around as appropriate (copy and paste). You can invoke the Replace Fields dialog as often as necessary to paste your required fields.</li>
+            <li>Click <span class="UXElement">Apply</span>.</li>
+        </ol>
+    </body>
+</html>

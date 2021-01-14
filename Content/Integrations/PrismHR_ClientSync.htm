@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>PrismHR to ClientSpace Client sync</h1>
+        <p>The PrismHR API import functionality enables initial and ongoing data imports from PrismHR to ClientSpace. The import process uses the following:</p>
+        <ul>
+            <li>Scheduled process <b>HRPImportInitialSync</b>.</li>
+            <li>On the <b>Client Master</b>, the field <b>Sync with PrismHR (Import)</b>. You must enable the option (select) to import the data.</li>
+            <li>API Configuration &gt; Additional Parameters: <b>ExcludeCompanyFromSync=0</b>: The Company Initial import map IS included in the Sync if the map is active.</li>
+            <li><b>company_initial import map</b>
+            </li>
+        </ul>
+        <p>For questions about this import configuration, log an Extranet case.</p>
+        <p>When the scheduled process runs, it:</p>
+        <ul>
+            <li>Locates any Client with <b>Sync with PrismHR</b> selected (and a Client Number is present on the Client Master).</li>
+            <li>For each Client, executes the INITIAL imports for all active INITIAL import maps.</li>
+            <li>When completed, the system clears the <b>Sync with PrismHR</b> option and saves the Client Master using biz logic (HRP pipeline), Biz Logic only.</li>
+        </ul>
+        <p class="TableTextLeftBold">Why use?</p>
+        <p>The <b>Sync with PrismHR (Import)</b> option is great for cleaning up any one-off clients that failed to import due to errors during the initial import.</p>
+    </body>
+</html>

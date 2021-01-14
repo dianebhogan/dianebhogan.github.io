@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="DocuSign" />Viewing document status in the DocuSign process</h1>
+        <p>The Uploaded Files Queue Dashboard provides insight into where your document is in the DocuSign process and is updated automatically from the DocuSign Get Docs Status scheduled process. The Uploaded Files Queue is a link on the Imports tile in System Admin. If there is an active DocuSign record, the Uploaded Files Queue is visible on the Imports tiles. Otherwise, it is hidden.</p>
+        <p>
+            <img src="../Resources/Images/Integrations/DocuSign_UploadedFilesQueue.png" alt="" title="">
+            </img>
+        </p>
+        <ul>
+            <li>The Uploaded Files Queue records initiate with a Status of New. </li>
+            <li>If the files cannot be sent to DocuSign, the Uploaded Files Queue displays a Status of CS Failure. </li>
+            <li>If the document fails to upload, you can reset the Status back to New (see <MadCap:xref href="#Reset" title="To reset the status for failed documents:" alt="To reset the status for failed documents:">To reset the status for failed documents:</MadCap:xref>). </li>
+            <li>When a DocuSign required tag is missing from one of the files, additional information is displayed in the Uploaded Files Queue record. <ul><li>When this occurs, you must re-run the merge file, upload the correct file to the field, and trigger the Send to DocuSign again. </li><li>After the DocuSign Request Signature scheduled process runs, the Uploaded Files Queue Status changes to Out for Signature.</li></ul></li>
+            <li> Additionally, you can create a workflow to notify users when signed documents come back into ClientSpace.</li>
+        </ul>
+        <p class="ProcedureIntro">To access the dashboard:
+        </p>
+        <ol>
+            <li>Go to&#160;<strong>System Admin</strong> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <strong>Imports</strong> &gt; <strong>Uploaded Files Queue</strong>.<br />The Uploaded Files Queue dashboard opens. From here, you can search, view, and delete entries.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Integrations/UploadFilesQueue.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Select an entry and click <strong>View</strong>. Alternatively, you can&#160;<img src="../Resources/Images/ICONS/ICON_Jump.png" />&#160;(<strong>Jump)</strong> to the record from the row entry.<br />The Uploaded Files Queue Detail page opens. The page is read-only.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Integrations/DS-UploadedFileDetail.png" alt="" title="" class="thumbnail" />
+            </p>
+        </div>
+        <p class="ProcedureIntro">To view signed and unsigned files attached to this record:</p>
+        <ol MadCap:continue="true">
+            <li>Click <strong>Attachments</strong>.</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 108px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Queue Status</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Displays the current status in the DocuSign pipeline.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Signers</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Displays a list&#160;of signers and associated email addresses who received the DocuSign item along with the requested action for them to take.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Log Data</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Presents detailed information about the DocuSign process.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="ProcedureIntro"><a name="Reset"></a>To reset the status of failed documents:</p>
+        <p>For failed documents, you can reset the Status back to New using Reset Status, which is only available when Status equals CS&#160;Failure.</p>
+        <ol>
+            <li>On the Uploaded Files Queue dashboard, failed entries show Status as <span class="UXElement">CS&#160;Failure</span>. Locate the failed entry and click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Jump</span>).<br />The Uploaded Files Queue Detail page opens. Retry Count reflects the number of times the system attempted to get the document.</li>
+            <li>In the <span class="UXElement">Action Center</span>, click <span class="UXElement">Reset Status</span>.<br />The Queue Status resets to New, and the Retry Count is set to 0 (zero). </li>
+        </ol>
+    </body>
+</html>

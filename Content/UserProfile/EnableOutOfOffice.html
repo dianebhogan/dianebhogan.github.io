@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="User Profile" />Enabling Out of Office option</h1>
+        <MadCap:microContent id="microcontent1">
+            <p>
+                <img src="../Resources/Misc/OutOfOffice.png" class="thumbnail_right" />
+            </p>
+            <p>Sometimes you have to be out of the office, and you need someone to follow up on items that you may be assigned. The <b>Enable Out of Office</b> option allows you to specify a back up user while you are away. The back up user will receive notifications from Dataforms, Org and Activity notifications, Email Template notifications, and the Task Manager. The Out of Office functionality initiates when notifications are sent. Notifications are sent to your <MadCap:variable name="MyVariables.ProductName" /> Inbox <span class="UXElement">and</span> can also be sent as an email to your external mailbox. You can utilize both methods or choose to only receive notifications in the <MadCap:variable name="MyVariables.ProductName" /> Inbox.</p> </MadCap:microContent>
+        <h2>Sending notifications to the <MadCap:variable name="MyVariables.ProductName" /> Inbox</h2>
+        <p>To send notification to the <MadCap:variable name="MyVariables.ProductName" /> Inbox, the primary user <span class="UXElement">only</span> needs to enable the option <span class="UXElement">Enable Out of Office</span> in their user profile and select a <span class="UXElement">Back Up User</span>. That is all there is to it!</p>
+        <p class="ProcedureIntro">To enable out of office notifications to the <MadCap:variable name="MyVariables.ProductName" /> Inbox:</p>
+        <ol>
+            <li>Go to <img src="../Resources/Images/ICONS/ICON_MyProfile.png" /> <b>My Profile</b>.<br />The User Details form opens.<br /></li>
+            <li>Select the <b>Enable Out of Office</b> option.<br />The Back Up User, Start Date, and End Date fields become available.<br /></li>
+            <li>In <b>Back Up User</b>, select a  user to receive your notifications.</li>
+            <li>Select a <b>Start Date</b> and <b>End Date</b> for the notifications.</li>
+            <li>Click <b>Save</b>.</li>
+        </ol>
+        <p>
+            <img src="../Resources/Images/ICONS/ICON_OutOfOfficeEnabled.png" class="left" />In the banner bar, the user profile icon turns red during the time you specified Out of Office and  displays <span class="UXElement">ZZ</span>, symbolizing that this user is out of the office and unavailable.</p>
+        <h2>Sending notifications to an external Email mailbox</h2>
+        <p>
+            <img src="../Resources/Images/Profile/OutOfOffice.png" alt="" title="" class="thumbnail_right" />
+        </p>
+        <p>To send a notification to an external email mailbox, the recipients must have the option <span class="UXElement">Enable Email for this account</span> enabled. However, if you only want one of the recipients to receive the external email notifications, then you only need to enable the option for one, for example, the primary user. </p>
+        <p>If you want both the primary and back up user to receive external email notifications, then both must have the option <span class="UXElement">Enable Email for this account</span> enabled. The back up user’s email does not display on the record in the Email Admin dashboard. Instead, when the Send Mail scheduled process runs, it checks the recipients of the unsent email.</p>
+        <p class="ProcedureIntro">To enable out of office to an external Email mailbox:</p>
+        <ol>
+            <li>Go to <img src="../Resources/Images/ICONS/ICON_MyProfile.png" /> <b>My Profile</b>.<br />The User Details form opens.<br /></li>
+            <li>Ensure that <span class="UXElement">Enable Email for this account</span> is selected.</li>
+            <li>Select the <b>Enable Out of Office</b> option.<br />The Back Up User, Start Date, and End Date fields become available.<br /></li>
+            <li>In <b>Back Up User</b>, select a  user to receive your notifications. <b>Note</b>: If you want the back up user to receive an email in their external mailbox, then ensure that the designated Back Up User also has <span class="UXElement">Enable Email for this account</span> enabled in their User Profile. The back up user always receives a <MadCap:variable name="MyVariables.ProductName" /> Inbox notification.</li>
+            <li>Select a <b>Start Date</b> and <b>End Date</b> for the notifications.</li>
+            <li>Click <b>Save</b>.</li>
+        </ol>
+        <p>
+            <img src="../Resources/Images/ICONS/ICON_OutOfOfficeEnabled.png" class="left" />In the banner bar, the user profile icon turns red during the time you specified Out of Office and  displays a <span class="UXElement">ZZ</span>, symbolizing that this user is out of the office and unavailable.</p>
+        <h2>What happens next</h2>
+        <p>If a system event occurs that sends a notification to you, such as a case or task assigned to you, the notification is forwarded to the user you selected in <b>Back Up User</b>. Both the primary and back up user receive the notifications in their <MadCap:variable name="MyVariables.ProductName" /> Inbox. The subject is pre-pended with <span class="UXElement">Out of Office</span>.</p>
+        <p>Let's say that you select John Smith as your Back Up User. When a notification is issued that is meant for you, John Smith  receives a <MadCap:variable name="MyVariables.ProductName" /> Inbox notification from you. If you enable notifications to an external mailbox, email notifications are also sent to the users that have the option <span class="UXElement">Enable Email for this account</span> enabled.</p>
+        <h2>Disabling out of office</h2>
+        <p>When you return to the office and are ready to disable the out of office function, you can disable the option or allow the expiration to complete, based on the end date.</p>
+        <p class="ProcedureIntro">To disable out of office notifications:</p>
+        <ol>
+            <li>Go to <img src="../Resources/Images/ICONS/ICON_MyProfile.png" /> <b>My Profile</b>.<br />The User Details form opens.<br /></li>
+            <li>Clear the <b>Enable Out of Office</b> option.</li>
+            <li>Click <b>Save</b>.<br /></li>
+        </ol>
+        <p MadCap:conditions="ClientSpace.Print">
+            <img src="../Resources/Images/ICONS/ICON_ViewVideo-pdf.png" /> Watch the video about enabling <a href="https://prismhr.wistia.com/medias/cknqlsy0ud" target="_blank" title="Video about enabling out of office" alt="Video about enabling out of office">Out of Office</a>.</p>
+        <p MadCap:conditions="ClientSpace.Screen"><i class="fas fa-play-circle" style="font-size:24px;color:var(--BrandPrimary2);"></i> To watch a video about enabling Out of Office, see <MadCap:xref href="Video_OutOffice.htm" title="Learning how" alt="Learning how">Learning how</MadCap:xref>.</p>
+    </body>
+</html>

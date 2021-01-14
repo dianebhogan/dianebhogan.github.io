@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>I-9 HRPAPI Import Mappings</h1>
+        <p>The following procedures provide details for viewing mappings as well as the dataform properties.</p>
+        <p class="ProcedureIntro">To view the mappings:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Advanced </span>&gt; <span class="UXElement">Configure Import</span>.</p>
+        <p class="StepResult">The Import Map Header Search dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Locate <span class="UXElement">HRPAPI_I9*.csv</span> and click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Jump</span>) to open the header detail.</p>
+        <p class="StepResult">The Import Map Header Detail form opens.</p>
+        <div class="indent">
+            <p>The following image presents the Import Map Header Detail for HRPAPI_I9*.csv.</p>
+            <p>
+                <img src="../Resources/Images/Integrations/I-9_ImportMapHeader.png" alt="" title="" class="thumbnail" />
+            </p>
+        </div>
+        <p class="L1Num" MadCap:autonum="3. ">To view the fields, click <span class="UXElement">Fields</span>.</p>
+        <p class="StepResult">The Import Map Search list displays the I-9 Dataform fields.</p>
+        <div class="indent">
+            <p class="Body">The following image lists the HRPAPI_I9*.csv fields.</p>
+            <p>
+                <img src="../Resources/Images/Integrations/I-9_Fields.png" alt="" title="" class="thumbnail" />
+            </p>
+            <p class="ProcedureIntro">To view the I-9 Dataform properties:</p>
+            <p class="L1Num1" MadCap:autonum="1. ">Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png"></img> &gt; <span class="UXElement">Advanced </span>&gt; <span class="UXElement">Dataform Admin</span>.</p>
+            <p class="StepResult">The Dataform Admin dashboard opens.</p>
+            <p class="L1Num" MadCap:autonum="2. ">Locate <span class="UXElement">I-9</span> and click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Jump</span>).</p>
+            <p class="StepResult">The Dataform Properties for I-9 opens.</p>
+            <p class="L1Num" MadCap:autonum="3. ">To view the fields, in the <span class="UXElement">Action Center</span>, click <span class="UXElement">Fields</span>.</p>
+            <p class="StepResult">The I-9 Dataform fields display.</p>
+        </div>
+        <div class="indent">
+            <div class="indent">
+                <p class="Body">The I-9 Dataform fields (for HRPAPI_I9*.csv) include Employment Record, I-9 Form, Status, Purge Date, Reverify Employee, Reverification &amp;&#160;Rehires, Document One, Document Two, Document Three, Eligibility Document, Alien Registration, and Legacy.</p>
+                <p class="Body">
+                    <img src="../Resources/Images/Imports/I-9_Fieldsets.png" class="thumbnail" style="width: 634px;height: 654px;" />
+                </p>
+                <p class="L1Num" MadCap:autonum="4. ">To view a field, such as Non-Resident Alien, locate the fieldset Alien Registration and select Non-Resident Alien.</p>
+                <p class="L1Num" MadCap:autonum="5. ">Click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Jump</span>).</p>
+                <p class="StepResult">The details of the field display.</p>
+            </div>
+        </div>
+        <p>The following image shows the field Non-Resident Alien, which is located in the Alien Registration fieldset.</p>
+        <p>
+            <img src="../Resources/Images/Integrations/I-9_TriggerableField.png" alt="" title="" class="thumbnail" />
+        </p>
+        <h2>Can use in Workflows</h2>
+        <p>With the <MadCap:variable name="MyVariables.ProductName" /> PrismHR&#160;HRPAPI, you can import I-9 data into the I-9 management dataform and then use the dataform in workflows. The import uses <span class="UXElement">HRPAPI_initial_I9*.csv</span> and <span class="UXElement">HRPAPI_I9*.csv</span> import mappings.</p>
+        <p>To track an Employee’s alien status within ClientSpace so that service providers can create workflows for document expiration, you can configure scheduled Workflow Channels to trigger before the expiration date of a document. Fields for tracking this data are available in the dataform <span class="UXElement">gen_I9</span> and marked as triggerable for workflows by default. See the previous image for an example of Triggerable in the field Non-Resident Alien.</p>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css'); margin-left: 0; margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 841px;" />
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 202px;" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Alien Registration (fsAlienRegistration) </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">fieldset</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Non-Resident Alien (IsNonResidentAlien)</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">checkbox</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Alien Registration Number (AlienRegistrationNumber)<br /></p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">text</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Alien Registration Expiration Date (DateAlienRegistrationExpiration)</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">date</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Any dataform field that is marked as Triggerable can be used in a workflow. See <MadCap:xref href="../Dataforms/AddFields.htm" title="Adding dataform fields" alt="Adding dataform fields">Adding dataform fields</MadCap:xref>.</p>
+        <h2>Lookup values</h2>
+        <p>To map the selections for I-9 documents in Prism to <MadCap:variable name="MyVariables.ProductName" />, use the lookup values in the document lookup groups with Import IDs that match the Prism values. The following lookup values are configured for you in I-9  Documents.</p>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 547px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">I-9 Documents</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">ImportID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">A - US Passport</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">A18</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">A - US Passport Card </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">A15</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">A - Perm. Resident (Form I-551)</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">A02</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">A - Alien Reg. Receipt Card (Form I-551)</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">A03</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">A - Foreign Passport with Temp. I-551 stamp</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">A04-2</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">A - Foreign Passport with Temp. I-551 MRIV</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">A05-2</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">A - Employment Auth. Document (Form I-766)</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">A06<br /></td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">A - Foreign Passport, work-authorized nonimmigrant</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">A07-3</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">A - FSM Passport with Form I-94</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">A08-2</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">A - RMI Passport with Form I-94</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">A09-2</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">A - Form I-94/I-94A</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">A11-2 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">A - Temporary I-551 Stamp</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">A16-2</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">A - Machine-readable immigrant visa (MRIV) </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">A17-2 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">A - Form I-20 </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">A13-3 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">A - Form DS-2019 </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">A14-3 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">B - Driver's license issued by state/territory</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">B01</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">B - ID card issued by state/territory</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">B21</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">B - Government ID</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">B13 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">B - School ID</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">B03 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">B - Voter Registration Card</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">B04</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">B - U.S. Military card</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">B22</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">B - U.S. Military draft record</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">B14 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">B - Military dependent's ID card</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">B06</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">B - USCG Merchant Mariner card</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">B07</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">B - Native American tribal document</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">B08</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">B - Canadian driver's license</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">B09</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">B - School record (under age 18)</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">B23 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">B - Report card (under age 18)</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">B15 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">B - Clinic record (under age 18)</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">B24 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">B - Doctor record (under age 18)</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">B16 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">B - Hospital record (under age 18)</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">B17 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">B - Day-care record (under age 18)</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">B25 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">B - Nursery School record (under age 18)</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">B18 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">B - Individual under Age 18</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">B19 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">B - Special Placement</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">B20 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">C - Social Security Card (Unrestricted)</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">C01 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">C - FS-545</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">C02 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">C - DS-1350</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">C03 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">C - US Birth Certificate</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">C04 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">C - Native American tribal document</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">C05 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">C - Form I-197</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">C06</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">C - Form I-179</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">C07 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">C - Employment auth. document (DHS)</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">C08 </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">C - FS-240</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">C09</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Dataforms" />Deleting dataform fields</h1>
+        <p>A few situations can exist that prevent a field from being deleted:</p>
+        <p class="Bullet1" MadCap:autonum="• ">The field is a <b>system field</b>. For system fields, the Delete action is not available and displays as disabled. System fields can be easily identified since their field names do not begin with <b>z_</b>.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Other system configurations depend on the field. Dataform fields that are referenced by system functions. For example, rules, links, or field display conditions cannot be deleted until their dependencies are removed. If you try to delete a field that has a dependency, an error message displays in the delete dialog: "This field is used by the following System functions and cannot be deleted while these dependencies are in place: System Function". From the delete dialog, you can open the dependency.</p>
+        <p class="ProcedureIntro">After you Save the configuration, you can then view the form from Admin Workspace:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Administrative Data</b> &gt; <b>&lt;groupname&gt;</b>.<br /></p>
+        <p class="StepResult" MadCap:autonum="">Where &lt;groupname&gt; matches the Dataform Group value you selected during the initial Dataform Properties add process.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Alternatively, from your modules bar, select <b>Admin Workspace</b> (if you added to your modules bar).</p>
+        <p class="L1Num" MadCap:autonum="3. ">In Admin Workspace, open the group, and within the group open the form.</p>
+        <p class="L1Num" MadCap:autonum="4. ">Click <b>Add</b>.<br /></p>
+        <p class="StepResult" MadCap:autonum="">The form opens.</p>
+        <p>The following images illustrate:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Dataform field mapping during the Add process</p>
+        <p class="Bullet1" MadCap:autonum="• ">The completed form, viewable through Admin Workspace</p>
+        <p>
+            <img src="../Resources/Images/Dataform/DataformAdmin_Attorney.png" class="thumbnail" />
+        </p>
+        <p>
+            <img src="../Resources/Images/Dataform/AttorneyFormFields.png" class="thumbnail" />
+        </p>
+    </body>
+</html>

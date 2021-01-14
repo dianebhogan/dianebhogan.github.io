@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+    </head>
+    <body>
+        <h1>Field Change Audit</h1>
+        <p>The Field Change Audit table is used to determine when and what data will be Exported to Salesforce.  <b>Field changes must be resolved to either tblOrganization, gen_ClientMaster or tblContact tables.</b></p>
+        <p class="Bullet1" MadCap:autonum="• ">Configure the Table Metadata for the Forms/Fields that will be monitored for an update</p>
+        <p class="Bullet1" MadCap:autonum="• ">Export Example 1, tblOrganization related:</p>
+        <p class="Bullet2" MadCap:autonum="• ">Org Other Info “z_SomeField” is audited in the FCA table</p>
+        <p class="Bullet2" MadCap:autonum="• ">“z_SomeField” value is changed; this will cause an Export to take place</p>
+        <p class="Bullet2" MadCap:autonum="• ">The CSUpdateProc will map that field change to a “tblOrganization” trigger</p>
+        <p class="Bullet2" MadCap:autonum="• ">All tblOrganization (Import Organization dataform) and Org Other Info mappings will be used to populate the Salesforce Opportunity and Account object</p>
+        <p class="Bullet1" MadCap:autonum="• ">Export Example 2, gen_ClientMaster related:</p>
+        <p class="Bullet2" MadCap:autonum="• ">Client Master “z_SomeOtherField” is audited in the FCA table</p>
+        <p class="Bullet2" MadCap:autonum="• ">Client Master “z_SomeOtherField” value is changed</p>
+        <p class="Bullet2" MadCap:autonum="• ">The CSUpdateProc will map that field change to a “gen_ClientMaster” trigger</p>
+        <p class="Bullet2" MadCap:autonum="• ">All Client Master mappings will be used to populate the Salesforce Opportunity and Account objects</p>
+        <p class="Bullet1" MadCap:autonum="• ">The ‘csupdateproc=x’ configuration parameter determines the stored procedure that will be used to collect the changes for Export</p>
+        <p class="Bullet1" MadCap:autonum="• ">PEO Default Configuration</p>
+        <p class="Bullet2" MadCap:autonum="• ">Tbd</p>
+    </body>
+</html>

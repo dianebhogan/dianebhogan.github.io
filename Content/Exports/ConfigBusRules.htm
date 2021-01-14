@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Configuring Client Master and Employee business rules</h1>
+        <p class="ProcedureIntro">To configure the Client Master and Employee Business Rules:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Advanced</span> &gt; <span class="UXElement">Manage Rules</span>.<br />The Custom Logic Rules dashboard opens.</li>
+            <li>For each of the following entries, locate and then select <b>Edit</b>.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Integrations/Export_PrismHR_Rules1.png" alt="" title="" />
+            </p>
+            <p>
+                <img src="../Resources/Images/Integrations/Export_PrismHR_Rules2.png" alt="" title="" />
+            </p>
+            <p>
+                <img src="../Resources/Images/Integrations/Export_PrismHR_Rules3.png" alt="" title="" />
+            </p>
+        </div>
+        <ol MadCap:continue="true" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+            <li>To Export Clients, activate the following rules:<ul style="list-style-type: square;"><li>Dataform <span class="UXElement">Client Master</span>, Method Name <span class="UXElement">HE_ValidateExportClient</span></li><li>Dataform <span class="UXElement">Client Master</span>, Method Name <span class="UXElement">ExportClientToHRP</span></li></ul></li>
+            <li>To export all Employees, activate the following rules:<ul style="list-style-type: square;"><li>Dataform <span class="UXElement">Client Master</span>, Method Name <span class="UXElement">HE_ValidateExportEmployees</span></li><li>Dataform <span class="UXElement">Employee</span>, Method Name <span class="UXElement">ExportEmployeesToHRP</span></li></ul></li>
+            <li>To export a single Employee, activate the following rules:<ul style="list-style-type: square;"><li>Dataform <span class="UXElement">Employee</span>, Method Name <span class="UXElement">HE_ValidateQueueEmployee</span></li></ul></li>
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+    </body>
+</html>

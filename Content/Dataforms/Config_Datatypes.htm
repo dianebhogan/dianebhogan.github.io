@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Dataforms" />Configuring your dataform datatypes</h1>
+        <p>The following is a list of the most commonly used datatypes in the application, accompanied by a brief explanation of how they work.&#160;&#160; </p>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');width: 100%;margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 223px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">TypeName</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableTextLeft">Explanation of Datatype</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Decimal</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Accepts a decimal number with the&#160;precision as defined in the mask.&#160;If the user enters a number with higher precision (more digits to&#160;the right of the decimal point), than the mask allows, the number is rounded to the proper precision.
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Field Set</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Fieldsets are not data entry fields, and no corresponding SQL Server field is created when a new fieldset data type is created. Fieldsets act as an organization container for other fields. The use of fieldsets typically makes the layout and organization of a data form significantly better.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Image</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Attach an image file.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Date</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Date. The user can enter a date or select a date by clicking the calendar icon to the right of the field.&#160;Only valid dates are accepted as an entry into this field. Codes can be used as a shortcut to populate the date field.&#160;Typing “2d” into a date field adds two days to the current date. “-2w” subtracts two weeks from the current date and so on.&#160;The valid codes are d=day, w=week, m=month, y=year.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Calendar Event Selector</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Select any non-recurring calendar event to which the user account has access and create a link within the dataform to this calendar event.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Integer</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <div>
+                            <div lang="en">Consists of the natural numbers (1, 2, 3), zero (0),&#160;and the opposites of the natural numbers (−1, −2, −3).&#160;If no minimum or maximum is specified in the field properties, the user can enter a number up to 2.146 billion.</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Text</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Standard text input field accepts alphanumeric and special characters.&#160;Limited to 500 characters unless a smaller number is entered into&#160;the max length property.
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Time - Standard</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Text field formatted to accept standard time (9:40pm).</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Link</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Text field with hyperlink control attached.&#160;<strong>CAUTION</strong>: The hyperlink control always&#160;attaches the HTTP protocol before a URL is stored in this field and can result in protocol doubling up.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">TextArea</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Wide text area. Expands to large note area for editing. Identical to the text entry field but the field spans two columns and 3 rows&#160;to accommodate longer text entry.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Time - Military</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Text field formatted to accept military time, such as 21:40.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">User</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Integer. List of all active users in ClientSpace.&#160;The primary key of the user record is stored in the integer field.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Text-Wide</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Wide text area. Takes two columns on form.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Phone</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Text formatted as phone number ### - ### - ####</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">SSN</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Text formatted&#160;as a&#160;SSN ### - ## - ####</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Log</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Wide text area . Enables the user to enter standard text in paragraph form.&#160;When the entry is saved, the user that entered the text and the date/time of entry is recorded with the entry stored at the top of the field (above all previously entered text).&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Project User</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">List of active users for the workspace the form resides on</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Money</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Decimal (14,2). You can enter a value of up to 10 billion dollars. The mask is set by the system to allow for a decimal scale of two with automatic rounding to two places. Minimum/maximum property settings can control the data entry as needed.&#160;The input is automatically formatted&#160;with dollar signs and decimal scale of two places.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Zip Code</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Text. Formatted as a zip code. Zip code fields also can use custom logic to set associated fields on&#160;the dataform. For more information, see <MadCap:xref href="../Admin_Config/ConfigZipCodeDatatype.html" title="configure zip code datatype" alt="configure zip code datatype" class="Heading">Configuring the ZipCode datatype</MadCap:xref>.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Parent Form</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Integer field contains custom logic to tie it to a parent dataform. For more information see <MadCap:xref href="ConfigParFormDatatypes.html" title="configuring parent form datatypes" alt="configuring parent form datatypes" class="Heading">Configuring parent form datatypes</MadCap:xref>.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Checkbox</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">True/False (bit). Presents the&#160;user with a check box (option). Defaults to&#160;unchecked (cleared).&#160;
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Role Selector</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Selects a Role from the Role administration.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">User Filtered By Role</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">List of users filtered by associated&#160;RoleID entered in the Related Fields area.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact Type Ahead</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Filters the related Org Category list to narrow the list of Contacts. If this parameter is not set, control returns a complete set of Active Contacts.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org Type Ahead</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Typeahead field that performs autocomplete foreign key to Organization&#160;record. <strong>Note</strong>: This can be filtered using the Category field when configuring this datatype.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">User Project</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">A list of the projects the user has access to.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">User by Role Type Ahead</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Typeahead list of users filtered by role entered in the Related Fields area.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Contact</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">List of contacts for the Org attached to the workspace.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">User Type Ahead</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Typeahead list of users.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Contact (Field Related)</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">List of contacts for an Org referenced in an Organization field on the dataform.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Project User Type Ahead</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Typeahead list of users associated with the workspace in which you are currently working.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Lookup (core)</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">The list is populated from the specified lookup. See <MadCap:xref href="../Admin_Config/Lookups.html" title="Adding and configuring lookups" alt="Adding and configuring lookups">Adding and configuring lookups</MadCap:xref>.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Lookup - Multiple (core)</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Text box (500 characters) stores multiple selections as text strings separated by <b>!.!</b>. See <MadCap:xref href="../Admin_Config/Lookups.html" title="Adding and configuring lookups" alt="Adding and configuring lookups">Adding and configuring lookups</MadCap:xref>.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">User Filtered By Entity Type Ahead</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Text box. Uses typeahead functionality to select available users&#160;filtered by a security entity.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">User Multiple Select</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Allows for the selection of multiple users from a pop-up.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Email</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Text field. Checks for a valid format of the email address.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Phone (No Formatting is Saved)</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Text field. Accepts phone numbers but does not save them as formatted.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Report Selector</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Provides a list of available reports.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contact Type Ahead</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Text box. Uses typeahead functionality to select available contacts.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Role Selector Type Ahead</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Text box. Uses typeahead functionality to select available roles.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Percent</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Decimal (14,2). Formatted as a percent.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Calendar Event Selector</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Select a calendar event from a list of events attached to the workspace.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Editor</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Rich text control. Similar to a text area, but with formatting.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">File Upload Manager - Database</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Enables file attachment. Files are stored in the database. Multiple instances of the same file are stored as one file with multiple linking records.
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Location Sync</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Creates a list that contains all the locations for a given workspace. Upon selection from the list, it pre-fills other address fields on the form. <strong>Only works on the Location form</strong></td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">UserByEntity</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">List of users filtered by Security Entity (Entity configured in Related Fields property of dataform field).</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">UserByEntityTypeAhead</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">Typeahead&#160;List of users filtered by Security Entity (Entity configured in Related Fields property of dataform field).</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

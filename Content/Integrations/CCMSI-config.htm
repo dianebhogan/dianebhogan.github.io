@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring the CCMSI connection</h1>
+        <p>The following procedure guides you through configuring the CCMSI connection. First, configure the connection. Then, activate the CCMSI links for the Comp Claim dataform: CCMSI Location Number, CCMSI Member Number, CCMSI Initial Report, and Submit to CCMSI.</p>
+        <p class="ProcedureIntro">To configure the API:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Advanced</span> &gt; <span class="UXElement">API&#160;Configuration</span>.<br />The API&#160;Configuration dashboard opens.</li>
+            <li>Highlight the row for <span class="UXElement">CCMSIAPI</span> and double-click or click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Open</span>).<br />The CCMSIAPI API Configuration form opens.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Integrations/CCMSIAPI-config.png" class="thumbnail">
+                </img>
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Complete the following fields:</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');width: 100%;" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 135px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Username</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The organization CCMSI username.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Password</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The organization CCMSI password.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Endpoint</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The URL&#160;that points to the API&#160;services for your organization. This is specific to each client.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Secondary ID</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">The organization CCMSI member number. This is the client identifier, which is part of the authenticator object – the Username and Password, specific to each client, is related to the Secondary ID.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <p class="ProcedureIntro">To activate the links:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span><img src="../Resources/Images/ICONS/ICON_SysAdmin.png"></img> &gt; <span class="UXElement">Advanced</span> &gt; <span class="UXElement">Custom Links</span>.<br />The API&#160;Configuration dashboard opens.</li>
+            <li>Filter the list to search for CCMSI, using <span class="UXElement">%CCMSI</span>.<br />The filtered list displays showing four entries. From here, open an entry and activate the link.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Integrations/CCMSI-config-links.png" class="thumbnail">
+                </img>
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>For each entry, open and select the <span class="UXElement">Active</span> option.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Integrations/CCMSI-Active.png">
+                </img>
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <p class="ProcedureIntro">To confirm the business rule SubmitClaimToCCMSI is active:</p>
+        <ol>
+            <li>
+Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png"></img> &gt; <b>Advanced</b> &gt; <b>Manage Rules</b>.<br />The Custom Logic Rules dashboard opens.
+
+<br></br></li>
+            <li>Search for SubmitClaimToCCMSI and open the rule.<br />The Rule Details form opens.
+</li>
+            <li>Select the <span class="UXElement">Active</span> option (if not already selected), and click <span class="UXElement">Save</span>.</li>
+        </ol>
+    </body>
+</html>

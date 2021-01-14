@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditionTagExpression="include[SnippetConditions-EmailTemplates.Task-TriggeringForm]">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Email Templates" />Triggering Email Templates from Tasks</h1>
+        <p>System administrators can trigger email templates from saved tasks. This functionality enables system admins to control the conditions by tailoring the task email templates. For example, you might configure an email template for any updates to a Task and a separate email template for when a Task is marked as closed.</p>
+        <p>When you set Triggering Form to <b>Task</b>:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Task and associated fields are available for field replacement in Step 2 Content.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Task and associated fields are available from Step 4 Conditions for use as triggering conditions.</p>
+        <h2>Step 1 Initial</h2>
+        <p>This is the detail information of your email template. When the Triggering Form for an Email Template is Task, <MadCap:variable name="MyVariables.ProductName" /> does not expose the Include as Activity option in Step 1 because you cannot add Activities to Tasks.</p>
+        <p>
+            <img src="../Resources/Images/EmailTemplates/TrigForm_Task_Stp1.png" alt="" title="" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">To trigger an email from a Task:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Complete the form fields:</p>
+        <MadCap:snippetBlock src="../Resources/Snippets/ET_Step1_Initial.flsnp" />
+        <p class="L1Num" MadCap:autonum="2. ">Click <b>Next</b> to proceed to Step 2 Content.</p>
+        <h2>Step 2 Content</h2>
+        <p>This is the content of the email template. To include contextual field information from a Task, (your Triggering Form in Step 1), you can use replacement fields.</p>
+        <p>
+            <img src="../Resources/Images/EmailTemplates/TrigForm_Task_Stp2.png" alt="" title="" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">To configure the content of the email:</p>
+        <p class="L1Num1" MadCap:autonum="1. "> Provide a <b>Subject</b> line of the email to be generated. </p>
+        <p class="L1Num" MadCap:autonum="2. "> Provide the email message in the <b>Body</b>. </p>
+        <p class="StepResult">This field uses a rich text editor and supports font styling, embedded images, hyperlinks, and so on. </p>
+        <p class="L1Num" MadCap:autonum="3. ">Click <b>See Replace Fields</b> to select items to copy to the clipboard. </p>
+        <p class="StepResult">You can paste items in Subject and Body as applicable. See <MadCap:xref href="../Admin_Config/ReplacementFields.htm" title="replacement fields" alt="replacement fields" class="Heading">Replacement fields</MadCap:xref>.</p>
+        <p class="Indent1">Field replacement includes:</p>
+        <p class="Bullet2" MadCap:autonum="• ">When you select Task as the Triggering Form in Step 1 Initial, Task fields are available for field replacement</p>
+        <p class="Bullet2" MadCap:autonum="• ">The active&#160;fields&#160;from the related Organization and Org Other Info</p>
+        <p class="Bullet2" MadCap:autonum="• ">Any&#160;fields&#160;returned by the Server Data Procs related to the triggering dataform</p>
+        <p class="L1Num" MadCap:autonum="4. ">Click <b>Next</b> to proceed to Step 3 Addresses.</p>
+        <h2>Step 3 Addresses</h2>
+        <p>In this step you define who the email is from, who it will be sent to, and any CC recipients. The available options on this step are controlled by the Triggering Form. When  the Triggering Form is <b>Task</b> (Step 1 Initial), then Source options are Adhoc Email Address and Task. Anyone who is currently marked as a Notification user on the triggering Task, is included as a subscriber.</p>
+        <p>
+            <img src="../Resources/Images/EmailTemplates/TrigForm_Task_Stp3.png" alt="" title="" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">To configure Addresses:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Complete the form fields:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 144px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">From Address</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This field is set to Current User. For Task, only the person performing the action displays as the task From Address.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Include Task Subscribers as CC Recipients</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">When this option is selected, it includes anyone who is currently marked as a Notification user on the triggering Task. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="2. ">To add Addresses, click <b>Add</b>.</p>
+        <p class="StepResult">A row opens to add recipients to the notification. </p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 142px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Source</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The Source list includes:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Ad-Hoc Email Address: When you select this option, type an email address in the Address column.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Task: When you select this option,  User fields are available for selection in the Address column, such Assigned To.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">What kind of email recipient type are you setting?  Options are <b>To</b> or <b>CC</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Address</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Use this field to manually type an email address to use every time.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="3. ">Click <b>Next</b> to proceed to Step 4 Conditions.</p>
+        <h2>Step 4 Conditions</h2>
+        <p>In this step you can specify Task fields in the Field column. When Task is the Triggering Form (from Step 1 Initial), Source is set to Task. Available options for Field are any of the Task fields.</p>
+        <p>
+            <img src="../Resources/Images/EmailTemplates/TrigForm_Task_Stp4.png" alt="" title="" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">To add conditions:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Complete the form fields:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 158px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">No Primary Trigger</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">When selected, no single condition must be met to trigger the email template. If this field is selected, the <b>Primary Trigger Field</b> is disabled.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Primary Trigger Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Optional field (from the Triggering Form selected in Step 1), which, when changed triggers the event. 
+The following statements refer to the condition entries in the <b>Add</b> area.
+Condition entries are identified with a <b>Label</b> (the last column).</p>
+                        <p class="TableBullet" MadCap:autonum="• ">If a Primary Trigger Field is selected, that field MUST change values to trigger this template and evaluate the conditions.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">If a Primary Trigger Field is not selected, only the conditions are evaluated.
+</p>
+                        <p class="TableBullet" MadCap:autonum="• ">If a Primary Trigger Field is selected, the conditions are combined with the Primary Trigger Field using an implied AND.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">If no Condition Expression is used, the additional conditions are treated as OR conditions.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Condition Expression</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Condition Expressions use Labels from the display conditions along with AND, OR, and NOT operators to control precedence and sequence. The Add section is where you can add more granular triggering conditions. Entries in this section are called display conditions. If the Condition Expression field is empty, then the entries under Add are treated as OR conditions.&#160;</p>
+                        <p>Allows for <b>AND</b>, <b>OR</b>, and <b>NOT</b> conditions using the display conditions (Label) from the Add section. Using the Label field that corresponds to the entries in the Add section, you can combine the conditions into more complex expressions. The Condition Expression field could state, for example (Condition1 AND Condition2) OR (Condition3 AND Condition4) OR Condition5. </p>
+                        <p class="TableTextLeft">Condition Expressions adhere to AND/OR/NOT across tabbed dataform conditions. For a detailed explanation about conditions, see <MadCap:xref href="../WFC/WFC_CondExpr.htm" title="condition expressions" alt="condition expressions" class="Heading">Condition Expressions</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Source</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When you select <b>Task</b> as the Triggering Form in Step 1 Initial, Source is set to <b>Task</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Field</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When you select <b>Task</b> as the Triggering Form in Step 1 Initial, the options for Field include all task fields.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Operator</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Choose the type of comparison. Each value from a multi-lookup Field can be added as a separate "<b>=</b>" condition.&#160;This supports complex AND, OR, and NOT conditions as well.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Value</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">The criteria against which the trigger field is compared. The Value corresponds to the Field of the Task. For example, if you select Assigned To for Field, then  select a user for the Value.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1"> Label</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">The label to use when constructing Condition Expressions for triggering. Make this label short and representative of the Field. Labels are used in the Condition Expression field.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="2. ">Click <b>Next</b> to proceed to the next step.</p>
+        <h2>Step 5 Attachments</h2>
+        <p>You can add attachments at this step to be included with each copy of the email sent. Static attachments can be included through the Attachments panel. Recipients receive any attachments added from the Attachment panel when the template is triggered.</p>
+        <p>
+            <img src="../Resources/Images/EmailTemplates/Step5 _Attachments.png" class="thumbnail">
+            </img>
+        </p>
+        <p class="ProcedureIntro">To complete the Attachments step:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Click <b>Add</b> to begin adding the attachments.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Select the <b>Dataform</b> from which the attachment will be copied.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Select the <b>Field</b> from the dataform selected previously that holds the dataform to be copied.</p>
+        <p class="StepResult">A panel displays on the right for adding attachments.</p>
+        <p class="L1Num" MadCap:autonum="4. ">To add static attachments, click <b>Attachments</b> and <img src="../Resources/Images/ICONS/ICON_Add.png" /> (Upload File).</p>
+        <p class="StepResult">The Upload File dialog box opens.</p>
+        <p class="L1Num" MadCap:autonum="5. ">Click <b>Choose File</b> to locate the file.</p>
+        <p class="L1Num" MadCap:autonum="6. ">Click <b>Save</b>.</p>
+        <p class="L1Num" MadCap:autonum="7. ">Click <b>Finish</b> to complete your email template configuration.</p>
+    </body>
+</html>

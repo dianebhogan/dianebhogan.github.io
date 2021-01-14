@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 63 ( PEO )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" width="250" src="https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50" srcset="https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50 2x, https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50 1x" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;12/04/2017&#160;&#160;&#160;&#160;&#160;<strong>Sprint Ended:</strong>&#160;12/31/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release63(PEO)-ClientTeamRoleTableUpdating-ENHANCEMENT"><span style="color: rgb(51,153,102);">Client Team Role Table Updating -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The CheckChangedFields rule on the Client Master has been updated - this rule will also now process the following updates:</p>
+                        <ul>
+                            <li>Changing the Assigned To on the Org will change the Sales Rep on the Client Team.</li>
+                            <li>Changing the Sales Rep on the Client Master will change the Sales Rep on the Client Team.</li>
+                            <li>Changing the Sales Rep on the Client Master may change the Sales Coordinator if the Sales Entity of the Assigned To user is configured to do such.</li>
+                            <li>Changing the Primary Agent on the Client Master will change the Agent on the Client Team if that Agent has a related User record.</li>
+                        </ul>
+                        <p>If this rule cannot find a configured Sales Entity&#160;Sales Coordinator&#160;or Agent User record the fields will not be updated.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release63(PEO)-DecodeWCClaimWorkItemName-ENHANCEMENT"><span style="color: rgb(51,153,102);">Decode WC Claim Work Item Name -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Work Item Label for WC Claims has been enhanced to show the Employee Name and DOI. For example, Smith, Susan (6/23/17).&#160;</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release63(PEO)-UIClaimsQuickSearch-ENHANCEMENT"><span style="color: rgb(51,153,102);">UI Claims Quick Search -&#160;&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The unemployment insurance claims dashboard has been enhanced to allow records to be Quick searched for using the Employee last name (Starts with search). Entering the first few letters of the employee last name into the quick search bar will now return records where the employee last name starts with the search string.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release63(PEO)-OSHA300AReport"><span style="color: rgb(51,153,102);">OSHA 300A Report</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue with incorrect Employee Count &amp; Average Hours values when a location is not used when running the Osha 300A report.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release63(PEO)-OSHA300Report"><span style="color: rgb(51,153,102);">OSHA 300 Report</span>
+                        </h4>
+                        <hr />
+                        <p>The OSHA 300 report has been updated to resolve an issue when running the used when running the report outside of a Workspace for all Clients.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release63(PEO)-PrismHRInitialImportsProcessAutomation-ENHANCEMENT"><span style="color: rgb(51,153,102);">PrismHR Initial Imports Process Automation -&#160;&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Prism API has been enhanced to automate the initial imports. A scheduled process PrismHR Import Auto has been created which runs the configured PrismHRAPI Initial imports. Import records are queued and then added to the system in batches to optimize performance.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release63(PEO)-PrismHRImportInitialsperformance-ENHANCEMENT"><span style="color: rgb(51,153,102);">PrismHR Import Initials performance -&#160;&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The PrismHR API has been enhanced to optimize Employee and Employment record batching, improving performance.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release63(PEO)-PrismHRClientSync-ENHANCEMENT"><span style="color: rgb(51,153,102);">PrismHR Client Sync -&#160;&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The PrismHR API import system has&#160;been&#160;enhanced to &#160;allow for Initial import data to be pulled from PrismHR on a per client basis.&#160; This uses the following:</p>
+                        <ul>
+                            <li>New scheduled process "HRPImportInitialSync"</li>
+                            <li>New field on Client Master, "Sync with PrismHR (Import)" - check this to import</li>
+                            <li>When the scheduled process runs it will:<br />&#160; - locate any Client with "Sync with PrismHR" checked (and a Client Number is present on the Client Master)<br />&#160; - for each Client, executes the INITIAL imports for all active INITIAL import maps<br />&#160; - when completed, unchecks the "Sync with PrismHR" checkbox and saves the Client Master via biz logic (HRP pipeline), Biz Logic only</li>
+                        </ul>
+                        <p>This enhancement is great for cleaning up any one-off clients that failed to import due to errors during the initial import.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release63(PEO)-ExcludeContractTypes-PrismHRImportAPI-ENHANCEMENT"><span style="color: rgb(51,153,102);">Exclude Contract Types - PrismHR Import API -&#160;&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A new setting has been added to the PrismHR Import API -<strong> ExcludedContractTypes.&#160; </strong>When configured this will exclude all PrismHR clients with the contract type(s) specified from the PrismHRAPI import.&#160; Configuration is as follows:</p>
+                        <ul>
+                            <li>Add the Additional Parameter of ExcludedContractTypes=XXX,YYY to the Additional parameters section of the API configuration replacing XXX,YYY with the comma separated (or singular) list of PrismHR Service Types&#160;.&#160;</li>
+                            <li>Service Types need to be comma-separated (if there are multiples to exclude)</li>
+                            <li>This setting applies to Import Initial Queue Clients and Import Initials scheduled processes</li>
+                            <li>If a Client is of an excluded contract type, it will <span>not </span>be included in the import file</li>
+                            <li>Import Queue records will <span>not </span>be created for Clients that are excluded (for remaining initial import maps)</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release63(PEO)-PrismHRUserInitialImports,filterusernames-ENHANCEMENT"><span style="color: rgb(51,153,102);">PrismHR User Initial Imports, filter user names -&#160;&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Several filter parameters have been added&#160;to the PrismHR API Configuration to prevent certain users from being imported:</p>
+                        <p><strong>ExcludeEmailDomains=&#160;</strong> Allows a comma separated list of partial email domains to be added, if a user account has an email domain that starts with the excluded string, the user account will not be imported.</p>
+                        <p>So ExcludeEmailDomains=PrismHR,gmail would exclude any user with an email domain&#160;beginning with prismhr or gmail such as &#160;<a href="http://PrismHR.com" class="external-link" rel="nofollow">PrismHR.com</a>.</p>
+                        <p><strong>ExcludeUserNames=</strong>&#160;&#160; Allows a comma separated list of partial UserIDs from the PrismHR payroll system&#160;to be added, if a user account has a UserID that starts with the excluded string, the user account will not be imported.</p>
+                        <p><strong>AllowUserTypes=</strong> (if not valid user type of user type is blank, will inactivate existing records if present)</p>
+                        <p>UserTypes are as follows:</p>
+                        <ul style="margin-left: 30.0px;">
+                            <li>E - Worksite Employee</li>
+                            <li>M - Worksite Manager</li>
+                            <li>A - Worksite Trusted Advisor</li>
+                            <li>I - Service Provider</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release63(PEO)-EmailTemplateMergefieldadditions-ENHANCEMENT"><span style="color: rgb(51,153,102);">Email Template Merge field additions&#160;</span><span style="color: rgb(51,153,102);">-&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Thirty seven new Organization fields have been added to the <strong>peo_employment_emailtemplate_merge</strong> stored procedure and are available for Field Replacement.&#160;&#160;</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release63(PEO)-PricingConsoleAddStateCodesSecurity"><span style="color: rgb(51,153,102);">Pricing Console Add State Codes Security&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved a security issue in the Pricing Console where the system would allow the addition of states and codes after submission.&#160; The Add States and Codes button is now secured in the following manner:</p>
+                        <p>The Add States and Codes button will be available</p>
+                        <ul>
+                            <li>If the PriBatch does not exist or if the Batch Status is "New" or Batch is a Comparison, then show the button.</li>
+                            <li>If the Batch Status is in any other status and the Pricing Batch is Unlocked and the user is in a role which has the <strong>biz_pricing_submitted_batch</strong> security entity.</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release63(PEO)-EmailConfirmationofDirectDepositChange-ENHANCEMENT"><span style="color: rgb(51,153,102);">Email Confirmation of Direct Deposit Change -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The PrismHR Sense system has been enhanced with a set of stored procedures to facilitate automatic email generation of Direct Deposit events.</p>
+                        <p>Direct Deposit Recipients:<br />&#160; - <strong>peo_directdeposit_emailtemplate_recipient_proc </strong>-&#160;returns the following:<br />&#160; - From: Payroll Specialist <br />&#160; - To: Employee Email<br />&#160; - CC: Payroll Specialist</p>
+                        <p>Direct Deposit Replace Fields<br />&#160; - <strong>peo_directdeposit_emailtemplate_merge_proc </strong>-&#160;returns the following:<br />&#160; - Replace Fields from Proc:</p>
+                        <ul>
+                            <li>{EEFirstName}</li>
+                            <li>{EELastName}</li>
+                            <li>{PayrollSpecialistFirstName}</li>
+                            <li>{PayrollSpecialistLastName}</li>
+                            <li>{PayrollSpecialistPhone}</li>
+                            <li>{PayrollSpecialistEmail}&#160;-</li>
+                        </ul>
+                        <p>The process will also return the following replace fields from Event Form:</p>
+                        <ul>
+                            <li>{Action}</li>
+                            <li>{ClassName}</li>
+                            <li>{ClientID}</li>
+                            <li>{Data}</li>
+                            <li>{DateProcessed}</li>
+                            <li>{EventID}</li>
+                            <li>{ModifiedAttributes}</li>
+                            <li>{ObjectID}</li>
+                            <li>{SchemaName}</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release63(PEO)-PrismHRAPIongoinguserimports-ENHANCEMENT"><span style="color: rgb(51,153,102);">PrismHR API ongoing user imports - &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>New functionality has been added to allow ClientSpace user creation and updates&#160;using the users from PrismHR.&#160; The <strong>"PrismHR Import Ongoing"</strong> scheduled process can be used to generate an <strong>HRPAPI_users</strong> CSV file which will be read by the associated import configuration.&#160; When the file is imported by the system it will:</p>
+                        <ul>
+                            <li>Automatically create CS User if it doesn't exist.&#160; This user will be cloned&#160;from a user that can be specified either in the import file, or as a default in the import configuration</li>
+                            <li>Automatically create&#160;a Third party login record for each new&#160; user at the time of creation</li>
+                            <li>Update existing users based on the user ImportID</li>
+                            <li>Automatically inactivate users based on flags set on the API configuration - users may be excluded by<ul><li>Username</li><li>Email domain</li><li>PrismHR UserType</li></ul></li>
+                            <li>Automatically create a Third Party Application record for single sign on from PrismHR based on the PEOID if the PEOID is mapped.</li>
+                            <li>Designed to respect the following API Configuration parameters used on the Initial User Import:</li>
+                        </ul>
+                        <p style="margin-left: 30.0px;">&#160;- AllowUserTypes (if not valid user type of user type is blank, will inactivate existing records if present) UserTypes are as follows:</p>
+                        <ul style="margin-left: 30.0px;">
+                            <li>E - Worksite Employee</li>
+                            <li>M - Worksite Manager</li>
+                            <li>A - Worksite Trusted Advisor</li>
+                            <li>I - Service Provider</li>
+                        </ul>
+                        <p style="margin-left: 30.0px;">&#160;- ExcludedUserNames - Users may be excluded by including them in a comma separated list of&#160;the first few letters of the PrismHR username&#160;&#160;(if exluded user name, will inactivate existing records if present)<br />&#160;- ExcludedEmailDomains&#160;- Users may be excluded by including them in a comma separated list of&#160;the email domain&#160;- ex. <a href="http://prismhr.com" class="external-link" rel="nofollow">prismhr.com</a>&#160;(if excluded email domain, will inactivate existing records if present)<br />&#160;- CloneFromUser - Include the ImportID of the user you would like to clone when creating new user accounts in this optional column.&#160; If not specified the system will fall back to the default specified on the import mapping.</p>
+                        <p>In order for the PrismHR user ongoing import to begin processing users, a new&#160;PrismHR Subscription record will need to be created in the Admin Workspace:</p>
+                        <p style="margin-left: 30.0px;">&#160;- Schema: Security<br />&#160;- Class: User<br />&#160;- Subscription Type: Standard<br />&#160;- API Configuration: match to other Ongoing API Configuration records<br />&#160;- Description: "PrismHR User Change Subscription"</p>
+                        <p>For more information or to request help configuring this new functionality, contact your account manager.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release63(PEO)-CaseCategoryMetadata"><span style="color: rgb(51,153,102);">Case Category Metadata</span>
+                        </h4>
+                        <hr />
+                        <p>Case Category has been deprecated as a dataform and re-created as metadata on the Case Type lookup.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

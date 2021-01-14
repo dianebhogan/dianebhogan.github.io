@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Testing the merge document</h1>
+        <p>The next step is to run a test with the merge document to review your tags. Most likely, you will need to add a link to the Client Master or the targeted dataform to run the merge document.</p>
+        <h2>Configure the Reports link</h2>
+        <p>Let's add a link for testing the merge document. It displays in the Action Center &gt; Reports pane.</p>
+        <p class="ProcedureIntro">To configure the link:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Advanced</span> &gt; <span class="UXElement">Custom Links</span>.<br />The Configure Links dashboard opens.</li>
+            <li>Click <b>Add</b>.<br />The Configure Links Detail form opens.</li>
+            <li>Complete the form.</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 181px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Location</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Client Master</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Display Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">
+                            <MadCap:concept term="DocuSign" />Enter your link name. This is how the link will display in the Action Center &gt;&#160;Reports pane. For example, our CSA&#160;document has DocuSign tags that we want to review. We added a link named CSA.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Group</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Report</span>. This denotes the type of link you are creating and drives the other
+ fields on the form.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Display Action</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Run Report</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Report/Merge</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">CSA</span>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <h2>Test the merge</h2>
+        <p>Now let's test the merge document.</p>
+        <ol>
+            <li>Go to the Client Master for your targeted client.</li>
+            <li>In the <span class="UXElement">Action Center</span> toolbar, click <img src="../Resources/Images/ICONS/ICON_Reload.png" /> (<span class="UXElement">Reload</span>).</li>
+            <li>In <span class="UXElement">Action Center</span> &gt; <span class="UXElement">Reports</span>, click <span class="UXElement">CSA</span>.<br />The merge process executes, and when done, the file is downloaded.</li>
+            <li>Open the file and review the tags.</li>
+            <li>After you confirm the tags are correct, in your merge template (a Word doc in our example), change the font color to white. This prevents the tags (D1, S1, T1, for example) from showing on the signed document. DocuSign can still read the tags.</li>
+            <li>If you changed the merge document (font color or any other changes), you must upload the merge template file to the Merge Admin again. </li>
+            <li>To test the merge document again, go to a Workspace and run the Reports link to view the outputted merge file. We covered that process in an earlier step: <MadCap:xref href="DocuSign_UploadMerge.htm" title="Uploading the Merge template" alt="Uploading the Merge template">Uploading the Merge template</MadCap:xref>.</li>
+        </ol>
+    </body>
+</html>

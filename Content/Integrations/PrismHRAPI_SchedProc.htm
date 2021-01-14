@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>PrismHR Import Queue Initial Clients scheduled process</h1>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">
+Scheduled process <span class="UXElement">PrismHR Import Initial</span> is deprecated and should NO LONGER be used (the scheduled process is now scripted out as inactive).
+</p>
+        <p class="Body">Scheduled process <span class="UXElement">PrismHR Import Queue Initial Clients</span> obtains a list of all clients available through the API, creates Import records for each, and sets the Sync with PrismHR flag on the Client Master for each Client imported (company initial import map <span class="UXElement">HRPAPI_initial_company*.csv</span> MUST be active). The company initial import map contains the <span class="UXElement">Sync with PrismHR</span> column (scripted out active) to allow the setting of that flag on the Client Master.
+</p>
+        <p>The API Configuration Additional Parameter <span class="UXElement">InitialImportClients=x</span> determines how many clients at a time are processed&#160;when the scheduled process&#160;runs (Location, ClientTeam, Employee, Employment).&#160;The parameter defaults to 5 clients per PrismHR Import Initial scheduled process run. If the client number cannot be matched in PrismHR, the client is ignored.  These related locations are then mapped into an import file for all clients based on the initial_location import configuration, and when all locations for all clients have been retrieved, the import begins.  This process syncs the system with any missing or new client locations, at the end of which the scheduled process inactivates itself. </p>
+        <p>Scheduled process <span class="UXElement">PrismHR Import Initial Sync</span> then processes the Clients to Sync and imports the remaining ACTIVE Import Map data (employee, employment, location). The PrismHR Automation process is the preferred method to use when attempting to sync all client data. It handles the newer initial import process. It has logic to turn on/off respective scheduled processes to prevent conflicts (the Prism Events scheduled process is not included in this, it can be running while initials are running).</p>
+        <h2>Parameters for the PrismHR Site
+        </h2>
+        <p>Use the following parameters to configure the PrismHR site before using the API. This configuration is done in the client Payroll System.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 156px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">HRP&#160;site</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Parameters</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Valid User account</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• ">Username (case sensitive)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Password (case sensitive)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">PEO ID (case sensitive)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">HRP API URL.&#160;The endpoint of the WSDL on the server to be used.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Account</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">The Account must be Enabled.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Subscriptions</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">The Account must have permission to create subscriptions (for Imports only).&#160; The following subscriptions are automatically created on the PrismHR server when the process first executes:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Employee/Person | Client | Compensation.&#160;Description is: “ClientSpace Employee Person-Client-Compensation Subscription All Clients”</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Client/Master | Location. Description is "ClientSpace Client master Subscription All Clients”</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Requirements</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">PrismHR requires the following for each Client:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Business Entity Type (Example: LLC, S Corp, etc.) (Client Details)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Payroll Check Account (Account)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Garnishments Check Account (Account)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Receipts Account (Account)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Processing Schedule (Control)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">GL Template (Control)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Bill Format (Billing)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Billing Template (Billing)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Delivery Method (Payroll)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Pay Groups (Payroll)</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">Pay Groups (Payroll)</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">Pay Group</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">Description</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">Pay Schedule</p>
+                        <p class="TableBullet2" MadCap:autonum="• ">Pay Date</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Job Codes (Positions)</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Process</h2>
+        <p class="L1Num" MadCap:autonum="1. ">The Client and Employee records are <strong>AUTOMATICALLY</strong> populated by the PrismHR Import Queue Initial Clients Scheduled Process.&#160;For the system to auto populate the record, you need to create stub records for the Client and Employee imports:</p>
+        <div class="indent">
+            <ul>
+                <li>Create two semi-blank PrismHR Subscription dataforms, one for Client and one for Employee. On these forms,  select the Schema and Classes (Client-Master,Location; Employee-Person,Client,Compensation) <ul><li>On those dataforms leave all other fields empty (no Subscription ID, no Replay ID, etc.)</li><li>Run the Import Ongoing scheduled process</li></ul></li>
+                <li>If the connection info is correct and PrismHR has properly configured our user account, the process <ul><li>acknowledges that two new subscriptions have to be created in HRP</li><li>creates the new subscriptions in PrismHR</li><li>updates our subscription dataforms with the new information</li><li>checks for any new events (most likely there will not be any since we grab the highest event replay id when the subscription is created)</li><li>exits</li></ul></li>
+            </ul>
+        </div>
+        <p class="L1Num" MadCap:autonum="2. ">Run the <strong>PrismHR Import Queue Initial Clients</strong> scheduled process (before PrismHR Import Initial).</p>
+        <p class="L1Num" MadCap:autonum="3. ">All Companies available on the PrismHR site are imported.&#160;</p>
+        <p class="L1Num" MadCap:autonum="4. ">Special Import Queue records are generated for each Company AND FOR EACH ACTIVE INITIAL IMPORT MAP HEADER (Location, ClientTeam, Employee, Employment), as in: &#160;&#160;</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 218px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">106!.!106!.!Location</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">(Company 106, Location import map) </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">106!.!106!.!ClientTeam </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">106!.!106!.!Employee</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">106!.!106!.!Employment</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">107!.!107!.!Location</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">(Company 107, Location import map)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">107!.!107!.!ClientTeam</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">107!.!107!.!Employee</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">107!.!107!.!Employment</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="5. ">Those Import Queue records are set to Status = <strong>InitialPending</strong>.</p>
+        <p class="L1Num" MadCap:autonum="6. ">The PrismHR Import Queue Initial Clients should only execute once. If&#160;for some reason it needs to execute multiple times, <strong>DELETE</strong> all of the Import Queue Records before proceeding.&#160;</p>
+        <p class="L1Num" MadCap:autonum="7. ">Run the <strong>PrismHR Import Initial Sync</strong> scheduled process.&#160;<br />A list of active Initial Import Maps is retrieved.&#160;&#160;</p>
+        <p class="L1Num" MadCap:autonum="8. ">For each Map, a list of Import Queue records for that map are retrieved (the quantity to process is defined by API Config <strong>InitialImportClients=x</strong>).</p>
+        <p class="L1Num" MadCap:autonum="9. ">Import files are generated &#160;&#160;</p>
+        <div class="indent">
+            <ul>
+                <li>If HRPRunImport=1, those Import Queue records are marked as InitialCompleted.</li>
+                <li>If HRPRunImport=0, those Import Queue records are left at InitialPending and are retrieved again the next time the process is run.</li>
+            </ul>
+        </div>
+        <p class="L1Num" MadCap:autonum="10. ">Assuming HRPRunImport=1, running the PrismHR Import Initial again grabs the next set of Import Queue records (those marked InitialPending). This continues until all Import Queue records are processed (marked InitialCompleted).</p>
+        <p class="L1Num" MadCap:autonum="11. ">To see if the process was successful, review the HRP API Import Ongoing log ad hoc report.</p>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1 MadCap:autonum="Chapter 1 ">Required Salesforce objects</h1>
+        <p>The Client must create <b>a Work_Queue__c</b> object with at least <b>Id</b>, <b>Opportunity__c</b>, and <b>Complete__c</b> fields. This object is populated with records containing Opportunity IDs for Opportunities that are to be imported into ClientSpace. It is up to the Client to determine when a Work Queue record will be created, typically based on a set of rules in Salesforce. Additionally, the Client must create the following objects for the 2.0 version of the Salesforce API to be viable:</p>
+        <p class="Bullet1" MadCap:autonum="• ">LeadCompany (Lead/Company)</p>
+        <p class="Bullet1" MadCap:autonum="• ">ConvertedFromLeadID (Account/Converted_Lead_ID__c)</p>
+        <p class="Bullet1" MadCap:autonum="• ">ConvertedFromLeadID (Contact/Converted_Lead_ID__c)</p>
+        <p>These objects are utilized by the API when working with Leads and Lead Conversion. These fields are required in the import configuration mappings.</p>
+    </body>
+</html>

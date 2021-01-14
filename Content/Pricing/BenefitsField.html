@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>PEO Administered Benefits on Pricing Batc<MadCap:annotation MadCap:createDate="2019-08-20T14:07:47.3765192-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="Needs SME&#160;review. Need to address Admin user and User user. Content is mixed up here." MadCap:editor="dhogan" MadCap:editDate="2019-08-20T14:07:48.9341715-04:00">h</MadCap:annotation></h1>
+        <p>In ClientSpace PEO, the&#160;<strong>PEO Administered Benefits</strong> field indicates the PEO is handling the benefits administration for their client. But what does this mean from a pricing perspective, and&#160;what is the effect on the rest of the system?&#160;</p>
+        <p style="font-weight: bold;">So what does it do?</p>
+        <p>On the Pricing Batch, if PEO Administered Benefits field (luPEOAdministeredBenefits) is set to <b>Yes</b>, then the SetDefaults() rule pulls the surcharge percent from the PEO Administered Benefits Surcharge (PEOAdministeredBenefitsSurcharge) field on the PEO Configuration form. This is then used to set the Pricing Batch Surcharge Percent (SurchargePercent) and Surcharge Amount (SurchargeAmount) fields. If set to <b>No</b>, the PEO Administered Benefits Surcharge is ignored.</p>
+        <p>The luPEOAdministeredBenefits is on the Pricing Batch.  If you set this to Yes, then the PEO Administered Benefits Surcharge on the PEO Configuration form is applicable.</p>
+        <p class="ProcedureIntro">How to find:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>Pricing</b> (from the modules bar).</p>
+        <p class="L1Num" MadCap:autonum="2. ">Select and open a workspace.<br /></p>
+        <p class="StepResult">The Pricing Console opens.</p>
+        <p class="L1Num" MadCap:autonum="3. ">From <b>Batch</b>, click <img src="../Resources/Images/ICONS/ICON_JumpActionCenter.png" /> (<b>Jump</b>).</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Sales/Batch_jump.png" />
+        </p>
+        <p class="Indent1">The Pricing Batch form opens.</p>
+        <p class="L1Num" MadCap:autonum="4. ">In the <b>Hidden Fields</b> fieldset, note the setting for <b>PEO Administered Benefits</b>.</p>
+        <p class="Bullet2" MadCap:autonum="• "><b>Yes</b>: The SetDefaults() rule pulls the surcharge percent from the PEO Administered Benefits Surcharge (PEOAdministeredBenefitsSurcharge) field on the PEO Configuration form.</p>
+        <p class="Bullet2" MadCap:autonum="• "><b>No</b>: Ignore the value in the PEO Administered Benefits Surcharge field on the PEO Configuration form.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Sales/PEOBenAdmin_Batchform.png" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">Where is the value set for benefits surcharge?</p>
+        <p>On the Pricing Batch, if you have PEO Administered Benefits set to Yes, then you may want to view the actual surcharge value.</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Administrative Data</b> &gt; <b>PEO&#160;Configuration</b>.<br /></p>
+        <p class="StepResult">The PEO&#160;Configuration form opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Locate the <b>PEO Administered Benefits Surcharge</b> field.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Sales/PEOConfig_AdminBenField.png" class="thumbnail" />
+        </p>
+        <p>Both <strong>Surcharge Percent</strong> and <strong>Surcharge Amount</strong> are used in other things, such as Pricing Views and Client Master validation.&#160;These include the following:</p>
+        <p class="Bullet1" MadCap:autonum="• ">peo_vwPricingInfo_All - Reporting View</p>
+        <p class="Bullet1" MadCap:autonum="• ">peo_vwPricingInfo - Reporting View</p>
+        <p class="Bullet1" MadCap:autonum="• ">peo_pricingbatch_u_base_pricing_info - Sets the Batch Benefits Surcharge Amount, among other things, based on calculation.</p>
+        <p class="Bullet1" MadCap:autonum="• ">peo_clientmaster_s_adminpercentageviolation</p>
+        <p>For more information about Pricing and how surcharges work, log an Extranet case.</p>
+        <p class="TopicsList" MadCap:conditions="ClientSpace.Screen">Topics in this section</p>
+        <MadCap:miniTocProxy style="mc-toc-depth: 1;" MadCap:conditions="ClientSpace.Screen" />
+    </body>
+</html>

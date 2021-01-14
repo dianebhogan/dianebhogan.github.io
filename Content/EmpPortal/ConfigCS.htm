@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Employee Support Center" />Configuring ClientSpace for the Employee Support Center</h1>
+        <p>The PrismHR Employee Support Center provides a portal for employee self-service for items, such as requesting vacation and reviewing benefits. The Employee Support Center allows you to set up a direct way for your worksite managers and employees to submit questions to your team. This functionality utilizes the ClientSpace Client Service Module to process those cases and allows your internal team to  process requests and questions efficiently.  Additionally, the Employee Support Center allows employees to submit questions that are then processed as <MadCap:variable name="MyVariables.ProductName" /> Cases. </p>
+        <p>To enable the self-service functionality, you must configure the Employee Support Center and ClientSpace. This topic guides you through the <MadCap:variable name="MyVariables.ProductName" /> configuration, which involves configuring the case types on the Client Team dataform for employee questions processed as Cases. To learn more about the PrismHR&#160;Employee Support Center, see the PrismHR documentation on the <a href="https://prismhr.force.com/CSC/s/article/The-Support-Center-in-Employee-Portal" title="Link to article on PrismHR CRC" alt="Link to article on PrismHR CRC">CRC</a>.</p>
+        <h2>Configuring Case Types</h2>
+        <p>You can configure any case type to be exposed to the Employee Support Center. Case types that you enable in <MadCap:variable name="MyVariables.ProductName" /> (Case Type Visible to External Users) determine what users see in the Submit a Question dialog box on the Employee Support Center. Additionally, you must enable the option Expose Case Type in PrismHR.</p>
+        <p class="ProcedureIntro">To configure:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Administrative Data</span> &gt; <span class="UXElement">Case Type</span>. In some systems, Case Type may be listed as <span class="UXElement">Client Service Case Type</span>.<br />The Client Service Case Type dashboard opens. You can configure any case type to be exposed to the Employee Support Center.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/EmpPortal/CaseType_list.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Open a case type (select and click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Jump</span>)). <br />In our example, we selected Client Name Change.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/EmpPortal/ConfigCaseType.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Complete the form. <br />Our example shows that the value for Label Override was changed to Request name change, which is what the user will see as an option when submitting a question or request. We also enabled the options Case Type Visible to External Users and Expose Case Type in PrismHR.</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 248px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Case Type Visible to External Users</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Enable this option to allow users to create cases for the selected type: Employee Question, General Question, and Manager Question. If disabled, the case type does <span class="UXElement">not</span> appear in the Case Type lookup on the Support Center.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Expose Case Type in PrismHR</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Enable this option to allow users to select this case type on the Support Center. You can also change the displayed case type title using the Label Override field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Label Override</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Specify a different label for case type. This field applies when you enable <span class="UXElement">Expose Case Type in PrismHR</span>. If blank, the title of the case type is displayed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Default Assignment</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the person or role that you want assigned to the new case. When you select Single User or Client role, additional required fields are displayed.</p>
+                        <ul>
+                            <li><span class="UXElement">Single User</span>:&#160;	When you select Single User, then you must also set <span class="UXElement">Assigned To User</span>.</li>
+                            <li><span class="UXElement">Client&#160;Role</span>: 	When you select Client Role, then you must also set <span class="UXElement">Assigned To Field</span> and <span class="UXElement">Backup Assigned To</span>.</li>
+                        </ul>
+                        <p class="TableTextLeft"><span class="UXElement">Note</span>: When you enable <span class="UXElement">Expose Case Type in PrismHR</span>, you must select <span class="UXElement">Single User</span> or <span class="UXElement">Client Role</span>. Do <span class="UXElement">not</span>&#160;select Creator.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Assigned To User</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When you select Single User, this field is available. Select a user from the list.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Assigned To Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When you select <span class="UXElement">Client Role</span>, Assigned To Field is available. When a case of this type is created, the system looks at the Assigned To Field. If the assignment is a client team role, the system looks at the client team form to see if anyone is assigned. For example, it could look at the Account Manager field to see if there is a user. If there is no user, it will, by default, assign to the Backup Assigned To user.<br /></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Backup Assigned To</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When you select <span class="UXElement">Client Role</span>, Backup Assigned To is available.  When a case of this type is created, </p>
+                        <p class="TableTextLeft">if the assignment is a client team role, the system looks at the client team form to see if anyone is assigned. If there is no user, it will, by default, assign to the backup user.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Default Subject</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Leave blank. This field populates directly from the Support Center, Submit a Question.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Default Issue</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Leave blank. This field populates directly from the Support Center, Submit a Question.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <b>Save</b>.</li>
+        </ol>
+        <h2> <i class="fas fa-eye" style="font-family: Font Awesome 5 Free; font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="See what you can do" alt="See what you can do"></i> What else can you do with this?</h2>
+        <ul>
+            <li><span class="UXElement">Email Templates</span>: You can configure Email Templates for the selected Case Types to send notifications when a question is submitted through the Employee Support Center. See <MadCap:xref href="../EmailTemp/Intro_EmailTemplates.htm" title="Email Templates" alt="Email Templates">Email Templates</MadCap:xref>.</li>
+            <li><span class="UXElement">Case Discussions</span>: You can configure Case Discussions to provide standard replies to your Employee Support Center case types and possible avenues of communication with the employee that submitted the case. See <MadCap:xref href="../CasesTasks/ConfigCaseDisc.html" title="Configuring client service case discussions" alt="Configuring client service case discussions">Configuring client service case discussions</MadCap:xref>.</li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultConditionTagSet>
+  <ConditionTag
+    BackgroundColor="#ff0000"
+    Name="DocuSign"
+    Comment="For DocuSign email templates ONLY"
+    OriginalName="DocuSign" />
+  <ConditionTag
+    BackgroundColor="#0000ff"
+    Name="Email"
+    Comment="For regular email templates"
+    OriginalName="Email" />
+  <ConditionTag
+    BackgroundColor="#008000"
+    Name="Org-TriggeringForm"
+    Comment="For triggering email templates when Triggering Form is Organization or Org Other Info"
+    OriginalName="Org-TriggeringForm" />
+  <ConditionTag
+    BackgroundColor="#ffa500"
+    Name="Task-TriggeringForm"
+    Comment="For triggering email templates when Triggering Form is Task"
+    OriginalName="Task-TriggeringForm" />
+  <ConditionTag
+    BackgroundColor="#00ff00"
+    Name="System"
+    Comment="Type=System for Task Notfications through Email Templates"
+    OriginalName="System" />
+</CatapultConditionTagSet>

@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 54 ( CORE )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell"><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2" /></span>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;4/17/2017&#160;&#160;&#160;&#160;&#160;<strong>Sprint Ended:</strong>&#160;5/5/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release54(CORE)-TimeTrackingonActivitiesENHANCEMENT"><span style="color: rgb(51,153,102);"><strong>Time Tracking on Activities&#160;</strong></span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></h4>
+                        <hr />
+                        <p>Time tracking has been added to Activities in NEXT, allowing you to now record time for any calls, emails, followups or other activities you record.&#160; Time tracking is available from the Right "Action Items" menu in the activity detail.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release54(CORE)-UpgradeKendoUI"><span style="color: rgb(51,153,102);">Upgrade Kendo UI<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Kendo UI, the third party add-in we use for grid controls, calendars and rich text editor controls has been upgraded to the latest version to resolve an issue where an error would be thrown during drag and drop of control items, such as columns in a list or calendar items.&#160;</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release54(CORE)-ContactsearchfiltersENHANCEMENT"><span style="color: rgb(51,153,102);">Contact search filters&#160;</span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></h4>
+                        <hr />
+                        <p>The Organization Assigned To field has been added as a "More"&#160;filter parameter on the Contact Search dashboard in NEXT.&#160; Contact search records may now be filtered by this field.</p>
+                        <p><span style="color: rgb(51,153,102);"><br /></span>
+                        </p>
+                        <p><strong><span style="color: rgb(51,153,102);">Quick search first name (NEXT)</span></strong>
+                        </p>
+                        <hr />
+                        <p>Contact First Name has been added as a Quick Search parameter on the Contact Search dashboard in NEXT.</p>
+                        <h4 id="Release54(CORE)-ConverttheDocumentSearchtoNextENHANCEMENT"><span style="color: rgb(51,153,102);">Convert the Document Search to Next&#160;</span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></h4>
+                        <hr />
+                        <p>Document Search functionality has been added to ClientSpace NEXT, including the ability &#160;to search by workspace, document type, keyword and Active/Inactive/All.</p>
+                        <h4 id="Release54(CORE)-Min/Maxvalidationmessage"><span style="color: rgb(51,153,102);">Min/Max validation message<br /></span>
+                        </h4>
+                        <hr />
+                        <p>The Min / Max validation of certain fields has been enhanced - now instead of displaying the upper and lower limits of the field the system now simply tells you which value you exceeded and what the max value is</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release54(CORE)-Multiselectsopenasdirty(NEXT)"><span style="color: rgb(51,153,102);">Multi selects open as dirty (NEXT)<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where multi-lookup values were stored in the database in such a way that when the multi-lookup was loaded on opening the dataform the field would appear to be "dirty" as if changes had been made.&#160; System now respects the true state of the field so the dataform so it no longer appears fields are "dirty" on the page when it is first opened</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release54(CORE)-OrgActivitySummarybug(NEXT)"><span style="color: rgb(51,153,102);">Org Activity Summary bug (NEXT)<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where when viewing Org Activity Summary for an Org with no Activities, if the user clicked the expand summary button then attempts to collapse the summary, a javascript error would be thrown. &#160;Page will now display a message that there are no associated activities.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release54(CORE)-PossibleModuleAdminBug"><span style="color: rgb(51,153,102);">Possible Module Admin Bug<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Fixed a bug in the Module Admin area where modules would disappear and not be available again&#160;if all of the module types were deselected.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release54(CORE)-Mobileloginenhancements"><span style="color: rgb(51,153,102);">Mobile login enhancements<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Our login page has been enhanced to detect mobile devices and automatically re-direct the browser to ClientSpace NEXT.&#160;&#160;Check to be sure&#160;that you are not navigating&#160;to one of our older Classic mobile apps for Contact or Organization search (the url should contain the word "mobile").&#160; &#160;If you are still experiencing issues on a mobile device, clear your browsers history as old information may be cached in the browser.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release54(CORE)-Emailmaskissue"><span style="color: rgb(51,153,102);">Email mask issue<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Fixed a bug in the email template functionality that was defaulting the "From" user to the default app setting email regardless of whether the "From Override" was set.&#160;&#160; Application will now:</p>
+                        <ul>
+                            <li>Attempt to retrieve&#160;a "From" user from a recipient stored procedure configured on the template</li>
+                            <li>If none is found the system will use the "From Override" configured on the template.</li>
+                            <li>If this is somehow blank the system will fall back to the App Admin Email configured in App settings.</li>
+                        </ul>
+                        <p><span style="color: rgb(51,153,102);"><br /></span>
+                        </p>
+                        <h4 id="Release54(CORE)-ExposefieldsinModuleAdmin(NEXT)ENHANCEMENT"><span style="color: rgb(51,153,102);">Expose fields in Module Admin (NEXT)&#160;</span><span style="color: rgb(255,0,0);">ENHANCEMENT</span>
+                        </h4>
+                        <hr />
+                        <p>Both the "Target" field and the "ClientSpace Next" checkbox have been exposed to Global Admins in the UI, allowing Global administrators to control these settings.</p>
+                        <p><strong>Target </strong>- this determines if a configured module will open within the frame of the application or in a new tab.&#160;</p>
+                        <ul>
+                            <li>main - open the module within the application frame</li>
+                            <li>new - open module in new tab</li>
+                        </ul>
+                        <p><strong>ClientSpace NEXT </strong>- this checkbox determines whether the module is available in NEXT</p>
+                        <ul>
+                            <li>Checked - ClientSpace Next module</li>
+                            <li>Unchecked - ClientSpace Classic module<br /><br /></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p />
+                        <ul class="content-by-label conf-macro output-block">
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details">System Features Rollout <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details"><a href="R86.htm">Release 86 Notes</a> <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details"><a href="R85.htm">Release 85 Notes</a> <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details"><a href="R84.htm">Release 84 Notes</a> <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details"><a href="R83.htm">Release 83 Notes</a> <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details"><a href="R82.htm">Release 82 Notes</a> <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details"><a href="R81.htm">Release 81 Notes</a> <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details"><a href="R80.htm">Release 80 Notes</a> <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details"><a href="R79.htm">Release 79 Notes</a> <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details">Release 78 Notes <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details">Release 77 Notes <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details">Release 76 Notes <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details">Release 75 Notes <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details">Release 74 Notes <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details">Release 73 Notes <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details">Release 72 Notes <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details">Release 71 Notes <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details">Release 70 Notes <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details">Release 69 Notes <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details">Release 68 ( PEO ) <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details">Release 68 ( CORE ) <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details"><a href="Release_67___PEO__.htm">Release 67 ( PEO )</a> <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details"><a href="Release_67___Interim__.htm">Release 67 ( Interim )</a> <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details"><a href="Release_67___CORE__.htm">Release 67 ( CORE )</a> <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                            <li>
+                                <div><span class="icon aui-icon aui-icon-small aui-iconfont-page-default" title="Page">Page:</span>
+                                </div>
+                                <div class="details"><a href="Release_66___PEO__.htm">Release 66 ( PEO )</a> <span class="smalltext">(KnowledgeSpace)</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;4/17/2017&#160;&#160;&#160;&#160;&#160;<strong>Sprint Ended:</strong>&#160;5/5/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release54(CORE)-TimeTrackingonActivitiesENHANCEMENT.1"><span style="color: rgb(51,153,102);"><strong>Time Tracking on Activities&#160;</strong></span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></h4>
+                        <hr />
+                        <p>Time tracking has been added to Activities in NEXT, allowing you to now record time for any calls, emails, followups or other activities you record.&#160; Time tracking is available from the Right "Action Items" menu in the activity detail.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release54(CORE)-UpgradeKendoUI.1"><span style="color: rgb(51,153,102);">Upgrade Kendo UI<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Kendo UI, the third party add-in we use for grid controls, calendars and rich text editor controls has been upgraded to the latest version to resolve an issue where an error would be thrown during drag and drop of control items, such as columns in a list or calendar items.&#160;</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release54(CORE)-ContactsearchfiltersENHANCEMENT.1"><span style="color: rgb(51,153,102);">Contact search filters&#160;</span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></h4>
+                        <hr />
+                        <p>The Organization Assigned To field has been added as a "More"&#160;filter parameter on the Contact Search dashboard in NEXT.&#160; Contact search records may now be filtered by this field.</p>
+                        <p><span style="color: rgb(51,153,102);"><br /></span>
+                        </p>
+                        <p><strong><span style="color: rgb(51,153,102);">Quick search first name (NEXT)</span></strong>
+                        </p>
+                        <hr />
+                        <p>Contact First Name has been added as a Quick Search parameter on the Contact Search dashboard in NEXT.</p>
+                        <h4 id="Release54(CORE)-ConverttheDocumentSearchtoNextENHANCEMENT.1"><span style="color: rgb(51,153,102);">Convert the Document Search to Next&#160;</span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></h4>
+                        <hr />
+                        <p>Document Search functionality has been added to ClientSpace NEXT, including the ability &#160;to search by workspace, document type, keyword and Active/Inactive/All.</p>
+                        <h4 id="Release54(CORE)-Min/Maxvalidationmessage.1"><span style="color: rgb(51,153,102);">Min/Max validation message<br /></span>
+                        </h4>
+                        <hr />
+                        <p>The Min / Max validation of certain fields has been enhanced - now instead of displaying the upper and lower limits of the field the system now simply tells you which value you exceeded and what the max value is</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release54(CORE)-Multiselectsopenasdirty(NEXT).1"><span style="color: rgb(51,153,102);">Multi selects open as dirty (NEXT)<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where multi-lookup values were stored in the database in such a way that when the multi-lookup was loaded on opening the dataform the field would appear to be "dirty" as if changes had been made.&#160; System now respects the true state of the field so the dataform so it no longer appears fields are "dirty" on the page when it is first opened</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release54(CORE)-OrgActivitySummarybug(NEXT).1"><span style="color: rgb(51,153,102);">Org Activity Summary bug (NEXT)<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where when viewing Org Activity Summary for an Org with no Activities, if the user clicked the expand summary button then attempts to collapse the summary, a javascript error would be thrown. &#160;Page will now display a message that there are no associated activities.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release54(CORE)-PossibleModuleAdminBug.1"><span style="color: rgb(51,153,102);">Possible Module Admin Bug<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Fixed a bug in the Module Admin area where modules would disappear and not be available again&#160;if all of the module types were deselected.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release54(CORE)-Mobileloginenhancements.1"><span style="color: rgb(51,153,102);">Mobile login enhancements<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Our login page has been enhanced to detect mobile devices and automatically re-direct the browser to ClientSpace NEXT.&#160;&#160;Check to be sure&#160;that you are not navigating&#160;to one of our older Classic mobile apps for Contact or Organization search (the url should contain the word "mobile").&#160; &#160;If you are still experiencing issues on a mobile device, clear your browsers history as old information may be cached in the browser.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release54(CORE)-Emailmaskissue.1"><span style="color: rgb(51,153,102);">Email mask issue<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Fixed a bug in the email template functionality that was defaulting the "From" user to the default app setting email regardless of whether the "From Override" was set.&#160;&#160; Application will now:</p>
+                        <ul>
+                            <li>Attempt to retrieve&#160;a "From" user from a recipient stored procedure configured on the template</li>
+                            <li>If none is found the system will use the "From Override" configured on the template.</li>
+                            <li>If this is somehow blank the system will fall back to the App Admin Email configured in App settings.</li>
+                        </ul>
+                        <p><span style="color: rgb(51,153,102);"><br /></span>
+                        </p>
+                        <h4 id="Release54(CORE)-ExposefieldsinModuleAdmin(NEXT)"><span style="color: rgb(51,153,102);">Expose fields in Module Admin (NEXT)&#160;</span>
+                        </h4>
+                        <h4 id="Release54(CORE)-Quicksearchfirstname(NEXT)"><span style="color: rgb(51,153,102);">Quick search first name (NEXT)<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Contact First Name has been added as a Quick Search parameter on the Contact Search dashboard in NEXT.</p>
+                        <h4 id="Release54(CORE)-"><span style="color: rgb(51,153,102);"><br /></span>
+                        </h4>
+                        <hr />
+                        <p>Both the "Target" field and the "ClientSpace Next" checkbox have been exposed to Global Admins in the UI, allowing Global administrators to control these settings.</p>
+                        <p><strong>Target </strong>- this determines if a configured module will open within the frame of the application or in a new tab.&#160;</p>
+                        <ul>
+                            <li>main - open the module within the application frame</li>
+                            <li>new - open module in new tab</li>
+                        </ul>
+                        <p><strong>ClientSpace NEXT </strong>- this checkbox determines whether the module is available in NEXT</p>
+                        <ul>
+                            <li>Checked - ClientSpace Next module</li>
+                            <li>Unchecked - ClientSpace Classic module<br /><br /></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

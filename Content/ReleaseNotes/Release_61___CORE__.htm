@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 61 ( CORE )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;10/09/2017&#160;&#160;&#160;&#160;&#160;<strong>Sprint Ended:</strong>&#160;11/03/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p>
+                            <br />
+                        </p>
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <div class="layout container-fluid">
+                            <div class="main-content">
+                                <p>
+                                    <br />
+                                </p>
+                                <p>
+                                    <br />
+                                </p>
+                                <h4 id="Release61(CORE)-ClientSpaceCalendarshowsdeclinedexternalevents"><span style="color: rgb(51,153,102);">ClientSpace Calendar shows declined external events&#160;</span>
+                                </h4>
+                                <hr />
+                                <p>Resolved an issue where an event that has been declined on an external calendar outside of ClientSpace would continue to show as an active event on the ClientSpace calendar.&#160; The system has been updated to remove these declined events.</p>
+                                <p>
+                                    <br />
+                                </p>
+                                <h4 id="Release61(CORE)-TemplateFilesRightMenuNotDisplaying"><span style="color: rgb(51,153,102);">Template Files Right Menu Not Displaying</span>
+                                </h4>
+                                <hr />
+                                <p>Resolved an issue where template attachments were not being displayed on the workspace level tasks generated from the template task. Attachments now display properly as "Template Attachments".</p>
+                                <p>
+                                    <br />
+                                </p>
+                                <h4 id="Release61(CORE)-Gridcolumnhidingissue."><span style="color: rgb(51,153,102);">Grid column hiding issue.</span>
+                                </h4>
+                                <hr />
+                                <p>Resolved 2 grid column hiding issues -</p>
+                                <ul>
+                                    <li>Problem with the resize threshold that forced columns to hide too quickly, especially on mobile devices</li>
+                                    <li>Problem with grid refresh which would reset the grid to defaults after editing a list record.&#160; Custom column selection and re-sizing would get reset if you edited a record.&#160;</li>
+                                </ul>
+                                <p>Thresholds have been adjusted to be less likely to hide columns and the grid will retain custom configuration after editing list items.</p>
+                                <p>
+                                    <br />
+                                </p>
+                                <h4 id="Release61(CORE)-FileRightMenuSecurityIssue"><span style="color: rgb(51,153,102);">File Right Menu Security Issue</span>
+                                </h4>
+                                <hr />
+                                <p>Resolved an issue with the right menu attachment action item that would cause it to not display properly under certain circumstances.</p>
+                                <p>
+                                    <br />
+                                </p>
+                                <h4 id="Release61(CORE)-NewBusinessRule(RunMerge)-ENHANCEMENT"><span style="color: rgb(51,153,102);">New Business Rule (Run Merge) -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                                </h4>
+                                <hr />
+                                <p>A new&#160;core business (_GenerateMergeFile) has been created that will run a merge and place the resulting file in a specified field.<br />This rule is configured using 4 Parameters<br />&#160;&#160;&#160;&#160; - <strong>Merge</strong> (Merge GUID) - This&#160;can be&#160;copied from&#160;the Merge Admin record<br />&#160;&#160;&#160;&#160; - <strong>Target Form</strong> - form on which the merge will be stored(Can only be a multiform if #ThisForm is used)<br />&#160;&#160;&#160;&#160; - <strong>Target Field</strong> -&#160;Field in which the merge will be stored(validate that this is a file upload field)&#160; If attaching to dataform record #Attachment may be used - this will overwrite as new files are added, not append.<br />&#160;&#160;&#160;&#160; - <strong>File Prefix</strong> - the merge output will be renamed to 'FilePrefix - YYYYMMDDYYMMSS.ext if&#160;set to #NoChange the file will not be renamed.</p>
+                                <p>
+                                    <br />
+                                </p>
+                                <h4 id="Release61(CORE)-DocuSign:MultipleDocuments-ENHANCEMENT"><span style="color: rgb(51,153,102);">DocuSign: Multiple Documents -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                                </h4>
+                                <hr />
+                                <p>The "DocuSign Get Docs Status" scheduled process has been updated so that if you are using the Attachments feature to include additional documents (multiples) in an envelope, it will place the documents back in the field from which they came when the process is completed.</p>
+                                <p>We would previously download these documents out of DocuSign (when envelop status is completed) as a single document but it is possible to pull them back out as separate documents. When we do this we place the completed doc in the field it was retrieved from. This allows users to use the _GenerateMergeFile business rule (see above) to run a merge and deposit in a field, then have a chance to review the document before send to DocuSign for signature. Then once completed and retrieved the documents would go back where they were pulled from.</p>
+                                <p>This process runs business logic on the destination dataforms and also uses file versioning if enabled for that site. The downloaded doc is pinnned as a new version.</p>
+                                <p>
+                                    <br />
+                                </p>
+                                <h4 id="Release61(CORE)-Docusign-Ignoreifnotpresent-ENHANCEMENT"><span style="color: rgb(51,153,102);">Docusign - Ignore if not present&#160; -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                                </h4>
+                                <hr />
+                                <p>DocuSign allows you to include a parameter on each Recipient/Tab in the envelop called "Ignore If Not Present".&#160;&#160; The DocuSign integration has been enhanced&#160;enabling you to define and include a recipient and associated tags in the envelope but not throw an error if that tags is not found in the envelope's documents using the "Ignore If Not Present" checkbox on the recipient configuration.&#160; This makes tags "optional" as the system allows the send to DocuSign with or without tags marked in this way.</p>
+                                <p>
+                                    <br />
+                                </p>
+                                <h4 id="Release61(CORE)-DocuSign-NumberofTabsNeededENHANCEMENT"><span style="color: rgb(51,153,102);">DocuSign - Number of Tabs Needed&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                                </h4>
+                                <hr />
+                                <p>A "# Tags Needed" integer field was added to the email recipient dialog so that if the "Ignore If Not Present" box it checked, it will clone that Recipient &amp; Tab for how ever many Tags are needed, appending "-1", "-2", and so on to the end of the tag. This enables us to have a dynamic number of Tags generated by the merge SQL and placed into the document while only having to setup one Recipient record on the email template.&#160; Let's say you have a /Name/ tag for the signees name - Instead of creating separate /Name/-1, /Name/-2, /Name/-3 recipient entries you would create a single recipient entry with the tag of /Name/ and set the "# of Tabs Needed" to 3.&#160; It is a best practice to check the "Ignore if not present" checkbox otherwise Docusign will reject the document if all tabs are not present.</p>
+                                <p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" height="150" src="https://clientspace.atlassian.net/wiki/download/thumbnails/218759174/Signature%20Tabs.jpg?version=1&amp;modificationDate=1510581322424&amp;cacheVersion=1&amp;api=v2&amp;width=147&amp;height=150" srcset="https://clientspace.atlassian.net/wiki/download/thumbnails/218759174/Signature%20Tabs.jpg?version=1&amp;modificationDate=1510581322424&amp;cacheVersion=1&amp;api=v2&amp;width=294&amp;height=300 2x, https://clientspace.atlassian.net/wiki/download/thumbnails/218759174/Signature%20Tabs.jpg?version=1&amp;modificationDate=1510581322424&amp;cacheVersion=1&amp;api=v2&amp;width=147&amp;height=150 1x" /></span>
+                                </p>
+                                <h4 id="Release61(CORE)-"><span style="color: rgb(51,153,102);"><br /></span>
+                                </h4>
+                                <h4 id="Release61(CORE)-TemplateTaskFieldReplaceIssue"><span style="color: rgb(51,153,102);">Template Task Field Replace Issue</span>
+                                </h4>
+                                <hr />
+                                <p>Resolved an issue with Field replacement where if a soft error was triggered in the save process field replacement would not work properly for tabbed dataform fields.</p>
+                                <p>
+                                    <br />
+                                </p>
+                                <h4 id="Release61(CORE)-GmailRecurringEvents"><span style="color: rgb(51,153,102);">Gmail Recurring Events</span>
+                                </h4>
+                                <hr />
+                                <p>Resolved an issue where GMAIL recurring events would not sync properly, causing the events to sometimes appear on the incorrect date.</p>
+                                <p>
+                                    <br />
+                                </p>
+                                <h4 id="Release61(CORE)-CloneUserbug"><span style="color: rgb(51,153,102);">Clone User bug</span>
+                                </h4>
+                                <hr />
+                                <p>Fixed an issue where cloning an existing user with a default workspace would not clone the default workspace, causing issues.&#160; &#160;System now will appropriately clone the users default workspace when generating the new user account.</p>
+                                <p>
+                                    <br />
+                                </p>
+                                <h4 id="Release61(CORE)-EnableFieldsetInfoIconENHANCEMENT"><span style="color: rgb(51,153,102);">Enable Fieldset Info Icon&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                                </h4>
+                                <hr />
+                                <p>Fieldset comments now work like field comments with an "I" icon and pop up bubble which displays the Comments from field properties.</p>
+                                <p>
+                                    <br />
+                                </p>
+                                <h4 id="Release61(CORE)-RemoveALLinstancesofthenwDownloadandSpellcheckerActiveXfromclassic"><span style="color: rgb(51,153,102);">Remove ALL instances of the nwDownload and Spellchecker ActiveX from classic&#160;</span>
+                                </h4>
+                                <hr />
+                                <p>ALL instances of the Download ActiveX and Spellchecker&#160;including the download button contro have been removed l from Classic.&#160;&#160;</p>
+                                <p>All other ActiveX controls have been left&#160;as is.</p>
+                                <p>
+                                    <br />
+                                </p>
+                                <h4 id="Release61(CORE)-Act-OnLeadScoreIssue"><span style="color: rgb(51,153,102);">Act-On LeadScore Issue</span>
+                                </h4>
+                                <hr />
+                                <p>Resolved an issue where a newly created Act-On record with a NULL lead score would cause an error to be thrown and the Act-On process to fail.&#160; The Act-On API now properly handles NULL lead scores.</p>
+                                <p>
+                                    <br />
+                                </p>
+                                <h4 id="Release61(CORE)-WidgetLayoutenhancement"><span style="color: rgb(51,153,102);">Widget Layout enhancement&#160;</span>
+                                </h4>
+                                <hr />
+                                <p>Resolved display issues on some widgets that caused them to not display the entire widget panel in some cases.&#160;&#160;</p>
+                                <p>
+                                    <br />
+                                </p>
+                                <h4 id="Release61(CORE)-UserAdminInterface-Phase1ENHANCEMENT"><span style="color: rgb(51,153,102);">User Admin Interface - Phase 1&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                                </h4>
+                                <hr />
+                                <p>A user admin interface has been added to NEXT - to access it go to <strong>System Admin | User Admin.</strong>&#160; This new admin tool contains the following features:</p>
+                                <p>Search for users by Quick Search:</p>
+                                <ul>
+                                    <li>Name</li>
+                                    <li>Email</li>
+                                    <li>LoginID</li>
+                                    <li>Company</li>
+                                </ul>
+                                <p>Search for users by "More" Search:</p>
+                                <ul>
+                                    <li>Workspace&#160;</li>
+                                    <li>Company</li>
+                                    <li>Email</li>
+                                    <li>Last Name</li>
+                                    <li>Department</li>
+                                    <li>Status</li>
+                                    <li>Expiration Date</li>
+                                    <li>Global Admins</li>
+                                </ul>
+                                <p>This interface also provides the ability to Assume, Edit, Delete and Add (from scratch) Users.&#160;&#160;</p>
+                                <p />
+                                <h4 id="Release61(CORE)-Gridcolumnhidingissue"><span style="color: rgb(51,153,102);">Grid column hiding issue</span>
+                                </h4>
+                                <hr />
+                                <p>Resolved 2 grid column hiding issues -</p>
+                                <ul>
+                                    <li>Problem with the resize threshold that forced columns to hide too quickly, especially on mobile devices</li>
+                                    <li>Problem with grid refresh which would reset the grid to defaults after editing a list record.&#160; Custom column selection and re-sizing would get reset if you edited a record.&#160;</li>
+                                </ul>
+                                <p>Thresholds have been adjusted to be less likely to hide columns and the grid will retain custom configuration after editing list items.</p>
+                                <p>
+                                    <br />
+                                </p>
+                                <h4 id="Release61(CORE)-MultipleSelectElementCustomQueryENHANCEMENT"><span style="color: rgb(51,153,102);">Multiple Select Element Custom Query&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                                </h4>
+                                <hr />
+                                <p>The multi lookup (core) has been enhanced to accept a custom SQL stored procedure and decode function.&#160; This allows the multi - lookup to display administrative information such as&#160;dataform key, user id, project id and organization id.</p>
+                                <p>
+                                    <br />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

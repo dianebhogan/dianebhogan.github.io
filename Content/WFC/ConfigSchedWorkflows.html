@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring scheduled workflows</h1>
+        <p>
+            <MadCap:concept term="Workflow Channels" />Business processes can sometimes be triggered upon reaching a specific date, such as a task that needs to be completed two weeks prior to a client's first payroll date. Workflow channels allow you to configure these types of automatic business processes using scheduled workflows.&#160; This topic provides a high-level overview of scheduled workflows as well as step-by-step instructions that can help you to begin using this robust feature to schedule the creation of workflow generated tasks and cloned dataforms.&#160;&#160;</p>
+        <p class="ProcedureIntro">To configure scheduled workflows:
+        </p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <strong>System Admin</strong> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <strong>Workflow Channels</strong>.<br /></p>
+        <p class="StepResult">The Workflow Channels dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Click <strong>Add</strong>.<br /></p>
+        <p class="StepResult">The Choose Workflow Triggering Type dialog opens with options to select <b>Real Time</b> or <b>Scheduled</b>.</p>
+        <p class="L1Num" MadCap:autonum="3. ">When you select <strong>Scheduled</strong>, the Add Workflow Channel wizard opens with Step 1 Channel.&#160;In this step, you need to configure the date that triggers the scheduled Workflow Action.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Admin/SchedWorkflow_Step1.png" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="4. ">Configure the following options:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 126px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Channel Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Provide a descriptive name of the workflow process.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Triggering Form</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft"> Select the form to trigger the workflow.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Presents a list of available Date fields from the Triggering Form selected.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Frequency Limit</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The Workflow task or dataform is triggered once every X days based on the value of this field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Date Offset</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The number of days (before or after the date stored in the triggering field) this workflow item triggers.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Grace Period</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft"> The number of days, starting with the offset date that the workflow attempts to trigger. When this grace period has ended, the workflow does not trigger again until the frequency limit has passed, and the triggering conditions are again met.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Triggered Form</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">The task or dataform to be generated when the triggering conditions are met.&#160;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="5. ">After you have configured the Scheduled Workflow Action, you receive a brief synopsis of the Schedule.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Workflow/Synopsis.png" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="6. ">When the last field is completed, the wizard progresses to Step 2 Content.</p>
+        <p class="L1Num" MadCap:autonum="7. ">After your configured workflow is saved, these conditions are evaluated by a scheduled process (<strong>Generate Scheduled Workflows</strong>) to determine if the date field combined with the other workflow schedule options&#160;as well as any additional Conditions added in Step 4 (Conditions) are met.&#160;</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">Because these workflow triggers are scheduled, the real time field analysis to determine if a field has changed (IsDirty) cannot happen.&#160;Because of this, notice that the IsDirty qualifier is not available when adding additional triggering conditions to scheduled tasks.</p>
+        <p>If all the triggering conditions are met, the dataform or task is generated from the Workflow.&#160;These actions can then trigger other dependent workflow items (such as a second task spawned when the scheduled task is complete) or completely new workflow channels.&#160;In this way, scheduled workflows can  drive your business processes based on milestone triggering dates stored in your system.<br /></p>
+    </body>
+</html>

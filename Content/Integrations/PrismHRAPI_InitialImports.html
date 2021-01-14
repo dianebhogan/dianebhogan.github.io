@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Configuring the PrismHR API for Initial Imports <i class="fas fa-cog" style="font-size:32px;color:var(--BrandPrimary2);padding:1px 6px 6px;" title="ClientSpace Advanced Administration" alt="ClientSpace Advanced Administration"></i></h1>
+        <p>This section describes the PrismHR API Initial Import process with step-by-step configuration information. Before you start, you need to create a case with PrismHR to request access for <MadCap:variable name="MyVariables.ProductName" /> to the API interface.</p>
+        <p>The <b>Initial</b> Import process, pulls all Client and related data from the PrismHR system into a ClientSpace installation.&#160;You must test  the validity of the data retrieved by the API against existing data being imported into ClientSpace. This is crucial to ensure a smooth transition to API imports. See <MadCap:xref href="PrismHRAPI_GoLive.htm" title="Before Go Live" alt="Before Go Live">Before Go Live</MadCap:xref>. </p>
+        <p class="ActionTip">If you try to configure this on your own and are not sure of your configuration or next steps, STOP, and log an Extranet case.&#160;When enabled, the API overwrites existing data values, potentially leading to data loss if not properly configured.</p>
+        <p class="ProcedureIntro">To get started, you need the following:</p>
+        <ul>
+            <li>HRP API URL</li>
+            <li>HRP Callback URL</li>
+            <li>HRP Username</li>
+            <li>HRP Password</li>
+            <li>HRP PEO ID</li>
+        </ul>
+        <p>Also ensure that when setting up the PrismHR API for a Client, always request that the API account has access to the following API services:</p>
+        <ul>
+            <li>Login Service</li>
+            <li>Subscription Service</li>
+            <li>ClientMaster Service</li>
+            <li>Employee Service</li>
+        </ul>
+        <p class="TopicsList" MadCap:conditions="ClientSpace.Screen">Topics in this section</p>
+        <MadCap:miniTocProxy MadCap:conditions="ClientSpace.Screen" />
+    </body>
+</html>

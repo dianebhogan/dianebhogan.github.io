@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Determining the Calendar Events Workspace<![CDATA[
+                        ]]></h1>
+        <p><MadCap:variable name="MyVariables.ProductName" /> allows for multiple CRM related workspaces. This configuration is beneficial if a client wants to separate their sales group into multiple territories or divisions and it is necessary to keep their Organizations, Contacts, Calendar Events,&#160;and Activities separated.
+        </p>
+        <p>The order of operations to determine which Workspace the calendar event is attached, is as follows: 
+        </p>
+        <p class="L1Num1" MadCap:autonum="1. "><MadCap:variable name="MyVariables.ProductName" /> checks to see if there is only one Client Workspace for this Org. If so, use it. If there are more than one, it prompts the user to select a workspace.
+            </p>
+        <p class="L1Num" MadCap:autonum="2. ">If there are Client Workspaces for this Org, it then checks if there is only one workspace that is marked as CRM Related (on the Workspace Settings tab). If so, use it. 
+            </p>
+        <p class="L1Num" MadCap:autonum="3. ">If there are CRM Related workspaces, it then falls back to what's configured as the Sales Workspace App Setting.
+            </p>
+    </body>
+</html>

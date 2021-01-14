@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Import Queue management</h1>
+        <p>As records are retrieved from PrismHR, Import Queue (tblImportQueue) records are created and modified. The Import Queue Management dashboard and detail pages enable you to reset queue item statuses (reset to Pending, set to Complete) and to interrogate error data using the Log Data field. </p>
+        <p>All PrismHR failures are stamped on the Queue record. If the queue record fails to import, it is put in Failure status. The reason for the error is included in the log data row.</p>
+        <p>The Import Queue management suite is available from <b>System Admin</b>  &gt; <b>Imports</b> &gt; <b>Manage Import Queue</b>.</p>
+        <p>Configuration includes:</p>
+        <ul>
+            <li>ImportIDs for Lookups and other data (ClientSpace)</li>
+            <li>Import Map Headers (ClientSpace)</li>
+            <li>Import Map Details (ClientSpace)</li>
+            <li>API Configuration form&#160;(ClientSpace)</li>
+            <li>The PrismHR Site</li>
+        </ul>
+        <h2>Import IDs</h2>
+        <p>Certain Lookups and other data require translation to Prism values.&#160;This is done using ImportIDs on the following data.
+</p>
+        <table style="width: 100%; mc-table-style: url('../Resources/TableStyles/Standard_Table.css'); margin-left: 0; margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1">
+            </col>
+            <col class="TableStyle-Standard_Table-Column-Column1">
+            </col>
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1" colspan="2">
+                        <p class="TableHead">Import IDs</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <ul>
+                            <li>Contract Type (ClientMaster)</li>
+                            <li>Contract Status (ClientMaster)</li>
+                            <li>HR Rep User</li>
+                            <li>Sales Rep User</li>
+                            <li>Employment Status (Employee)</li>
+                            <li>Employment Type (Employee)</li>
+                            <li>Marital Status&#160;(Employee)</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <ul>
+                            <li>Gender&#160;(Employee)</li>
+                            <li>Ethnic Classification&#160;(Employee)</li>
+                            <li>Work State Filing Status&#160;(Employee)</li>
+                            <li>Home State Filing Status&#160;(Employee)</li>
+                            <li>Pay Method (Employment)</li>
+                            <li>Pay Frequency&#160;(Employment)</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Import Map Headers
+        </h2>
+        <p>Import Map Headers must be configured for each file type to be produced and MUST match the following PEO headers<strong>**</strong>.&#160;Configure the Custom Import Class for each Header.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: auto;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1">
+            </col>
+            <col class="TableStyle-Standard_Table-Column-Column1">
+            </col>
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">File</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Custom import class</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">HRPAPI_initial_company*.csv</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">ClientSpace.PEO.Import.ClientMaster</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">HRPAPI_initial_clientteam*.csv</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">No custom import class</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">HRPAPI_initial_employee*.csv</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">ClientSpace.PEO.Import.Employee</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">HRPAPI_initial_employment*.csv</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">ClientSpace.PEO.Import.Employment</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">HRPAPI_initial_location*.csv</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">ClientSpace.PEO.Import.Location</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>**These import map configurations should have been pushed to your site but may be inactive</strong>.&#160;If you find these configurations do not on your site, log an Extranet case to have these configurations added.
+        </p>
+        <h2>HRP Subscription Dataforms
+        </h2>
+        <p>The following dataforms are typically used in the Admin Workspace:</p>
+        <ul style="font-weight: normal;">
+            <li>Client Schema
+            </li>
+            <li>Employee Schema
+            </li>
+            <li>Voucher Schema
+            </li>
+        </ul>
+        <p class="StepResult">&#160;</p>
+        <p>Each form contains:</p>
+        <ul>
+            <li><strong>Schema</strong>: For Import Ongoing only, defines the type of data this Subscription ID evaluates.</li>
+            <li><strong>Subscription ID</strong>: The HRP ID of the registered Subscription for this ClientSpace installation.</li>
+            <li><strong>Replay ID</strong>: The last Event marker processed, from the last time the Ongoing Scheduled Process successfully ran.</li>
+            <li><strong>Voucher Last Process Date</strong>: The last date the Voucher Scheduled Process successfully ran.</li>
+            <li><strong>Notes</strong>: General information such as the date and time the scheduled process ran, the Replay ID used.</li>
+        </ul>
+        <p class="StepResult">&#160;</p>
+        <p class="TableTextLeftBold">Excludes Import Map Detail</p>
+        <p>Review the PrismHR Security subscription record to ensure that Users=activeUser is NOT part of the Excludes Import Map Detail for the HRPAPI_users import. The import must contain a valid record for the Active flag.</p>
+        <p class="TableTextLeftBold">User status in PrismHR and ClientSpace</p>
+        <p>The ClientSpace user Active value is automatically set to the PrismHR value so that when a user is inactivated in PrismHR, the same status is reflected in ClientSpace.</p>
+        <p class="TableTextLeftBold">Contact status in PrismHR and <MadCap:variable name="MyVariables.ProductName" /></p>
+        <p>When a Contact is deleted in PrismHR, the corresponding Contact  in <MadCap:variable name="MyVariables.ProductName" /> is marked as Inactive.</p>
+    </body>
+</html>

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <table style="mc-table-style: url('../TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 164px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Mailbox&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required.  The email address
+ for the email account with which you would like to integrate. Email addresses
+ are case insensitive and must be in a valid format.&#160;This address must be
+ attached to a supported email provider (such as Gmail, AOL). The address must be an actual email address associated with this mailbox and not an alias for the mailbox.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Later in the configuration process, an email alias is created using this email address. The alias provides to <MadCap:variable name="MyVariables.ProductName" /> the default values for the workspace, project type, and client.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Password </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required. The user account
+ password.&#160;Depending on the email provider, this field may be case sensitive,
+ so ensure that you use the appropriate case when you enter the value.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">When editing an existing credential, the Password field is hidden. To change the password, see <MadCap:xref href="../../Integrations/EmailInteg_Credentials.htm#Edit" title="Edit a credential" alt="Edit a credential">Edit a credential</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Host&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required. The IMAP mail host for
+ the mail client.&#160;This setting is used when connecting to the
+ mailbox.&#160;For information on your IMAP host settings, contact your mail
+ provider.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Port</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required. The secured firewall
+ port used by your provider to allow access to the mailbox.&#160;Most IMAP
+ providers use Port 993, so we default the field to this.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Use Secure Connection (HTTPS)&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Connect to the mail provider over the
+ internet via unsecured (HTTP) or secured (HTTPS) access.&#160;Defaults to selected
+ (secured).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Configuration Name&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required. Should contain the
+ application name associated with the application code.&#160;This name will
+ appear in Lists, so it should&#160;provide a hint at the mailbox
+ association.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Description </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required. Should contain a brief
+ description of this credential.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Test Connection&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Test Connection is
+ disabled until all required fields are completed, at which point the button
+ color indicates it is ready for use.   </p>
+                        <p>Select <b>Test Connection</b> to
+ ensure the connection information connects to the mailbox successfully
+ before proceeding to the next step.&#160;A successful test presents the   message: We were able to connect to your mailbox.</p>
+                        <p>Unsuccessful tests yield an error message. Some examples of common errors and their causes:</p>
+                        <ul>
+                            <li><code>xm001 NO [AUTHENTICATIONFAILED] Invalid credentials (Failure)</code> - Bad username or password</li>
+                            <li><code>No such host is known</code> - Bad hostname</li>
+                            <li><code>Object reference not set to an instance of an object</code>. This message is more generic but is most commonly caused when a secure connection is required, and the <b>Use Secure Connection</b> option is cleared.</li>
+                        </ul>
+                        <p>Before deleting a credential, you must ensure that it is not associated with any email aliases, else an error will be logged.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

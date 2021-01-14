@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultSearchFilterSet>
+  <SearchFilter
+    Name="Dataforms"
+    Comment=""
+    Order="4"
+    Concepts="Dataforms" />
+  <SearchFilter
+    Name="Release Notes"
+    Comment=""
+    Order="10"
+    Concepts="Release Notes" />
+  <SearchFilter
+    Name="Case"
+    Comment=""
+    Order="0"
+    Concepts="Cases" />
+  <SearchFilter
+    Name="Videos"
+    Comment=""
+    Order="15"
+    Concepts="Videos" />
+  <SearchFilter
+    Name="Business Intelligence"
+    Comment=""
+    Order="2"
+    Concepts="Business Intelligence" />
+  <SearchFilter
+    Name="Modules"
+    Comment=""
+    Order="9"
+    Concepts="Modules" />
+  <SearchFilter
+    Name="Case Discussion Email Templates"
+    Comment=""
+    Order="1"
+    Concepts="Case Discussion Email Templates" />
+  <SearchFilter
+    Name="Reply Above the Line"
+    Comment=""
+    Order="11"
+    Concepts="ReplyAboveLine" />
+  <SearchFilter
+    Name="Email Templates"
+    Comment=""
+    Order="6"
+    Concepts="Email Templates" />
+  <SearchFilter
+    Name="Business Rules"
+    Comment=""
+    Order="3"
+    Concepts="Business Rules" />
+  <SearchFilter
+    Name="DocuSign"
+    Comment=""
+    Order="5"
+    Concepts="DocuSign" />
+  <SearchFilter
+    Name="Email Integration"
+    Comment=""
+    Order="7"
+    Concepts="Email Integration" />
+  <SearchFilter
+    Name="Employee Support Center"
+    Comment=""
+    Order="8"
+    Concepts="Employee Support Center" />
+  <SearchFilter
+    Name="User Profile"
+    Comment=""
+    Order="14"
+    Concepts="User Profile" />
+  <SearchFilter
+    Name="Security"
+    Comment=""
+    Order="13"
+    Concepts="Security" />
+  <SearchFilter
+    Name="Sales"
+    Comment=""
+    Order="12"
+    Concepts="Sales" />
+  <SearchFilter
+    Name="Workflow Channels"
+    Comment=""
+    Order="16"
+    Concepts="Workflow Channels" />
+</CatapultSearchFilterSet>

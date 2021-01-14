@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Application troubleshooting</h1>
+        <p>Application issues occur during normal use, sometimes the error codes are helpful, sometimes not, but if you have the code, try using the error info in the search box. The following documented errors comprise a list of troubleshooting tips.</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>"Invalid Cast Exception" when using Business Intelligence</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You run a report that has an embedded drill down link and when you click the link an error is thrown: "Invalid cast exception - an error has occurred while processing this request".  </p>
+                <p><b>Cause</b>: Column additions in the middle of the report have caused the drill down link to break as the referenced column has been moved.</p>
+                <p><b>Solution</b>: Adding a column to the middle of a report with drill downs will shift the column count below the new column by one.  This can be corrected by either:
+</p>
+                <p class="Bullet1" MadCap:autonum="• ">
+Move the new column to the end of the report.</p>
+                <p class="Bullet1" MadCap:autonum="• ">
+Update your embedded drill down links to account for the new column.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>"You are not authorized to view this page" on Pricing Console</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You attempt to access the ClientSpace pricing console and you receive the error "You are not authorized to view this page".</p>
+                <p><b>Cause</b>: You do not have sufficient security rights to add/edit one of the Pricing Console associated functions or dataforms (Client Master, Pricing Batch, State or Code). </p>
+                <p style="font-weight: normal;"><b>Solution</b>: Update the Role security to include appropriate rights to View/Add/Edit the forms using the following steps. There are several security entities in use by the Pricing Console.  The most common are:</p>
+                <p class="Bullet1" MadCap:autonum="• ">CRM - creating and managing Organizations - At least View rights</p>
+                <p class="Bullet1" MadCap:autonum="• ">biz_workflow_cm_create_batch - creating batches from the Client Master  - At least Add Rights to create new batch</p>
+                <p class="Bullet1" MadCap:autonum="• ">PricingConsole - access to the pricing console - At least View rights</p>
+                <p class="Bullet1" MadCap:autonum="• ">QuickEdit - At least <b>Add</b> rights</p>
+                <p class="Bullet2" MadCap:autonum="• ">QuickEdit_subfields - for each field on the Quick Edit form there are available view/Add/Edit rights, these will need to be set for each field (if editing of pricing rows is allowed)</p>
+                <p>At least <b>View</b> rights are also required for the related Dataform entities such as:</p>
+                <p class="Bullet1" MadCap:autonum="• ">gen_PricingBatch</p>
+                <p class="Bullet1" MadCap:autonum="• ">gen_Pricing</p>
+                <p class="Bullet1" MadCap:autonum="• ">gen_PricingBatchState</p>
+                <p class="Bullet1" MadCap:autonum="• ">gen_PricingCompCode</p>
+                <p class="Bullet1" MadCap:autonum="• ">gen_ClientMaster</p>
+                <p>If any of the dataforms are secured the user will need to be in a role with appropriate rights for the dataform, such as Add or Edit rights.</p>
+                <p>
+                    See <MadCap:xref class="Heading" href="../Security/AdminRoleSec.htm">Administering role security</MadCap:xref>.
+</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Pricing Console errors</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You attempt to open the pricing console and receive SQL errors relating to Arithmetic Overflow.</p>
+                <p><b>Cause</b>: Field value is not properly set or way outside normal parameters.  Something such as the Admin % field being set to 150000%.  Downstream calculations that use this number will fail.</p>
+                <p><b>Solution</b>: Fix erroneous data</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Find the erroneous field on one of the Pricing Forms - either Batch, State, or Code.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Because you cannot access these forms through the Pricing Console, you need to go to the Workspace in question and Access Dataforms from the Workspace Action Menu.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Navigate to the forms in question, find the offending field, and correct the value.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Dataform save error: "Object reference not set to an instance of an object..."</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You attempt to add a new field to a dataform and receive the error "Whoops - something went wrong..."  When you check the exception logs you find the slightly more detailed error:  "Object reference not set to an instance of an object. URL: http://yourinstall.clientspace.net/Next/Admin<br />/ProjectAttribute/Detail" the system will not allow you to save the field.</p>
+                <p><b>Cause</b>: You have attempted to use a field name that is already in use on the dataform. This could be a system generated field, such as CreateDate, UpdateDate, CreatedByUserID, UpdatedByUserID, etc. SQL will not allow you to create two columns on the same table with exactly the same name, hence the error.</p>
+                <p><b>Solution</b>: Change the field name and re-save. Avoid using any of the names for the existing fields on the dataform, or any of the system protected fields. If you are unsure of the preexisting field names, you should run the Dataform Specification report to get a list of all the current dataform field names.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Error when editing field information: "Incorrect syntax near ',' "</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: When trying to edit the Field configuration on a dataform, the following error appears:</p>
+                <p class="Code">Incorrect syntax near ','.</p>
+                <p class="Code">Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.</p>
+                <p><b>Cause</b>:  A lookup field does not have a Lookup Group defined and is being set as a Multiform Column.  The lookup group is used to decode the column for the list, so the system effectively doesn't know how to decode the column.</p>
+                <p><b>Solution</b>: Open the Lookup field that is defined as a Multiform Column and add a Lookup Group. See <MadCap:xref class="Heading" href="../Admin_Config/Lookups.html">Adding or configuring lookups</MadCap:xref>.
+</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Error when running PDF Merge: "Rebuild failed: trailer not found"
+                </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You attempt to run a merge to PDF and when the PDF opens, fields are not being displayed properly and some of the data is missing.  When you check the exception logs, you find the error: "Rebuild failed: trailer not found.; Original message: Error reading string at file pointer #######"</p>
+                <p><b>Cause</b>: Adobe Acrobat reader is not installed on the machine or is corrupted.  The PDF is attempting to open in your default web browser but cannot be read properly by the browser.</p>
+                <p><b>Solution</b>: Install / reinstall Adobe Acrobat Reader. See instructions at Adobe.com:  <a href="https://acrobat.adobe.com/us/en/products/pdf-reader.html" target="_blank" title="https://acrobat.adobe.com/us/en/products/pdf-reader.html" alt="https://acrobat.adobe.com/us/en/products/pdf-reader.html">https://acrobat.adobe.com/us/en/products/pdf-reader.html</a></p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Error: "Column headers have not been defined for this dataform."</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You are creating a new multiform in the application and when you attempt to review the form on a workspace you receive the error: Column header has not been defined for this dataform or this dataform has been incorrectly defined as a One to Many relationship.  Go to the Dataform Admin section under System Admin to set up column headers.</p>
+                <p><b>Cause</b>: Multiform list has not been defined.</p>
+                <p><b>Solution</b>: See <MadCap:xref class="Heading" href="../Dataforms/defMultiColHdrs.htm">Defining dataform multiform list column headers</MadCap:xref>.
+</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Error: "Failed to save dashboard: Category\DashboardName"</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You are attempting to edit a dashboard embedded Report Title or Description and you receive the error "Error  Failed to save dashboard: CategoryName\DashboardName"</p>
+                <p><b>Cause</b>: Neither the Title nor description on Reports from the dashboard UI accepts special characters, including numeric characters such as <i>equals</i> signs.</p>
+                <p><b>Solution</b>: Change your Description or title so that it does not contain a special character.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Error: 'The OpenDataSource Method or Property Is Not Available'</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: When trying to run a merge, the error message, “The OpenDataSource Method or property is not available because this command is not available for reading” appears.  The merge document opens, however, it returns no data.</p>
+                <p><b>Cause</b>: Microsoft Word 2013 defaults to open a document in read only mode.  The data cannot be written into the merge because Word does not allow editing in read only mode.</p>
+                <p><b>Solution</b>: Change default settings in Word.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Open a Word document.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Open Word options from the File toolbar.</p>
+                <p class="L1Num" MadCap:autonum="3. ">On the bottom of the General tab clear the option <b>Open e-mail attachments and other uneditable files in reading view</b>. This prevents Word from opening in read-only view, therefore the data will merge.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Exception log error: "The Condition Expression cannot contain one of the SQL keywords: DELETE, SELECT, DROP, etc. Link Configuration ID: ###"
+                </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Exception log contains the error: "The Condition Expression cannot contain one of the SQL keywords: DELETE, SELECT, DROP, UPDATE, EXEC, EXECUTE, INSERT, ALTER or CREATE. Link Configuration ID: ###"</p>
+                <p><b>Cause</b>: Link Display condition is configured with SQL Protected Word.  The underlying code has been designed to eliminate the possibility of SQL Injection, and so will throw an error if any of the words DELETE, SELECT, DROP, UPDATE, EXEC, EXECUTE, INSERT, ALTER or CREATE are used when configuring Link Condition Expressions.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Edit the Link Display Configuration conditions to remove the SQL Protected word. Also remove the Protected word from the Condition Expression line so it matches the Display Configuration labels.</p>
+                <p>Both the Label and the Condition expression should avoid using the word SELECT.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>File Attach/Upload error: "You may not upload files with an extension of .XXXX."
+                </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Attempting to upload a file to ClientSpace either through dataform attachment or Email integration and you receive the following message: "ClientSpace.Business.pwInvalidFileExtension: You may not upload files with an extension of .XXXX. Contact the system administrator to request a change to the accepted file types or zip the file before uploading." (replacing .XXXX with the invalid file extension).</p>
+                <p><b>Cause</b>: The File type you are attempting to upload has not been added to the list of Valid File Attachment Extensions. For example, the system allows .jpg files, but not .jpeg files.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Add the file extension to the Lookup group for ValidAttachExt, which will allow the file to be uploaded.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Lookups</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Click <b>Add</b>.</p>
+                <p class="L1Num" MadCap:autonum="3. ">In <b>Group</b>, select <b>ValidAttachExt</b>.</p>
+                <p class="L1Num" MadCap:autonum="4. ">In <b>Code</b>, enter the file extension with <b>no</b> periods (Example: jpg).</p>
+                <p class="L1Num" MadCap:autonum="5. ">In <b>Decode</b>, copy and paste the Code value.</p>
+                <p class="L1Num" MadCap:autonum="6. "><b>Save</b> the record.</p>
+                <p class="L1Num" MadCap:autonum="7. ">Try to upload your file again.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Import error: "Server Error accessing the file - Import failed."
+                </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Attempting to upload a file using <b>System Admin</b>   &gt; <b>Imports</b> &gt; <b>Manage Import</b> and you receive the error "Server Error accessing the file - Import failed."</p>
+                <p><b>Cause</b>: Improper Source File configuration on the import config that conflicts with an existing import. For example, creating an import config with a source file of EmployeeConversion*.csv when an employee*.csv import already exists.</p>
+                <p style="font-weight: normal;"><b>Solution</b>:                         Alter the Source File name in the Import Configuration to make it unique. Alter the name of the file being uploaded to match the new Source File value.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Import file macro error: "The path you selected may be bad"
+                </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You are attempting to create a CSV file for import into ClientSpace using the CreateClientSpaceCSV macro. When you attempt to save the file, you get a message "Error: The path you selected may be bad"</p>
+                <p><b>Cause</b>: Some part of the save path you have chosen is missing or incorrect.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Correct the save path you are using. Some solutions for this are:</p>
+                <p class="Bullet1" MadCap:autonum="• "><b>You are attempting to save to a directory that does not exist</b>:&#160;Create the directory first as the Macro save will not give you the option to create the directory as part of the Save function like Windows does.</p>
+                <p class="Bullet1" MadCap:autonum="• "><b>You have not provided a file name for the CSV file</b>: You may be using an older version of this macro. The latest version attached to KnowledgeSpace should generate the file name based on the Worksheet Tab Name. If it doe not, simply append a file name to the path you are using for save, making sure to use the correct .csv file extension.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Merge error: "Call was rejected by the callee"
+                </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You are running a merge and when the system attempts to open the Office document, instead of opening Office you receive the error: "Call was rejected by the callee"</p>
+                <p><b>Cause</b>: An instance of that merge is already open - likely with some kind of system prompt.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Sometimes when opening merges rapidly you will open a copy of the merge document, attempt to close it and then re-open the merge again.  When this happens, it is not uncommon to miss the system prompt for "Would you like to save changes to document XXXXX?"  These save prompts will block other instances of office from opening.  You may also receive this if an instance of the office application is hung in the background.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Check to see if the office application is open and prompting you to save changes.</p>
+                <p class="L1Num" MadCap:autonum="2. ">If so, save or cancel and close the currently open document.</p>
+                <p class="L1Num" MadCap:autonum="3. ">If Office does not appear open, check the task manager to see if the application is not responding.</p>
+                <p class="Bullet2" MadCap:autonum="• ">Right click the task bar at the bottom of your screen in Windows and select <b>Task Manager</b>.</p>
+                <p class="Bullet2" MadCap:autonum="• ">Look for an instance of the Office application such as Word or Excel.</p>
+                <p class="Bullet2" MadCap:autonum="• ">If you find an instance of the application that does not appear to be open on your desktop, in Task Manager, right-click the application and choose <b>End Task</b>.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Merge formula issues<![CDATA[                ]]></MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: When you open an Excel merge you receive an error such as "Excel completed file level validation and repair.  Some parts of this workbook may have been replaced or discarded.  Removed Records: Formula from /xl/calcChain.xml part (Calculation properties)"</p>
+                <p><b>Cause</b>: Repeating row data above a formula in the workbook has caused the cell references in a formula to become broken.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Update the template document to move all of your calculations above the repeating row data on the worksheet.  If you need this data presented below the repeating row information, hide the fields at the top of the workbook and point to these fields using cell references below the repeating row data.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Merge links produce error: "Object doesn't support this property or method code: 0"
+                </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: PDF Merge  Links no longer work - Get an error when clicking link "An error has occurred in the script on the Page Line 88 Char 9 Error: Object doesn't support this property or method code: 0 Do you want to continue running scripts on this page? Yes or No."</p>
+                <p><b>Cause</b>: Pop-up blocker settings interfere with merge document opening.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: </p>
+                <p class="L1Num1" MadCap:autonum="1. ">In your browser pop up blocking settings, add the domain name for your ClientSpace installation, such as *.clientspace.net</p>
+                <p class="L1Num" MadCap:autonum="2. ">Click <b>Save</b>.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>nwDataInvalidKey error                </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You are logged in and working in the system, then when you move to another part of the application you receive the error  'Error: nwDataInvalidKey - System Error'.</p>
+                <p><b>Cause</b>: Browser has for some reason dropped the session and is no longer logged in.</p>
+                <p style="font-weight: normal;"><b>Solution</b>:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Close all browser windows and log back in.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Or in the browser, go to <b>File</b> &gt; <b>New Session</b> and create a new session.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Then log back in through the new session and close the old.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Pricing error: "An error occurred executing the business rule: RecalculatePricing"
+                </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Attempt to save pricing and receive the error "An error occurred executing the business rule: RecalculatePricing. The ClientSpace Exception Log will contain more details about this error."  This often occurs when attempting to open the Pricing Console.  Checking the exception logs reveals something like "System.Data.SqlClient.SqlException (0x80131904): Arithmetic overflow error converting money to data type numeric."</p>
+                <p><b>Cause</b>: One of the fields that is used in the pricing calculation has an invalid amount entered (too large).  During pricing these fields are used in calculation and when multiplied by other fields can result in a value that cannot be represented by the system.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Correct the bad value and save the record.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Review each of the pricing dataforms (Pricing Batch, State, and Code) by opening <b>Workspace</b> &gt; <b>Action Center</b> &gt; <b>Dataforms</b> for the workspace in question  to open a list of dataforms in the workspace.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Look for overtly large numbers stored in one of the form fields, such as 3000% in a mod field, or 1870000 in the employee count field.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Adjust the number to the actual (correct) number and save the record.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Try to open the pricing console again.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>pwPermissionViolation when accessing linked dataform                </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You attempt to access a linked form from a dataform and despite having role access to the linked form you receive the error "Error: pwPermissionViolation - Permission Denied"</p>
+                <p><b>Cause</b>: Some dataforms are not stored at the client workspace level, but instead centrally stored on the Admin Workspace, or another workspace such as the Sales Team workspace.  If the user in question does not have access to the central workspace, they will receive a permissions error.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Provide access to the workspace where the form is stored.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to <b>Admin Workspace</b>.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Select the workspace in question.</p>
+                <p class="L1Num" MadCap:autonum="2. ">In the <b>Action Center</b>, select <b>Users</b> <img src="../Resources/Images/ICONS/ICON_Users.png" />.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Click <b>Add</b> to add new users to the workspace. </p>
+                <p class="L1Num" MadCap:autonum="4. ">In <b>Add Workspace Users</b>, select the required users from the list.</p>
+                <p class="L1Num" MadCap:autonum="5. ">Click <b>Ok</b>.</p>
+                <p class="L1Num" MadCap:autonum="6. ">The new user is added to the list.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>System exception: 'Out of Memory' error               </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You are unable to access different parts of the Application - most commonly the Client Workspaces.  Application throws the error: 'System Exception: Out of Memory Error'</p>
+                <p><b>Cause</b>: Possible server drive space issues.  This sometimes happen if large log files or temp files were auto-generated by a server application.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Contact PrismHR:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Login to the Extranet.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Log an Extranet case.  Provide as much detail as you can about how to replicate the issue.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>The UPDATE statement conflicted with the FOREIGN KEY constraint "FK_gen_CompClaim_gen_AdminWorkersCompPolicy".                </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: During a loss runs import the import log contains a generic "A business logic error was encountered for line...check the exception log ..."</p>
+                <p><b>Cause</b>: The Comp Claim system in ClientSpace validates the information necessary to complete claim logging. One of these data items is the associated Workers' Comp Policy.  The rule called by the comp policy import preprocess is HE_VerifyCompPolicyIsLocated. If you do not enable this rule on the Imports pipeline, the system allows the comp claim dataform save to happen without a verified fkAdminWorkersCompPolicyID. Subsequently the foreign key relationship that is expected later in the save process does not exist.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: If you are importing claim information you must enable the HE_VerifyCompPolicyIsLocated rule on the Imports pipeline.  This unfortunately causes imported records without a valid fkAdminWorkersCompPolicyID to fail.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Unable to open multiform search - Unending swirly
+                </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Attempting to open the dataform search for a multi-form and you get the "Loading..." graphic with the swirly - never loads the search.</p>
+                <p><b>Cause</b>: A File upload datatype has been configured with the Form Searchable option selected.  When the dataform search attempts to load the More search parameters it is unable to handle the File upload datatype.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Verify the field location. It will be on the dataform on which you are attempting to drill into the search. Use a debugger such as the one available in Google Chrome to capture the Client Side error and reveal the field in question. The error revealed begins with  "Uncaught TypeError: Unable to process binding "controlWrapper: function (){return $.cs.csfileupload }""</p>
+                <p>Remove the Form Searchable attribute for that field under dataform admin:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png"></img> &gt; <b>Advanced</b> &gt; <b>Dataform Admin</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Select the dataform where the error was occurring and search for the field in question.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Edit the field and clear <b>Form Searchable</b>.</p>
+                <p class="L1Num" MadCap:autonum="4. "><b>Save</b> the record.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Unable to open Pricing Console on Workspace. "System Error - An error occurred while attempting to process your request"                </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Attempting to open the pricing console on a particular Client Workspace fails with the Error: "System Error - An error occurred while attempting to process your request.  If the error persists, please contact the system administrator."  Checking the Exception logs under Admin Settings may reveal some form of Mathematical overrun error.</p>
+                <p><b>Cause</b>: On open, the pricing console recalculates pricing, using the values stored on the Pricing Batch, Pricing State, and Pricing Codes dataforms, as well as defaults stored in various places throughout the system  The most common issue responsible for this type of issue is bad data on one of the pricing dataforms, causing the pricing calculations to far exceed the limits of the fields in which the calculated values will be stored. Accidentally typing a large number of Employees on a pricing code form, or an extremely large percentage on a pricing modifier field will cause the type of mathematical overrun error in question.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Correct the bad data using the following steps:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to <b>Workspaces</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Locate and open the workspace in question.</p>
+                <p class="L1Num" MadCap:autonum="3. ">In the <b>Action Center</b>, from the menu, select <img src="../Resources/Images/ICONS/ICON_WorkspaceDataforms.png" /> <b>Dataforms</b>.</p>
+                <p class="L1Num" MadCap:autonum="4. ">In <b>Workspace Dataforms</b>, search to find the Pricing Dataforms.</p>
+                <p class="L1Num" MadCap:autonum="5. ">Open the dataform.</p>
+                <p class="L1Num" MadCap:autonum="6. ">Carefully examine each of the pricing dataforms and find the offending bit of bad data, 1,000,000 employees on a pricing code, or a 3000% modifier would cause these types of issues.</p>
+                <p class="L1Num" MadCap:autonum="7. ">Correct the bad data and Save the form.</p>
+                <p class="L1Num" MadCap:autonum="8. ">Check the Pricing Console again.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Error: "New mask conflicts with existing data. Contact the system administrator for further assistance."               </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You are editing an existing dataform field that uses the decimal or percent datatype and you attempt to alter the mask value.  Upon save you receive a message stating: "New mask conflicts with existing data. Contact the system administrator for further assistance."  The record will not save.</p>
+                <p><b>Cause</b>: The system allows the precision (numbers to the right of the decimal) of a  mask to be changed when data has been saved into a decimal or percentage field, but the numbers to the left of the decimal point cannot be altered without significantly changing the value of the data stored in the field.  For this reason, these types of changes are not allowed.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: To adjust a decimal or percent field to alter the values left of the decimal, you must delete the field and recreate it on the form.  Doing so deletes all the data stored within the field, so this action should not be undertaken lightly.  If you have questions about the effects of deleting a field on your data or need assistance creating a solution, log an Extranet case.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Client stuck in Pending Termination</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You have a client workspace that is in Pending Termination status and the status is not getting changed to Terminated by the scheduled process.  The TerminatePending scheduled process normally compares the run date of the scheduled process and the Termination date on the Term form and any client where the termination date is equal to or lesser than the date of the scheduled process, and the Status is Pending Termination, the status is changed to Terminated.</p>
+                <p><b>Cause</b>: Termination form Termination Date is set to a future date.</p>
+                <p style="font-weight: normal;"><b>Solution</b>: Update Termination Date and manually queue the terminate process.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Open the termination form on the client workspace and correct the date to today's date or earlier.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt;&#160;<b>Scheduled Processes</b>.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Manually queue the <b>TerminatePending</b> scheduled process to term the client workspace.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+    </body>
+</html>

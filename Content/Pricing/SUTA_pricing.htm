@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.FutureDev">
+    <head>
+    </head>
+    <body>
+        <h1>How SUTA pricing works for proposed pricing and profit calculation<MadCap:annotation MadCap:createDate="2020-03-12T18:03:58.3663013-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="This is Idea 481. I edited content in the case and put in Pricing chapter, in Sales guide.\r\n\r\nhttps://extranet.clientspace.net/next/linkto/Idea/481\r\n\r\nI would like to add a screenshot - but need guidance on what to capture please." MadCap:editor="dhogan" MadCap:editDate="2020-03-12T18:03:59.6129819-04:00">s</MadCap:annotation></h1>
+        <p>What is actually billed to the client that is in the PrismHR system?
+</p>
+        <ul style="list-style-type: square;">
+            <li>The <span class="UXElement">Default SUTA Cutoff</span> on the on State Master defines the default wage base, which can be overridden on the Pricing State form.
+</li>
+            <li>The <span class="UXElement">SUTA Bill Rate</span> on the Pricing State is the % taxed on the first amount of wages (wage base).
+</li>
+            <li>If the <span class="UXElement">SUTA Cutoff Override</span> is blank, the default SUTA Cutoff on the State Master is used for Pricing Profitability. The <span class="UXElement">SUTA Cutoff</span> can vary by industry and employment type, such as seasonal workers, which is where using the SUTA Cutoff Override could make sense.
+SUTA Cutoff % discounts the SUTA Bill Rate after the SUTA Wage Base (Cutoff) is met but continues billing the client at the discounted rate.
+For example, a SUTA Cutoff % of 60% has the client paying 100% of the SUTA Tax Rate up to the Wage Base (Cutoff), then 40% of the rate after the wage base cutoff is met for the remainder of the year</li>
+            <li>SUTA Cost is always 100% on the State Legal Entity and is influenced by the State, Legal Entity, and Contract Type selected.
+</li>
+            <li>The SUTA Bill Rate on the State Master pulls from the State Legal Entity. The SUTA Bill Rate on the Pricing States pulls from the Default SUTA Cost, and Bill Rates set on the State Legal Entity.
+</li>
+            <li>The Client SUTA Reporting option is used for billing the client SUTA rate, not the PEO, and is required by some states.
+</li>
+            <li>The SUTA Bill Rate defaults to the Current SUTA set on the Pricing State form if the Client SUTA Reporting option is enabled (selected) on the Contract Type Metadata, State Legal Entity, or State Master, and the SUTA Bill Rate is empty.
+</li>
+            <li>The Default SUTA Threshold is only active if the Use Default SUTA Threshold option is selected.
+If it is selected and a Threshold is entered, the Pricing State uses whichever of the following options is higher:
+	<ul style="list-style-type: circle;"><li>The SUTA Rate on the Pricing State minus the Default SUTA Threshold entered on the State Legal Entity.
+	</li></ul><ul style="list-style-type: circle;"><li>The SUTA Billing Rate on the State Legal Entity.
+</li></ul></li>
+        </ul>
+    </body>
+</html>

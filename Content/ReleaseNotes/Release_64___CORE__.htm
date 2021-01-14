@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 64 ( CORE )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" width="250" src="https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50" srcset="https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50 2x, https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50 1x" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;1/3/2018&#160; &#160;&#160;<strong>Sprint Ended: </strong>1/31/2018</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release64(CORE)-CompanyHolidayNEXTconversion-ENHANCEMENT"><span style="color: rgb(51,153,102);">Company Holiday NEXT conversion -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Company Holiday management&#160;system&#160;has been converted to NEXT. This system&#160;consists of a Search and Detail page.</p>
+                        <ul>
+                            <li><strong>Search Page:</strong>&#160;&#160;<ul><li>Quick Search:&#160;&#160;<ul><li>Holiday Name (starts with)</li></ul></li></ul></li>
+                            <li><strong>More Search</strong>&#160;&#160;<ul style="margin-left: 30.0px;"><li>Active/Archived/All radio button&#160;&#160;</li><li>Holiday Date (date range)&#160;&#160;</li><li>Holiday Year (integer)</li></ul></li>
+                            <li><strong>Search Result Columns</strong>&#160;&#160;<ul><li>Holiday Date&#160;&#160;</li><li>Holiday Name</li></ul></li>
+                        </ul>
+                        <ul>
+                            <li><strong>Detail Page</strong>:&#160;&#160;<ul><li>Holiday Name (textbox, required)&#160;</li><li>Holiday Date (date, required)&#160;</li><li>Active (checkbox)</li></ul></li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release64(CORE)-DocumentSearchCategory/DescriptionSearchparameter-ENHANCEMENT"><span style="color: rgb(51,153,102);">Document Search Category/Description Search parameter -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>"File Category" and "File Description" have been added as Search parameters to the "More" search area of the Document Search dashboard and removed from the Quicksearch area.</p>
+                        <p>The "Status" search parameter in More search has been renamed to "Show". This is more consistent with other areas that work like this.</p>
+                        <p>The "Entity Type" search parameter has been renamed to "Form" in the More Search, as well as in the column list that displays the data.</p>
+                        <p>Quick Search now works with the Keyword parameter only.</p>
+                        <p>Date Uploaded has been set as the First Column.<br />Ordering of forms in the "Form" dropdown in More Search has been updated to list forms alphabetically for ease of use.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release64(CORE)-DataformSubscibersshouldbeCCrecipients-ENHANCEMENT"><span style="color: rgb(51,153,102);">Dataform Subscibers should be CC recipients -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where dataform subscribers are receiving notifications as "To" recipients. Dataform subscribers now are added as "CC" recipients to minimize the amount of clutter in the Notifications inbox</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release64(CORE)-FieldDisplayconfiguration-ENHANCEMENT"><span style="color: rgb(51,153,102);">Field Display configuration -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Field Display configuration has been enhanced to allow multiple field display triggering conditions against the same field / fieldset. So for example the system will now allow you to configure the following</p>
+                        <p>When First Name == "Tiny" then the Some_Other Field will display.<br />When Last Name == "Tim" then the Some_Other Field will display.</p>
+                        <p>You can also still configure multiple trigger conditions on a field using seperating commas so</p>
+                        <p>When First Name == "Tiny" then the Some_Other Field will display.<br />When Last Name == "Tim,Bill,John" then the Some_Other Field will display.</p>
+                        <p>These conditions are treated as "OR" conditions, so that when FirstName = 'Tiny" OR when LastName = "Tim" OR "Bill" OR "John" the field will display.</p>
+                        <p>Due to the flexibility of this system it is possible to configure conflicting conditions, so use caution when setting up these multiple field display conditions.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release64(CORE)-EmailTemplateRecipients(EmailElementType)-ENHANCEMENT"><span style="color: rgb(51,153,102);">Email Template Recipients (Email Element Type) -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Email template system has been enhanced to accept email type fields from the triggering dataform as a recipient record.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release64(CORE)-FollowupinHomeENHANCEMENT"><span style="color: rgb(51,153,102);">Followup in Home&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The following changes have been made to activities in the application:<br />The label on the Follow-up Home Page panel has been renamed to "Last Activity" instead of "Last Call".</p>
+                        <p>
+                            <br />On "Edit" of an Existing follow-up – the “Activity Date” is no longer set to today’s date, , all other Activity Type's result in the Activity Date being set to today's date.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release64(CORE)-Errorwhendataformrecordnolongerexists"><span style="color: rgb(51,153,102);">Error when dataform record no longer exists</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where if there are references to a dataform which no longer exists, such as in the watch widget, attempting to navigate to the missing dataform would throw a generic system error.</p>
+                        <p>The system will now alert the user that "The dataform you requested was not found or no longer exists. If you navigated here from Business Intelligence, please contact the report owner to have the link updated. "</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release64(CORE)-ErrorwhenmovingCasestodifferentWorkspace"><span style="color: rgb(51,153,102);">Error when moving Cases to different Workspace&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where under certain circumstances, while moving a dataform from one workspace to another the system would generate a foreign key exception when there were no foreign keys to the dataform and not allow the dataform to be moved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

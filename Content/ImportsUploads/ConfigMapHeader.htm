@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <map id="map1">
+            <area shape="rectangle" coords="74,111,398,149" dragDirection="0" title="Source File" alt="Source File" href="../Popups/Imports/SourceFile.htm" target="_popup" />
+            <area shape="rectangle" coords="479,114,797,148" dragDirection="0" title="Dataform" alt="Dataform" href="../Popups/Imports/Dataform.htm" target="_popup" />
+            <area shape="rectangle" coords="77,154,398,192" dragDirection="0" title="Execution Order" alt="Execution Order" href="../Popups/Imports/ExecOrder.htm" target="_popup" />
+            <area shape="rectangle" coords="479,156,796,193" dragDirection="0" title="Execution Pipeline" alt="Execution Pipeline" href="../Popups/Imports/ExecPipeline.htm" target="_popup" />
+            <area shape="rectangle" coords="63,207,395,241" dragDirection="0" title="Import Type" alt="Import Type" href="../Popups/Imports/ImportType.htm" target="_popup" />
+            <area shape="rectangle" coords="453,203,796,240" dragDirection="0" title="Import Action" alt="Import Action" href="../Popups/Imports/ImportAction.htm" target="_popup" />
+            <area shape="rectangle" coords="57,250,395,288" dragDirection="0" title="Custom Import Class" alt="Custom Import Class" href="../Popups/Imports/CustomImpClass.htm" target="_popup" />
+            <area shape="rectangle" coords="551,246,795,281" dragDirection="0" title="Execute Business Logic" alt="Execute Business Logic" href="../Popups/Imports/ExecBusLogic.htm" target="_popup" />
+            <area shape="rectangle" coords="74,301,722,411" dragDirection="0" title="Description" alt="Description" href="../Popups/Imports/Description.htm" target="_popup" />
+            <area shape="rectangle" coords="150,451,395,493" dragDirection="0" title="Special Import" alt="Special Import" href="../Popups/Imports/SpecialImport.htm" target="_popup" />
+            <area shape="rectangle" coords="53,500,395,543" dragDirection="0" title="Record Source Field" alt="Record Source Field" href="../Popups/Imports/RecSrcField.htm" target="_popup" />
+            <area shape="rectangle" coords="455,494,805,541" dragDirection="0" title="Record Source Column" alt="Record Source Column" href="../Popups/Imports/RecSourceCol.htm" target="_popup" />
+            <area shape="rectangle" coords="71,551,396,596" dragDirection="0" title="Workspace Source Field" alt="Workspace Source Field" href="../Popups/Imports/WorkspaceSourceField.htm" target="_popup" />
+            <area shape="rectangle" coords="455,549,806,596" dragDirection="0" title="Workspace Source Column" alt="Workspace Source Column" href="../Popups/Imports/WorkspaceSourceCol.htm" target="_popup" />
+            <area shape="rectangle" coords="72,602,395,665" dragDirection="0" title="Workspace Source Dataform" alt="Workspace Source Dataform" href="../Popups/Imports/WorkspaceSourceDataform.htm" target="_popup" />
+            <area shape="rectangle" coords="783,49,1083,87" dragDirection="0" title="Fields" alt="Fields" href="../Popups/Imports/Fields.htm" target="_popup" />
+        </map>
+        <h1>Configuring the Import Map Header</h1>
+        <p>ImportIDs are used by the import process to determine if a record already exists in <MadCap:variable name="MyVariables.ProductName" /> to update the record if it exists or create a new one if no match is found. Because of this, it is vital to have a unique ImportID for each row of the import file that is distinct across the entire dataset. ImportIDs should never be re-used unless the intention is to update an existing record.&#160;</p>
+        <p class="ProcedureIntro">To begin creating a custom import:</p>
+        <ol MadCap:continue="true">
+            <li>Go to <strong>System Admin&#160;<img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /></strong> &gt; <strong>Advanced</strong> &gt; <strong>Configure Import</strong>.<br />The Import Map Header Search dashboard opens.</li>
+            <li>Click <strong>Add</strong>.<br />The Import Map Header Detail form opens.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Imports/ImportMapHeaderDetail.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Begin creating a new import configuration by completing the fields.</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col style="width: 190px;" class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Source File</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the name of the file that you are importing. The file name should include the file extension (commonly
+ CSV).&#160;A best practice is to add an asterisk before the file
+ extension to account for variations in the file name. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Dataform</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select the dataform to receive the information. For example, if you select the Employee dataform, the data is mapped to fields in the Employee  form.&#160;The system can import to dataforms associated with the primary dataform in tabs. </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Execution Order</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">If the import runs
+ automatically,&#160;in which order should the files import?&#160;It is
+ important to set this appropriately if you have multiple dependent imports,
+ such as an Employee Import, which depends on the Client Import executing
+ first.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Execution Pipeline</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When the imported records are saved,
+ which pipeline will execute?&#160;This determines which rules are
+ applied when the data is saved. Selecting Import, for
+ example, runs the business rules, triggers email templates, and triggers workflows with the Import pipeline selected.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Import Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Options include: </p>
+                        <ul>
+                            <li><b>Nightly</b>: Imports  run from uploaded
+ files created from reporting either manually through Admin Settings or
+ automatically from a&#160;Windows schedule on the Server. In most situations, this option is not available. For assistance, log an Extranet case.</li>
+                            <li><b>API</b>: Imports  run using direct
+ connection to an external system by a scheduled&#160;process. When <span class="UXElement">API</span> is selected, <span class="UXElement">API Path</span> is available on the Import Map Detail form (see <MadCap:xref href="ConfigMapDetail.htm" title="Configuring the Import Map Detail" alt="Configuring the Import Map Detail">Configuring the Import Map Detail</MadCap:xref>). Currently,
+ the only import configured in this way is the PrismHR API. For assistance, log an Extranet case.</li>
+                            <li><b>Scheduled Process</b>: Imports  run from the
+ Process Scheduled Imports scheduled process.&#160;Files in
+Ready for Import status of this type are automatically imported
+ when the scheduled process kicks off.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Import Action</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Options include:</p>
+                        <ul>
+                            <li><b>Insert</b>: Only insert new records. Does not&#160;update
+ existing records.</li>
+                            <li><b>Update</b>: Only update existing records. Does not insert new
+ records.</li>
+                            <li><b>Both</b>:  Insert new records and Update existing
+ records.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Custom Import Class</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This field is only used if there is a specialized import code written by ClientSpace. Log an Extranet case if you have questions.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Execute Business Logic</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When selected (enabled), any Workflows, Email Templates, Hard Errors,&#160;or Business Rules
+ configured in the Execution&#160;Pipeline  fire on save
+ of the data into ClientSpace.&#160;Soft errors on the pipeline are ignored.  Hard errors create Log Entries, and the associated record is not  imported.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Provide a brief description of the import. It is useful to use this area to distinguish the purpose
+ of the import and where the data to be imported originates.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">System</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When selected (enabled), only a developer user can configure the Import Map Header and Fields. From the Import Map Header Search dashboard, when this option is enabled, Add and Delete are not available for global administrators.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Special Import</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Only used for <MadCap:variable name="MyVariables.CompanyName" /> technology
+ custom import code.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Record Source Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the field on the selected Dataform (in the General fieldset) for locating the record. Select ImportID&#160;or ID (Record Primary Key).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Record Source Column</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Specify the name of the column in the import file that contains the value of the Record Type Field. The column name is used to match the ClientSpace record you want to update.  This is always compared to the ImportID on the record to
+ be updated. Cannot be identical to the Workspace Identifier.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Workspace Source Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Specify the type of information  on the Workspace Source Dataform to locate the workspace. The administrator can configure an import to select the appropriate workspace when inserting a row of data based on the following:</p>
+                        <ul>
+                            <li><b>ID (Record Primary Key)</b>: Inserts/updates the record in the workspace where the dataform of that type and RecordID matches the Workspace Source Column from the source file.</li>
+                            <li><b>ImportID</b>: Inserts/updates the record in the workspace where the dataform of that type and the ImportID matches the Workspace Source Column from the source file.</li>
+                            <li><b>ProjectID</b>: Inserts/updates the record in the workspace where the WorkspaceID&#160;matches the Workspace Source Column from the source file.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p>Workspace Source Column</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the column name on the
+ import file that matches the Workspace record in ClientSpace.
+ Information in this field/column is compared to the Workspace Source Field of the
+ Workspace Source Dataform.&#160;Cannot be identical to the
+Records to Update.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Workspace Source Dataform</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the dataform name that has the field to which you will match the Workspace Source Column. The Workspace Source Field of this dataform is matched against the Workspace Identifier column in the imported file to
+ select the appropriate workspace in which to put the data. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Fields</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is how you add dataform fields to
+ your configuration. See <MadCap:xref href="ConfigMapDetail.htm" title="Configuring the Import Map Detail" alt="Configuring the Import Map Detail">Configuring the Import Map Detail</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Active</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">When Active is selected (enabled), the import is active. Inactive imports are ignored.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <b>Save</b>.</li>
+            <li>Continue to the next topic <MadCap:xref href="ConfigMapDetail.htm" title="Configuring the Import Map Detail" alt="Configuring the Import Map Detail">Configuring the Import Map Detail</MadCap:xref> to add fields. </li>
+        </ol>
+    </body>
+</html>

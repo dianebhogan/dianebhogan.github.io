@@ -1,0 +1,650 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\Resources\MasterPages\ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Release Notes" />Release 84 Notes</h1>
+        <p><b>R84 Sprint</b>: 9/1/2019 to 9/30/2019. To learn about product features that you may not recognize, contact your Customer Success Manager.<br /></p>
+        <h2>Release schedule</h2>
+        <p>Release updates are implemented by groups.</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Click to view the R84 release schedule.</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The release schedule is subject to change and is&#160;updated as required.  To determine your group or to ask questions, please log a case for Professional Services in the Extranet.</p>
+                <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;width: 100%;" cellspacing="0">
+                    <col class="TableStyle-Standard_Table-Column-Column1" />
+                    <col class="TableStyle-Standard_Table-Column-Column1" />
+                    <col class="TableStyle-Standard_Table-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard_Table-Head-Header1">
+                            <th class="TableStyle-Standard_Table-HeadD-Column1-Header1" colspan="3">
+                                <p class="TableHead">Sprint <span style="font-weight: normal;">9/1/2019 to 9/30/2019</span></p>
+                            </th>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Head-Header1">
+                            <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                                <p class="TableHead">Upgrade groups</p>
+                            </th>
+                            <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                                <p class="TableHead">Date of upgrade</p>
+                            </th>
+                            <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                                <p class="TableHead">For this sprint, tentatively occurs on</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Group 1</td>
+                            <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Second Tuesday of the month</td>
+                            <td style="text-align: left;" class="TableStyle-Standard_Table-BodyG-Column1-Body2">October 8, 2019</td>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Group 2</td>
+                            <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Third Tuesday of the month</td>
+                            <td style="text-align: left;" class="TableStyle-Standard_Table-BodyD-Column1-Body2">October 15, 2019</td>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Group 3</td>
+                            <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Fourth Tuesday of the month</td>
+                            <td style="text-align: left;" class="TableStyle-Standard_Table-BodyA-Column1-Body2">October 22, 2019</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <h2>Legend</h2>
+        <p>Hover on the icons to discover the level of product enhancements: <img src="../Resources/Images/ICONS/ICON_Cheese.png" alt="Change in functionality" title="Change in functionality" /> <img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" style="width: 29px;height: 29px;" alt="ClientSpace Premium (ClientSpace with additional modules)" title="ClientSpace Premium (ClientSpace with additional modules)" /> <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" />.</p>
+        <h2>Enhancements<br /></h2>
+        <p class="TableTextLeftSmall">&#160;</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Workflow Channels: Tabbed dataform options (38090)&#160;</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Workflow Channels now include all active tabbed forms on the Conditions step of a workflow item when the triggering form is the home form of a tabbed set.</p>
+                <ul>
+                    <li>The <strong>Source</strong>&#160;list now includes all active tabbed forms in the tab set. In the <strong>Source</strong> list, the primary tabbed dataform precedes the child tabbed forms. The child tab names are prepended with a dash (<strong>–</strong>).</li>
+                    <li>The <strong>Field</strong>&#160;list is filtered based on the selected <strong>Source</strong>.</li>
+                    <li><strong>Condition Expressions</strong> also follow AND/OR/NOT across the tabbed dataform conditions, enabling complex triggering conditions.</li>
+                </ul>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Workflow Channels: User source for tabbed dataforms (39529)&#160;</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The user type fields on workflow item tasks and dataforms now include any child forms in a tab relationship with the available selected dataform when the user source option of&#160;<strong>From a Field on a Form</strong>&#160;is selected.&#160;These tab form fields appear in the <strong>Field</strong> list below the primary form in the tabbed relationship and are formatted as follows:</p>
+                <p><strong>*&lt;ChildFormName&gt; </strong>—<strong> &lt;UserFieldName&gt;</strong></p>
+                <p>The asterisk denotes that the configuration is configured for a form that is not the triggering form. For example, if Form One is in a tabbed relationship with Forms Two and Three, and each form contains user fields, Form One displays in the <strong>Dataform</strong> field. The fields for Form One are at the top of the <strong>Field</strong> selector and fields from the child forms are available below the primary form in the following format:</p>
+                <ul>
+                    <li>*Form Two -- User By Role (fkUserByRoleID)</li>
+                    <li>*Form Two -- Specialist User (fkSpecialistUserID)</li>
+                    <li>*Form Three -- Other User (fkOtherUserID)</li>
+                </ul>
+                <p>For more information about this new functionality, review the article <MadCap:xref href="../WFC/TabbedDataforms.htm" title="Workflow Channels and tabbed dataforms" alt="Workflow Channels and tabbed dataforms" class="Heading">Workflow Channels and tabbed dataforms</MadCap:xref> in our Knowledge Base, or log a case in the Extranet.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Email Templates: Tabbed dataform options (38671)&#160;</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Email Templates now include options for dataforms configured as tabs of the triggering dataform.</p>
+                <ul>
+                    <li>In the <strong>Addresses</strong> step, the <strong>Source</strong> list includes all tabbed forms included in the tabbed set.&#160;These appear immediately below the triggering form in the list and are preceded by a dash (<strong>–</strong>).</li>
+                    <li>In the <strong>Conditions</strong> step, the <strong>Primary</strong><strong>Trigger Field</strong> list only displays fields associated with the triggering dataform and includes the ability to <strong>Add Untriggered Field</strong> (as it currently does).</li>
+                    <li>In the <strong>Conditions</strong> step, the <strong>Trigger Field</strong> list also enables you to <strong>Add Untriggered Field</strong>s dynamically as well as current, active, triggerable fields from the source.&#160;</li>
+                </ul>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Workflow Channel Visualizer (38710)&#160;</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The Workflow Channel Visualizer was enhanced to complement the new item level publishing of Workflow channels.&#160;Unpublished workflow channel items now display in a different color in italics to denote their unpublished status.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Workflow Channel item level publishing (38711)&#160;</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Workflow Channels now enable you to publish and unpublish channel items.&#160;A&#160;<strong>Publish&#160;</strong>option was added to Step 4 Conditions that enables the administrator to selectively enable and disable portions of workflow channels, without unpublishing the entire channel when adding new workflow items, the new option defaults to selected (On).&#160;</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>New Business Rule (38922)&#160;<img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /></MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>A new business rule method&#160;<strong>_SetFieldFromProc&#160;</strong>enables you to set dataform fields based on information provided by a custom stored procedure. You can configure this rule to set a field on a triggering multiform using&#160;<strong>#thisform</strong> as the TargetForm.&#160;For information about implementing a custom stored procedure, contact Professional Services.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Workflow Channel multi-lookups as conditions (38994)&#160;</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Workflow Channel configuration now uses multi-lookup fields as triggering conditions. You can add each value from the multi-lookup as a separate "<strong>=</strong>" condition.&#160;This enhancement supports complex AND, OR, and NOT conditions.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Current Workflow Channel claim financial record (39036 and 40278)&#160;<img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" alt="ClientSpace Premium (ClientSpace with additional modules)" title="ClientSpace Premium (ClientSpace with additional modules)" /></MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><strong>39036</strong>: The Workflow Channel claims system now contains logic to set the most recent claims financial record (based on VAO date and Date Created) as the current record.&#160;This helps to optimize reports that rely on the most recent financial record when calculating claim amounts.</p>
+                <p><strong>40278</strong>: An index was added to the Claim Financial record to optimize the new current record feature.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Claim payment tracking (39039)&#160;<img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" alt="ClientSpace Premium (ClientSpace with additional modules)" title="ClientSpace Premium (ClientSpace with additional modules)" /></MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>A new Workers' Compensation Claims management dataform, <strong>Work Comp Claim Payment</strong>, tracks payments&#160;with the following configuration:</p>
+                <ul>
+                    <li>The form is a multi-form child of Workers' Compensation Claim</li>
+                    <li>The form is secured to enable<ul><li>Read-only access for the role <strong>PEO Employees</strong>&#160;</li><li>Edit access for the role <strong>Risk_Member</strong></li></ul></li>
+                </ul>
+                <p>The form fields are:</p>
+                <ul>
+                    <li><strong>Payee&#160;</strong>(text)</li>
+                    <li><strong>Date Paid</strong>&#160;(date)&#160;</li>
+                    <li><strong>Paid Amount</strong>&#160;(money)</li>
+                    <li><strong>Status&#160;</strong>(lookup with values of Pending (default), Scheduled, Paid, Canceled)</li>
+                    <li><strong>Pay Method</strong>&#160;(lookup&#160;with values of&#160;&#160;Check, Online, Cash, Other)</li>
+                    <li><strong>Payment Reference</strong>&#160;(text) - used for the check number</li>
+                    <li><strong>Category</strong>&#160;(lookup&#160;with values of Indemnity, Expense, Medical, Legal)</li>
+                    <li><strong>Category details</strong>&#160;(text wide)</li>
+                    <li><strong>Exported</strong> (lookup: Yes/No default is No)</li>
+                    <li><strong>Notes</strong> (text area)</li>
+                    <li><strong>WCClaim</strong> parent form; links to Workers' Compensation Claim from which the payment was created</li>
+                </ul>
+                <p>The&#160;CalculateTotals business rule on the Claim Financial record now uses a new field on the Claim Financial form: <strong>Calculate Paid Totals</strong>&#160;(Yes/No lookup where blank = No)</p>
+                <ul>
+                    <li><strong>No:&#160;</strong>Calculates Financial record totals as it did before this enhancement, using the fields on the Financial form.</li>
+                    <li><strong>Yes:&#160;</strong>Updates the Paid fields on the Current Financial record from the sums of the Claim Payments in Paid status, then sums the Financial amounts.</li>
+                </ul>
+                <p>See&#160;<MadCap:xref href="../Risk/ClaimPayment_dataform.htm" title="Claim payment tracking dataform" alt="Claim payment tracking dataform" class="Heading">Claim Payment tracking dataform</MadCap:xref>.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Payroll Batch Dataform (39062)&#160;&#160;COMING SOON</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>A new dataform stores payroll batch information.&#160;The Payroll Batch dataform is read-only and secured.&#160;By default, the form is secured with View rights for all users in the PEO Employees role.&#160;This new dataform contains the following fields:</p>
+                <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;width: 100%;" cellspacing="0">
+                    <col style="width: 140.0px;" class="TableStyle-Standard_Table-Column-Column1" />
+                    <col style="width: 152.0px;" class="TableStyle-Standard_Table-Column-Column1" />
+                    <col style="width: 81.0px;" class="TableStyle-Standard_Table-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard_Table-Head-Header1">
+                            <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                                <p class="TableHead">Label</p>
+                            </th>
+                            <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                                <p class="TableHead">FieldName</p>
+                            </th>
+                            <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                                <p class="TableHead">Datatype</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Pay Date</td>
+                            <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">DatePaid</td>
+                            <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">date</td>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Payroll Number</td>
+                            <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">PayrollNumber</td>
+                            <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">text</td>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Batch Type</td>
+                            <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">luBatchType</td>
+                            <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">lookup</td>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Pay Group</td>
+                            <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">PayGroup</td>
+                            <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">text</td>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Period Start Date</td>
+                            <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">DatePeriodStart</td>
+                            <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">date</td>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Period End Date</td>
+                            <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">DatePeriodEnd</td>
+                            <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">date</td>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Employee Count</td>
+                            <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">EmployeeCount</td>
+                            <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">integer</td>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Total Hours</td>
+                            <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">TotalHours</td>
+                            <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">integer</td>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">Payroll Processor</td>
+                            <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">fkPayrollProcessorID</td>
+                            <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">user</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>All the fields on this form are read-only and are filled using a PrismHR API Import. The Payroll Processor field is set using a new business rule that finds the Client Team form associated with the workspace and copies the Payroll Processor field information into the fkPayrollProcessor field.&#160;This rule triggers when records are inserted either through a normal dataform save or from an import.&#160;&#160;</p>
+                <p><strong>Billing Voucher changes</strong>
+                </p>
+                <p>A previous iteration of the Billing Voucher dataform contained some payroll batch information.&#160;With the addition of the Batch form, the batch level fields have been removed and a new field for Cost Amount (money) and Payroll Batch (fkPayrollBatchID - integer) was added.&#160;These Billing Voucher records break out the individual line item billing code entries associated with a payroll batch. A link was added to the Payroll Batch dataform to display the associated voucher records.</p>
+                <p>See&#160;<MadCap:xref href="../Payroll/PayrollBatch.htm" title="Payroll batch information" alt="Payroll batch information" class="Heading">Payroll Batch information</MadCap:xref>.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Workflow Channel task triggering (39215)&#160;</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Workflow channel triggering conditions now enable you to trigger Task Workflow Channel items from the most recent parent dataform, even if the triggered Task is multiple levels deep.&#160;</p>
+                <ul>
+                    <li>On the Conditions step, the Source column includes the most recently referenced dataform that would trigger the initial task (single or multi).</li>
+                    <li>Condition Expressions operators (AND, OR, and NOT) work across multiple dataforms.</li>
+                    <li>IsDirty does not appear in the trigger operator list (since the task can be separated from the dataform by several other tasks, the dataform may not be dirty).</li>
+                    <li>The&#160;<strong>Add Untriggered&#160;</strong>functionality is available when adding fields from this source</li>
+                </ul>
+                <p>If the most recent dataform is the main triggering dataform for the workflow, the condition source is&#160;<strong>Channel Trigger: &lt;NameOfTriggeringForm&gt;</strong>. If the most recent dataform is a cloned dataform workflow item, the condition source is&#160;<strong>Workflow #&lt;ItemNumber&gt;: &lt;ItemName&gt;</strong>.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Email Templates: Multi-lookup conditions (39534)&#160;</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Email Template triggering now uses multi-lookup fields as triggering conditions (Step 4 Conditions). You can add each value from the multi-lookup as a separate "<strong>=</strong>" condition.&#160;This supports complex AND, OR, and NOT conditions as well.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Multi-lookup links (39535)&#160;<img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /></MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The Custom Link configuration functionality now uses multi-lookup fields as triggering conditions. You can add each value from the multi-lookup as a separate "<strong>=</strong>" condition.&#160;This supports complex AND, OR, and NOT conditions.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Payroll Batch API/Import mappings (39583)&#160;COMING SOON</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Import Mappings were created in preparation for a future payroll batch import using the PrismHR API.&#160;This functionality relies on version 1.18 of the PrismHR API, which has not been released.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Notify External Employees from Client Service Case(39877)&#160;</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The Employee Address stored procedure was updated to include the work and personal email addresses of the employee associated with a client service case. In Step 3 Addresses, you can add the new fields (<strong>EmployeePersonalEmail&#160;</strong>and&#160;<strong>EmployeeWorkEmail</strong>) as either a To or CC address. You can use any email template created from the Case dataform.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Salesforce PEO process deprecated (40008)&#160;<img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /></MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The older PEO Salesforce scheduled process has been deprecated in favor of the newer, more efficient CORE process.&#160;The functionality of the scheduled process remains the same.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Employee Benefits mappings&#160;(40019)&#160;<img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" alt="ClientSpace Premium (ClientSpace with additional modules)" title="ClientSpace Premium (ClientSpace with additional modules)" /> <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /></MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>In Employee Benefits, the following fields were added to the Employment form:</p>
+                <ul>
+                    <li>Has Retirement: (Yes/No) - luHasRetirement</li>
+                    <li>Has Dependents: (Yes/No) - luHasDependents</li>
+                    <li>Enrolled Benefits: multi-lookup - mluEnrolledBenefits</li>
+                </ul>
+                <p>The new fields have the following configured values for Enrolled Benefits options:</p>
+                <p><strong>Code/ImportID - Decode</strong>
+                </p>
+                <table class="TableStyle-Procedure" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+                    <col class="TableStyle-Procedure-Column-Column1" />
+                    <col class="TableStyle-Procedure-Column-Column1" />
+                    <col class="TableStyle-Procedure-Column-Column1" />
+                    <tbody>
+                        <tr class="TableStyle-Procedure-Body-Body1">
+                            <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                                <ul>
+                                    <li>MED: Medical</li>
+                                    <li>VIS: Vision</li>
+                                    <li>DEN: Dental</li>
+                                    <li>VOL: Voluntary Benefits</li>
+                                    <li>LIF: Life Insurance - Basic</li>
+                                    <li>GTL: Group Term Life</li>
+                                    <li>LTD: Long Term Disability&#160;</li>
+                                    <li>STD: Short Term Disability&#160;</li>
+                                    <li>GAP: Gap Insurance</li>
+                                </ul>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                                <ul>
+                                    <li>ADD: Accidental Death and Dismemberment</li>
+                                    <li>LIS: Life Insurance - Basic - Spouse Only</li>
+                                    <li>LIC: Life Insurance - Basic - Child Only</li>
+                                    <li>ANC: Ancillary</li>
+                                    <li>CRI: Critical Illness</li>
+                                    <li>CAN: Cancer Benefits</li>
+                                    <li>MDP: Domestic Partner Medical</li>
+                                    <li>DDP: Domestic Partner Dental</li>
+                                    <li>VDP: Domestic Partner Vision</li>
+                                </ul>
+                            </td>
+                            <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                                <ul>
+                                    <li>ACC: Accident Benefits&#160;</li>
+                                    <li>LDA: Additional LTD</li>
+                                    <li>SDA: Additional STD</li>
+                                    <li>BLX: Basic Life Extra</li>
+                                    <li>HOS: Voluntary Hospitalization</li>
+                                    <li>IDT: Identity Theft</li>
+                                    <li>LGL: Legal</li>
+                                    <li>CRL: Critical Illness as Life</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Field mappings for the new fields were added&#160;to <strong>HRPAPI_initial_employment</strong> and <strong>HRPAPI_employment</strong> import configurations.</p>
+                <p>The following fields were also marked as triggerable, enabling workflow channel and email template triggering to occur on changes to the following fields:</p>
+                <ul>
+                    <li>mluEnrolledBenefits</li>
+                    <li>luHasRetirement</li>
+                    <li>luHasDependents</li>
+                    <li>isFICAexempt</li>
+                    <li>isFLSAexempt</li>
+                </ul>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Workflow Channels and Email Templates: Replace Fields from single dataform options (40023 and 40024)&#160;</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Field replacement on Workflow Channels now includes:</p>
+                <ul>
+                    <li>Any&#160;active&#160;fields on the triggering dataform</li>
+                    <li>The active fields from any additional condition source dataform</li>
+                    <li>The active fields from the related Organization and Org Other Info</li>
+                    <li>Any fields returned by the Server Data Procs related to the triggering dataform&#160;&#160;</li>
+                </ul>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Convert PrismHR API to REST&#160;(40052)&#160;<img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /></MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The client and employee portions of the PrismHR API were converted to use a REST API from a SOAP API.&#160;The transition is seamless to the end-user and strengthens our ability to develop new import methods without having to rewrite the API connections each time.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Dataforms:&#160;Warning on removing child tab from dataform (40458)&#160;<img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /></MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>Dataform administration now performs a dependency check when you remove a child form from a tabbed dataform relationship. The dependency check ensures that the tabbed form is not used in triggering an email template or workflow channel. If there is a dependency, the system presents the message:&#160;</p><pre xml:space="preserve">	This dataform is used by the following System functions and cannot be removed as a tab while these dependencies are in place:</pre>
+                <p>Additionally, the message provides a list of selectable links that are associated with email templates or workflow channels.&#160;The Delete button is disabled until all dependent processes with the related triggering conditions are removed.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Database table indexes (40543)&#160;</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The Time Tracking table now has indexes to optimize performance when managing time tracking.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <h2>Fixes<br /></h2>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;width: 100%;" cellspacing="0">
+            <col style="width: 67px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 83px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 324px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 1052px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1" style="text-align: center;">
+                        <p class="TableTextLeft" style="text-align: center;">Level of change</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Issue summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Resolution</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">36672&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">
+                        <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" />
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Editor field issues</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Disabled field searching and list inclusion for the Editor datatype to resolve UI issues when these features were enabled with the editor field type.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">37004</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Inbox Widget sizing</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p colspan="1" class="TableTextLeft">Resolved issues that made the Notification inbox challenging to use because the scrollbar did not appear under certain circumstances.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">38648</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Client Master will not load in Template Workspace</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved exceptions when opening the Client Master on a template workspace.&#160;The system now appropriately presents the following message, with no exceptions:</p>
+                        <p xml:space="preserve" class="Code">PEO workspaces must be created by clicking the Create Prospect link on the detail record of an Organization.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">38862</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Exception thrown during external Calendar sync in Extranet</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved calendar syncing issues with an external calendar source, such as Google. The system logged the exception:</p>
+                        <p xml:space="preserve" class="Code">The data for table-valued parameter "@Occurrences" doesn't conform to the table type of the parameter. SQL Server error is: 242, state: 3.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">39023</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Business hours on scheduled workflows</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">The formula that calculates business hours offsets using the true Business Open and Business Close time was updated to work for both positive and negative business offsets. These offsets are configured in App Settings when a date is used as a seed for the offset and falls outside of normal business hours.</p>
+                        <p>For example, a&#160;trigger date set to Friday at 6:15 pm</p>
+                        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+                            <col class="TableStyle-Procedure-Column-Column1" style="width: 20px;" />
+                            <col class="TableStyle-Procedure-Column-Column1" style="width: 20px;" />
+                            <col class="TableStyle-Procedure-Column-Column1" style="width: 20px;" />
+                            <thead>
+                                <tr class="TableStyle-Procedure-Head-Header1">
+                                    <th class="TableStyle-Procedure-HeadE-Column1-Header1">
+                                        <p class="TableHead">Business Hours</p>
+                                    </th>
+                                    <th class="TableStyle-Procedure-HeadE-Column1-Header1">
+                                        <p class="TableHead">Offset</p>
+                                    </th>
+                                    <th class="TableStyle-Procedure-HeadD-Column1-Header1">
+                                        <p class="TableHead">Result</p>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="TableStyle-Procedure-Body-Body1">
+                                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                        <p class="TableTextLeft">Business Close = 5:00 pm&#160;</p>
+                                    </td>
+                                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                                        <p class="TableTextLeft">− 3 hours</p>
+                                    </td>
+                                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                                        <p class="TableTextLeft">2:00 pm Friday</p>
+                                    </td>
+                                </tr>
+                                <tr class="TableStyle-Procedure-Body-Body1">
+                                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                                        <p class="TableTextLeft">Business Open = 8:00 am&#160;</p>
+                                    </td>
+                                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                                        <p class="TableTextLeft">+ 3 hours</p>
+                                    </td>
+                                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                                        <p class="TableTextLeft">11:00 am Monday</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">39301</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">
+                        <img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" alt="ClientSpace Premium (ClientSpace with additional modules)" title="ClientSpace Premium (ClientSpace with additional modules)" />
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Exception: Pricing Console error</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved issues when a user not associated with any template workspaces could not open the Pricing Console.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">39404</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Scroll functionality broken on initial load of Notification Inbox</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved issues that hid the scroll bar in the Notifications inbox on the initial load, making it difficult to reach items outside the visible window.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">39408</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Time Tracking Category not set on new cases again</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue on&#160;<strong>Add</strong>of a client service case: When a time tracking record was created before the case was saved, the time tracking category would not default from the case record.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">39453</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Escalation Pipeline fix</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">All pipelines except the case escalation pipeline were removed from the&#160;SendEscalationNotifications on the Client Service Case dataform.&#160;This resolves an issue where case escalation notices would be sent every time a case was saved.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">39741</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">
+                        <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" />
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Import Source issue</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved issues that cleared the Import Source when saving changes to an Import Map Header record under Configure Import.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">39754</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org category security entities duplicating</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved a bug with&#160;duplicate Category Security records that caused duplicate security entries to appear in&#160;<span style="color: black;"><strong>Organization</strong> &gt; <strong>Action Items</strong>&#160;&gt; <strong>Security</strong>.</span></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">39852</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">
+                        <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" />
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Boolean values not standardized (links)</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Updated Link Conditions from Header Proc values with a Boolean condition (Yes / No)&#160;to present as a Yes / No selector during link configuration and still store the appropriate Boolean value (0 or 1) in the triggering table.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">39951&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">
+                        <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" />
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Able to add Child forms as Triggering Form in Workflow Channels and Email Templates using <strong>Add Untriggered</strong></td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">The <strong>Add Untriggered</strong> functionality of the primary trigger on Workflow Channels and Email Templates has been filtered to exclude fields from child forms when the primary triggering form has tabbed relationships to other forms.&#160;Child form fields can still be added as additional conditions in the Conditions step of email template or workflow channel configuration.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">39919&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">
+                        <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" />
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Exception: Object Reference error in Field configuration</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved Object Reference errors when attempting to add a new field with the same database field name as an existing field. Now, a more friendly message is presented:&#160;</p>
+                        <p xml:space="preserve" class="Code">The field name 'XXXXX' is already in use by another field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">40448&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">
+                        <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" />
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Field inactivation error</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved issues that displayed a generic error message when attempting to inactivate a field used in Workflow Channel triggering:</p>
+                        <p xml:space="preserve" class="Code">&#160;</p>
+                        <p xml:space="preserve" class="Code">There was an error loading your content.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">40474</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Generate Scheduled Workflow not recognizing inactive Workflow Channel items</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue that included inactive, unpublished workflow channels when running the scheduled process, <strong>Generate Scheduled Workflows</strong>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">40522</td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">Email templates: Add Untriggered on Primary trigger issue</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue that prevented an email from firing when the value <strong>Add Untriggered</strong> was not saved to the database as a trigger value from the Primary trigger. The Primary trigger field now clears when the Add Untriggered dialog box opens.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

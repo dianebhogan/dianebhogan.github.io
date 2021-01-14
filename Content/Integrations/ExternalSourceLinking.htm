@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>External source linking</h1>
+        <p>The External Source Linking table is used by the Salesforce API to link records in ClientSpace and Salesforce. The Import (IMPORT_externalsourcelinking_*.csv) allows you to update existing records in the External Source Linking table from the field Record Identifier. This field maps to the RowGUID field (unique identifier) of the external source linking record to ensure the import updates the correct row.</p>
+        <p>The API system has a supporting import that imports External Source Linking records into <span class="UXElement">tblExternalSourceLinking</span>. This imports new and existing records. The primary purpose of this import is to seed the external source linking record in preparation for implementing an integration, such as Salesforce.</p>
+        <p>This import is based on the following configurations:</p>
+        <ul>
+            <li>Uses the PEO staging form <span class="UXElement">gen_ImportExternalSourceLinking</span></li>
+            <li>Rule <span class="UXElement">CreateExternalSourceLink</span> must be configured on form <span class="UXElement">gen_ImportExternalSourceLinking</span></li>
+            <li>No soft or hard errors are available during the import process</li>
+        </ul>
+        <h2>Using the dashboard</h2>
+        <p>From the External Source Linking dashboard, you can manage the data contained in tblExternalSourceLinking. The dashboard is like a library of connections. The dashboard is accessible from System Admin &gt; Imports &gt; External Source Linking. It is also available from any dataform through the Action Center &gt; More options &gt; External Source Linking. You can perform searches, Add, Edit, and Delete records.</p>
+        <p class="ProcedureIntro">To access the dashboard:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Imports</span> &gt; <span class="UXElement">External Source Linking</span>.<br />The External Source Linking dashboard displays with a list of API&#160;records.</li>
+            <li>To open a record, click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Jump</span>).<br />The External Source Linking dialog box opens, showing the imported fields.</li>
+            <li>You can review, add, edit, or delete entries.<br />The fields and descriptions are as follows:</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 193px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">API Configuration</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">List of library connections.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">ClientSpace Table Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The ClientSpace table name for the selected API. Auto-filled.<br /></p>
+                        <p class="TableTextLeft">ClientSpace Table, tblOrganization, tblContact, gen_Whatever</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">ClientSpaceID</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is a generated ID for ClientSpace that maps to the External ID of the connection.<br /></p>
+                        <p class="TableTextLeft">ClientSpace RowGUID for the ClientSpaceTableName table <br /></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">External Object</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Name of the external object. External Object Type, such as Account.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">External Object ID</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">ID&#160;of the external object that maps to the ClientSpace ID.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Export Status</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The status of the external integration. This field is editable only by system admins. These values are modified by a system process.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Integration Log</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Information about the integration. This field is modified by a system process. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <h2>Accessing the dashboard from a workspace</h2>
+        <p>The External Source Linking dashboard is also accessible from any dataform.</p>
+        <p class="ProcedureIntro">To access from a workspace:</p>
+        <ol>
+            <li>Go to a workspace.</li>
+            <li>In the <span class="UXElement">Action Center</span>, in the toolbar, click <img src="../Resources/Images/ICONS/ICON_MoreOptions.png" /> (<span class="UXElement">More Options</span>).<br />A list of links displays.</li>
+            <li>Select <span class="UXElement">Dataforms</span>.<br />A list of Workspace Dataforms is displayed.</li>
+            <li>Select and open a dataform.</li>
+            <li>In the <span class="UXElement">Action Center</span>, in the toolbar, click <img src="../Resources/Images/ICONS/ICON_MoreOptions.png" /> (<span class="UXElement">More Options</span>).<br />A list of links displays.</li>
+            <li>Select <span class="UXElement">External Source Linking</span>.<br />You are taken to the External Source Linking dashboard. </li>
+        </ol>
+        <h2>User Imports</h2>
+        <p>Users are imported into the External Source Linking table using the <span class="UXElement">IMPORT_externalsourcelinking_*.csv</span> import map. The ClientSpaceID value is tested against the Users table UserGUID field. If a match is found, the record is inserted into the linking table (non-matching ClientSpaceIDs cannot be inserted into this table).</p>
+        <p>The <span class="UXElement">IMPORT_user*.csv</span> import  includes Immediate Supervisor and Default workspace. These fields are imported on both insert and update for internal users, and updates to external users (External users cannot be created from an import).</p>
+    </body>
+</html>

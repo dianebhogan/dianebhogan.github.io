@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 53 ( CORE )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" width="155" src="https://clientspace.atlassian.net/wiki/download/thumbnails/93853300/logo-top-nav.png?version=1&amp;modificationDate=1494278677555&amp;cacheVersion=1&amp;api=v2&amp;width=155&amp;height=35" srcset="https://clientspace.atlassian.net/wiki/download/thumbnails/93853300/logo-top-nav.png?version=1&amp;modificationDate=1494278677555&amp;cacheVersion=1&amp;api=v2&amp;width=177&amp;height=40 2x, https://clientspace.atlassian.net/wiki/download/thumbnails/93853300/logo-top-nav.png?version=1&amp;modificationDate=1494278677555&amp;cacheVersion=1&amp;api=v2&amp;width=155&amp;height=35 1x" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;4/17/2017&#160;&#160;&#160;&#160;&#160;<strong>Sprint Ended:</strong>&#160;5/5/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release53(CORE)-RemoveCreateDateandUpdateDatefromActivityUI(NEXT)"><span style="color: rgb(51,153,102);">Remove CreateDate and Update Date from Activity UI (NEXT)<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Create Date and Updated Date have been removed from display on the header of the activity detail. These fields are still available for reporting, just not displayed.</p>
+                        <h4 id="Release53(CORE)-AddlinktoFormPropertiesontheDataformFieldAttributesPopup"><span style="color: rgb(51,153,102);">Add link to Form Properties on the Dataform Field Attributes Popup<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Previously, from the Dataform Admin list, when you clicked "Edit Attributes", the dataform list was replaced with the field list, and Dataform Admin search criteria was lost. Clicking Edit Attributes now opens the field list in a popup. When the popup is closed the previous Dataform Admin search is preserved.</p>
+                        <h4 id="Release53(CORE)-DocumentIndex-Rebuildissue"><span style="color: rgb(51,153,102);">Document Index - Rebuild issue<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Fixed an issue where using the scheduled process to rebuild the document index caused the index table to get removed and re-created. New process now simply deletes the contents of the index, not the table itself.</p>
+                        <h4 id="Release53(CORE)-CustomDatatypeissueinNEXT&quot;More&quot;search"><span style="color: rgb(51,153,102);">Custom Datatype issue in NEXT "More" search<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue on certain dashboards where filters under "More" options in NEXT would produce an error when selected if the filter datatype was a custom datatype based on a Parent Form. Filter drop down now functions as expected.</p>
+                        <h4 id="Release53(CORE)-AddDocumentSearchWebService(NEXT)"><span style="color: rgb(51,153,102);">Add Document Search Web Service (NEXT)<br /></span>
+                        </h4>
+                        <hr />
+                        <p>A web service has been added to allow the Document Search function from Classic to be created in ClientSpace NEXT.&#160; This work is foundational - Document Search will be added to the application in a later release.</p>
+                        <h4 id="Release53(CORE)-DisableEmailtoCurrentUser"><span style="color: rgb(51,153,102);">Disable Email to Current User<br /></span>
+                        </h4>
+                        <hr />
+                        <p>Modified the Notification logic no longer send a message to the Current User. &#160;The only exception to this is for Calendar Events and Marketing Campaigns where the current user will still get notified.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

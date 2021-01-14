@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc
+  Version="1">
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/HOME/InstructionalDesignSamples.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <TocEntry
+      Title="Prototype_elearning-module"
+      Link="/Content/Resources/PDFs/Prototype_elearning-module.pdf"
+      FrameName="_blank"
+      ReplaceMergeNode="false" />
+    <TocEntry
+      Title="Storyboard"
+      Link="/Content/Resources/PDFs/Storyboard.pdf"
+      FrameName="_blank"
+      ReplaceMergeNode="false" />
+  </TocEntry>
+</CatapultToc>

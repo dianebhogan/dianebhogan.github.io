@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Security" /><MadCap:variable name="MyVariables.ProductName" /> security tips</h1>
+        <h2>Role security changes do not appear to happen immediately</h2>
+        <p>A common scenario for a Global Admin in <MadCap:variable name="MyVariables.ProductName" /> is to apply dataform security within the application.  For example:</p>
+        <p class="Bullet1" MadCap:autonum="• ">You secure a dataform by opening dataform manager, selecting the form, and going to Form Properties to check the Secured option.</p>
+        <p class="Bullet1" MadCap:autonum="• ">The system is immediately alerted to this change and the dataform is locked until you add the security entity (gen_DataformName) to a role.</p>
+        <p class="Bullet1" MadCap:autonum="• ">After adding the security entity to a role, you can assume a user by going to <b>System Admin</b>   &gt; <b>User Admin</b> selecting a user and clicking <b>Assume User</b>.</p>
+        <h2>User security is cached at the server level and reset at login</h2>
+        <p>Assuming the user through Admin Settings provides the same security rights as that user.  If you have just made security changes within the application, such as securing a dataform and adding the Security Entity to a role and you are unable to see the expected results, log an Extranet case and request they recycle the application pool to process the changes.</p>
+        <h2>Best practice</h2>
+        <p>To truly assume the same security settings as the user, it is a best practice to have a test user that you can configure with the appropriate security rights, then assume the test user and check security.</p>
+        <h2>Securing a fieldset with View rights affects all the fields within that fieldset</h2>
+        <p><MadCap:variable name="MyVariables.ProductName" /> allows hierarchical security, basically any field within a fieldset inherits the security applied to the fieldset (to a point).  Individual field security within the fieldset is followed.</p>
+        <p>
+            <img src="../Resources/Images/Security/Hierarchical Security.jpg" class="thumbnail" />
+        </p>
+        <p class="Bullet1" MadCap:autonum="• ">In the example, Fieldset Test 1 has been secured with Edit rights, none of the fields within the fieldset have their own security so they inherit the security of the fieldset and are also secured with Edit rights.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Fieldset Test 2 has been secured with View rights and the luState field within fieldset 2 has also been secured, but with Edit rights applied.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Fields within Fieldset 2 inherit the Fieldset security unless they have their own security, so CheckTestToo and DateToo are View only, while luState which has it's own security can be edited.</p>
+        <p>There must be a minimum of View rights for a field or fieldset to appear on the form.  In the following image, security has been flipped:</p>
+        <p>
+            <img src="../Resources/Images/Security/Hierarchical Security2.jpg" class="thumbnail" />
+        </p>
+        <p class="Bullet1" MadCap:autonum="• ">Fieldset Test 1 has been secured with View rights, none of the fields within the fieldset have their own security so they inherit the security of the fieldset and are also secured with View rights.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Fieldset Test 2 has been secured with Edit rights and the luState field within Fieldset 2 has also been secured, but with View rights applied.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Fields within Fieldset 2 inherit the fieldset security unless they have their own security, so CheckTestToo and DateToo are editable, while luState which has its own security cannot be edited.</p>
+    </body>
+</html>

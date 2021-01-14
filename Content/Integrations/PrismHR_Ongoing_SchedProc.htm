@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>The Scheduled Process</h1>
+        <p>There are two scheduled processes involved in the HRP Import function:</p>
+        <ul>
+            <li><b>HRP Import Ongoing</b> process generates the following standard Import files:<ul><li>HRPAPI_company_ongoing*.csv</li><li>HRPAPI_clientteam_ongoing*.csv</li><li>HRPAPI_employee*.csv</li><li>HRPAPI_employment*.csv</li><li>HRPAPI_location*.csv</li></ul></li>
+            <li><b>HRP Import Voucher</b> process generates the following standard Import file:<ul><li>HRPAPI_voucher*.csv</li></ul></li>
+        </ul>
+        <h2>Service Provider user type</h2>
+        <p>Prism users who are not Service Provider user types are not imported using the HRPAPI_Users initial and ongoing imports. The user types included in the user import is determined using the AllowUserTypes parameter.</p>
+        <h2>Existing inactive users</h2>
+        <p>Existing inactive users  are deleted if a change is made to these users in PrismHR and the user is still inactive. The system will not delete user accounts without being triggered by a change to a user account in PrismHR.</p>
+        <h2>Additional parameters</h2>
+        <p>Additional parameters used by the PrismHR API include:</p>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 186px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">DefaultProjectCode</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Sets the default workspace for a record if the system is unable to
+ determine it</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">KeepLeadingZeros</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Tells the system to not strip leading zeroes from the client number
+ value stored in PrismHR</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">ExcludedContractTypes </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Sets the system to ignore clients in the PrismHR system based on the
+ Service Type. (comma delimited)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p>&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">Add ExcludedContractTypes=XXX,YYY to the Additional Parameters
+ section of the API configuration replacing XXX,YYY with the comma separated
+ (or singular) list of PrismHR Service Types.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Service Types must be comma-separated (if there are multiples to
+ exclude).</p>
+                        <p class="TableBullet" MadCap:autonum="• ">This setting applies to Import Initial Queue Clients and Import
+ Initials scheduled processes.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">If a Client is of an excluded contract type, it is not included in
+ the import file.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Import Queue records are not created for Clients that are excluded
+ (for remaining initial import maps).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">ExcludeEmailDomains </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">  Allows a comma-separated list
+ of partial email domains to be added. If a user account has an email domain
+ that starts with the excluded string, the user account is not imported. </p>
+                        <p class="TableTextLeft">Example: ExcludeEmailDomains=PrismHR,gmail would exclude any user with an
+ email domain beginning with PrismHR or Gmail such as PrismHR.com.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">ExcludeUserNames</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Allows a comma-separated list of partial UserIDs from the PrismHR
+ payroll system to be added. If a user account has a UserID that starts with
+ the excluded string, the user account is not imported.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">AllowUserTypes </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft"> If not valid, user type  is blank, will
+ inactivate existing records if present. </p>
+                        <p class="TableTextLeft">UserTypes are:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">E: Worksite Employee</p>
+                        <p class="TableBullet" MadCap:autonum="• ">M: Worksite Manager</p>
+                        <p class="TableBullet" MadCap:autonum="• ">A: Worksite Trusted Advisor</p>
+                        <p class="TableBullet" MadCap:autonum="• ">I: Service Provider</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">NumberOfEvents</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft"> Sets the max number of records to import per subscription record on each run of the HRPAPI_Ongoing import. Setting NumberOfEvents to 0 defaults the max records imported per subscription to 100. This parameter minimizes the risk of imports failing due to large recordsets. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">ContactImportBehavior</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <ul>
+                            <li><span class="UXElement">Insert</span>/<span class="UXElement">Both</span>:&#160;Allows Import Queue record creation for Contacts that are in Prism but not in <MadCap:variable name="MyVariables.ProductName" />.</li>
+                            <li><span class="UXElement">Update</span>: Does not allow  Import Queue record creation for Contacts that are in Prism but not in <MadCap:variable name="MyVariables.ProductName" />. Updates existing <MadCap:variable name="MyVariables.ProductName" /> Contacts with changes.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

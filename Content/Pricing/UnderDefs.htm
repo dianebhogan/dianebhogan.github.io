@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1 MadCap:autonum="Chapter 1 ">Underwriting definitions and their relation to underwriting approval records</h1>
+        <p>Underwriting Definitions reside in the Admin workspace.  They are used as templates to generate Underwriting Approval Records for a client workspace.  One Approval record is generated for each Underwriting Definition that matches the following criteria:</p>
+        <p class="Bullet1" MadCap:autonum="• ">UD (Underwriting Definition) unique Department</p>
+        <p class="Bullet1" MadCap:autonum="• ">UD Approval Type = RFP or Renewal</p>
+        <p class="Bullet1" MadCap:autonum="• ">UD Contract Type = CM Contract Type OR is empty</p>
+        <p class="Bullet1" MadCap:autonum="• ">UD IsActive = True</p>
+        <p>Underwriting Definition configurations are managed by unique Department/Approval Type/Contract Type:</p>
+        <p class="Bullet1" MadCap:autonum="• ">For a given Department, a Definition can be created with EITHER a unique Contract Type OR no Contract Type</p>
+        <p class="Bullet1" MadCap:autonum="• ">A Definition with no Contract Type specified will cause an Approval record to be created for ANY CM/PB Contract Type</p>
+        <p class="Bullet1" MadCap:autonum="• ">You are not allowed to have an active Department/Approval Type/Contract Type record and an active Department/Approval Type/No Contract Type as that is considered redundant and would result in duplicate Department Approvals</p>
+        <p>Each Time the Batch is ‘Accepted’ (RFP) or ‘Submitted’ (Renewal Batch), any existing Approvals in the workspace are inactivated.  New Definitions are retrieved based on the current state of the CM and Batch.  Since the Contract Type could change during a Reprocess (RFP) or at any stage in the Renewal process, it is critical that new Definitions are evaluated with each workflow pass.  This prevents Approvals that no longer apply to a client from being orphaned and left in the critical path.  Consider the following RFP scenario:</p>
+        <p class="Bullet1" MadCap:autonum="• ">A new client is created with Contract Type = PEO</p>
+        <p class="Bullet1" MadCap:autonum="• ">Two Underwriting Definitions exist for Contract Type = PEO:</p>
+        <p class="Bullet2" MadCap:autonum="• ">Risk</p>
+        <p class="Bullet2" MadCap:autonum="• ">Carrier</p>
+        <p class="Bullet1" MadCap:autonum="• ">When the Batch is Accepted, two active Underwriting Approvals are generated:</p>
+        <p class="Bullet2" MadCap:autonum="• ">Risk (Pending)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Carrier (Pending)</p>
+        <p class="Bullet1" MadCap:autonum="• ">It is then decided to convert this client to PEO-Low Cost</p>
+        <p class="Bullet1" MadCap:autonum="• ">The Batch must be Reprocessed as the Contract Type is currently locked</p>
+        <p class="Bullet1" MadCap:autonum="• ">The two existing Approval records are set to Status = Reprocess, but they are still Active in the workspace</p>
+        <p class="Bullet1" MadCap:autonum="• ">The Contract Type is changed to PEO-Low Cost</p>
+        <p class="Bullet1" MadCap:autonum="• ">One Underwriting Definition exists for Contract Type = PEO-Low Cost</p>
+        <p class="Bullet2" MadCap:autonum="• ">HR</p>
+        <p class="Bullet1" MadCap:autonum="• ">When the Batch is Accepted, we must inactive the invalid Approvals ‘Risk’ and ‘Carrier’ and generate the valid Approval ‘HR’.  If this did not take place, three Approvals would be in the system that would have to be processed, even though two of them no longer apply to the business</p>
+        <p class="Bullet1" MadCap:autonum="• ">The inactivated Approvals are not removed from the system; they are simply removed from the current workflow process.  Notes/Comments on those Approvals are still available.</p>
+        <p class="Bullet1" MadCap:autonum="• ">If this PEO-Low Cost client is ever Reprocessed and the Contract Type is set back to PEO, the existing inactive Approvals ‘Risk’ and ‘Carrier’ will be recycled (re-activated and re-used), and the non-applicable Approval ‘HR’ will be inactivated for possible future recycling.</p>
+    </body>
+</html>

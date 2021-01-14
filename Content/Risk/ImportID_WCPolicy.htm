@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1> Workers' Comp Policies and ImportIDs</h1>
+        <p>For Workers' Comp Policies, <MadCap:variable name="MyVariables.ProductName" /> controls ImportIDs  using a specific naming convention. ImportIDs remain unique at all times. The convention ensures that there are no duplicate ImportIDs on Workers' Comp policies when new ones are added or when they are cloned during renewal. Additionally, the ImportID on related Policy Comp Code and Policy State Cost Factor records are always updated when an Admin Workspace Policy ImportID&#160;has changed. </p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">Existing data generated before Release 88 does not reflect the specified convention. Workers' Comp Policy changes after Release 88 (R88) reflect the ImportID&#160;naming convention.</p>
+        <h2>Naming convention</h2>
+        <p>The business logic that generates ImportID for a Policy uses the following naming convention:</p>
+        <p>Workspace level: <code>{PolicyType}-{PolicyNumber}-{yyyymmdd(effective date)}-{WorkspaceID}</code></p>
+        <p>The naming convention also applies to Policies that reside in the Admin Workspace or within a client workspace, substituting the WorkspaceID&#160;with the ProjectID.</p>
+        <h3>ImportID examples of related dataforms</h3>
+        <p>The system uses the following naming conventions to generate ImportIDs on child dataforms:</p>
+        <p class="TableBullet" MadCap:autonum="• ">Policy Comp Code = {Policy.ImportID}-{StateAbbreviation}-{WCCodeMaster.CompCode}</p>
+        <p class="TableBullet" MadCap:autonum="• ">Policy State Cost Factor = {Policy.ImportID}-{StateAbbreviation}</p>
+        <p>The Policy ImportID populates the child dataforms when either of the following actions occurs:</p>
+        <p class="TableBullet" MadCap:autonum="• ">The dataforms are cloned on policy renewal.</p>
+        <p class="TableBullet" MadCap:autonum="• ">The Policy Number, Effective Date, or Policy Type is updated on the policy.</p>
+        <h3>When you edit the Workers' Comp Policy</h3>
+        <p>A&#160;warning message is issued when the Policy Number, Effective Date, or Policy Type is changed on the Workers' Comp Policy, indicating it will change the ImportIDs on the child forms (as previously listed).</p>
+        <h3>Business Rules</h3>
+        <p class="Body">The following table lists business rules that ensure ImportIDs are unique. These rules execute on Save, including those associated with policy renewals.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 203px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Rule</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">HE_CheckDuplicateImportID</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Checks the ImportID on save of the policy record to ensure that no other records exist with the same ImportID.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">SE_WarnImportIDChange</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">This soft error warns the global admin user that changes to the Policy Type, Policy Number, or effective date affects the ImportID of the policy and its related dataforms.</p>
+                        <p>The SetImportID rule on the Workers Comp Policy dataform was updated to set the ImportID to the following format: <code>PolicyType-PolicyNumber-yyyymmdd (effective date)-ProjectID</code> on change of any of the following fields:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Policy Type</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Policy Number</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Effective Date of the policy</p>
+                        <p>Set ImportID rules on the Policy Comp Code and Policy Cost Factor were also updated to set the ImportIDs in the following manner:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">PolicyCompCode : <code>{WCPolicy.ImportID}-{StateAbbreviation}-{WCMaster.CompCode}</code></p>
+                        <p class="TableBullet" MadCap:autonum="• ">PolicyCostFactor : <code>{WCPolicy.ImportID}-{State}</code></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

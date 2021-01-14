@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Requiring a dataform for workflow channels</h1>
+        <div>
+            <p>To require a dataform to be completed before you can change the Contract Status, configure the <b>HE_RequiredTablePerCodeEngine</b> biz rule. This also puts a link on the Client Master header to access the dataform and complete it.</p>
+            <p class="ProcedureIntro">To configure the rule:</p>
+            <ol>
+                <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Manage Rules</b>.<br />The Custom Logic Rules dashboard opens.<br /></li>
+                <li>Locate and open the entry with Method Name <b>HE_RequiredTablePerCodeEngine</b>.<br />The Rule Details form opens.<br /></li>
+            </ol>
+            <p class="Indent1">
+                <img src="../Resources/Images/Sales/RuleDetails.png" class="thumbnail">
+                </img>
+            </p>
+            <ol MadCap:continue="true">
+                <li>Configure accordingly:<ul><li>The CodeList field cannot have any spaces.</li><li>The CodeList field can be comma-separated with no spaces after the comma.</li></ul></li>
+                <li>Click <span class="UXElement">Save</span>.</li>
+            </ol>
+        </div>
+    </body>
+</html>

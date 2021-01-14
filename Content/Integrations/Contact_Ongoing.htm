@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.FutureDev">
+    <head>
+    </head>
+    <body>
+        <h1>Part 2: Contact syncing on an ongoing basis</h1>
+        <p>After the initial standardization of Contacts completes, you are ready to adopt the practice of entering contacts in either <MadCap:variable name="MyVariables.ProductName" /> or PrismHR. </p>
+        <p class="ActionTip">Do <span class="UXElement">NOT</span> enter contacts in both systems if your organization adopts the bi-directional sync functionality. </p>
+        <p>The <MadCap:variable name="MyVariables.ProductName" /> import and export processes will dutifully do the following:</p>
+        <ul>
+            <li>Import new contacts entered into PrismHR into ClientSpace and stamp the proper ImportID. This occurs if the <span class="UXElement">HRPAPI_contact*.csv</span> import mapping is active AND the <span class="UXElement">ContactImportBehavior</span> parameter is set to Insert or Both.</li>
+            <li>When the HRPExportContactsSync scheduled process is active: When a contact is saved and the Client Number is not empty, <MadCap:variable name="MyVariables.ProductName" /> automatically enables (selects)&#160;the <span class="UXElement">Sync with PrismHR</span> option.<ul><li>The HRPAPIExportContactsSync process identifies the records that have the <span class="UXElement">Sync with PrismHR</span> option selected, and exports them to PrismHR. </li><li>The <span class="UXElement">Sync with PrismHR</span> option is not selected when a contact is saved from an Import. It is only applicable to contacts who belong to a Workspace with status = Client.</li></ul></li>
+            <li>
+                <p>The <span class="UXElement">HRPAPIBiDirectionalContactsSync</span> scheduled process should be disabled (off, not active). This scheduled process is ONLY used for the initial clean up effort.</p>
+            </li>
+            <li>The <span class="UXElement">PrismHR Export Contacts</span> scheduled process continues to process the contacts with <span class="UXElement">Sync With PrismHR</span> option enabled (selected) and enters those Contacts in PrismHR.</li>
+        </ul>
+    </body>
+</html>

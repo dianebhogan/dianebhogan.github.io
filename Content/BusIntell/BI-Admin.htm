@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <map id="map1">
+            <area shape="rectangle" coords="20,77,524,120" dragDirection="0" title="Quick Search" alt="Quick Search" href="../Popups/Search.htm" target="_popup" />
+            <area shape="rectangle" coords="914,68,993,134" dragDirection="0" title="More search" alt="More search" href="../Popups/More.htm" target="_popup" />
+            <area shape="rectangle" coords="1072,128,1193,166" dragDirection="0" title="Open the selected report in design mode" alt="Open the selected report in design mode" href="../Popups/BIAdmin/DesignEdit.htm" target="_popup" />
+            <area shape="rectangle" coords="1195,126,1313,167" dragDirection="0" title="Open the selected report in view mode" alt="Open the selected report in view mode" href="../Popups/BIAdmin/RunRpt.htm" target="_popup" />
+        </map>
+        <map id="map2">
+            <area shape="rectangle" coords="61,77,612,122" dragDirection="0" title="Quick Search" alt="Quick Search" href="../Popups/Search.htm" target="_popup" />
+            <area shape="rectangle" coords="616,78,683,118" dragDirection="0" title="More search" alt="More search" href="../Popups/More.htm" target="_popup" />
+            <area shape="rectangle" coords="671,129,790,165" dragDirection="0" title="Design/Edit the selected report" alt="Design/Edit the selected report" href="../Popups/BIAdmin/DesignEdit.htm" target="_popup" />
+            <area shape="rectangle" coords="794,128,909,166" dragDirection="0" title="Run the selected report" alt="Run the selected report" href="../Popups/BIAdmin/RunRpt.htm" target="_popup" />
+        </map>
+        <h1>Business Intelligence Admin</h1>
+        <p>The Business Intelligence Admin dashboard provides Business Intelligence functionality directly from the admin dashboard. To access this dashboard, you must be a system administrator.</p>
+        <p>
+            <img src="../Resources/Images/BI/AdminDashboard-4.png" alt="" title="" />
+        </p>
+        <p class="ProcedureIntro">To access Business Intelligence Admin:</p>
+        <ol>
+            <li>
+                <p>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Outputs</span> &gt; <span class="UXElement">Business Intelligence</span>.<br />The Business Intelligence Admin dashboard opens.</p>
+            </li>
+            <li>
+                <p>To search, you can do any of the following:</p>
+                <ul style="list-style-type: square;">
+                    <li>
+                        <p>Sort by columns. <MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">See <MadCap:xref href="../Navigating/Lists.htm" title="Search dashboards" alt="Search dashboards">Search dashboards</MadCap:xref>.</MadCap:conditionalText></p>
+                    </li>
+                    <li>
+                        <p>Use Quick Search. <MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">See <MadCap:xref href="../HowToUse/QuickSearch.htm" title="Quick Search" alt="Quick Search">Quick Search</MadCap:xref>.</MadCap:conditionalText></p>
+                    </li>
+                    <li>
+                        <p>Use More search to search by Name, Category, Report Type, XML, Last Run User and Date, and Last Design User and Date. <MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">See <MadCap:xref href="../HowToUse/MoreSearch.htm" title="More search" alt="More search">More search</MadCap:xref>.</MadCap:conditionalText></p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>To search by Report Type, you can enable the column <span class="UXElement">Report Set Type</span> or use <span class="UXElement">More</span> search.</p>
+            </li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/BI/ReportSetType.png" />
+                <br />The Report Set Type column appears. Types are Report Dashboard, Scheduled, and Datasource.</p>
+        </div>
+        <p class="ProcedureIntro">To view reports:</p>
+        <ul>
+            <li>
+                <p>Select the report and click <span class="UXElement">Run Report</span>.<br />The report opens in Business Intelligence, in view mode.</p>
+            </li>
+        </ul>
+        <p class="TableProcIntro">To edit reports:</p>
+        <ul>
+            <li>
+                <p>Select the report and click <span class="UXElement">Design/Edit</span>.<br />The report opens in Business Intelligence, in design mode.</p>
+            </li>
+        </ul>
+        <p class="TableProcIntro">To delete reports:</p>
+        <ol start="1">
+            <li>
+                <p>To delete a report, select the report and click <span class="UXElement">Delete</span>. You must be a Developer User to delete reports.</p>
+            </li>
+            <li>
+                <p>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Advanced</span> &gt; <span class="UXElement">Scheduled Processes</span>.<br />The Scheduled Processes Admin dashboard opens.</p>
+            </li>
+            <li>
+                <p>Locate and select <span class="UXElement">Process Scheduled AdHoc Reports</span>.</p>
+            </li>
+            <li>
+                <p>Click <span class="UXElement">Run Process</span>.<br />The scheduled process runs and synchronizes with Izenda.</p>
+            </li>
+        </ol>
+    </body>
+</html>

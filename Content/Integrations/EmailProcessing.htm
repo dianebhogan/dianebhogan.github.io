@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Email Integration processing</h1>
+        <p>Email integration processes an external email account and creates a Client Service Case (dataform). The Email Integration scheduled process performs multiple actions to process the emails and save them as a case.</p>
+        <table style="width: 100%; mc-caption-repeat: true; mc-table-style: url('../Resources/TableStyles/Standard_Table.css'); margin-left: 0; margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 165px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Action</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableTextLeft">Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Credentials</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">The credential is looked up from the API Credentials table using the Application Code that matches the mailbox being searched.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Unread emails are downloaded</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">The list of unread emails is downloaded.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Determine workspace</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <ul>
+                            <li>If <b>Always use Default Workspace</b> is selected, the system uses the Default Workspace ID.</li>
+                            <li>The Email Alias is looked up based on the email To address. If a match is found, it uses this to determine the workspace.</li>
+                            <li>The body is searched for the CLID (Client Number) token, and if found, the business object is called to interpret the CLID and return the appropriate workspace ID++++.</li>
+                            <li>The body is searched for the WSID token, and if found, and the workspace was not set by the business object CLID request, the workspace ID is set to the WSID value.</li>
+                            <li>The email From address is compared to all employee email addresses (both Personal and Work email) in the system and tries to match the email. If a match is found, the workspace associated with that employee is used and if multiple instances of the employee email (Personal and Work) exist, the most recently changed instance is used. The email addresses are used for workspace lookup purposes to determine where to generate the case.</li>
+                            <li>If no workspace is determined, the contacts are searched for one with the same email as the email From address.  If found, the primary project ID for the contact is used as the workspace ID.</li>
+                            <li>If the contact is not found, the Organization table is searched for an organization with the same email domain.  If found, the default workspace for this organization is used.</li>
+                            <li>If no workspace is found, the default workspace from the alias is used along with the project type to create the appropriate data form.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Body scanned</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <ul>
+                            <li>When the dataform type and workspace are found, the body is scanned for additional data value tokens that are added to the form data XML document in addition to the email data items to set valid fields. </li>
+                            <li>Any invalid special characters found in the email subject and body are scrubbed. This process does not log an error message.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Business object</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <ul>
+                            <li>If a business object is specified, the EmailIntegrationCreateNewForm is called to allow the business layer to set data values before creating the form.</li>
+                            <li>If the Business Object does not cancel the save, then the dataform is saved.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Dataform saved</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">The attachments are downloaded and attached to the form based on the alias Include Attachments indicator.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">XML document</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">In addition to the email fields, the saved data is placed into an XML document to generate the reply message.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Set data values</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">If a business object is specified, the EmailIntegrationNotifySender is called to allow the business layer to set data values before generating and transmitting the notification.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Notification sent</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">If the business object does not cancel the notify action, then the notification is sent.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Marked as read</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">The email is then marked as read.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

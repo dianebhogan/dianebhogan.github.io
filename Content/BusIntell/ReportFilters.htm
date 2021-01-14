@@ -1,0 +1,674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Business Intelligence" />Report filters</h1>
+        <p>One of the trickiest parts of building a Business Intelligence (BI) report or dashboard is ensuring the filters that are applied are selecting the values you would like (and only the values that you would like) to be returned to the report at runtime.</p>
+        <p>This topic includes instructions sourced from the Izenda wiki guide to report design. We have provided some useful information  when designing and building Izenda Reports and information specific to using BI within <MadCap:variable name="MyVariables.ProductName" />.</p>
+        <h2>Filters tab</h2>
+        <p>In the Filters tab, the fields of the table/view chosen in the Data Sources tab can be filtered so that only pertinent entries appear in the table.</p>
+        <p>
+            <img src="../Resources/Images/BI/filters_tab.png" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">Filter Field drop-down menu</p>
+        <p>The Filter Field drop-down menu is a list of the available fields in the table/view that have been selected or created in the Data Sources tab. </p>
+        <p class="L1Num1" MadCap:autonum="1. ">Simply select the field you want to filter on from the drop-down menu. </p>
+        <p class="L1Num" MadCap:autonum="2. ">If you are joining tables/views, the title of the table/view that the field is from appears in parentheses next to the name of the field. The following figure demonstrates what the filter field drop-down looks like with joined tables.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/BI/filter_field_dropdown.png" />
+        </p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">Calculated fields can sometimes also be used as report filters. These calculated fields appear at the very bottom of the Datasource fields list.</p>
+        <h2>Filter Operator drop-down menu and value(s)</h2>
+        <p>The Filter Operator drop-down lets you select your operator based on the data type that has been selected in the filter. The filter fields available are only those under the Tables or Views selected in the Data Sources tab.</p>
+        <h3>Operator categories</h3>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');border-left-style: solid;border-left-width: 0.15px;border-left-color: #808080;border-right-style: solid;border-right-width: 0.15px;border-right-color: #808080;border-top-style: solid;border-top-width: 0.15px;border-top-color: #808080;border-bottom-style: solid;border-bottom-width: 0.15px;border-bottom-color: #808080;margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 118px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 160px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p>Type</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p>Filter</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Comparison</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Is Less Than</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Displays only
+ items whose values are less than the input values.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Comparison</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Is Greater Than</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Displays only
+ items whose values are greater than the input values.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Comparison</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Between</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Displays only
+ items whose values lie between the input values.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Comparison</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Isn't Less Than</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Displays only
+ items whose values are not less than the input value.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Comparison</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Isn't Greater
+ Than</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Displays only
+ items whose values are not greater than the input value.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Comparison</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Isn't Between</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Displays only
+ items whose values are between the input values.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Equivalence</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Equals</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Manual text entry
+ of the comparison value(s) separated with commas for easy copy/paste from
+ CSV.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Equivalence</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Equals(List)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Manual text entry
+ of the comparison value(s) separated by intelligently parsed delimiters. User
+ delimiter use must be consistent. For example, of consistent use: 1, 2, 3, 4
+ or 1-2-3-4 or 1 2 3 4.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Equivalence</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Equals(Auto-complete)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Manual text entry
+ of the comparison value(s) that displays a list of options as you type.
+ Separate each value with a comma.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Equivalence</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Equals(Select)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Select a single value from a drop-down list.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Equivalence</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Equals(Multiple)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Select multiple values from a scrollable list. Use Ctrl+click to highlight
+ multiple values (command+click on Mac).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Equivalence</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Equals (pop-up)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Select
+ of multiple values from a pop-up list of options.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Equivalence</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Equals (Tree)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Select groupings of values based on a hierarchy.&#160;<b>NOTE</b>: This is not a
+ default Izenda filter. Please see&#160;this page&#160;for more information.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Equivalence</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Doesn't Equal</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Exactly the opposite
+ of equals.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Equivalence</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Doesn't Equal
+ (Select)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">The opposite of
+ Equals (Select).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Equivalence</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Doesn't Equal
+ (Multiple)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">The opposite of
+ Equals (Multiple).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Equivalence</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Doesn't Equal
+ (pop-up)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">The opposite of
+ Equals (pop-up).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Equivalence</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Doesn't Equal (Tree)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">The opposite of
+ Equals (Tree).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Field Comparison</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Is Less Than
+ (Field)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Allows you to
+ compare one field to another. Determines if the first field is less than the
+ second field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Field Comparison</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Is Greater Than
+ (Field)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Compare  if one field is greater than another field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Field Comparison</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Equals (Field)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Determines if one
+ field value equals another. This is useful for joining tables on multiple
+ fields.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Field Comparison</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Not Equals
+ (Field)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">The opposite of
+ Equals (Field).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Date/Time</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Between
+ (Calendar)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Select two dates from a calendar pop-up on which to filter. This filter is inclusive
+– any dates equal to or between the specified values are included. This
+ can be changed to a manual text entry field by modifying the
+ ShowBetweenDateCalendar in the&#160;AdHocSettings.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Date/Time</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">In Time Period</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Select from a list of time periods to filter on. See more about&#160;Adding new time periods.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Date/Time</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Less Than Days
+ Old</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Single
+ numeric entry to represent the days and uses that as a filter.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Date/Time</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Greater Than Days
+ Old</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">The opposite of
+ Less Than Days Old</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Date/Time</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Equals Days Old</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Filters on
+ records that are only as many days old as you specify.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">String</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Like</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Determines if the
+ value of the field contains the given text.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">String</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Begins With</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Determines if the
+ value of the field begins with the given text.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">String</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Ends With</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Determines if the
+ value of the field ends with the given text.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">String</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Isn't Like</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">The opposite of
+ Like.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Boolean</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">True</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Determines if the
+ value in the field is true.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Boolean</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">False</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Determines if the
+ value in the field is false. Values other than the number 1 and
+ the text <b>(T|t)rue</b> is interpreted as false.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Available for All</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">...</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Selected when no
+ filter is used.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Available for All</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Blank</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Is the field
+ blank?</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Available for All</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Isn't Blank</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Is the field not
+ blank?</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Available for All</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Use Previous OR</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">String together a number of fields in an OR
+ condition as long as all fields utilize the same type of data values, such as
+ Yes/No lookups or date fields.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Blank and Param options</h3>
+        <p>
+            <img src="../Resources/Images/BI/filter_example_2.png" />
+        </p>
+        <p>The Blank and Param options  allow you to control the filtering behavior in the report viewer. They do not affect the Preview tab of the report designer.</p>
+        <p><b>Blank</b>: To use this, first set a Filter Field and then set an Operator. A value can be entered, but it is not required. If Blank is enabled, the filter returns data that matches the Value drop-down/textbox and also data that has a null value in that field.</p>
+        <p>In the example above, if Blank is enabled and then viewed in the report viewer, then the user would see all of the data where the ShipCity begins with <b>s</b> or are null.</p>
+        <p><b>Param</b>: To use this, first set a Filter Field, set an Operator, and then set Value, as in the previous example. This displays the filtered report in the report viewer and allow the user to change the filter value. If it is not enabled, then the filter is not visible to the end-user and the end-user will not be able to change the filter.</p>
+        <p>In the example above, a user can change the <b>s</b> to a <b>t</b> and update the report.</p>
+        <h3>Other buttons on the Filters tab</h3>
+        <p>The <img src="../Resources/Images/BI/BI_delete.png" /> (<b>Delete</b>), <img src="../Resources/Images/BI/filter_create_above.png" /> (<b>Create Above</b>), <img src="../Resources/Images/BI/filter_create_below.png" /> (<b>Create Below</b>), and <img src="../Resources/Images/BI/filter_move.png" /> (<b>Move</b>) functions of the Filters tab are shown below.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 46px;" />
+            <col style="width: 138px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1" style="text-align: center;">
+                        <p>Icon</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p>Control Name</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">
+                        <p class="TableTextLeft">
+                            <img src="../Resources/Images/BI/BI_delete.png" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Delete </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Delete the row the button is on.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">
+                        <p class="TableTextLeft">
+                            <img src="../Resources/Images/BI/filter_create_above.png" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Insert Row Above
+ </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Insert a row above the row the button is on.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">
+                        <p class="TableTextLeft">
+                            <img src="../Resources/Images/BI/filter_create_below.png" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Insert Row  </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Insert a row below the row the button is on.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2" style="text-align: center;">
+                        <p class="TableTextLeft">
+                            <img src="../Resources/Images/BI/filter_move.png" />
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Move</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Allows users to move
+ a row up or down in the list. You must click and drag until you see the space
+ between rows is highlighted and release the mouse button to drop it.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Other Filter features</h2>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p>Feature</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Show Filters in Report
+ Description</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Adds the filters
+ being used to the Description field of the report when the report is viewed
+ in the Report Viewer or is exported</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Require [blank]
+ Parameters in Viewer</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Sets the number of
+ filter parameters the user must set when accessing this report in the Report
+ Viewer.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p>Filter Logic
+ (Conditional Filtering)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Ex: (1 OR 2) AND (3
+ OR 4). See more about Advanced Filter Logic (see below)</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Filter logic (conditional filtering)</h3>
+        <p>Izenda Reports allow you to have an arbitrary number of filters on a new report. These filters can even be applied with custom logic that you define. This is done with the advanced logic filter.</p>
+        <p>
+            <img src="../Resources/Images/BI/filter_logic.png" class="thumbnail" />
+        </p>
+        <p>The text box on the Filters tab labeled Filter Logic is where you configure this logic. By default, there is an example filter already populated into the box to guide users in the format they should use.  This filter logic works much like the Condition Expressions used in ClientSpace for custom link display conditions.</p>
+        <p>Changing the contents of this box causes Izenda to attempt to apply this logic to the filters on the report when Preview is selected or when the Report Viewer is accessed for this report. Using the example, "(1 OR 2) AND (3 OR 4)", results are filtered conditionally based on meeting either Filter 1 or Filter 2 in addition to meeting either Filter 3 or Filter 4. You can construct simple to extremely complex logic using this control. If you have a mere two filters, a simple "1 OR 2" forces your results to meet either the first or the second filter condition. Alternatively, you can nest parenthesis and combine logical operators to form sophisticated advanced filters.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">Filter logic is applied hierarchically, left to right. In the example  <b>(1 OR 2) AND (3 OR 4)</b>, the dataset returned is filtered by (1 OR 2) before assessing AND (3 OR 4) condition. This means that any records removed by filters 1 or 2 are not available to meet the second part of the condition AND (3 OR 4).</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">When you update filter logic, it updates filter values but does not trigger the cascading filter check. Cascading only kicks in on filter value selection or filter refresh. Because the filter logic update does not trigger the cascading filter check, this could leave some filter values removed that do not need to be removed. For example, if we remove some criteria from a lower filter that would cause a prior filter to remove that value from the filter list, then when the lower filter value is removed while logic is changed it might prevent the upper filter from refreshing properly.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">A best practice is to add all required filters to a report before adding/changing the filter logic.</p>
+        <h3>Require [blank] Parameters in Viewer</h3>
+        <p>The following example requires the user to select at least two parameters before the report will run in the Report Viewer.</p>
+        <p>
+            <img src="../Resources/Images/BI/require_x_parameters.png" />
+        </p>
+        <p>And here is what the user sees when attempting to access the report.</p>
+        <p>
+            <img src="../Resources/Images/BI/require_x_parameters_2.png" class="thumbnail" />
+        </p>
+        <h3>Alias Filter field names</h3>
+        <p>The filter field name can be aliased using the Description field. This can be accessed in the Report designer from the filter tab or from the viewer by clicking the gear icon in the filter. Here the Description can be entered in the Report Designer Filter Tab.</p>
+        <p>
+            <img src="../Resources/Images/BI/rdfilter.png" class="thumbnail" />
+        </p>
+        <p>And here is the description field in the Report Viewer by clicking the gear icon on the filter.</p>
+        <p>
+            <img src="../Resources/Images/BI/vw1filter.png" class="thumbnail" />
+        </p>
+        <h3>Dashboard reports and filters</h3>
+        <p>It is important to understand that when constructing a dashboard with filtered data, the included reports which you have added to the dashboards tiles must either run independent of passed filters (such as a report using the #CurrentUser flag) or must all share the filter parameters that are passed in from the dashboard which calls them.  </p>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Business Rules" />Configuring Create Discussion business rules</h1>
+        <p>The Client Service Case  rule <span class="UXElement">Create Discussion</span>, automatically creates a case discussion based on configured triggers. The rule is scripted as inactive and requires the following parameter configuration: <span class="UXElement">EmailTemplateCode</span> and <span class="UXElement">InitialRecipients</span>. After you configure and activate, the rule creates a new discussion and triggers an automated email to the initial recipients based on the rule parameters.</p>
+        <p>
+            <img src="../Resources/Images/Rules/CreateDiscussion.png" class="thumbnail" />
+        </p>
+        <p>Related data:</p>
+        <ul style="list-style-type: square;">
+            <li>Method:&#160;CreateDiscussion</li>
+            <li>Rule Title: Create Discussion</li>
+            <li>Rule Type:&#160;Biz Logic</li>
+        </ul>
+        <p class="ProcedureIntro">To configure the rule:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Advanced</span> &gt; <span class="UXElement">Manage Rules</span>.<br />The Custom Logic Rules dashboard opens.</li>
+            <li>Open the rule <span class="UXElement">Create Discussion</span> (click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> Jump).<br />The Rule Details form opens.</li>
+            <li>Complete the form.</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 183px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Primary Trigger Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Optional. Select a field from the Table Name, which is the Client Service Case.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Primary Trigger Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When you specify a Primary Trigger Field, then select a value. For example, for Primary Trigger Field = Communication Method, you can specify a value, such as Employee Portal. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">EmailTemplateCode</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Enter the template code of the system email template that is used when replying to discussion threads. The template code must begin with <span class="UXElement">CSC</span>. See <MadCap:xref href="../EmailTemp/Config-CaseDisc-ET.htm" title="Configuring Case Discussion Email Templates" alt="Configuring Case Discussion Email Templates">Configuring Case Discussion Email Templates</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">InitialRecipients</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is a comma-delimited list of User fields on the associated case or Employee form that is used to create the initial email recipients for the discussion response. Field names must follow the tableName.fieldName format. For example, gen_ClientServiceCase.BrokerContact.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Active</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Active</span> to enable the rule.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+    </body>
+</html>

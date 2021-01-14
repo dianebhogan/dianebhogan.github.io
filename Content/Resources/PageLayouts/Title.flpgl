@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PageStyles>
+    <Page Width="800" Height="800" Padding="20px" PageSize="Letter" PageType="title" PaddingLeft="1in" PaddingRight="1in" PaddingTop="1in" PaddingBottom="1in" Name="TitleCoverLogo">
+        <Frame X="-34px" Y="-51px" Width="69px" Height="45px" Flow="decoration0" Right="589px" Bottom="870px" BackgroundImage="../Images/FlareProjectAssets/Logos/PrismHR_Logo_Small.png" BackgroundRepeat="no-repeat" Anchors="" />
+        <Frame X="-95px" Y="193px" Width="817px" Height="502px" Flow="decoration0" Right="-98px" Bottom="169px" BackgroundImage="../CoverImages/Hand and Computer.jpg" BackgroundRepeat="no-repeat" Anchors="" />
+        <Frame X="-50px" Y="23px" Width="722px" Height="823px" Flow="body" Right="-48px" Bottom="18px" BackgroundRepeat="no-repeat" Anchors="" />
+    </Page>
+    <Page Width="800" Height="800" Padding="20px" PageSize="Letter" PageType="normal" PaddingLeft="1in" PaddingRight="1in" PaddingTop="1in" PaddingBottom="1in" Name="TitleNOLogo">
+        <Frame X="1px" Y="77px" Width="623px" Height="176px" Flow="body" Right="0px" Bottom="611px" />
+    </Page>
+</PageStyles>

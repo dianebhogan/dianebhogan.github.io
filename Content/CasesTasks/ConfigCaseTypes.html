@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring case types</h1>
+        <p>You can add case types with default values so that when your users add cases, some of the fields are all set! To add client service case types, you must be a Global Admin and assigned a role with Edit rights to the <b>gen_AdminCaseTypes</b> form. To view a list of your case types, see <MadCap:xref href="FindCaseTypes.htm" title="Finding your case types" alt="Finding your case types">Finding your case types</MadCap:xref>.</p>
+        <p class="ProcedureIntro">To add client service case types:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>Admin Workspace</b>.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Search for <i>Client Service Case Type</i> or select <b>Client Service</b> &gt; <b>Client Service Case Type</b>.<br /></p>
+        <p class="StepResult">The Client Service Case Type displays.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Click <b>Add</b>.<br /></p>
+        <p class="StepResult">The Client Service Case Type Add form opens.</p>
+        <p class="L1Num" MadCap:autonum="4. ">Complete the form as required:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 140px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="vertical-align: top;padding-left: 4px;padding-right: 4px;padding-top: 4px;padding-bottom: 4px;border-right-style: solid;border-right-width: 0.025px;border-right-color: #c0c0c0;border-bottom-style: solid;border-bottom-width: 0.025px;border-bottom-color: #c0c0c0;">
+                        <p class="TableTextLeft">Default Subject</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The <b>Default Subject</b> field can be used to set the Subject line for the Case Type in question on create.  After this field is filled, the subject line no longer defaults. This is by design. We want to preserve any additional information that may have been added. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="vertical-align: top;padding-left: 4px;padding-right: 4px;padding-top: 4px;padding-bottom: 4px;border-right-style: solid;border-right-width: 0.025px;border-right-color: #c0c0c0;border-bottom-style: solid;border-bottom-width: 0.025px;border-bottom-color: #c0c0c0;">
+                        <p class="TableTextLeft">Default Issue</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The <b>Default Issue</b> field can be used to set the Issue field for the Case Type in question on create.  After this field is filled, the Issue field no longer defaults. This is by design as we want to preserve any additional information that may have been added.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1" style="vertical-align: top;padding-left: 4px;padding-right: 4px;padding-top: 4px;padding-bottom: 4px;border-right-style: solid;border-right-width: 0.025px;border-right-color: #c0c0c0;border-bottom-style: solid;border-bottom-width: 0.025px;border-bottom-color: #c0c0c0;">
+                        <p class="TableTextLeft">Default Assignment</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">When you assign a case, you can specify the Default Assignment as Creator, Single User, or Client Role.</p>
+                        <ul>
+                            <li><b>Creator</b>: Defaults to the <b>Assigned To</b> user on the case, the person that creates the case</li>
+                            <li><b>Single User</b>: Defaults to the user selected in <b>Assigned To User</b> (fields change depending on the selection in Default Assignment).</li>
+                            <li><b>Client Role</b>: Enables <b>Assigned To Field</b> and <b>Backup Assigned To</b>. </li>
+                        </ul>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">When you select Client Role, Assign To Field and Backup Assigned To are required.</p>
+                        <ul>
+                            <li>Backup Assigned To ensures that if the selected client role is not completed on the Client Team dataform, the case type defaults to a meaningful value. </li>
+                            <li>If the Client Team field is empty and the Backup Assigned To has not been set, the Default Assignment reverts to the Manager of the Responsible Department field on the Client Service Case Category metadata associated with the case type.</li>
+                        </ul>
+                        <p class="TableTextLeft">The system dynamically selects the targeted user based on the Client workspace settings.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="5. ">Click <b>Save</b>.</p>
+        <p class="ProcedureIntro" MadCap:conditions="ClientSpace.Print">
+            <img src="../Resources/Images/ICONS/ICON_ViewVideo-pdf.png">
+            </img> Video</p>
+        <p MadCap:conditions="ClientSpace.Print">View the video about <a href="https://prismhr.wistia.com/medias/7v5njhhh6c" target="_blank" title="Configuring Case Types" alt="Configuring Case Types">Configuring Case Types</a>.</p>
+    </body>
+</html>

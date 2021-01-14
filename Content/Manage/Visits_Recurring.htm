@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring recurring visits</h1>
+        <p>
+            <img src="../Resources/Images/Sales/Visit_plannedrecurring.png" class="thumbnail_right" />
+        </p>
+        <p>One of the best features of client visits is the ability to set automatically recurring visits. For a recurring visit, when you mark the visit as Completed, the visit is saved and you are returned to the Client Visit dashboard. When you refresh the list, you see that another Planned visit has been set up. The recurring planned visit is established from the Client Master Company Other Info tab of the Client Master, when you select a Visit Type of R.</p>
+        <p>However, for recurrence to work, your system administrator must configure Lookup metadata for Type of Visit and Visit Schedule. The following procedures guide you through the configuration.</p>
+        <h2>Step 1:&#160;Activate the rule</h2>
+        <p>First, you must activate the rule, CreateNextVisit. </p>
+        <p class="ProcedureIntro">To activate the rule:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span><img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Advanced</span> &gt; <span class="UXElement">Manage Rules</span>.<br />The Custom Logic Rules dashboard opens.</li>
+            <li>Locate the Dataform Client Site Visit with the Method Name <span class="UXElement">CreateNextVisit</span> and click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Open</span>).<br />The Rule Details form opens.</li>
+            <li>Select the <span class="UXElement">Active </span>option.<br />Typically this rule is set to Active. </li>
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <h2>Step 2: Configure the Lookups</h2>
+        <p>The next step is to configure the Lookup metadata for the Type of Visit and Visit Schedule. Different visit types can have different recurrence frequencies. Additionally, there are multiple entries for each of the Lookups. For recurrence to work, you must configure each one.</p>
+        <p class="ProcedureIntro">To configure the Type of Visit:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Lookups</span>.<br />The Lookups dashboard opens. </li>
+            <li>Filter on <span class="UXElement">TypeOfVisit</span>.<br />There are multiple entries for TypeOfVisit. Configure each type where you want recurrence. </li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Lookups/TypeOfVisit-List.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Select an entry and click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Open</span>).<br />The Lookup Details form opens. Our example uses RetentionVisit.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Lookups/LookupDet-TypeOfVisit.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>In <span class="UXElement">Auto Create Next Visit</span>, select <span class="UXElement">Yes</span>.<br />The Next Visit Setting fieldset becomes available, with the required fields Dataform for Frequency and Field for Frequency.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Lookups/NextVisitSetting.png" class="thumbnail" />
+            </p>
+        </div>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 142px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Dataform for Frequency</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select a dataform with the field that determines how often a recurrence will occur. This can be any dataform. The Company Other Info dataform is a good example.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Field for Frequency</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Enter the technical name of the field for recurrence, which is on the selected Dataform for Frequency. Field for Frequency requires a field that has the Element Type, Lookup (core) in the Lookup Group, Visit Schedule. Visit Schedule metadata must be configured.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="indent">
+            <p><span class="UXElement">Field for Frequency</span>: As an example, on the Company Other Info dataform, the field HR&#160;General Visit has the technical Field Name of luHRGeneralVisitSchedule.</p>
+            <p class="TableTextLeft">
+                <img src="../Resources/Images/Lookups/TechnicalName.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <p class="ProcedureIntro">To configure a new frequency:</p>
+        <p>Lookups for Visit Schedule are already configured with frequency. </p>
+        <ol>
+            <li>To view frequency, in Lookups, filter for <span class="UXElement">Visit Schedule</span>.<br />The entries are already configured. However, you may want to review or add a new frequency.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Lookups/VisitSched-List.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>To add a new frequency, click <span class="UXElement">Add</span>.<br />The Lookup Details form opens.</li>
+            <li>Complete the fields:</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 141px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Group</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Visit Schedule</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Code</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Enter a name, such as Weekly.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Decode</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Enter the name again, such as Weekly.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Apply</span>.<br />The Additional Settings fieldset becomes available.</li>
+            <li>In <span class="UXElement">Days per Frequency</span>, enter a number. For example, for Weekly, type 7.</li>
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+    </body>
+</html>

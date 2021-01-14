@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultDestination
+  Version="1"
+  Comment="This is my publish destination"
+  Host="diane-hogan.com"
+  User="MyAccountId"
+  Password=""
+  Directory="/public_html"
+  Port="21"
+  ViewUrl=""
+  Type="ftp"
+  ChangedOnly="true"
+  UploadLogFile="true"
+  RemoveStale="true"
+  SftpServerValidation="validation-none"
+  SftpAuthentication="authentication-password"></CatapultDestination>

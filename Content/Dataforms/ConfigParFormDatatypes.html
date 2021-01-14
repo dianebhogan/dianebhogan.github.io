@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Dataforms" />Configuring parent form datatypes</h1>
+        <p>Parent-child relationships between dataforms allow you to build a fully relational structure to your <MadCap:variable name="MyVariables.ProductName" /> information, knitting dataforms together to create a data structure that mirrors the real world. An example of this in our PEO system is the Employee demographics and related forms. For clients, there are one or more employees, each with a singular record. If the employee moves or gets married, you want to update that record instead of creating a new one.</p>
+        <p>
+            <img src="../Resources/Images/Dataform/OneToMany.jpg" class="right" />
+        </p>
+        <p>The employee’s employment history, however, is a different story. There are many reasons to historically track employment information. Take for example a theme park that terminates employees at the end of the season, then re-hires them at the beginning of the next season. By historically tracking this employment record, we can view an employee’s history, pay grade changes, and reasons for termination.  The person is the same but the job changes. </p>
+        <p>In database administration, this is known as a One-to-Many relationship: one employee record, with many employment records. To take this a step further, each Employment record has multiple paycheck or voucher records associated with it and each voucher record can have multiple deduction records and so on. The ability to dynamically associate data together in a cohesive structure is one of the most powerful capabilities of the <MadCap:variable name="MyVariables.ProductName" /> system.</p>
+        <p>Parent form fields are always added from the Child form. So, in our example, there would be an Employee field on the Employment record, an Employee Employment (Job) field on the Voucher record, and so on. This is important to understand when completing the setup of this relational datatype.</p>
+        <p>Let's use the Employee field and the following dataform as a guide.</p>
+        <p>
+            <img src="../Resources/Images/Dataform/Employee.png" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">To configure the Employment dataform:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Dataform Admin</b>.<br /></p>
+        <p class="StepResult">The Dataform Admin dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Open <b>Employment</b>.<br /></p>
+        <p class="StepResult">The Dataform Properties: Employment form opens.</p>
+        <p class="L1Num" MadCap:autonum="3. ">In the <b>Action Center</b>, open <b>Fields</b>.<br /></p>
+        <p class="StepResult">The Employment fields list displays.</p>
+        <p class="L1Num" MadCap:autonum="4. ">Open <b>Employee</b>.<br /></p>
+        <p class="StepResult">The Employee dataform opens.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 130px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Procedure-Head-Header1">
+                    <th class="TableStyle-Procedure-HeadE-Column1-Header1">Field</th>
+                    <th class="TableStyle-Procedure-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Element Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Determines the type of data you store in this field. <b>Parent Form</b> is the default.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Field Set</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">A fieldset is a group of fields delineated by a box. You use a fieldset to organize fields.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Field Label</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">This value displays on the dataform, so <b>Employee</b> makes sense.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Field Name</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is the column name for this field as it is stored in the database.</p>
+                        <p>On these parent form datatype fields, the system stores the  ID  of the parent form record. This is  called a  Foreign Key  (when joining data tables together in these relationships, the primary ID of the record on another table is the foreign key of that record on the referencing table), so we would use a standard naming convention for this field of  <b>fk</b>  (foreign key)  <b>Employee</b>  (dataform name)  ID  or  <b>fkEmployeeID</b>.</p>
+                        <p>As a best practice, use camel case for the Field name. Begin with lowercase to indicate datatype (such as  <b>fk</b>  for foreign key or  <b>lu</b>  for lookup). This is a best practice and makes the data easier to understand when you use this information in reports.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Row</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">Row property determines the vertical ordering of fields and fieldsets. Fields that are within a fieldset are ordered within that fieldset. A best practice is to set this in increments of ten, which allows for re-ordering fields or adding fields between rows without re-ordering the entire form.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Column</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">Column property is hard-coded to dictate a two-column format.&#160;</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Field Behavior</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• ">When  <b>ReadOnly</b>  is selected, the field cannot be edited.</p>
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• ">When  <b>Required</b>  is selected, the field must be completed before you can save the dataform unless the field is in a hidden fieldset.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Length</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">The maximum length of the field entry. This property is valid for text and integer data types.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Comment</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">Comments provide online help for dataform users. When comments are added to any dataform field, the info bubble is enabled and on hover, the info bubble displays the comment text in a pop-up.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Quick Search</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select a value to add the field to the Quick Search on multiform searches:</p>
+                        <p class="Bullet1" MadCap:autonum="• ">Starts With</p>
+                        <p class="Bullet1" MadCap:autonum="• ">Equals</p>
+                        <p class="Bullet1" MadCap:autonum="• ">Contains (% search)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Parent Form</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Dataforms can be related to each other in a parent-child relationship using the <b>Parent Form</b> data type. When this data type is selected, the related form fields are enabled (<b>One to One</b>&#160;and  <b>Form Link Name</b>), allowing you to define the relationship.</p>
+                        <p>The Parent Form is selected from the list of all dataforms because the relational field is placed on the child form.&#160;Recursive relationships where a record is related to another record of the same dataform are supported. For example, a person dataform may be related to itself to represent the mother and father of the person.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">One to One</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p colspan="1" class="TableTextLeft">By default,  <b>One to One</b>  is enabled (selected). This means that each parent form can be related to only one child form. One-to-many relationships allow a parent form to relate to many children records.</p>
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• ">If  <b>One to One</b>  is enabled (selected), the link to the child form from the parent presents the child form directly.</p>
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• ">If  <b>One to One</b>  is cleared (not selected), this means you have a one-to-many relationship. The link to the child form from the parent presents a list of related records giving the user the option to edit an existing related record or add a new related record.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Form Link Name</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">Employment Information. This is what appears in the form link in the upper left of the Parent dataform.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Form Searchable</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">When selected, the form is one of the Search parameters in a multiform list.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Secured</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">When selected, the field is secured and generates a security entity for the field in the format of <b>gen_TableName_FieldName</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Active</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">Determines if the field displays on the dataform. Deactivating a field is preferential to deleting it because deleting the field removes it from the underlying SQL table and erases the data. When you deactivate or hide a field, you retain the data for later use.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Hidden</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">Determines if the field and its children are hidden when a dataform record is viewed.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Index this field</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">When selected, the field is added to the SQL table index. <b>Index this field</b>&#160;makes searches based on this field faster.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Audit this field</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">Determines if the field is auditable.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Cloneable</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">Determines if the field is configurable when this dataform is created by Workflow and Email Templates.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Allow Dataform Notification</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">When selected, this field is included in a dataform notification when dataform subscribers are emailed. Updated fields appear in bold in this email.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyB-Column1-Body1">Triggerable</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyA-Column1-Body1">Determines if this field is available for use as the Triggering Field or as one of the Triggering Conditions when configuring Workflow Channels and Email Templates</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The remainder of the setup for this dataform field is open to configuration on your part but notice that fkEmployeeID is a required field on this form. You cannot have an employment record without an attached employee, so the field is required. Careful planning before adding fields to a dataform saves a lot of cleanup of bad data down the road.</p>
+    </body>
+</html>

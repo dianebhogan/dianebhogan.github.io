@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Workflow Channels" />Channel and items</h1>
+        <p>When you have completed the four-step process, you are returned to the Channel. Channel is the top-level item that can have multiple workflow items, all potentially triggered from unique conditions. In our example, a Risk case in the Southeast region could generate a different workflow than the same case in the Northwest region and so on. All these top-level Workflow items are attached to the Workflow Channel.</p>
+        <p>
+            <img src="../Resources/Images/Workflow/TopLvl.png" class="thumbnail" />
+        </p>
+        <p>Workflow Channels can contain many workflow items, and each item can have dependent workflow items. You can add, edit, and remove workflow items from the channel using this interface.</p>
+        <p class="ProcedureIntro">From the Workflow Channels list, you can:</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Edit</b>: Select an existing workflow item and click  <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<b>Jump</b>) to begin editing an existing workflow.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Delete</b>: Delete the selected Workflow Item and any dependent items.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Add</b>: Add a new Workflow Item for this channel.</p>
+        <h2>Display order of workflow items</h2>
+        <p class="Body">You can adjust the display order of workflow items, so they present in a logical order. Changing the display order does not affect the triggering of workflow items but is merely a visual reference to better allow administrators to organize these lists. Workflow items are adjusted by numerical value. You can use negative numbers to move an entry above an item numbered 0 (zero).</p>
+        <p class="ProcedureIntro">To alter the display order of workflow items:</p>
+        <ol>
+            <li>Open a workflow channel with multiple workflow items.<br />The Channel opens, with the Workflow Items listed. Note the column Display Order. In the following example, both workflow items have a display order of 0 (zero).</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Workflow/DisplayOrder_1.png" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>To change the display order, select and open (double-click the item or <img src="../Resources/Images/ICONS/ICON_Jump.png" />) the item you want to move. Let's move <span class="UXElement">Benefits item</span>. <br />The item opens in the workflow wizard.</li>
+            <li>In <span class="UXElement">Display Order</span>, type the new order number and click <span class="UXElement">Save</span>. For this example, let's change the order for <span class="UXElement">Benefits item</span> from 0 to 1.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Workflow/DisplayOrder_2.png" />
+            </p>
+            <p>You are returned to the Channel list of Workflow Items. Note the Display Order column now shows <span class="UXElement">Benefits item</span> as the second entry with the Display Order number set to 1. </p>
+            <p>
+                <img src="../Resources/Images/Workflow/DisplayOrder_3.png" />
+            </p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Maintaining Policy Comp Codes</h1>
+        <p>This topic describes the process of adding  Policy Comp Codes to <MadCap:variable name="MyVariables.ProductName" />. When adding Comp Codes, the <b>Master Code</b> and the <b>Policy Comp Code</b> are related components.</p>
+        <p class="ProcedureIntro">To add policy comp codes:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Administrative Data</b> &gt; <b>Policy Comp Code</b>.<br />The Policy Comp Code dashboard opens.<br /></li>
+            <li>To add a policy comp code, click <b>Add</b>.<br />The Policy Comp Code: Add form opens. The Policy Comp Code dataform describes the policy, code state, and rates for use in the Pricing System in <MadCap:variable name="MyVariables.ProductName" />.<br /></li>
+            <li>Complete the form.</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 121px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Comp Code&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is a foreign
+ key relationship to the WC Code Master table, which is a parent form link to the master code. Therefore, the Master Code must be set up before using it on the
+ Policy Comp Code. Provide the exact value shown in the WC Code field.  If a 0 or series of zeros precede the
+ number, be sure your import file contains them too.   This field should be treated as text not a
+ number. See <MadCap:xref href="Add-Master-Comp-Code.htm" title="Adding Master Comp Codes" alt="Adding Master Comp Codes">Adding Master Comp Codes</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">State&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">  The State to which the Policy Code  applies.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Policy&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">  Workers' Comp Policies generally only cover
+ a subset of Codes and States. This is the Policy to which the code is
+ attached.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Status&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">  Codes may have many statuses, some of
+ which&#160;are used to flag dangerous codes or codes that otherwise require
+ some kind of special underwriting or approval.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Rate (Manual)&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">  This is normally the PEO Rate per $100
+ before any mods and discounts.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Rate (Funding)&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">  This is the PEO Cost per $100 provided by
+ the Workers' Comp Carrier. This is the amount paid to the carrier.  Sometimes this is referred to the Net Rate or Effective Rate paid to
+ the Carrier. If the Use
+ Cost Factors on the associated Policy is set to Yes and the Manual Rate
+ is changed, this field is recalculated after imported.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Rate (State)&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">  The State Rate field is not used in Pricing
+ calculations but is displayed in the header of the Pricing Comp Code for
+ comparison to the other Rates, so this could be the State provided rate, or
+ can be used to store a baseline rate for the code for comparison.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <p>Policy Comp Codes can either be added manually, by filling out all of the required fields on the dataform and saving or can be imported using the Code Rate Sheet field on the Workers Comp Policy. <MadCap:conditionalText MadCap:conditions="ClientSpace.Sprint_R98">To mass update or add new rates, see <MadCap:xref href="Import-WC-Code-Rates.htm" title="Importing Policy Work Comp Code Rates" alt="Importing Policy Work Comp Code Rates">Importing Policy Work Comp Code Rates</MadCap:xref>.</MadCap:conditionalText></p>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>
+        <MadCap:microContent id="microcontent1">
+            <p>All <MadCap:variable name="MyVariables.ProductName" /> users have a user profile. For some clients, the user profile  is automatically imported from PrismHR or Salesforce. Administrators can also manually add user profiles. The user profile record contains the username that you use to access <MadCap:variable name="MyVariables.ProductName" />, along with a few identification fields (Name, Department, Job Title, Phone, Email). Additionally, the user profile has a few administrative and out of office settings.</p>
+            <p>You can edit your user profile for some demographic information, enable out of office notifications, and add modules to the topmost banner bar of the application. Other edits are performed by administrators such as role assignment. Roles control user access (view, add, edit, delete, and admin) to various entities. <MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">See <MadCap:xref href="../../UserProfile/AddEditUserAccounts.htm" title="Adding and editing user accounts" alt="Adding and editing user accounts">Adding and editing user accounts</MadCap:xref></MadCap:conditionalText><MadCap:conditionalText MadCap:conditions="ClientSpace.Print">See the topic <i>Adding and editing user accounts</i> in <i>ClientSpace Setup &amp;&#160;Administration</i></MadCap:conditionalText>.</p>
+            <p MadCap:conditions="ClientSpace.Screen">
+                <object MadCap:HTML5Video="true" src="../Movies/FindUserProfile.mp4" MadCap:Param_controls="true" MadCap:Param_muted="true" MadCap:Param_loop="true" MadCap:Param_autoplay="true" style="max-width: 100%;">
+                </object>
+            </p>
+        </MadCap:microContent>
+    </body>
+</html>

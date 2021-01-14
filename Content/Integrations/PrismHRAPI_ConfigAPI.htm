@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring the API for Import Map Details</h1>
+        <p>This topic guides you through configuring the Import Map Details. In the Add Parameter section, you specify a set of name-value pairs for each Field to be included in the import file.</p>
+        <p style="font-weight: bold;">
+            <img src="../Resources/Images/Integrations/PrismAPI.png" class="thumbnail">
+            </img>
+        </p>
+        <p class="ProcedureIntro">To configure the API:</p>
+        <ol>
+            <li>Go to <strong>System Admin</strong> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <strong>Advanced</strong> &gt; <strong>API Configuration</strong>.<br />The API&#160;Configuration dashboard opens.</li>
+            <li>If there is no API&#160;entry in the list, then click <b>Add</b>.<br />The API&#160;Configuration form opens. The API Configuration form  has an API Configuration fieldset that contains the information necessary to connect to the specific PrismHR installation for the Client. The example shows test data. Use actual client data when configuring.</li>
+        </ol>
+        <MadCap:snippetBlock src="../Resources/Snippets/PrismHRAPI_Imports.flsnp">
+        </MadCap:snippetBlock>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <h2>How InitialImportClients and InitialMaxEmployeeCount work together</h2>
+        <p class="Body">Let's look at how  InitialImportClients and InitialMaxEmployeeCount are  processed. The scenario is as follows:</p>
+        <ul style="list-style-type: square;">
+            <li>API  Parameter <span class="UXElement">InitialImportClients</span> = 5 (5 clients will be processed during each scheduled process run)</li>
+            <li>API Parameter <span class="UXElement">InitialMaxEmployeeCount</span>= 10 is the maximum number of Employees to import during a scheduled process run</li>
+        </ul>
+        <h3>First Scheduled Process Run</h3>
+        <p>The first scheduled process run: 5 Clients at a time, Max Employee Threshold is 10</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Client</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableTextLeft">Employees processed</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Client 1 has 5 employees</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">5 Employees will be processed</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Client 2 has 2 Employees</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">2 Employees will be processed</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Client 3 has 4 Employees</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">4 Employees will be processed</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Client 4 has 20 Employees</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Client 4 will not be processed during this run, Max Employee Count has been exceeded</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Client 5 has 30 Employees</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Client 5 will not be processed during this run, Max Employee Count has been exceeded</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Second Scheduled Process Run</h3>
+        <p>The second scheduled process run: 5 Clients at a time, Max Employee Threshold is 10</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Client</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableTextLeft">Employees processed</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Client 4 has 20 Employees</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">20 Employees will be processed</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Client 5 has 30 Employees</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Client 5 will not be processed during this run, Max Employee Count has been exceeded</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Client 6 has 2 Employees</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Client 6 will not be processed during this run, Max Employee Count has been exceeded</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Client 7 has 50 Employees</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Client 7 will not be processed during this run, Max Employee Count has been exceeded</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Client 8 has 9 Employees</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Client 8 will not be processed during this run, Max Employee Count has been exceeded</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>If InitialMaxEmployeeCount = 0, all Clients (up to InitialImportClients count) and their Employees will be processed each scheduled process run.</p>
+    </body>
+</html>

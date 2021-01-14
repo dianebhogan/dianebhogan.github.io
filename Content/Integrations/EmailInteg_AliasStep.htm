@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Email Integration" />Step 1:&#160;Alias step</h1>
+        <p>An Email Integration record can have multiple aliases on a mailbox. The email address is how it connects to the mailbox. The alias defines what it does with the mailbox. In this step, specify the email address to match an email mailbox, such as <code>payroll.bigtmepeo@gmail.com</code>.</p>
+        <p class="ProcedureIntro">To create email integration aliases:
+</p>
+        <p class="L1Num1" MadCap:autonum="1. ">
+Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Email Integration</b>.
+<br /></p>
+        <p class="StepResult">The Email Integration dashboard opens.
+</p>
+        <p class="L1Num" MadCap:autonum="2. ">Select an entry from the list and click <b>Details</b>.<br /></p>
+        <p class="StepResult">The Email Integration form opens</p>
+        <p class="L1Num" MadCap:autonum="3. ">In <b>Aliases</b>, click <img src="../Resources/Images/ICONS/ICON_NewAdd.png" /> (<b>New</b>).<br /></p>
+        <p class="StepResult">The Alias step opens.<br /></p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/Alias_Add.png" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="4. ">To create, delete, or modify an email template, access the Email Integration Alias page and set the following fields:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 157px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Email Alias</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required. Should contain the email address
+ associated with this alias. The email To address is used to match an email to
+ its associated alias. Each credential should have at least one email alias
+ associated with the account email address. Additional, email aliases can be
+ created so that email accounts with multiple email aliases can be mapped to
+ different Project Types. You can create as many email aliases as the provider
+ allows. There may be differences in the “To address” format of email aliases
+ between providers. For example:</p>
+                        <ul>
+                            <li>Credential Username: client@gmail.com</li>
+                            <li>Email Account: client@gmail.com</li>
+                            <li>Email Alias 1: client+clientservicecase@gmail.com</li>
+                            <li>Email Alias 2: client+createemployee@gmail.com</li>
+                        </ul>
+                        <p class="TableTextLeft">In this example, you would create 3 email aliases,
+ the first using the Email Account as the email Alias value.&#160;This creates
+ the default email alias to be used.&#160;The second would be created using email Alias 1
+ and the project type set to the Project Type associated with creating a
+ Create Client Service Case project type. The third would be created using email Alias 2,
+ and the project would be set to the Project Type associated with creating an
+ employee <MadCap:annotation MadCap:createDate="2019-08-05T12:30:54.1819146-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="Ask Tony to confirm" MadCap:editor="dhogan" MadCap:editDate="2019-08-05T12:31:01.1544898-04:00">(the only supported dataform
+ created using this method is the Client Service Case dataform).</MadCap:annotation></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Default Alias</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">If an alias cannot be located by the email address
+ for the incoming email, this alias is used to process the email for the API
+ configuration mailbox.&#160;Only one default alias can be defined.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Include Attachments</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Optional. When set,&#160;email
+ attachments are downloaded and attached to the dataform during
+ processing.&#160;File attachments are checked against the list of Valid Email
+ attachment types stored in the Lookup ValidAttachExt. Unrecognized email
+ attachments are&#160;added to&#160;a .zip archive and attached with the
+ message: "CAUTION! The original file is NOT AN
+ ALLOWED FILE TYPE in ClientSpace, and it has been converted to a Zip
+ Archive"</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="5. ">Click <b>Next</b>.<br /></p>
+        <p>The <MadCap:xref href="EmailInteg_ActionStep.htm" title="Step 2: Action step" alt="Step 2: Action step">Step 2:&#160;Action step</MadCap:xref> opens.</p>
+    </body>
+</html>

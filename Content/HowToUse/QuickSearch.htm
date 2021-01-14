@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Quick Search</h1>
+        <p>The Quick Search bar provides an easy way to search for records quickly.&#160;</p>
+        <p>
+            <img src="../Resources/Images/Navigating/QuickSearch.png" alt="" title="" />
+        </p>
+        <p class="ProcedureIntro">To use Quick Search:</p>
+        <ol>
+            <li>When you type an ID or word:</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');width: 100%;" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 109px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">term or phrase</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Must equal the search string entered. For example, searching for <b>23564</b> finds the case where case number = 23564.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">starts with</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Must begin with the search string entered. For  example, searching for <b>Client</b> finds cases with a category of <i>Client Alert</i> and <i>Client Contact</i> but <b>not</b> <i>Payroll Client</i>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">%</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Use the <span class="UXElement">%</span> symbol to search fields for records containing the search string that follows the symbol.&#160;For example, searching for <b>%del</b>finds entries with <span class="UXElement">del</span> anywhere in the grid fields. The following example shows Del Friscos Tex-Mex, Jason's Deli, Inc., Jay's Deli, Jim's Deli, Reuben and Rachel Deli, and Tracy's Deliveries.</p>
+                        <p class="TableTextLeft">&#160;</p>
+                        <p class="TableTextLeft">
+                            <img src="../Resources/Images/HowTo/Percent.png" alt="" title="" class="thumbnail" style="width: 585px;height: 166px;" />
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Press <span class="UXElement">Enter</span>.<br /></li>
+        </ol>
+        <p>Results render active and inactive records when searching for specific IDs for the following modules: </p>
+        <ul>
+            <li>Cases (Case number)</li>
+            <li>Tasks (Task ID)</li>
+            <li>WC Policies (Policy Number) </li>
+            <li>WC Claims (Carrier Claim Number, CS Claim Number) </li>
+            <li>EPLI Claims (Carrier Claim Number)</li>
+            <li>Unemployment Claims (Docket Number)</li>
+        </ul>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">Overlaps can occur when using Quick Search. Looking for <b>%Loss Run</b> can return cases where the category is <i>Loss Run Request</i> because the Starts With search overlaps the <b>%</b> search.</p>
+    </body>
+</html>

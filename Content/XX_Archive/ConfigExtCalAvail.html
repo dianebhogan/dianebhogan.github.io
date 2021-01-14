@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+    </head>
+    <body>
+        <h1>Configuring external calendar availability</h1>
+        <p><MadCap:variable name="MyVariables.ProductName" /> allows you to check an external calendar (such as an external Outlook or Gmail calendar) when reviewing Attendee availability for a calendar event.&#160;This means non-system events scheduled in your external work calendar show as busy in your system calendar. This topic describes how to configure this for the two most popular mail/calendar options – Gmail and Microsoft Outlook.&#160;While theoretically, this functionality could work with any calendaring system that provides ICS accessibility, it has been designed and tested to work with Gmail and Microsoft Outlook.</p>
+        <h2>Adding Gmail calendar free/busy availability</h2>
+        <p>To add visibility into a Gmail calendar, you need to export the Private URL for the Gmail Calendar.</p>
+        <p class="ProcedureIntro">To add Gmail calendar availability:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Open your Gmail calendar and go to <span class="UXElement">Settings</span>.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Email/GoToSettings.png" class="thumbnail" />
+        </p>
+        <p class="Indent1">The Settings page opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">On the left under <b>Settings for my calendars</b>, select the calendar you would like to include. </p>
+        <p class="L1Num" MadCap:autonum="3. ">Click <strong>Integrate calendar</strong>.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Email/IntegrateCalendar.png" class="thumbnail" />
+        </p>
+        <p class="Indent1">The Integrate Calendar page opens.</p>
+        <p class="L1Num" MadCap:autonum="4. ">Locate the link <strong>Secret address in iCal format</strong>.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Email/LinkSecretiCalFormat.png" />
+        </p>
+        <p class="L1Num" MadCap:autonum="5. ">Right-click the URL and select <strong>Copy</strong>.</p>
+        <p class="L1Num" MadCap:autonum="6. ">In <MadCap:variable name="MyVariables.ProductName" />, access your user profile. Go to &lt;<i>yourusername</i>&gt; <img src="../Resources/Images/ICONS/ICON_MyProfile.png" /> <b>My Profile</b>.<br />The User Details form opens.</p>
+        <p class="L1Num" MadCap:autonum="7. ">Paste the private URL you just copied into <strong>External Calendar URL</strong>.</p>
+        <p class="L1Num" MadCap:autonum="8. ">Click <b>Save</b>.</p>
+        <p>Selecting Attendee availability on a <MadCap:variable name="MyVariables.ProductName" /> calendar event checks to see the last time you refreshed your Gmail calendar. If it has been more than 30 minutes, the system retrieves all active calendar events for the next 3 months and displays them in this Free / Busy area.</p>
+        <div class="NoPageBreak">
+            <h2>Adding Outlook calendar free/busy availability</h2>
+            <p>To add visibility into an Outlook calendar, you will need to export <strong>iCalendar ICS URL</strong>.</p>
+            <p class="ProcedureIntro">To add visibility into an Outlook calendar:</p>
+            <p class="L1Num1" MadCap:autonum="1. ">Open the calendar in Outlook.</p>
+        </div>
+        <p class="L1Num" MadCap:autonum="2. ">Right-click the calendar you would like to share.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Select <strong>Share</strong> &gt; <strong> Publish This Calendar</strong>.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Email/OutlookCalendar.png" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="4. ">For Office 365 clients, you will be asked to log in and will then be presented with the option to select the calendar and the sharing permissions you would like to allow.</p>
+        <p class="L1Num" MadCap:autonum="5. ">After you choose a sharing option, select <strong>Save</strong>.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Email/ShareOption.png" class="thumbnail" />
+        </p>
+        <p class="Indent1">The page will then display both the HTML and ICS URLs for sharing.</p>
+        <p class="L1Num" MadCap:autonum="6. ">Right-click the <strong>ICS</strong> and select <strong>Copy</strong>.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Email/ICSLink.png" />
+        </p>
+        <p class="L1Num" MadCap:autonum="7. ">In <MadCap:variable name="MyVariables.ProductName" />, access your user profile. Go to &lt;<i>yourusername</i>&gt; <img src="../Resources/Images/ICONS/ICON_MyProfile.png" /> <b>My Profile</b>.<br />The User Details form opens.</p>
+        <p class="L1Num" MadCap:autonum="8. ">Paste the ICS URL you just copied into <strong>External Calendar URL</strong>.</p>
+        <p class="L1Num" MadCap:autonum="9. "><strong>Save</strong> the profile.</p>
+        <p class="ProcedureIntro">When you select Attendee availability on a <MadCap:variable name="MyVariables.ProductName" /> calendar event:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">The system checks for the last time you refreshed your Outlook calendar.</p>
+        <p class="L1Num" MadCap:autonum="2. ">If it has been more than 30 minutes, the system retrieves all active calendar events for the next 3 months and displays them in the Free / Busy area.</p>
+        <p class="L1Num" MadCap:autonum="3. ">External Events are visible in the system calendar and Free/Busy management but cannot be opened or edited.</p>
+        <p MadCap:conditions="ClientSpace.Screen"> <i class="fas fa-play-circle" style="font-size:24px;color:var(--BrandPrimary2);"></i> Watch the video <MadCap:xref href="../Videos/OutlookAvailability.htm" title="External Availability Calendar Sync" alt="External Availability Calendar Sync">External Availability Calendar Sync</MadCap:xref>.</p>
+    </body>
+</html>

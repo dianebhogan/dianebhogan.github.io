@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultConditionTagSet>
+  <ConditionTag
+    BackgroundColor="#ff0000"
+    Name="Ongoing"
+    Comment="Ongoing Imports limited to this set"
+    OriginalName="Ongoing" />
+  <ConditionTag
+    BackgroundColor="#0000ff"
+    Name="Initial"
+    Comment="Initial imports only" />
+</CatapultConditionTagSet>

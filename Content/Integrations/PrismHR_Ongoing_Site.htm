@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>PrismHR Site parameters</h1>
+        <p>The PrismHR Site must be configured with the following parameters before the use of the API can commence. This configuration is performed in the client Payroll System.</p>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 203px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Valid User account</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="Bullet1" MadCap:autonum="• ">Username (case sensitive)</p>
+                        <p class="Bullet1" MadCap:autonum="• ">Password (case sensitive)</p>
+                        <p class="Bullet1" MadCap:autonum="• ">PEO ID (case sensitive)</p>
+                        <p class="Bullet1" MadCap:autonum="• ">HRP API URL.  The endpoint of the WSDL on the server to be used</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">The Account must be Enabled</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p>The Account must have permission to create subscriptions (for Imports only). </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p> The following subscriptions will be automatically created on the HRP server when the process first executes:</p>
+                        <p class="Bullet1" MadCap:autonum="• ">Employee/Person|Client|Compensation. Description is “ClientSpace Employee Person-Client-Compensation Subscription All Clients”</p>
+                        <p class="Bullet1" MadCap:autonum="• ">Client/Master|Location. Description is "ClientSpace Client master Subscription All Clients”</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">HRP requires the following for each Client:</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="Bullet1" MadCap:autonum="• ">Business Entity Type (Example: LLC, S Corp) (Client Details)</p>
+                        <p class="Bullet1" MadCap:autonum="• ">Payroll Check Account (Account)</p>
+                        <p class="Bullet1" MadCap:autonum="• ">Garnishments Check Account (Account)</p>
+                        <p class="Bullet1" MadCap:autonum="• ">Receipts Account (Account)</p>
+                        <p class="Bullet1" MadCap:autonum="• ">Processing Schedule (Control)</p>
+                        <p class="Bullet1" MadCap:autonum="• ">GL Template (Control)</p>
+                        <p class="Bullet1" MadCap:autonum="• ">Bill Format (Billing)</p>
+                        <p class="Bullet1" MadCap:autonum="• ">Billing Template (Billing)</p>
+                        <p class="Bullet1" MadCap:autonum="• ">Delivery Method (Payroll)</p>
+                        <p class="Bullet1" MadCap:autonum="• ">Pay Groups (Payroll)</p>
+                        <p class="Bullet2" MadCap:autonum="• ">Pay Group</p>
+                        <p class="Bullet2" MadCap:autonum="• ">Description</p>
+                        <p class="Bullet2" MadCap:autonum="• ">Pay Schedule</p>
+                        <p class="Bullet2" MadCap:autonum="• ">Pay Date</p>
+                        <p class="Bullet2" MadCap:autonum="• ">Job Codes (Positions)</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

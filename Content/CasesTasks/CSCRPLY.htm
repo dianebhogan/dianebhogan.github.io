@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Case Discussion Email Templates" />CSCRPLY: Case Discussion Reply Template</h1>
+        <MadCap:microContent id="microcontent1">
+            <p>Use CSCRPLY to create customized reply templates  for distinct categories of responses, such as an authorization form for a stop payment.  These categories can be as flexible as required by the business case – from a series of 2 or 3 standard responses to specific responses for each case type. You can use a CSCRPLY&#160;template within a CSCDISC template.</p>
+        </MadCap:microContent>
+        <p>The templates CSCRPLY1, CSCRPLY2, and CSCRPLY3 are included in the standard PEO installation. You can modify these templates to suit the needs of your organization. Additionally, to further customize your template, you can add attachments to be included in Case Discussion replies and also display in the Case Discussion thread. For example, let's say you have a template named CSCRPLYPayrollProblem that you use for a generic payroll form that an employee or manager must complete. Attaching the form to the template saves time and streamlines the process.</p>
+        <p>
+            <img src="../Resources/Images/Case/cscrply.png" class="thumbnail">
+            </img>
+        </p>
+        <p class="ProcedureIntro">To configure the email template for CSCRPLY:</p>
+        <ol>
+            <li>Complete the form fields. <br />If you are adding a CSCRPLY template, for Type, select <span class="UXElement">System</span>.</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 159px;">
+            </col>
+            <col class="TableStyle-Procedure-Column-Column1">
+            </col>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">System</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Template Code</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Template code must begin with <b>CSCRPLY</b> and must be unique. Can be up to 100 characters in length.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Template Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Configure to suit business requirements. Displays when selecting Reply Template from the internal discussion.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Configure to suit business requirements.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">From Email Override</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Specify an email address to override the default noreply address commonly used by the system. The default Admin Email configuration is stored in application settings. For help configuring this setting, log an Extranet case.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Subject</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Can configure using replacement fields.   Formatted as <b>WorkspaceName -  Template Subject Line</b>. Any additional text can also be configured in this line up to the limits of the field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Body</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Body uses a rich text editor and supports font styling, embedded images, hyperlinks, lists, and tables. For best results, we recommend embedding .jpg or .jpeg images. </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Use the HTML editor controls to customize each reply template. </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">You can also use field replacement to enhance customization. See <MadCap:xref href="CSC_FieldReplacement.htm" title="Client Service Case field replacement" alt="Client Service Case field replacement">Client Service Case field replacement</MadCap:xref>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>To add attachments, expand <span class="UXElement">Attachments</span>, and click <img src="../Resources/Images/ICONS/ICON_Add.png" />.<br />The Upload File dialog box opens.</li>
+            <li>Click <span class="UXElement">Choose File</span> to upload a file, and then click <span class="UXElement">Save</span>.</li>
+            <li>To save your changes and close the template, click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <p>When viewing the Discussion Thread, a counter indicates if any attachments are present.</p>
+        <p>
+            <img src="../Resources/Images/Case/CSCRPLY_attachment.png" alt="" title="" class="thumbnail" />
+        </p>
+        <h2>How the templates work together</h2>
+        <p>The following image shows how CSCDISC and CSCRPLY work together. Additionally, we also show you how your custom text is added from the discussion message.</p>
+        <ul>
+            <li>CSCDISC is the standard template</li>
+            <li>CSCRPLY is the reply template</li>
+            <li>The customized message entered in the discussion New Message box appears below the reply template content.</li>
+        </ul>
+        <p>
+            <img src="../Resources/Images/Case/CaseDisc_example.png" class="thumbnail" />
+        </p>
+    </body>
+</html>

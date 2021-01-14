@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>PrismHR event monitoring</h1>
+        <p><MadCap:variable name="MyVariables.ProductName" /> watches for data changes in PrismHR and imports a selected set of data related to those changes. <MadCap:variable name="MyVariables.ProductName" /> does this by monitoring the event queue, noting events that show changed data that is also mapped in an Import Map Header record. Changed data that is mapped then triggers system logic.</p>
+        <h2>Import Map Header Detail</h2>
+        <p>The Import Map Header Detail form defines the import event.</p>
+        <p>
+            <img src="../Resources/Images/Integrations/PrismHR_ImportEvents.png" class="thumbnail" />
+        </p>
+        <table class="TableStyle-Standard_Table" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 170px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Field</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Source File</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">HRPAPI_event*.csv</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Dataform</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">PrismHR Event</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Execution Order</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">100</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Execution Pipeline</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Default</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Import Type</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">API</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Special Import</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">True (selected)</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Import Map Detail</h2>
+        <p>The Import Map Detail form manages the settings for the imported fields.</p>
+        <p>
+            <img src="../Resources/Images/Integrations/PrismHR_ImportMapDetail.png" class="thumbnail" />
+        </p>
+        <table class="TableStyle-Standard_Table" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 170px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Field</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">File Column</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">This name has no spaces.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Data Type</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Text (always)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">API&#160;Path</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Schema/Class/field</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>API Configuration</h2>
+        <p class="Bullet1" MadCap:autonum="• ">Same as a typical PrismHR API Configuration (can use existing)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Users only the <b>KeepLeadingZeros=0/1</b> parameter for Client Numbers</p>
+        <h2>PrismHR Subscription forms</h2>
+        <p class="Bullet1" MadCap:autonum="• ">New Type field, Standard, or Event</p>
+        <p class="Bullet1" MadCap:autonum="• ">Existing Subscriptions must be set to Standard (run attached Script to update)</p>
+        <p class="Bullet1" MadCap:autonum="• ">This process uses Type Event</p>
+        <h2>Process overview</h2>
+        <p class="Bullet1" MadCap:autonum="• ">Retrieve the Event type Subscription</p>
+        <p class="Bullet1" MadCap:autonum="• ">Retrieve all Import Map Details with header source file = 'HRPAPI_event*.csv'</p>
+        <p class="Bullet1" MadCap:autonum="• ">Retrieve all Events from PrismHR for the Subscription</p>
+        <p class="Bullet1" MadCap:autonum="• ">Resolve each Event into a list of</p>
+        <p class="Bullet2" MadCap:autonum="• ">Schema (the type of change, such as Employee)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Class (the category of change, such as Person or Direct Deposit</p>
+        <p class="Bullet2" MadCap:autonum="• ">Client Number</p>
+        <p class="Bullet2" MadCap:autonum="• ">Object ID (typically the Employee ID)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Modified Attributes (which fields changed for this Event)</p>
+        <p class="Bullet2" MadCap:autonum="• ">If an Event contains a Modified Attribute that is not in the Import Map it will be added to the Excludes list on the Subscription</p>
+        <p class="Bullet1" MadCap:autonum="• ">For each resolved Event</p>
+        <p class="Bullet2" MadCap:autonum="• ">Populate a new PrismHR Event dataform with the resolved Event data</p>
+        <p class="Bullet2" MadCap:autonum="• ">Locate the workspace for the Client Number (from CM.ClientNumber)</p>
+        <p class="Bullet2" MadCap:autonum="• ">if found, save the PrismHR Event dataform in that workspace</p>
+        <p class="Bullet2" MadCap:autonum="• ">if not found, save the PrismHR Event dataform in the Admin workspace</p>
+        <p class="Bullet2" MadCap:autonum="• ">Save using the PrismHREvent Pipeline  - Any business rules triggered by this will also need to be set to execute on the PrismHREvent Pipeline.</p>
+    </body>
+</html>

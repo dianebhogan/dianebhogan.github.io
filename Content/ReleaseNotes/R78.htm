@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\Resources\MasterPages\ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Release Notes" />Release 78 Notes</h1>
+        <p><strong>R78 Sprint</strong>:&#160;3/1/2019&#160;&#160;to&#160;3/31/2019. To learn about product features that you may not recognize, contact your Customer Success Manager.</p>
+        <h2>Enhancements</h2>
+        <p>Hover on the icons to discover the level of product enhancements: <img src="../Resources/Images/ICONS/ICON_FunctionalChange.png" title="Change in functionality" alt="Change in functionality" /> <img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" title="ClientSpace Premium (ClientSpace with additional modules)" alt="ClientSpace Premium (ClientSpace with additional modules)" /> <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /><br /></p>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 69px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 88px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1" style="text-align: center;">
+                        <p class="TableHead">Level of change</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">30265</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">User Management</p>
+                        <p class="TableTextLeft">User management was enhanced.&#160;When a user account is set to <strong>Inactive,</strong> the email address is updated with the text "<strong>inactive.</strong>" prepended to the account (<em>inactive</em> with a period). The prepend value ensures that system emails are not sent to inactive user accounts (inactive.bobSmith@test.org).&#160;If an account is re-activated, the "<strong>inactive.</strong>" is removed from the email address, ensuring the user receives system emails.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">32079</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Condition description for Email Templates</p>
+                        <p class="TableTextLeft">In Email Template creation, the step description has been updated for Step 4 (Conditions). Previously this description simply stated:&#160;In This Step:&#160;Set up your conditions.</p>
+                        <p>The statement was updated with a more helpful description:</p>
+                        <p class="TableTextLeft">In This Step:&#160;What additional conditions would you like to have met for this Email Template to be triggered? Add one or more conditions below and they will be used to determine the criteria for when the template will be triggered. This allows for 'AND' as well as 'OR' Conditions utilizing the Condition Expression feature. Using the Label field on the Condition, you can combine trigger conditions into more complex expressions, overriding the default 'OR' behavior - for example&#160;(Condition1 AND Condition2) OR (Condition3 AND Condition4) OR Condition5.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">34438</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Link to triggering form via Email Templates</p>
+                        <p class="TableTextLeft">Email Templates were enhanced. New field replace values were added that make it easy to encode clickable links within your correspondence.&#160;The following new replacement values were added to the field replacement function in Email Templates&#160;:</p>
+                        <p class="TableBullet" MadCap:autonum="• "><strong>{AppURL}</strong>:&#160;Embeds a clickable link to the application which, when clicked, takes you to the application homepage.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><strong>{LinkToTriggeringForm}</strong>: Embeds a clickable link to the application which, when clicked, takes you to the dataform from which the email was triggered.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">35021</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Case assignment</p>
+                        <p class="TableTextLeft">The case system was enhanced with a link for moving a case between workspaces.&#160;This enhancement includes:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">A link that opens a dialog to select a new workspace (from detail page).</p>
+                        <p class="TableBullet" MadCap:autonum="• ">A soft error (SE_ValidateMoveCase)&#160;to validate the move and warn the&#160;user if fields are cleared (if the employee is not in the new workspace, a soft error is provided).</p>
+                        <p class="TableBullet" MadCap:autonum="• ">A business rule (MoveCase) to change the workspace (set new Assigned To based on case type and new workspace).</p>
+                        <p class="TableTextLeft">The Move Case rule is pre-configured to run at the appropriate time during the dataform save process.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35344</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">
+                        <img src="../Resources/Images/ICONS/ICON_FunctionalChange.png" title="Change in functionality" alt="Change in functionality" />
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Triggerable fields</p>
+                        <p class="TableTextLeft">The Dataform field, Workflow Channel, and email systems were enhanced to allow for customization of triggering fields.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><strong>Dataform Field Admin</strong>: A <strong>Triggerable</strong> check box was added to the dataform field admin that allows administrators to selectively mark dataform fields as "triggerable" fields.&#160;Only fields marked in this manner are available for selection as triggering fields or conditions in Workflow Channels or Email Templates.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><strong>Workflow Channel:</strong>:&#160;The <strong>Triggering Field</strong> and <strong>Conditions</strong> areas, where workflow triggering is configured, were updated to accommodate the <strong>Triggerable</strong> flag on dataform fields.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><strong>Email Templates</strong>:&#160;The <strong>Trigger Field</strong> and <strong>Conditions</strong> areas, where Email Template triggering is configured, were updated to respect the <strong>Triggerable</strong> flag on dataform fields.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">For system&#160;included workflows and templates where triggering fields are used as well as commonly used fields, a script has been created to set the <strong>IsTriggerable</strong> flag.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">If a field was previously configured as a trigger condition and for some reason was not marked as <strong>Triggerable</strong> in dataform field admin, a message displayed: "The selected triggering field or one of the fields used as part of a triggering condition needs to have the "Triggerable" property set in Dataform Admin." For more information about this functionality or assistance configuring this for your installation, create an Extranet case.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">35440</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Assume User</p>
+                        <p class="TableTextLeft">The Assume User functionality in System Admin was enhanced to alert system admins when they attempt to assume an inactive or expired user.&#160;The message is "This user is expired or inactive and cannot be assumed." Previously, the system would hide the Assume User button for these individuals, which could be confusing.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35912</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Email Templates</p>
+                        <p class="TableTextLeft">The Email template system was enhanced to include user typeahead type fields in triggering conditions.&#160;This allows the configuring administrator to use a typeahead method when selecting the Trigger Value for a condition that is using a user datatype as the Trigger Field, so they no longer need to know or look up the User ID for use in a text field.</p>
+                        <p>The typeahead fields perform in the following manner:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Typeahead returns user values (Last Name, First Name) for active users only.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Typeahead returns "(expired)" behind the user name if the user record is expired.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">36247</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Workflow Channel and Email Template typeahead fields</p>
+                        <p class="TableTextLeft">Workflow Channels and Email Templates were enhanced to use typeahead fields when configuring triggering based on Lookup or Parent form type fields. Previously a text field was provided for use.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Typeahead fields were implemented for lookup fields and parent form fields on the Conditions step.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">The typeahead allows you to select from a defined list for the field, or click into the typeahead and begin typing your selection.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">The behavior of these typeahead fields closely mimics the field response of a lookup or foreign key field on a dataform.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Check boxes and HdrAction conditions do not use the new typeahead. They are still native select drop-downs.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">36920</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">HRPAPI_Users</p>
+                        <p>The HRPAPI_Users import was enhanced to recognize the Active field in PrismHR. The import process updates the ClientSpace user record so that when users are inactivated in PrismHR, they are inactivated in <MadCap:variable name="MyVariables.ProductName" />.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">37010</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">ClientSpace Help</p>
+                        <p class="TableTextLeft">Three new help items were added to the user profile using video lightbox/guide technology:</p>
+                        <p class="TableBullet" MadCap:autonum="• "><strong>Add Modules to your user profile (Guide)</strong>: This guided walkthrough takes you step-by-step through the process of adding modules to your profile and teaches you how to put the modules you use most right at your fingertips.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><strong>Enable Out of Office for your profile (Guide)</strong>: Walks you through setting up your out-of-office profile and helps you to configure a backup user to cover for you when you are away.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><strong>Personalizing your user profile (Lightbox)</strong>: This 3-minute video provides an overview of the user profile, explaining at a high level how you can customize the profile to suit your specific needs.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">37065</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Employee Portal Case Widget rebranding</p>
+                        <p class="TableTextLeft">The Employee Portal Case Widget was updated with styling to more closely match the Employee Portal application.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">37101</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Client Service Workspace</p>
+                        <p class="TableTextLeft">A new Client Services Department workspace was added as a repository for cases and other records where a matching Client or Employee number cannot be found.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">37110</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Client Locations: Salesforce API</p>
+                        <p class="TableTextLeft">Business rules were enhanced to include workspace creation logic when Organizations and Workspaces are updated from the Salesforce API. </p>
+                        <p class="TableTextLeft">New Client Master rule <strong>SetupClientProspect</strong>. Similar to CM.ProcessNewClient, the SetupClientProspect rule is&#160;configured to run AFTER ProcessNewClient. It is used in situations where an Org and Workspace already exist (typically via ProcessNewClient) but will set up other basic workspace forms. This rule is triggered when:<p class="TableBullet" MadCap:autonum="• ">Client Master is added via the Salesforce API pipeline&#160;(hardcoded, cannot be configured via the rule 'Save Action' setting).</p><p class="TableBullet" MadCap:autonum="• ">A Workspace already exists.</p><p class="TableBullet" MadCap:autonum="• ">An associated Organization already exists.</p></p>
+                        <p>When the rule&#160;<strong>SetupClientProspect</strong> is triggered, it will:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Attach the associated Organization to a Workspace.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Set the Org Primary Project.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">If the Contract Type&#160;field is empty, sets the default value.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Configurable<p class="TableBullet2" MadCap:autonum="• ">Create Primary Location (if Primary Location exists, will skip).</p><p class="TableBullet2" MadCap:autonum="• ">Create Sales User Commission.</p><p class="TableBullet2" MadCap:autonum="• ">Create Collateral (if Collateral form exists will skip).</p></p>
+                        <p>Default settings as scripted:<p class="TableBullet2" MadCap:autonum="• ">Pipeline: SalesforceAPI (new Pipeline added).</p><p class="TableBullet2" MadCap:autonum="• ">Create Primary Location checked.</p><p class="TableBullet2" MadCap:autonum="• ">Order '15' (after ProcessNewClient at '10').</p><p class="TableBullet2" MadCap:autonum="• ">Inactive.</p></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">37144</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Employee Portal</p>
+                        <p class="TableTextLeft">The “Can we help” dialog in the Employee Portal was enhanced with typeahead functionality for the employee name. When logged in as a worksite manager, the typeahead function filters the list of employees based on the characters typed. If no connection can be made to PrismHR to retrieve employee names, the field functions as a text field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">37189</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Dataform field properties</p>
+                        <p class="TableTextLeft">A <strong>Cloneable</strong> check box was added to table metadata, allowing fields marked as such to be cloned as part of a workflow channel.&#160;These include fields, such as the <strong>Delete</strong> field on cloneable workflow tasks, enabling the creation of notification tasks, which then automatically delete themselves.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">37201</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Employee Portal Case Widget</p>
+                        <p class="TableTextLeft">The Employee Portal Case Widget was enhanced to include more detailed information about the PrismHR user/employee logging a case.&#160;The case widget includes the configured cell phone (or work phone if unavailable) for the current user's employee detail in <MadCap:variable name="MyVariables.ProductName" />, as well as their configured work email.&#160;If this information is unavailable, the system attempts to retrieve information from the PrismHR payroll system.&#160;If none of this is available, the created case will include the login ID of the Employee Portal user that submitted the case.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">37231</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Employee Portal Case Widget</p>
+                        <p class="TableTextLeft">The Employee Portal Case Widget was enhanced with&#160;more helpful&#160;error messages. The error message now displays:&#160;"Unfortunately, the service is currently unavailable. Please try again later. [Message ID: {Error Code}]"</p>
+                        <p class="TableTextLeft">For an explanation of the Error Code that accompanies the error message, see <MadCap:xref href="../AppErrors/ErrMsgs_PrismHRAPI.htm" title="Error messages: ClientSpace and PrismHR API" alt="Error messages: ClientSpace and PrismHR API">Error messages: ClientSpace and PrismHRAPI</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">37775</td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Salesforce API</p>
+                        <p class="TableTextLeft">The Salesforce API was enhanced with the following functions:</p>
+                        <p><strong>Import/Export of FK mappings to Org and Contact forms</strong>
+                        </p>
+                        <p class="TableTextLeft">The API was enhanced to translate Organization and Contact foreign key fields into related account fields in Salesforce. For example, if there is a foreign key to the Organization on the Client Master, the Salesforce API can now be configured to take the foreign key to the Org, look up the Salesforce objectID using this key, and update the appropriate Salesforce object.</p>
+                        <p><strong>Import - Convert multi-lookup formats to the appropriate system (!.!x!.!y!.! to x,y and x,y to !.!x!.!y!.!)</strong>
+                        </p>
+                        <p class="TableTextLeft">The API was enhanced to convert values stored in&#160;Salesforce picklists into valid multi-lookup content in ClientSpace. The import configuration compares the Salesforce data to the ImportID of the lookup record to find the matching code value(s) to be stored in the multi-lookup field.</p>
+                        <p><strong>Import/Export, decimal datatype fields should be 'sforce.soapType.sxddouble' type:</strong>
+                        </p>
+                        <p class="TableTextLeft">Resolved an issue where decimal or money values exported to Salesforce would not maintain the proper formatting. Decimal values now maintain appropriate formatting when exported to or imported from Salesforce.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Fixes</h2>
+        <table class="TableStyle-Standard_Table" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" cellspacing="0">
+            <col style="width: 68px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 312px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 708px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Issue Summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Resolution</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">34530</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Removing Client Template removes too many users</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue in which removing a user from a Client Template inadvertently removed other workspace access from the user that had been manually added to their account. The system now records that the user access has been added from the template, and when the user is removed from the template, the system&#160;uses this flag to determine if the workspace should be removed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">34645</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Case Notification Email Template cleanup from R71</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Removed deprecated Email Templates CSCINT and CSEXT from the system. Replaced the templates with configurable Case Email templates. Deprecated the related inactive business rule on the Case <em>SendNotifications</em>.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">36074</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Remove default task category</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Removed the deprecated functionality of setting a default task category by dataform from the dataform admin area.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">36697</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Show Attachments on Email Admin</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where email attachments were not available either through the Notifications dashboard or the Email Admin control panel.&#160;The system now displays a paperclip in the Notifications inbox and an Attachments Action item in Email admin that allows access to the email attachments.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">37043</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Deprecate unused Incident Clone Keys</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">The following Incident clone keys and related code&#160;have been deprecated from the system:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">COI_Approve_Email</p>
+                        <p class="TableBullet" MadCap:autonum="• ">COI_Approve_Fax</p>
+                        <p class="TableBullet" MadCap:autonum="• ">COI_Approve_Mail</p>
+                        <p class="TableBullet" MadCap:autonum="• ">FirstPayroll</p>
+                        <p class="TableBullet" MadCap:autonum="• ">IMP--&gt;Complete&#160;</p>
+                        <p class="TableBullet" MadCap:autonum="• ">PB_*&#160; (any that starts with this)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">PC_*&#160; (any that starts with this)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">PS_*&#160; (any that starts with this)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">biz_claim_MissingWCCode</p>
+                        <p class="TableBullet" MadCap:autonum="• ">biz_treatmentdetails_doctorapptreminder</p>
+                        <p class="TableBullet" MadCap:autonum="• ">LEADSCORE_DECLINED</p>
+                        <p class="TableBullet" MadCap:autonum="• ">LEADSCORE_IMPROVED</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Benefits Renewal</p>
+                        <p class="TableBullet" MadCap:autonum="• ">CRMDupOrgReview&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">37060</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Field display and multiple rules in NEXT</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue for configured field displays&#160;when multiple field display rules were configured for the same SOURCE field. Previously only one of the rules was followed.&#160;The system now follows each of the configured field display rules.&#160;The system also validates the rules on Save to ensure that conflicting rules are not created.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">37063</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Unable to clear values in primary or secondary trigger fields on business rules</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where the system would not allow the page to be saved if you attempted to clear existing trigger values from a business rule.&#160;The system now allows you to clear both primary and secondary trigger fields.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">37077</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Set pipelines for Business Rules</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where Cases could be created with a null (or 0) Case Number, due to several business rules being created without appropriate pipelines in place.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">37116</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">% Search on Custom Logic Rule Quick search is broken</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where the quick search on Dataform Name or Dataform from the Custom Logic Rules SysAdmin control panel would return no results.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">37145</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Core change for defaulting Time Tracker Category</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Added code that will allow the default time tracking category to be set when creating a time tracking record from a task.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">37284</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Case Escalation</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue in Case Escalation when a case escalation record with a matching case type and category cannot be found. The system would ignore an escalation record that matched only on priority.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">37317</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Workspace groups</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Deprecated the classic interfaces for Workspace Groups functionality and replaced with new code that performs the same function.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">37482</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Configure import field error</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where canceling out of field import mapping without saving would cause an exception. This would occur when a user&#160;attempted to add a new record but then decided to cancel without saving. Clicking <strong>X</strong> or <strong>Cancel</strong> would cause an application error.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">37541</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Application error while trying to create Workflow Channel</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved a bug when adding conditions (Step 4) to a scheduled workflow channel caused an error.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">37545</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">Cannot save Template Task (Classic)</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Corrected an issue in Classic when&#160;saving a Template Task caused an error and the task was not updated.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

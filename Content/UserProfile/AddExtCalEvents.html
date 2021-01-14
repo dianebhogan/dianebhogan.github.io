@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="User Profile" />Adding external calendar events</h1>
+        <p><MadCap:variable name="MyVariables.ProductName" /> allows you to review an external calendar (such as an Outlook or Gmail calendar) when reviewing attendee availability for a calendar event. This means non-system events scheduled in your external work calendar show as busy in your system calendar. </p>
+        <p>This topic describes how to configure this for the two most popular email calendar options: Gmail and Microsoft Outlook. While theoretically this functionality could work with any calendaring system that provides ICS accessibility, it has been designed and tested to work with these two systems.</p>
+        <h2>Gmail configuration</h2>
+        <p>For a Gmail calendar, you must copy the link of the Secret address URL.</p>
+        <p class="ProcedureIntro">To add visibility into a Gmail calendar:</p>
+        <ol>
+            <li>Open your Google Calendar.</li>
+            <li>Click <img src="../Resources/Images/User/GoogleCalendar-settings.png" /> <b>Settings menu</b> &gt;&#160;<b>Settings</b>.</li>
+            <li>In <span class="UXElement">Settings for my calendars</span>, select the targeted calendar.<br />The Calendar settings display.</li>
+            <li>In <span class="UXElement">Integrate calendar</span>, locate <span class="UXElement">Secret address in iCal format</span>.</li>
+            <li>Right-click the URL and select <span class="UXElement">Copy</span>.</li>
+        </ol>
+        <p class="ProcedureIntro">In ClientSpace:</p>
+        <ol>
+            <li>On the module bar, click <span class="UXElement">username</span> &gt; <span class="UXElement">My Profile</span>.<br />The User Details form opens.</li>
+            <li>In <b>External Calendar URL</b>, paste the URL that you just copied.</li>
+            <li>Click <b>Save</b>.</li>
+        </ol>
+        <p>When you select attendee availability on a <MadCap:variable name="MyVariables.ProductName" /> calendar event, the system now checks to see the last time you refreshed your Gmail calendar. If it has been more than 30 minutes, the system retrieves all active calendar events for the next three months and displays them in the Free / Busy area.</p>
+        <h2>Outlook configuration</h2>
+        <p>For an Outlook calendar, you must export the iCalendar ICS&#160;URL.</p>
+        <p class="ProcedureIntro">To add visibility into an Outlook calendar:</p>
+        <ol>
+            <li>Open your Outlook calendar. </li>
+            <li>Right-click the calendar and click <b>Share</b> &gt; <b>Publish This Calendar</b>.</li>
+            <li>Right-click the <b>ICS&#160;URL</b> entry and select <b>Copy Shortcut</b>.</li>
+        </ol>
+        <p class="ProcedureIntro">In ClientSpace:</p>
+        <ol>
+            <li>On the module bar, click <span class="UXElement">username</span> &gt; <span class="UXElement">My Profile</span>.<br />The User Details form opens.<br /></li>
+            <li>In <b>External Calendar URL</b>, paste the URL that you just copied.</li>
+            <li>Click <b>Save</b>.</li>
+        </ol>
+        <p>When you select attendee availability on a <MadCap:variable name="MyVariables.ProductName" /> calendar event, the system checks to see the last time you refreshed your Gmail calendar. If it has been more than 30 minutes, the system retrieves all active calendar events for the next three months and displays them in the Free / Busy area.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">External Events are visible in the system calendar and Free/Busy management, but cannot be opened or edited.</p>
+        <p MadCap:conditions="ClientSpace.Screen"><i class="fas fa-play-circle" style="font-size:24px;color:var(--BrandPrimary2);"></i> To watch a video about syncing your external calendar, see <MadCap:xref href="../Videos/OutlookAvailability.htm" title="Learning how: External availability calendar sync" alt="Learning how: External availability calendar sync">Learning how: External availability calendar sync</MadCap:xref>.</p>
+        <p class="Body" MadCap:conditions="ClientSpace.Print">
+            <br />
+            <img src="../Resources/Images/ICONS/ICON_ViewVideo-pdf.png" /> View the video <a href="https://prismhr.wistia.com/medias/act3y3q28h" target="_blank" title="External availability calendar sync" alt="External availability calendar sync">External availability calendar sync</a>.</p>
+    </body>
+</html>

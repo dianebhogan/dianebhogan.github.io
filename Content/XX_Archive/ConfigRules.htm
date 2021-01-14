@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+    </head>
+    <body>
+        <h1>Step 1:&#160;Configure the rules</h1>
+        <p>In this step, let's <span class="UXElement">activate</span> SendReply and <span class="UXElement">disable</span> SendEmailIntegrationReply. SendEmailIntegrationReply is an older rule that has been replaced with SendReply.</p>
+        <p class="ProcedureIntro">To activate SendReply:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Advanced</span> &gt; <span class="UXElement">Manage Rules</span>.<br />The Custom Logic Rules dashboard opens.</li>
+            <li>Filter the list for the Table Name <span class="UXElement">Case Discussion Message</span> with the Rule Title <span class="UXElement">SendReply</span> and click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Jump</span>).<br />The Rules Detail form opens.</li>
+            <li>Select the <span class="UXElement">Active</span> option (enables the rule).</li>
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <p>
+            <img src="../Resources/Images/Case/CaseDisc_ActRule.png" alt="" title="" class="thumbnail" /> </p>
+        <p>Next, you must disable SendEmailIntegrationReply.</p>
+        <p class="ProcedureIntro">To disable SendEmailIntegrationReply:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Advanced</span> &gt; <span class="UXElement">Manage Rules</span>.<br />The Custom Logic Rules dashboard opens.</li>
+            <li>Filter the list for the Table Name <span class="UXElement">Case Discussion Message</span> with the Rule Title <span class="UXElement">SendEmailIntegrationReply</span> and click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Jump</span>).<br />The Rules Detail form opens. If you cannot find the rule, it may be archived. In <span class="UXElement">More Search</span>, select <span class="UXElement">All</span> and click <span class="UXElement">Search</span>.</li>
+            <li>Clear the <span class="UXElement">Active</span> option (disables the rule).</li>
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <p>
+            <img src="../Resources/Images/Case/CaseDisc_DisRule.png" alt="" title="" class="thumbnail" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Go to <MadCap:xref href="Config_Mailbox.htm" title="Step 2: Configuring the Email Integration Mailbox" alt="Step 2: Configuring the Email Integration Mailbox">Step 2:&#160;Configuring the Email Integration Mailbox</MadCap:xref>.</li>
+        </ol>
+    </body>
+</html>

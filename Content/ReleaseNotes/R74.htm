@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\Resources\MasterPages\ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Release Notes" />Release 74 Notes</h1>
+        <p><strong>R74 Sprint</strong>:&#160;11/1/2018&#160;to&#160;11/30/2018. To learn about product features that you may not recognize, contact your Customer Success Manager.</p>
+        <h2>Enhancements</h2>
+        <table class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Modify document search to use the new TotalRecords design</p>
+                        <p class="TableTextLeft">The document search has been modified to use a more efficient method of generating total record counts for returned search data.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Ability to move or insert a task at another level</p>
+                        <p class="TableTextLeft">Workflow channel configuration has been enhanced with the ability to move dependent workflow items through a simple drag and drop interface. The intelligent drag and drop functionality is aware of the parent item type for the child workflow object that you are attempting to move and will only allow this item to be moved to a workflow parent of the same type. Because of this, triggering conditions of the parent will always match that of the child which is being moved.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Multi-tenant email template administration</p>
+                        <p class="TableTextLeft">Email template administration has been enhanced. A <strong>Workspace Templates</strong> field was added to email template configuration that allows you to configure&#160;a workflow channel to only be triggered when the executing dataform was created from one of the selected Workspace Templates. This enhancement allows for greater control when triggering a specific email template. The Workspace Templates field is a multi-select, which allows you to apply email templates across multiple workspace templates. If no specific template(s) are selected, the Workspace Templates field will default to <em>All Templates</em>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Email templates pipelines</p>
+                        <p class="TableTextLeft">Email templates have been enhanced to&#160;support multiple pipelines. The Pipeline selector has been changed to a multi-select, allowing you to create a single email template that can apply to multiple execution pipelines, eliminating the need to create separate email templates for dataform saves and imports for example.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Multi-tenant Workflow Channel administration</p>
+                        <p class="TableTextLeft">Workflow channel administration has been enhanced. A <strong>Workspace Templates</strong> field was added to workflow channels configuration that allows you to configure&#160;a workflow channel to only be triggered when the executing dataform was created from one of the selected workspace templates. This enhancement provides greater control when triggering a specific workflow channel. The Workspace Templates field is a multi-select, which allows you to apply a workflow channel&#160;across multiple workspace templates. If no specific template(s) are selected, the Workspace Templates field will default to <em>All Templates</em>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Multi-tenant business rule administration</p>
+                        <p class="TableTextLeft">The business rules engine has been enhanced to support multi-tenancy. A <strong>Workspace Templates</strong> field was added to rules configuration that allows you to configure rules to only be triggered when the executing dataform was created from one of the selected workspace templates. If no specific template(s) are selected, the Workspace Templates field will default to <em>All Templates</em>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Forgotten password message for expired user accounts</p>
+                        <p class="TableTextLeft">A previous update, which stopped emails from being sent to&#160;expired user accounts caused an issue for users with accounts that automatically expired through inactivity. The user would receive a success message that an email had been sent, but never actually received the email. The system has been updated, so that expired or inactive users will receive a message that there is an issue with their account and they should contact the system administrator.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert dataform administration - Finalized</p>
+                        <p class="TableTextLeft">Dataform properties administration conversion, which allows this function to work with our cross-browser NEXT application, has been completed. This development does not include field administration, which will be addressed in an upcoming release. For more information about configuring dataform properties, read the dataform properties section of Dataforms - Workspace Building Blocks.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Third party users - Finalized</p>
+                        <p class="TableTextLeft">Updated the third party application administration to resolve some search issues and make the user interface more functional.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">tblEmailRecipient deadlock errors</p>
+                        <p class="TableTextLeft">The code that generates email recipients was streamlined to minimize the potential for deadlock errors when there are simultaneous attempts to access a record.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Fixes</h2>
+        <table class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 66px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 358px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Issue summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Resolution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">35546</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Org primary workspace does not always get set</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Fixed a bug where the primary project for an Organization would not always get set properly on initial workspace creation.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">35739</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Org Phone Number and Header procs
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where Organization phone numbers greater than 25 characters would throw an exception when the phone number information was presented through the pricing console where the phone number was truncated at 25 characters.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">35788</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Client Visits dashboard not showing records with a missing location
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Fixed a bug in the Client Visits dashboard in which the client visit record would not display&#160;if there were no location populated on the visit record.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">35910</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Profitability report
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Fixed a bug in the profitability report filter page that caused the Activity Dates filter to not function in our cross-browser NEXT application.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">35351</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Hourly rate workflow channel case creating too often
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where masked numeric fields such as money or decimal fields would interpret an imported value of the same amount, but a different number of decimal places as having been changed, when in fact no change had taken place. For example, the dataform stored the value 123.45 (2 decimal place mask), and the import contained the value 123.4511. This issue would cause events such as notifications to trigger every time the data was imported as if it was being changed each time. The system has been updated to apply the mask during import, thereby avoiding the false changed flag for these types of records.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">35414</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Suppress report header not working as expected
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Functionality was introduced in&#160;a previous release that allowed the report title to be suppressed in business intelligence widgets. This has been further enhanced to remove the report&#160;header completely, increasing the amount of space dedicated to report data and removing the likelihood of unintended edits to a system report.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">35548</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Dataform subscription notifications via workflow channel
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Fixed an issue where the embedded link in dataform notifications generated by workflow channels was malformed, causing the link to fail.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">35591</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Make Required and Log datatypes
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where Log datatypes would only respect the Required Field attribute if the field had focus before the dataform was saved.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">35765</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Use Pricing Console Yes/No on Client Master
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved how import configuration data was being saved to the database in our classic application versus our newer cross-browser application. The issue caused the Use Pricing flag on the client master dataform to change unexpectedly.&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">35766</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Saved Search is being applied improperly
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Removed the ability to add saved searches for action items such as Tasks, Activities, Subscribers, Attachments, and Time Tracking when accessed from a dataform.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">35779</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Module administration issue
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Fixed a bug where configuration changes to the Create Case and Create Task modules could cause the Outlook Add-In (version 1.1) to throw an error when attempting to create a case or task from within an Outlook mailbox.&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">35801</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact type ahead field type does not work with non-alpha characters
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Fixed a bug in type ahead datatypes where the presence of an apostrophe in the search value (such as a contact with a last name of O'Reilly) would cause the typeahead search code to fail and not return any matching values.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">35814</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">TFA emails not sending
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where Two Factor Authentication (TFA) emails&#160;would not properly use the Admin Email variable, causing the email send to fail.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">35862</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Importing issues
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Fixed a bug that was causing exceptions on the save of any dataform that had child forms and business rules enabled.&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">35865</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Related form not being properly translated on dataform activities search chiclet
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Fixed a bug where the Related Dataform filter on an activities search was not properly decoded to the dataform name, but instead was displaying the dataform type ID on initial open of the search. The system now properly decodes the related dataform name.&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">35898</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Manage import timeout fix
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue with long running imports for large files that would throw a timeout error when the import processing time exceeded the 30-second web server timeout interval in our cross-browser NEXT application.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">35915</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Workflow channel and email templates when creating a workspace
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Fixed a bug where triggered email templates and workflow channels were not being passed the proper workspace ID&#160;when triggered during workspace creation, causing workflow channels that create dataforms to fail during the save with a foreign key exception.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">35991</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Unable to import user to client team
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">Fixed a bug that caused Import Map Detail records with a datatype of <em>Foreign Key</em> to not save properly after the conversion to integrate this feature with&#160;our cross-browser compatible NEXT application.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

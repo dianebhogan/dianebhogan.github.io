@@ -1,0 +1,742 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\Resources\MasterPages\ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Release Notes" />Release 92 Notes</h1>
+        <p><strong>R92 Sprint</strong>:&#160;5/1/2020&#160;to&#160;5/31/2020. To learn about product features that you may not recognize, contact your Customer Success Manager.</p>
+        <h2>Release schedule</h2>
+        <p>Release updates are implemented by groups.</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Click to view the R92 release schedule.</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The release schedule is subject to change and is&#160;updated as required.  To determine your group or to ask questions, please log a case for Professional Services in the Extranet.</p>
+                <table class="TableStyle-Standard_Table" style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" cellspacing="0">
+                    <col class="TableStyle-Standard_Table-Column-Column1" />
+                    <col class="TableStyle-Standard_Table-Column-Column1" />
+                    <col class="TableStyle-Standard_Table-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard_Table-Head-Header1">
+                            <th class="TableStyle-Standard_Table-HeadD-Column1-Header1" colspan="3">
+                                <p class="TableHead">Sprint <span style="font-weight: normal;">5/1/2020 to 5/31/2020</span></p>
+                            </th>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Head-Header1">
+                            <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                                <p class="TableHead">Upgrade groups</p>
+                            </th>
+                            <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                                <p class="TableHead">Date of upgrade</p>
+                            </th>
+                            <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                                <p class="TableHead">For this sprint, tentatively occurs on</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Group 1</td>
+                            <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">First Thursday of the month</td>
+                            <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">June 4, 2020</td>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Group 2</td>
+                            <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Second Tuesday of the month</td>
+                            <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">June 9, 2020</td>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Group 3</td>
+                            <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Third Tuesday of the month</td>
+                            <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">June 16, 2020</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <h2>Enhancements</h2>
+        <p>Enhancements are grouped as Change in Functionality, ClientSpace Premium (ClientSpace with additional modules), Advanced Administration, and General.</p>
+        <h3><i class="fas fa-bell" style="font-family: Font Awesome 5 Free; font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="Change in functionality" alt="Change in functionality"></i> Change in Functionality</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 69px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">42659</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Payroll Batch data imported earlier</p>
+                        <p class="TableTextLeft">The PrismHR API now updates the payroll batch throughout the payroll creation process. Previously any Import Queue record created before the payroll was finalized in PrismHR would fail because of missing billing vouchers. This system now creates a new ClientSpace Payroll batch record as soon as the record is created in PrismHR. It then updates the batch status using a scheduled process, so if a batch is stopped at a certain point in the payroll system, we can create notification and workflow events from status changes. Additionally, new statuses and fields were added. See <MadCap:xref href="../Payroll/PayrollBatch.htm" title="Payroll Batch information" alt="Payroll Batch information">Payroll Batch information</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">43044</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Workflow Channel Full View Mode</p>
+                        <p class="TableTextLeft">The Full View option for Workflow Channels was deprecated and removed from the application.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">43242</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Number of fields on a Dataform</p>
+                        <p class="TableTextLeft">The maximum number of fields that can be added to a dataform is now limited to 150, which will improve application performance.  At 150 fields, the admin will receive a message stating the maximum number of fields cannot be exceeded, and the Add button will be disabled. See <MadCap:xref href="../Dataforms/AddFields.htm" title="Adding dataform fields" alt="Adding dataform fields">Adding dataform fields</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">43251</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Reporting Profile maintenance</p>
+                        <p class="TableTextLeft">Business Intelligence reporting profile administration was moved from the Advanced Administration area to System Admin &gt; Security &gt; Reporting Profile, which makes  this functionality available to all system administrators.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">44396</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Client Profitability Report</p>
+                        <p class="TableTextLeft">The client profitability merge was modified (peo_client_profitability_merge) to only show Completed or Finalized batches.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">43423</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Expired users receive Emails</p>
+                        <p class="TableTextLeft">ClientSpace now includes expired users in email recipient lists.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">43620</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">WC Policy Agent field filtered by Carrier Org</p>
+                        <p class="TableTextLeft">The Agent field on the Workers' Compensation policy now filters the agent list by adding a related field that you can use for selecting another field on the form such as Carrier Organization. When properly configured, the list filters to the agents associated with the selected Organization. When related data is configured using an appropriate Organization field on the form, the list is filtered to the contacts for that Organization. If the field is left blank, all Organization contacts are displayed.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3><i class="fas fa-plus-circle" style="font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="ClientSpace Premium (ClientSpace with additional modules" alt="ClientSpace Premium (ClientSpace with additional modules"></i> ClientSpace Premium</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 68px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">41952</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Workers' Comp Policy renewals</p>
+                        <p class="TableTextLeft">Risk Admins can now control whether to update the default policy configurations on the State Master, State Legal Entities, and Contract Type Metadata records when a WC Policy is renewed from the Admin Workspace. This enhancement controls automatic updating as it relates to pricing. For details, see <MadCap:xref href="../Risk/WC_PolRenew.htm" title="WC Policy renewals" alt="WC Policy renewals">WC Policy renewals</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">43687</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Re-sale of a terminated client</p>
+                        <p class="TableTextLeft">After a client is terminated, admins can now resell a client. </p>
+                        <ul>
+                            <li>When the Client Master is in Terminated status, a Resale workflow link displays. When you click Resale, the termed batch type changes to Archived. The Client Master status changes to Prospect.</li>
+                            <li>The associated Pricing Batch, Pricing States, and Pricing Codes are updated with a status of Terminated.</li>
+                            <li>The new cloned batch has the type RFP and is marked as Current Batch. The Current Batch flag is set on the new RFP batch and cleared on the old one.</li>
+                            <li>The Pricing Console does not show Archived (previous batches that are not the newly cloned batch) batches. Batches can still be searched through the workspace from the dataform tiles or links.</li>
+                            <li>If pricing is set to No, then there is nothing to clone.</li>
+                        </ul>
+                        <p class="TableTextLeft">To implement this feature, please log an Extranet case.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">43739</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Benefits Batch: Apply Plan Group</p>
+                        <p class="TableTextLeft">When a Plan Group is applied to the Benefits Batch, using the Apply Plan Group link, the Benefits Batch form now updates to show the applied Offered Benefits Plans count on the Offered Benefits Plan link.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">43837</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Pricing Console fields</p>
+                        <p class="TableTextLeft">The following Pricing fields now adhere to the <span class="UXElement">biz_pricing_submitted_batch</span> security entity. They are editable as other pricing fields. The fields are now unlocked when Pricing is unlocked and read-only after submitted unless the user is in a role with the appropriate rights to the <span class="UXElement">biz_pricing_submitted_batch</span> security entity.</p>
+                        <p class="TableTextLeft">On the Pricing State (gen_PricingBatchState):</p>
+                        <ul>
+                            <li>TDI (TDI)</li>
+                            <li>Current SUTA (SUTA)</li>
+                        </ul>
+                        <p class="TableTextLeft">On Pricing Batch (gen_PricingBatch):</p>
+                        <ul>
+                            <li>WC Mod Method (luWCModMethod)</li>
+                            <li>WC Billing Modifier (BillingClientModifier)</li>
+                            <li>Include Expense Constant (IncludeExpenseConstantInRate)</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3><i class="fas fa-cog" style="font-size:32px;color:var(--BrandPrimary2);padding:1px 6px 6px;" title="ClientSpace Advanced Administration" alt="ClientSpace Advanced Administration"></i> Advanced Administration</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 68px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableTextLeft">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">40941</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Salesforce API: defaultorgowner</p>
+                        <p class="TableTextLeft">The Salesforce API now accepts a new API parameter <span class="UXElement">defaultorgowner</span>. Previously, if an organization was created in ClientSpace from a Salesforce import and the Salesforce Owner did not exist as a ClientSpace user, the Assigned To on the organization would default to blank. The parameter <span class="UXElement">defaultorgowner</span> allows the admin to specify a LoginID (username) as the default. The configured user is set as the owner of organizations imported from Salesforce where the owner specified in Salesforce does not have a ClientSpace user account. See <MadCap:xref href="../Integrations/Salesforce_v2.0_AdditionalParams.htm" title="Additional parameters" alt="Additional parameters">Additional parameters</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">41756</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Create Discussion: Business logic</p>
+                        <p class="TableTextLeft">The Client Service Case has a new rule <span class="UXElement">Create Discussion</span> that automatically creates a case discussion based on configured triggers. By default, the rule is inactive. To use, it requires configuration of the following parameters:</p>
+                        <ul>
+                            <li>EmailTemplateCode: The template code (must start with CSC) of the system email template for replying to discussion threads.</li>
+                            <li>InitialRecipients: A comma-separated list of User fields on the associated case or employee form for the discussion response. Field names should follow the tableName.fieldName format (gen_ClientServiceCase.BrokerContact, for example).</li>
+                        </ul>
+                        <p class="TableTextLeft">After you configure and activate, the rule creates a new discussion and triggers an automated email to the initial recipients based on the rule parameters. See <MadCap:xref href="../BusinessRules/ConfigRule_CreateDisc.htm" title="Configuring Create Discussion business rules" alt="Configuring Create Discussion business rules">Configuring Create Discussion business rules</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">43289</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">PrismHR API: Import errors</p>
+                        <p class="TableTextLeft">When logging errors from imports, the Source field is now set to Imports. This enhancement enables reporting on the count of import errors per site.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">44441</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Prism API: ExcludeUserNames</p>
+                        <p class="TableTextLeft">The PrismHR API configuration has a new parameter <span class="UXElement">ExcludeUserNames</span>,  to exclude certain users during the user security import. The new parameter is an exclude filter that looks for a username that starts with the ExcludeUserNames value, such as <em>abc</em>. For usernames that begin with the filter value, the queue record is stamped with the message "User '&lt;userID&gt;' has excluded name, this record will not be processed."</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">44472</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Prism API: Benefits Events</p>
+                        <p class="TableTextLeft">The PrismHR API now suppresses a benefits event that does not contain a matching Client ID.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>General Enhancements</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 69px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableTextLeft">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">42381</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Case Discussion Replies</p>
+                        <p class="TableTextLeft">Recipients of a Case Discussion message in their email mailbox (for example, Gmail) can now reply above the line from any discussion reply. The Reply Above This Line logic uses Email Template codes CSCDISC and CSCDISCNEW. While the email templates (CSCDISC and CSCDISCNEW) themselves do <span class="UXElement">not</span> require Email Integration, the reply above the line functionality <span class="UXElement">does</span>. For Reply Above This Line to work, both CSCDISC and CSCDISCNEW must have a <span class="UXElement">From Email Override</span> address that matches an Active Email Integration mailbox. For details, see <MadCap:xref href="../CasesTasks/Config_CaseDiscAboveLine.htm" title="Configuring Case Discussion: Reply Above This Line" alt="Configuring Case Discussion: Reply Above This Line">Configuring Case Discussion: Reply Above This Line</MadCap:xref>. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">43131</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Employee Name in EPLI Module Quick Search</p>
+                        <p class="TableTextLeft">The EPLI Claims search was modified to more closely match the WC Claims dashboard. Employee Last and First Name were added to the Quick Search on the dashboard, as well as the ability to search by Carrier Claim number.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">43132</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Delete button on EPLI Module</p>
+                        <p class="TableTextLeft">The EPLI dashboard now has a delete button that is available for any user associated with a role containing the security entity <span class="UXElement"> biz_epliclaim_delete</span> with View rights. This button allows designated users with appropriate security rights to delete EPLI claims dataform records.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">43695</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Workflow Channels and Email Templates: Date field Operator for Aging</p>
+                        <p class="TableTextLeft">Email Template and Workflow Channel triggering were enhanced with the new Date field operator for Aging. These new operators allow the system administrator to configure triggers based on a period before a specific date or a date on a field. For details, see Workflow Channels <MadCap:xref href="../WFC/Step4_WFC_Conditions.htm" title="Step 4: Conditions" alt="Step 4: Conditions">Step 4: Conditions</MadCap:xref> and Email Templates <MadCap:xref href="../EmailTemp/Step4_ETConditions.htm" title="Step 4 Conditions" alt="Step 4 Conditions">Step 4 Conditions</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">43807</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Active Employee Count on Payroll Batch</p>
+                        <p class="TableTextLeft">The Payroll Batch dataform now includes more accurate definitions of the employee counts by batch. This enhancement includes:</p>
+                        <ul>
+                            <li>A new fieldset for General Information that contains the existing Payroll Batch fields.</li>
+                            <li>A new fieldset on the Payroll Batch dataform called Employee Counts.</li>
+                        </ul>
+                        <p>The Employee Counts fieldset only displays for Batch Types of Regular with the following fields:</p>
+                        <ul>
+                            <li>FT Active WSE Count</li>
+                            <li>PT Active WSE Count</li>
+                            <li>FT Terminated WSE Count</li>
+                            <li>PT Terminated WSE Count</li>
+                            <li>FT Leave WSE Count</li>
+                            <li>PT Leave WSE Count</li>
+                        </ul>
+                        <p class="TableTextLeft">When a payroll batch record is inserted with the status of Completed, a business rule runs to stamp the counts from the ClientSpace Employment records (calculation of FT/PT and Status Classification). This rule only runs when Batch Type = Regular.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">There is a new field on the Payroll Batch for Pay Frequency (lookup core, lookup Group = PayFrequency). This field displays when the Batch Type = Regular. The values for this field are calculated based on the difference between the start date and end date of the payroll batch.</p>
+                        <p class="TableTextLeft">See <MadCap:xref href="../Payroll/PayrollBatch.htm" title="Payroll Batch information" alt="Payroll Batch information">Payroll Batch information</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">43901</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Field Display Rules: Comma-separated values</p>
+                        <p class="TableTextLeft">Manage Field Display rules now use a comma-delimited list of values. Additionally, Multi Lookups in field display now recognize blank values, to include delimited lists (for example <code>importcomplete,,onhold</code>). For more information about managing field display in your ClientSpace installation, see <MadCap:xref href="../Admin_Config/ConfigFldDispMultVal.html" title="Configuring field display with multiple values" alt="Configuring field display with multiple values">Configuring field display with multiple values</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">44293</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Benefit Classification</p>
+                        <p class="TableTextLeft">Benefits dataforms were updated to more closely mirror the terminology used in PrismHR.</p>
+                        <ul>
+                            <li>On the Apply Plan Group modal, the Classification field is now <span class="UXElement">Benefit Group</span>.</li>
+                            <li>The rule title for HE_ClassificationCodeUnique on the Benefit Groups is <span class="UXElement">Benefit Group Code Unique</span>.</li>
+                            <li>The description for HE_DuplicateOfferedPlan on the Offered Benefits Plan is <span class="UXElement">Benefit Group</span> rather than Classification.</li>
+                            <li>The description for SetImportID on the Offered Benefits Plan uses <span class="UXElement">Benefit Group</span> anywhere it previously showed Classification.</li>
+                            <li>The rule title and the description for HE_DuplicateCPCClassification on the Offered Benefits Plan uses <span class="UXElement">Benefit Group</span> anywhere it previously showed Classification.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">44500</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">ClientSpace and Employee Portal integration enhancements</p>
+                        <p class="TableTextLeft">In the PrismHR June Quarterly Release, the Employee Portal Support Center will be delivered, which relies on data from ClientSpace. When a Client Service Case is created in ClientSpace from the Employee Portal, the Source is marked as <span class="UXElement">Employee Portal</span>, and a new, read-only field  displays for the Reported By Employee. The new field captures the name of the worksite manager or worksite employee who submits the case. This enhancement requires additional configuration in <MadCap:variable name="MyVariables.ProductName" />. See <MadCap:xref href="../EmpPortal/ConfigCS.htm" title="Configuring ClientSpace to work with the Employee Portal" alt="Configuring ClientSpace to work with the Employee Portal">Configuring ClientSpace to work with the Employee Support Center</MadCap:xref>. </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">The <MadCap:variable name="MyVariables.ProductName" /> More Search enhancement enables searching by the Reported By Employee on the Client Service Case dataform searches. Reported By (Employee) is also included in the More Search for Cases on a dataform search, which allows users to search for cases submitted by a specific employee. This enhancement ensures that the same case results display in ClientSpace and the Employee Portal.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Technical Enhancements</h2>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 69px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">43998</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">PrismHR API Export: Convert to REST</p>
+                        <p class="TableTextLeft">The Export methods from the PrismHR API for creating Clients and the related locations and employees were updated to use REST API technology, which does not rely on a shared WSDL system for updates. This enhancement means that as PrismHR adds new methods for accessing PrismHR data, the ClientSpace code can be updated to take advantage of these new methods without the need to download a new WSDL package containing the method names.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">44281</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">TableName search  for tblOrganization on Manage Rules</p>
+                        <p class="TableTextLeft">The TableName search in More Search now includes non-dataform objects where appropriate. Note: For future release.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">44372</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Remove Classic Code</p>
+                        <p class="TableTextLeft">In our continuing effort to sunset our classic application, more classic functionality was removed from the application to include:</p>
+                        <ul>
+                            <li>Dataforms: the ability to access dataforms from the classic TOC</li>
+                            <li>Search: the ability to search on multiforms from the classic TOC</li>
+                            <li>Trigger</li>
+                            <li>webusercontrols_net</li>
+                            <li>Stylesheets</li>
+                        </ul>
+                        <p class="TableTextLeft">These functions were either removed or migrated into our cross-browser version of the application.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">44577</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Imports date value</p>
+                        <p class="TableTextLeft">Invalid dates on imported data now use the Default to Current Value setting to provide a default value. If no default value is configured, an informational message is logged, using the existing value in the dataset.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">44649</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Pending Import Queue Count</p>
+                        <p class="TableTextLeft">Pending Import Queue count now filters pending records based on the record being over 60 minutes old.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">44659</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">PrismHR Location Imports</p>
+                        <p class="TableTextLeft">Converted the Location (Ongoing only) process to use the new REST method to retrieve a single Location based on an Event.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">44705</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Prism API Initial Imports: Client Status</p>
+                        <p class="TableTextLeft">Initial Imports now only retrieve ClientSpace Clients in Client, Terminated, and PendingTermination status for the following:</p>
+                        <ul>
+                            <li>Bidirectional Contact Sync, scheduled process: HRPBiDirectionalContactsSync</li>
+                            <li>Initial Location, scheduled process: HRPImportInitialLocations</li>
+                            <li>Initial Employee, scheduled process: HRPImportInitialEmployees</li>
+                            <li>Initial Employment, scheduled process:  HRPImportInitialEmployees</li>
+                            <li>Vouchers scheduled process:  HRPImportVoucher</li>
+                        </ul>
+                        <p class="TableTextLeft">Existing installations may have Client data for statuses other than those mentioned (historic). No purging of data occurs. See <MadCap:xref href="../Integrations/ScheduledProcesses.html" title="List of scheduled processes" alt="List of scheduled processes">List of scheduled processes</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">44707</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Document indexing</p>
+                        <p class="TableTextLeft">ClientSpace now uses ObjectCache for document indexing when saving dataforms. This enhancement caches stored procedure parameters to make them available for subsequent document indexing.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">45750</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Import logging</p>
+                        <p class="TableTextLeft">Log Data information now contains the ImportID of the processed row.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Fixes</h2>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="margin-left: auto;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 69px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 78px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 280px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1" style="text-align: center;">
+                        <p class="TableHead">Level of change</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Issue summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Resolution</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">43770</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Email Template Execution Pipeline Validation</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue on Email Templates where the Execution pipeline field was not verified when moving from tab to tab.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">43903</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Client Team Role: duplicate records</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue that deleted a client team when duplicate client team role dataforms existed for a role in a workspace.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">43914</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Remove duplicate lookup values</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Removed duplicate lookups from the Import Queue Status list: InitialPending and InitialCompleted.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">43916</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Log field in Chrome</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue from an update to the Chrome browser that caused odd behavior in log fields.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">43964</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Lookup System checkbox</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue with the System parameter on lookup values that did not allow saving changes.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">43989</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">JavaScript error with zipcode fields</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an exception on dataform save with incomplete parameters on a zipcode datatype.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">43992</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">License List issues</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue with Custom Links configuration where links on a dataform that was secured to a system license would still display in the list.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">44063</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Checkboxes and Salesforce</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">The Salesforce API now imports and exports checkboxes from ClientSpace as a checkbox datatype. It passes a True/False value instead of the previous 1/0 value.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">44127</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">JavaScript breaks in Workflow Channel when select dataform trigger downstream</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue when the Item Name field would clear during the Add of a new Workflow Channel.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">44287</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft" style="text-align: center;"><i class="fas fa-cog" style="font-size:32px;color:var(--BrandPrimary2);padding:1px 6px 6px;" title="ClientSpace Advanced Administration" alt="ClientSpace Advanced Administration"></i>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Dataform Admin: Filter Value and Filter Source not saving changes</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue when changing the Filter Value or Filter Source on a Lookup field in Dataform Admin if no other changes or clicks are made, the change did not always save when you Save or Apply.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">44308</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Email Templates: Tasks</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue when configuring a triggerable email template for a Task (Triggering Form = Task) where the Source drop-down on the Conditions tab did not show the Task option if the BI Name is not filled out on Table Metadata.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">44322</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Workflow Controller</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an exception when decoding a typeahead primary condition in Workflow Channels when using a unary operator (such as Empty, NotEmpty).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">44328</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Unable to delete Email Templates from list</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue when trying to delete Email Templates. The tblEmailTemplateConditions (deprecated) was removed, which prevented the removal of email templates.  </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">44561</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft" style="text-align: center;"><i class="fas fa-cog" style="font-size:32px;color:var(--BrandPrimary2);padding:1px 6px 6px;" title="ClientSpace Advanced Administration" alt="ClientSpace Advanced Administration"></i>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Dataform column discrepancy</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue in Import configuration where the Dataform name for some configured fields of an import could have a different value if the field had been added to the import config, and then the dataform friendly name changed. Import field configuration now reflects the current dataform name.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">44678</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Workspace ID is required to view Pricing Console error</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved a Pricing Console error when clicking the Pricing Console link on the Workspace Landing page, when the Client Master status is Implementation or Client.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">44697</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">PrismHR API: User delete sequence</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <ul>
+                            <li>When a User is deleted in PrismHR (and a User DELETE Event is generated), an Import Queue record is now generated, and the Action parameter in the Identifier is DELETE.</li>
+                            <li>If the User exists in ClientSpace, the User is Inactivated and the queue record is Completed  with a message.</li>
+                            <li>If the User does not exist in ClientSpace, the queue record is Completed  with a message.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

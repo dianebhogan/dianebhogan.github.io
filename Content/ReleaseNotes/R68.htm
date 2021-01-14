@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('../Resources/MasterPages/ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Release 68 Notes</h1>
+        <p><strong>R68 Sprint</strong>:&#160;5/1/2018&#160;to&#160;6/6/2018. To learn about product features that you may not recognize, contact your Customer Success Manager.</p>
+        <h2>Enhancements</h2>
+        <p>Enhancements groups are Change in Functionality, ClientSpace Premium (ClientSpace with additional modules), Advanced Administration, and General.</p>
+        <h3><i class="fas fa-bell" style="font-family: Font Awesome 5 Free; font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="Change in functionality" alt="Change in functionality"></i> Change in Functionality</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Date Uploaded Search Parameter </p>
+                        <p class="TableTextLeft">The employee document search dashboard has been enhanced to make it easier to use:</p>
+                        <ul>
+                            <li>Added 'Date Uploaded' to More search criteria as a Date range filter</li>
+                            <li>Added Description to Quick Search as a&#160; 'contains' filter</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Workflow Channel Replace Field Options (Server Data Procs) </p>
+                        <p class="TableTextLeft">The workflow channels functionality has been enhanced, including three new server data stored procedures to be used when merging Employee and Employment type data.&#160; These stored procedures and the available merge fields are as follows:</p>
+                        <p><strong>Employment (peo_server_data_employment)</strong>
+                        </p>
+                        <ul>
+                            <li>FirstName</li>
+                            <li>LastName</li>
+                            <li>MiddleInitial</li>
+                            <li>EmployeeIdentifier</li>
+                            <li>Address1</li>
+                            <li>Address2</li>
+                            <li>City</li>
+                            <li>State</li>
+                            <li>ZipCode</li>
+                            <li>EmploymentStatus</li>
+                            <li>EmploymentType</li>
+                            <li>HireDate</li>
+                            <li>ClientNumber</li>
+                            <li>ContractType</li>
+                            <li>ContractEffectiveDate</li>
+                        </ul>
+                        <p><strong>Employee (peo_server_data_employee)</strong>
+                        </p>
+                        <ul>
+                            <li>EmploymentStatus</li>
+                            <li>EmploymentType</li>
+                            <li>HireDate</li>
+                            <li>ClientNumber</li>
+                            <li>ContractType</li>
+                            <li>ContractEffectiveDate</li>
+                        </ul>
+                        <p><strong>PrismHR Event (peo_server_data_prismhrevent)</strong>
+                        </p>
+                        <p style="margin-left: 30.0px;"><em><strong>Schema = Employee:</strong></em>
+                        </p>
+                        <ul>
+                            <li>FirstName</li>
+                            <li>LastName</li>
+                            <li>MiddleInitial</li>
+                            <li>EmployeeIdentifier</li>
+                            <li>Address1</li>
+                            <li>Address2</li>
+                            <li>City</li>
+                            <li>State</li>
+                            <li>ZipCode</li>
+                            <li>EmploymentStatus</li>
+                            <li>EmploymentType</li>
+                            <li>HireDate</li>
+                            <li>ClientNumber</li>
+                            <li>ContractType</li>
+                            <li>ContractEffectiveDate</li>
+                        </ul>
+                        <p style="margin-left: 30.0px;"><em><strong>Schema = Company:</strong></em>
+                        </p>
+                        <ul>
+                            <li>ClientNumber</li>
+                            <li>ContractType</li>
+                            <li>ContractEffectiveDate</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Benefit tier validation rule: Change from HE to SE</p>
+                        <p class="TableTextLeft">Converted hard error rule <strong>HE_MultiplePlanTiers</strong> to soft error <strong>SE_MultiplePlanTiers</strong>. This allows multiple Offered plans which share a Benefit Plan to have different tiers, preventing exceptions when saving Offered Benefit Plan forms.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert Merge Admin</p>
+                        <p class="TableTextLeft">The merge admin&#160;management console and detail page&#160;has been implemented in our cross platform application (NEXT/Pulse).&#160; The system has also been enhanced to store the merge template files using our FileUpload element that uploads the file to the database. The merge execution has been updated as well to retrieve the merge templates from the database during the server side merge process.&#160; Finally a scheduled process has been created to extract existing merge templates and upload them to the database.</p>
+                        <p class="TableTextLeft"><strong>== SEARCH PAGE ==</strong>
+                            <br>
+                            </br>Quick Search:<br></br>&#160;&#160; Merge Name</p>
+                        <p class="TableTextLeft">% Search:<br></br>&#160;&#160; Merge Name<br></br>&#160;&#160; Description</p>
+                        <p class="TableTextLeft">More Search:<br></br>&#160;&#160; Merge Name<br></br>&#160;&#160; Description<br></br>&#160;&#160; Merge Type</p>
+                        <p class="TableTextLeft">Columns:<br></br>&#160;&#160; Merge Name<br></br>&#160;&#160; Description<br></br>&#160;&#160; Merge type</p>
+                        <p><strong>== DETAIL PAGE ==</strong>
+                        </p>
+                        <p>The Merge Detail page Includes the following elements:</p>
+                        <ul>
+                            <li><strong>Name</strong>: Name of the Merge - this appears in lists throughout the application such as when creating custom links.</li>
+                            <li><strong>Template File</strong>: Upload control used to store the associated template in the database.</li>
+                            <li><strong>Description</strong>(optional): Use this field to store a brief description of the merge and how it works.</li>
+                            <li><strong>Type</strong>: Output type for the merge.&#160; This is validated against the file extension of the template file on save.</li>
+                            <li><strong>Password</strong>: Used for password protected merges.</li>
+                            <li><strong>Procedure</strong>: Select the stored procedure that will provide the data for the merge.&#160; (optional for PDF merges - see Business Logic&#160;below).</li>
+                            <li><strong>Flatten</strong>: For PDF merges <span style="text-decoration: underline;">only</span> select whether the merge fields will be editable (unchecked) after merging or static (checked).</li>
+                            <li><strong>Output Type</strong>: For Word merges <span style="text-decoration: underline;">only</span> select whether to output as a word or pdf file - pdf files are static.</li>
+                        </ul>
+                        <p><strong>==Available Links==</strong>
+                        </p>
+                        <ul>
+                            <li><strong>Show Procedure </strong>Fields - Displays a list of the fields that will be output from the selected stored procedure.&#160; The copy function outputs these fields in a useful comma separated list.</li>
+                            <li><strong>Show PDF Fields </strong>(pdf only) - Displays the actual field names from the pdf template file.</li>
+                        </ul>
+                        <p><strong>==Security</strong><strong>==&#160;</strong>
+                        </p>
+                        <p>Merge&#160;security&#160;has been&#160;modeled&#160;on other&#160;Action center&#160;Security&#160;options such as on the Organization&#160;Detail. This allows you to secure any merge so that it is only available to certain roles and the associated users.</p>
+                        <p><strong>== BUSINESS LOGIC ==</strong>
+                        </p>
+                        <ul>
+                            <li><strong>Type Validation</strong>: As previously noted there is logic in the code that validates the file extension of the file that was uploaded to make sure it's valid for the selected Merge Type.</li>
+                            <li><strong>Stored Procedure generation</strong> (pdf only):&#160;For PDF merges there is code that can generate a stored procedure. On add, if the selected&#160;Merge Type is PDF and the stored procedure is left blank, the system will generate a stub stored procedure using the fields from the PDF document.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Dataform: Unlock Row Security</p>
+                        <p class="TableTextLeft">The ability to unlock individual dataform rows&#160;such as with secured case types has been added to the application.&#160; Secured records are indicated by&#160;a lock in the action center&#160;icons.&#160; Administrators can navigate to the individual secure record and unlock that record by clicking the lock icon in the action center, removing security for that record.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Default Contact Owner</p>
+                        <p class="TableTextLeft">The contacts system has been enhanced to synchronize the default assigned to user with the associated organization.</p>
+                        <ul>
+                            <li>When creating a new contact, the system will now&#160;default the contact Assigned To, matching it to&#160;the Org Assigned To.&#160;</li>
+                            <li>When Org Assigned To changes, the system updates all associated contacts&#160;synchronizing the&#160;Assigned To user with the Org.&#160;</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Task Enhancements</p>
+                        <p class="TableTextLeft">Tasks within the application have been enhanced to make them more organized and easier to use.&#160; These changes include the following:</p>
+                        <ul>
+                            <li>All of the task detail fields have been organized into a "General" fieldset.</li>
+                            <li>The Related Form field has been moved to the top left and the "Send Notification" checkbox has been moved to the top on the right making it easier to use when saving the form.</li>
+                            <li>An "Administrative Fields" fieldset has been added below the "General" fieldset - similar to the Administrative fieldset on dataforms. It will include all of the same fields as dataforms, excluding Import ID and Workspace but adding the "Date Updated" and "Updated By".&#160; Only global admins can see this fieldset.</li>
+                            <li>The Task "Archive" checkbox has been updated to use the "Is Active" format, like dataforms, and most everywhere else in the application. This checkbox has been moved out of the fieldset area, to the bottom left of the form, with the label "Is Active". This is a cosmetic change to make the task functionality consistent with the rest of the application - the underlying data structure is being preserved so as to not affect existing reports which rely on the "Archive" flag.&#160;All existing logic that Archives a task when completed has also been preserved.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Workspace level Recurring Tasks</p>
+                        <p class="TableTextLeft">Workspace level recurring tasks have been added to the application. This functionality allows you to add a task at the workspace level that will be generated on a configured schedule,&#160; like a recurring calendar event using a system scheduled process.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Workflow Channels: Start channel via schedule</p>
+                        <p class="TableTextLeft">The workflow system has been enhanced to allow Workflows (both task and dataform cloning) to be triggered on a schedule based on a date field from the triggering form. A scheduled process (Generate Scheduled Workflow) compares the current date to the triggering date field of each scheduled workflow as well as any additional&#160;triggering conditions to determine whether the task or dataform will be cloned. The triggering determination can be modified using a date offset and supports a Grace period should all the triggering conditions not be immediately met.&#160; </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Need to Trigger More Than 1 Item From the Main Workflow Channel</p>
+                        <p class="TableTextLeft">Workflow channels have been enhanced to separate the workflow channel from all of the workflow items, allowing for true concurrent workflow items to be generated from the initial triggering event. Previously an initial task would need to be attached to the triggering event and all dependent items would be fired from the triggering task. By separating the workflow channel from the workflow items the system can now generate multiple independent workflows simultaneously from the same triggering event. Workflow tasks can then spawn dependent workflow items allowing you to create cascading workflow events. Each of the triggered workflow items share a triggering Form, but can have unique triggering fields and events, providing for much more robust configurations.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Workflow Notifications on User-based Fields</p>
+                        <p class="TableTextLeft">User notifications have been added to Workflow Channels. You can now select user fields on a system dataform containing a user type field when configuring workflow notifications by selecting the option "From a field on Form". This displays a list of forms within the system which contain user fields. Once a form is selected a list of user type field on the form is available for selection. When notification occurs the email address for the user in this field will be looked up and a notification sent.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Workflow Channel Replace Field Options</p>
+                        <p class="TableTextLeft">Server data stored procedure information for SDP1 and SDP2 have been added to Field replacement in Workflow channels. These custom stored procedures can be used to return data from other workspace dataforms that can then be used when generating system notifications.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">User Workspaces</p>
+                        <p class="TableTextLeft">The user profile has been enhanced, adding a new Admin option to the Action items to Add&#160;Workspaces. This option allows the admin to easily add and remove workspaces from an individual user profile.&#160; The list of workspaces available for admin is limited to those&#160;where&#160;the admin is already a member of the project users.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Next: prevent log in from Template User accounts</p>
+                        <p class="TableTextLeft">User security has been enhanced to remove the ability to log into the system as a Template user. When a template user account is used to log in the attempt will fail with the error: This user account cannot be used to login to the system. Please contact the system administrator.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>General Enhancements</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Joinder: Add the ability to push locations into PrismHR </p>
+                        <p class="TableTextLeft">The PrismHR API has been enhanced, allowing the system to push location information into PrismHR.&#160; If a ClientSpace location does not exist in PrismHR, that location will be created in the Prism System.&#160; Two new business rules have been added to accomplish this:</p>
+                        <p><strong>Client Master:&#160;CM.ExportLocationsToHRP</strong>
+                        </p>
+                        <ul>
+                            <li>Creates all locations in a workspace in PrismHR</li>
+                            <li>Not on Add, and CM.ClientNumber must exist</li>
+                            <li>Updates the Export Status and Export Log fields on each Location form, saves via Biz Logic ("HRP" pipeline)</li>
+                            <li>Will NOT set the ImportID on the Location(s), Import ID setter proc should be used</li>
+                        </ul>
+                        <p><strong>Client Location: LOC.ExportLocationToHRP</strong>
+                        </p>
+                        <ul>
+                            <li>Creates the current location in PrismHR</li>
+                            <li>Not on Add, and CM.ClientNumber (on associated Client Master) must exist</li>
+                            <li>Will NOT set the ImportID on the Location(s), Import ID setter proc should be used</li>
+                            <li>In rule configurations<ul><li>Provide the AppCode of the PrismHR API Configuration form to use</li><li>Must be active and meet the requirements of v1.12+</li></ul></li>
+                        </ul>
+                        <p><strong>General Info</strong>
+                        </p>
+                        <ul>
+                            <li>Locations must have Location Code provided or an error will occur</li>
+                            <li>Client must exist in PrismHR</li>
+                            <li>Exports the following fields:<ul><li>Location.ClientNumber</li><li> Location.LocationCode</li><li> Location.LocationName</li><li>Location.GeoCode (PrismHR derived from ZipCode)</li><li>Location.AddressLine</li><li>Location.AddressLine2</li><li>Location.ZipCode</li><li>Location.ZipSuffix (not in ClientSpace, set to empty)</li><li> Location.State (sets PrismHR Location WorkCompState field)</li></ul></li>
+                            <p>If successful:<ul><li>Export Status set to "Location Export Complete"</li><li>Export Log set to "Successfully created Location 'LOC4212' in PrismHR"</li></ul><p>If unsuccessful:</p></p>
+                        </ul>
+                        <ul>
+                            <li>Export Status set to "Location Export Failed" or other API related lookup value</li>
+                            <li>Export Log set to the error message from PrismHR, e.g.&#160; "You cannot create another location with an existing code for the client 254"</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">New PrismHR Code Tables </p>
+                        <p class="TableTextLeft">The HRIS system has been enhanced, adding Employment code tables to match the Employment records in PrismHR</p>
+                        <p class="TableTextLeft">New 'Job Code' Dataform:</p>
+                        <ul>
+                            <li>Job Code as Text</li>
+                            <li>Job Name as Text</li>
+                        </ul>
+                        <p class="TableTextLeft">New 'Division Code' Dataform:</p>
+                        <ul>
+                            <li>Division Code as Text</li>
+                            <li>Division Name as Text</li>
+                        </ul>
+                        <p class="TableTextLeft">New 'Department Code' Dataform:</p>
+                        <ul>
+                            <li>Department Code as Text</li>
+                            <li>Department Name as Text</li>
+                        </ul>
+                        <p class="TableTextLeft">New 'Shift Code' Dataform:</p>
+                        <ul>
+                            <li>Shift Code as Text</li>
+                            <li>Shift Name as Text</li>
+                        </ul>
+                        <p class="TableTextLeft">New 'Pay Group Code' Dataform:</p>
+                        <ul>
+                            <li>Pay Group Code as Text</li>
+                            <li>Pay Group Name as Text&#160;</li>
+                            <li>Pay Group Frequency as Lookup (use Pay Frequency lookup group)</li>
+                        </ul>
+                        <p class="TableTextLeft">On Employment the following parent form fields have been added, to take advantage of these new code tables:</p>
+                        <ul>
+                            <li>new "Job" (parent field). Drop list should show the Job Name.</li>
+                            <li>new "Division" (parent field). Drop list should show the Division Name.</li>
+                            <li>new "Department" (parent field). Drop list should show the Department Name.</li>
+                            <li>new "Shift" (parent field). Drop list should show the Shift Name.</li>
+                            <li>new "Pay Group" (parent field). Drop list should show the Pay Group Name.</li>
+                        </ul>
+                        <p class="TableTextLeft">All parent fields&#160;are filtered to the current workspace only.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Performance tune peo_cs_employee_s_dashboard_search</p>
+                        <p class="TableTextLeft">The underlying stored procedure for the employee search dashboard has been performance tuned to optimize performance.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Activity Dataform Linking</p>
+                        <p class="TableTextLeft">The activity detail has been enhanced, adding a link to the action center which enables you to open the associated dataform</p>
+                        <ul>
+                            <li>An action center link has been added to the Activity details , when applicable, which on click will open&#160;the related dataform record as a separate work item below the activity in the Work Center.&#160;</li>
+                            <li>A filter has been added to&#160;the Activity module allowing the user to filter the list by the associated&#160;dataform.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Recurring Task Enhancement: Validate Start Date &amp; Due Date</p>
+                        <p class="TableTextLeft">The start and due date offset field on the task recurrence configuration dialog has been enhanced, adding validation to insure the Due Date Offset cannot be inadvertently mis-configured to be less than the start date of the recurring task. Additionally a visual indicator has been added to mark these fields as required when cleared.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Email Templates - Slack</p>
+                        <p class="TableTextLeft">The Email Template system has been enhanced, providing the ability to send automatic notifications to slack users or channels as well as via email all at the same time. Slack notifications will display the Subject line of the email template and support field replacement, allowing you to include dataform and workspace information in your message. Slack notifications are automatically set to "To" addresses when selected, the Address field should be set to either the Slack channel name (for example #notify_ClientService) or the slack user (@bill).&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Boolean Field Types on Workflow Channels</p>
+                        <p class="TableTextLeft">All workflow condition fields for dataform checkboxes now have value drop-downs containing Unchecked and Checked.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Monthly ClientSpace Index Tuning - Core</p>
+                        <p class="TableTextLeft">Additional indexes have been added to several system tables, making accessing the tables more efficient.&#160; These tables include:</p>
+                        <ul>
+                            <li>tblImportQueue (API Imports)</li>
+                            <li>tblWorkflowItemLinking (Workflow Channels)</li>
+                            <li>tblCalendarEventAttendee (Calendar Attendees)</li>
+                            <li>tblCalendarEvent (Calendar Events)</li>
+                            <li>gen_ClientServiceCase (Cases)</li>
+                            <li>gen_CompClaimFinancial (Claim Financial records)</li>
+                            <li>The employee search dashboard has also been performance tuned, adding an index to the Employment table as well as improving the method of collecting the total record count.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Fixes</h2>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="margin-left: auto;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 269px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Issue summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Resolution</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">PrismHR Events, error when an employee CREATE event is processed</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where PRismHR Event creation would cause errors due to "Create" Events being sent for an Employee that did not exist in the system yet due to the timing of the PrismHR_Ongoing import and the Event scheduled process.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">NAICS/SIC Swapped Around on OSHA 300A</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where the NAICS and SIC codes were being swapped on the OSHA 300A report due to configuration in the system. The system will now place the SIC code value in the SIC field and the NAICS code value in the NAICS field on the report regardless of configuration.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Unhandled Exception on Case Escalation creation</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue in the SetCaseCategory business rule where attempting the add a Case escalation without a case category or type would cause an exception to be created. The SetCaseCategory rule will now only be triggered on Add if the Case Type is not blank.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Icon on Case Discussion page is tiny</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Icon size for attachments on the Case Discussion form has been increased to increase visibility.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Email Admin Issue</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue in the Email Admin control panel where the counts for Sent and Unsent did not match expected numbers. Email admin now accurately reflects the number of Sent, Unsent and all emails available.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Can't update the Import ID for a user</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">The user ImportID will now save. If not provided it will be set to the username.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Dataform Object Reference Exception</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where an Object Reference Exception is thrown when attempting to navigate to a dataform record that no longer exists.&#160; If you attempt to open a record which no longer exists the system will now present the message:&#160;"The dataform you requested was not found or no longer exists. If you navigated here from BI....."</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Widget Conditions</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where filtered lookups used in widget condition expressions would return no values, making them unusable as triggering fields for widget layouts. A filtered lookup will now return all possible values available to that lookup field when used as a triggering condition for widget layouts.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Izenda Reporting 6.10.0.30 Update</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">The Izenda business intelligence reporting engine has been updated to the latest version, 6.10.0.30 which resolves a reported issue with formatting on exported excel reports&#160;where dates were not formatted as dates.&#160; Dates are now appropriately formatted when exporting to excel.&#160; More information about the latest Izenda reporting release can be found in the Izenda Release notes (<a href="http://wiki.izenda.us/Release-Notes" class="external-link" rel="nofollow">http://wiki.izenda.us/Release-Notes</a>).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Exception when trying to assume expired user</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Removed the ability to assume an expired or inactive user account as this could cause system exceptions. If there is a need to assume an expired or inactive user it is recommended you change their password, activate and assume them, then inactivate or expire the user once done.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Sunset Message Boards</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">The Classic message board has been deprecated. After review of it's use it was found that this object was primarily used for notification of import exceptions.&#160; This can be accomplished though a scheduled BI report using tblImportException.&#160; For more information about generating this report contact your staff consultant.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

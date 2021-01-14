@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title>Addresses</title>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <div class="NoPageBreak">
+            <h1>
+                <MadCap:concept term="Email Templates" />Step 3: Addresses</h1>
+            <p>This step defines who the email is from, who will receive it, and any CC recipients. You can use a custom stored procedure  to include email addresses from system objects other than the triggering form. By default, the system excludes the current user who triggers the email. In Source, you can select Current User to ensure that user receives an email.</p>
+            <p>
+                <img src="../Resources/Images/EmailTemplates/Step3_Addresses.png" class="thumbnail" />
+            </p>
+            <p class="ProcedureIntro">To configure recipients:</p>
+        </div>
+        <div>
+            <p class="L1Num1" MadCap:autonum="1. ">Complete the form fields. </p>
+            <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+                <col class="TableStyle-Procedure-Column-Column1" style="width: 142px;" />
+                <col class="TableStyle-Procedure-Column-Column1" />
+                <tbody>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">Address Source Procedure</td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select a stored procedure (optional) that generates data to provide additional recipient email addresses. Select from any stored procedure in the system with a name containing <b>emailtemplate_recipient_proc</b>. The recipient proc list only displays valid options based on the Triggering Form in Step 1.</td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                            <p class="TableTextLeft">Include Dataform Subscribers as CC Recipients</p>
+                        </td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                            <p class="TableTextLeft">Adds anyone who has subscribed to the dataform as CC recipients when this notification is sent in addition to any other recipients you configure here. 
+When enabled (selected), this option presents a list to notify internal, external, or both recipient types:</p>
+                            <p class="TableBullet" MadCap:autonum="• "><b>Internal</b>: When the email template triggers, only internal dataform subscribers are notified.</p>
+                            <p class="TableBullet" MadCap:autonum="• "><b>External</b>: When the email template triggers, only external dataform subscribers are notified.</p>
+                            <p class="TableBullet" MadCap:autonum="• "><b>Both</b>: If you select Both or leave the field blank, all dataform subscribers are notified.</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                            <p class="TableTextLeft">From Address</p>
+                        </td>
+                        <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                            <p class="TableTextLeft">Select the From Address for the email. You can set this field to the email of the default admin user, a specific user, or from a field on a form. </p>
+                            <p class="TableTextLeft">&#160;</p>
+                            <p class="TableTextLeft">
+                                <img src="../Resources/Images/EmailTemplates/FromAddress_friendlyname.png" alt="" title="" />
+                            </p>
+                            <p class="TableTextLeft">This field defaults to Admin Email Address, which is the application administrator's email address. This is the default admin email set in System Admin &gt; Advanced &gt; App Settings. Only User Developers can change this email address.</p>
+                            <p class="StepResult">&#160;</p>
+                            <p class="TableProcIntro">To select  from a distinct set of options:</p>
+                            <ol>
+                                <li>Click the link <span class="UXElement">Admin Email Address</span>. <br />The From Address Options dialog box opens.</li>
+                            </ol>
+                            <div class="indent">
+                                <p>
+                                    <img src="../Resources/Images/EmailTemplates/FromAddressOptions.png" alt="" title="" /> <br /></p>
+                            </div>
+                            <ol MadCap:continue="true">
+                                <li>Select one of the following options:<ul style="list-style-type: square;"><li><span class="UXElement">Admin Email</span>: Uses the default admin email set in System Admin &gt;&#160;Advanced &gt;&#160;App Settings. Only User Developers can change this email address. For assistance with App Setting, please log an Extranet case.</li><li><b>AdHoc</b>: Allows you to manually add to the From list by simply typing the email address. Additionally, you can specify a friendly name to accompany the email address. For more details about using AdHoc, see <MadCap:xref href="FromFriendlyName.htm" title="Specifying a friendly name as From Address" alt="Specifying a friendly name as From Address">Specifying a friendly name as From Address</MadCap:xref>.</li></ul><ul style="list-style-type: square;"><li><b>User</b>: Select a specific user of the system.</li><li><b>Procedure</b>: Select an address stored procedure and pick the From address.</li><li><b>Field on a Form</b>: Select a dataform from a list of forms in the system that have relevant email fields. You can set user fields to values that exist on dataforms across a tabbed set. If the selected user fields are empty, the default value is the system admin. For more details, review the following section <MadCap:xref href="#From" title="From a Field on a Form" alt="From a Field on a Form">From a Field on a Form</MadCap:xref>.</li></ul></li>
+                                <li>When done, click <b>Ok</b>.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="L1Num" MadCap:autonum="2. ">To add a new recipient record to this notification, click <b>Add</b>.</p>
+            <p class="StepResult">A new row opens for Source, Type, and Address. Each recipient's source, type, and address must be unique.</p>
+            <p class="L1Num" MadCap:autonum="3. ">Complete the fields:</p>
+            <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+                <col class="TableStyle-Procedure-Column-Column1" style="width: 142px;" />
+                <col class="TableStyle-Procedure-Column-Column1" />
+                <tbody>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                            <p class="TableTextLeft">Source</p>
+                        </td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                            <p class="TableTextLeft">Source is where you select the source of your recipient email addresses or user contacts. When you select a source from the list, then any available email addresses or user contacts are available in the <b>Address</b> column. Recipient Source options are:</p>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">&#160;</td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1" style="padding: 0px;">
+                            <img src="../Resources/Images/EmailTemplates/Source_list.png" style="left: 186px;top: 1936px;width: 277px;height: 356px;" class="left" />
+                            <ul>
+                                <li>The triggering dataform selected in Step 1 Initial. In the example, the Triggering Form is Employee.</li>
+                                <li>Single dataforms that exist in workspaces with either email fields or user fields.</li>
+                                <li>Tabbed dataforms that are children of the triggering dataform. The tabbed dataforms (child forms) appear immediately after the triggering form in the Source list and are preceded by a dash (–). The Source list includes all tabbed dataforms included in the tabbed set.</li>
+                                <li><span class="UXElement">Adhoc Email Address</span>:&#160;When you select as Source, type the email address in the <b>Address</b> field.</li>
+                                <li><span class="UXElement">Employee</span>:&#160;When you select Employee, you can specify Employee Work or Personal Email address in Address. See <MadCap:xref href="EmailRecipients.htm" title="Specifying Employee Work and Personal Email" alt="Specifying Employee Work and Personal Email">Specifying Employee Work and Personal Email</MadCap:xref>.</li>
+                                <li><span class="UXElement">Address Source Procedure</span>: An email address selected from the Address Source Procedure. The email addresses appear in <b>Address</b> if a proc with email fields has been selected in the <b>Address Source Procedure</b> field.</li>
+                                <li><span class="UXElement">Current User</span>: Includes the logged in user who triggers an email template. By default, the system excludes the current user who triggers an email template.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyE-Column1-Body1">Type</td>
+                        <td class="TableStyle-Procedure-BodyD-Column1-Body1">What kind of email recipient type are you setting?  Options are <b>To</b> or <b>CC</b>.</td>
+                    </tr>
+                    <tr class="TableStyle-Procedure-Body-Body1">
+                        <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                            <p class="TableTextLeft">Address</p>
+                        </td>
+                        <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                            <p class="TableBullet" MadCap:autonum="• ">For a dataform source, select the user or contact type field on the form from which you would like to extract the email address. </p>
+                            <p class="TableBullet" MadCap:autonum="• ">When Source is <b>Address Source Procedure</b>, select a recipient type: AdminEmail, CaseSubscribers, CaseTypeRoleUsers, and ImmediateSupervisor.</p>
+                            <p class="TableBullet" MadCap:autonum="• ">When Source is <b>Adhoc Email Address</b>, use this field to type an email address to use every time manually.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="L1Num" MadCap:autonum="4. ">Click <b>Next</b> to proceed to <MadCap:xref href="Step4_ETConditions.htm" title="Step 4: Conditions" alt="Step 4: Conditions">Step 4: Conditions</MadCap:xref>.</p>
+        </div>
+        <h2><a name="From"></a>From a Field on a Form</h2>
+        <p>From the From Address Options dialog box, when you select <b>From a Field on a Form</b>, you can set user fields to values that exist on dataforms across a tabbed set. You can choose from which Dataform and then when you select a dataform, choose the Field. The Dataform drives the items in the Field list that you choose. The user fields include any child forms in a tabbed relationship. The child form has an asterisk in the name, as in <code>*Form One -- F1 User(F1User)</code>.</p>
+        <p>
+            <img src="../Resources/Images/EmailTemplates/FromAddress_childForms.png" />
+        </p>
+    </body>
+</html>

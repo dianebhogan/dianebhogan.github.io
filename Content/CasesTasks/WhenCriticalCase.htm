@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Cases" />When a critical case is logged</h1>
+        <p>When a Critical Case is logged, the scheduled process <b>CriticalCaseNotification</b> sends an email to the Assigned To user as well as the Manager of the Assigned To user's Primary Department. Any users in the Department Admin role receive these notifications, regardless of whether the user account is Active.</p>
+        <p><b>ServiceCaseNotification</b> sends an escalation case report to users in a role that has the <b>biz_ClientServiceCase_Email_Notifications</b> entity.  Cases with the <b>Include In Case Escalation Email</b> option disabled (cleared), are ignored by this Scheduled Process.  The ServiceCaseNotification scheduled process needs to be configured to fire at or less than the lowest escalation time, otherwise, you can create cases with 1 hour escalations but the notifications only queue up for the next run of the scheduled process.</p>
+    </body>
+</html>

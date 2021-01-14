@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1 MadCap:autonum="Chapter 1 ">Required field business rules</h1>
+        <p>Often you want to require a dataform field to be completed, but only under certain conditions. Making the field required at the dataform level is not a good solution.  That's where the required field business rules come into play. Required field business rule names are prepended with an underscore (<span class="UXElement">_</span>) and the word <span class="UXElement">Require</span>.</p>
+        <p><span class="UXElement">Fields with required field business rules</span>: Fields with a _Require rule, such as <span class="UXElement">_RequireFieldOnThisForm</span>, that are in hidden fieldsets, are required when completing a dataform.</p>
+        <p>The following list comprises the required field rules.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;width: 100%;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 202px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Rule</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2"><b>_RequireFieldOnThisForm</b>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Checks for a value in a field on the current form.</p>Parameter: <b>sFieldName</b></td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2"><b>_RequireTabField</b>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Checks for a value in a field on a related tab.</p>Parameters: <b>sTabTableName</b> and <b>sFieldName</b></td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2"><b>_RequireAdHocField</b>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Checks for a field value that resides in a node embedded in the dataform XML packet.</p>Parameters: <b>sFieldPath</b> and <b>sFieldLabel</b></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

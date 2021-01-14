@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Using Font Awesome</h1>
+        <p>Some topics use Font Awesome icons. Font Awesome stuff is in the master pages - not in topics. You should not have to do anything to make them work - other than use then as inline styling.</p>
+        <p class="ProcedureIntro">To implement Font Awesome icons:</p>
+        <ol>
+            <li>To add the script to a master page. (The script has been added to the master pages - so no need to do this again unless you create a new master page.)<ol><li>Open the topic in the Text Editor and paste the following after &lt;head&gt;. Copy the actual line from MasterPages/ReleaseNotes.flmsp</li></ol><p>&#160;</p><div class="indent"><p><img src="script.png" /></p></div></li>
+            <li>In the topic, you then copy the icon from the Font Awesome site or from this topic - if it is there. You do this in the Text Editor because this is CSS. You may find a new one, or use an existing - depends on the need.<ol><li>For example, for the icon that represents Advanced Administration, copy the last &lt;i&gt; with the title Advanced Administration. You have to copy the code.</li><li>The following example shows the change in functionality icon (fa-bell), premium icon (fa-plus-circle), and the system admin icon (fa-cog).</li></ol></li>
+        </ol>
+        <p>
+            <img src="Release Notes icons.png" />
+        </p>
+        <p>&#160;</p>
+        <h2>Icons used in topics as cues to the user</h2>
+        <p>For regular paragraphs &lt;p&gt;, the size should be 24px or smaller. This is what it looks like when using Font Awesome icons. To view the actual code, click <span class="UXElement">Text Editor</span>. If you find an icon you like, then you can just copy/paste the <span class="UXElement">&lt;i&gt;&lt;/i&gt;</span> stuff the precedes the following text. For example, to use the Eyes icon, copy the <span class="UXElement">&lt;i&gt;&lt;/i&gt;</span> and paste where you want it - in the XML Editor. Or you can copy the code in the Text Editor.</p>
+        <p><i class="fas fa-eye" style="font-family: Font Awesome 5 Free; font-size:24px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="See what you can do" alt="See what you can do"></i> Eyes icon</p>
+        <p><i class="fas fa-hand-point-right" style="font-size:18px;color:var(--BrandPrimary2);"></i> Pointing hand</p>
+        <p> <i class="fas fa-play-circle" style="font-size:24px;color:var(--BrandPrimary2);"></i> Play video circle icon</p>
+        <p><i class="fas fa-info-circle" style="font-size:20px;color:var(--BrandPrimary2);"></i> Information icon</p>
+        <p><i class="fas fa-tasks" style="font-size:20px;color:var(--BrandPrimary2);"></i> Task management</p>
+        <p><i class="fas fa-bell" style="font-family: Font Awesome 5 Free; font-size:24px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="Change in functionality" alt="Change in functionality"></i> Alerts</p>
+        <p><i class="fal fa-chart-pie" style="font-size:24px;color:var(--BrandPrimary2);"></i> Dashboards</p>
+        <p><i class="fal fa-clipboard-list" style="font-size:24px;color:var(--BrandPrimary2);"></i> Release Notes</p>
+        <p><i class="fas fa-file-download" style="font-size:24px;color:var(--BrandPrimary2);"></i> File Download</p>
+        <p><i class="fas fa-arrow-down" style="font-size:24px;color:var(--BrandPrimary2);"></i> Arrow down</p>
+        <p><i class="fas fa-arrows-alt-h" style="font-size:24px;color:var(--BrandPrimary2);"></i> Arrows left and right</p>
+        <p><i class="fas fa-envelope-open-text" style="font-size:24px;color:var(--BrandPrimary2);"></i> Email</p>
+        <p>The following example shows you the code for using the icons. Font Awesome uses the <span class="UXElement">&lt;i&gt;</span> tag with a <span class="UXElement">class</span>. The class info comes from the Font Awesome site. You style it to fit the formatting - color and font-size. Please use the established variables for color - in the stylesheet.</p>
+        <p>
+            <img src="../Resources/Images/FlareProjectAssets/HowFontAwesomeIcons-look-inline-styling.png" />
+        </p>
+        <h2>Icon Code for Adv Administration</h2>
+        <ol>
+            <li>Switch to Text Editor.</li>
+            <li>Copy  &lt;i class="fas fa-cog" style="font-size:32px;color:var(--BrandPrimary2);padding:1px 6px 6px;" title="ClientSpace Advanced Administration" alt="ClientSpace Advanced Administration"&gt;&lt;/i&gt;</li>
+            <li>Open the targeted topic.</li>
+            <li>Go to Text Editor and paste where want to display.</li>
+        </ol>
+        <p>This is the icon for Adv Admin <i class="fas fa-cog" style="font-size:32px;color:var(--BrandPrimary2);padding:1px 6px 6px;" title="ClientSpace Advanced Administration" alt="ClientSpace Advanced Administration"></i></p>
+    </body>
+</html>

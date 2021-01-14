@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring <MadCap:variable name="MyVariables.ProductName" /></h1>
+        <p>Several <MadCap:variable name="MyVariables.ProductName" /> mechanisms must be configured before implementing the Salesforce API.</p>
+        <p class="ProcedureIntro">To configure <MadCap:variable name="MyVariables.ProductName" />:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<b>Advanced</b> &gt; <b>API&#160;Configuration</b>.<br /></p>
+        <p class="StepResult">The API Configuration dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Click <b>Add</b>.<br /></p>
+        <p class="StepResult">The New API&#160;Configuration form opens.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/NewAPIConfiguration.png" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="3. ">Complete the form:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 139px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">API Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select <b>Web Service</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Application Code</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• "><strong>SFDCDEV</strong> is the sandbox configuration</p>
+                        <p class="TableBullet" MadCap:autonum="• "><strong>SFDCPROD</strong> is the Production configuration</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Application Name</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Type <strong>Salesforce Integration</strong> <em>(user choice)</em></td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Username</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Enter the username of the API account.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Password</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Enter the password of the API account AND the integration key.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Description</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Provide a description (user choice).</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Endpoint</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Type the URL of the API for the Partner WSDL.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Secondary ID</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">not used</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Logging Level</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• "><strong>0</strong> None</p>
+                        <p class="TableBullet" MadCap:autonum="• "><strong>1</strong> Only logs that the process ran and the date/time begin and end</p>
+                        <p class="TableBullet" MadCap:autonum="• "><strong>2</strong> Logs process details and results (for setup and debugging only)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Active</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Configuration ID</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">&#160;</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Add Parameter</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Additional Parameters are semi-colon delimited name=value pairs, such as&#160;<em>param1=value1;param2=value2.</em> </p>
+                        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">Spaces between parameters are not allowed. <br />Example: “;&lt;space&gt;param2=” is invalid</p>
+                        <ul>
+                            <li><span style="color: rgb(51,51,51);">exporttosf=x</span>
+                                <ul>
+                                    <li><strong>0</strong> = No Export (CS changes will not be exported to Salesforce) (defaults to “0”)</li>
+                                    <li><strong>1</strong>&#160;= Export to and Import from Salesforce</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>updatestage=x<ul><li><strong>0</strong> = Opportunity Stage will never be updated when exporting</li><li><strong>1</strong> = Opportunity Stage will be updated when exporting (defaults to <strong>1</strong>), based on the following translation:</li></ul></li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="4. ">Click <b>Apply</b>.</p>
+        <p class="L1Num" MadCap:autonum="5. ">To add more parameters, see the next topic <MadCap:xref href="Salesforce_v2.0_AdditionalParams.htm" title="Addiitonal Parameters" alt="Addiitonal Parameters">Additional parameters</MadCap:xref>.</p>
+    </body>
+</html>

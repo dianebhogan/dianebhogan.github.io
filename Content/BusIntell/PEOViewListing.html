@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Business Intelligence" />PEO view listing
+        </h1>
+        <p>ClientSpace provides&#160;a series of PEO views in the Reporting Profile that are preformatted to give you easy access to commonly used data.&#160;Descriptions of these views are as follows.</p>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 272px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">View name</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p>Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">peo_vwBenefitsComparison</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">This view pulls fields from BenefitsBenefitPlan, BenefitPlan, RateGroupDetail, and PreSaleBenefitPlan tables.</p>
+                        <p class="L1Num1" MadCap:autonum="1. ">Benefits Benefit Plan (<strong>OBP</strong>): Presented Benefit Plan</p>
+                        <p class="StepResult">Returns all fields on this dataform.</p>
+                        <p class="L1Num" MadCap:autonum="2. ">Benefit Plan (<strong>BP</strong>)</p>
+                        <p class="StepResult">If there is a Benefit Plan, it brings back all the fields on this dataform.</p>
+                        <p class="L1Num" MadCap:autonum="3. ">Rate Group Detail</p>
+                        <p class="StepResult">Brings back all of the fields on this dataform if there is a Rate Group and if the group matches the Rate Group on the Presented Benefit Plan table.</p>
+                        <p class="L1Num" MadCap:autonum="4. ">PreSale Benefits Plan (<strong>PSBP</strong>)</p>
+                        <p class="StepResult">Brings back all the fields on this dataform if one exists and its primary key matches the fk on the Presented Benefit Plan table.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">peo_vwClaimDetail</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">This view pulls all fields from Comp Claim, Comp Claim Claimant, Comp Claim Injury, Comp Claim Legal, and all fields from the latest record on the Comp Claim Financial and Comp Claim RTW.</p>
+                        <p class="L1Num1" MadCap:autonum="1. ">Comp Claim (<strong>CC</strong>)</p>
+                        <p class="StepResult">Pulls all fields.</p>
+                        <p class="L1Num" MadCap:autonum="2. ">Comp Claim Claimant (<strong>CCC</strong>)</p>
+                        <p class="StepResult">Pulls all fields.</p>
+                        <p class="L1Num" MadCap:autonum="3. ">Comp Claim Injury (<strong>CCI</strong>)</p>
+                        <p class="StepResult">Pulls all fields.</p>
+                        <p class="L1Num" MadCap:autonum="4. ">Comp Claim Legal <strong>(CCL)</strong></p>
+                        <p class="StepResult">Pulls all fields.</p>
+                        <p class="L1Num" MadCap:autonum="5. ">Comp Claim Financial (<strong>CCF</strong>)</p>
+                        <p class="StepResult">Pulls the financial record with the Current Record option selected.</p>
+                        <p class="L1Num" MadCap:autonum="6. ">Comp Claim RTW (<strong>RTW</strong>)</p>
+                        <p class="StepResult">Pulls the latest Record for the Comp Claim based on the Date Started.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">peo_vwClientServiceCase_Active</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Brings back the MOST RECENT and ACTIVE case information for a project based on the Date Created. Excludes Org with multiple workspaces.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">peo_vwCompanyWorkspaces</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Brings back the MOST RECENT information for an Organization based on the Date Created. Excludes Org with multiple workspaces.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">peo_vwCompanyWorkspaces_All</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Brings back ALL the information for an Organization even if it has more than one workspace (ProjectID) associated with it. Includes Org with multiple workspaces.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">peo_vwCompanyWorkspaces_Clients</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Brings back the MOST RECENT information for an Organization based on the Date Created and WHERE Org_crCategory=Client. Excludes Org with multiple workspaces.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">peo_vwCompanyWorkspaces_Clients_All</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Brings back ALL the information for an Organization even if it has more than one workspace (ProjectID) associated with it and WHERE Org_crCategory=Client. Includes Org with multiple workspaces.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">peo_vwCompanyWorkspaces_Prospects</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Brings back the MOST RECENT information for an Organization based on the Date Created and WHERE Org_crCategory=Prospect. Excludes Org with multiple workspaces.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">peo_vwCompanyWorkspaces_Prospects_All</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Brings back the ALL information for an Organization even if it has more than one ProjectID associated with it and WHEREOrg_crCategory=Prospect. Includes Org with multiple workspaces.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">peo_vwEmployees</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Brings back an Employees Info and their Employment Info when Employment is ACTIVE.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">peo_vwLOA</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Brings back an Employees Information, their most recent Employment record, their most recent LOA information based on Date Created and the status must be Current or Pending. Also brings back their Comp Claim ID # if the claim is ACTIVE and status is OPEN.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">peo_vwPricingInfo</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Brings back the most recent information from (<strong>peo_vwCompanyWorkspaces</strong>) and all the information associated with that project.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">peo_vwPricingInfo_All</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p colspan="1">Brings back the all information from (<strong>peo_vwCompanyWorkspaces_All</strong>) and all the Pricing Batch, Pricing State, and Pricing Code  information associated with that project. Pulls the pricing information from the batch that is marked as the Current Record.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">peo_vwMBRCredit</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Brings back the Master Benefits Record Credits information used by our Benefits Reconciliation system.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">peo_vwMBRDebit</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">Brings back the Master Benefits Record Debits information used by our Benefits Reconciliation system.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

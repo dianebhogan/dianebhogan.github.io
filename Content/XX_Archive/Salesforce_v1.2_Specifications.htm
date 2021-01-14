@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+    </head>
+    <body>
+        <h1>Specifications</h1>
+        <p>The capabilities of the process are as follows.</p>
+        <p><b>Exports</b> to Salesforce affect the following Salesforce Objects:
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">
+Opportunity (updates existing Opportunities in Salesforce, will not create new Opportunities)
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">Account (updates existing Accounts in Salesforce, will not create new Accounts)
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">Contact (updates existing Contacts or creates new Contacts under an Account)
+</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">Proper expectations should be set regarding Exports to Salesforce.  The API can export changes to existing Salesforce records from ClientSpace. However, the Salesforce API will NOT create new Salesforce objects.</p>
+        <p>ClientSpace Tables are mapped to Salesforce:
+
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">CS_Organization =&gt; SF_Opportunity =&gt; SF_Account
+</p>
+        <p class="Bullet2" MadCap:autonum="• ">An Organization (or Org Other Info) change in ClientSpace will result in an Opportunity and an Account update in Salesforce
+</p>
+        <p class="Bullet2" MadCap:autonum="• ">Only one Opportunity can be related to an Account.  The Salesforce system may contain more than one Opportunity for the Account, but only one Opportunity can be updated.  This is the Client’s responsibility to manage
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">CS_Client Master =&gt; SF_Opportunity =&gt; SF_Account
+</p>
+        <p class="Bullet2" MadCap:autonum="• ">A ClientMaster change in ClientSpace will result in an Opportunity and an Account update in Salesforce
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">CS_Contact =&gt; SF_Contact
+</p>
+        <p class="Bullet2" MadCap:autonum="• ">A Contact (or Contact Other Info) change in ClientSpace will result in a Contact update in Salesforce
+</p>
+        <p><b>Imports</b> from Salesforce affect the following ClientSpace tables and dataforms.
+
+New Workspaces and records can be created by the process:
+
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">tblOrganization
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">gen_OrgOtherInfo
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">gen_ClientMaster
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">gen_ClientLocation
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">tblContact
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">gen_ContactOtherInfo
+</p>
+        <p class="Bullet1" MadCap:autonum="• ">any gen_ form (via configuration)
+</p>
+        <p>You can import Salesforce <b>Opportunities</b>, <b>Accounts</b>, <b>Lead</b>, <b>Event</b>, <b>Task</b>, and <b>Contacts</b> data into ClientSpace.</p>
+        <p>Salesforce objects are mapped to ClientSpace:</p>
+        <p class="Bullet1" MadCap:autonum="• ">SF_Opportunity=&gt;_SF_Account=&gt;SF_Contact to ClientSpace tables</p>
+        <p class="Bullet1" MadCap:autonum="• ">Opportunity (retrieved from Work Queue) and Account (retrieved from related Opportunity) and Contacts (related to the Account) map to the ClientSpace tables</p>
+    </body>
+</html>

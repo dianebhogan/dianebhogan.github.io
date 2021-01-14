@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring dynamic field display</h1>
+        <p>Configurable field display provides an administrator with vast control over the general look and feel of a dataform. This is much more than just grouping fields into fieldsets or tabs but includes the ability to dynamically enable or disable fields and&#160;show or hide fields, fieldsets,&#160;or even tabbed dataforms based on the other data on that dataform. In combination with custom header links, an administrator can virtually set up any workflow or process in <MadCap:variable name="MyVariables.ProductName" /> using dynamic field display. </p>
+        <p>When configuring field display,  keep in mind what you would like to accomplish and map out how the result should work on your dataform. For example, when you select Organization as the Location, Organization fields can be made read-only or hidden based on configurable properties just as dataform fields. The source for these properties can be either based on Organization fields (where Field Source is This Table) or other related fields in ClientSpace using a field display proc (Field display Proc 1 or 2). </p>
+        <p>Field display can be cascaded. Combine this with required field rules, and it allows you to build incredibly complex workflows within a dataform. An example of this could be a form, where filling out a Pay Frequency field with a value of <b>Weekly</b> displays a Weekly payroll fieldset containing a&#160;required Pay Type field with values of <b>Check</b> or <b>Direct Deposit</b>. Selecting <b>Direct Deposit</b> displays a field for <b>Bank Authorization</b>, which is also required to save the form.</p>
+        <p>Required dataform fields hidden through configurable field display do not present their Required attribute to the system’s dataform save logic, meaning these fields are only required if visible. This allows you to structure complex dataform logic and workflow within a dataform. This flexibility should be tempered with planning to ensure that appropriate data is captured when required. In short, make sure you are not hiding a field that should be completed.</p>
+        <p class="ProcedureIntro">To configure and manage dynamic field display:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Manage Field Display</b>.<br />The Field Display Rule Search dashboard opens. It is helpful to filter the presented list for the dataform to which you are adding field display. This helps you to understand the existing field display logic and determine if this affects the changes you want to make.<br /></li>
+            <li>When ready, click <b>Add</b>.<br />The Field Display Rule Detail form opens. This form provides a number of configuration options to customize your field display.<br /></li>
+        </ol>
+        <p class="Indent1">
+            <img src="../Resources/Images/Dataform/FieldDisplayRuleDetail.png" class="thumbnail" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Complete the form:</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 121px;" />
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 516px;" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Location</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required. Select the location for which you would like to configure the field display.  Many of the items on the list are dataforms. However, some are not, such as Organization. The Location selection affects several other choices on this form.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Field Source</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required. Select one of the following:</p>
+                        <ul>
+                            <li><span class="UXElement">This Table</span>: Indicates your field source is from the Location field (such as a dataform).</li>
+                            <li><span class="UXElement">Field Display Proc 1</span>: Indicates your field source is from a custom stored procedure.</li>
+                            <li><span class="UXElement">Field Display Proc 2</span>:  Indicates your field source is from a custom stored procedure.</li>
+                        </ul>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">A Field Display Proc is a custom SQL stored procedure that allows you to aggregate information from other dataforms in the system. For example, this allows you to disable all of the fields on workspace Employee and Employment forms if the Client Status on the Client Master page is Terminated.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required. Determines whether this is a field display change that affects <b>State</b> or <b>Styling</b>:</p>
+                        <ul>
+                            <li><b>State</b>: Field interaction. Visibility / read-only attributes (default).</li>
+                            <li><b>Style</b>:&#160;Sets CSS Styling changes to the field label based on a specific triggering condition.&#160;<ul><li>When you select Style, <span class="UXElement">Settings</span> becomes available in the Result fieldset. </li></ul></li>
+                        </ul>
+                        <p class="ProcedureIntro">To set Style:</p>
+                        <ol>
+                            <li>Click <span class="UXElement">Settings</span>.<br />The Settings dialog box opens.</li>
+                            <li>Select Font Type, Font Style, and Font Color.</li>
+                            <li>Click <span class="UXElement">Update</span>.</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">When this field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required. Presents a series of fields based on your choice of Location and Field Source. The selection in this field acts as the trigger for your field display action. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">equals this value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required. This is the triggering value and should be set to something appropriate for the triggering field selected in <span class="UXElement">When this field</span>.  For example, a check box selected as the triggering value should equal either True or 1 to trigger your field display off the checked state. </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">The value of a Lookup trigger field should equal the code value of either one of the lookup options or a comma-separated list of code values. </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">You can also build OR statements using a comma-separated list of values in this field for distinct value fields such as lookups, text, or parent form fields. Lets' say you have a lookup field to store the days of the week. To trigger field display for weekend days using <span class="UXElement">equals this value</span> as <code>Saturday,Sunday</code> equates to <em>where value equals Saturday OR Sunday</em>. Note, there are NO&#160;spaces between the values in a comma-separated list.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">this item</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required. This is the field, fieldset, or tab upon which to perform the field display.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">will</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required. Choose a field display action:</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Enable</b>: Opens field for edits, allows changes to the field to be saved.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Disable</b>:  Marks the field or tab as read-only and not editable.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Hide</b>:  Hides the field or tab from displaying.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Display</b>:  Shows the field or tab on the dataform.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Clear Field On Disable/Hide</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft"><i>Clear Field on Disable/Hide</i> does precisely that. It removes any information previously stored in this field when it is hidden or disabled. This is a hard delete from the system, so exercise careful planning when choosing this option. Hiding a fieldset hides all fields within the fieldset, masking any required field actions for those fields.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">This option is hidden when a tab is selected in <span class="UXElement">When this field</span>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>After you have configured all the field display options, click <b>Save</b>.</li>
+        </ol>
+        <h2><a name="Examples"></a>Examples</h2>
+        <p>On the Organization, when the field DoNotCall is selected (equals 1), then the tab Org Other Info is hidden.</p>
+        <p>
+            <img src="../Resources/Images/Dataform/DynFieldDisplay-Ex1.png" class="thumbnail" />
+        </p>
+        <p>When the field named MultiTest has a value of 20 or 25, then the tab named Tab One is hidden.</p>
+        <p>
+            <img src="../Resources/Images/Dataform/DynFieldDisplay-Ex2.png" alt="" title="" class="thumbnail" />
+        </p>
+    </body>
+</html>

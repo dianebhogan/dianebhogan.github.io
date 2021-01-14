@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1 MadCap:autonum="Chapter 1 ">Additional Parameters</h1>
+        <p>Additional Parameters are semi-colon delimited name=value pairs, such as param1=value1;param2=value2.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">Spaces between parameters are not allowed (e.g. “;&lt;space&gt;param2=” is invalid)</p>
+        <p style="font-weight: bold;">exporttosf=x</p>
+        <p class="Bullet1" MadCap:autonum="• ">0 = No Export (CS changes will not be exported to Salesforce) (defaults to “0”)</p>
+        <p class="Bullet1" MadCap:autonum="• ">1 = Export to and Import from Salesforce</p>
+        <p style="font-weight: bold;">updatestage=x</p>
+        <p class="Bullet1" MadCap:autonum="• ">0 = Opportunity Stage will never be updated when exporting</p>
+        <p class="Bullet1" MadCap:autonum="• ">1 = Opportunity Stage will be updated when exporting (defaults to 1), based on the following translation:</p>
+        <p>&#160;</p>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col style="width: 193.0px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 162.0px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">ClientSpace CM Status</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Stage Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Prospect</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Pricing</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Submitted</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Pricing</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Accepted</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Pricing</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Underwriting</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Proposal</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">PricingApproved</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Proposal</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Approved</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Negotiation</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">ContractPending</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Negotiation</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Negotiation</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Negotiation</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">UnderContract (Onboarding)</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Closed Won</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">PendingActivation</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p>Closed Won</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Terminated</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Closed Won</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Dead</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Closed Lost</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Expired</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">Closed Lost</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Bullet1" MadCap:autonum="• ">csworkspacedataproc=x</p>
+        <p class="Bullet2" MadCap:autonum="• ">Name of the proc used to export workspace data (defaults to <b>peo_salesforce_org_s_workspace_by_org</b>)</p>
+        <p class="Bullet1" MadCap:autonum="• ">csupdateproc=x</p>
+        <p class="Bullet2" MadCap:autonum="• ">Name of the proc used to set _CSUpdateAllowed (defaults to <b>peo_salesforce_s_allow_cs_update</b>). This determines when ClientSpace will begin ignoring Salesforce.</p>
+        <p class="Bullet1" MadCap:autonum="• ">csavailableupdates=x</p>
+        <p class="Bullet2" MadCap:autonum="• ">Name of the proc used to determine which audit records will be exported (defaults to <b>peo_salesforce_s_available_cs_updates</b>). These are the triggers from the Field Change Audit table.</p>
+        <p class="Bullet1" MadCap:autonum="• ">opprecordtypename=x</p>
+        <p class="Bullet2" MadCap:autonum="• ">Used when retrieving Opportunities from Salesforce</p>
+        <p class="Bullet2" MadCap:autonum="• ">If this is specified, you must include an import map entry for API Path = “Opportunity/RecordType/Name” otherwise a match will not be found.</p>
+        <p class="Bullet1" MadCap:autonum="• ">contactrecordtypename=x</p>
+        <p class="Bullet2" MadCap:autonum="• ">Used when retrieving Contacts from Salesforce</p>
+        <p class="Bullet2" MadCap:autonum="• ">If this is specified, you must include an import map entry for API Path = “Contact/RecordType/Name” otherwise a match will not be found.</p>
+        <p class="Bullet1" MadCap:autonum="• ">querysize=1000 (must be this value)</p>
+        <p class="Bullet1" MadCap:autonum="• ">sessionlength=29 (must be this value)</p>
+        <p class="Bullet1" MadCap:autonum="• ">querybatchsize=-1 (must be this value)</p>
+    </body>
+</html>

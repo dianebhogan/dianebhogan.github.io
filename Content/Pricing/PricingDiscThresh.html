@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Pricing discount thresholds
+        </h1>
+        <p>This topic describes base functionality and setup of Pricing Discount Thresholds.</p>
+        <p>The <b>Max Work Comp Discount</b> field in the State Master defines the maximum work comp discount allowed for the state. Because the competitive environment is highly dependent on the state, it makes sense to store at the state level. MaxWorkCompDiscount (% data type).</p>
+        <p>The <b>Discount Threshold</b> table defines the max discount thresholds for members in a role.&#160;Work comp discount is one of these definitions.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Role (role selector data type)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Work Comp Discount threshold % of Max (% data type): Defines the percentage of the max work comp discount that is allowed for members of this role. Default this field to 100% on record create if the field is left blank.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Minimum Admin Per Head (money data type)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Minimum Admin Per Account (money data type)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Max SUTA discount (% data type)</p>
+        <p>This table&#160;is managed in the admin workspace.&#160;Validation ensures&#160;that only one Discount Threshold can be setup per role.
+</p>
+        <p>        
+        A new field (submitted by user) has been added to the pricing batch form.&#160;This field determines the user rights that allow or disallow the desired level of discounting.&#160;PricingBatch.SubmittedByUser (user data type: read only)
+        
+        </p>
+        <p><b>Business logic</b> has been added&#160;to the pricing batch submission to validate that the user submitting the batch is not discounting the work comp on any of the associated states more than their allowed maximum.&#160;If the user has set any of the PricingCode.WorkCompDiscount at a level that&#160;is more than they are allowed, a hard error will be raised when the batch is submitted.&#160;The error handles both initial quoting and repricing.&#160;The error states "Work comp discount exceeds max allowed for code 8810FL (max%), 8742FL (max%), etc".&#160;
+		</p>
+        <p class="Bullet1" MadCap:autonum="• ">The max discount % threshold is the highest discount level for any of the roles in which the user is a member.&#160;The max discounts are all stored at the state level.&#160; The user role will have the ability to use a portion of the max discount.&#160;For example, if the max Work Comp Discount for Florida is 30%, and a user is a member of a role that has authority to discount at 50% of the max discount, they can discount at a 15% level.&#160;If no record exists for any given state that is being submitted, for any role in which the user is a member, the user is not allowed to discount codes in that state at all.</p>
+        <p class="Bullet1" MadCap:autonum="• ">The validation is based on the user that is submitting the deal, not the salesperson and can be skipped using the Override Validations option, a secured field&#160;on the pricing batch dataform.</p>
+        <p class="Bullet1" MadCap:autonum="• ">The validation business rule also sets the PricingBatch.SubmittedByUser.</p>
+        <p>The <b>business rule</b> that validates the minimum admin per head and per account that is currently stored on the Default Information form instead now&#160;validates at the user (role) level if there are any Discount Threshold records setup.<br /></p>
+        <p class="Bullet1" MadCap:autonum="• ">On submission of a pricing batch, the minimum Per Head and Per Account admin that the user is able to set are determined based on their roles.&#160;If no Threshold records are setup, then&#160;defaults are used from the Default Information Form.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Total Admin fee is calculated using the standard function (same as on pricing console).&#160;This Total Admin is compared to the Minimum Admin Per Account.&#160;Validation of&#160;the minimum admin per head is done by dividing the total admin by the total number of EEs (part time and full time) on any active pricing code associated with the Pricing Batch that is being submitted.</p>
+    </body>
+</html>

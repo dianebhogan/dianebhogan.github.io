@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Email Templates" />Configuring calendar event notification template</h1>
+        <p>You can configure email notification of calendar events using email templates in <MadCap:variable name="MyVariables.ProductName" /> allowing for customization of the HTML email.  If no calendar event template is published, the system generates email notifications as it always has.  For help configuring a calendar event notification template, log an Extranet case.</p>
+        <p>Calendar events utilize a non-triggered email template. This template is used for both Internal and External (to <MadCap:variable name="MyVariables.ProductName" />) recipients.</p>
+        <p class="ProcedureIntro">To configure a calendar event notification template:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<b>Email Templates</b>.<br />The Email Templates dashboard opens.<br /></li>
+            <li>Click <b>Add</b>.<br />The Add Email Template form opens.<br /></li>
+        </ol>
+        <p class="Indent1">
+            <img src="../Resources/Images/EmailTemplates/CalEvent.png" class="thumbnail" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Complete the form fields.</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 131px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select <b>System</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Template Code</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select <b>CALEVENT</b>. Template Code must be unique.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Template Name</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Use <b>Calendar Event</b>. This name is displayed in the system lists.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Description</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Provide a brief description.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Subject,<br />Body</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">Replace fields are available in both Subject and Body. For more details, see <MadCap:xref href="../Admin_Config/UsingReplaceFields.htm" title="Using replace fields" alt="Using replace fields">Using replace fields</MadCap:xref>.</td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <p>The Email Template must be published. If the Template cannot be located (not published, Template Code incorrect), the default notification format is used. </p>
+    </body>
+</html>

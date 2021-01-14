@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="2"
+  Comment="PDF for Review"
+  Type="PDF"
+  Destinations=""
+  OutputFile="R91 Release Notes"
+  GlossaryTermConversion="marked"
+  ConditionTagExpression="include[ClientSpace.Print], exclude[ClientSpace.Screen]"
+  PatchHeadingLevels="true"
+  MasterStylesheet="/Content/Resources/Stylesheets/ClientSpace.css"
+  DisableAutoSync="true"
+  OutputFolder="C:\Output for PDFs">
+  <PrintedOutput
+    CollapseMargins="false"
+    GenerateTOCProxy="false"
+    GenerateIndexProxy="false"
+    GenerateGlossaryProxy="false" />
+  <DocumentProperties
+    Author="[%=MyVariables.CompanyName%]"
+    Title="Review" />
+  <PDF
+    ShowUsedBookmarks="false"
+    PageLayout="TwoPageLeft"
+    TitleBar="DocumentTitle"
+    CollapsedBookmarks="true" />
+  <Glossaries />
+  <Variables>
+    <Variable
+      Name="MyVariables/DocumentTitle">ClientSpace Setup &amp; Administration</Variable>
+  </Variables>
+</CatapultTarget>

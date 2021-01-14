@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Importing to <MadCap:variable name="MyVariables.ProductName" /></h1>
+        <p>The PrismHR Import Ongoing process evaluates PrismHR Events (Company and Employee changes) that may affect existing ClientSpace Client and Employee data, as well as those events that create new Clients and Employees. All active ongoing import map configurations are processed each time the scheduled process executes on the same set of PrismHR Events (this minimizes the amount of data retrieved from PrismHR). Data from PrismHR is extracted and loaded into ClientSpace through scheduled processes. </p>
+        <h2>Client records</h2>
+        <p>For PrismHR API Ongoing events, ClientSpace ignores inactive Client Master records. When events are retrieved and converted into Import Queue records, for non-Company ongoing import maps, the Client associated with the event must be in ClientSpace. If not, the event is discarded, and an Import Queue record is not created for that event. </p>
+        <ul>
+            <li>The <span class="UXElement">PrismHR Import Ongoing</span> scheduled process imports ongoing data for clients <span class="UXElement">only</span> when a matching client number exists in ClientSpace.</li>
+            <li>If the Client Number exists, but the Client is not in a Status of Client, PendingTermination, Termination, or UnderContract, the event is ignored.</li>
+            <li>If the ongoing event is a Client schema event (UPDATE or CREATE), the event is processed, and an Import Queue record is created. </li>
+            <li>If the event is a Security schema event, the event is processed, and an Import Queue record is created. </li>
+            <li>All other events test whether the associated Client exists; if not, the ongoing event is skipped. No Import Queue record is created, and a Business Intelligence report entry is logged <code>"---Create Import Queue Events, ClientNumber not found in ClientSpace, this event will not be processed"</code>.</li>
+            <li>If a DELETE event is received for a Client, the Import Queue record is automatically completed without attempting to retrieve the Client details. No import row is generated. The Queue record is marked with a comment indicating the Client was deleted from PrismHR.</li>
+        </ul>
+        <h2>Employee and Employment records</h2>
+        <h3>Employee records </h3>
+        <ul>
+            <li>When an Employee record is not found in PrismHR, the associated Event Import Queue record is marked Completed with a note indicating the Employee was removed from PrismHR.</li>
+            <li>For Employee records, when a DELETE queue record is created, ClientSpace inactivates the associated Employee record.</li>
+            <li>For Employment records, when a DELETE queue record is created, ClientSpace sets the status of the associated Employment record to Deleted.</li>
+            <li>Future changes are supported by the import configuration HRPAPI_emp_futurechange*.csv, which captures Termination Date and Termination Reason from the employee record when that date occurs in the future. You can synchronize the fields for future changes while leaving the employment status Active.</li>
+            <li>When extracting the Termination Date, if the Employee Status (PrismHR value) begins with <span class="UXElement">T</span>, then set the TerminationDate value in the import file to the Employee/client/statusDate value.  If the status is multiple characters (such as T1, T2), ClientSpace only uses the first character, looking for a <span class="UXElement">T</span> to determine the Employee was terminated.</li>
+        </ul>
+        <h3> Employment records</h3>
+        <ul>
+            <li>For Employment data on an Employee that is not found in ClientSpace, the system creates a stub Employee record and populates the Employee ID and ImportID. The record is set to Active. The stub Employee record is created to accept Employment data. The system creates a new Employee Import Queue record in Pending status. This action  populates the new Employee data the next time the scheduled process runs.</li>
+            <li>If the AnnualPay field from PrismHR is not between -10,000,000.00 and 10,000,000.00, the AnnualPay field value is not imported into ClientSpace. In the Employment record, the field Invalid Annual Pay field is selected, and the Annual Pay is not set for the Employee. This logic applies to Employment imports that use the <span class="UXElement">ClientSpace.PEO.Import.Employment</span> Custom Import Class (in the Import Map Header Detail). </li>
+        </ul>
+        <h3>Benefit data</h3>
+        <ul>
+            <li>If the Employment record is not found, the Import Queue record is set to Completed, with a note indicating the Employment record was not found.</li>
+        </ul>
+        <h3>Location records</h3>
+        <ul>
+            <li>For Location records, when a DELETE queue record is created, ClientSpace inactivates the associated Location record.</li>
+            <li>Location events with locationCode values containing <span class="UXElement">#</span> or <span class="UXElement">&amp;</span> are processed.</li>
+        </ul>
+        <h2>The  process </h2>
+        <ul>
+            <li>Based on the PrismHR configuration data provided, the process logs into the PrismHR server. Failure to log in terminates the process (a log entry is generated).</li>
+            <li>A list of PrismHR Subscriptions is retrieved from PrismHR.<ul><li>Typically, there are two Subscriptions: Company Information and Employee Information.</li><li>The Subscriptions establish the type of information that must be monitored for change (Events).</li></ul></li>
+            <li>The API parameter value for HRPRunImport is retrieved, and if set to <span class="UXElement">1</span>, a list of Import Map Configurations is retrieved from <MadCap:variable name="MyVariables.ProductName" /> in this order:<ul><li>HRPAPI_company_ongoing</li><li>HRPAPI_clientteam_ongoing</li><li>HRPAPI_location</li><li>HRPAPI_employee</li><li>HRPAPI_employment</li></ul></li>
+        </ul>
+        <p>
+            <img src="../Resources/Images/Integrations/HRPAPI_param.png" class="thumbnail" />
+        </p>
+        <h3>For each Subscription</h3>
+        <ul>
+            <li>The last ReplayID is retrieved from <MadCap:variable name="MyVariables.ProductName" />. This indicates the last event that was retrieved by the process.  All events from that point to the current point in time are evaluated.</li>
+            <li>If the last ReplayID is equal to the current value associated with the Subscription (meaning no events have occurred since the last process run time), no new events are retrieved from PrismHR.</li>
+            <li>If the Replay IDs are different, a list of events is retrieved from PrismHR, from the last ReplayID to the current point in time.  These events are associated with this instance of the Subscription ID.</li>
+        </ul>
+        <h3>For each Import Map configuration</h3>
+        <ul>
+            <li>A list of Import Map Fields and Paths is retrieved.</li>
+            <li>For each new event, if the event action is Delete, no action is taken on this event.</li>
+            <li>For each Modified Attribute in the event, the Modified Attribute (the actual field in PrismHR that has changed) is compared to the list of Import Map Paths.<ul><li>If the Modified Attribute is not found in the Import Map Path list, this event is ignored. Because it is a change, ClientSpace does not need to process. The associated Subscription dataform is updated with this Attribute as an Exclude value.</li><li>If the Modified Attribute is found in the Import Map Path list, the Company or Employee for which thiseEvent is associated is saved for Import.</li></ul></li>
+            <li>After all Events are evaluated, the result is a list of distinct Companies and Employees that will be queued. For example:<ul><li>EventID 1: Company 123 Address changed</li><li>EventID 2: Company 123 Phone changed</li><li>EventID 3: Company 456 Fax changed</li></ul></li>
+            <li>These three Events produce the following list of Companies to be queued: <ul><li>Company 123 and Company 456.</li><li>Company 123 is only in the list once even though it had multiple changes. The process only operates on the unique set of Company or Employee changes.</li></ul></li>
+        </ul>
+        <h3>For each Company or Employee in the list</h3>
+        <ul>
+            <li>An entry is created in tblImportQueue with the following data:<ul><li>The current Import Map Header ID</li><li>A formatted Identifier (EventObjectID!.!EventClientID!.!EventSchema)</li><li>Status of Pending</li></ul></li>
+        </ul>
+        <h3>After all Import Map Configurations are processed</h3>
+        <ul>
+            <li>The ClientSpace Subscription dataform associated with this Subscription is updated with the latest ReplayID from the Event list.</li>
+            <li>Regardless of whether new events were available, queued events are then processed, for each Import Map Configuration, a list of Import Map Fields and Paths is retrieved<ul><li>A call to tblImportQueue is made to retrieve event details for and queued record whose status = Pending or Failed</li><li>A call is made to PrismHR to retrieve specific Company/Employee/Location data for each queue record.</li><li>Based on Import Map Fields and Paths and the Company or Employee data retrieved from PrismHR, an Import file row is constructed for the particular Import Map being processed.</li><li>The Import file row is presented to any Custom Import Business Class for further manipulation (if configured).</li></ul></li>
+        </ul>
+        <h3>After all Companies or Employees are processed </h3>
+        <ul>
+            <li>The Import File is generated and uploaded to ClientSpace, status = Ready for Import.</li>
+            <li>If the configuration value <b>HRP Run Import</b> is set to <b>True</b>, the file is immediately imported using the <MadCap:variable name="MyVariables.ProductName" /> Import process.</li>
+            <li>The next Import Map configuration is processed.</li>
+        </ul>
+        <h3>The next Subscription is processed</h3>
+        <ul>
+            <li>After all Subscriptions are processed, the process logs out of the PrismHR server.</li>
+        </ul>
+        <h4>Excludes Import Map Detail</h4>
+        <p>Review the PrismHR Security subscription record to ensure that Users=activeUser is NOT part of the Excludes Import Map Detail for the HRPAPI_users import. The import must contain a valid record for the Active flag.</p>
+        <h4>User status in PrismHR and <MadCap:variable name="MyVariables.ProductName" /> </h4>
+        <p>The <MadCap:variable name="MyVariables.ProductName" /> user Active value is automatically set to the PrismHR value so that when a user is inactivated in PrismHR, the same status is reflected in <MadCap:variable name="MyVariables.ProductName" />.</p>
+    </body>
+</html>

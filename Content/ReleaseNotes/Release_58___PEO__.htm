@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 58 ( PEO )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;07/18/2017&#160;&#160;&#160;&#160;&#160;<strong>Sprint Ended:</strong>&#160;08/11/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-PricingArithmeticErrorwhenGrossPayrollistoolarge"><span style="color: rgb(51,153,102);">Pricing Arithmetic Error when Gross Payroll is too large&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>A maximum value of 2 Billion has been added to the Pricing Comp Code Gross Payroll to resolve issues created when too large a number is passed into the pricing calculations.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-ContractStatusfilteronTeamsDashboard-ENHANCEMENT"><span style="color: rgb(51,153,102);">Contract Status filter on Teams Dashboard -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A new Search option has been added to the More drop down on the&#160;Teams (PEO) dashboard for Contract Status.&#160; This allows you to filter the records returned in the&#160;dashboard by the Contract Status displayed on the Client Master for the workspace.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-ClientMasterViewOnlyFields-ENHANCEMENT"><span style="color: rgb(51,153,102);">Client Master View Only Fields -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The ClientSpace pricing workflow has been enhanced to allow the Organization fields displayed on the Client Master to be locked based on Organization status.</p>
+                        <ul>
+                            <li>A new field has been added to the Default Information page -&#160; LockCMOrgFields (multiselect, CRMOrganizationStatus group) which allows the global admin to select multiple Organization statuses which will trigger the lock behavior.</li>
+                            <li>If the Org crStatus&#160;matches a status selected by LockCMOrgField, the Org fields that are available on the associated Client Master and Pricing Console will be locked.</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-AddWaitingPeriodsfieldtoClassificationDataform-ENHANCEMENT"><span style="color: rgb(51,153,102);">Add Waiting Periods field to Classification Dataform -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Add a Waiting Periods lookup field to the Classification dataform. Use the same Waiting Period lookup group as on Company Benefits fields.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-CleanupOfferedBenefitsPlanfields"><span style="color: rgb(51,153,102);">Clean up Offered Benefits Plan fields&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>The Offered Benefits Plan dataform has been updated to consolidate supplemental fieldsets and fields into one fieldset and group of fields with the following changes:</p>
+                        <ul>
+                            <li>The fieldset LifeInsCompanyPaid has been hidden</li>
+                            <li>The fieldset LTDCompanyPaid&#160;has been hidden</li>
+                            <li>The fieldset STDCompanyPaid&#160;has been hidden</li>
+                            <li>The fieldset LifeInsVoluntary&#160;has been hidden</li>
+                            <li>The fieldset LTDVoluntary&#160;has been hidden</li>
+                            <li>The fieldset STDVoluntary&#160;has been hidden</li>
+                        </ul>
+                        <p>A new fieldset has been created called Supplemental with the following fields:</p>
+                        <ul>
+                            <li>Coverage (text)</li>
+                            <li>Cost (text)</li>
+                            <li>State Coordination Req (text)</li>
+                            <li>Employer Contribution (text)</li>
+                            <li>Notes (log)</li>
+                        </ul>
+                        <p>Field Display rules have been configured to show the Supplemental fieldset when the Benefit Plan selected has a Category of LTD, STD, Life Ins or Supplemental.</p>
+                        <h4 id="Release58(PEO)-CleanupBenefitPlandataformfields"><span style="color: rgb(51,153,102);">Clean up Benefit Plan dataform fields</span>
+                        </h4>
+                        <hr />
+                        <p>The Benefits Plan dataform has been re-factored to make it easier to use and more organized.&#160;</p>
+                        <p>A new Supplemental fieldset has been added which displays when Category equals "Supplemental" and contains the following fields:</p>
+                        <ul>
+                            <li>Coverage (text)</li>
+                            <li>Cost (text)</li>
+                            <li>State Coordination Req (text)</li>
+                            <li>Employer Contribution (text)</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-CaseDueDateonHomeWidget-ENHANCEMENT"><span style="color: rgb(51,153,102);">Case Due Date on Home Widget -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Client Service Case home widget has been enhanced by adding the Due Date column from the client service case.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-ContactWidgetPanelre-work"><span style="color: rgb(51,153,102);">Contact Widget Panel re-work</span>
+                        </h4>
+                        <hr />
+                        <p>The Contact Widget Panel code has been refactored to prevent errors from being thrown when there is no primary contact, the primary contact is inactive or there is no Organization associated with the Workspace.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-BenefitsBatchDataform/Logic-ENHANCEMENT"><span style="color: rgb(51,153,102);">Benefits Batch Dataform/Logic -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A new Benefits dataform has been created - the Benefits Batch form.</p>
+                        <p>There is configured logic on the Benefits Batch for the following:</p>
+                        <ul>
+                            <li>Renewal workflow (similar to WC Policy logic) that will clone the benefits batch.&#160; The effective date field will be updated by cloning effective date+1 year for the new benefit batch and then assume a one year batch cycle.</li>
+                            <li><strong>"Associate Offered Plans"</strong> HdrAction link on the Benefit Batch will associate any existing Offered Benefit Plans in a Status of "<strong>Selected</strong>" that do not have a related Benefits Batch with the currently selected Renewal Benefits Batch</li>
+                            <li>A Soft error to display the plans that will be attached to the Benefit Batch.&#160; If none, the system will show "No Plans in Selected Status".</li>
+                            <li>Expire logic which expires the previous Benefits Batch when the Renewal Benefits Batch is Activated.</li>
+                            <li>An Expire workflow link/logic to Expire the Benefits Batch and update the associated Offered Benefit Plans to Expired.</li>
+                        </ul>
+                        <p>Data form Changes<br />A parent form field was added &#160;to the Project Milestone dataform for the Benefits Batch<br />The following configured links were also added to the Benefits Batch:</p>
+                        <ul>
+                            <li>Classification dataform</li>
+                            <li>Offered Benefits Plans dataform (add a Parent Form field for the Benefits Batch to this dataform)</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-CalculatebyPercentageonBenefitsPlanTierdataform-ENHANCEMENT"><span style="color: rgb(51,153,102);">Calculate by Percentage on Benefits Plan Tier dataform -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Benefits Plan Tier dataform has been enhanced:</p>
+                        <p>A new field has been added&#160;to the data form (Percentage)</p>
+                        <p>A lookup has been added to Benefit Plan Tier form to indicate whether the rates will be manually set or calculated by Percentage.&#160;</p>
+                        <ul>
+                            <li>If set to "Manual",&#160;the rate fields are enabled.&#160;</li>
+                            <li>If "Percentage", then the rate fields are disabled and&#160;the user must enter the percentage.&#160; A biz rule&#160;calculates the bill rates on save by multiplying the percentage by the rates on the associated benefit plan.</li>
+                        </ul>
+                        <p>A business rule&#160;has also been added&#160;to the benefit plan that will&#160;find any tiers associated with the plan and update the rates (if rates change on the benefit plan record) for any tier that is marked as "Percentage" rates.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-NAICSinPricingConsole"><span style="color: rgb(51,153,102);">NAICS in Pricing Console</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where the Alternate Industry code field on the client master can be configured to display either NAICS or SIC codes, depending on the installation requirements, but the same field displayed in the Pricing Console was hard-coded to use SIC codes.&#160; The system has been updated so that the AltIndustryCode field now checks dataform configuration and displays the lookup group value&#160;currently associated with the Client Master field. &#160;The Alternate Industry code field on the Pricing Console has also been updated to the typeahead lookup datatype,</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-ClientPremiumonOBP(FIELDSONLY)-ENHANCEMENT"><span style="color: rgb(51,153,102);">Client Premium on OBP (FIELDS ONLY) -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A new fieldset has been added to the Offered Benefits Plan called Client Premium, containing the following fields:</p>
+                        <ul>
+                            <li>Override Client Premium</li>
+                            <li>EE Premium</li>
+                            <li>ES Premium</li>
+                            <li>EC Premium</li>
+                            <li>EK Premium</li>
+                            <li>EF Premium</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-PrismHREmploymentClientLocation"><span style="color: rgb(51,153,102);">PrismHR Employment Client Location</span>
+                        </h4>
+                        <hr />
+                        <p>An update has been made to the PrismHR API to extract data from Employee/client/assignment/homeLocation for the Employee Default location to allow for changes in the PRismHR application.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-Admin&amp;AdminSupplementtoMinimumCalculationRoundingisCreatingHardError"><span style="color: rgb(51,153,102);">Admin &amp; Admin Supplement to Minimum Calculation Rounding is Creating Hard Error</span>
+                        </h4>
+                        <hr />
+                        <p>A "Variance" parameter has been added to the following business rules.</p>
+                        <ul>
+                            <li>HE_ValidateSubmit_PerAcctMinAdmin</li>
+                            <li>HE_ValidateSubmit_PerHeadMinAdmin</li>
+                        </ul>
+                        <p>If the calculated Admin falls short but within the value specified for the variance the system will pass the&#160;HE rule.&#160; If the parameter is left blank then it would assume a $0 variance as we do now.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-PrismHRVoucherImports,State/CompCodecalculations-ENHANCEMENT"><span style="color: rgb(51,153,102);">PrismHR Voucher Imports, State/CompCode calculations -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The following mappings have been Added/Updated to allow for changes to the way Comp Codes and associated wages are calculated for voucher records containing multiple Workers' comp codes:</p>
+                        <div class="table-wrap">
+                            <table class="wrapped confluenceTable">
+                                <colgroup>
+                                    <col style="width: 168.0px;" />
+                                    <col style="width: 248.0px;" />
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td class="confluenceTd"><strong><span>Source Field</span></strong>
+                                        </td>
+                                        <td class="confluenceTd"><strong><span>API Path</span></strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="confluenceTd"><span>State (no change)&#160;</span>
+                                        </td>
+                                        <td class="confluenceTd"><span>Payroll/wcState</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="confluenceTd"><span>TotalHours (no change)</span>
+                                        </td>
+                                        <td class="confluenceTd"><span>Payroll/tsEarning/tsHoursWorked</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="confluenceTd"><span>StateByMaxHours</span>
+                                        </td>
+                                        <td class="confluenceTd"><span>Payroll/tsEarning/tsLocation</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="confluenceTd"><span>WCompCodeByMaxHours</span>
+                                        </td>
+                                        <td class="confluenceTd"><span>Payroll/tsEarning/tsWorkComp</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="confluenceTd"><span>TotalPayAmount</span>
+                                        </td>
+                                        <td class="confluenceTd"><span>Payroll/tsEarning/tsPayAmount</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="confluenceTd"><span>TotalWCTaxablePay</span>
+                                        </td>
+                                        <td class="confluenceTd"><span>Payroll/workerComp/wcTaxablePay</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="confluenceTd"><span>TotalWCPremAmount</span>
+                                        </td>
+                                        <td class="confluenceTd"><span>Payroll/workerComp/wcPremAmount</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="confluenceTd"><span>TotalWCBillAmount</span>
+                                        </td>
+                                        <td class="confluenceTd"><span>Payroll/workerComp/wcBillAmount</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="confluenceTd"><span>TotalWCPremBill</span>
+                                        </td>
+                                        <td class="confluenceTd"><span>Payroll/workerComp/wcPremBill</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h4 id="Release58(PEO)-MinimumPremiumLogic-FundingSide-ENHANCEMENT"><span style="color: rgb(51,153,102);">Minimum Premium Logic - Funding Side -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Funding Rate calculation for MCP policies has been enhanced&#160;to account for Minimum Premium and Expense Constant, if configured. The funding rate is determined from the Coverage Policy selected on the Pricing State and can be see in the header of the Pricing Comp Code. &#160;Master and Client Policy funding rates are still pulled from the Policy Comp Code for the selected Coverage Policy and have not changed.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-ServiceAgreementUpdates"><span style="color: rgb(51,153,102);">Service Agreement Updates</span>
+                        </h4>
+                        <hr />
+                        <p>The Client Service agreement links throughout the system have been modified to resolve an issue where no Service agreement is attached in the workspace. &#160;The link to the agreement simply reads "(View)" and if no service agreement exists it reads "Not Uploaded"</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-ActivationDateFieldIssue"><span style="color: rgb(51,153,102);">Activation Date Field Issue&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Fixed a bug on the StartDate (activation date on Client Master) where the field had the same FieldID as a StartDate field on the ActivateFuture dialog on the ClientMaster and Pricing Batch causing the calendar controls to be unusable.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release58(PEO)-PricingBatchActivatefutureissue"><span style="color: rgb(51,153,102);">Pricing Batch Activate future issue</span>
+                        </h4>
+                        <hr />
+                        <p>Fixed a bug preventing the PB Effective Date value from being set from the Activate Future Modal form data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

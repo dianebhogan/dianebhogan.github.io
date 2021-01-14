@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring the Outlook add-in module for Create</h1>
+        <p>Through the Outlook add-in, you can create new cases and tasks directly from your email Inbox. You can indicate the fields that will be auto-filled and the information from the email to fill them. This topic walks you through configuring the Create Case and Create Task <b>modules</b> for the Outlook add-in. </p>
+        <p>The Outlook add-in uses a system module when creating a new case or task directly from the add-in. You must be a global admin to perform this configuration. Additionally, your global admin can configure a Create module for creating any workspace dataform from the Email add-in, such as Create WC&#160;Claim.</p>
+        <p class="ProcedureIntro">To configure the Outlook add-in modules:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Modules</b>.<br /></p>
+        <p class="StepResult">The Modules dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">In the <b>Search</b> box, filter the Modules list by typing <b>Outlook</b>.<br /></p>
+        <p class="StepResult">Modules that apply to Outlook are displayed. The two relevant modules are Create Case and Create Task.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Open <b>Create Case</b>.<br /></p>
+        <p class="StepResult">The Module Details form for Create Case opens.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/AddIns/Outlook_CreateCase.png" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="4. ">Complete the form and click <b>Save</b>.</p>
+        <p class="L1Num" MadCap:autonum="5. ">Open <b>Create Task</b>.<br />The Module Details form for Create Task opens.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/AddIns/Outlook_CreateTask.png" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="6. ">Complete the form and click <b>Save</b>.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 123px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Name</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Defaults to  <b>Create Case</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Category</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Defaults to  <b>Outlook</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Description</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• ">For Create Task, defaults to  <b>Create a Task from the email client Add-In</b>.</p>
+                        <p colspan="1" class="TableBullet" MadCap:autonum="• ">For Create Case, defaults to  <b>Create a Client Service Case from the email client Add-In</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Target</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Will this open in a new window or in the main view? The add-in opens a new instance of the system, so this is set to Main Window, ensuring the case or task is opened normally (within the page frame).</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Defaults to  <b>Outlook</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Url</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is used by the Outlook add-in to find the appropriate code path when generating a new dataform or task. This field is pre-configured and should  not  be altered, or unexpected behavior occurs.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyB-Column1-Body1">Email Addin Configuration</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">This field enables the global admin to selectively fill fields in the newly created case or task using data from the selected email. Pair case or task fields with email fields. Separate the pairings with a semi-colon, no spaces between them, and no ending semicolon. </p>
+                        <p class="TableTextLeft">Example:&#160;Case/TaskField=EmailField</p>
+                        <p class="TableTextLeft">Example:&#160;Subject=Subject;CaseInfo=Body;EmailAddress=Sender;z_ClientReportDate=DateSent</p>
+                        <p>In the example:&#160;</p>
+                        <p class="TableBullet" MadCap:autonum="• "> <b>Subject</b> of the case is filled with the  Subject  line in the email.</p>
+                        <p class="TableBullet" MadCap:autonum="• "> <b>Issue</b>  of the case is filled with the  Body  of the email.</p>
+                        <p class="TableBullet" MadCap:autonum="• "> <b>Email Address</b>  on the case is filled with the  From&#160;address on the email.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">The custom  <b>Client Report Date</b>&#160;field is filled with the  DateSent  of the email.</p>
+                        <p>Available fields retrieved from the email are:</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>DateSent</b>: mailboxItem.dateSent</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Subject</b>: mailboxItem.subject</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Body</b>:   mailboxItem.body</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Sender</b>:   mailboxItem.from</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>Recipient</b>:  mailboxItem.to</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="7. ">Click <span class="UXElement">Save</span>.</p>
+        <p class="ActionTip">For Create Case or Create Task functionality to appear in the add-in, the respective module must be active in <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Modules</b>.</p>
+        <p class="ProcedureIntro">To add custom Outlook modules:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png"></img> &gt; <b>Modules</b>.</p>
+        <p class="StepResult">The Modules dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Click <span class="UXElement">Add</span>.</p>
+        <p class="StepResult">The Module Details form opens.</p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 123px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Enter a name that fits your new module. Example: Create WC&#160;Claim.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Category</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Outlook</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Enter a description of the new module.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Target</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Will this open in a new window or in the main view? The add-in opens a new instance of the system, so this is set to Main Window, ensuring the case or task is opened normally (within the page frame).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Outlook</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Url</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">This is used by the Outlook add-in to find the appropriate code path when generating a new dataform or task. </p>
+                        <p class="TableTextLeft">For a new module, such as Create WC&#160;Claim, type <code>~/api/MailService/Create/gen_CompClaim</code>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="3. ">Click <span class="UXElement">Save</span>.</p>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/AddIns/Outlook_AddNewModule.png" alt="" title="" class="thumbnail" />
+            </p>
+        </div>
+    </body>
+</html>

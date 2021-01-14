@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Attaching emails to Tasks</h1>
+        <p>With Attach To Record, you can attach emails to a task in a prospect or client workspace.  Attaching emails to a task is beneficial to organizations that are task-centric versus case-centric. </p>
+        <p><b>Scenario</b>: An underwriting user receives an email from the Workers Comp insurer regarding a current task they are working on. The user wants to attach the email to a task, to maintain an accurate history.</p>
+        <p class="ProcedureIntro">To attach the message to a dataform:</p>
+        <ol>
+            <li>From the <b>Post To ClientSpace</b> page, under <b>Links</b>, select <b>Attach To Record</b>.<br />The Select Record form opens in the right pane.<br /></li>
+        </ol>
+        <p class="Indent1">
+            <img src="../Resources/Images/Addins/AttachToRecord_Email-Task.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Complete the form:</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 114px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Workspace</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li>If the FROM address is the same as the ClientSpace email address, it is not used to determine the Workspace. Instead, the first TO address is used to determine the Workspace.</li>
+                            <li>If the FROM address is DIFFERENT from the ClientSpace email address, the Workspace defaults to the Workspace of the email sender (the FROM address).</li>
+                            <li>The email address is compared to all employee email addresses (both Personal and Work email) in the system and tries to match the email. If a match is found, the Workspace associated with that employee is used. If multiple instances of the employee email (Personal and Work) exist, the most recently changed instance is used. If the From email is not recognized, then you can select a Workspace of your choice.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Form Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Task</span>. The Record field becomes available. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Record</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Select a task. The list shows active tasks. </p>
+                        <ul>
+                            <li>To view inactive tasks, type <span class="UXElement">~</span> to the beginning of the type ahead.</li>
+                            <li>To see a more extensive list, click <b>Record Search</b>. The search list is loaded for the selected Workspace. You cannot change or remove the selected Workspace.</li>
+                            <li>To select a record from the <b>Search</b> list, highlight the row and click <b>Ok</b>. You are returned to the Post to ClientSpace page with the Select Record form auto-filled.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Attach To Record</span>.<br />In the right pane, the message "Email attached successfully!" appears.</li>
+        </ol>
+        <p class="ProcedureIntro">To view the task with the newly attached email:</p>
+        <ol>
+            <li>Click <b>Open Record</b>.<br />The task that you selected in Form Name opens.<br /></li>
+            <li>From the open form, in the <b>Action Center</b>, expand <b>Activities</b> to see the newly attached email.</li>
+            <li>When ready, click <b>Cancel</b>.<br />You are returned to the Post to ClientSpace page.<br /></li>
+            <li>When ready, click <b>Close</b>.</li>
+        </ol>
+    </body>
+</html>

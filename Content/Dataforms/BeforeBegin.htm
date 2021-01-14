@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Before you begin</h1>
+        <p>This area of the system requires an Enterprise license with access to Advanced Admin. If you do not have an Enterprise License and are interested, please log an Extranet case. </p>
+        <p>
+            <MadCap:concept term="Dataforms" />Using dataforms, global administrators can create new forms, add, delete, or modify fields on existing forms. Additionally, global administrators can relate forms in one-to-one or one-to-many relationships to each other. The configuration of these forms results in a relational data model with tables and properly typed (such as integer, decimal, varchar) data fields embedded within the ClientSpace database. During creation, a set of stored procedures (one set for each dataform) are generated to allow various parts of the application to interact with the tables and fields. </p>
+        <p>All dataforms must exist within a workspace. The one exception to this rule is a special dataform that is associated with the Other Info tab on the Organization Detail page or the Contact Manager. Different types of workspaces may include various sets of relational dataforms with some forms overlapping from workspace to workspace. The dataforms that are related to a workspace are inherited from the template used to create the workspace.&#160;&#160;&#160;&#160;</p>
+        <p>Dataforms are a suite of tools that comprise the Dataforms Engine. The dataform engine allows you to:</p>
+        <ul>
+            <li>Dynamically create and manage configurable data collection points</li>
+            <li>Generate Web forms and fields for data collection</li>
+            <li>Allow for Workflow systemization</li>
+            <li>Allow for extremely granular security, down to the field level</li>
+        </ul>
+        <p>Adding a dataform to the system:</p>
+        <ul>
+            <li>Generates a new SQL table in the server</li>
+            <li>Adds your configured fields to this table as columns</li>
+            <li>Automatically configures the data columns with appropriate values based on field selection options</li>
+            <li>Automatically generates foreign key relationships between tables (Parent / Child forms, Lookups, and so on)&#160;</li>
+        </ul>
+        <h2>Dataform security tips</h2>
+        <p>Draw a diagram of the dataform before adding security to it so that you can map out how you would like the field access to occur.  This approach helps you envision users that need access to the dataform and help you to better plan out how to architect the security and associated user roles.</p>
+    </body>
+</html>

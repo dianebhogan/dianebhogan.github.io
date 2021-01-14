@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Importing data</h1>
+        <h2>Updates Allowed
+</h2>
+        <p class="Bullet1" MadCap:autonum="• ">An internal flag <b>_CSUpdateAllowed</b> is used to determine if Salesforce data is allowed to be imported into <MadCap:variable name="MyVariables.ProductName" />. This is a configurable setting that changes programmatically depending on the state of the Client Master Status.</p>
+        <h2>Work Queue</h2>
+        <p class="Bullet1" MadCap:autonum="• ">Object must be named <b>Work_Queue__c</b></p>
+        <p class="Bullet1" MadCap:autonum="• ">Must contain <b>OpportunityID__c</b> and <b>Complete__c</b> fields</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Complete__c</b> must be set to <b>false</b> when the record is created in Salesforce</p>
+        <p class="Bullet1" MadCap:autonum="• ">Duplicate Opportunities in multiple Work Queue records are ignored</p>
+        <p class="Bullet1" MadCap:autonum="• ">If the import is successful,</p>
+        <p class="Bullet2" MadCap:autonum="• ">Work Queue <b>OpportunityID__c</b> is set to <b>Empty</b></p>
+        <p class="Bullet2" MadCap:autonum="• "><b>Complete__c</b> is set to <b>true</b></p>
+        <h2>Organization</h2>
+        <p class="Bullet1" MadCap:autonum="• ">Creates new Org or updates an existing Org</p>
+        <p class="Bullet1" MadCap:autonum="• ">General Notes marked Updated/Created from the SalesforceAPI</p>
+        <p class="Bullet1" MadCap:autonum="• ">Org ImportID is set to Salesforce Account ID</p>
+        <p class="Bullet1" MadCap:autonum="• ">Only updates existing Org data with Salesforce data if _CSUpdateAllowed</p>
+        <p class="Bullet1" MadCap:autonum="• ">Org is saved from the database, no biz logic executed</p>
+        <h2>Org Other Info</h2>
+        <p class="Bullet1" MadCap:autonum="• ">Creates new Org Other Info or updates existing Org Other Info</p>
+        <p class="Bullet1" MadCap:autonum="• ">All fields and values are retrieved from the current installation (custom fields are available)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Only updates existing Org Other Info data with Salesforce data if _CSUpdateAllowed (or when creating a new record)</p>
+        <p class="Bullet1" MadCap:autonum="• ">Org Other Info is saved from the database, no biz logic executed</p>
+        <h2>Client Master</h2>
+        <p class="Bullet1" MadCap:autonum="• ">Creates new Client Master and workspace if associated Org has no workspace (must have client template configured for this to function)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Updates Client Team Sales Admin User after workspace is created (to Org Assigned To)</p>
+        <p class="Bullet2" MadCap:autonum="• ">The new Client Master is saved using the dataform pipeline <b>Default</b></p>
+        <p class="Bullet1" MadCap:autonum="• ">After the new Client Master is created (or Client Master exists)</p>
+        <p class="Bullet2" MadCap:autonum="• "><b>fkParentCompanyID</b> is set to Salesforce Account/ParentId associated CS Organization (if exists)</p>
+        <p class="Bullet2" MadCap:autonum="• ">All fields and values are retrieved from the current installation (custom fields are available)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Adds Org Node for Biz Logic access (similar to a Client Master save from the UI)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Only updates existing Client Master data with Salesforce data if <b>_CSUpdateAllowed</b></p>
+        <p class="Bullet2" MadCap:autonum="• ">Updated Client Master is saved from the dataform pipeline <b>SalesforceAPI</b></p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Client Location</b>
+        </p>
+        <p class="Bullet2" MadCap:autonum="• ">Creates new Client Location or updates existing Client Location</p>
+        <p class="Bullet2" MadCap:autonum="• ">If new, sets LocationName("MAIN"), luLocationType("Main"), SyncToM("P"), SyncToB("P")</p>
+        <p class="Bullet2" MadCap:autonum="• ">All fields and values are retrieved from the current installation (custom fields are available)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Only updates existing Client Location data with Salesforce data if _CSUpdateAllowed (or when creating a new record)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Client Location is saved from the dataform pipeline SalesforceAPI</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Contacts</b>
+        </p>
+        <p class="Bullet2" MadCap:autonum="• ">Retrieves all Salesforce Contacts associated with Salesforce Account</p>
+        <p class="Bullet2" MadCap:autonum="• ">Looks up each contact by <MadCap:variable name="MyVariables.ProductName" /> ImportID</p>
+        <p class="Bullet2" MadCap:autonum="• ">Creates new Contact if ImportID not found</p>
+        <p class="Bullet2" MadCap:autonum="• ">Always set IsActive(True), SyncWithOrganizationAddress(false), ImportID(SF Contact ID)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Ignores _CSUpdateAllowed (always syncs Salesforce data)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Contact is saved from the database, no biz logic executed</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Contact Other Info</b>
+        </p>
+        <p class="Bullet2" MadCap:autonum="• ">Updates or creates Contact Other Info for each Salesforce Contact (from Contacts above)</p>
+        <p class="Bullet2" MadCap:autonum="• ">All fields and values are retrieved from the current installation (custom fields are available)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Ignores <b>_CSUpdateAllowed</b> (always syncs Salesforce data)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Contact Other Info is saved from the database, no biz logic executed</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Other Dataforms</b>
+        </p>
+        <p class="Bullet2" MadCap:autonum="• ">Any Dataform mapped (Import Map Header) is included</p>
+        <p class="Bullet2" MadCap:autonum="• ">Iterates through each mapped Dataform</p>
+        <p class="Bullet2" MadCap:autonum="• ">Retrieves existing Dataform from Workspace associated with Salesforce Account (CS Organization)</p>
+        <p class="Bullet2" MadCap:autonum="• ">Creates dataform if one does not exist in Workspace</p>
+        <p class="Bullet2" MadCap:autonum="• ">Dataform is saved from the dataform pipeline <b>SalesforceAPI</b></p>
+        <p class="Bullet2" MadCap:autonum="• ">Only updates existing dataform data with Salesforce data if <b>_CSUpdateAllowed</b> (or when creating a new record)</p>
+    </body>
+</html>

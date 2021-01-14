@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+    </head>
+    <body>
+        <h1 MadCap:autonum="Chapter 1 ">Finding the API Path in Salesforce</h1>
+        <p>The API Path used to configure the Import / Export Map details in ClientSpace can be found in Salesforce. To view the necessary settings, the Salesforce user must have administrative rights.</p>
+        <p class="ProcedureIntro">To find the API&#160;path in Salesforce:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">In Salesforce, click <b>Setup</b> in the upper right of the screen.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/Setup link step 1.JPG" />
+        </p>
+        <p class="L1Num" MadCap:autonum="2. ">Next, select the Salesforce object you would like to import/export to ClientSpace via the API.</p>
+        <p class="Indent1">Object types currently supported by the API include Opportunities, Accounts, and Contacts.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Using the <b>Build</b> menu, expand to the Salesforce Object / Field you would like to import/export.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/build_cust_ opp_Step2.JPG" />
+        </p>
+        <p>The Enterprise version of the Salesforce API Supports both standard Salesforce fields, as well as custom fields created in the client Salesforce install.</p>
+        <p>We will use the Field Name value as shown:</p>
+        <p>
+            <img src="../Resources/Images/Integrations/opp field name step 3.JPG" />
+        </p>
+        <p>For custom fields, use the API Name value as shown. All custom fields will end in two underscore marks ( _ ) followed by the letter "c" to denote that the field is custom. It is important to get these API and Field names correct.</p>
+        <p>
+            <img src="../Resources/Images/Integrations/step 3 vs2.JPG" />
+        </p>
+        <p>When configuring the API Path in ClientSpace construct the path text by separating the Salesforce object and the Field using a backslash ( / ) some examples of this might be:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Account/Name - ClientSpace Org Name</p>
+        <p class="Bullet1" MadCap:autonum="• ">Account/Phone - ClientSpace Org Phone</p>
+        <p class="Bullet1" MadCap:autonum="• ">Opportunity/Probability - ClientSpace Org probability of close</p>
+        <p class="Bullet1" MadCap:autonum="• ">Opportunity/Description - ClientSpace - Client Master - description of Operations</p>
+        <p class="Bullet1" MadCap:autonum="• ">Opportunity/Company_State_Unemployment_rate__c - Custom field, could be imported to a Custom field on the Client Master or Org Other Info dataform.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Contact/FirstName - ClientSpace Contact First Name</p>
+        <p class="Bullet1" MadCap:autonum="• ">Contact/Email - ClientSpace Contact email</p>
+    </body>
+</html>

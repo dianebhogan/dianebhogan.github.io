@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.FutureDev">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Business Rules</h1>
+        <table style="width: 100%; mc-table-style: url('../Resources/TableStyles/Standard_Table.css'); margin-left: 0; margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 180px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableTextLeft">Dataform</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableTextLeft">Business Rule</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Clients (Client Master)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <ul>
+                            <li><span class="UXElement">HE_ValidateExportClient</span> validates that ClientSpace values are populated before allowing the Client to be added to the Export through the Scheduled Process queue.<ul><li>HdrAction = ExportClient</li></ul></li>
+                            <li><span class="UXElement">ExportClientToHRP</span> immediately issues this client to Prism. Updates the Export Status and Export Log fields with the results of the Prism action.  If successful, sets the Client Number field with the Prism assigned value, and the Export Status to Complete.<ul><li>HdrAction = ExportClient</li></ul></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Employees (Employee Demographics)</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <ul>
+                            <li><span class="UXElement">HE_ValidateExportEmployee</span> validates all Prism required fields have been populated.<ul><li>HdrAction = ExportEmployee</li></ul></li>
+                            <li><span class="UXElement">ExportToHRP</span> immediately issues this Employee to Prism. Updates the Export Status and Export Log fields with the results of the Prism action.  If successful, sets the Employee Identifier field with the Prism assigned value, and the Export Status field to EmployeeSetupPending.<ul><li>HdrAction = EEExport</li></ul></li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

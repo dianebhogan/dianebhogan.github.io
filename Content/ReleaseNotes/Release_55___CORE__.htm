@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 55 ( CORE )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;5/8/2017 &#160; &#160;&#160;<strong>Sprint Ended:</strong>&#160;6/2/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p>The following items have been completed in this release:</p>
+                        <h4 id="Release55(CORE)-SaveandCreateAppointment(NEXT)ENHANCEMENT"><span style="color: rgb(51,153,102);">Save and Create Appointment (NEXT)&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A link has been added to Activity records called&#160;<strong>"Save and Create Appointment"</strong>. When clicked the system will save the&#160;Activity and open a new calendar event in add mode with connection to the&#160;organization related to the activity.&#160; When the link is clicked, the workspace will default to the org's&#160;workspace so the workspace is defaulted on the calendar event (if the org has multiple workspaces, the workspace selector will allow you to choose one of the associated workspaces.</p>
+                        <p>The activity work item will be saved and a&#160;an appointment work item will be created. The appointment org&#160;defaults to the activity's org, and the appointment contact&#160;defaults to the activity's selected contact (if there is one).</p>
+                        <p>Any changes made to the activity prior to clicking the link&#160;are saved when the link is clicked. Validation on the activity, such as required fields,&#160;also happens when the link is clicked.</p>
+                        <h4 id="Release55(CORE)-Disablethesearchbuttonuntilthesearchiscompleted(NEXT)ENHANCEMENT"><span style="color: rgb(51,153,102);">Disable the search button until the search is completed (NEXT)&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where under certain conditions the Search buttons on list pages and dashboards would allow&#160; multiple clicks that would lead to unexpected results.&#160; Search buttons are now disabled while search results are being collected and enabled once search results are displayed in the list.</p>
+                        <h4 id="Release55(CORE)-Jumpbuttononsearchdashboardsopeningupnewrecords(NEXT)"><span style="color: rgb(51,153,102);">Jump button on search dashboards opening up new records (NEXT)</span>
+                        </h4>
+                        <hr />
+                        <p>Fixed an issue where changes to the list manger caused the Jump to icon to jump to the selected record in the list instead of the row that was being clicked on.&#160; System will now jump to the record based on which record is clicked.</p>
+                        <h4 id="Release55(CORE)-CalendarEmailsNotGettingSent(NEXT)"><span style="color: rgb(51,153,102);">Calendar Emails Not Getting Sent (NEXT)</span>
+                        </h4>
+                        <hr />
+                        <p>Fixed a bug where calendar event related emails were not getting sent if a user had unchecked "Enable Email for this account" on their user profile.&#160; Emails are now sent on calendar events regardless of this setting.</p>
+                        <h4 id="Release55(CORE)-SendingEmailstoInactiveUsers(NEXT)ENHANCEMENT"><span style="color: rgb(51,153,102);">Sending Emails to Inactive Users (NEXT)&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A&#160;condition has been added&#160;before an email is sent to look to see if the user is Active or Inactive. If Inactive, the system does not send any email notifications.</p>
+                        <p>the system does this check at the time the recipient row is inserted, and also at the time when the list of recipients is retrieved, in case they were inactivated between email creation and send.</p>
+                        <h4 id="Release55(CORE)-UpdateContactFieldonActivitiestoOnlyShowActiveContacts(NEXT)"><span style="color: rgb(51,153,102);">Update Contact Field on Activities to Only Show Active Contacts (NEXT)&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where when adding an Activity in a Client site the list of Contacts in the Contact field&#160;showed Active and Inactive Contacts.&#160;The Contact field on the Activity has been updated&#160;to only show Active Contacts in the drop down.</p>
+                        <h4 id="Release55(CORE)-TimeTrackerbuttonnotworkingforStopping(NEXT)"><span style="color: rgb(51,153,102);">Time Tracker button not working for Stopping (NEXT)</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue with the javascript on the time tracker detail record that was causing the "Stop Timer" button to not stop the time tracking record when used from the Time Tracker detail record after drilling into an open record.</p>
+                        <h4 id="Release55(CORE)-OutofOffice:IsPrimaryRecipient(NEXT)"><span style="color: rgb(51,153,102);">Out of Office: IsPrimaryRecipient (NEXT)&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>The IsPrimaryRecipient flag, on the Email Recipient that's inserted for the Out of Office backup user, now mirrors the Out of Office users "IsPrimaryRecipient" flag. So, if the main user is a Primary Recipient, the backup user is as well, on that email, so that it shows up in their "To" box, as opposed to the "CC" box, in the ClientSpace Inbox.</p>
+                        <h4 id="Release55(CORE)-BadgesonDataformSubscribersRightMenu(NEXT)"><span style="color: rgb(51,153,102);">Badges on Dataform Subscribers Right Menu (NEXT)&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue in NEXT where the subscribers badge which shows notification counts for a dataform was not getting populated until the subscribers button was clicked.&#160; Badge now&#160;displays subscription count when the dataform opens if subscriptions are present.</p>
+                        <h4 id="Release55(CORE)-ConvertCalendarInvitetoEmailTemplatesENHANCEMENT"><span style="color: rgb(51,153,102);">Convert Calendar Invite to Email Templates&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Calendar events have been updated to allow them to utilize email templates when formatting the calendar invite that is sent from ClientSpace. &#160;This will allow you to configure a calendar event email with html formatting and branding. &#160;For more information, review Configuring Calendar Event Notification Template or contact your NetWise Account manager</p>
+                        <h4 id="Release55(CORE)-Tasknotificationsarenolongercomingtomyemail"><span style="color: rgb(51,153,102);">Task notifications are no longer coming to my email&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Recent changes to cut down on the amount of unnecessary email being produced by the system caused an issue where triggered template tasks were not notifying the triggering user if they should have been on the notification list (owner assigned to etc...)&#160; Triggered template tasks will now notify the triggering user as they may not even be aware they are triggering a task.&#160; Notifications are not sent however to the logged in user if they create a task manually through Task Manager and add themselves to the notifications.</p>
+                        <h4 id="Release55(CORE)-DocuSignissues"><span style="color: rgb(51,153,102);">DocuSign issues&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where if there are more than one documents in the ClientSpace Queue that have overlapping Signers and Anchor Tags, the code that is sent to DocuSign&#160;duplicated the tags, which forces the users to have to click the DocuSign controls more than once. It appears to duplicate the number of times that the Signer and Anchors are in the ClientSpace Queue. The system no longer creates these duplicated tag/queue records.</p>
+                        <h4 id="Release55(CORE)-WorkspaceDeleteFailingduetoFKrelationships"><span style="color: rgb(51,153,102);">Workspace Delete Failing due to FK relationships</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where foreign key relationships caused workspace deletes to fail and be rolled back in a transaction.&#160; Workspaces may once again be deleted from the Classic Workspace search by global administrators.</p>
+                        <h4 id="Release55(CORE)-AppSettingspage,BItab"><span style="color: rgb(51,153,102);">App Settings page, BI tab</span>
+                        </h4>
+                        <hr />
+                        <p>The Business Intelligence tab of the App settings page has been removed from App settings in ClientSpace.&#160; This page contained only single adjustable setting and the install key, which if changed improperly causes Business Intelligence to stop functioning.&#160; If you would like help adjusting the "Hide report filters if locked" setting, contact your NetWise Account manager.</p>
+                        <h4 id="Release55(CORE)-Incidentworkflowexceptions"><span style="color: rgb(51,153,102);">Incident workflow exceptions</span>
+                        </h4>
+                        <hr />
+                        <p>The decode field in the Incident configuration options has been lengthened from 50 to 500 characters to allow for longer descriptions in Task Category, Priority, Type and Workflow.</p>
+                        <h4 id="Release55(CORE)-EmailTemplateError"><span style="color: rgb(51,153,102);">Email Template Error&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where a NULL reference error would be logged if you changed the Table Name configuration of an existing triggered email template</p>
+                        <h4 id="Release55(CORE)-WeirdDatesinAuditTrail"><span style="color: rgb(51,153,102);">Weird Dates in Audit Trail&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Fixed a bug in the Audit trail search that would truncate the year of the Begin and end date search parameters to two years, causing the system to interpret the dates incorrectly (06/01/17 or 1917 instead of 06/01/2017). &#160;System now retains the appropriate 4 digit year format.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 59 ( PEO )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong><span style="color: rgb(51,51,51);">&#160;8/14/2017&#160; &#160; &#160;</span><strong>Sprint Ended:</strong><span style="color: rgb(51,51,51);">&#160;9/8/2017</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-CallbackURLforCaseDiscussion"><span style="color: rgb(51,153,102);">Callback URL for Case Discussion</span>
+                        </h4>
+                        <hr />
+                        <p>The case discussion code that&#160;is used to locate discussion messages and discussion recipients have been modified&#160;to only allow the use of&#160;8 character Row GUIDS when selecting the appropriate discussion.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-FieldLabelColorsonPricingConsole-ENHANCEMENT"><span style="color: rgb(51,153,102);">Field Label Colors on Pricing Console -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Label styles for Client Master and Pricing Batch fields exposed on the pricing console now reflect the styles as they would on the originating pages - triggering fields must also be exposed on the pricing console for this functionality to work.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-PricingBatchMinimumAdminFields-ENHANCEMENT"><span style="color: rgb(51,153,102);">Pricing Batch Minimum Admin Fields -&#160;&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The&#160;"Minimum Admin Per Account" field and the "Minimum Admin Per Head" field on the Batch&#160; are pricing-based fields and are now&#160;locked down after submit unless you have the <strong>biz_pricing_submitted_batch entity</strong>.&#160; These fields now also respect the Override Pricing for this Batch so when checked they will be editable.&#160;</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-PricingCompCodeBreakdown-ENHANCEMENT"><span style="color: rgb(51,153,102);">Pricing Comp Code Breakdown -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Pricing Console has been enhanced&#160;with an information icon next to each WC Code on the pricing console. When clicked it produces a dialog similar to the Commission Detail dialog that presents detailed information about the pricing breakdown for the selected WC Code.</p>
+                        <p>This breakdown displays Payroll, Admin, Taxes, Workers' Comp, Total Billing, and Oher information for the selected code.&#160;&#160;</p>
+                        <p>i3 Analytics data will additionally be displayed if your ClientSpace installation is configured to use i3 data.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-CaseDiscussionRecipientIssues"><span style="color: rgb(51,153,102);">Case Discussion Recipient Issues</span>
+                        </h4>
+                        <hr />
+                        <p>Case discussion code has been updated to remove inactive Users, Employees and Contacts from the recipients list.&#160;</p>
+                        <p>If the current user is the only recipient selected for the message a confirmation box will be presented with the message "A recipient other than the current user has not been selected.&#160; Do you wish to continue?"</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-ClientPremiumonOBP(Logic)-ENHANCEMENT"><span style="color: rgb(51,153,102);">Client Premium on OBP (Logic) -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A new business rule has been added to set the Client Premium fields from the selected Benefits Plan's or the selected Plan Tier's Monthly Premium fieldset. This rule will trigger if the OBP Benefits Plan or Plan Tier is dirty.</p>
+                        <p>The Offered Benefits Plan header has been updated so that the Total Premium column of the Rate Grid is pulled from the new fields on the form, associated formulas in the rate grid have also been updated.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-BenRecon:ClientBilledPremiumonOBP-ENHANCEMENT"><span style="color: rgb(51,153,102);">Ben Recon: Client Billed Premium on OBP -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The&#160;Convert EDV process has been updated so that the Premium Monthly Cost is pulled from the Offered Benefits Plan Client Billed Premium fieldset.&#160;<br />The Import MBR import class has been updated so that the Premium Monthly Cost it is pulled from the Offered Benefits Plan Client Billed Premium fieldset.</p>
+                        <p>Both these changes rely on the Benefits Plan associated with the Offered Benefits plan having the "Collection Record Premium Source" field set to "Plan Data".</p>
+                        <h4 id="Release59(PEO)-BenefitsPlan&amp;OfferedBenefitsPlandata-ENHANCEMENT"><span style="color: rgb(51,153,102);">Benefits Plan &amp; Offered Benefits Plan data -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>New business rules have been added to clone data onto an Offered Plan from the associated Supplemental Benefits Plan. Fields to be cloned include:</p>
+                        <ul>
+                            <li>Coverage</li>
+                            <li>Cost</li>
+                            <li>State Coordination Req</li>
+                            <li>Employer Contribution</li>
+                            <li>Notes&#160;</li>
+                        </ul>
+                        <h4 id="Release59(PEO)-"><span style="color: rgb(51,153,102);"><br /></span>
+                        </h4>
+                        <h4 id="Release59(PEO)-ClientReportSettingonStateLegalEntityisgettingIgnored"><span style="color: rgb(51,153,102);">Client Report Setting on State Legal Entity is getting Ignored</span>
+                        </h4>
+                        <hr />
+                        <p>Fixed an issue where under some circumstances the&#160;Client Report Setting on State Legal Entity is getting Ignored, causing SUTA Profit, in certain situations, to not calculate correctly.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-AddLogiconCaseMassUpdatetosetResolutionDate/Time"><span style="color: rgb(51,153,102);">Add Logic on Case Mass Update to set Resolution Date/Time&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue in Mass Update for Cases where business logic would not run on Mass Update. If a Case was updated to a Status of "Complete" through Mass Update the Resolution Date/Time field was not being set.&#160;Logic was added to set the date/time field even if the Status is updated to Complete through the Mass Update functionality.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-CaseTypeSecurityissue"><span style="color: rgb(51,153,102);">Case Type Security issue</span>
+                        </h4>
+                        <hr />
+                        <p>The system has been updated to account for Case Type naming changes, adjusting the associated security entity of secured case types when the case type name changes.&#160; This allows the entity to be created (if it does not exist) as it does today.&#160;</p>
+                        <p>If the Case Type title is changed, the business rule will locate the existing entity of the prior title and rename the entity to the new title.&#160; This will allow for easy identification of entities for Case Types and existing security will remain intact as the title changes.</p>
+                        <h4 id="Release59(PEO)-SalesforceAPI,userexpiration"><span style="color: rgb(51,153,102);">Salesforce API, user expiration</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where the Salesforce user (sfservice) that is used as the updated by user for dataforms expires on a regular basis, because that account typically is never logged in.&#160;</p>
+                        <p>Now, when creating a session for that user,&#160; the User table DateLastLogin field is updated with the current date/time</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-PrismHROngoingImportenhancement-ENHANCEMENT"><span style="color: rgb(51,153,102);">PrismHR Ongoing Import enhancement -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The system has been enhanced to catch exceptions caused by the API get methods, and log them in the Scheduled Process History table (not the exception log).&#160; These files will be&#160;left in the Pending status (so that they will be reprocessed the next time the process executes), as it may be caused by a temporary outage of the API).&#160;</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-EmployeeSearchDashboardFiltering"><span style="color: rgb(51,153,102);">Employee Search Dashboard Filtering</span>
+                        </h4>
+                        <hr />
+                        <p>The Employee Search Dashboard was not filtering to "active" properly - &#160;the code value&#160;being returned was incorrect and caused clients to have to remove the filter and search.&#160; Default filtering now properly returns "Active" records.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-AddBenefitsBatchDataformtoPEOWorkspaces-ENHANCEMENT"><span style="color: rgb(51,153,102);">Add Benefits Batch Dataform to PEO Workspaces -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A Benefits Batch dataform has been added to PEO Workspaces - this dataform allows Offered benefits plans to be collected under an associated Batch.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-WCMasterPolicyCloningforMCPCompModel"><span style="color: rgb(51,153,102);">WC Master Policy Cloning for MCP Comp Model</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where under certain circumstances the code which clones the policy to the workspace when choosing an MCP contract type could cause duplicates if contract types changed several times.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-PricingCompCode-ExceptionError"><span style="color: rgb(51,153,102);">Pricing Comp Code - Exception Error</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue in the Pricing calculations where an exception would be generated when total gross payroll exceeded 2 billion dollars. System is now able to handle extreme dollar amounts.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-CreateBusinessRuletosetCategoryonOfferedBenefitsPlan-ENHANCEMENT"><span style="color: rgb(51,153,102);">Create Business Rule to set Category on Offered Benefits Plan -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p><strong>"SetOfferedBenefitsCategory"&#160;</strong>business rule has been created that sets the Category field on the gen_BenefitBenefitsPlan dataform from the associated Plan (fkBenefitPlanID selected on the form).</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-DeleteComparisonNotWorking"><span style="color: rgb(51,153,102);">Delete Comparison Not Working</span>
+                        </h4>
+                        <hr />
+                        <p>Fixed an issue where surcharges and commission records associated with comparison batches in pricing were not getting deleted properly when the comparison batch was deleted causing orphaned records.&#160;</p>
+                        <p>Surcharge and commission records are now appropriately deleted with the batch.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-ClientServiceCaseDetailReport"><span style="color: rgb(51,153,102);">Client Service Case Detail Report</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where the Case Detail report would over-run the margins of the page, this in turn would cut the text of the notes and detail short, dropping important detail.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-ModifyAPIInitialCode-ENHANCEMENT"><span style="color: rgb(51,153,102);">Modify API Initial Code -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A new API Configuration Parameter has been added to the PrismHR initial: IncludeTerminatedClients=x.&#160;</p>
+                        <ul>
+                            <li>If this parameter is not configured or it is set to 1, will import both Active and Terminated clients.&#160;</li>
+                            <li>If set to 0, will only import Active clients.</li>
+                        </ul>
+                        <h4 id="Release59(PEO)-.1"><span style="color: rgb(51,153,102);"><br /></span>
+                        </h4>
+                        <h4 id="Release59(PEO)-ApplicationErroronGeneratePricing"><span style="color: rgb(51,153,102);">Application Error on Generate Pricing</span>
+                        </h4>
+                        <hr />
+                        <p>Fixed bug when adding/editing quick create states and codes from a tablet (e.g. Safari/Chrome on iPad)</p>
+                        <h4 id="Release59(PEO)-.2"><span style="color: rgb(51,153,102);"><br /></span>
+                        </h4>
+                        <h4 id="Release59(PEO)-PEONextwidgets-ENHANCEMENT"><span style="color: rgb(51,153,102);">PEO Next widgets - &#160;&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The PEO widgets in ClientSpace NEXT have all; been modified to make them more plug and play and allow them to work more easily with Widget layouts.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-FieldLabelColorsonPricingConsole-ENHANCEMENT.1"><span style="color: rgb(51,153,102);">Field Label Colors on Pricing Console -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>'Style' type field display rules for Client Master and Pricing Batch can be used to manage Label styles on the Pricing Console</p>
+                        <p>Multiple 'Style' rules can be configured for the same Controlling and Target fields (e.g. When Corp Type = LLC Pay Frequency will be RED, when C Corp then Pay Frequency will be GREEN</p>
+                        <p>Only 'Style' rules are honored; 'State' rules are ignored</p>
+                        <h4 id="Release59(PEO)-.3"><span style="color: rgb(51,153,102);"><br /></span>
+                        </h4>
+                        <h4 id="Release59(PEO)-MultipleWorkspacesundersingleOrganizationduringimport"><span style="color: rgb(51,153,102);">Multiple Workspaces under single Organization during import</span>
+                        </h4>
+                        <hr />
+                        <p>During initial workspace import, do not allow a new workspace to be associated with an existing Organization if that Organization already contains a workspace.&#160; Instead, throw an error.&#160; The error will be formatted as follows:<br />A workspace was already found for the Organization associated with Client Number #####.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(PEO)-ApplicationErroronGeneratePricing.1"><span style="color: rgb(51,153,102);">Application Error on Generate Pricing</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue in Pricing Console javascript, to correct bug with jquery selector for the pricing grid that would cause an error to be thrown when adding states and codes on a mobile device.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

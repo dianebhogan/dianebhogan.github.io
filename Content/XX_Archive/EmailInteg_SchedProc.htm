@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+    </head>
+    <body>
+        <h1>Step 4:&#160;Review the Email Integration scheduled process</h1>
+        <p>The scheduled process for email integration is named <span class="UXElement">Process Email Integration</span>.  When the scheduled process runs, it sweeps through the mailbox looking for unread messages, grabs the information such as the From and To address, and the body of the email. It then looks for an Email Integration record that is tied to the email address, such as payroll.bigtimepeo@gmail.com. It references the Alias and Action parts of the Email Integration record (as shown)&#160;and processes accordingly.</p>
+        <p>
+            <img src="../Resources/Images/Case/EmailInteg_Action2.png" />
+        </p>
+        <p>For case discussions, it creates a <span class="UXElement">Case Discussion Message</span>. The Business Object logic directs it to look for a ReplyID in the Subject line that matches a case discussion that already exists and then updates that case discussion. When a user responds, it uses the Reply Template <span class="UXElement">Case to Email Reply</span>.</p>
+        <p class="ProcedureIntro">To review the scheduled process configuration:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Advanced</span> &gt; <span class="UXElement">Scheduled Processes</span>.<br />The Scheduled Processes Admin dashboard opens.</li>
+            <li>Open <span class="UXElement">Process Email Integration</span> (click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Jump</span>)).<br />The Process Email Integration form opens.</li>
+            <li>Review the Frequency, Frequency Type, and Valid Days. <br />Typically, you want this  to run every minute, every day of the week. </li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Case/SchedProcess_frequency.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>For any changes, please log an Extranet case.</li>
+            <li>To review the configuration process, go to <MadCap:xref href="ReplyAboveLine_process.htm" title="Reviewing how this works" alt="Reviewing how this works">Reviewing how this works</MadCap:xref>.</li>
+        </ol>
+    </body>
+</html>

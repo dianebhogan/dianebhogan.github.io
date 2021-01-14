@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Replacement Fields</h1>
+        <p>Field replacement allows you to select fields from an associated dataform within the workspace from which the task is triggered. Field replacement is available when configuring Email Templates and Workflow Channels. For example, when configuring an Email Template for employee termination, you can select fields for employee-related information such as email, state, city, and SSN. The replacement fields help to customize your message.</p>
+        <ul>
+            <li>For Email Template configuration, replacement fields are available from the link <b>See Replace Fields</b>.</li>
+            <li>For Workflow Channel configuration, replacement fields are available from the link <b>Get Replace Fields</b>.</li>
+        </ul>
+        <p>You can use replacement fields for Workflow Channel configuration and Email Templates.</p>
+        <h2>Field replacement includes</h2>
+        <ul>
+            <li>
+                <p>Any&#160;active&#160;fields on the triggering dataform</p>
+            </li>
+            <li>
+                <p>The active fields from any additional condition source dataform</p>
+            </li>
+            <li>
+                <p>Task  fields when you select <b>Task</b> as the Triggering Form on an Email Template</p>
+            </li>
+            <li>
+                <p>The active fields from the tabbed forms related to the triggering form</p>
+            </li>
+            <li>
+                <p>The active fields from the related Organization and Org Other Info</p>
+            </li>
+            <li>
+                <p>Any fields returned by the Server Data Procs related to the triggering dataform</p>
+            </li>
+            <li>
+                <p>Any field from the most recent parent dataform, even when tasks are multiple levels deep. See <MadCap:xref href="#Ancestor" title="Ancestor fields" alt="Ancestor fields" class="Heading">Ancestor fields</MadCap:xref>.</p>
+            </li>
+        </ul>
+        <MadCap:snippetBlock src="../Resources/Snippets/ReplaceFields.flsnp" />
+        <h2>Alternate values</h2>
+        <p>The following fields provide alternate values.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 148px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 916px;" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Field</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Contact</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>TableName.FieldName.FirstName</b>&#160;(blank if empty) example Client Master.PrimaryContact.FirstName</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>TableName.FieldName.LastName</b>
+                        </p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>TableName.FieldName</b>&#160;returns&#160;<b>LastName, FirstName</b></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Users</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>TableName.FieldName.FirstName</b>&#160;example ClientMaster.SalesRep.FirstName</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>TableName.FieldName.LastName</b>
+                        </p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>TableName.FieldName</b>&#160;returns <b>LastName, FirstName</b></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Text area</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>TableName.FieldName</b>&#160;returns the first 250 characters (appends "..." if the field contains more than 250 characters)</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>TableName.FieldName.All</b>&#160;returns entire field</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>TableName.FieldName.&lt;integer&gt;</b>&#160;returns first ## number of characters (replace &lt;integer&gt; with the numeric character count). If the field contains more than &lt;integer&gt; number of characters, it appends "<b>...</b>" For example, Clientmaster.DescriptionOfOps.7 returns the first 7 characters from this field. If the field contains more than 7 characters, these will end with&#160;<b>...</b>&#160;indicating more info is available.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Lookup</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>TableName.FieldName</b>&#160;returns <b>Decode</b> value displayed in the application</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>TableName.FieldName.Code</b>&#160;returns <b>Code</b> value stored in the field</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Integer</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>TableName.FieldName</b>&#160;returns comma formatted value (##,###)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Decimal or Money</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableBullet" MadCap:autonum="• "><b>TableName.FieldName</b>&#160;returns comma formatted value (##,###.##) or 0.00 if blank</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="Ancestor"></a>Ancestor fields</h2>
+        <p>The following image illustrates pulling ancestor fields as replacement fields into the Body field. The fields are from the nearest dataform ancestor.</p>
+        <p>Example: <code>2379 gen_Employee.FirstName</code></p>
+        <ul>
+            <li>
+                <p>The Workflow item  is 2379</p>
+            </li>
+            <li>
+                <p>The  form is gen_Employee</p>
+            </li>
+            <li>
+                <p>The field is FirstName</p>
+            </li>
+        </ul>
+        <p class="StepResult">&#160;</p>
+        <p>
+            <img src="../Resources/Images/Workflow/ReplaceFields_ancestor.png" alt="" title="" />
+        </p>
+    </body>
+</html>

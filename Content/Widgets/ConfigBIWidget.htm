@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring BI Reporting Widgets</h1>
+        <p>Report widgets require additional configuration when creating a BI Dashboard. Any part of a report can be added to a widget, including Charts.</p>
+        <p>
+            <img src="../Resources/Images/BI/BI_OrgDetails_Widget.png" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">From a BI&#160;report:</p>
+        <ol>
+            <li>When configuring a BI report inside a BI Widget, to filter on #currentworkspace, <ol><li>In <span class="UXElement">Filter Field</span>, add the <span class="UXElement">fkprojectID</span> from the client master.</li><li> In <span class="UXElement">Operator</span>, select <span class="UXElement">Equals </span>. </li></ol></li>
+            <li>Leave <span class="UXElement">Value</span> blank. </li>
+            <li>Leave the <span class="UXElement">Parameter</span> selected. </li>
+        </ol>
+        <p class="ProcedureIntro">To configure a BI&#160;report widget:</p>
+        <ol>
+            <li>From the <b>Widget Layout Details</b> form, click <b>Settings</b>.<br />The Widget Settings form opens.<br /></li>
+        </ol>
+        <div class="indent">
+            <p MadCap:autonum="">
+                <img src="../Resources/Images/BI/BI_CurrentWorkspaceFilter.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Complete the fields:</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 200px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Report</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select the report to be used in your widget. </p>
+                        <p class="TableTextLeft">&#160;</p>
+                        <p class="TableTextLeft">These widgets adhere to report security as well as report filters, such as fkprojectid or pkorganizationid equals blank. The widget  fills in this filter when the report runs using its own Current Workspace filter logic. There is no need to add a value into the report filter in BI. <span class="UXElement">NOTE</span>: if you try to add a value, such as #currentworkspace into the BI report filter, it will not work in the widget. </p>
+                        <p class="TableTextLeft">&#160;</p>
+                        <p class="TableTextLeft">BI&#160;System Administrators and Global Admins can see the report filters.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Filter</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Current Workspace</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select the report part you would like to include such as Chart, Summary, or Detail.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Suppress Report Header</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">When enabled (selected), the report header does not display. Default setting is disabled (cleared).</td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>When you have completed your configuration, click <b>Save Settings</b>.</li>
+        </ol>
+        <p>If you have any questions, please submit an Extranet service ticket to ClientSpace.</p>
+    </body>
+</html>

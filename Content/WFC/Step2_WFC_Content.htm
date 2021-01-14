@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <div class="NoPageBreak">
+            <h1>
+                <MadCap:concept term="Workflow Channels" />Step 2: Content</h1>
+            <p>This is where the rubber meets the road. Information entered into these fields is copied to each cloned object created by this step.  On the Content step, you can set user fields to values that exist on dataforms across a tabbed set. For more details about selecting users across tabbed dataforms, see <MadCap:xref href="TabbedDataforms.htm" title="Workflow Channels and tabbed dataforms" alt="Workflow Channels and tabbed dataforms">Workflow Channels and tabbed dataforms</MadCap:xref>.</p>
+            <p>The fields that are available for cloning are based entirely on the work done when defining clone-configurable fields (see <MadCap:xref href="DefineCloneConfigDataforms.htm" class="Heading">Defining clone-configurable dataforms</MadCap:xref>). Clone configurable fields follow the datatype of the field and act as those fields do on the dataform. For example, a lookup displays the appropriate values.</p>
+            <h2><a name="FieldReplace"></a>Field Replacement</h2>
+            <p>
+                <img src="../Resources/Images/Workflow/AddWorkflow_Step2_Content.png" class="thumbnail_right" />
+            </p>
+            <p>You may have noticed a <strong>Get Replace Fields</strong> link on the Content step. This link allows you to insert field content for Subject and Body from:</p>
+            <ul>
+                <li>Triggering dataform</li>
+                <li>Server data procs</li>
+                <li>Any associated tabbed dataforms</li>
+                <li>Related Organization and Org Other Info </li>
+                <li>Closest dataform ancestor </li>
+            </ul>
+        </div>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="Step">
+                <MadCap:dropDownHotspot>To use Get Replace Fields:
+        </MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <p>The list can be extensive because it can include fields:</p>
+            <ul>
+                <li>
+                    <p> From the triggering dataform</p>
+                </li>
+                <li>
+                    <p>From its server data proc</p>
+                </li>
+                <li>
+                    <p>From any associated tabbed dataform</p>
+                </li>
+                <li>
+                    <p>From the closest dataform ancestor. </p>
+                </li>
+                <li>
+                    <p>Field content from the related Organization and Org Other Info</p>
+                </li>
+            </ul>
+            <MadCap:dropDownBody>
+                <MadCap:snippetBlock src="../Resources/Snippets/ReplaceFields.flsnp" />
+            </MadCap:dropDownBody>
+            <p><i class="fas fa-info-circle" style="font-size:20px;color:var(--BrandPrimary2);"></i> For more details, see <MadCap:xref href="../Admin_Config/ReplacementFields.htm" title="replacement fields" alt="replacement fields" class="Heading">Replacement fields</MadCap:xref>.</p>
+        </MadCap:dropDown>
+        <h2>Triggered Form:&#160;Task</h2>
+        <p>In Step 1 Channel, in Triggered Form, when you select Task, the fields in Step 2 are as follows.</p>
+        <p>
+            <img src="../Resources/Images/Workflow/Stet2_Task-fields.png" class="thumbnail" />
+        </p>
+        <ol>
+            <li>Complete the fields:</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 160px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Item Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Provide a short descriptive name for what this workflow object is.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">IsMarkedForDeletion</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When this option is selected, the Workflow Channel clones the task with this field selected. Then, when the scheduled process, Delete Marked Tasks, runs, it finds all the tasks with this field select, and deletes the task.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Subject</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Subject Line that displays on the task. This field supports field replacement. See <MadCap:xref href="#FieldReplace" title="Field replacement" alt="Field replacement">Field Replacement</MadCap:xref>. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Body</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Include any instructions that you feel could be helpful. This field
+ should contain information to provide steps to complete the task. This field supports
+ field replacement.  See <MadCap:xref href="#FieldReplace" title="Field replacement" alt="Field replacement">Field Replacement</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Category</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Choose the appropriate Task Category.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Status</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select the appropriate Task Status.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Priority</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">What is the criticality of this task?</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Within the category, what is the task type?</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Stage</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Also called workflow. Where in
+ the process does this task fall?</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Assigned To,</p>
+                        <p class="TableTextLeft">Owner</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">For Assigned To, select the person responsible for accomplishing this task from the
+ following options. For Owner, select an owner.</p>
+                        <p class="ProcedureIntro">To change Assigned To and Owner:</p>
+                        <ol>
+                            <li>Select <span class="UXElement">Current User</span>.<br />The Assigned To or Owner Options dialog box opens.</li>
+                            <li>Select an option:<ul style="list-style-type: square;"><li><span class="UXElement">Current User</span>: The logged in user who triggers the task.</li><li><span class="UXElement">Specific User:</span> A specific user in the Workspace. When you select Specific User, the User field is enabled. This displays all active user accounts.</li><li><span class="UXElement">From a Field on a Form</span>: Any user field on the triggering dataform is available.<ul style="list-style-type: circle;"><li>When you select From a Field on a Form, <b>Dataform</b> is enabled. </li><li>Select the Dataform that has a field from which to select a User. Field becomes available.</li><li>Select a user field.</li></ul></li></ul></li>
+                            <li>Click <span class="UXElement">Ok</span>.<br />You are returned to the Workflow Channel form.</li>
+                        </ol>
+                        <p class="TableTextLeft">For details about referencing users from tabbed dataforms (parent and child dataforms), see <MadCap:xref href="TabbedDataforms.htm" title="Workflow channels and tabbed dataforms" alt="Workflow channels and tabbed dataforms" class="Heading">Workflow Channels and tabbed dataforms</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Start Date Source,</p>
+                        <p class="TableTextLeft">Due Date Source</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Date options are Create Date, Specific Date, and From a Field on a Form. Additionally, you can select the Offset as Days, Weeks, Months, Years, Business Hours, Business Days, Beginning of Month, End of Month, Beginning of Year, or End of Year.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft"><span class="UXElement">Due Date Source</span>:&#160;Tasks created by this channel can have their due date set by the task create date, or to a specific date from a dataform field. Choose from the create date of the task or a Date type field on the triggering dataform. </p>
+                        <p class="ProcedureIntro">To configure dates:</p>
+                        <ol>
+                            <li>Select <b>On Create Date</b>.<br />The Date Options dialog box opens.</li>
+                        </ol>
+                        <div class="indent">
+                            <p>
+                                <img src="../Resources/Images/Workflow/SourceDateOptions.png" class="thumbnail" />
+                            </p>
+                        </div>
+                        <div class="indent">
+                            <p>For date fields that are not required, the None option becomes available. For required (red ink)&#160;date fields,  None is not an option.</p>
+                        </div>
+                        <ol MadCap:continue="true">
+                            <li>Select an option:<ul MadCap:continue="true" style="list-style-type: square;"><li><span class="UXElement">Create Date</span>: Default value. Optionally, you can use Offset to specify a number of days, weeks, months, years, hours, end of month, beginning of year, or end of year.</li><li><span class="UXElement">Specific Date</span>: Enables the Date field where you can use the date picker. Optionally, you can use Offset to specify a number of days, weeks, months, years, hours, end of month, beginning of year, or end of year.</li><li><span class="UXElement">From a Field on a Form</span>:  Includes the triggering form for that workflow, all single dataforms with date fields, and child tab forms when the Triggering Form (from Step 1)&#160;is a home form of a tabbed set. <ul MadCap:continue="true" style="list-style-type: circle;"><li> When you select From a Field on a Form, <span class="UXElement">Dataform</span> is enabled. Select the Dataform that has a date field. </li><li>When you select a dataform, <span class="UXElement">Field</span> becomes available. Select a date field.</li><li>Optionally, you can use <span class="UXElement">Offset</span> to specify a number of days, weeks, months, years, hours, end of month, beginning of year, or end of year.</li></ul></li><li><span class="UXElement">Offset</span>: 
+You can use Offset with Create Date, Specific Date, and From a Field on a Form.
+Default value is 0 Business Days.</li></ul></li>
+                            <li>When ready, click <b>Ok</b>.</li>
+                        </ol>
+                        <p class="TableTextLeft">You are returned to the Workflow Channel form, where the Start and/or Due Date Source fields show (as applicable): <i>nn</i> Business Days after Create Date, <i>nn</i> Business Days after Specific Date, <i>nn</i> Business Days after Field Label (Contract Effective Date).</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Triggered Form: Dataform</h2>
+        <p>In Step 1 Channel, in Triggered Form, when you select a dataform, the available fields in Step 2 are variable and dependent on the specific form fields. You will only see fields for the form you are cloning, and the fields have to be marked as cloneable for that form. </p>
+        <p>Additionally, date fields can vary. Some dataforms may have Date One and Date Two, and others may have Due Date. On Step 1, when the Triggered Form is a dataform, and the date field is not required, you have the option to set the On Create Date to None.</p>
+        <p>
+            <img src="../Resources/Images/Workflow/TriggeredForm_DateNotRequired.png" class="thumbnail" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>In Step 1 Channel, in Triggered Form, if you selected a dataform, the displayed fields vary, depending on your selections in Step 1. The following fields focus on date.</li>
+        </ol>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 143px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Item Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Provide a brief descriptive name for what this workflow item does.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Date One, </p>
+                        <p class="TableTextLeft">Date Two,</p>
+                        <p class="TableTextLeft">Due Date</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Date field names vary by dataform. Date fields in red ink are required and black ink are not required. When the date field is not required, an additional option of None is available.</p>
+                        <p class="ProcedureIntro">To configure a date field:</p>
+                        <ol>
+                            <li>Select <b>On Create Date</b>.<br />The Date Options dialog box opens.</li>
+                        </ol>
+                        <div class="indent">
+                            <p>
+                                <img src="../Resources/Images/Workflow/Date_None.png" />
+                            </p>
+                        </div>
+                        <div class="indent">
+                            <p>For date fields that are not required, the None option becomes available. For required (red ink)&#160;date fields,  None is not an option.</p>
+                        </div>
+                        <ol MadCap:continue="true">
+                            <li>Select an option:<ul MadCap:continue="true" style="list-style-type: square;"><li><span class="UXElement">None</span>: Indicates the date does not require a value when configuring. The field will be empty when the workflow channel is triggered.</li><li><span class="UXElement">Create Date</span>: Default value. Optionally, you can use Offset to specify a number of days, weeks, months, years, hours, end of month, beginning of year, or end of year.</li><li><span class="UXElement">Specific Date</span>: Enables the Date field where you can use the date picker. Optionally, you can use Offset to specify a number of days, weeks, months, years, hours, end of month, beginning of year, or end of year.</li><li><span class="UXElement">From a Field on a Form</span>:  Includes the triggering form for that workflow, in addition to all single dataforms with Date fields. <ul MadCap:continue="true" style="list-style-type: circle;"><li>When you select From a Field on a Form, <span class="UXElement">Dataform</span> is enabled. Select the Dataform that has a date field. </li><li>When you select a dataform, <span class="UXElement">Field</span> becomes available. </li><li>Optionally, you can use <span class="UXElement">Offset</span> to specify a number of days, weeks, months, years, hours, end of month, beginning of year, or end of year.</li></ul></li><li><span class="UXElement">Offset</span>: 
+You can use Offset with Create Date, Specific Date, and From a Field on a Form.
+Default value is 0 Business Days.</li></ul></li>
+                            <li>When ready, click <b>Ok</b>.</li>
+                        </ol>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>When ready, click <strong>Next</strong>. <MadCap:xref href="Step3_WFCNotifications.htm" title="Step 3: Notifications" alt="Step 3: Notifications">Step 3: Notifications</MadCap:xref> opens.</li>
+        </ol>
+    </body>
+</html>

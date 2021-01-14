@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Configuring Slack</h1>
+        <p>A Slack administrator will have the ability within Slack to Browse and Add new apps to the Slack install.  This normally appears at the bottom of the Slack user list.</p>
+        <p class="ProcedureIntro">To configure Slack:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Open Slack.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Select <b>Apps</b>.<br /></p>
+        <p class="StepResult">The Browse Apps page opens.</p>
+        <p class="L1Num" MadCap:autonum="3. ">If not installed, install the <b>Slash Commands</b> app. </p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/Slash1.jpg" class="thumbnail" />
+        </p>
+        <p class="StepResult">If Slash Commands is already installed, click <b>View</b> to add a new configuration.<br />The Slash Commands page opens.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/Slash2.jpg" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="4. ">Click <b>Add Configuration</b>.<br /></p>
+        <p class="L1Num" MadCap:autonum="5. ">The Integration Settings page opens.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/IntSettings.jpg" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">To configure the integration settings for your installation:</p>
+        <p class="L1Num1" MadCap:autonum="1. "><b>Command</b>: The precursor command you will use in Slack to begin requesting data from <MadCap:variable name="MyVariables.ProductName" />. In our example we are using <b>/clientspace</b>.</p>
+        <p class="L1Num" MadCap:autonum="2. "><b>URL</b>: The install URL of your <MadCap:variable name="MyVariables.ProductName" /> installation with <b>/next/peo/slack</b> appended to the end. For example, <code>https://yourinstall.clientspace.net/next/peo/slack</code></p>
+        <p class="L1Num" MadCap:autonum="3. "><b>Method</b>: Select <b>POST</b>. This is the request-response method when connecting the third- party application. </p>
+        <p class="L1Num" MadCap:autonum="4. "><b>Token</b>: Simply adding the configuration will cause the Slack system to generate a token. This token identifies the Slack application for third-party integrations and will be used when configuring the <MadCap:variable name="MyVariables.ProductName" /> application.  <b>Copy this token to notepad because you will use this later</b>.</p>
+        <p class="L1Num" MadCap:autonum="5. "><b>Customize Name</b>:  The name that will identify the slash command responses. The Slack username that your ClientSpace data will come from.</p>
+        <p class="L1Num" MadCap:autonum="6. "><b>Customize Icon</b>: The icon that will appear in Slack next to the response.</p>
+        <p class="L1Num" MadCap:autonum="7. "><b>Preview Message</b>: This field will give you an advance preview of what you can expect the slack interaction to look like.</p>
+        <p class="L1Num" MadCap:autonum="8. ">All other configurations should be left at their defaults.</p>
+        <p class="L1Num" MadCap:autonum="9. ">Click <b>Save</b> to save your Slash Command Config.</p>
+    </body>
+</html>

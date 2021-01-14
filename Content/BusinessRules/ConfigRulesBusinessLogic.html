@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Business Rules" />Configuring rules and business logic</h1>
+        <p>Dataform rules can trigger events, ensure that data does not become corrupt (no duplicate SSN and FEIN), and manage the requirements of a workflow, along with any number of custom functions. </p>
+        <p>You can configure rules to auto-populate another field when a value is selected. For example, let’s say that you select a Primary trigger field and a Secondary trigger field. If the values match, you can set a destination value. You have choices for operator and trigger value datatypes. For example, you can create a rule when you want to set the Implementation Specialist to X when the Payroll Specialist is Y.</p>
+        <p class="ProcedureIntro">To configure a  rule:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Manage Rules</b>.<br />The Custom Logic Rules dashboard opens.
+
+<br /></li>
+            <li>To add a business rule, click <b>Add</b>.<br />The Rule Details form opens.
+</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Rules/Add-Rule.png" alt="" title="" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Complete the form using the following guidelines.</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 200px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Table Name</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">This is the dataform where this rule will execute when the dataform is saved.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Method</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select a method. Is this rule for a field, calendar event, a date value, etc? Our example shows _SetFieldValue.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Rule Title</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Provide an abbreviated explanation of what this rule does, for example, "Set Implementation Specialist for Green Team".</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Rule Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1"><MadCap:variable name="MyVariables.ProductName" /> controls this field automatically. Rule Type is determined by the Method.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Description</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Provide a more thorough explanation of what this rule is to accomplish.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Primary Trigger Field</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select the field that is going to cause the change. This field is a lookup of all the fields on the form.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Secondary Trigger Field</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select an additional trigger condition that must be met if necessary. This field is a lookup of all the fields on the form.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Primary Trigger Operator</p>
+                        <p class="TableTextLeft">Secondary Trigger Operator</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select the operator datatype. The following operators apply to their respective datatypes:</p>
+                        <ul>
+                            <li>
+                                <p>Contains: Text</p>
+                            </li>
+                            <li>
+                                <p>Does Not Equal: Text, Integer, Date, Lookup, User, Parent</p>
+                            </li>
+                            <li>
+                                <p>Empty: Text, Integer, Date, Lookup, User, Parent</p>
+                            </li>
+                            <li>
+                                <p>Equals: Text, Integer, Date, Lookup, User, Parent, XML</p>
+                            </li>
+                            <li>
+                                <p>Greater Than: Text, Integer, Date, User</p>
+                            </li>
+                            <li>
+                                <p>Greater Than or Equal: Text, Integer, Date, User</p>
+                            </li>
+                            <li>
+                                <p>Is Dirty: Text, Integer, Date, Lookup, User, Parent</p>
+                            </li>
+                            <li>
+                                <p>Less Than: Text, Integer, Date, User</p>
+                            </li>
+                            <li>
+                                <p>Less Than or Equal: Text, Integer, Date, User</p>
+                            </li>
+                            <li>
+                                <p>Not Empty: Text, Integer, Date, Lookup, User, Parent</p>
+                            </li>
+                            <li>
+                                <p>Starts With: Text</p>
+                            </li>
+                            <li>
+                                <p>Org, Contact, and some other special fields present as an integer and share those operators</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Primary Trigger Value<br />Secondary Trigger Value</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Type a value to be met as a triggering condition. The following list is the standard behavior of the value field based on datatype:</p>
+                        <ul>
+                            <li>
+                                <p>Text: Shows a text field.</p>
+                            </li>
+                            <li>
+                                <p>Integer: Shows an integer field.</p>
+                            </li>
+                            <li>
+                                <p>Checkbox:</p>
+                            </li>
+                            <li>
+                                <p>Date: Shows an integer field. You can use date settings for today (t), 1 day (1d), 1 week (1w), etc.</p>
+                            </li>
+                            <li>
+                                <p>Lookup: Provides a drop-down field with the corresponding lookup values prefilled.</p>
+                            </li>
+                            <li>
+                                <p>User field: Displays a list of all users.</p>
+                            </li>
+                            <li>
+                                <p>Contact/org typeaheads: Integer.</p>
+                            </li>
+                            <li>
+                                <p>XML: A sub-selector with the associated lookup and integer.</p>
+                            </li>
+                            <li>
+                                <p>Parent field: Brings back decoded data.</p>
+                            </li>
+                            <li>
+                                <p>Project User: Integer.</p>
+                            </li>
+                        </ul>
+                        <p>Other valid values include:</p>
+                        <ul>
+                            <li>#IsDirtyAndIsEmpty: Executes if the Trigger Field on this form has changed and is now empty.</li>
+                            <li>#IsDiryAndNotEmpty:&#160;Executes if the Trigger Field on this form has changed and now contains a value.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Execution Pipeline</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Leave this set to <b>Default</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Execution Order</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This field controls the order in which rules will execute. Rules execute from the lowest to the highest number. It may be necessary to look at other rules already configured on this dataform to determine the order of precedence for executing rules.</p>
+                        <p class="TableTextLeft"><b>Execution Order of Precedence</b>: Within the Rules system, there is a distinct order of precedence that occurs, that being HardError, SoftError, BizLogic. This means that setting a field to a specific value automatically with BizLogic, then validating that field with a Hard Error will never occur in the correct order, as the Hard Error will fire before the BizLogic fills the field. This order of precedence happens irrespective of the execution order placed on the configured rule, so Hard Errors will fire in Execution Order least to greatest, then Soft Errors will fire in their order of execution, then the Biz Logic will happen, again in the order of execution set on each rule.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Save Action</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Will this rule be applied on Insert of a new dataform, the Update of an existing dataform, or on Both?</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Workspace Templates</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select the templates under which this rule will run.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">System</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Method Parameters</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Method Parameters are dependent on the selected rule method for this rule. Hover over the info bubble for more parameter information or submit an Extranet case with your questions.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Workspace Template</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">Select the Workspace Template to which this rule applies.</td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>, <span class="UXElement">Apply</span>, or <span class="UXElement">Save &amp;&#160;New</span>.<br />Save &amp; New clones the selected dataform from the previous rule, making it easier to add multiple rules to the same dataform. </li>
+        </ol>
+        <p class="ActionTip">To find the technical database names and the values stored in the database representing the value on the dataform, use a combination of Ad-hoc Reports, the Dataform Specifications Report, Lookup Admin, or Dataform Admin. </p>
+        <p>If you need further help with configuring custom rules in your system, please log a case in the Extranet.</p>
+    </body>
+</html>

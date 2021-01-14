@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MsExcelImport
+  SaveWorkbookToFolder="false"
+  WorksheetImportType="topic"
+  PersistFirstRowAsHeader="false"
+  LimitRows="false"
+  LimitRowsCount="30"
+  SaveChartsAs="true"
+  SaveChartsAsType="Png"
+  ConvertEquations="true"
+  ExclusionFilters=""
+  CreateMasterTopic="false"
+  IncludeWorksheetTitlesAsHeadings="false"
+  ImportHiddenRowsColumns="false"
+  KeepSourceLinks="false"
+  Stylesheet=""
+  PreserveSourceStyles="true"
+  LastImport="2020-10-06T11:32:12.8302079-04:00">
+  <Files>
+    <Url
+      Source="../../../../NOTES ClientSpace doc/SPRINTS/R96/ClientSpaceAPI_DataMapping.xlsx"
+      AbsoluteSource="file:///C:/NOTES ClientSpace doc/SPRINTS/R96/ClientSpaceAPI_DataMapping.xlsx" />
+  </Files>
+  <ExcludedFiles />
+  <CollectedSourceFiles />
+  <SkippedSourceFiles />
+  <GeneratedFiles>
+    <Url
+      Source="../../Content/Resources/Stylesheets/ClientSpaceAPI_DataMapping.css"
+      TimeStamp="10/6/2020 11:27:37 AM" />
+    <Url
+      Source="../../Content/ClientSpaceAPI_DataMapping/From Al (Internal Use Only).htm"
+      TimeStamp="10/6/2020 11:27:38 AM" />
+    <Url
+      Source="../../Content/ClientSpaceAPI_DataMapping/Client.htm"
+      TimeStamp="10/6/2020 11:28:01 AM" />
+    <Url
+      Source="../../Content/ClientSpaceAPI_DataMapping/Contacts.htm"
+      TimeStamp="10/6/2020 11:28:22 AM" />
+    <Url
+      Source="../../Content/ClientSpaceAPI_DataMapping/Locations.htm"
+      TimeStamp="10/6/2020 11:28:43 AM" />
+    <Url
+      Source="../../Content/ClientSpaceAPI_DataMapping/Employee.htm"
+      TimeStamp="10/6/2020 11:29:05 AM" />
+    <Url
+      Source="../../Content/ClientSpaceAPI_DataMapping/Employment.htm"
+      TimeStamp="10/6/2020 11:29:26 AM" />
+    <Url
+      Source="../../Content/ClientSpaceAPI_DataMapping/Client Team.htm"
+      TimeStamp="10/6/2020 11:29:46 AM" />
+    <Url
+      Source="../../Content/ClientSpaceAPI_DataMapping/Users.htm"
+      TimeStamp="10/6/2020 11:30:07 AM" />
+    <Url
+      Source="../../Content/ClientSpaceAPI_DataMapping/PrismHR Event.htm"
+      TimeStamp="10/6/2020 11:30:29 AM" />
+    <Url
+      Source="../../Content/ClientSpaceAPI_DataMapping/Employee I9.htm"
+      TimeStamp="10/6/2020 11:30:29 AM" />
+    <Url
+      Source="../../Content/ClientSpaceAPI_DataMapping/Employee Benefits.htm"
+      TimeStamp="10/6/2020 11:30:29 AM" />
+    <Url
+      Source="../../Content/ClientSpaceAPI_DataMapping/Payroll Batch.htm"
+      TimeStamp="10/6/2020 11:30:29 AM" />
+    <Url
+      Source="../TOCs/ClientSpaceAPI_DataMapping.fltoc"
+      TimeStamp="10/6/2020 11:30:29 AM" />
+  </GeneratedFiles>
+</MsExcelImport>

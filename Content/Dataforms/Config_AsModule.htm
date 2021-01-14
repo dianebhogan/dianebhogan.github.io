@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Dataforms" />Configuring a Dataform to open as a Module</h1>
+        <p>Did you know that you can create a module from a dataform? This allows you to access a single or multi-dataform without having to enter the Workspace first.</p>
+        <p class="ProcedureIntro">To create a module:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Modules</span>.<br />The Modules dashboard opens.</li>
+            <li>Click <span class="UXElement">Add</span>.<br />The Module Details form opens.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Dataform/CreateModule_Dataform.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Complete the form:</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Name</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Enter a name for the new Module.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Category</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select a category for the new Module.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Description</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Enter a description.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Target</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Main Window</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Dataform</span>. The Dataform field becomes available.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Dataform</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p>Select a dataform from the list. These are single dataforms (not tabbed forms).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Active</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Select to activate the new module.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <h2><i class="fas fa-eye" style="font-family: Font Awesome 5 Free; font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="See what you can do" alt="See what you can do"></i> Example of how to use</h2>
+        <p>Let's say that you want to configure a module named Employee Search to display a list of Employees.</p>
+        <p class="ProcedureIntro">To configure:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Modules</span>.</li>
+            <li>Enter the Name as <span class="UXElement">Employee Search</span>.</li>
+            <li>For Category, select <span class="UXElement">Other</span>.</li>
+            <li>For Target, select <span class="UXElement">Main Window</span>.</li>
+            <li>For Type, select <span class="UXElement">Dataform</span>.</li>
+            <li>For Dataform, select <span class="UXElement">Employee</span>.</li>
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <p class="ProcedureIntro">To view your new module:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Modules</span>.<br />The Modules dashboard opens.</li>
+            <li>In the list, locate your new module, <span class="UXElement">Employee Search</span>.</li>
+            <li>To open, click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Jump</span>).</li>
+        </ol>
+        <p>The list of employees is displayed with the columns that are configured in the Dataform Admin for the Employee dataform, under Multi Col (see <MadCap:xref href="defMultiColHdrs.htm" title="Defining dataform multiform list column headers" alt="Defining dataform multiform list column headers">Defining dataform multiform list column headers</MadCap:xref>). Numeric values (not zero)&#160;in Multi Col determine the columns that you see in the Employee Search list.</p>
+    </body>
+</html>

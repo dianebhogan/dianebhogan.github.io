@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Dataforms" />Adding dataform fields</h1>
+        <p>Dataform fields contain information that you want to store and track. The maximum number of fields allowed on a dataform  is 250. When this limit is reached, the <img src="../Resources/Images/ICONS/ICON_NewAdd.png" /> (New) button is disabled, and a message displays, "Only 250 fields can be added to a single dataform." If you need more than 250 fields, consider using a dataform tab or add another single dataform link.</p>
+        <p class="ProcedureIntro">To add fields:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Dataform Admin</b>.<br /></p>
+        <p class="StepResult">The Dataform Admin dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">From the list, select an entry and click <b>Edit</b> or click <img src="../Resources/Images/ICONS/ICON_Jump.png" />  (<b>Jump</b>).<br /></p>
+        <p class="StepResult">The Dataform Properties form opens.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Dataform/Dataform_NewField.png" class="thumbnail">
+            </img>
+        </p>
+        <p class="L1Num" MadCap:autonum="3. ">In the <b>Action Center</b>, click <b>Fields</b>.<br />The Fields list of the dataform displays. From here, you can Open, Delete, and Add (New) fields.</p>
+        <p class="L1Num" MadCap:autonum="4. ">Click <img src="../Resources/Images/ICONS/ICON_NewAdd.png" /> (<b>New</b>).<br /></p>
+        <p class="StepResult">The New Field form opens. You cannot configure a dataform (single or multiform) to contain more than 250 fields. When this threshold is reached, a message displays, and the New button is inactivated.</p>
+        <p class="L1Num" MadCap:autonum="5. ">Use the following field descriptions to continue the configuration.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 200px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Element Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Determines the type of data you store in this field. ClientSpace has a full array of different datatypes. The most commonly used datatypes can be found in the topic <MadCap:xref href="Config_Datatypes.htm" title="configuring dataform datatypes" alt="configuring dataform datatypes" class="Heading">Configuring your dataform datatypes</MadCap:xref>. For an in-depth look at the Lookup datatype, see <MadCap:xref href="../Admin_Config/Lookups.html" title="addig configuring lookups" alt="addig configuring lookups" class="Heading">Adding or configuring lookups</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Field Set</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Outlines that hold and organize other fields. No actual SQL field is
+ created, and no data can be stored in a fieldset.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Field Label</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The field label is displayed on the dataform. By default, the
+ underlying field name is set to the field name with any spaces or special
+ characters removed. Click the field name to open the field properties
+ page.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Field Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The name of the field that is created on the SQL table. By default,
+ the field label is stripped of its spaces and special characters and used as
+ the Field Name. The field name can be overridden as needed and can be set to
+ anything that is accepted by SQL Server as a valid field name. Duplicate
+ field names are not accepted. </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Field labels are often duplicated in developing
+ large dataforms. As duplicate fields are created, you must modify the field
+ name to make it unique  to save the field. After the field is saved
+ the first time, the field name CANNOT be changed. </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Carefully map out your
+ field naming standards before creating dataforms. <MadCap:variable name="MyVariables.ProductName" /> uses a standard naming convention when
+ naming a field based on the datatype of the field. It is a recommended best
+ practice to use these same conventions in your own field names. To
+ discover the best practice for your field type, see <MadCap:xref href="FieldNameStds.html" title="Dataform field naming standards" alt="Dataform field naming standards">Dataform field naming standards</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Row</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The row property determines the vertical ordering of fields and
+ fieldsets. Fields that are within a fieldset are ordered within that fieldset. Though the sort uses a standard numeric order, it is recommended to set rows in increments of ten. This allows for reordering
+ fields or adding fields between rows without reordering the entire form.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Column</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The column property is hardcoded to dictate a two-column format.
+ Technically, you can select the same row and column for more than one
+ field, and they align alphabetically. However, this generally causes problems
+ in the presentation of the dataform to the user.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Field Behavior</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">ReadOnly</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">You cannot edit this field. It is read-only. Usually, ReadOnly fields are set
+ automatically by business logic.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Required</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This property can only be set from within the field properties page.
+ When selected, the field must be completed for the dataform to be saved.  This function is overridden if the field is contained in a hidden field set.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Length</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Specifies the maximum length of the field entry. This property is
+ valid for text and integer data types.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Comment</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The text in Comment provides contextual help for dataform users. When
+ comments are added to any dataform field, the info bubble next to the field
+ label is enabled, and on hover, the info bubble displays the comment text in a
+ pop-up.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Quick Search</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Selecting a value in this list adds the field to the Quick Search on
+ multiform searches. Fields that link to other dataforms are not eligible for
+ Quick Searches. Available options (quick search types) include Starts With,
+ Equals, and Contains (% search).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Form Searchable</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Is this one of the Search parameters available in a multiform list?
+ This property can be set from the form list page or from within the field
+ property page.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Secured</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Secures the field and generates a security entity for the field in
+ the format of gen_TableName_FieldName. For more in-depth documentation about
+ using security entities in Role security, review <MadCap:xref href="../Security/OrgWorkspaceSecConfig.html" title="Configuring Organization and Workspace security" alt="Configuring Organization and Workspace security">Configuring Organization and Workspace Security</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Active</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Determines if the field appears on the dataform. Deactivating a field
+ is preferential to deleting it because deleting the field removes it from the
+ underlying SQL table and erases the data. When you deactivate or hide a
+ field, you retain the data for later use.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Hidden</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This property is only available for Field Sets. When selected, the
+ field and its children are hidden when a dataform record is viewed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Index this field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Marks the field for addition to the SQL table index. Searches based on Index this Field will run faster.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Audit this field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Marks the field auditable and is configured in System Admin &gt; Advanced
+ &gt; Tables.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Cloneable</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Marks the field as configurable when this dataform is created by
+ Workflow Channels. Clearing this option initiates a validation to determine if this field is used by Workflow Channel dataform cloning. When used, a warning message is displayed with a link to the referenced items. Only published Workflow Channels are referenced. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Triggerable</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Marks the field as available for use as a Triggering Field or as one
+ of the Triggering Conditions when configuring Workflow Channels and Email
+ Templates. When a field is marked (selected) as Triggerable, it displays in the field
+ list on Email Templates and Workflow Channels.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Clearing this option initiates a validation to determine if this field is used as a triggering condition in an Email Template or Workflow Channel. When used, a warning message is displayed with a link to the referenced items. Only published Email Templates or Workflow Channels are referenced. This option cannot be cleared until the dependencies are removed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Allow Dataform Notification</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">If selected, this field is included in a dataform notification when
+ dataform subscribers are emailed. Updated fields appear in bold in this email.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="6. ">Click <b>Apply</b> when you are done.</p>
+        <h2>Available field actions</h2>
+        <p>When viewing the list of dataform fields, note the available actions:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 65px;">
+            </col>
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 107px;">
+            </col>
+            <col class="TableStyle-Standard_Table-Column-Column1">
+            </col>
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1" style="text-align: center;">
+                        <p class="TableHead">Action</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Action label</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">
+                        <p>
+                            <img src="../Resources/Images/ICONS/ICON_Jump.png">
+                            </img>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Open</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Opens the field properties for the
+ highlighted field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">
+                        <p>
+                            <img src="../Resources/Images/ICONS/ICON_DataformDeleteField.png">
+                            </img>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Delete</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Deletes the highlighted
+ field.&#160;For system fields, the Delete action is not available and
+ displays as disabled. System fields can be easily identified because their
+ field names do not begin with&#160;<span class="UXElement">z_</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">
+                        <p>
+                            <img src="../Resources/Images/ICONS/ICON_NewAdd.png">
+                            </img>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">New</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Adds a new field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2" style="text-align: center;">
+                        <p>
+                            <img src="../Resources/Images/ICONS/ICON_SaveDataformFields.png">
+                            </img>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Save</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Saves changes to the dataform
+ fields list.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

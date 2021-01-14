@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultVariableSet>
+  <Variable
+    Comment=""
+    Name="CopyrightYear"
+    EvaluatedDefinition="2020">2020</Variable>
+  <Variable
+    Name="CompanyName"
+    Comment=""
+    EvaluatedDefinition="PrismHR">PrismHR</Variable>
+  <Variable
+    Name="Month"
+    Type="DateTime"
+    LastUpdated="2019-08-07T10:39:38.3183818-04:00"
+    EvaluatedDefinition="MMMM">MMMM</Variable>
+</CatapultVariableSet>

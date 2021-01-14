@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>
+        <p>Additional Information allows you to customize your Workflow Channels and Email Templates related to data that is changed in Prism to reflect the source of the change. When data is modified in PrismHR (for example, a Client’s address changes, or an Employee is added), the PrismHR API generates an Event in a queue. The ClientSpace Ongoing scheduled process polls the Event queue for new Events (relative to the last time the scheduled process ran). If the Events contain data that is mapped by ClientSpace (using Import mappings), the Event is processed, and data in ClientSpace is updated.
+
+</p>
+        <p>AdditionalInformation is a data element provided by the PrismHR API. Each Event contains an AdditionalInformation element that, in turn, contains data appropriate to the type of the Event (Schema). For example, if an Employee’s email address changes, the AdditionalInformation informs us which User made the change and the Type of that User (Internal or External).
+
+</p>
+        <MadCap:microContent id="microcontent1">
+            <p>
+                <img src="../Images/EmailTemplates/AdditionalInformation.png" alt="" title="" class="thumbnail_right" />
+            </p>
+            <p>The purpose of AdditionalInformation is to allow Workflow Channels and Email Templates to react to specific conditions unique to each dataform save.
+AdditionalInformation data is available to ALL dataforms in the system. It is a pseudo-field in that it is not a true dataform field, but it is available in code to be exposed to the dataform save data. It is not visible on the dataform in the application.
+</p>
+            <p>In Workflow Channels and Email Templates, the additional information is available as <span class="UXElement">Additional Record Information</span> and has an associated user type.</p>
+        </MadCap:microContent>
+    </body>
+</html>

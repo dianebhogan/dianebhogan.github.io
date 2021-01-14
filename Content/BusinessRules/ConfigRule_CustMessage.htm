@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Business Rules" />Configuring rules to generate custom messages</h1>
+        <p>System administrators can configure rules to produce custom messages for fields that only display for Hard and Soft errors.</p>
+        <p>
+            <img src="../Resources/Images/Admin/CustomMessage_HardSoftError.png" alt="" title="" class="thumbnail" />
+        </p>
+        <p>When rules trigger,  if a custom error is configured, the custom error is displayed.  If no custom error is configured, the standard system message is displayed.</p>
+        <p class="ProcedureIntro">To configure a rule to generate custom messages:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">
+Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png"></img> &gt; <b>Advanced</b> &gt; <b>Manage Rules</b>.
+</p>
+        <p class="StepResult">The Custom Logic Rules dashboard opens.
+</p>
+        <p class="L1Num" MadCap:autonum="2. ">To add a business rule, click <b>Add</b>.
+To edit an existing rule, click <b>Edit</b>.<br /></p>
+        <p class="StepResult">The Rule Details form opens.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Complete the form:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 175px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Dataform</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">This is the dataform where this rule will execute when the dataform is saved.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Method</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Choose from the list. For a list of Methods, see <MadCap:xref href="BusinessRuleMethods.htm" title="Business Rule Methods" alt="Business Rule Methods">Business Rule Methods</MadCap:xref>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Rule Title</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Provide an abbreviated explanation of what this rule does.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Rule Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1"><MadCap:variable name="MyVariables.ProductName" /> controls this field automatically. Rule Type is determined by the Method. To customize messages, the Rule Type must be Hard Error or Soft Error. </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Description</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Provide a more thorough explanation of what this rule is to accomplish.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Primary Trigger Field</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select the field that is going to cause the change. </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Primary Trigger Value</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Type the value of what is stored in the database for the Trigger Field.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Secondary Trigger Field</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select an additional trigger condition that must be met, if necessary.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Secondary Trigger Value</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Set the secondary trigger value.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Execution Pipeline</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Leave this set to <b>Default</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Execution Order</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This field controls the order in which rules execute. Rules execute from the lowest to the highest number. It may be necessary to look at other rules already configured on this dataform to determine the order of precedence for executing rules.</p>
+                        <p class="TableTextLeft"><b>Execution Order of Precedence</b>: Within the Rules system, there is a distinct order of precedence that occurs, that being HardError, SoftError, and BizLogic. This means that setting a field to a specific value automatically with BizLogic, then validating that field with a Hard Error will never occur in the correct order, as the Hard Error fires before the BizLogic fills the field. This order of precedence happens irrespective of the execution order placed on the configured rule:</p>
+                        <p class="L1Num1" MadCap:autonum="1. ">Hard Errors fire in execution order least to greatest.</p>
+                        <p class="L1Num" MadCap:autonum="2. ">Soft Errors fire in their order of execution.</p>
+                        <p class="L1Num" MadCap:autonum="3. ">Biz Logic fires in the order of execution set on each rule.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Save Action</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Will this rule be applied on Insert of a new dataform, or the update of an existing dataform, or on both?</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Workspace Template</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select the Workspace Template to which this rule applies.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Error Message Override</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Type your custom message. This rich text area field supports advanced formatting options including font selection, size, color, as well as additional formatting, such as bold, italics, and bullet points. This field is available when the Rule Type is Hard Error or Soft Error. The text in this field displays when the rule fires.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="4. ">Click <b>Save</b>.</p>
+    </body>
+</html>

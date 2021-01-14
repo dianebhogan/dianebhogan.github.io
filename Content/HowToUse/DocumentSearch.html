@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Document Search
+                        </h1>
+        <p>The Document Search module allows you to find documents across the system using filtered searches.&#160;This module uses <b>dtSearch</b>, a retrieval and full text search engine to search large numbers of system records efficiently, returning the results quickly.&#160;</p>
+        <p class="ProcedureIntro">To use Document Search:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">From the modules bar, select <b>Document Search</b>. You may have to click <b>View</b> to see the overflow list.</p>
+        <p class="StepResult">The Document Search dashboard opens.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Navigating/DocSearch.png" alt="" title="" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="2. ">Use <b>More Search</b> to filter the list.</p>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 204px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Procedure-Head-Header1">
+                    <th class="TableStyle-Procedure-HeadE-Column1-Header1">Parameter</th>
+                    <th class="TableStyle-Procedure-HeadD-Column1-Header1">What it does</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Show</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">Options, Active. Inactive, or All. This refers to the record IsActive flag</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Keywords / File Description</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Searches File description for matching text using a LIKE search.</p>
+                        <p>Searches in these areas:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">File Category</p>
+                        <p class="TableBullet" MadCap:autonum="• ">File Name</p>
+                        <p class="TableBullet" MadCap:autonum="• ">File Category</p>
+                        <p class="TableBullet" MadCap:autonum="• ">File Metatags</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Organization Name</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Workspace Name</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Entity Type (Dataform Name or Task or Organization or Contact or Activity</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Default Attribute for Entity Type (such as Case # or Task #)</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Fields with the Index this Field box checked.&#160; Searches actual DB Values, not decoded.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Workspace</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">Filters for selected Workspace</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Form</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">Select a dataform or an Organization, Contact, Activity, Task</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">File Source</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">Enabled when a dataform is selected.&#160;Choose the paperclip or a upload field on that dataform</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyE-Column1-Body1">Category</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Filters for files of the selected Category.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td colspan="1" class="TableStyle-Procedure-BodyB-Column1-Body1">Date Uploaded</td>
+                    <td colspan="1" class="TableStyle-Procedure-BodyA-Column1-Body1">Filters for documents uploaded between the selected dates.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Security</h2>
+        <p>Document search provides access to workspace documents where the logged in user is in the Workspace Users list.&#160;Documents in Workspaces to which the user does not have access are not displayed.</p>
+        <h2>Buttons</h2>
+        <table class="TableStyle-Procedure" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft"><b>Open File</b>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Download the file for viewing.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft"><b>Open Record</b>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Opens the record containing the file. Double-clicking the row does the same.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Category management</h2>
+        <p>Populate the name of the dataform on the Filter Value for the Lookup and that category would be limited to just that dataform. Leaving the filter value blank would allow the category to be available from all forms.</p>
+        <h2>Scheduled processes</h2>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col style="width: 191px;" class="TableStyle-Procedure-Column-Column1" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft"><strong>Document Index - Rebuild</strong>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Deletes and re-creates the indexes on the following tables: Orgs, Contacts, Tasks, Org Activities and Dataforms (file upload fields and paperclips). Optimizes file searches.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft"><strong>Document Index - Update</strong>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Updates the indexes on the following tables:&#160;Orgs, Contacts, Tasks, Org Activities and Dataforms (file upload fields and paperclips). Optimizes file searches.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>These processes make attached files easier to find in the system by either refreshing or removing and re-creating the indexes that point to those files.&#160;These indexes are rebuilt/refreshed for:</p>
+        <ul>
+            <li>Files attached to dataform paperclips (Core and PEO dataforms)</li>
+            <li>Files attached to dataform fields (Core and PEO dataforms)</li>
+            <li>Files attached to Organizations</li>
+            <li>Files attached to Contacts</li>
+            <li>Files attached to Tasks</li>
+            <li>Files attached to Activities</li>
+        </ul>
+        <p>Indexes generally contain the items of data on the file that we use to link to or search for the file - like an index in a book so that the searches are optimized.</p>
+        <h2>dtSearch keyword search help</h2>
+        <p>Using a <strong style="font-weight: bold;">*</strong> search option is more forgiving and can yield better search results. The <strong style="font-weight: bold;">*</strong> is used to match any number of characters. It is similar to the <b>%</b> (contains) search option. A <b>%</b> search with dtSearch performs differently,&#160;ignoring any records where the string before the wildcard does not stand alone:</p>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" cellspacing="0">
+            <col style="width: 36.7187%;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 63.2813%;" class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Search String</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Returned Results</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Business%</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Business File For Test.doc</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">Business*</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">Business File For Test.doc, BusinessRuleError.jpg</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Keyword search is any sequence of text, like a sentence or a question.&#160; </p>
+        <p>In keyword searches:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Use quotation marks around phrases.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Use <strong>+</strong> in front of any word or phrase that is required.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Use <strong style="font-weight: bold;">–</strong> in front of a word or phrase to exclude it.</p>
+        <p class="Example">Examples:</p>
+        <p class="Bullet2" MadCap:autonum="• ">banana pear "apple pie"</p>
+        <p class="Bullet2" MadCap:autonum="• ">"apple pie" –salad +"ice cream"</p>
+        <p>A Boolean search request consists of a group of words or phrases linked by connectors such as <b>and</b> and <b>or</b> that indicate the relationship between them.</p>
+        <p class="Example">Examples:</p>
+        <p class="Bullet2" MadCap:autonum="• "><b>apple and pear</b> - Both words must be present</p>
+        <p class="Bullet2" MadCap:autonum="• "><b>apple or pear</b> - Either word can be present</p>
+        <p class="Bullet2" MadCap:autonum="• "><b>apple and not pear</b> - Only <i>apple</i> must be present</p>
+        <p>If you use more than one connector,  use parentheses to indicate precisely what you want to search for. For example, <i>apple and pear or orange juice</i> could mean <i>(apple and pear) or orange</i>, or it could mean <i>apple and (pear or orange)</i>.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 440px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Use</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Use a <strong>?</strong>&#160; to match any single character.</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft"><b>appl?</b> matches <b>apply</b> or <b>apple</b></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Use a <strong>*</strong>&#160; to match any number of characters.</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft"><b>appl*</b> matches <b>application</b></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Use a <strong>~</strong> to extend a search to cover grammatical variations on a word.</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft"><b>apply~</b> matches <b>apply</b>, <b>applies</b>, <b>applied</b></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Use a <strong>%</strong> to find a word even if it is misspelled.</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft"><b>ba%nana</b> matches <b>banana</b>, <b>bananna</b></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Use <strong>#</strong> to look for a word that sounds like the word you are searching for and begins with the same letter.</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft"><b>#smith</b> matches <b>smith</b>, <b>smythe</b></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Use <strong>&amp;</strong> to find synonyms of a word in a search request.</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft"><b>fast&amp;</b> matches <b>quick</b></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Use the <strong>AND</strong> connector in a search request to connect two expressions, both of which must be found in any document retrieved.</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft"><b>apple pie and poached pear</b> would retrieve any document that contained both phrases</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Use the <strong>OR</strong> connector in a search request to connect two expressions, at least one of which must be found in any document retrieved.</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft"><b>apple pie or poached pear</b> would retrieve any document that contained apple pie, poached pear, or both</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Use <strong>NOT</strong> in front of any search expression to reverse its meaning. This allows you to exclude documents from a search.</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft"><b>apple sauce and not pear</b>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

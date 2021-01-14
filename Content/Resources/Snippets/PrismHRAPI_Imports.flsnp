@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <table style="width: 100%;mc-table-style: url('../TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 174px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">API Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select <b>PrismHR API</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Application Code</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Use a unique value to denote the PrismHR installation, such as <b>PrismHRAPI</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Application Name</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Description that displays in the ClientSpace lists. Use something to indicate the installation, such as <b>PrismHR API</b>.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Username</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">The username registered with the PrismHR API for this site.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Password</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">The password associated with the PrismHR Account Username&#160;for this site.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Description</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Provide a description.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Endpoint</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">A formatted URL pointing to the API services for the specific PrismHR client and site (must include the trailing <b>/</b> character). </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">For the <span class="UXElement">GetPayrollBatchCutoffDate</span> parameter, specify version 1.22 or higher of the PrismHR API. <span class="UXElement">Note</span>: Failure to update the version in the API Endpoint config results in the following error in the API log:  Error Processing Batch Control Info '202023.104', error=Unexpected character encountered while parsing value: }. Path 'PayrollBatchWithOptionsResponse', line 1, position 35., queue record will be in Pending status.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Secondary ID</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">An identifier used to enable the monitoring of all PrismHR clients at an installation.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Logging Level</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• ">The PrismHR Export process for Company Information and Employee/Employment information contains important log information to monitor the export activity  from ClientSpace to PrismHR.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">When set to Level 2 (Verbose), ALL log data is stored in the Scheduled Process History Table.&#160;This includes entry/status/exit entries for every PrismHR API call and ClientSpace action (up to the Import Phase).&#160;Errors and Information entries are created.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">When set to Level 1, only ERRORS are logged to the Scheduled Process History Table.</p>
+                        <p class="TableBullet" MadCap:autonum="• ">When Set to Level 0 (None), No log data is produced.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Active</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">When this option is selected, the configuration is active (enabled).</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Configuration ID</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">&#160;</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="ProcedureIntro">To configure Additional Parameters:</p>
+        <p>This is where you specify a set of name-value pairs to configure the process. </p>
+        <p>
+            <img src="../Images/Integrations/PrismParams.png" />
+        </p>
+        <ol>
+            <li>
+                <p>Click <span class="UXElement">Add Parameter</span>.<br />A new row opens.</p>
+            </li>
+            <li>
+                <p>Select from the following list to add parameters.</p>
+            </li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Procedure-Head-Header1">
+                    <th class="TableStyle-Procedure-HeadE-Column1-Header1">
+                        <p class="TableHead">Parameter </p>
+                    </th>
+                    <th class="TableStyle-Procedure-HeadD-Column1-Header1">
+                        <p class="TableHead">Value settings</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">AllowUserTypes</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Defines the types of users included in a user import:</p>
+                        <ul>
+                            <li><span class="UXElement">I</span>: Internal User. Someone who works for the PEO or someone at PrismHR.</li>
+                            <li><span class="UXElement">M</span>: Manager. Someone who works in payroll or human resources for a PEO&#160;client.</li>
+                            <li><span class="UXElement">A</span>: Trusted Advisor. Same as Manager but without an Employee ID. Used for consultants.</li>
+                            <li><span class="UXElement">E</span>: Employee.</li>
+                            <li><span class="UXElement">S</span>: Super User in the legacy HRPWE. Similar to <span class="UXElement">I</span>.</li>
+                            <li><span class="UXElement">C</span>: Client Manager in HRPWE.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">ContactImportBehavior</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li><span class="UXElement">Insert</span>/<span class="UXElement">Both</span>:&#160;Allows Import Queue record creation for Contacts in PrismHR but not in <MadCap:variable name="MyVariables.ProductName" />.</li>
+                            <li><span class="UXElement">Update</span>: For Contacts in PrismHR but not in ClientSpace, it does not create an Import Queue record. It updates existing ClientSpace Contacts with changes.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1" MadCap:conditions="SnippetConditions-Imports.Ongoing">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">DefaultProjectCode</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p MadCap:conditions="SnippetConditions-Imports.Ongoing" class="TableTextLeft">Defines where an employee portal case is created if no workspace match is found.  Uses ProjectCode from workspace settings.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1" MadCap:conditions="SnippetConditions-Imports.Ongoing">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">ExcludeCompanyFromSync</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li><span class="UXElement">0</span>: The Company Initial import map is included in the sync if the map is active (updates Company information and all other active Initial maps). <b>Note</b>: Initial sync of company data can be applied to individual workspaces using the option <b>Sync with PrismHR</b> on the Client Master. See <MadCap:xref href="../../Integrations/PrismHR_ClientSync.htm" title="client sync" alt="client sync" class="Heading">PrismHR Client Sync</MadCap:xref>.</li>
+                            <li><span class="UXElement">1</span>: The Company Initial import map is NOT included in the sync whether or not the map is active (all other active Initial maps are processed).</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">ExcludedContractTypes</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">ASO and HRO are the PrismHR Service Types that should not be imported into ClientSpace.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">ExcludeEmailDomains</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Email domains that should not be imported into ClientSpace.  Supports comma-separated list.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">ExcludeUserNames</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">User names that should not be imported into ClientSpace.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">FailureRetryTime</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li><span class="UXElement">0</span>: Reprocesses all failed Import Queue records.</li>
+                            <li><span class="UXElement">X</span>: Reprocesses failed Import Queue records with an UpdatedDate greater than X hours.</li>
+                            <li>If not present (default), failed Import Queue records are not reprocessed.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">GetPayrollBatchCutoffDate</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Remote Cutoff Date is the deadline for reporting payroll.</p>
+                        <ul>
+                            <li>
+                                <p><span class="UXElement">0</span>: Do not retrieve the Batch Control Remote Cutoff Date in the import.</p>
+                            </li>
+                            <li>
+                                <p><span class="UXElement">1</span>: Include the Remote Cutoff Date if available in the Payroll Batch in PrismHR.</p>
+                            </li>
+                            <li>
+                                <p>If GetPayrollBatchCutoffDate not present, defaults to <span class="UXElement">0</span>.</p>
+                            </li>
+                        </ul>
+                        <p class="TableTextLeft">GetPayrollBatchCutoffDate parameter requires version 1.22 or higher of the PrismHR API. Specify the version in the URL in <span class="UXElement">Endpoint</span>. For example, https://api.prismhr.com/api-1.22/services/.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1" MadCap:conditions="SnippetConditions-Imports.Ongoing">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">HRPRunImport</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li><span class="UXElement">0</span>: The files generated by the API Import appear in the Manage Import File List at status Ready for Import.</li>
+                            <li><span class="UXElement">1</span>: The files generated by the API Import automatically import into ClientSpace.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1" MadCap:conditions="SnippetConditions-Imports.Initial">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">InitialImportClients</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p MadCap:conditions="SnippetConditions-Imports.Initial" class="TableTextLeft">Sets how many queue records of each import map type are processed at a time.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1" MadCap:conditions="SnippetConditions-Imports.Initial">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">InitialMaxEmployeeCount</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Sets the threshold of maximum number of Employees to import during a scheduled process run.</p>
+                        <ul>
+                            <li> If <span class="UXElement">no</span> Value is set, it processes all Employees for Clients (up to the InitialImportClients count)&#160;during a scheduled process run. </li>
+                            <li>If a Value is set, after obtaining a list of Employees, if the number exceeds the parameter Value, no additional processing occurs for that run. Subsequent runs for the scheduled process resume the import, picking up where the last run ended when the maximum threshold was met. This parameter eliminates session timeouts for groups of Clients with high Employee counts.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1" MadCap:conditions="SnippetConditions-Imports.Initial">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">KeepLeadingZeros</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li><span class="UXElement">0</span>: Any leading zeros on CompanyID in PrismHR are stripped off before the Client Record is saved.</li>
+                            <li><span class="UXElement">1</span>: Leading zeroes on CompanyID are retained when importing records into ClientSpace.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1" MadCap:conditions="">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">NumberOfEvents</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Sets the max number of records to import per subscription record on each run of the HRPAPI_Ongoing import. Setting NumberOfEvents to 0 defaults the max records imported per subscription to 100. This parameter minimizes the risk of imports failing due to large record sets. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1" MadCap:conditions="">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">processvouchers</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li><span class="UXElement">0</span>: Queued Employee Payroll Vouchers are not processed immediately.</li>
+                            <li><span class="UXElement">1</span>: Employee Payroll Vouchers are processed as they are imported.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1" MadCap:conditions="">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">RequireBillingVouchers</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <ul>
+                            <li><span class="UXElement">0</span>: If Billing Vouchers cannot be located for a Client, the Payroll Voucher data is processed (will be missing all Billing related mapped fields). </li>
+                            <li><span class="UXElement">1</span>: The payroll is not processed for that Client (current behavior). If the parameter is not specified, it is assumed that RequireBillingVouchers=1 (current behavior).</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,801 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Troubleshooting" />Administration troubleshooting</h1>
+        <p>Administering an application can have its challenges.  Are you experiencing challenges?  Try using the following solutions to overcome those obstacles.</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>"The request failed with the error message: Object moved" Error when running merge</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p colspan="4"><b>Problem</b>: You attempt to run a merge and you receive the error: "The request failed with the error message: Object moved"</p>
+                <p colspan="4"><b>Cause</b>: The Merge template document is no longer attached to the merge under Merge Admin.</p>
+                <p colspan="4"><b>Solution</b>: Update the Merge Configuration with a Template Document.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" />   &gt; <b>Outputs</b> &gt; <b>Merges</b>.<br /></p>
+                <p class="StepResult">The Merge Admin dashboard opens.</p>
+                <p class="L1Num" MadCap:autonum="2. ">From the list, select the merge in question and click <b>Edit</b>.<br /></p>
+                <p class="StepResult">The Merge Admin Detail form opens.</p>
+                <p class="L1Num" MadCap:autonum="3. ">In <b>Template File</b>, click <img src="../Resources/Images/ICONS/ICON_upload.png" />  (<b>upload</b>) and browse to the appropriate document.</p>
+                <p class="L1Num" MadCap:autonum="4. "><b>Save</b> your changes.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Allow Import option is cleared on Organization</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: The allow import option on the Organization record appears to be cleared somehow and nobody seems to know who is clearing it.</p>
+                <p><b>Cause</b>: The system automatically clears this option when the Create Prospect link is selected in the header of the Organization.</p>
+                <p><b>Solution</b>: Log an Extranet case.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Activity search is missing salesperson’s activities</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: The Activity Search page on the Org is not displaying the Salespersons calendar events.  If you log in as a global admin, the activities appear correctly.</p>
+                <p><b>Cause</b>: Salesperson does not have access to the designated Sales workspace.  Activities such as Tasks, Notes, and Calendar events need to be attached to a workspace.  Before you select the Generate Quote link, a workspace has not been generated for the Organization, so any activity is attached to the default Sales Workspace set under <b>System Admin</b> &gt;  <b>App Settings</b> &gt; <b>Default Workspaces</b>.  If the salesperson in question is not set as a user of that workspace, the activities do not appear for them.</p>
+                <p><b>Solution</b>: Add the Salesperson to the default Sales Workspace.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Find the default sales workspace by navigating to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png"></img> &gt; <b>Advanced</b> &gt;&#160;<b>App Settings</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Go to <b>Workspaces</b> and open a workspace.</p>
+                <p class="L1Num" MadCap:autonum="3. ">In the <b>Action Center</b>, in the menu, select <b>Users</b>.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Click <b>Add</b> and select the user from the list then click <b>Ok</b>.<br /></p>
+                <p class="StepResult">This action adds the salesperson as a valid user of this workspace.</p>
+                <p class="L1Num" MadCap:autonum="5. ">Verify that the user can now see their Activities.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>All Dataform fields disabled on an Active dataform</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: When opening a dataform, the form is marked as Active, but all the fields on the form are disabled.  The form may or may not be secured.</p>
+                <p><b>Cause</b>: The client workspace has been marked Inactive, so all associated forms are also inactive.</p>
+                <p><b>Solution</b>: Re-Activate the workspace.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">First, determine with the client if they want the Workspace to be marked as inactive. There are valid business reasons for this.</p>
+                <p class="L1Num" MadCap:autonum="2. ">If this is not the case, go to the Client workspace in question.</p>
+                <p class="L1Num" MadCap:autonum="3. ">In the <b>Action Center</b> menu, select <b>Settings</b>.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Select the <b>Active</b> option.</p>
+                <p class="L1Num" MadCap:autonum="5. ">Click <b>Save</b>. </p>
+                <p>This action re-activates the workspace and all associated dataforms.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Calculated Commissions missing from Pricing Console Profit Matrix</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>:&#160;When we enter a Commission Detail record on a Client workspace, the System does not show the calculated commission amount in the Pricing Console Profit pop-up matrix.</p>
+                <p><b>Cause</b>: Misconfiguration of Sales Entity record causes Commission effective date to be set incorrectly.</p>
+                <p><b>Solution</b>: Correct the Sales Entity configuration and manually change commission record date for all auto-generated records.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to <b>Admin Workspace</b> &gt; <b>Sales</b> &gt; <b>Sales Entity</b>.<br /></p>
+                <p class="StepResult">The Sales Entity dashboard opens.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Open the Sales Entity record in question and look at the Commission information recorded:</p>
+                <p class="Indent1">
+                    <img src="../Resources/Images/Sales/SalesEntity_commission.png" class="thumbnail" />
+                </p>
+                <p class="L1Num" MadCap:autonum="3. ">Sales Entity records allow you to set up to 3 tiers of commissions for each sales entity.  In the example above the Sales Entity has two tiers or periods configured.</p>
+                <p class="L1Num" MadCap:autonum="4. ">The first period starts the first year (1) of the Client's Contract Effective date and calculates commission based on 4.5% of Admin on the Client.</p>
+                <p class="L1Num" MadCap:autonum="5. ">The second period starts in the 3rd year (3) of the Client's contract and calculates commission based on 2.0% of Profit on the Client.</p>
+                <p class="L1Num" MadCap:autonum="6. ">So, if the Client's contract effective date was March 1, 2014, the Salesperson would be paid 4.5% of the admin fee starting March 1, 2014, and running through February 28, 2016, then starting in the third year of the contract (March 1, 2016)</p>
+                <p class="L1Num" MadCap:autonum="7. ">The salesperson would be paid 2.0% of the Admin collected from the client.**</p>
+                <p>After correcting the Sales Entity record you will need to fix the Sales commission detail records for each affected workspace.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to the workspace in question and open the Commission detail records for the affected Sales user or Agent.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Update the <b>Effective Date</b> field on the Commission record to the appropriate value. This effective date is calculated on Workspace creation using the Contract Effective Date and the Start Year information configured above on the Sales Entity record.</p>
+                <p class="L1Num" MadCap:autonum="3. "><b>Save</b> the commission detail record(s) and review the Profit Matrix on the client again to ensure commissions are being calculated properly.</p>
+                <p>Information about Sales Entity Configuration can be found by reviewing the contextual help text.  On any dataform, point to the field label and if the label changes color, then there is related help text to be found by clicking the label.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Cannot Login or Assume an external user</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: A user cannot login and as a Global Admin you are unable to assume the external user.</p>
+                <p><b>Cause</b>: The external user account is linked to a template workspace.</p>
+                <p><b>Solution</b>
+                </p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Users</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Search for the user.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Change the Default Workspace to that user's company workspace.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Cause, nature of injury, or body part missing on Workers' Comp Claim</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: The cause, nature, or body part drop-down list is not appearing when filling out a Workers' Compensation Claim.</p>
+                <p><b>Cause</b>: The metadata form for each of those fields is not configured. </p>
+                <p><b>Solution</b>: The metadata form needs to be set on the Lookup Group detail.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Lookups</b>.<br /></p>
+                <p class="StepResult">The Lookups dashboard opens. The lookup groups that correspond with the three lookup fields are <b>AccidentCause</b>, <b>TypeofInjury</b>, and <b>InjuredArea</b>.</p>
+                <p class="Indent1">
+                    <img src="../Resources/Images/Issues/LookupList.png" class="thumbnail" />
+                </p>
+                <p class="L1Num" MadCap:autonum="2. ">Locate a lookup group and click <b>Edit</b>. <br /></p>
+                <p class="StepResult">Use the <b>%</b> quick search to quickly locate each one.<br />The Lookup Details form opens. The following example shows the Lookup Details for AccidentCause.</p>
+                <p class="Indent1">
+                    <img src="../Resources/Images/Issues/LookupDetails.png" class="thumbnail" />
+                </p>
+                <p class="L1Num" MadCap:autonum="3. ">In the <b>Action Center</b>, click <b>Open Metadata</b>.<br /></p>
+                <p class="StepResult">The metadata form opens.</p>
+                <p class="L1Num" MadCap:autonum="4. ">For the lookup group in question, select a value.</p>
+                <p class="L1Num" MadCap:autonum="5. ">Click <b>Save</b>.</p>
+                <p class="L1Num" MadCap:autonum="6. ">Repeat the procedure for each group: <b>AccidentCause</b>, <b>TypeofInjury</b>, and <b>InjuredArea</b>.</p>
+                <p>After the metadata is configured, each individual drop-down value in the detail fields can be configured to show or hide based on the selected Category field.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Certificates of Insurance are not being emailed properly</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: A ClientSpace user completes and authorizes a Certificate of Insurance, and an email is sent to the Certificate Holder appropriately, but the person who authorized the Cert will sometimes not receive the email.</p>
+                <p><b>Cause</b>: The system is designed to automatically email the Certificate Holder and the person who created the certificate, not the person who accepts or authorizes the certificate.  If these are the same person, they will receive the email, but if the certificate is created by person #1 and accepted / authorized by person #2, only person #1 will receive the email.</p>
+                <p><b>Solution</b>: If you are authorizing a cert and were not the creator of the cert:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">In the <b>Action Center</b>, click <b>Subscribers</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Add yourself to the notification list on the cert manually.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Client stuck in Pending Termination status</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Customer has a client workspace that is in Pending Termination status and the status is not getting changed to Terminated by the scheduled process. The TerminatePending scheduled process normally compares the run date of the scheduled process and the Termination date on the Term form and any Client where the Termination date is equal to or lesser than the date of the scheduled process, and the Status is Pending Termination, the status is changed to Terminated.</p>
+                <p><b>Cause</b>: Scheduled process has not run.</p>
+                <p><b>Solution</b>: Manually run the scheduled process.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Check the scheduled process by going to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;  <b>Advanced</b> &gt; <b>Scheduled Processes</b>.<br /></p>
+                <p class="StepResult">The Scheduled Processes Admin list is displayed.</p>
+                <p class="L1Num" MadCap:autonum="2. ">From the list, look for <b>Terminate Pending</b>.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Make sure it is scheduled properly, specifically look at the next run date. The scheduled process is typically set to run hourly at least every weekday and the next run date should be today.</p>
+                <p class="L1Num" MadCap:autonum="4. ">If the Next Run Date is set to a future date, change it to today and manually run the scheduled process.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Commissions not included in gross profit calculations</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Salesperson commissions are not included in Gross Profit Calculations.</p>
+                <p><b>Cause</b>: Effective Date of the Commission record is set to a future date, so it is not included in pricing calculations.</p>
+                <p><b>Solution</b>: Either add a current commission record or edit an existing record to make the effective date less than or equal to the current date.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">From the modules bar, select <b>Admin Workspace</b>.<br /></p>
+                <p class="StepResult">The Admin Workspace tiles display.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Select <b>Sales Entity</b>.<br /></p>
+                <p class="StepResult">The Sales Entity dashboard opens.</p>
+                <p class="L1Num" MadCap:autonum="3. ">From the list, select the salesperson in question and click <b>Edit</b>.<br /></p>
+                <p class="StepResult">The Sales Entity form opens.</p>
+                <p class="Indent1">
+                    <img src="../Resources/Images/Sales/SalesEntity_effectiveDate.png" class="thumbnail" />
+                </p>
+                <p class="L1Num" MadCap:autonum="4. ">Check the <b>Effective Date</b> on the record.</p>
+                <p class="L1Num" MadCap:autonum="5. ">If the commission structure is age banded, a new record may need to be created to cover the current time period.</p>
+                <p class="L1Num" MadCap:autonum="6. ">Otherwise, edit the existing record to include the current time period by changing either the <b>Effective  Date</b> (start) or <b>Expiration Date</b> (end) of the existing record.</p>
+                <p class="L1Num" MadCap:autonum="7. "><b>Save</b> your changes.</p>
+                <p>For more information about the PEO pricing system and how commissions work, log an Extranet case.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Configured links do not display in form header</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>:&#160;You have configured a custom link, but when you go to a dataform with the configured link, sometimes it does not display.</p>
+                <p><b>Cause</b>: The dataform is a single form and has actually not yet been saved. Because the system dynamically generates the fields when you open the dataform, it looks like the form is there, when there is no copy of the form attached to the workspace.</p>
+                <p><b>Solution</b>: Make changes and save the form or set the Custom Link to <b>Display when Adding</b>.</p>
+                <p>Dataform Links require a dataform in which to attach.</p>
+                <p>Two ways to resolve this:</p>
+                <p class="Bullet1" MadCap:autonum="• ">Any change that is saved to the dataform causes the page to re-load, which loads the header and display the links.</p>
+                <p class="Bullet1" MadCap:autonum="• ">Alternately you can set the link to display on Add by selecting the <b>Display this link when adding</b> option on the link configuration and saving the change.</p>
+                <p>
+                    <img src="../Resources/Images/Dataform/DisplayWhenAdding.png" class="thumbnail" />
+                </p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Critical case notifications being received by users not working on the case</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You have departmental manager users that are receiving case notifications for Client Service Cases in which they are not the Owner or Assigned To.</p>
+                <p><b>Cause</b>: There is logic in the system when the priority is Critical to also notify the Admin Role for the Assigned To Department. For example, the Users in the Benefits Reconciliation and Administration_Admin role were notified because the Assigned To user is in the Benefits Reconciliation and Administration Department.</p>
+                <p><b>Solution</b>: There is no way to disable Critical Case notifications on a per person or department basis.  It is not recommended to disable them for an entire organization.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>CSC Escalation Notices not being sent to escalation users</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: A user has been set as the level 1 or level 2 escalation user on a particular Client Service Case type, but they are not receiving notices, or are receiving them outside of the expected escalation times.</p>
+                <p><b>Cause</b>: Misconfiguration</p>
+                <p><b>Solution</b>: Several items need to be configured properly for these escalation notices to be delivered to the appropriate users.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">The ServiceCaseNotification scheduled process needs to be configured to fire at or less than the lowest escalation time, otherwise you can create cases with 1 hour escalations but the notifications will only cue up for the next run of the scheduled process.</p>
+                <p class="L1Num" MadCap:autonum="2. ">To be notified, the user needs to be in a role containing the entity biz_ClientServiceCase_Email_Notifications.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Check if the user is in a role containing this entity by going to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Security</b> &gt; <b>Roles</b>.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Add Search filters for the User Name and the Entity Name <b>of biz_ClientServiceCase_Email_Notifications</b>.</p>
+                <p class="L1Num" MadCap:autonum="5. ">Click <b>Search</b>.</p>
+                <p class="L1Num" MadCap:autonum="6. ">If there are no results, remove the Entity Name search parameter and re-search.</p>
+                <p class="L1Num" MadCap:autonum="7. ">Edit an appropriate role and Add the <b>biz_ClientServiceCase_Email_Notifications</b> with <b>View</b> rights.</p>
+                <p class="L1Num" MadCap:autonum="8. "><b>Save</b> the record.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Data will not merge to Presentation tabs on Excel Merge</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You attempt to run an Excel merge and the data appears to be merging to the Data (CSExport) tab, but none of your formulas or presentation tabs seem to work.</p>
+                <p><b>Cause</b>: Server Side Merge does not have rights to Edit document.  The older Security Policy Editor method obtained these rights by default.</p>
+                <p><b>Solution</b>: Allow the data to process to the other tabs by clicking <b>Enable Editing</b> at the top of the Excel document.</p>
+                <p>
+                    <img src="../Resources/Images/Issues/EnableEditing.jpg" class="thumbnail" />
+                </p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Dataform not listed within the drop-down list</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: When creating a new or editing an existing scheduled template task trigger, the dataform that you wish to trigger the task from is not listed.</p>
+                <p><b>Cause</b>: The Task Trigger dataform list will not show tab dataforms.</p>
+                <p><b>Solution</b>: Use main dataform when creating trigger.</p>
+                <p class="ProcedureIntro">To schedule a task off a field on a tab dataform:</p>
+                <p class="Bullet1" MadCap:autonum="• ">Select the main form and the tabbed fields will appear listed with the main form fields.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Dataform or Task fields do not enable</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Trying to save changes to an inactive Task or Case, most commonly trying to re-activate using a Header Link, but the Form remains disabled.</p>
+                <p><b>Cause</b>: Form is attached to a disabled workspace.</p>
+                <p><b>Solution</b>: If changes to the form are necessary, you must re-activate the workspace to make the changes.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to the workspace in question. To find inactive workspaces, from the Clients list, in <b>More</b>, select <b>All</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">From the list, select the workspace in question and click <b>Edit</b>.<br /></p>
+                <p class="StepResult">The Client form opens.</p>
+                <p class="L1Num" MadCap:autonum="3. ">At the bottom of the Client form, select the <b>Active</b> option.</p>
+                <p class="Indent1">
+                    <img src="../Resources/Images/WorkspaceLandingPage/Workspace_Active.png" class="thumbnail" />
+                </p>
+                <p class="L1Num" MadCap:autonum="4. "><b>Save</b> your changes. You will then be able to update your task or Dataform.</p>
+                <p class="L1Num" MadCap:autonum="5. ">When completed, determine whether the Workspace should be inactivated and if so, reverse the steps to activate the workspace.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Delete Role is not working</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: The Delete button in Role Admin does not appear to work. You get a confirmation pop-up and click Yes. The role row disappears from the list, but it is back when you Search.</p>
+                <p><b>Cause</b>: If the role being deleted is a Departmental Role (_Member or _Admin), they are System Roles and are linked to the department.</p>
+                <p><b>Solution</b>: You cannot delete roles with <b>_Admin</b> or <b>_Member</b>. These roles are associated with Departments and the association keeps them from being deleted.  If you need to delete the entire department and associated roles, log an Extranet case. There are possible repercussions when making this change. <MadCap:xref class="Heading" href="../Security/OrgWorkspaceSecConfig.html">See Configuring Organization and Workspace Security</MadCap:xref>.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Duplicate Employee in Dataform list</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Open a Client Workspace and go to Employees and one or more of the employees in the list appear to have duplicate records.</p>
+                <p><b>Cause</b>: Inner Join in List Select statement causing multiple rows to come back due to multiple active Employment records.</p>
+                <p><b>Solution</b>: Inactivate the appropriate Employment record.</p>
+                <p>To inactivate the appropriate Employment record, you must first understand how the historical employment records are generated.  When a change for an employee job history (employment) record arrives in the system, the original record is cloned, and then inactivated. The original record is then updated to reflect the new changes before being saved.  This process should leave only one record in the system with the IsActive flag selected.  Sometimes however this process may fail, leaving multiple employment records marked as IsActive.</p>
+                <p>The Employee dataform list will erroneously join the employee once to each of these records, resulting in a list containing seemingly duplicate employees when there is in fact only one employee records and multiple employment records.  </p>
+                <p class="ProcedureIntro">To correct the issue:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Open one of the employee records.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Using the header link, open each employment record and look at the Administrative fields at the bottom of the records to find the RecordID.</p>
+                <p class="L1Num" MadCap:autonum="3. ">The Employment record with the lowest ID number (oldest record) should remain Active. (IsActive option should be selected.)</p>
+                <p class="L1Num" MadCap:autonum="4. ">All other Employment records for this employee should have the IsActive option cleared to inactivate them. </p>
+                <p class="L1Num" MadCap:autonum="5. ">Remember to <b>Save</b> your changes.</p>
+                <p class="L1Num" MadCap:autonum="6. ">As you inactivate these Employment records, you will see the duplicate employee records eliminated from the list.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Duplicate Employment records in ClientSpace</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: In reviewing Employee Information in ClientSpace, it is reported that some employees have multiple employment records, all but one of which are inactive.</p>
+                <p><b>Cause</b>: Employment is a historized form -  storing a historical track of Employee job changes.</p>
+                <p><b>Solution</b>: During the historize process the current record is cloned when there are changes and then saved as inactive, then the current record is updated and saved as the IsCurrent record. This is done to preserve the foreign key relationships between the Employment record and any child records it may have such as I-9 records. There should only be one active employment record at any given time.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Error when using Pricing Workflow: "This RFP cannot be submitted because there is a lock on this FEIN."</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You are attempting to move a Client Workspace through the pricing workflow. The workspace has related companies already in ClientSpace when you receive the error: "This RFP cannot be submitted because there is a lock on this FEIN."</p>
+                <p><b>Cause</b>: Related Client Workspace is locked to prevent accidental duplication of FEIN on unrelated companies.</p>
+                <p><b>Solution</b>: Unlock related Workspace</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Find the related workspace that is already in Client status and navigate to the Client Master using Workspace Search.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Clear the <b>Locked</b> option and <b>Save</b> the record.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Try moving the new workspace through pricing again.</p>
+                <p class="L1Num" MadCap:autonum="4. ">The appropriate workspace will be locked during the pricing process.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Field security behaving differently in NEXT</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Security behaves differently in NEXT than it does in Classic in that in Classic users have access to the fields in a specific fieldset, but in NEXT they do not.</p>
+                <p><b>Cause</b>: In Classic, a secured fieldset only needed View rights to edit the fields inside it.  In NEXT, the user needs to be in a role with View and Edit rights.</p>
+                <p><b>Solution</b>: Add Edit rights to the Role that includes the fieldset Entity in question.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" />  &gt; <b>Security</b> &gt; <b>Roles</b>.<br /></p>
+                <p class="StepResult">The Security Roles dashboard opens.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Search for Roles with the security entity in question. This should be in the format gen_DataformName_FieldsetName.</p>
+                <p class="Indent1">
+                    <img src="../Resources/Images/Security/SecurityRoleEntities_FieldSecurityEditRights.png" class="thumbnail" />
+                </p>
+                <p class="L1Num" MadCap:autonum="3. ">Ensure that you update the role selections to include <b>View</b> and <b>Edit</b> as in the example.</p>
+                <p class="L1Num" MadCap:autonum="4. "><b>Save</b> your settings.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Field value still required on Dataform cloning trigger</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You are attempting to set up a trigger condition for Dataform Cloning  using the Empty or Not Empty options, which should not require a Dataform Field Value, but that field is still required to be able to save the form.</p>
+                <p><b>Cause</b>: Bug in the JavaScript on the page.</p>
+                <p><b>Solution</b>: Fill the Dataform field value with a value which is appropriate for the Trigger field and save the form. The value clears and the Dataform field value marked not required on Save.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Limited or no access to Workspaces</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You have a user working in the system, but they do not appear to have access to all workspaces. Some of them don't appear in the Workspace Search list.</p>
+                <p><b>Cause</b>: User account is not on the Template Workspace User List.</p>
+                <p><b>Solution</b>: Add the user account to the template user list.</p>
+                <p class="ProcedureIntro">To add users to the Workspace list:</p>
+                <p>Add the User directly to the Workspace. This may be necessary for installations that have lots of Workspaces, or complex TOC security.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Workspace Templates</b>.<br /></p>
+                <p class="StepResult">The Workspace Template Search dashboard opens.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Open the workspace template in question.<br /></p>
+                <p class="StepResult">The template opens.</p>
+                <p class="L1Num" MadCap:autonum="3. ">In the <b>Action Center</b>, select <b>More Options</b> &gt; <b>Users</b>.<br /></p>
+                <p class="StepResult">The list of users that are pre-filtered for this workspace are displayed.</p>
+                <p class="Indent1">
+                    <img src="../Resources/Images/WorkspaceLandingPage/WorkspaceUserAccess.png" />
+                </p>
+                <p class="L1Num" MadCap:autonum="4. ">Click <b>Add</b>.<br /></p>
+                <p class="StepResult">The Add Workspace Users form opens.</p>
+                <p class="L1Num" MadCap:autonum="5. ">From the list, select the user in question and click <b>Ok</b>.<br /></p>
+                <p class="StepResult">The user is added to the Workspace Users list.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Missing Create Prospect link on Organization Header</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: The Create Prospect link does not appear on the header of Organizations.</p>
+                <p><b>Cause</b>: Missing security</p>
+                <p><b>Solution</b>: The Create Prospect link has its own security and logic behind it that determines how it presents. For this link to be available, the user must have edit rights to the organization, either through their user or a role in which they are a member being present on the security tab of the organization with Edit rights to that Org.  There is also template logic that determines how the link will react when selected. If the user has access to a single template, the Create Prospect link will create a workspace from that template.  If the user has access to multiple templates, the Create Prospect link will present the user with a list of these template workspaces and allow them to choose which one to clone.  There are two security Entities that come into play in the PEO system for displaying and populating the Create Prospect link: the <b>CRM</b> entity as well as the <b>template_YourTemplateName_member</b> entity.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">First, the user will either need to be a Global Admin, or be included on the Security tab of the Organization in question with Edit rights to the Organization (normally either the Sales user that created the organization or the Admin for that users default department).</p>
+                <p class="L1Num" MadCap:autonum="2. ">The user will also need to have the <b>Can Create Workspaces</b> option selected on the user profile.</p>
+                <p class="L1Num" MadCap:autonum="3. ">The CRM Entity controls Organization access. To generate workspaces from an Organization, you will need Edit access to the organization.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Workspaces are generated from templates, so to have access to this functionality, the user will need template member access.</p>
+                <p class="L1Num" MadCap:autonum="5. ">The format for template member entities is the template name, bracketed by the words 'template' and 'member so:  'template_YourTemplateName_member'.</p>
+                <p class="L1Num" MadCap:autonum="6. ">Both of these entities should be added to a role in which the user belongs under the Role Admin dashboard located under <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Roles</b>.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Options missing when you add filters to Ad-Hoc Report</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You are creating an Ad-Hoc report and when you add multiple filters to the report, some of the filters do not have all of the options that you would expect.</p>
+                <p><b>Cause</b>: Filters in the Izenda reporting tool are additive, so if the first filter in say a pricing report selects only workspaces in the Prospect status, the second filter for Pricing State will be affected - if there are no Prospects in Georgia, Georgia will not appear as a valid option in the Pricing State filter list.</p>
+                <p><b>Solution</b>: If you do not want this behavior to occur, simply move your least restrictive filters to the top of the filter definition page.  In the example above, moving the Pricing State filter above the Status filter will resolve the issue.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Organization created via SFDC API Assigned To incorrect user</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Organizations created through the SFDC API are being generated with an AssignedTo user of Salesforce Service, instead of the appropriate sales user.</p>
+                <p><b>Cause</b>: No matching (or blank) Sales user email address in <MadCap:variable name="MyVariables.ProductName" /> or Salesforce.</p>
+                <p><b>Solution</b>: Check the Sales user account email address in <MadCap:variable name="MyVariables.ProductName" /> and Salesforce.  If the values do not match, update one or both  email addresses so they are identical in both systems, then re-run the Salesforce Sync.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Organization dashboard list crashes on open</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You are attempting to open the Organization Dashboard, but on open, when the list refresh should happen, no records are returned, and the entire list disappears.</p>
+                <p><b>Cause</b>: Timeout issue on the initial load of data into the list. This is caused by too many records being returned in the default search.</p>
+                <p><b>Solution</b>: Reset the default rows per page returned to the list.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>App Settings</b>.<br /></p>
+                <p class="StepResult">The App Settings form opens.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Check the <b>Rows per Page</b> setting. It is likely set to a very high number.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Reset the <b>Rows per Page</b> to a more reasonable number, we recommend 250.</p>
+                <p class="L1Num" MadCap:autonum="4. "><b>Save</b> the record.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Payroll statistics getting regenerated causing duplicate statistics for PayPeriods</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: When reviewing Client payroll statistics information, you find the PayPeriod amounts are double, triple or even more times greater than they should be.</p>
+                <p><b>Cause</b>: Missing data fields on the Voucher import records, or mis-configured Import Configs cause the fkPayrollStatisticsID to not get updated, which in turn causes dupe Payroll Statistics records to be produced.</p>
+                <p><b>Solution</b>: The process that generates the Payroll Statistics records and updates the vouchers uses many concurrent Voucher record fields to tie these records together - these fields include Voucher.State, Voucher.CompCode,, Voucher.STARTDATE,  Voucher.ENDDATE, Voucher.PAYDATE, AND Voucher.PAYCYCLE.  If any of these fields are missing either from the Import Config, or the Voucher record that is being produced from the payroll system, the Voucher updates will fail.  The following steps will help to determine the cause, and associated resolution for the issue.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Imports</b> &gt; <b>Manage Import</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Examine the Import Configuration for the Voucher files, and make sure that each of the fields: Voucher.State, Voucher.CompCode, Voucher.STARTDATE,  Voucher.ENDDATE, Voucher.PAYDATE, AND Voucher.PAYCYCLE, are in the configuration.  Make note of the appropriate field name from the voucher file being produced by the payroll system.</p>
+                <p class="L1Num" MadCap:autonum="3. ">If any of these fields are missing, update the Import Config to include them by first showing inactive fields, and re-activating the field for import.  If the field is missing, add it to the import configuration.</p>
+                <p class="L1Num" MadCap:autonum="4. ">If all of the fields appear on the import configuration, the problem most likely is in the imported file itself.</p>
+                <p class="L1Num" MadCap:autonum="5. ">Check the Voucher file by going to <b>System Admin</b> &gt; <b>Imports</b> &gt; <b>Manage Import</b>.</p>
+                <p class="L1Num" MadCap:autonum="6. ">Open the record in question by double-clicking in the list or highlighting the record and selecting <b>Details</b>.</p>
+                <p class="L1Num" MadCap:autonum="7. ">Choose <b>View File</b> and look for each of the above fields, ensure the column names match the import configuration and that the columns hold data.  If they do not, correct the issue.</p>
+                <p class="L1Num" MadCap:autonum="8. ">When you are sure the fields are properly named, populated and configured for import, and can see the fields being filled on the voucher records, create an Extranet case to have the duplicate Payroll Statistics records removed from your system, and the newly generated records synchronized with the associated voucher records.</p>
+                <p>If you are unable to determine the cause, or unable to re-configure your imports, log an Extranet case.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Pricing Console is not showing external commissions</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: There are zeros listed for external commissions in the client pricing console, even though there is a broker attached to the client.</p>
+                <p><b>Cause</b>: The Effective Date of the commission record is set for a date not yet recognized by the system as it is in the future.  This makes the commissions not effective at the current time.</p>
+                <p><b>Solution</b>:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">From the Workspace landing page, at the bottom, select <b>Sales</b>  &gt; <b>Commission</b>.<br /></p>
+                <p class="StepResult">The Commission dashboard opens.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Select the appropriate commission record.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Change the <b>Effective Date</b> to a date prior to or the current date. Example: Today's date is 5/1/15, change it to 5/1/15 or an earlier date such as 4/15/15.</p>
+                <p class="L1Num" MadCap:autonum="4. "><b>Save</b> the record.</p>
+                <p>The system will now recognize the commission record as being effective.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Quick Create link displaying on Client Master</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: The quick create link (Add Codes) is displaying on the Client Master page in ClientSpace. This link should be hidden on the Client Master so that codes may only be added through the Pricing Console.</p>
+                <p><b>Cause</b>: Custom Link configuration has been changed to remove the Pinned Open configuration</p>
+                <p><b>Solution</b>: Because of the way the links are generated in the right navigation menu, this link needs to be Pinned Open. The right navigation dynamically generates and displays the list of unpinned links, so the quick create link that was hidden when the page loads, is dynamically re-added to the page when you select More. Edit the Custom Link configuration for this link and ensure the Pinned Open option is selected.</p>
+                <p>
+                    <img src="../Resources/Images/Issues/PinnedOpen.png" class="thumbnail" />
+                </p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Receive hard error on Pricing Submit: Workers' Comp Below Cost</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You are a Global Admin attempting to submit pricing with deep Workers' Comp discounts, but the system throws a hard error about the Comp Pricing being below cost.</p>
+                <p><b>Cause</b>: There is validation that happens during the submit process to ensure the cost to billing ratio is not exceeded.  In some cases, however, you may want to forgo these validations as you will make up any losses through another portion of pricing.</p>
+                <p><b>Solution</b>: Disable the validation on submit using the Override Validations option on the Pricing Batch dataform.  Select this secured option will allow a Global Admin or administrative user with appropriate rights to skip the pricing validations for this batch.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Report is missing columns in Business Intelligence</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You have designed an Ad Hoc report and when you view it in Ad Hoc Reporting it is too wide for the page, but a scroll bar allows you to access the missing columns.  Opening the report in Business Intelligence however these columns are missing and inaccessible.</p>
+                <p><b>Cause</b>: <b>Enable Responsive Design</b> feature is enabled on the report.  This feature, introduced in a version 6.9.0.6 of Izenda reporting makes the report columns responsive to changing page size, such as on a tablet or mobile device and removes columns from the right side of the report to allow it to fit the current screen.  This will even drop columns on long reports that will not fit within the monitor space.  This feature is enabled by default on reports.</p>
+                <p><b>Solution</b>: There are multiple solutions to this issue which you use should be based on how frequently the report is accessed and in what format</p>
+                <p><span class="UXElement">Resize solution</span>: Report is mostly used on a monitor and fits within the screen:</p>
+                <p>For cases where the report will rarely need to be resized because it is not used by mobile users and fits nicely into the desktop real estate we recommend changing the zoom level in the browser - this is easy for the end user to do without having to make changes to the report that would affect all users.  To change the zoom level:</p>
+                <p><span class="UXElement">Internet Explorer</span>: Do <span class="UXElement">one</span> of the following:</p>
+                <ul style="list-style-type: square;">
+                    <li>Press <b>Ctrl</b> and use the scroll wheel of your mouse or use <b>Ctrl -</b> (Control + Minus or Dash key) to zoom out</li>
+                    <li>OR use the Zoom level in the lower right corner of the browser  to adjust the zoom to an appropriate level.</li>
+                </ul>
+                <p><span class="UXElement">FireFox</span>: Do <span class="UXElement">one</span> of the following:</p>
+                <ul style="list-style-type: square;">
+                    <li>Press <b>Ctrl</b> and use the scroll wheel of your mouse or use <b>Ctrl -</b> (Control + Minus or Dash key) to zoom out.</li>
+                    <li>OR use the Zoom by going to <b>Settings</b> &gt; <b>Zoom</b> in the upper right of the browser  to adjust the zoom to an appropriate level.</li>
+                </ul>
+                <p><span class="UXElement">Chrome</span>: Do <span class="UXElement">one</span> of the following:</p>
+                <ul style="list-style-type: square;">
+                    <li>Press <b>Ctrl</b> and use the scroll wheel of your mouse or use <b>Ctrl -</b> (Control + Minus or Dash key) to zoom out.</li>
+                    <li>OR use the Zoom by going to <b>Settings</b> &gt; <b>Zoom</b> in the upper right of the browser  to adjust the zoom to an appropriate level.</li>
+                </ul>
+                <p><span class="UXElement">Change Report Settings</span>: Report does not easily fit within the monitor screen area</p>
+                <p>When you do not want to  constantly resize the report and it is rarely used by mobile applications that would require responsive design, you can disable this feature on a report by report basis.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Open the report in design mode.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Click the <b>Style</b> tab of the report.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Go to the series of options that affect page visualization.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Clear the <b>Enable Responsive Grid</b> option.</p>
+                <p class="L1Num" MadCap:autonum="5. "><b>Save</b> the report.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Scheduled Processes not running, not stuck in running state</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Client calls because their scheduled processes, such as send mail, do not appear to be running, but they are not hung up in the running state.</p>
+                <p><b>Cause</b>: There is a scheduled process on the Virtual Hosting server (Extranet) that kicks off the scheduled processes on the hosted client sites.  If this process hangs up on Extranet, it will never start the client processes.</p>
+                <p><b>Solution</b>:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Open the Extranet and go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Scheduled Processes</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Check the Scheduled Processes to see if the Kickoff Client Processes is stuck in the Running state.</p>
+                <p class="L1Num" MadCap:autonum="3. ">If so, edit this process and clear the <b>Running</b> option and click <b>Save</b>.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Manually re-run this process by selecting it in the list and clicking <b>Run Process</b>.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>SendMail or other Scheduled Process does not appear to be working</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Client calls because a scheduled process they expect to have run (SendMail for example) does not appear to be working.  When you examine the scheduled processes, the one in question has a last run time and is active.  The process also appears to be currently running.</p>
+                <p><b>Cause</b>: Sometimes the scheduled processes will hang - they start, but then fail prior to completion.  If this happens, the Running flag that is set at the beginning of the scheduled process never gets reset, since the system only allows one instance of a running process, it will not restart until the Running flag is reset.</p>
+                <p><b>Solution</b>: Reset the Running flag</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Manually open the scheduled process and clear the <b>Running</b> option to reset this flag.</p>
+                <p class="L1Num" MadCap:autonum="2. "><b>Save</b> and close the record.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Manually run the process using <b>Run Process</b> from the Scheduled Process dashboard.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Terminated user still appears in drop-down lists</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You have an ex-employee who has been terminated, their ClientSpace account de-activated, but the user name still appears in drop-down lists such as on the Client Team dataform.</p>
+                <p><b>Cause</b>: Inactive user is still a Role Member for the role associated with the list.</p>
+                <p><b>Solution</b>: Clean up user roles</p>
+                <p>You can cleanup user roles by removing users from the role or removing roles from the user.</p>
+                <p><span class="UXElement">CASE 1</span>: Remove the user from the Role:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Find out which role is associated with the lookup field (drop-down) that you need to fix by going to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Dataform Admin</b> &gt; <b>Form Fields</b>. The role is represented by the alphanumeric string stored in the Related Fields field.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Copy the info in the Related Fields area and go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Security</b> &gt; <b>Roles</b> and find the Role ID that was stored in Related Fields.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Open the record by clicking <b>Edit</b> or double-clicking the row.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Select the <b>Users</b> tab.</p>
+                <p class="L1Num" MadCap:autonum="5. ">Select the <b>Show Inactive</b> option and search.</p>
+                <p class="L1Num" MadCap:autonum="6. ">You should now be able to highlight and delete the user name from the role list.</p>
+                <p><span class="UXElement">CASE 2:</span> Remove the Roles from the User:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Open the user profile in question by going to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Users</b> <b>~User Profile~</b> &gt; <b>Roles</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Select each of the Roles on this tab and delete them.</p>
+                <p class="L1Num" MadCap:autonum="3. "><b>Save</b> the record.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Current Year is not available for OSHA Reports</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You attempt to run the OSHA or OSHA 300 report in ClientSpace, but the Year that you need to run the report for is not available in the filter criteria.</p>
+                <p><b>Cause</b>: The current year lookup has not been created yet.  These reports utilize a special lookup group called OSHAYear</p>
+                <p><b>Solution</b>: Add the necessary years to the OSHAYear lookup group.  See <MadCap:xref href="../Admin_Config/Lookups.html#AddValues" title="Adding values to the new group" alt="Adding values to the new group">To add values to the new group:</MadCap:xref> in <MadCap:xref href="../Admin_Config/Lookups.html" title="Configuring lookups" alt="Configuring lookups">Configuring lookups</MadCap:xref>.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Third Party Application Key was not found</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Client attempted a third-party login to the Extranet via the ClientSpace Module and receives the error "The third party application key was not found.  Click the button below to login."</p>
+                <p><b>Cause</b>: The Third Party Application Key has not been set up properly on either the Client site or the Extranet</p>
+                <p><b>Solution</b>: Log an Extranet case for assistance in configuring the Third Party Application Key.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Unable to Add State or Code to Pricing using Quick Edit</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: A ClientSpace user attempted to add a WC state and code to the pricing console prior to submitting the deal to underwriting and he received an error message - "An error occurred executing the business rule: Recalculate Pricing."</p>
+                <p><b>Cause</b>: Insufficient Rights on the Quick Edit form.  This form has required fields that can be secured, if the user does not have view rights to the fields, they disappear and cause the error.</p>
+                <p><b>Solution</b>: Update one of the user roles to have at least View rights to all applicable fields on the Quick Edit form (Or create a Quick Edit Role).  Ensure the user in question is a member of that role.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Unable to approve Comp Code</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You are attempting to approve pricing and every time you try to clear the Needs Review option on a Pricing Comp Code, it gets re-selected on Save.</p>
+                <p><b>Cause</b>: The Comp Model is not set on the associated Pricing State Master dataform.</p>
+                <p><b>Solution</b>: The Comp Model needs to be set on the associated Pricing State of the Pricing Console on the Workspace that is having problems.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">To keep this from reoccurring, the Comp Model needs to be changed in the Admin Workspace.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Go to the <b>Admin Workspace</b> &gt; <b>State Master</b> and select the state that the comp code is in.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Set the Comp Model for the State and <b>Save</b> the record.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Unable to change Contract Type or Legal Entity after Pricing submission</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You have submitted a deal for pricing but realize the Contract Type or Legal Entity listed on the Client Master is incorrect.  When you attempt to edit these fields, even as a Global Admin, they are read-only.</p>
+                <p><b>Cause</b>: Contract Type and Legal Entity settings can factor into pricing, and can change pricing dramatically, so these fields are locked by design during the submission process.</p>
+                <p><b>Solution</b>: Re-price the deal.  Re-pricing a deal effectively resets it, unlocking these fields for edit.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Unable to see Activities</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You have a user that is in roles with the CRM Entity, but they still do not see any Activities on the workspace dataforms.</p>
+                <p><b>Cause</b>: Missing Organization Access</p>
+                <p><b>Solution</b>: Because Activities are tied to the Organization record,  for a user to access those notes they need not only the CRM entity on one of their user roles, but access to the organizations in question. If this is a Sales user, this access automatically shows up as they create Organizations and associated Workspaces. For Non-Sales, internal users, they need to either be added to the security tab of the Organizations for which they need CRM Note access or added to a role that has CRM Admin access.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Unable to view or download Organization attachments</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Organization users do not have access to view or download attachments from an ORG</p>
+                <p><b>Cause</b>: Affected user does not have access to the CRM Attachments workspace.</p>
+                <p><b>Solution</b>: Prior to a workspace being created, any attached items need to be associated with a workspace, so the system uses the CRM Attachments workspace.  Add the affected user to security on the CRM attachment workspace using the following steps:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">First,  determine the workspace in your installation that is being used as the default Sales Workspace.  This can be found in App Settings.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>App Settings</b> &gt; Default Workspaces to find the name of the default sales workspace.</p>
+                <p class="L1Num" MadCap:autonum="3. ">You can provide Workspace access to a single user by opening the user profile under System Admin  | Users | Edit user, selecting the Workspaces tab and choosing Add to search for the  default sales Workspace name and add this workspace to the users Workspace list.</p>
+                <p class="L1Num" MadCap:autonum="4. "><b>Save</b> the user record.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Unintended Case Notifications being sent</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: A critical case was logged, and many users were notified who were not on the notifications list for the case.</p>
+                <p><b>Cause</b>: The Business Rule <b>Send Notifications</b> notifies members of the associated Department Admin role for the Assigned To user when a critical case is created.</p>
+                <p><b>Solution</b>: The Send Notifications business rule is core functionality of ClientSpace, which controls all case notifications.  You may want to consider cleaning up the Departmental Admin Roles in ClientSpace to remove non-essential users.  If this does not fit your business model, log an Extranet case to discuss custom development.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Users not available when adding Activities to an Organization</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You attempt to configure an activity such as a Calendar event on a ClientSpace Organization, but the user you would add to the Calendar attendees is not available from the Attendee list</p>
+                <p><b>Cause</b>: The user in question does not have access to the CRM Sales Workspace.</p>
+                <p><b>Solution</b>: Prior to an Organization having a workspace generated and becoming a Client, the Org does not have its own related workspace. These pre-workspace organizations will all share a workspace called&#160;CRM Sales Workspace.</p>
+                <p>
+                    <img src="../Resources/Images/WorkspaceLandingPage/WorkspaceUsers.png" class="thumbnail" />
+                </p>
+                <p class="ProcedureIntro">To make the users available for activities, you need to add them as users of this workspace:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Open the workspace in question.</p>
+                <p class="L1Num" MadCap:autonum="2. ">In the <b>Action Center</b> menu, select <b>Users</b> <img src="../Resources/Images/ICONS/ICON_Users.png" />.<br /></p>
+                <p class="StepResult">The list of users with access to the workspace are displayed.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Click <b>Add</b>.<br /></p>
+                <p class="StepResult">The Add Workspace Users dialog box opens.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Select the user and click <b>Ok</b>.</p>
+                <p>There will be a slight delay while the workspace provides this user access.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Users not listed in drop-down list</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: On the task notification list, not all the users are listed.</p>
+                <p><b>Cause</b>: This list shows all users that have access to the Workspace the task is associated with.  If the task is not associated with a workspace, then the task is attached to the CRM&#160;Sales Workspace.</p>
+                <p><b>Solution</b>: The User needs to be added to the Workspace.  There are two ways this can be done.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Users</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Open the user's profile.</p>
+                <p class="L1Num" MadCap:autonum="3. ">In the <b>Action Center</b>, click <img src="../Resources/Images/ICONS/ICON_Workspaces.png" /> (<b>Workspaces</b>).</p>
+                <p class="L1Num" MadCap:autonum="4. ">Add the Workspace to that tab to give access to the workspace.</p>
+                <p class="L1Num" MadCap:autonum="5. ">Go to the Workspace, and in the <b>Action Center</b> menu, select <b>Users</b> <img src="../Resources/Images/ICONS/ICON_Users.png" />.</p>
+                <p class="L1Num" MadCap:autonum="6. ">Click <b>Add</b> to open a list of users.</p>
+                <p class="L1Num" MadCap:autonum="7. ">Select the User and click <b>Ok</b>.</p>
+                <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">By giving a user access to a Workspace Template, you are giving that user access to all Workspaces created from that template.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>View File does not give the Open option, only Save</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You attempt to click on a linked file to open it, and instead of getting the dialog that allows you to either Open or Save the file, you only have the option to Save.</p>
+                <p><b>Cause</b>: File name to long causing truncation of file extension.</p>
+                <p><b>Solution</b>: Check the length of the file name.  Extremely long file names can push the file extension past the field limitations, truncating the file name and dropping the extension.</p>
+                <p class="Bullet1" MadCap:autonum="• ">If this has happened, save the file with a shorter file name and the proper file extension, then re-attach the file.</p>
+                <p class="Bullet1" MadCap:autonum="• ">The Open option will then be available.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Workflow does not always work appropriately</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Automated business rules can be used to process workflow and sometimes do not work as expected.</p>
+                <p><b>Cause</b>: Business Rule trigger conditions are not being adequately met in the expected order, causing rules to fire prematurely.</p>
+                <p><b>Solution</b>: Understand the workflow involved and review the ordering of rule firing.  Business rules fire on save and always as follows:</p>
+                <p class="Bullet1" MadCap:autonum="• ">Hard Errors in their listed order - then</p>
+                <p class="Bullet1" MadCap:autonum="• ">Soft Errors in their listed order - and finally</p>
+                <p class="Bullet1" MadCap:autonum="• ">Business logic rules in their listed order</p>
+                <p>If a hard error is preventing a trigger condition for a business logic rule, or business logic rules are ordered such that trigger conditions are not met, workflow may work, but only intermittently.  If you have questions about the design of your workflow or need help, log an Extranet case.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Workspace / Organization missing from search</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You attempt to use a search dashboard such as the Client Service Case Search or Organization Search and the Org/Workspace you are searching for does not appear in  the Client Filter parameter.</p>
+                <p><b>Cause</b>: Org / Workspace has been marked as Inactive.</p>
+                <p><b>Solution</b>: </p>
+                <p class="Bullet1" MadCap:autonum="• ">Select the <b>Active</b> option at the bottom of the Org detail page to activate the Org. </p>
+                <p>
+                    <img src="../Resources/Images/Sales/OrgDetail_Active.jpg" class="thumbnail" />
+                </p>
+                <p class="Bullet1" MadCap:autonum="• ">Or, you can select <b>Active</b> in the Workspace settings.</p>
+                <p>
+                    <img src="../Resources/Images/WorkspaceLandingPage/WorkspaceSettings_Active.png" class="thumbnail" />
+                </p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Workspace search issue</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: When we enter a particular client name in the workspace name search field, that workspace does not show in the drop-down list to select. The search function seems to work correctly for all other workspaces, but not this particular one. The workspace in question is active.</p>
+                <p><b>Cause</b>: Workspaces Associated Organization has been inactivated.  The Workspace type ahead search functions will use the Organization data and will ignore inactivated Orgs.</p>
+                <p><b>Solution</b>: Edit the Organization record and make sure the <b>Active</b> option located just below the Org header is select.  If not, select it.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Organizations or Contact Tasks not automatically attaching to the Sales Workspace</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: Organizations or Contact tasks not automatically attaching to the Sales workspace even though the Default workspace is set under App Settings.</p>
+                <p><b>Cause</b>: When you create a task or calendar event from an Org or Contact prior to Creating a workspace for that Org the tasks will generally get attached to the Sales Workspace designated in the App Settings page.  However, the ClientSpace system allows for multiple workspaces to be designated as CRM related.  When this happens, you are presented with a list of CRM related workspaces on Task Creation.</p>
+                <p><b>Solution</b>: Either select the appropriate workspace from the DropDown list, or if there is a workspace improperly set as "CRM related" then correct this by performing the following steps.</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Find the Name of the Workspace you need to adjust through the Select Workspace quick jump.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Open the Workspace Search dashboard and navigate to that workspace.</p>
+                <p class="L1Num" MadCap:autonum="3. ">From the Workspace go to the Workspace Maintenance &gt; Workspace Settings  area at the top of the TOC.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Clear the <b>CRM Related</b> option and <b>save</b> the record.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Unable to use Time Tracking - Category field is blank</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: You attempt to use Time Tracking on a dataform in your environment, but the Category field on the Time Tracking record is blank.  As this is a required field you are unable to save the record.</p>
+                <p><b>Cause</b>: Time Tracker Categories have not yet been configured in your environment</p>
+                <p><b>Solution</b>: Configure Time Tracking Categories</p>
+                <p class="ProcedureIntro">To configure Time Tracking categories in your environment:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">First, check to be sure that all the appropriate Category Groups have been configured for your environment. Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Lookups</b>.<br /></p>
+                <p class="StepResult">The Lookups list is displayed.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Filter for the Group Time Tracker Category.</p>
+                <p class="L1Num" MadCap:autonum="3. ">Review this lookup and If required, add any additional time tracker groups you need.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Time Tracker Categories.</b></p>
+                <p class="L1Num" MadCap:autonum="5. ">To add a category, click <b>Add</b>.<br /></p>
+                <p class="StepResult">The Time Tracker Categories Details form opens.</p>
+                <p class="L1Num" MadCap:autonum="6. ">Provide a <b>Category Name</b> and select an appropriate <b>Category Group</b>.</p>
+                <p class="L1Num" MadCap:autonum="7. ">Click <b>Save</b> and continue until all Time Tracker Categories have been configured.</p>
+                <p class="L1Num" MadCap:autonum="8. ">Verify your new categories by adding a time tracker record and reviewing the Time Tracker Categories list.</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Parent-Child relationship between dataforms, but child form link does not appear</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p><b>Problem</b>: User has added a Parent-Child relationship between two dataforms by Adding a Parent Form field to the Child dataform.  The new field appears to be configured properly, but the Related dataform drop-down still does not appear on the Parent Form.</p>
+                <p><b>Cause</b>: Child form is not a member of the Template Workspace.  Both the parent and child dataforms need to be members of the Template workspace for the relationship to work.</p>
+                <p style="font-weight: normal;"><b>Solution</b>:</p>
+                <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Workspace Templates</b>.</p>
+                <p class="L1Num" MadCap:autonum="2. ">Select the Template in question.</p>
+                <p class="L1Num" MadCap:autonum="3. ">When on the Template Workspace, in the <b>Action Center</b> menu, select <b>Dataforms</b> <img src="../Resources/Images/ICONS/ICON_SelectDataforms.png" />.</p>
+                <p class="L1Num" MadCap:autonum="4. ">Ensure that both the Parent and Child dataforms are added to this workspace (it is not necessary for the child form to be on the TOC as it can be accessed through the Parent Form).</p>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+    </body>
+</html>

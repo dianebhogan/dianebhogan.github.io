@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Using the Contact User template</h1>
+        <p>The Contact Management system  enables Contact users to be created from a template.  When the Create User option  on the contact is checked and the contact record is saved, the system generates a user record using contact information such as First Name, Last Name, Phone, email, and associated Organization. The system then combines this information with user profile settings from a pre-designated Contact User Template.  </p>
+        <p>The fields that are cloned from the template user include:</p>
+        <p class="Bullet1" MadCap:autonum="• ">DepartmentID</p>
+        <p class="Bullet1" MadCap:autonum="• ">Company</p>
+        <p class="Bullet1" MadCap:autonum="• ">Time Zone</p>
+        <p class="Bullet1" MadCap:autonum="• ">ForcePasswordChange</p>
+        <p class="Bullet1" MadCap:autonum="• ">AddProjects</p>
+        <p class="Bullet1" MadCap:autonum="• ">CanTrackTime</p>
+        <p class="Bullet1" MadCap:autonum="• ">SendCoreEmail</p>
+        <p class="Bullet1" MadCap:autonum="• ">DefaultWorkspace</p>
+        <p>The system will always set the UserType to External and Default to Next to true.</p>
+        <p>An Application Variable <b>app-i-contact-templateuser</b> specifies the UserID of a Template User to be used when generating the contact user records. For help configuring this option, log an Extranet case.</p>
+        <p>Caveats to using the contact user template:</p>
+        <p class="Bullet1" MadCap:autonum="• ">A Default workspace must be set for the associated Organization or a Hard Error will be invoked.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Any User save failures (username in use, etc.) will appear as a Hard Error and must be resolved before the Contact can be saved.</p>
+        <p>This system also synchronizes the default assigned to user with the associated organization.  When creating a new contact, the system will default the contact Assigned To field, matching it to the Organization Assigned To.   When Org Assigned To changes, the system updates all associated contacts synchronizing the Assigned To user with the Organization.</p>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring the Case Discussion templates</h1>
+        <p>Email to Case Discussion relies on a series of non-triggered email templates: CSCDISC, CSCDISCCONFIRM, CSCDISCEMINT, and CSCDISCNEW. These templates are configured and ready for use. You can customize the template HTML  for your business needs. This topic guides you through the customization.</p>
+        <p>This functionality requires several custom field replacement tags:&#160;{ReplyToURL}, {ReplyID}, {LASTREPLY_Comments}, and {Comments}. A full list of Field replacement tags that can be used in this process may be found in the topic <MadCap:xref href="../CasesTasks/ConfigCaseDisc.html" title="Configuring client service case discussions" alt="Configuring client service case discussions">Configuring client service case discussions</MadCap:xref>.</p>
+        <p>In all cases:</p>
+        <p class="TableBullet" MadCap:autonum="• ">Template Code MUST match what is specified here.</p>
+        <p class="TableBullet" MadCap:autonum="• ">Template type must be <span class="UXElement">System</span>.</p>
+        <p class="ProcedureIntro">To  configure the Case Discussion Templates:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Email Templates</span>.<br />The Email Templates dashboard opens.</li>
+            <li>Locate each template: CSCDISC, CSCDISCCONFIRM, CSCDISCEMINT, and CSCDISCNEW.</li>
+            <li>Open the template and apply your changes:</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 185px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">From Email Override</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The administrator can override the system default Admin Email address using the <span class="UXElement">From Email Override</span> field  to override the system default Admin Email address. This allows each installation to tailor a more appropriate From email address. If you leave the field blank, the system default Admin Email is used.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">{ReplyToURL}</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This generates a clickable link in the email that opens the discussion in a web browser.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">{ReplyID}</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Only used in Subject line. This embeds the unique ID of the discussion.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">{LASTREPLY_Comments}</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is replaced with the most recent discussion comments made by the external user in the thread.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">{Comments}</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">The latest internal reply in the discussion thread.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>CSCDISC</h2>
+        <p class="Body">Client Service Case Discussion wrapper for outgoing discussions. This is sent to the external recipient.</p>
+        <p class="Body">
+            <img src="../Resources/Images/Integrations/EmailInteg_CSCDISC.png" alt="" title="" class="thumbnail" />
+        </p>
+        <h2>CSCDISCCONFIRM</h2>
+        <p class="Body">Case Reply Confirmation. Use when a case reply is received and successfully posted to the discussion thread as a new message.</p>
+        <p class="Body">
+            <img src="../Resources/Images/Integrations/EmailInteg_CSCDISCCONFIRM.png" alt="" title="" class="thumbnail" />
+        </p>
+        <h2>CSCDISCEMINT</h2>
+        <p>Case to Email Reply. This is the message to external users when a discussion response has been posted to the thread.</p>
+        <p>
+            <img src="../Resources/Images/Integrations/EmailInteg_CSCDISCEMINT.png" alt="" title="" class="thumbnail" />
+        </p>
+        <h2>CSCDISCNEW</h2>
+        <p>Client Service Case Discussion New Reply Template. When the external recipient sends a message, this is sent to the AssignedTo user.</p>
+        <p>
+            <img src="../Resources/Images/Integrations/EmailInteg_CSCDISCNEW.png" alt="" title="" class="thumbnail" />
+        </p>
+    </body>
+</html>

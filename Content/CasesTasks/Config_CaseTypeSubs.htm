@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring case type subscriptions</h1>
+        <p><MadCap:variable name="MyVariables.ProductName" /> provides the ability to select Case Type subscriptions (within security limits), which means you can subscribe to a given case type and if you have security appropriate to see the case type you will be notified when cases of this type are created.  This topic describes Case Type Subscriptions and how to manage them through the Case Type Subscriptions module.</p>
+        <p>An administrative Case Type Subscriptions  allows users to subscribe to specific case types either by individual workspace (filtered by the workspaces to which the selected user has access ) or by selecting My Clients, which subscribes the user to the selected case type for any workspace where they are a member of the Client Team role in workspace security settings.</p>
+        <p class="ProcedureIntro">To configure case type subscriptions:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">From the modules bar, select <b>Case Type Subscriptions</b>. You may need to select it from the View list.<br /></p>
+        <p class="StepResult">The Case Type Subscriptions dashboard opens.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Case/CaseTypeSub_list.png" alt="" title="Case Type Subscriptions list" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="2. ">Click <b>Add</b>.<br />The Subscription Selection form opens. </p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Case/Add_Sub.png" alt="" title="" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="3. ">Complete the form fields. All fields are required.</p>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 135px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">User</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Global Admin users can either subscribe themselves in the same way or add subscriptions for other users by selecting a different user in the list. Altering user selection is limited to Global Admin users.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Workspace</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">This is a filtered list of workspaces for the selected user. <b>My Clients</b> subscribes to workspace where the selected user is in one of the fields on the <b>Client Team</b> dataform. Select a Workspace.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Category and Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Select the Category and Type of case to which you would like to subscribe.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="4. ">Click <b>Save</b>.</p>
+        <p>The Case Type Subscription follows the ClientSpace security model. Users cannot subscribe to or receive notifications for any case type to which they do not have access.</p>
+    </body>
+</html>

@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\Resources\MasterPages\ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Release Notes" />Release 86 Notes</h1>
+        <p><strong>R86 Sprint</strong>:&#160;11/1/2019&#160;to&#160;11/30/2019. To learn about product features that you may not recognize, contact your Customer Success Manager.<br /></p>
+        <h2>Release schedule</h2>
+        <p>Release updates are implemented by groups.</p>
+        <MadCap:dropDown>
+            <MadCap:dropDownHead class="ErrMsg">
+                <MadCap:dropDownHotspot>Click to view the R86 release schedule.</MadCap:dropDownHotspot>
+            </MadCap:dropDownHead>
+            <MadCap:dropDownBody>
+                <p>The release schedule is subject to change and is&#160;updated as required. To determine your group number or to ask questions, please log a case for Professional Services in the Extranet. </p>
+                <table class="TableStyle-Standard_Table" style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" cellspacing="0">
+                    <col class="TableStyle-Standard_Table-Column-Column1" />
+                    <col class="TableStyle-Standard_Table-Column-Column1" />
+                    <col class="TableStyle-Standard_Table-Column-Column1" />
+                    <thead>
+                        <tr class="TableStyle-Standard_Table-Head-Header1">
+                            <th class="TableStyle-Standard_Table-HeadD-Column1-Header1" colspan="3">
+                                <p class="TableHead">Sprint <span style="font-weight: normal;">11/1/2019 to 11/30/2019</span></p>
+                            </th>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Head-Header1">
+                            <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                                <p class="TableHead">Upgrade groups</p>
+                            </th>
+                            <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                                <p class="TableHead">Date of upgrade</p>
+                            </th>
+                            <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                                <p class="TableHead">For this sprint, tentatively occurs on</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Group 1</td>
+                            <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Second Tuesday of the month</td>
+                            <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">December 17, 2019</td>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Group 2</td>
+                            <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Third Tuesday of the month</td>
+                            <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">December 19, 2019</td>
+                        </tr>
+                        <tr class="TableStyle-Standard_Table-Body-Body2">
+                            <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Group 3</td>
+                            <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Fourth Tuesday of the month</td>
+                            <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">December 24, 2019</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </MadCap:dropDownBody>
+        </MadCap:dropDown>
+        <h2>Enhancements</h2>
+        <p>Hover on the icons to discover the level of product enhancements: <img src="../Resources/Images/ICONS/ICON_FunctionalChange.png" title="Change in functionality" alt="Change in functionality" /> <img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" style="width: 29px;height: 29px;" alt="ClientSpace Premium (ClientSpace with additional modules)" title="ClientSpace Premium (ClientSpace with additional modules)" /> <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" />.</p>
+        <p class="SubHdr">Produce Task Notifications through Email Templates&#160;(Case 30409)</p>
+        <p>The task notification system was enhanced to use a System Email Template if available, making task notifications customizable.&#160;These enhancements include:</p>
+        <ul>
+            <li>New System Email Template with the code value INCIDENT.</li>
+            <li>If the INCIDENT template does not exist, ClientSpace uses the original notification style.</li>
+            <li>For emails generated from the INCIDENT template, the Email Admin dashboard displays TaskSystemEmailTemplate in the Source column (otherwise displays Task).</li>
+        </ul>
+        <p class="SubHdr">Score Card Merge proc (Case 34710)</p>
+        <p>A new stored procedure for the Client Scorecard merge, <strong>peo_merge_client_profitability</strong>, has been added and includes scorecard fields and the following additions. <strong>Note</strong>: To implement this enhancement, you need a merge template. For assistance, please log a case in the Extranet.&#160;</p>
+        <p>Payroll tab:&#160;The merge date range now applies to all results and returns the following:</p>
+        <ul>
+            <li>Count of payroll batches in date range (integer)</li>
+            <li>Count of paychecks (employees paid) in date range&#160;</li>
+            <li>Bill Amount, Cost Amount, Bill Code, and metadata value on Bill Code (Billing Voucher)</li>
+            <li>Total count of payroll batch dataforms by batch type in date range (integer)&#160; R, S, M, Other</li>
+            <li>TotalWSEPaid by: TotalR, TotalS, TotalM, TotalOther</li>
+            <li>Total Checks Processed equal to the sum of Employee Count field on all batches in the date range</li>
+            <li>Average EE Count: Total Employee Count divided by count of batches in the date range</li>
+        </ul>
+        <p>Contract Info:&#160;Surcharge list data associated with current batch returns:</p>
+        <ul>
+            <li>fkSurchargeTypeID (decoded)</li>
+            <li>Surcharge</li>
+            <li>SurchargeDescription</li>
+        </ul>
+        <p>Commission list data associated with current batch returns:</p>
+        <ul>
+            <li>fkSalesEntityID (decoded)&#160;</li>
+            <li>luCommissionMethod (decoded)</li>
+            <li>SalesCreditPct</li>
+            <li>PercentProfit</li>
+            <li>PercentPayroll</li>
+            <li>FlatCommission</li>
+            <li>PerHeadCommission</li>
+            <li>SurchargePercent</li>
+            <li>PercentPremium</li>
+            <li>PercentAdmin</li>
+            <li>EffectiveDate</li>
+            <li>ExpirationDate</li>
+        </ul>
+        <p>Client Service:&#160;A new column shows HourlyCost by Department (Client Visit Type Metadata).</p>
+        <p>Unemployment:&#160;Two new columns:</p>
+        <ul>
+            <li>Now returns the Latest Value as of value.</li>
+            <li>Returns a sum of all of the active benefit charges. **No changes to the Summary tab.</li>
+        </ul>
+        <p class="SubHdr">Email Templates Address Recipients&#160;(Case 39875)</p>
+        <p>The Address Recipient Proc list now reflects options compatible with the Table Name from Step 1 of Email Templates.</p>
+        <p class="SubHdr">Redirect of Extranet module (Case 39927)</p>
+        <p>The module that allows registered users to connect to the Extranet and log cases for ClientSpace now redirects users to the Help Center.&#160;<strong>Note</strong>: In a future sprint, we are deprecating the Extranet Module.&#160;</p>
+        <p class="SubHdr">Benefits Plan Tier Validate ImportID (Case 40105)</p>
+        <p>The Benefits system now has the business rule Validate Benefits Plan Tier Title to validate the Plan Tier title. This enhancement prevents generating duplicate ImportIDs.</p>
+        <p class="SubHdr">Org Primary Contact (Case 40338)</p>
+        <p>The&#160;<strong>peo_employee_emailtemplate_recipient_v2_proc</strong> now includes the Primary Contact of the Organization related to the Employee Workspace.</p>
+        <p class="SubHdr">Workflow Channels: Notify triggering user (Case 40406)</p>
+        <p>Workflow Channel configuration has been enhanced to add the current user to the Notifications tab so that when the workflow triggers, the current user is aware that something has been created.&#160;This enhancement includes:</p>
+        <ul>
+            <li>A new option <strong>Notify Current User</strong> is available when adding a notification user.</li>
+            <li>The system notifies the Created By user when creating a task or dataform if Notify Current User is enabled.</li>
+            <li>The notification uses the Enable Email setting on the user profile.</li>
+            <li>When the current user is added to the notification list, the user receives email notifications of all updates.&#160;&#160;</li>
+        </ul>
+        <p>For more information, see the Help topic <a href="https://extranet.clientspace.net/helpdoc/wfc/step3_wfcnotifications.htm" class="external-link" rel="nofollow">Step 3: Notifications</a>.</p>
+        <p class="SubHdr">Help document links (Case 40423)</p>
+        <p>Links for non-video Help documents were re-directed to the new version of these articles on our newly integrated Help site.&#160;</p>
+        <p class="SubHdr">Email Templates user select (Case 40413)</p>
+        <p>Email Templates now allow the System Admin to select users across tabbed dataforms in the <strong>From Address</strong> area of Email Templates.</p>
+        <ul>
+            <li>When the Triggering Form for the Email Template is the primary tab in a tab set, the modal pop-up on the <strong>Address</strong> step of Email Templates for <strong>From Address</strong> now contains child tab forms on the <strong>From a Field on a Form</strong> option.&#160;</li>
+            <li>This interface works the same as the Content step of the Workflow Channel (Triggering form, Child tabs with a dash, everything else).</li>
+        </ul>
+        <p class="SubHdr">Workflow Channel notifications (Case 40855)</p>
+        <p>Workflow Channel notification now includes child tab form fields when selecting notification users <strong>From a Field on a Form</strong>. The field selector includes child tab form fields where the parent tab form is the triggering dataform for the workflow channel.</p>
+        <p class="SubHdr">Trigger Conditioning for Parent Form fields: Email Templates and Workflow Channels (Case 40414)</p>
+        <p>Workflow Channels and Email Templates were enhanced.&#160;Parent form fields are now available for primary triggering and additional triggering conditions.&#160;Available Operators for parent form fields are IsDirty/Empty/Not Empty.&#160;Admin workspace Parent form fields also include equals and not equals operators with values decoded in the Values list.</p>
+        <p class="SubHdr">Project Milestone dataform (Case 40594)</p>
+        <p>The Project Milestone dataform now has an Owner field (fkOwnerUserID).</p>
+        <p class="SubHdr">Organization Category updates from Client Master (Case 40599)</p>
+        <p>The Org Category now uses the Client Master status metadata when using the Activate Future workflow and scheduled process.</p>
+        <p class="SubHdr">Product name changed to ClientSpace (Case 40857 and 40858)</p>
+        <p>External mailbox references to Pulse:&#160;References to the name Pulse are now removed from the External Mailbox in the application and replaced with ClientSpace.&#160;The name change is on the page for posting to ClientSpace using the Email Add-In (Post to ClientSpace).</p>
+        <p>Application name in App Settings:&#160;The name Pulse was removed from the following areas within the application and replaced with ClientSpace:</p>
+        <ul>
+            <li>The header of the home page</li>
+            <li>Help Center text</li>
+            <li>The header of the application help page</li>
+            <li>The default company name in the application</li>
+        </ul>
+        <p class="SubHdr">Enterprise Library: ZIPCodeRepository (Case 40992)&#160;</p>
+        <p>Removed enterprise libraries and replaced them with more efficient code to optimize system performance.</p>
+        <p class="SubHdr">I-9: Ongoing Imports and Subscription&#160;(Case 41250)&#160;</p>
+        <p>The PrismHR API now includes an ongoing I-9 import configuration.&#160;The HRPAPI_I9 import includes:</p>
+        <ul>
+            <li>Identification Document: Identification documents for List A, B, and C documents</li>
+            <li>Document Expiration Date for each of these documents</li>
+            <li>Non-Resident Alien:&#160;checkbox value&#160;</li>
+            <li>Alien Registration Number</li>
+            <li>Alien Registration Expiration Date</li>
+        </ul>
+        <p class="SubHdr">PrismHR API v1.18 (Case 41483)&#160;</p>
+        <p>The ClientSpace PrismHR API service was updated to version 1.18 of the API.&#160;&#160;</p>
+        <p class="SubHdr">Pricing Console: Quick Create (Case 41569)&#160;</p>
+        <p>The pricing console Quick Create function was enhanced. When using the Save and New functionality, the State field now clears, ensuring that users select a state.</p>
+        <h2>Fixes<br /></h2>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 68px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 74px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 218px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1" style="text-align: center;">
+                        <p class="TableTextLeft">Level of change</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Issue summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Resolution</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">40263</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Outlook Add-In record search not functioning for selecting inactive records</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved issues with the External Mailbox module when attaching inactive records to a dataform. The action would fail. Inactive records can now be attached to dataforms, just as active records.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">40620</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Child Workflow Dataform items - Add Untriggerable issue</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved issues with the dependent ancestor in a child workflow item. When you Add Untriggerable from the first workflow dataform item that is not the channel trigger, the child workflow item does not update the Triggerable flag on the dataform field record.</p>
+                        <br />Example:<br /><ul><li>Workflow triggers from an Employee form.</li><li>This generates a task based on an employee field that was added as Add Untriggerable. When selected, this field is marked as triggerable in dataform admin.</li><li>That task creates a case (this resets the closest dataform ancestor to the case form).</li><li>The Case creates a Task that is triggered by a Case field that is added as Add Untriggerable. When selected, this field is now marked as triggerable in dataform admin.</li></ul></td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">40621</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Hard error on change of generated item in child workflows</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Removed the ability to change the Triggered Form&#160;configuration on a child workflow item after it has been saved because this could cause significant issues for downstream child workflow items that rely on this triggered form.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">40625&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">
+                        <img src="../Resources/Images/ICONS/ICON_FunctionalChange.png" title="Change in functionality" alt="Change in functionality" />
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Removed Add Untriggered functionality from primary trigger</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2" alt="Indicates a change in functionality." title="Indicates a change in functionality.">
+                        <p class="TableTextLeft">The Add Untriggered functionality was removed from the primary trigger on Email Templates and Workflow Channels. You can no longer add untriggered fields on the Primary trigger field of real-time workflow and email template configurations. The list now only displays fields previously marked as Triggerable in dataform administration. Add Untriggered functionality is still available from the Primary Triggered field for scheduled workflows and from the Conditions tab (Step 4) of workflow configuration.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">40631</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Activities icons</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved issues with icons that did not display correctly on the Workspace Landing page Activities widget.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">40664</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Calendar error</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an exception when synching an external calendar with ClientSpace: Cannot insert the value NULL into column 'EndsOn', table 'ClientSpace.NetWise.dbo.tblExternalCalendarEventOccurrences'; column does not allow nulls. INSERT fails.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">40809</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">COI not showing Signatures</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue with the Reporting logo and Reporting signature branding files when signatures did not display on the Certificate of Insurance reports.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">40868</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">XML Data type in Link and Widget Conditions</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">The XML datatype was removed as a usable datatype in Link display and Widget Condition configuration. The datatype did not add value and had the potential for causing unexpected behavior if improperly configured.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">40879</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Save and New in lookup Admin causes an exception on save</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved issues that caused exceptions when adding lookup configurations with Save and New functionality.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">40897</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Cannot edit text in Workflow Channel Conditions tab</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved issues with Workflow Channel and Email Template conditions with unresponsive fields when adding a condition.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">41019</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Email Template replace fields are not working</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved issues with Email Template field replacement when the email template was triggered from a multiform using replace fields from single forms.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">41228</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Scheduled Workflow Channel triggering bug</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an exception when retrieving the triggering data while executing a scheduled workflow channel.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">41334</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Type (fkCaseTypeID) does not load as a value</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved populate issues with the Value field when using a parent form datatype as the primary trigger.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">41339</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Scheduled Workflow Channel triggering</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where, under certain conditions, real-time workflows triggered when a scheduled workflow on the same triggering form was triggered.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">41353</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Workflow Channel Replace Fields for SDP on Triggering Dataform</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Replace fields from the Server Data Proc that is configured on the triggering dataform are available at all levels of a workflow channel.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">41367</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Users cannot save changes to their profile</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved issues with non-Global Admin users trying to update editable fields on their user profile.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">41398</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Payroll Batch and Billing Voucher issues</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Payroll batch and billing voucher dataforms were added to the Client Template workspace. The Payroll Batch dataform was added to the Payroll Info Group. Date Paid and PayrollNumber were added as columns in the multiform list at 40 and 50.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">41508</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Editing Org Security from the Org</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue that would check the view attribute of the first row in the security tab when clicking the white space of the tab.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">41593</td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2" style="text-align: center;">&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">JavaScript application error in Workflow Channels</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Resolved a JavaScript error when a unary Operator (IsDirty, Empty, Not Empty) was on the primary condition of an existing workflow item, causing an error when editing these types of workflow items.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

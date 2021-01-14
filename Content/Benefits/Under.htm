@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Benefits underwriting and quoting</h1>
+        <p><span class="UXElement">Benefits Underwriting</span> is similar to other underwriting approval records. If the Client Master Health Benefits is set to Yes, then the benefits underwriting record is generated at the time of submission to underwriting. This supports all of the underwriting functionality that you expect, including approval contingencies.</p>
+        <p><span class="UXElement">Benefits Pricing</span> is for recommending a risk tier based on the provided average age and percent male. First, it compares the provided Single Rate * Max Discount to the single rate on the selected base comparison plan. This determines the Control Tier. It then examines the provided Average Age and Percent Male to the Benefits Tier Definition table in the Admin Workspace to determine the calculated tier. Lastly, it takes the higher of these two to determine the Final Tier. This final tier can be overwritten if needed. The final tier is also used to default the tier on any new Offered Benefits Plans.</p>
+        <p><span class="UXElement">Presale Benefits Plan or Existing Benefits Plan</span> are specialized plan records that are used when pricing benefits for new prospects. They are used to help gather information for the agent (or internal benefits employee) who is building the benefits offering. They are typically entered by the sales reps with notes about how it compared to other options. Compare To is for selecting pending offered benefits plans to compare to on the benefits comparison.</p>
+        <p><span class="UXElement">Benefits Batch dataform</span> specifies the status, effective date, eligibility, open enrollment state and end dates, and the renewal date. This dataform can be linked to Workflow Channels, Email Templates, Business Rules, Custom Links, and Lookups.</p>
+        <p><span class="UXElement">Offered Benefits Plan</span> dataform is the intersection between the plan and how you, the PEO, are going to offer it to your prospect, and in turn, how they will offer it to their employees.</p>
+        <p>Offered plan workflow:</p>
+        <ol>
+            <li>New: In the building stage. Before anything is presented to the client, typically set up by the benefits department or agent.</li>
+            <li>Selected: These are the plans the client has selected to offer their employees, which will eventually be active plans.</li>
+            <li>Active: These are the currently effective plans.</li>
+            <li>Rejected: These are plans that were presented to the prospect but were not offered to their employees.</li>
+            <li>Expired: These are the old offered benefits plans.</li>
+        </ol>
+        <p>ClientSpace can use these different statuses when generating our Benefits Comparisons, Benefits Acceptance Forms, and Benefits Election Forms. When you select a plan to offer, the rate grid is established. If you change the Rate Group, the total premium column is updated appropriately.</p>
+        <p>
+            <img src="../Resources/Images/Benefits/OfferedPlans.png" alt="" title="" class="thumbnail">
+            </img>
+        </p>
+        <p>Employer contributions and methods:</p>
+        <ul>
+            <li>Manually set percentages</li>
+            <li>Contribute EO premium</li>
+            <li>Match EO contribution</li>
+            <li>Combine EO and dependent</li>
+        </ul>
+        <p>As you change the contributions, it adjusts the Employer and Employee portion of the Rate Grid.</p>
+        <p><span class="UXElement">Selected Offered Benefits Plans</span>: To activate the Selected Offered Benefit Plans, you can activate the Benefits Batch dataform, and any Selected Offered Benefit Plans change to Active status. This is the proper method for activating plans.</p>
+        <p><span class="UXElement">Benefits comparison</span> provides reports (merges) of data. The reports pull data from presales and offered plans to build the comparison.</p>
+    </body>
+</html>

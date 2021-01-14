@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Configuring Dataform fields to use Lookups</h1>
+        <p>After the group and values are defined, the next step is to connect a field that uses lookups to the new group. The following procedure and subsequent topics use the dataform Client&#160;Location and the field State. The State field uses a lookup group <span class="UXElement">US&#160;States</span>. This topic guides you through configuring a dataform field to use a lookup.</p>
+        <p class="ProcedureIntro">To configure a dataform field to use a lookup:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Advanced</span> &gt; <span class="UXElement">Dataform Admin</span>.<br />The Dataform Admin dashboard opens.</li>
+            <li>Locate the dataform and double-click the row or click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Open</span>).<br />The Dataform Properties form opens. Our example uses the Client Location dataform.</li>
+            <li>In the <span class="UXElement">Action Center</span>, click <span class="UXElement">Fields</span>.<br />The dataform fields are displayed. Our example configures the dataform field State to use a lookup.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Lookups/SelectDataformField2.png" class="thumbnail" />
+                <br />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Locate the field in question and double-click or click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Open</span>). <br />The form configuration opens for the selected field. Our example shows we selected the field State.</li>
+            <li>In <span class="UXElement">Lookup Group</span>, select the group.<br />Our example shows that we selected <em>US&#160;States</em> as the Lookup Group.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Lookups/State-field-LookupGroup.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <p>The next step is to reload the dataform to use the new lookup settings.</p>
+        <p class="ProcedureIntro">To reload the dataform:</p>
+        <ul>
+            <li>On the dataform, on the <span class="UXElement">Action Center</span> toolbar, click <img src="../Resources/Images/ICONS/ICON_Reload.png" /> (<span class="UXElement">Reload</span>).<br />This action refreshes the dataform to use the configured lookup group.</li>
+        </ul>
+        <h2>Putting it all together</h2>
+        <p>Let’s summarize what we did. We have a dataform field named <em>State</em> that needs to be configured as a lookup field to standardize the value selections. We configured the field to use the Lookup Group named <em>US&#160;States</em>.</p>
+        <p>
+            <img src="../Resources/Images/Lookups/Put-All-Together.png" class="thumbnail" />
+        </p>
+    </body>
+</html>

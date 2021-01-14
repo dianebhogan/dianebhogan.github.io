@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 65 ( CORE )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" width="250" src="https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50" srcset="https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50 2x, https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50 1x" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;02/01/2018&#160; &#160;&#160;<strong>Sprint Ended:</strong>&#160;03/05/2018</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(CORE)-WorkflowChannels2.0-ENHANCEMENT"><span style="color: rgb(51,153,102);">Workflow Channels 2.0 - <span style="color: rgb(255,0,0);">ENHANCEMENT</span>&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>The workflow system has been enhanced with the following:</p>
+                        <p>Workflow configuration has been reduced from 5 steps to 4 in order to streamline the process.&#160;&#160;</p>
+                        <p>The ability to add triggered dataform cloning has been added, allowing you to generate pre-filled system dataforms based on workflow triggering conditions</p>
+                        <p>The Workflow channels system now morphs based on the generated content type (Task or Form) which you select, presenting appropriate configuration options.&#160;&#160;</p>
+                        <p>You can read the complete configuration documentation here.</p>
+                        <p>A configuration video will be available soon.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(CORE)-RecurringTaskScheduledProcessBug"><span style="color: rgb(51,153,102);">Recurring Task Scheduled Process Bug&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where recurring tasks without an appropriate recurrence rule would cause the recurring task generation process to create new tasks over and over. The process now ignores recurring tasks without an appropriate recurrence rule.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(CORE)-_SetDateFieldValueFromSourceField-ENHANCEMENT"><span style="color: rgb(51,153,102);">_SetDateFieldValueFromSourceField -&#160;</span><span style="color: rgb(51,153,102);"><span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Enhanced the _SetDateFieldValueFromSourceField business rule to allow this rule to be configured on Multiformns IF #ThisForm is use as the source field.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(CORE)-Textareassometimesappeardirtyonpageload"><span style="color: rgb(51,153,102);">Text areas sometimes appear dirty on page load&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where sometimes CRLF was not being treated as equivalent to a lone LF, which could be in the database if the user copied/pasted text, or used a Mac or Linux.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(CORE)-WrappingonInfoIconforFields"><span style="color: rgb(51,153,102);">Wrapping on Info Icon for Fields&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Fixed an issue where Long field labels would wrap down to the next line, moving the info bubble with them. The info bubble now stays fixed by the field as the label text wraps.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(CORE)-ContactImportsometimesthrowserrors"><span style="color: rgb(51,153,102);">Contact Import sometimes throws errors&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where when importing contacts if the ImportID was longer than 20 characters the ImportID would be truncated. The system now handles ImportID's up to the maximum field length.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(CORE)-TaskLookupConversion-ENHANCEMENT"><span style="color: rgb(51,153,102);">Task Lookup Conversion -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Task Priority, Task Categories &amp; Workflows have been updated to use the standard Dataform Lookup Groups in classic and next.&#160; The associated Lookups are Task Category, Task Type and Task Workflow.&#160; If there are no configured values for these lookups, the field will not be displayed on the task.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(CORE)-EmailDashboardinNext-ENHANCEMENT"><span style="color: rgb(51,153,102);">Email Dashboard in Next -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>An Email dashboard similar to the messages dashboard has been added to the application. Emails can be filtered by sent and unsent, user and source. This new management dashboard is included in the System administration area available to global admins and contains the following:</p>
+                        <p><strong>Quick Search</strong>
+                        </p>
+                        <ul>
+                            <li>Subject (starts with)</li>
+                        </ul>
+                        <p><strong>Search</strong>&#160;</p>
+                        <p>% Search:</p>
+                        <ul>
+                            <li>Subject</li>
+                            <li>Body</li>
+                        </ul>
+                        <p><strong>More Search</strong>
+                        </p>
+                        <ul>
+                            <li>User (User Typeahead)&#160;</li>
+                            <li>Status (all/sent/unsent) - default to all</li>
+                            <li>Source</li>
+                        </ul>
+                        <p><strong>Buttons</strong>
+                            <br /> - View</p>
+                        <p><strong>Grid Columns</strong>
+                            <br /> - Date<br /> - Subject<br /> - Source</p>
+                        <p><strong>&#160;Detail (when record is opened)&#160;</strong>
+                        </p>
+                        <ul>
+                            <li>Labels for recipients (To &amp; CC)</li>
+                            <li>Date/Time Sent</li>
+                            <li>Subject</li>
+                            <li>Links to Attachments</li>
+                            <li>Body</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(CORE)-DepartmentAdmin-ENHANCEMENT"><span style="color: rgb(51,153,102);">Department Admin -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Department admin functionality has been migrated to our newer, cross browser application. Department admin contains the following:</p>
+                        <p>
+                            <br />
+                            <br /><strong>Quick Search</strong>
+                        </p>
+                        <ul>
+                            <li>Department Name (starts with)</li>
+                            <li>Manager Last Name (starts with)</li>
+                        </ul>
+                        <p><strong>Search&#160;</strong>
+                        </p>
+                        <p>% Search:</p>
+                        <ul>
+                            <li>Department Name</li>
+                            <li>Description</li>
+                        </ul>
+                        <p><strong>More Search</strong>
+                        </p>
+                        <ul>
+                            <li>Department Name</li>
+                            <li>Manager (User TypeAhead)</li>
+                            <li>Parent Department (dropdown)</li>
+                            <li>Member Org Access - Lookup</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <p><strong>Buttons</strong>
+                        </p>
+                        <ul>
+                            <li>Add</li>
+                            <li>Edit</li>
+                            <li>Delete</li>
+                        </ul>
+                        <p><strong>Grid Columns</strong>
+                        </p>
+                        <ul>
+                            <li>Department Name</li>
+                            <li>Description</li>
+                            <li>Manager</li>
+                        </ul>
+                        <p><strong>Detail Page</strong>
+                        </p>
+                        <p style="margin-left: 30.0px;">Fields</p>
+                        <ul>
+                            <li>Department (required)</li>
+                            <li>Member Org Access (required)</li>
+                            <li>Manager - User TypeAhead</li>
+                            <li>Parent Department</li>
+                            <li>Description</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(CORE)-UserImport-LoadHomePage-ENHANCEMENT"><span style="color: rgb(51,153,102);">User Import- Load Home Page -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The "Default Home Page" checkbox will now have a default value of checked, enabling the default home page in NEXT.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(CORE)-MergeGetData-ENHANCEMENT"><span style="color: rgb(51,153,102);">Merge Get Data -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Get Data functionality from the Classic Merge list that was used to get the Merge field names for Word Merges has been replicated in the application, this allows you to create custom Word merges using the returned field names.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(CORE)-AttachmentsRightMenuBadgeCount"><span style="color: rgb(51,153,102);">Attachments Right Menu Badge Count&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where the attachment action item would only display 10 items in the badge count. Attachment item badge counter now displays the Total count of all records.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(CORE)-RequiredFieldBug-NEXT"><span style="color: rgb(51,153,102);">Required Field Bug - NEXT&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where numeric datatypes in next were not flagging a field as required unless it gained and lost focus (the red banner at the top of the page would flag the field as required, but the field itself would not be highlighted on the page, making it difficult to find on larger forms).</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(CORE)-TouchesnotrecognizedinSafari-NEXT"><span style="color: rgb(51,153,102);">Touches not recognized in Safari - NEXT&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>An issue was reported where BI report parts were not loading in the Safari browser, causing the application to appear locked and unresponsive.&#160; This has been reported to Izenda and a fix is forthcoming - until the fix can be included in the App report parts have been disabled on Safari browsers.&#160; For iPhone and iPad users it is recommended they use Google Chrome until such time as the issue can be resolved.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(CORE)-IzendaReportingUpgrade"><span style="color: rgb(51,153,102);">Izenda Reporting Upgrade&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>The Izenda reporting engine used by Business Intelligence has been upgraded to the latest - version 6.10.0.27.&#160; For more information about this Izenda upgrade read the <a href="http://wiki.izenda.us/Release-Notes#6.10.0.27-(February-13,-2018)" class="external-link" rel="nofollow">Izenda Release Notes</a>.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release65(CORE)-BeginSunsettingClassic"><span style="color: rgb(51,153,102);">Begin Sunsetting Classic&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>As part of the ongoing effort to sunset our Classic application in favor of the newer Cross Browser app formerly known as NEXT we have made the following changes:<br />App Settings:<br />- Removed the Login, Search, Default Workspaces and graphics tabs - much of this functionality has been deprecated or moved to System Admin.</p>
+                        <p>Other Classic Functionality that has been deprecated:<br />- Removed Admin functionality from the Classic interface - Admin settings can be found as a Widget under System Admin. This functionality is secured with a special security entity - Contact your ClientSpace representative for more information if needed.<br />- Removed Clone Workspaces function from Workspace Admin<br />- Removed Web File List functionality from Workspce Admin<br />- Removed Classic Broadcast Notifications Module in favor of the newer Announcenments module.<br />- Removed Classic Calendar Modules and code from the application<br />- Removed Classic Exception logging code from the application<br />- Removed user incident report and Print button for the report from Tasks<br />- Removed the ability to upload files directly to an application folder as uploaded files are databased<br />- Removed deprecated AttachmentDetail from solution in favor of the new file upload control<br />- Removed a number of older, unnecessary ActiveX components or deprecated pages that rely on those components, mainly for TOC management in the Classic application<br />- Remove the Campaigns tab from Org Detail in Classic<br />- Remove the Old School Classic Mobile application in favor of Next which is cross browser compatible and supports responsive design for mobile apps.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <div class="NoPageBreak">
+            <h1>
+                <MadCap:concept term="DocuSign" />Step 5: Attachments</h1>
+            <p>This is where you tell <MadCap:variable name="MyVariables.ProductName" /> which files to send to DocuSign. You can point to files from multiple fields, and when <MadCap:variable name="MyVariables.ProductName" /> sends it to DocuSign, it combines all into one document. You have the option to Merge All Documents, so when the documents are pulled back into <MadCap:variable name="MyVariables.ProductName" />, they can come in as one big file – and put it in Link To Field. The DocuSign functionality runs business logic on the destination dataforms where the files are returned completed and the signed file is pinned as a new version in the field. </p>
+            <p>If you are using the Attachments feature to include additional documents (multiples) in an envelope, it places the documents back in the field from which they came when the process completes. It is possible to pull them back out as separate documents. When we do this, we place the completed doc in the field from which it was retrieved. </p>
+            <p>To assist in generating the merge files to prepare to send to DocuSign, the <span class="UXElement">_GenerateMergeFile</span> business rule can be configured to run the merge document and deposit the file in a field. This business rule can be configured multiple times to generate each file needed. After the business rules are run, you can review the documents in their individual file fields before you click the workflow link to send the files to DocuSign for signatures.</p>
+            <p>
+                <img src="../Resources/Images/Integrations/DS_Step5.png" class="thumbnail" />
+            </p>
+        </div>
+        <p class="ProcedureIntro">To complete the Attachments step:</p>
+        <ol>
+            <li>Complete the form.</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 192px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Mail Merge</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The options in this fields are Merge Admin records where merge templates have been uploaded. When you select a merge in this field, it tells the system to run the merge document and send it at the same time.  You can view or edit the merged file before sending to DocuSign. The merge and send occur immediately after the clicking Send to DocuSign. Typically, you would set up another Email Template to also notify users or the client that a DocuSign email is coming.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Link To Form</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">After the document is signed, it can be returned to the system and attached to this form. This is where your returned file is placed. Use the table code name. For example, for Collateral, type <span class="UXElement">gen_Collateral</span>. To find the table code name, go to Dataform Admin, Dataform Properties, and navigate to the Table Name. Find the Table Name and select the Table Name code. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Rename Signed Document</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">During the process that links the signed document to a form, the document can be renamed. Use this value to prepend the document name with an identifying tag, such as DocuSign Completed. </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Renamed files are Mail Merge files, or if you are merging all docs when in the Attachments tab, Merge All Docs is selected. If you are not using a mail merge and only using attached files from fields that are not being merged into one file, those files are not renamed to the Rename Signed Document value when they return from DocuSign. By default, the files are prepended with COMPLETED_ when they return signed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Merge All Documents?</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select this option if you want all signed and attached documents to be merged into a single document. When you select this option, it puts the merged document into the Link To Field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Link To Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">You can optionally select a file upload field on the Link To Form into which to save the document. Use the field code name. To find the field code name, go to Dataform Admin, Dataform Properties, and navigate to Fields. Find the field and select the Field Name code.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">If you do not provide a Link To Field value, the files will go back to the individual fields from which the originated (in the Add rows).</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Add</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">In the Add rows, specify the fields where <MadCap:variable name="MyVariables.ProductName" /> retrieves the file for DocuSign. You can specify files from multiple fields, and when <MadCap:variable name="MyVariables.ProductName" /> sends to DocuSign, the files are combined into one document. The example (screenshot)&#160;shows the Dataform selection is <em>Collateral</em>, and the Field is <em>CSA</em>.</p>
+                        <ol>
+                            <li>Click <b>Add</b>.<br />A row opens.</li>
+                            <li>For <span class="UXElement">Dataform</span>, select the dataform where the file resides.</li>
+                            <li>For <span class="UXElement">Field</span>, select the dataform field where the file resides.</li>
+                        </ol>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <b>Save</b>.<br />You are returned to the Email Templates list.</li>
+            <li>For the new Email Template, select the <span class="UXElement">Published</span> option.</li>
+        </ol>
+        <p class="SubHdr">What's next?</p>
+        <p>If you edited the merge template (Word document) from the time the original file was uploaded, then you must upload it again. See <MadCap:xref href="DocuSign_UploadMerge.htm" title="Uploading the Merge template" alt="Uploading the Merge template">Uploading the Merge template</MadCap:xref>. Now you are ready to proceed to the next step, testing the tags. Go to <MadCap:xref href="DocuSign_test.htm" title="Testing the Merge document" alt="Testing the Merge document">Testing the Merge document</MadCap:xref>.</p>
+    </body>
+</html>

@@ -1,0 +1,373 @@
+﻿/*<meta />*/
+
+/* Home Page Landing Page for HTML5  */
+
+:root
+{
+	--BrandPrimary: #333333;
+	--BrandPrimary2: #3C5A9A;
+	--BrandPrimary3: #545454;
+	--BrandPrimary4: #008AAD;
+	--BrandPrimary5: #017390;
+	--BrandPrimary6: #004969;
+	--BrandPrimary7: #F0F2F7;
+	--BrandFont: Lato, "Trebuchet MS";
+	--BrandFont2: "Segoe UI", "Open Sans", "Mier B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.body-container	/* Keep - need for HTML5 output formatting */
+{
+	padding-top: 0px;
+	border-top: 1px solid #a9a9a9;
+	mc-hidden: hidden;
+}
+
+div.body_container
+{
+	padding-right: 400px;
+	mc-hidden: hidden;
+}
+
+body	/* default */
+{
+	color: var(--BrandPrimary);
+	font-family: var(--BrandFont2);
+	margin-left: 0em;
+	padding-left: 1.5em;
+	padding-right: 1em;
+	border-bottom-width: .5em;
+	border-left-width: .5em;
+	border-right-width: .5em;
+	border-top-width: .5em;
+	font-size: 1em;
+	mc-hyphenate: never;
+	line-height: 1.4;
+	background-color: var(--BrandPrimary7);
+}
+
+/* The following CSS is for the new sleek landing page NOVEMBER 2020   */
+
+ul
+{
+	margin-left: 2px;
+}
+
+h1
+{
+	top: 0px;
+	background: #3C5A9A;
+	background-size: 100%;
+	color: #ffffff;
+	font-size: 3.05em;
+	line-height: 1.95em;
+	width: 100%;
+	height: 20.0em;
+	margin: 0 0 0 0;
+	padding-top: 60px;
+	padding-left: 30px;
+	padding-right: 30px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: var(--BrandFont);
+	font-weight: normal;
+}
+
+h2
+{
+	font-weight: normal;
+	font-size: 1.9em;
+	margin-bottom: 0.4em;
+	color: var(--BrandPrimary3);
+	font-family: var(--BrandFont);
+	margin-top: 80px;
+	padding-left: 5px;
+}
+
+/* End of CSS for the new sleek landing page   */
+
+div.home-banner
+{
+	height: 160px;
+	/*	border-bottom: 1px solid #9c9c9c; 
+	border-bottom-style:groove;   */
+	background-color: #F0F2F7;
+}
+
+div.home-section
+{
+	padding: 5% 0;
+	border-bottom: solid 1px #dadada;
+}
+
+div.home-layout
+{
+	padding: 2% 5%;
+}
+
+div.home-section:last-of-type	/*Removes the border on the last section of the home page*/
+{
+	border-bottom: none;
+}
+
+div.home-section	/* For the main landing page - puts Resources across page  */
+{
+	padding: 5% 0;
+	border-bottom: solid 1px #dadada;
+}
+
+div.background	/* Background color for landing title   */
+{
+	background-color: #F0F2F7;
+	border: 0.25px solid #3C5A9A;
+	height: 150px;
+	width: auto;
+}
+
+/**NOT USING THIS ANYMORE. This is a custom responsive layout row style (div class) in your stylesheet. To provide your own description for this style: (1) Open the stylesheet; (2) Find and select the div class with this name; and (3) In the Comment field, replace this text with your own. For more information on adding comments to styles, see the online Help.*/
+
+div.article-tiles
+{
+	mc-grid-row: true;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.article-tiles::before
+{
+	content: ' ';
+	display: table;
+}
+
+div.article-tiles::after
+{
+	content: ' ';
+	display: table;
+	clear: both;
+}
+
+div.article-tiles > div
+{
+	float: left;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-radius: 50px;
+	background: #3C5A94;
+	border: 1px solid #dadada;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	margin-left: 2px;
+	box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.3);
+}
+
+div.article-tiles > div:hover
+{
+	background-color: #004969;
+	font: var(--BrandFont);
+	transition: all 0.8s cubic-bezier(.25,.8,.25,1);
+	margin-left: 0px;
+	box-shadow: 4px 4px 6px 4px rgba(0,0,0,0.2);
+}
+
+div.article-tiles > div:nth-child(1)
+{
+	width: 18%;
+	margin-left: 0%;
+}
+
+div.article-tiles > div:nth-child(2)
+{
+	width: 18%;
+	margin-left: 2%;
+}
+
+div.article-tiles > div:nth-child(3)
+{
+	width: 18%;
+	margin-left: 2%;
+}
+
+div.article-tiles > div:nth-child(4)
+{
+	width: 18%;
+	margin-left: 2%;
+}
+
+div.article-tiles > div:nth-child(5)
+{
+	width: 18%;
+	margin-left: 2%;
+}
+
+div.article-tiles img
+{
+	max-width: 90%;
+}
+
+.footer
+{
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	color: #ffffff;
+	font-size: 0.75em;
+	padding-bottom: 1em;
+}
+
+p.ButtonText
+{
+	color: #ffffff;
+	text-align: center;
+	font-size: 1em;
+	margin-bottom: 0.25em;
+	margin-top: 0.25em;
+	font-family: var(--BrandFont);
+}
+
+p.ProductName
+{
+	font-size: 3.75em;
+	vertical-align: middle;
+	text-align: center;
+	color: #4c4c4c;
+	font-weight: bold;
+}
+
+p.SubProductName
+{
+	font-size: 3.75em;
+	text-align: center;
+	vertical-align: middle;
+	opacity: 65;
+	color: var(--BrandPrimary2);
+}
+
+p.LastUpdated
+{
+	color: var(--BrandPrimary);
+	font-family: var(--BrandFont2);
+	border-top-width: 1px;
+	border-top-color: #d3d3d3;
+	margin-top: 6px;
+	font: inherit;
+	font-size: 7pt;
+	padding-bottom: 0px;
+	border-top-style: solid;
+	padding-top: 4px;
+}
+
+/*==Home Tiles section==*  NOT USING */
+
+div.home-tiles-container
+{
+	padding-top: 30px;
+	padding-bottom: 40px;
+}
+
+div.home-tiles	/*This layout was created using the Responsive Layout Editor in MadCap Flare. Go to: Home Ribbon > Styles Section > Responsive Layout*/
+{
+	mc-grid-row: true;
+	margin-left: -300px;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+div.home-tiles::before
+{
+	content: ' ';
+	display: table;
+}
+
+div.home-tiles::after
+{
+	content: ' ';
+	display: table;
+	clear: both;
+}
+
+div.home-tiles > div
+{
+	float: left;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+div.home-tiles > div:nth-child(1)
+{
+	width: 18%;
+	margin-left: 24%;
+}
+
+div.home-tiles > div:nth-child(2)
+{
+	width: 18%;
+	margin-left: 1%;
+}
+
+div.home-tiles > div:nth-child(3)
+{
+	width: 18%;
+	margin-left: 1%;
+}
+
+/*=Elements for text contained within each home-tile=*/
+
+p.tile-title
+{
+	text-align: center;
+	margin: 0;
+}
+
+a.home-button
+{
+	display: block;
+	text-decoration: none;
+	background-color: #3C5A9A;
+	color: white;
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	border: 1px solid #3C5A9A;
+	border-radius: 50px;
+	padding-left: 11.5px;
+	padding-right: 11.5px;
+	overflow: hidden;
+	box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.3);
+	padding-bottom: 6px;
+	padding-top: 6px;
+}
+
+a.home-button:hover
+{
+	background-color: #008AAD;
+	color: #FFF;
+}
+
+/* The following are unique to the main landing Help page  KEEP THIS */
+
+@media tablet
+{
+	h1
+	{
+		line-height: 1em;
+		font-size: 2em;
+		padding-left: 5px;
+		padding-right: 5px;
+		padding-top: 30px;
+		height: 5em;
+	}
+}
+
+@media mobile
+{
+	h1
+	{
+		line-height: 1em;
+		font-size: 1.5em;
+		padding-left: 5px;
+		padding-top: 10px;
+		margin-right: 10px;
+		padding-right: 0px;
+		height: 5em;
+	}
+}

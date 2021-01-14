@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Enabling user accounts for Two Factor Authenticatio<MadCap:annotation MadCap:comment="Case 43518 Javar Slacked me that this topic was out of date. I created a case to track the work. https://extranet.clientspace.net/Next/linkto/ClientServiceCase/43518" MadCap:createDate="2020-03-17T14:11:38.446Z" MadCap:creator="Diane Hogan" MadCap:editDate="2020-03-17T14:12:43.686Z" MadCap:editor="Diane Hogan" MadCap:initials="DH" MadCap:creatorCentralUserId="98c66c7b-566c-4028-b287-6a8c4e6d073b">n</MadCap:annotation></h1>
+        <p>Enabling two-factor authentication for your ClientSpace installation redirects all your users to a login page for ClientSpace, regardless of their User Profile preference setting. If you have any questions about this or any other login function, log an Extranet case before making configuration changes.</p>
+        <p><b>Two-factor authentication</b> (also known as 2FA ) is a method of confirming a user's claimed identity by using a combination of two different components. ClientSpace 2FA uses the standard username and password combination as the first factor, and a generated code sent to the user at authentication time as a second confirmation factor.</p>
+        <p>For details on configuring your <MadCap:variable name="MyVariables.ProductName" /> authentication settings, see <MadCap:xref href="ConfigAuthSettings.html" title="Configuring authentication settings" alt="Configuring authentication settings">Configuring your [%=MyVariables.ProductName%] authentication settings</MadCap:xref>.</p>
+        <p class="ProcedureIntro">
+            <MadCap:annotation MadCap:comment="enhanced the procedure. Changed step 4 - was worded so that only Prism could do this. " MadCap:createDate="2020-03-17T14:12:45.938Z" MadCap:creator="Diane Hogan" MadCap:editDate="2020-03-17T14:13:44.835Z" MadCap:editor="Diane Hogan" MadCap:initials="DH" MadCap:creatorCentralUserId="98c66c7b-566c-4028-b287-6a8c4e6d073b">To configure user accounts for 2FA:</MadCap:annotation>
+        </p>
+        <ol>
+            <li>
+                <p>Ensure that each user has a valid <span class="UXElement">Email</span> configured in their User Profile in ClientSpace.</p>
+            </li>
+            <li>
+                <p>For users who want to receive authentication information by text, ensure they have a valid <span class="UXElement">SMS Email</span> configured in their User Profile (see <MadCap:xref href="SMSEmailFormats.htm" title="SMS email formats" alt="SMS email formats">SMS Email formats</MadCap:xref>).</p>
+            </li>
+            <li>
+                <p>If the user does not receive the authentication code in a timely fashion, check the configurations on the User Profile. Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement"><MadCap:concept term="Security" />Security</span> &gt; <span class="UXElement">Authentication Settings</span>.<br />The Authentication Settings form opens.</p>
+            </li>
+            <li>
+                <p>Complete the following fields:</p>
+            </li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <colgroup>
+                <col class="TableStyle-Procedure-Column-Column1" style="width: 220px;" />
+                <col class="TableStyle-Procedure-Column-Column1" />
+            </colgroup>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">TFA Code Length</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The length of the 2FA authentication code that is generated for the user.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">TFA Code Expiration Minutes</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Authentication code expires after this number of minutes.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">TFA Code Expiration Days</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">The number of days the 2FA Authentication code exists in the browser before automatic expiration and subsequent re-authentication of user. <span class="UXElement">Note</span>:&#160;If the user chooses the option to Delete Cookies when clearing their browser cache, the system cannot match the hashed codes and interprets this as an un-authenticated browser, prompting the user through the 2FA process.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>
+                <p>After the system is configured, when a user logs in, the ClientSpace username and password is validated as normal. Then the system checks to see if the user has a current 2FA security cookie cached in their browser.</p>
+            </li>
+            <li>
+                <p>If the user does not have a valid 2FA cookie, the system:</p>
+                <ul MadCap:continue="true" style="list-style-type: square;">
+                    <li>
+                        <p>Checks the user profile, and if the SMS Email is configured, attempts to send a 2FA authentication code to the configured email address (see <MadCap:xref href="SMSEmailFormats.htm" title="SMS email formats" alt="SMS email formats">SMS Email formats</MadCap:xref>).</p>
+                    </li>
+                    <li>
+                        <p>If SMS Email is not configured, the system sends an email to the primary Email of the user containing the authorization code.</p>
+                    </li>
+                    <li>
+                        <p>After the user receives the authorization code, they can enter it into the security box, which creates a security token (system cookie) containing a hashed code separate from the session cookie created by logging in.</p>
+                    </li>
+                    <li>
+                        <p>The cookie is checked against the current 2FA cookie stored in ClientSpace, and if the hashed codes match, the user is authenticated. The cookie lives in the browser for the length of time specified under System Admin &gt;&#160;App Settings, at which point the cookie expires, and the user is prompted for 2FA again. <span class="UXElement">Note</span>: If the user chooses the option to Delete Cookies when clearing their browser cache, the system cannot match the hashed codes and interprets this as an un-authenticated browser, prompting the user through the 2FA process.</p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>If you are logged into Outlook with the Outlook Add-In enabled, you must close and re-open Outlook to allow the Add-In access to the Two Factor Authenticated browser session. Failure to do so causes an authentication error when using the Outlook Add-In.</p>
+            </li>
+        </ol>
+    </body>
+</html>

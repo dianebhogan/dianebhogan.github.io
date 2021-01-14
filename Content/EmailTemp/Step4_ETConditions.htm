@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title>Conditions</title>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <div class="NoPageBreak">
+            <h1>
+                <MadCap:concept term="Email Templates" />Step 4: Conditions</h1>
+            <p>Conditions determine how and when the email notification triggers. You can configure display conditions (in the Add section), and you can use the display conditions in the Condition Expression field.  When the Condition Expression field is empty, the display conditions process as ORs. In the  example, the Condition Expression examines 1 <span class="UXElement">and</span> 2. Both conditions must be met. Without the Condition Expression, the display conditions process as 1 <span class="UXElement">or</span> 2. Only one of the conditions must be met. For a detailed explanation about conditions, see the topic <MadCap:xref href="CondExpr.htm" title="condition expressions" alt="condition expressions" class="Heading">Condition Expressions</MadCap:xref>.</p>
+            <p>
+                <img src="../Resources/Images/EmailTemplates/DisplayCond_CondExp.png" alt="" title="" />
+            </p>
+            <p>The following procedures guide you through configuring conditions. You can clone conditions and also set up a condition based on the number of days, months, or years from a date.</p>
+            <p>
+                <img src="../Resources/Images/EmailTemplates/Step4_Conditions.png" class="thumbnail" />
+            </p>
+        </div>
+        <MadCap:snippetBlock src="../Resources/Snippets/ET_Step4Conditions.flsnp" />
+        <p class="ProcedureIntro">To trigger conditions based on number of days/months/years from a date:</p>
+        <ol MadCap:continue="true">
+            <li>Complete the form fields:</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 124px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select a date datatype field. This action makes the Aging operators available in <span class="UXElement">Operator</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Operator</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select one of the following:</p>
+                        <ul>
+                            <li><span class="UXElement">Aging (from now) &gt; =</span>
+                                <ul>
+                                    <li>Greater than or equal to the number of days/months/years in <span class="UXElement">Value</span>.</li>
+                                </ul>
+                            </li>
+                            <li><span class="UXElement">Aging (from now) &lt; =</span>
+                                <ul>
+                                    <li>Less than or equal to the number of days/months/years in <span class="UXElement">Value</span>.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p class="TableTextLeft">The less than operator requires that the evaluated date occurs between the calculated date and today.  It has to be between the date set in the configuration. For example, if the value is 6d, the from date must be between 6 days ahead and today.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Type a number accompanied by:</p>
+                        <ul>
+                            <li><span class="UXElement">d</span>: for days</li>
+                            <li><span class="UXElement">m</span>: for months</li>
+                            <li><span class="UXElement">y</span>: for years</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Apply</span> or <span class="UXElement">Save.</span></li>
+        </ol>
+        <p class="ProcedureIntro">Putting it all together</p>
+        <p>The following example illustrates three conditions named 1, 2, and 3. The Condition Expression is <span class="UXElement">(1 and 2) OR 3</span>. The OR&#160;indicates that only one data point must be met. For an aging evaluation, this condition expression is looking for a date that is greater than 3 days and less than 12 days. Or, a date that is greater than 5 days.</p>
+        <p>
+            <img src="../Resources/Images/EMailTemplates/Aging.png" class="thumbnail" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>Click <b>Next</b> to proceed to <MadCap:xref href="Step5_ETAttachments.htm" title="Step 5: Attachments" alt="Step 5: Attachments">Step 5: Attachments</MadCap:xref>.</li>
+        </ol>
+    </body>
+</html>

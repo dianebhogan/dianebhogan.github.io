@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Sales" />Creating a Workspace from an Organization</h1>
+        <p>You can easily create a workspace in Implementation status directly from an Organization record using the New Implementation link. This is a convenient feature for clients that do not use the <MadCap:variable name="MyVariables.ProductName" /> Sales module. This feature generates a Client Master and Client Team.</p>
+        <p>The <span class="UXElement">New Implementation</span> link is a feature available to users of the Implementation Group license. The link generates Workspaces directly into Implementation status.</p>
+        <p>Creating a workspace in Implementation status requires the following:</p>
+        <ul>
+            <li>The <span class="UXElement">New Implementation</span> link on the Organization displays only if the Organization does not already have associated workspaces (scripted as inactive).</li>
+            <li>The features uses the business rule <span class="UXElement">Setup Client in Implementation</span>.</li>
+            <li>The link is deployed as inactive.</li>
+            <li>Clicking this link runs the same business logic as the Create Client link without prompting for Client Number. Org/Contract status is Implementation.</li>
+            <li>When workspace generation is complete, the Workspace landing page is displayed.</li>
+            <li>Clicking this link runs the same business logic as the Create Client link without prompting for Client Number. The Org/Contract status is Implementation. </li>
+        </ul>
+        <p class="ProcedureIntro">To create a Workspace from an Organization:</p>
+        <ol>
+            <li>Open the targeted Organization record.</li>
+            <li>In the <b>Action Center</b>, under <b>Workflow</b>, select <b>New Implementation</b>.<br />A Workspace record opens for your Organization showing the Contract Status as Implementation.</li>
+        </ol>
+    </body>
+</html>

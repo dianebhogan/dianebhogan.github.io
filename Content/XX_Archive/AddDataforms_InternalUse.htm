@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <p class="InternalComment">This content is for internal use only. Removed from client facing doc.</p>
+        <h2>Next: Actions and Developer Settings</h2>
+        <p>The next step is to configure the actions for your dataform. The following fields are in the Actions and Developer Settings of Dataform Properties.</p>
+        <p class="ProcedureIntro">To further customize your dataform:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">On the Dataform Properties form, locate the <b>Actions</b> fieldset, where you will find an array of options.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Use the following field descriptions to guide you through the configuration.</p>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 166px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p>Can Have Multiple</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p>Single vs Multiform: Dataforms come in two basic flavors:</p>
+                        <p class="Bullet1" MadCap:autonum="• ">The&#160;Single form (such as the Client Master) has a one to one relationship with the Workspace.&#160; This is great for recording specifics about an individual or client where there is only ever one item, and if it changes you need to update it.</p>
+                        <p class="Bullet1" MadCap:autonum="• ">The Multiform (such as locations) has a one-to-many relationship with the workspace. This is great for recording multiple instances of something, such as physical locations for a client, or paycheck records for an employee.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p>Search On Load</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p>Multiforms present as a list of records, whether this list is populated automatically when you land on the dataform or have to click the 'Search' button to populate the list is a function of search on load.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p>Secure Attachments</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p>Secures attachments for this dataform.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p>Sow on Landing Page</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p>Indicates the dataform will be available at the bottom of the various types of Landing pages in our Next application under dataform search.&#160; Leave this unchecked if you only want to display the form in Next as a tabbed or linked dataform.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p>Exclude from BI</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p>Removes the dataform from the list of available tables in the Datasources section of Business Intelligence, effectively hiding the dataform from reporting.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p>BI Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p>The "Friendly Name" stored in this field will display in Business Intelligence reporting instead of the table name.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p>Task Category</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p>On creation of a task record from this dataform, the category field of the task defaults to the selected value.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p>Time Category</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p>On creation of a time tracking record from this dataform, the category field of the record defaults to the selected value.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="3. ">In the <b>Developer Settings</b> fieldset, use the following field descriptions to guide you through the configuration:</p>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 181px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p>Time Category Function</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p>This option requires custom development and allows you to override the default Time Tracking Category.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p>Icon CSS&#160;Class</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p>This field defines the type of icon that will be displayed for this form on the workspace landing page.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p>Include Activities in Notifications</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p>Specifies if Activities (CRM Notes) are included in dataform notifications.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="4. ">After you configure this section, click <b>Apply</b>.</p>
+    </body>
+</html>

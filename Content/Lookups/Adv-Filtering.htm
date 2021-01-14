@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Advanced filtering: Using contents of another field and Filter Source</h1>
+        <p>For advanced filtering, we reference two fields, so that when the field value changes for A, then the list for B is filtered with that value. In advanced filtering, you copy the field's Name value  that you want to be the source for your filter to another field's Filter Source. </p>
+        <p>With this in mind, let's take filtering a bit further using our US States example. We want to restrict the range of values displayed in the lookup field <em>State</em> using a new field <em>Region</em> to hold the values to filter the State field.  </p>
+        <p class="ActionTip">Advanced filtering applies to the Lookup (core) and Lookup Type Ahead (core) datatypes,  but does <span class="UXElement">not</span> apply to Lookup - Multiple (core).</p>
+        <p class="StepResult"> </p>
+        <p>
+            <img src="../Resources/Images/Lookups/Adv-Region-lookups.png" class="thumbnail_right" />
+        </p>
+        <p>To guide you through this process, we configured a new lookup group <em>Region</em>, and a set of lookup values for this group. The code value of the Region lookup matches the filter values we applied to the US&#160;States lookups. We use NE, SE, N, P, SW, NW, MW, and MA.</p>
+        <p>The following procedure guides you through advanced filtering using our example of US States and Region, and the State field.</p>
+        <h2>1. Add a new dataform field</h2>
+        <p>Our example uses a new dataform field named <em>Region</em>.</p>
+        <p class="ProcedureIntro">To add a new dataform field:</p>
+        <ol>
+            <li>Return to the dataform. Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Advanced</span> &gt; <span class="UXElement">Dataform Admin</span>.<br />The Dataform Admin dashboard opens.</li>
+            <li>Open the dataform in question. Our example opens the Client Location dataform.<br />The Dataform Properties form opens.</li>
+            <li>In the <span class="UXElement">Action Center</span>, click <span class="UXElement">Fields</span>.<br />The field list opens. </li>
+            <li>Add a new lookup field to the dataform and set this field to use the new lookup group (in our scenario, the new field is <em>Region</em>) with no filtering on the field. We set the <em>Region</em> field  to use a Lookup Group named <em>Region</em>.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Lookups/New-dataform-lookup-field.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <h2>2. Configure the dataform field</h2>
+        <p>We return to the dataform and configure the State field to use the new Region field as its Filter Source. Make sure that the Filter Value field has been cleared. If Filter Source is used in configuring lookup field types, the Filter Value field is ignored.</p>
+        <ol start="1">
+            <li>From the dataform field list, copy the Name value of field A. In our example, field A is <em>Region</em>, and the value we are copying is <em>luRegion</em>.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Lookups/Adv-copyName-column-value.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol start="1" MadCap:continue="true">
+            <li>Open the related field (field B, which in our example is <em>State</em>).<br />The field configuration form opens.<br /></li>
+            <li>In <span class="UXElement">Filter Source</span>, paste the copied value.<br />Our example shows that we pasted <em>luRegion</em> in the State field <span class="UXElement">Filter Source</span>.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Lookups/Region-dataform-field-FilterSource.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <p>The next step is to reload the dataform to use the new lookup settings.</p>
+        <p class="ProcedureIntro">To reload the dataform:</p>
+        <ul>
+            <li>On the dataform, on the <span class="UXElement">Action Center</span> toolbar, click  (<span class="UXElement">Reload</span>).</li>
+        </ul>
+        <h2>See it in action</h2>
+        <p>Now let's see this in action. With the new configuration, the value selected in the Region field filters the list of available values in the State field of the same form. The Client Location dataform field for <em>State</em> now presents a new list of values – the Region values of MidAtlantic, Midwest, North, Northeast, Northwest, Pacific, Southeast, and Southwest. You might use this form of filtering when selecting a group of values (in our scenario <em>Region</em> is a group of states) to simplify and standardize lists.</p>
+        <p>
+            <img src="../Resources/Images/Lookups/State-dataform-field-config-with-Region-as-FilterSource.png" />
+        </p>
+    </body>
+</html>

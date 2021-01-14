@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="DocuSign" />Notifying users of status</h1>
+        <p>DocuSign user notifications can occur through a workflow when a file has returned, or a system email template when a DocuSign call fails.</p>
+        <h2>System Email Template - Failure</h2>
+        <p>ClientSpace users are notified when a DocuSign call fails through the System Email Template, <span class="UXElement">DocusignFail</span>. The template sends a notification to the Created By user on Insert or Update when the Status equals CS Failed and includes the Log Data from the related Uploaded Files Queue record. The email template is Active by default.</p>
+        <h2>Workflow</h2>
+        <p>You can create a workflow to notify users when a file has returned to ClientSpace. Use the following HrdActions in the Workflow:</p>
+        <ul>
+            <li>DOCUSIGN_COMPLETED indicates the signing process completed.</li>
+            <li>DOCUSIGN_DECLINED indicates the process  was declined by a signer.</li>
+            <li>DOCUSIGN_VOIDED indicates the process was voided (canceled).</li>
+        </ul>
+        <p class="ProcedureIntro">When creating your workflow:</p>
+        <ol>
+            <li>In Step 1 Channel, set the following:</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 172px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Execution Pipeline</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">DocuSign</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Triggering Form</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select the form to which the completed files are uploaded. In our example, we used the Collateral dataform.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">HdrAction</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">In Value:</p>
+                        <ol>
+                            <li>Select <span class="UXElement">Other Value</span>.<br />The Header Action Value dialog box opens.</li>
+                            <li>In <span class="UXElement">Value</span>, type one of the following:<ul style="list-style-type: square;"><li>DOCUSIGN_COMPLETED</li></ul><ul style="list-style-type: square;"><li>DOCUSIGN_DECLINED</li></ul><ul style="list-style-type: square;"><li>DOCUSIGN_VOIDED</li></ul></li>
+                            <li>Click <span class="UXElement">Ok</span>.</li>
+                        </ol>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>For more details on creating a Workflow, see <MadCap:xref href="../WFC/ConfigYourWorkflow.htm" title="Configuring your workflow" alt="Configuring your workflow">Configuring your workflow</MadCap:xref>.</li>
+        </ol>
+    </body>
+</html>

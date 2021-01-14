@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1 MadCap:autonum="Chapter 1 ">Import/ Export mapping</h1>
+        <p>The mapping of data between ClientSpace and Salesforce is defined using Import Map Headers.  </p>
+        <p>Two Import Maps must be created:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Export Map Header</p>
+        <p class="Bullet1" MadCap:autonum="• ">Import Map Detail</p>
+        <h2>Export Map Header</h2>
+        <p>
+            <img src="../Resources/Images/Integrations/Salesforce_exportmap.png" />
+        </p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');margin-left: 0;margin-right: auto;" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Procedure-Head-Header1">
+                    <th class="TableStyle-Procedure-HeadE-Column1-Header1">Field</th>
+                    <th class="TableStyle-Procedure-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Source File</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">SFORCE_export_mapping*.csv</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Dataform</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1"> Import_Organization</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Custom Import Class</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">not yet implemented</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Import Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Salesforce Export</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Execution Pipeline</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">ignored</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Import Action</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">ignored</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Execute Business Logic</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">ignored</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Special Import</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">selected</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Import Map Header</h2>
+        <p>Use Import Map Headers to map data between ClientSpace and Salesforce.</p>
+        <p class="ProcedureIntro">To create the Import Map Header:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Configure Import</b>.<br />The Import Map Header Search page is displayed.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Click <b>Add</b>.<br />The Import Map Header Detail form is displayed.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/salesforce_importmapHdrDetail.png" />
+        </p>
+        <p class="L1Num" MadCap:autonum="3. ">Complete the form fields:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Procedure-Head-Header1">
+                    <th class="TableStyle-Procedure-HeadE-Column1-Header1">Field</th>
+                    <th class="TableStyle-Procedure-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Source File</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1"> SFORCE_import_mapping*.csv</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Dataform</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Import_Organization</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Custom Import Class</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1"> not yet implemented</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Import Type</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1"> Salesforce Import</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Execution Pipeline</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1"> ignored</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Import Action</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1"> ignored</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Execute Business Logic</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">ignored</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Special Import</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">selected</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="4. ">Click <b>Save</b>.</p>
+        <p>The next step is to add fields by configuring the import map detail.</p>
+        <p class="ProcedureIntro">
+            <MadCap:annotation MadCap:createDate="2019-09-06T17:37:52.8462708-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="Not sure if this procedure is accurate. Check with SME." MadCap:editor="dhogan" MadCap:editDate="2019-09-06T17:38:05.2283368-04:00">To configure the Import Map Detail:</MadCap:annotation>
+        </p>
+        <p class="L1Num1" MadCap:autonum="1. ">Open the newly created Import Map Header.<br />The Import Map Header Detail form is displayed.</p>
+        <p class="L1Num" MadCap:autonum="2. ">In <b>Action Items</b>, click <b>Fields</b>.<br />The Import Map Search list is displayed, showing the existing fields.</p>
+        <p class="L1Num" MadCap:autonum="3. ">To add a field, click <b>Add</b>.<br />The Import Map Detail form is displayed.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/ImportMapDetail.png" />
+        </p>
+        <p class="L1Num" MadCap:autonum="4. ">Complete the form:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 91px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Procedure-Head-Header1">
+                    <th class="TableStyle-Procedure-HeadE-Column1-Header1">Field</th>
+                    <th class="TableStyle-Procedure-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">File Column</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Ignored. Enter text that describes the source of this detail (e.g., OrgName or sfAcctName) for clarification.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Field and Dataform</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p>This selection will always be the ClientSpace data, whether configuring an Export or Import. When configuring an Export, this will be where the data originates when sending to Salesforce.  When configuring an Import, this is where the data from Salesforce will be stored</p>
+                        <p class="Bullet1" MadCap:autonum="• ">Select any non-parent field type on any single-form</p>
+                        <p class="Bullet1" MadCap:autonum="• ">When mapping Organization or Contact, select Import_Organization or Import_Contact project type respectively.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">API Path</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p>This entry will always be the Salesforce data, whether configuring an Export or Import. When configuring an Export, this will be where the data will be stored in Salesforce.  When configuring an Import, this is where the data from Salesforce will be retrieved</p>
+                        <p>The format of this field is SF_ObjectType/FieldName, e.g. Account/BillingStreet</p>
+                        <p>The only valid SF_ObjectType values are Opportunity, Account or Contact. Other values will be ignored</p>
+                        <p>Can only contain a SF_ObjectType and up to two sub fields, as in Account/RecordType/Name</p>
+                        <p>Cannot contain special characters (other than ‘/’) and no spaces</p>
+                        <p>Salesforce fields that are ‘Calculated’ will not be exported by ClientSpace as Salesforce will not allow them to be directly updated</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Data Type</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="Bullet1" MadCap:autonum="• "><b>Text</b>: Most fields should be mapped as Text (even if the source or destination fields are integers or dates/etc.)</p>
+                        <p class="Bullet1" MadCap:autonum="• "><b>Lookup</b>: Not yet implemented (use Text).</p>
+                        <p class="Bullet1" MadCap:autonum="• "><b>Foreign Key</b>
+                        </p>
+                        <p class="Bullet2" MadCap:autonum="• ">Currently, this is only implemented for Imports and locating CS Users.</p>
+                        <p class="Bullet2" MadCap:autonum="• ">It will accept a Salesforce User ID and locate that User in ClientSpace by Email. A call is made to Salesforce using the SF User ID. The SF User Email is located and used to find a matching Email in ClientSpace.</p>
+                        <p class="Bullet1" MadCap:autonum="• "><b>Default Value</b>
+                        </p>
+                        <p class="Bullet2" MadCap:autonum="• ">A Default Value can be set in this field. In this case, the API Path must be set to “Object/DefaultValue” (without the quotes).  This default value will be set in the appropriate ClientSpace field.  For Imports the Object is not important, the Default Value will be set in the CS field.  For Exports, Object must be Opportunity, Account, or Contact.</p>
+                        <p class="Bullet1" MadCap:autonum="• "><b>Active</b>, <b>Required Value</b>, and <b>Required Column</b></p>
+                        <p class="Bullet2" MadCap:autonum="• ">Only Active records will be used.</p>
+                        <p class="Bullet2" MadCap:autonum="• ">Required Value and Required Column settings are ignored.</p>
+                        <p class="Bullet1" MadCap:autonum="• "><b>Minimum Required Field</b>
+                        </p>
+                        <p class="Indent1">Some fields are required in order to create Organization, Workspaces, Contacts, etc.  Those fields must be mapped or failures will be encountered.  Required fields depend on the dataform and the Client’s Installation.  See the Required Fields Mapping Table for details of PEO required fields.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="5. ">Click <b>Save</b>.</p>
+    </body>
+</html>

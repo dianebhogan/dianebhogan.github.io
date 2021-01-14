@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="2"
+  Comment="HRML5 Help output - Side Nav"
+  Type="WebHelp2"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  MasterToc="/Project/TOCs/DHoganSamplesMaster_TOC.fltoc"
+  ConditionTagExpression="include[ClientSpace.Screen], exclude[ClientSpace.Exclude or ClientSpace.FutureDev or ClientSpace.Print or ClientSpace.SME_Review or ClientSpace.Sprint_R98]"
+  EquationsOutputType="PNG"
+  MasterPage="/Content/Resources/MasterPages/OtherTopics.flmsp"
+  ExcludeUnreferencedContent="true"
+  TopNavTocPath="false"
+  Skin="/Project/Skins/HTML5.flskn"
+  ReplaceSpacesWithUnderscores="true"
+  MasterStylesheet="/Content/Resources/Stylesheets/ClientSpace.css"
+  MasterStylesheetOverride="true"
+  TopicToolbarSkin="/Project/Skins/Toolbar.flskn"
+  OutputFile="Samples"
+  ResolveCssVariables="true"
+  InsertMOTW="false"
+  GenerateWebSafeImages="false"
+  MakeFileLowerCase="true"
+  PartialWordSearch="true"
+  ServerEnabled="false"
+  MoveOutputContentToRoot="true"
+  FaviconSkin="/Project/Skins/Favicon.flskn"
+  SearchResultsSkin="/Project/Skins/SearchResults.flskn"
+  MenuSkin="/Project/Skins/SideMenu.flskn"
+  GenerateAllSkins="true"
+  SearchBarSkin="/Project/Skins/SearchTopics.flskn"
+  DisableAutoSync="true"
+  OutputAnalyticsServer="https://api.madcapcentral.com/"
+  OutputAnalyticsLicenseId="9435"
+  LiveHelpType="Disabled"
+  OutputAnalyticsKey="c5430b77-abb5-4d7a-9cec-8685840d42fb"
+  SearchFilterSet="/Project/Advanced/SearchFilterSet.flsfs"
+  DefaultUrl="/Content/HOME/DianeHogan-samples.htm"
+  ContentInclusionType="Toc">
+  <PrintedOutput
+    CollapseMargins="true"
+    GenerateTOCProxy="true"
+    GenerateIndexProxy="true"
+    GenerateGlossaryProxy="true"
+    OutputFormat="doc" />
+  <Destinations>
+    <Destination
+      Link="/Project/Destinations/SampleDocs.fldes"
+      Publish="true"
+      IsResource="false" />
+  </Destinations>
+  <Variables>
+    <Variable
+      Name="MyVariables/ProductName">ClientSpace</Variable>
+    <Variable
+      Name="MyVariables/CopyrightMonth">December</Variable>
+  </Variables>
+  <MetaTags>
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge" />
+  </MetaTags>
+</CatapultTarget>

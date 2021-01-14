@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+    </head>
+    <body>
+        <h1>Step 3:&#160;Configure the Email Templates</h1>
+        <p>The email templates  for case discussions are CSCDISC: Case Discussion, CSCDISCNEW: Case Discussion New, and CSCRPLY: Case Discussion Reply. These templates are already configured for case discussions. However, you need to set a value in CSCDISC and CSCDISCNEW for the <span class="UXElement">From Email Override</span> address, which is the connection to the Email Integration Mailbox (see the following image). The From Email Override address in the email template CSCDISC and CSCDISCNEW must match the Mailbox address that you specified in the Email Integration record. Our example uses payroll.bigtimepeo@gmail.com. In this topic, you will edit <span class="UXElement">From Email Override</span> in the email templates <span class="UXElement">CSCDISC</span> and <span class="UXElement">CSCDISCNEW</span>.</p>
+        <p>
+            <img src="../Resources/Images/Case/EmailInteg_Mailbox_EmailTemp.png" class="thumbnail" />
+        </p>
+        <p class="ProcedureIntro">To configure the From Email Override:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Email Templates</span>.<br />The Email Templates dashboard opens.</li>
+            <li>Locate and open <span class="UXElement">CSCDISC</span> Client Service Case Discussion (click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Jump</span>)).<br />The email template opens.</li>
+            <li>In <span class="UXElement">From Email Override</span>, enter the email address that you set in the Email Integration record. Our example uses payroll.bigtimepeo@gmail.com.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Case/EmailInteg_FromEmailOverride.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+            <li><span class="UXElement">Repeat</span> the procedure for <span class="UXElement">CSCDISCNEW</span> and <span class="UXElement">Save</span>.</li>
+            <li>Go to <MadCap:xref href="EmailInteg_SchedProc.htm" title="Step 4: Reviewing the Email Integration scheduled process" alt="Step 4: Reviewing the Email Integration scheduled process">Step 4:&#160;Reviewing the Email Integration scheduled process</MadCap:xref>.</li>
+        </ol>
+    </body>
+</html>

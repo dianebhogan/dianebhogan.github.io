@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 66 ( CORE )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" width="250" src="https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50" srcset="https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50 2x, https://clientspace.atlassian.net/wiki/download/thumbnails/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2&amp;width=250&amp;height=50 1x" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;3/5/2018&#160; &#160; &#160;<strong>Sprint Ended:</strong>&#160;3/31/2018</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-OrgDetail-WorkspacesActionCenterItemENHANCEMENT"><span style="color: rgb(51,153,102);">Org Detail - Workspaces Action Center Item &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Organization detail has been enhanced with a multi function Workspace button.&#160; The button displays in the Action Center of the Organization and works in the following manner:</p>
+                        <ul>
+                            <li>For Organizations without a workspace - Action Center Shows&#160;the Map It button</li>
+                            <li>For Organizations with one workspace -&#160; Action Center Shows&#160;the Map It button and a&#160;button with counter of 1</li>
+                            <li>For Organizations with multiple workspaces - Action Center Shows&#160;the Map It button&#160;and a button with counter matching the number of Active, non-template workspaces.</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-OrgAuditTrailENHANCEMENT"><span style="color: rgb(51,153,102);">Org Audit Trail&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>This exposes the Audit Trail icon (magnifying glass) to global administrators on the Organization detail page, allowing authenticated users to see a list of edits to audited fields including the original and new value for the field, when the field was changed and by whom.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-DataformAuditTrailENHANCEMENT"><span style="color: rgb(51,153,102);">Dataform Audit Trail&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>This exposes the Audit Trail icon (magnifying glass) to global administrators and any user that has security rights to Dataform.Admin in the Action Center Icons for the datafom, allowing authenticated users to see a list of edits to audited fields including the original and new value for the field, when the field was changed and by whom.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-AbilitytoimporttotheActivefieldonanydataformENHANCEMENT"><span style="color: rgb(51,153,102);">Ability to import to the Active field on any dataform&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The import process has been enhanced to allow for import of the IsActive flag</p>
+                        <p>The IsActive field has been added to the field selection list on Import Map Detail records</p>
+                        <p>This field automatically sets to Checkbox when selected</p>
+                        <p>Import file should pass a 1 if "Active" or 0 if "InAactive" (unchecked).</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-CCCurrentUserwhenCreatinganOrgActivityENHANCEMENT"><span style="color: rgb(51,153,102);">CC Current User when Creating an Org Activity&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Organization Email Activities have been enhanced</p>
+                        <p>A checkbox "CC Current User" has been added to the Activity form where the activity type = Email<br />When checked, enables sending email to the current user<br />This setting does not persist and only applies to the current save; the checkbox resets to unchecked when form is opened. When the email is generated from the activity the current user will be added as a "CC" recipient.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-OrgContact-AddTitletoThumbnailViewENHANCEMENT"><span style="color: rgb(51,153,102);">Org Contact - Add Title to Thumbnail View&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Contact section of the Organization Action menu has been updated to display the Contact Job Title (if populated) under the Contact Name.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-SecondaryconditiononrulesENHANCEMENT"><span style="color: rgb(51,153,102);">Secondary condition on rules&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Business rules has been enhanced, allowing for a secondary triggering condition in the rules configuration:</p>
+                        <p>(In the descriptions below, Primary Trigger has been shortened to PT, secondary trigger has been shortened to ST so PT Field is the triggering field on the primary condition and so on...)</p>
+                        <p><strong>Primary Trigger</strong>
+                            <br />- PTField: can specify 'HdrAction' or a field on the current dataform<br />- PTValue: the 'HdrAction' value or the field value used for comparison<br />- Compares PTField HdrAction value or the dataform field value with PTValue entered<br />- The PTValue must have changed for the rule to fire, based on the following criteria:<br />&#160; - If comparing 'HdrAction' value, the HdrAction is assumed changed<br />&#160; - If comparing dataform field values (e.g. luState=MA), dataform field must have changed<br />&#160; - If #IsEmpty, #IsNotEmpty, dataform field is assumed changed<br />&#160; - If #IsDirty, #IsDirtyAndIsEmpty, #IsDirtyAndNotEmpty, dataform field must have changed<br />- Clicking the label brings up a list of '#' conditions, hyperlinked to set the condition in PTValue</p>
+                        <p><strong>Secondary Trigger</strong>
+                        </p>
+                        <p>Secondary trigger field&#160;and&#160;value fields are enabled once a primary trigger condition has been set and are <strong><em>optional</em></strong>.&#160; Criteria for secondary trigger conditions are as follows:<br />- Primary Trigger condition&#160;<em><span style="text-decoration: underline;">must </span></em>be met.&#160; Secondary Trigger acts as an AND with Primary Trigger<br />- STField: can specify 'HdrAction', a field on the current dataform, or a field from ServerDataProc1 or ServerDataProc2<br />- STField: when using Server Data Procs, format is SDP1.FieldName or SDP2.FieldName<br />- STValue: the 'HdrAction' value or the dataform/SPD1/SPD2 field value<br />- Compares STField HdrAction value or the dataform/ServerDataformProc field value with STValue entered<br />- The PTValue must have changed for the rule to fire, based on the following criteria:<br />&#160; - If comparing 'HdrAction' value, the HdrAction is assumed changed<br />&#160; - If comparing SDP1/SDP2 value, the current value is assumed changed<br />&#160; - If comparing dataform field values (e.g. luState=MA), current dataform field must have changed<br />&#160; - If #IsEmpty, #IsNotEmpty, current dataform/SPD1/SPD2 field is assumed changed<br />&#160; - If #IsDirty, #IsDirtyAndIsEmpty, #IsDirtyAndNotEmpty, dataform field must have changed<br />&#160; - If #IsDirty, #IsDirtyAndIsEmpty, #IsDirtyAndNotEmpty, previous value is assumed Empty, field must have changed (contains a value)<br />- Clicking the label brings up a list of '#' conditions, hyperlinked to set the condition in STValue</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-ScheduledProcessAdmininNEXTENHANCEMENT"><span style="color: rgb(51,153,102);">Scheduled Process Admin in NEXT&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The scheduled process admin console has been integrated into our cross platform application and consists of the following:</p>
+                        <p>== Search Page ==</p>
+                        <p>Quick Search:</p>
+                        <ul>
+                            <li>Name (starts with)</li>
+                            <li>Process Type (starts with)</li>
+                        </ul>
+                        <p>% Search:</p>
+                        <ul>
+                            <li>Name</li>
+                            <li>Description</li>
+                        </ul>
+                        <p>More Search:</p>
+                        <ul>
+                            <li>Active/Archived/All radio button</li>
+                            <li>Name (starts with)</li>
+                            <li>Process Type</li>
+                        </ul>
+                        <p>Grid Columns:</p>
+                        <ul>
+                            <li>Name</li>
+                            <li>Schedule</li>
+                            <li>Days</li>
+                            <li>Next Run Date</li>
+                            <li>Last Run Date</li>
+                            <li>Running</li>
+                            <li>Last Result</li>
+                            <li>Last Run (sec)</li>
+                        </ul>
+                        <p>Detail Page:</p>
+                        <ul>
+                            <li>Name (TextWide, Required)</li>
+                            <li>Frequency (Integer, Required)</li>
+                            <li>Frequency Type (Lookup - 96E6D384, Required)</li>
+                            <li>Next Run Date (Date Picker, Required)</li>
+                            <li>Next Run Time (Time Picker, Required)</li>
+                            <li>Max Run Minutes (Integer)</li>
+                            <li>Last Run Seconds (Integer, Read Only)</li>
+                            <li>FieldSet for "Valid Days" checkboxes</li>
+                            <li>Description (textarea)</li>
+                            <li>Is Active (checkbox)</li>
+                            <li>Running (checkbox)</li>
+                            <li>Is System (checkbox)</li>
+                        </ul>
+                        <p>A progress indicator has been added to the "Run Process" button and displays "Running..." and a mini progress indicator within button while the process is engaged.</p>
+                        <p>&#160;If the process runs successfully, the button text changes to 'Completed'&#160;and a green check mark appear briefly.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-TightenupEmailAdminInterfaceENHANCEMENT"><span style="color: rgb(51,153,102);">Tighten up Email Admin Interface&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The email admin interface has been tightened up with the following changes:</p>
+                        <p style="margin-left: 30.0px;">DASHBOARD LIST - Table Name is now the decoded value, so "Client Master" instead of "gen_ClientMaster"<br />In STEP 2 - The Merge Procedure displays all Stored Procedures with a name LIKE '%emailtemplate_merge%'<br />In STEP 3 - The recipient source Procedure is a list displaying all Stored Procedures with a name LIKE '%emailtemplate_recipient%'</p>
+                        <p style="margin-left: 30.0px;">The UI for Source, Type, and Address does not require the Check be selected, but instead sets the value when selected.<br />In STEP 4 - The UI for Field Source, Trigger field, Operator, trigger value and label do not require the Check be selected, but instead set the value when selected<br />In STEP 5 - Attachment - is set when selected</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-HelpLinksConfigurationLabelChange"><span style="color: rgb(51,153,102);">Help Links Configuration Label Change&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>The list was incorrectly displaying "HelpCenter" instead of "Help Center" in the configuration list. This has been corrected.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-DeclinedEventsDon'tNotifyPeopleWhoDeclined"><span style="color: rgb(51,153,102);">Declined Events Don't Notify People Who Declined</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where if a user declined a meeting and then later it got rescheduled the system would not reset the responses of the people who had previously declined the meeting. The system now will reset users responses regardless if declined, accepted or not responded. Also corrected an issue where the Organizer was not getting set correctly in Gmail.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-CustomEmailTemplates-usersecurityENHANCEMENT"><span style="color: rgb(51,153,102);">Custom Email Templates - user security&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The 'Send Password' and 'Forgot Username' notifications now use Email Templates. These have been pre-configured in a series of email templates, replacing the outdated System email notifications with more interesting, customizable ones.</p>
+                        <p><strong>&#160;ClientSpace Authentication</strong>
+                        </p>
+                        <ul>
+                            <li>SYS_CSPWD (Reset Password)</li>
+                            <li>SYS_CSUSER (Forgot Username)</li>
+                        </ul>
+                        <p><strong>Domain Authentication</strong>
+                        </p>
+                        <ul>
+                            <li>SYS_DAPWD (Reset Password)</li>
+                            <li>SYS_DAUSER (Forgot Username)</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-Bademailaddresshandling"><span style="color: rgb(51,153,102);">Bad email address handling&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>The SendMail process will now validate the recipient mail addresses<br />If and address is invalid, email will not be sent to that recipient<br />If any addresses were found to be invalid, the LogData column in tblEmail will be updated with the invalid email info:</p>
+                        <ul>
+                            <li>EmailAddress</li>
+                            <li>UserID</li>
+                            <li>Recipient GUID (left 8 chars)</li>
+                            <li>Reason (from exception)</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-RequiredFieldinMoreSearchENHANCEMENT"><span style="color: rgb(51,153,102);">Required Field in More Search&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The system has been enhanced with a required field chiclet for module filters. If a filter on a module is required, but not filled in, that filter will display as a red chiclet on the search, graphically displaying that the filter is required.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-ConvertAuditTrailENHANCEMENT"><span style="color: rgb(51,153,102);">Convert Audit Trail&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Audit trail console has been converted to NEXT allowing you to monitor configured field changes within the application and consists of the following:</p>
+                        <p>== Search Page ==<br />Quick Search:</p>
+                        <ul>
+                            <li>Table Name (starts with)</li>
+                            <li>Field Name (starts with)</li>
+                            <li>Original Value (starts with)</li>
+                            <li>New Value (starts with)</li>
+                        </ul>
+                        <p>% Search:</p>
+                        <ul>
+                            <li>Table Name</li>
+                            <li>Field Name&#160;</li>
+                            <li>Original Value&#160;</li>
+                            <li>New Value</li>
+                        </ul>
+                        <p>More Search:</p>
+                        <ul>
+                            <li>Table Name</li>
+                            <li>Field Name</li>
+                            <li>Original Value</li>
+                            <li>New Value</li>
+                            <li>Action</li>
+                            <li>Audit Date Range (Required)</li>
+                            <li>User</li>
+                        </ul>
+                        <p>Grid Columns:</p>
+                        <ul>
+                            <li>Date</li>
+                            <li>Table Name</li>
+                            <li>Field Name</li>
+                            <li>Action</li>
+                            <li>Original Value</li>
+                            <li>New Value</li>
+                            <li>Login ID</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-EmailTemplateConditions-ParentFormFieldsENHANCEMENT"><span style="color: rgb(51,153,102);">Email Template Conditions - Parent Form Fields&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Parent Form Field support has been added to email template triggering:</p>
+                        <p>The system will display Parent Form fields for those dataform fields that relate to the Admin Workspace records only</p>
+                        <p>The allowable trigger conditions are: Empty, Not Empty, IsDirty, Equals, Does Not Equal</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-TemplateUserFieldENHANCEMENT"><span style="color: rgb(51,153,102);">Template User Field&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Template User Field on the User detail has been refined. The template user functionality now works on Manual Edit was well as on Add during a user import. This functionality will set the following fields:</p>
+                        <p>During an import, the Template UserID will only be applied to User ADD, not EDIT. If updating a user the Template UserID mapping will be ignored.<br />On ADD, if a Template UserID is provided (either in the import file or via default import configuration), the following fields will be populated:</p>
+                        <ul>
+                            <li>Department RoleID</li>
+                            <li>User Type</li>
+                            <li>Company</li>
+                            <li>AddProjects</li>
+                            <li>Dashboards</li>
+                            <li>Enable Email for this Account</li>
+                            <li>Enable Time Tracking</li>
+                            <li>Load Home Page By Default (This is always set to true)</li>
+                            <li>Time Zone</li>
+                            <li>Change Password Next login</li>
+                        </ul>
+                        <p>On ADD, via import if the import contains <strong>Department, UserType, Company, AddProjects</strong> and a <br /><strong>Template UserID,</strong> those fields will be overwritten with the values from the imported file, otherwise the information will be populated from the Template User.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-WorkflowTriggeringbug"><span style="color: rgb(51,153,102);">Workflow Triggering bug&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue in Workflow configuration where the Assigned to and Owner fields on a configured workflow task were always defaulting to the current user. The system will now correctly set the Assigned To and Owner values in the task based on the Workflow configuration.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-MoveAdminFeaturesintoTilesENHANCEMENT"><span style="color: rgb(51,153,102);">Move Admin Features into Tiles&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The following Admin Systems have been converted to Admin Settings Tiles in NEXT:</p>
+                        <ul>
+                            <li>Departments</li>
+                            <li>Email Admin (Formerly known as Messages Dashboard)</li>
+                            <li>Company Holiday's</li>
+                        </ul>
+                        <p>These are available from the Admin Settings area.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-IzendaReportParts(Next),SafariBrowser"><span style="color: rgb(51,153,102);">Izenda Report Parts (Next), Safari Browser&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Izenda has provided a fix for report widgets which shortens load times in mobile browsers,specifically safari. Previously Report widgets were experiencing performance issues on Safari and other browsers causing us to disable report widgets in Safari until Izenda could provide us a fix.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-FIleZipprocessENHANCEMENT"><span style="color: rgb(51,153,102);">FIle Zip process&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A selected file zipping process has been added to the system in order to download file attachments as a zip file, but if you exceed either the maximum file count or max download file size you will receive an error explaining the issue.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-ParentFormFieldsonWorkflows"><span style="color: rgb(51,153,102);">Parent Form Fields on Workflows</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where Parent Form fields saved in Workflow Configuration would display the pk-ID of the parent form record instead of the decode value for that record. System now displays the proper decoded value for the parent form record.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-WorkspaceSettingsENHANCEMENT"><span style="color: rgb(51,153,102);">Workspace Settings&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The system has been enhanced with Workspace Settings controls for Global Administrators</p>
+                        <p>A Workspace Settings dialog&#160;<span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/576913421/image2018-4-2_15-24-17.png?version=1&amp;modificationDate=1522697060173&amp;cacheVersion=1&amp;api=v2" /></span> &#160;has been added in the Workspace Landing Page action center and allows Admins to update the following:</p>
+                        <ul>
+                            <li>Workspace Name</li>
+                            <li>Workspace Group</li>
+                            <li>Related Organization</li>
+                            <li>Description</li>
+                            <li>Use as Template - warns prior to saving changes</li>
+                            <li>Active</li>
+                            <li>Source Template - warns prior to saving changes</li>
+                            <li>Project Code</li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release66(CORE)-UpdgradeIzendaReportingtoversion6.10.0.28"><span style="color: rgb(51,153,102);">Updgrade Izenda Reporting to version 6.10.0.28</span>
+                        </h4>
+                        <hr />
+                        <p>The integrated business intelligence application has been upgraded to the latest version - 6.10.0.28 which resolved a number of issues including report widget issues in the safari browser, a problem using arithmetic and string concatenation in the same report and export issues to Excel.&#160; <a href="http://wiki.izenda.us/Release-Notes#6.10.0.28-(March-13,-2018)-IMPORTANT-NOTE" class="external-link" rel="nofollow">For a full list of fixes in 6.10.0.28 review the Izenda release notes.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <p>Condition expressions are used in email templates, workflow channels, widget layouts, and custom links. Condition expressions are used to control when an event or action is triggered.</p>
+        <MadCap:microContent>
+            <p>Condition Expressions use Labels from Display Conditions along with AND, OR, and NOT operators to control precedence and sequence.</p>
+        </MadCap:microContent>
+        <p class="Bullet1" MadCap:autonum="• ">The <b>AND</b> operator specifies that all specified conditions must be met for a query to return true. The AND is exclusive. AND narrows a search by telling the database that <b>all</b> keywords used must be found.</p>
+        <p class="Bullet1" MadCap:autonum="• ">The <b>OR</b> operator specifies that if one of two or more conditions is met, then the query is true. The OR only needs one data point to be present. OR broadens a search by telling the database that <b>any</b> of the words it connects are acceptable.</p>
+        <p class="Bullet1" MadCap:autonum="• ">The <b>NOT</b> operator allows you to exclude items that are not relevant to your search. NOT narrows your search by telling the database to <b>eliminate all terms that follow it</b>.</p>
+        <h3 id="ConditionExpressions-ANDexpressions">AND expressions</h3>
+        <p>AND expressions are used when you want to include all conditions. For example, consider an expression that specifies that the month must be January and the day of the week must be a Monday&#160;<strong>(January AND Monday)</strong>. This expression specifies that all data points must be present; it is exclusive.</p>
+        <h3 id="ConditionExpressions-ORexpressions">OR expressions</h3>
+        <p>OR expressions are used when you want to find an overlap between items. For example, <strong>(January OR Monday)</strong> specifies that the day could be in January or could be a Monday of any month. This expression specifies that any data point can be present and is inclusive.</p>
+        <h3>NOT expressions</h3>
+        <p>NOT expressions are used when you are interested in a very specific list by letting you eliminate items that are not relevant. For example, (January NOT Monday) specifies that the day could be in January but cannot be a Monday.</p>
+        <h2 id="ConditionExpressions-Wheretostart">Where to start</h2>
+        <p>The first step in creating Condition Expressions is to determine your objective. A good place to start is with a flowchart using Yes and No logic. Determine the fields and values and whether the condition is to meet all conditions or just one data point. Next, determine how you want to group the criteria. You then must add the conditions (from within a form) and then determine how to group them using Condition Expressions. The remaining portion of this topic describes and illustrates how to compose Condition Expressions.</p>
+        <p>Before you can build a condition expression, you must first add the conditions from within a form such as Configure Data Links Details.</p>
+        <h3 id="ConditionExpressions-1.AddDisplayConditions">1.&#160;Add Display Conditions</h3>
+        <p>For forms that offer conditions, when you click <strong>Add</strong> (lower portion of the form), a row opens where you can assign values to within fields such as Source, Field, Operator, Value, and Label (see the following image). The values must correspond to what is stored in the database. For example, lookups would be the Code value, and for parent form fields, such as Case Type, the value would be the ID of the form.</p>
+        <p>The following example illustrates two expressions, HOL1 and HOL2. These entries are Display Conditions. When the Condition Expression field is empty, the Display Conditions are processed as ORs.&#160;For example, in the following example, there is no Condition Expression. Therefore, HOL1 and HOL2 are processed as ORs. The result would be the match for each condition; it would be all-inclusive (WHERE Holiday Name = Christmas OR Holiday Name = New Year's Day).</p>
+        <p>
+            <img src="../Images/Dataform/ConditionStatements.png">
+            </img>
+        </p>
+        <h3 id="ConditionExpressions-2.AddaConditionExpression">2. Add a condition expression</h3>
+        <p>But what if you want to treat the Display Condition statements differently? What if OR is not enough? You can use a Condition Expression by referencing the display condition statements (through Labels) and adding the AND and OR operators: (Cond1 AND Cond2) OR (Cond3)<strong>. </strong>With a Condition Expression, you can control how many conditions you use and how they are used.</p>
+        <p>When building a Condition Expression, you use the condition Label value of the Display Conditions. You can create complex conditions by using unique combinations of the conditions. Condition Expressions can use AND as well as OR conditions.</p>
+        <p>For example, to trigger a workflow when there is a new training request, the expression could be stated as <strong>(CaseTypeTR AND CaseNEW)</strong> where:</p>
+        <p class="Bullet1" MadCap:autonum="• ">CaseTypeTR:&#160;When case type = Training Request</p>
+        <p class="Bullet1" MadCap:autonum="• ">CaseNew: When case status = New</p>
+        <p>Using the Label field, you can combine trigger conditions into more complex expressions. For example: (Condition1 AND Condition2) OR (Condition3 AND Condition4) OR Condition5.</p>
+        <p>The following example has three Display Conditions: STAT, CITY, GEN. Two of the three Labels are used in the Condition Expression.</p>
+        <p class="Bullet1" MadCap:autonum="• ">The (STAT AND CITY) Condition Expression is looking for employees who are married <strong>and</strong> reside in Sarasota. This result is exclusive.</p>
+        <p class="Bullet1" MadCap:autonum="• ">When the three separate conditions (STAT, CITY, GEN) are used <strong>without</strong> a Condition Expression, the search is for employees who are married, or reside in Sarasota, or are female. The result is inclusive.</p>
+        <p>
+            <img src="../Images/Dataform/ConditionExpression2.png">
+            </img>
+        </p>
+    </body>
+</html>

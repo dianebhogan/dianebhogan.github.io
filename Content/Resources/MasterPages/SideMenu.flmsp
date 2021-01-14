@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <MadCap:topicToolbarProxy class="" style="mc-topic-toolbar-items: ;" />
+        <MadCap:breadcrumbsProxy />
+        <MadCap:menuProxy style="mc-toc-depth: 1;mc-context-sensitive: True;mc-include-parent: True;mc-include-siblings: False;mc-include-children: True;" data-mc-skin="/Project/Skins/SideMenu.flskn" mc-linked-toc="$topicHeadings" />
+        <div class="body_container">
+            <MadCap:bodyProxy />
+        </div>
+    </body>
+</html>

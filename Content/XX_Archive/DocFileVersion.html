@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+    </head>
+    <body>
+        <h1>File versioning</h1>
+        <p>Files uploaded to ClientSpace as Attachments or assigned to Dataform fields can have a hierarchy of several files, all associated with a Primary file.  The Primary file is considered the currently in-use file.  Other files associated with this Primary file are Versions or Versioned files.  Versioned files can be updated to be the Primary file (a technique called Pinning).  This allows for somewhat of an historical record of File Management activity.</p>
+        <p>On Attachment lists or Dataform Fields, only the Primary file is displayed.  Using the File Management Upload web page, modifications to the hierarchy can be accomplished. There is no technical limit to the number of files that can be included in the hierarchy, but only one file is designated as the Primary file at any time.</p>
+        <p><span class="UXElement">Protected versus unProtected:&#160;</span>If files are shared over multiple locations in ClientSpace, they can be managed as individual sets of files (Protected) or as a synchronized set (UnProtected).  This implementation in ClientSpace is limited to Orgs, Contacts, and Activity Attachments. See the section Special Considerations (in this topic)&#160;for a description of this methodology.</p>
+        <h2>System configuration</h2>
+        <p>On the App Settings (only User Developers can access App Settings) page, Miscellaneous tab, a File Versioning option  sets the default behavior for the installation.  When uploading a file, the  Upload File dialog box  has buttons labeled <b>Replace</b> and <b>New Version</b>.  Based on the file versioning option setting, the appropriate button is automatically selected based on the following convention:</p>
+        <ul>
+            <li>When unchecked, files uploaded over existing files replace the existing file (this is how prior versions of ClientSpace operated).</li>
+            <li>When checked, files uploaded over existing files become the Primary file, causing the existing file to become a Version of the Primary file.</li>
+        </ul>
+        <h2>Security</h2>
+        <p>Security Entities  manage the versioning process:</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>FileMan_Ver_Override</b>: Override the default File Versioning App setting when uploading a file. The user can select either the Replace or New Version  on the File Management Upload page.  Each time the page loads, the default value is selected.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>FileMan_Pin</b>: Swap files in the versioning hierarchy.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>FileMan_Delete</b>: Delete a version of a file.</p>
+        <h2>File management upload  </h2>
+        <p>File versioning is handled from File Management Upload.  </p>
+        <ul>
+            <li>Existing files (Current File and those in the Versions list) can be viewed from this interface (click the File Name hyperlink).</li>
+            <li>A logical Version Number is displayed next to each file name. The number is derived from the order in which associated files were uploaded to the system, ‘v1’ being the earliest.</li>
+            <li>A Versions list appears on the form, ordered by Version Number ascending.</li>
+            <li>A Help button appears next to each file name. Clicking this button displays information about the file:<ul><li>File Name</li><li>Version</li><li>Description</li><li>Uploaded Date</li><li>Modified Date</li><li>Size</li></ul></li>
+            <li>The Versioning  set, Replace and New Version define the operation of uploading a file:<ul><li>If Replace, uploading a new file replaces the Current File and all its contents with the new file.</li><li>If New Version, uploading a new file causes the Current File to be moved to the Versions list, and sets the new file to be the Primary file.</li><li>On page load, the buttons default to the File Versioning App Setting as previously described.</li><li>If the User is not a Global Admin and does not have the FileMan_Ver_Override entity, the buttons are disabled, and the user can only perform the operation defined by the File Versioning App Setting.</li></ul></li>
+            <li>The Category value allies to ALL associated files.</li>
+            <li>The Description and Tags apply to the specific file.</li>
+            <li>A Pin button appears on each file in the Versions list. Clicking this button:<ul><li>Swaps the Current File for the Versioned file being pinned (must be a global admin or have FileMan_Pin entity).</li></ul></li>
+            <li>A Delete button appears on each file in the Versions list, if:<ul><li>The User is a global admin or has FileMan_Delete entity.</li><li>The file is not in use in another location.</li></ul></li>
+        </ul>
+        <h2>Special considerations</h2>
+        <p>While the process is consistent in use, it is important to recognize the following conditions and how they affect the process:</p>
+        <p><span class="UXElement">Dataform Attachments</span>
+        </p>
+        <ul>
+            <li>
+                <ul>
+                    <li>Uploading a new file takes effect only after Saving the File Management Upload page</li>
+                    <li>If a Current File exists, uploading a new file and clicking Save will pin the new file as the Current File and version the existing file</li>
+                    <li>Pinning a Versioned file takes effect INSTANTLY, no Save is needed</li>
+                    <li>Deleting a Versioned file takes effect INSTANTLY, no Save is needed (a confirmation message is presented before the delete is executed)</li>
+                    <li>Dataform File Management data types (Dataform fields)<ul><li>Uploading a new file does not take effect until:</li><li>The File is uploaded and the File management Upload page is Saved, AND</li><li>The Dataform is Saved</li></ul></li>
+                </ul>
+            </li>
+            <li>The Dataform field File Name will appear in Red type if it has changed and the form is not yet Saved</li>
+            <li>If the Dataform is not saved, no changes will be made, and the newly uploaded file will be abandoned</li>
+        </ul>
+        <p>Pinning a file does not take effect until:</p>
+        <ul>
+            <li>The File Management Upload page is Saved, AND</li>
+            <li>The Dataform is Saved</li>
+            <li>The Dataform field File Name will appear in Red type if it has changed and the form is not yet Saved</li>
+            <li>If the Dataform is not saved, no changes will be made<ul><li>Deleting a Versioned file takes effect INSTANTLY; no Save is needed (a confirmation message is presented before the delete is executed)</li></ul></li>
+            <li>Orgs, Contacts, and Activity Attachments<ul><li>Behavior is similar to Dataform Attachments</li><li>For Orgs and Contacts, pinning will be synchronized</li></ul></li>
+        </ul>
+        <p>Example:</p>
+        <ul>
+            <li>Upload File_A to Contact</li>
+            <li>File_A will appear on both Contact and Org</li>
+            <li>Upload File_B to Contact</li>
+            <li>File_B will appear and be pinned on Contact and Org, File_A will be versioned on both</li>
+            <li>Pin File_A on Contact</li>
+            <li>File_A will also be pinned on Org (UnProtected)</li>
+            <li>File_B will be versioned on both</li>
+            <li>Pin File_B on Org</li>
+            <li>File_A will still be pinned on Contact</li>
+            <li>Upload File_C on Org</li>
+            <li>File_C will be pinned on Org</li>
+            <li>File_A will remain pinned on Contact</li>
+            <li>File_C will be in Version list on Contact</li>
+        </ul>
+        <p>For Activity Attachments, pinning does not affect Contact/Org (Protected).</p>
+        <p>The file attachment datatype  (File Upload Manager - database) adheres to both dataform and File management security rights.  These security rights work in the following way:</p>
+        <p><b>Dataform_Field security</b>: View/Add/Edit/Delete controls whether a user can</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>View</b>: View the file from the field</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Add</b>: Add a new file when the field is empty</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Edit</b>: Update or change an existing file (folder icon)</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Delete</b>: Delete a file from the Dataform (trashcan icon).</p>
+        <p>With field edit rights comes an additional layer of security in the file manager dialog using the File_Man security entities:</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>File_Man_Delete</b>: Edit rights provide the ability to delete files in the file manager dialog (under "Manage Versions")</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>File_Man_Pin</b>: Edit rights provide the ability to pin a different file (under "Manage Versions") and make it the current file.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>File_Man_Ver_Override</b>: Edit rights provide the ability to override the system default setting of Pin New vs Replace File.</p>
+    </body>
+</html>

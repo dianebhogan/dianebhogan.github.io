@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Exclude">
+    <head>
+    </head>
+    <body>
+        <h1>Template Tasks: Automate your <MadCap:annotation MadCap:createDate="2019-09-09T11:10:06.1933142-04:00" MadCap:creator="dhogan" MadCap:initials="DH" MadCap:comment="Ask Jane - is this topic still relevant? If YES - then I need to replace screenshots.\r\n\r\nNO - remove all topics about template tasks" MadCap:editor="dhogan" MadCap:editDate="2019-10-14T16:56:22.9257849-04:00">workflow</MadCap:annotation></h1>
+        <p>Making sure the right things happen at the right time is what workflow and business automation is all about.&#160; ClientSpace can help to insure business process workflow happens in a timely fashion through the configuration of Template tasks.&#160; These tasks are automatically generated based on triggers you set in the task manager of the Template workspace.&#160;The following document is designed to walk you through the configuration options available for template tasks, and help you to start automating your business processes through ClientSpace.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">This functionality will be deprecated soon.&#160;Template tasks are being replaced by Workflow Channels. To read more about Workflow channels, review Configuring Workflow Channels.</p>
+        <h2 id="TemplateTasks-AutomateYourWorkflow-IntroductionToWorkflows">Introduction to Workflows</h2>
+        <p>Let’s discuss workflows. When multiple Tasks need to be generated either simultaneously or sequentially and also created automatically, this is known as workflow. For example, workflow can be triggered when a Client Termination Request Case is created or maybe if a field called FMLA eligible equals “Yes”. In either of these scenarios it may be appropriate to initiate the automatic generation of a set of Tasks that will be assigned to users dynamically.&#160;</p>
+        <h2 id="TemplateTasks-AutomateYourWorkflow-WhatareTemplateTasks?">What are Template Tasks?</h2>
+        <p>You’ve probably heard the term Template Tasks.&#160;Template Tasks are really just pre-made Tasks that are either &#160;automatically generated in <strong>Real Time</strong> when something happens in ClientSpace,&#160;<strong>Scheduled</strong> based on a&#160;date field&#160;or <strong>Manually</strong> initiated on demand.&#160; Template Tasks can also be configured to serve the purpose of providing a notification to users when something happens.</p>
+        <h2>Configuring Template Task triggering</h2>
+        <p><strong>Template task configuration</strong> allows for templated task generation to occur automatically based on trigger conditions set in the template.&#160;Tabs important to configuration of template tasks are:</p>
+        <div class="NoPageBreak">
+            <p class="ProcedureIntro"><strong>General Tab</strong>
+            </p>
+            <p>
+                <img src="../Resources/Images/TempTasks/GeneralTab.jpg" />
+            </p>
+        </div>
+        <p class="Bullet1" MadCap:autonum="• "><strong>Owner / Assigned to</strong> fields can be set on the general tab, but will be overridden by any pertinent settings on the configuration tab.</p>
+        <p class="Bullet1" MadCap:autonum="• ">You can use <strong>field replacement</strong> to insert dynamic text from the associated <strong>Organization, OrgOtherInfo&#160; or Dataform</strong> from which the task is triggered.&#160; For example, you trigger a template task from a Client Service Case where the type = “Unemployment” and Status =”New”.&#160; Because the task was triggered from the case, you can select items of data from this case for inclusion in the text of the generated template task.&#160; For any Template task you may also select data from the associated Organization.&#160;For more info about available fields for a particular dataform, click the <strong>Get Replace Fields</strong> report link at the top of the Form Header,</p>
+        <p class="Bullet1" MadCap:autonum="• ">The format of this field replacement information is <strong>dataform-name dot field-name wrapped in curlybraces</strong>, so<strong> {gen_ClientServiceCase.Status}</strong> would provide the status of the case at the time the template task was generated.&#160; <strong>{gen_ClientServiceCase.Subject}</strong> would be replaced with the case subject and so on.&#160; For a complete list of available replace fields, click the link at the top of the template task, remember to only select a dataform for field replacement if it is associated with the Template task via task triggering.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Finally If you would like to include fields that are not on the triggering dataform, or the Org associated with the workspace you may log a case with NetWise to create a custom <strong>Server Data Proc</strong> for the triggering dataform.&#160;This is&#160;custom SQL code which allows you to pull information from any table in the system which has records related to either the Triggering Dataform, the associated Workspace or associated Organization.&#160;&#160; Once this is in place and configured you can reference these fields using the&#160;<strong>SDPC2</strong> replacement code format <strong>SDPC2 </strong><strong>dot field-name wrapped in curlybraces.</strong>&#160;To tie into the above example, a server data proc could be created to collect Employee and Employment information for an employee associated with an HR type case.&#160; You could then use these fields for field replacement as such: <strong>&#160;{SDPC2.EmployeeName}&#160;</strong>which would provide the&#160;Name from the associated Employee record, <strong>{SDPC2.EmploymentHireDate}</strong>&#160;could provide that employees Hire Date from his current active employment record and so on. For more information about this field replacement,  read the article <MadCap:xref href="../Admin_Config/DefaultServerDataProcs.htm" title="default server data procs" alt="default server data procs" class="Heading">Default Server Data Procs</MadCap:xref> for more detailed information about the server data procs which come with our PEO system.</p>
+        <p class="Bullet1" MadCap:autonum="• "><strong>Archive</strong>: Archived tasks will be cloned as Archived - these can be used to indicate milestones hit, or trigger notifications.</p>
+        <p class="Bullet1" MadCap:autonum="• "><strong>Mark for Deletion</strong>:&#160; ***Warning - Checking this box means you want to delete the Template task, <u>not</u> mark cloned tasks for deletion.&#160; To automatically delete the cloned task,&#160;Configure Mark for deletion on the configure tab.</p>
+        <div class="NoPageBreak">
+            <p class="ProcedureIntro"><strong>Notifications Tab</strong>
+            </p>
+            <p>
+                <img src="../Resources/Images/TempTasks/Notifications.jpg" />
+            </p>
+        </div>
+        <p>Users to be notified of Task progress are automatically populated from the Owner / Assigned to fields on the General Tab.</p>
+        <p>If your business process requires additional ClientSpace users are notified, you may add additional notifications which will be copied to each of the tasks generated from this template.</p>
+        <div class="NoPageBreak">
+            <p class="ProcedureIntro"><strong>Attachments Tab</strong>
+            </p>
+            <p>Attaching a file here will attach an instance of the file to the cloned task.&#160; It is important to note however that the attached file(s) will not reside on the attachments tab of the cloned task, but instead will appear as linked files in the header of the cloned task.</p>
+            <p>
+                <img src="../Resources/Images/TempTasks/Attach.jpg" />
+            </p>
+        </div>
+        <div class="NoPageBreak">
+            <p class="ProcedureIntro"><strong>Configuration Tab</strong>
+            </p>
+            <p>
+                <img src="../Resources/Images/TempTasks/Configs.jpg" />
+            </p>
+        </div>
+        <p>This is where the rubber meets the road in Template tasks and is separated into three (or four) segments, depending on whether the task will be scheduled in real time, or scheduled based on a dataform date-time field (more on that later).</p>
+        <p class="ProcedureIntro"><strong>Real Time Scheduling Segments</strong>
+        </p>
+        <p class="Bullet1" MadCap:autonum="• ">Task Cloning</p>
+        <p class="Bullet1" MadCap:autonum="• ">Task Notification</p>
+        <p class="Bullet1" MadCap:autonum="• ">Trigger Configuration </p>
+        <p class="ProcedureIntro"><strong>Scheduled Segment</strong>
+        </p>
+        <p class="Bullet1" MadCap:autonum="• ">Schedule this Task  </p>
+        <p>We will handle each of these in detail.</p>
+        <div class="NoPageBreak">
+            <p class="ProcedureIntro"><strong>Task Cloning</strong>
+            </p>
+            <p>
+                <img src="../Resources/Images/TempTasks/TaskCloning.jpg" />
+            </p>
+        </div>
+        <p class="Bullet1" MadCap:autonum="• "><b>Owner Attribute</b>:&#160;The owner attribute can be dynamically set at time of task generation by “looking up” a user datatype field on any dataform associated with the template. So for example you could set the Owner to the Payroll Manager field on the Client Team dataform.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Assigned to Attribute</b>:&#160;The assigned to&#160; attribute can be also dynamically set at time of task generation much like the Owner attribute.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Owner is Current User / Assign To is Current User</b>:&#160;These options will set the owner or assigned to user to the logged in user who triggers the task.&#160;&#160;&#160;&#160;&#160;</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Mark Triggered Task for Deletion</b>:&#160;This sets the ‘Mark for Deletion’ option on the triggered task.&#160; This is most commonly utilized when generating Tasks for notification purposes.&#160; The tasks marked in this way will be deleted by the scheduled process 'Delete Marked Task'.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Start Date Source / Due Date Source</b>:&#160;The start date and due date of the tasks can be set to either the date that the task is generated, or can be set to pull the date from a date type field on a dataform associated with the Template.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Start Date Offset / Due Date Offset</b>:&#160;These fields provide the ability set the start and due date offset from the Start and Due date source by a certain amount of time.&#160; Offsets can only be calculated using one of the following codes: 'd', 'w', 'm', 'y', 'bom', 'eom', 'boy', 'eoy' '2w' = 2 weeks '1y' = 1 year 'eom' = end of month 'boy' = beginning of year, etc. These offsets also support 'bh' (business hours) and 'bd' (business days)</p>
+        <p class="ProcedureIntro"><strong>Task Notification</strong> </p>
+        <p>Task notification allows you to add up to 8 more dynamically generated notifications to the Task.&#160;Much like the owner attribute under Task Cloning, these fields look up a user datatype field on any dataform associated with the template.</p>
+        <div class="NoPageBreak">
+            <p class="ProcedureIntro"><strong>Trigger Configuration</strong>
+            </p>
+            <p>
+                <img src="../Resources/Images/TempTasks/TriggerConditions.jpg" />
+            </p>
+        </div>
+        <p>Trigger configuration  allows you to fire a template task based on a given set of circumstances, or at a specific time.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Trigger Type</b>: Trigger type determines what is the driving force behind the triggering of the task, this field can be configured with the following&#160;options:</p>
+        <p class="Bullet2" MadCap:autonum="• "><strong>Task</strong>: The task is triggered based on the state of another template task, the triggered task may be fired based on any of the following fields on the triggering task:&#160;</p>
+        <p class="Bullet2" MadCap:autonum="• ">Category</p>
+        <p class="Bullet2" MadCap:autonum="• ">Priority</p>
+        <p class="Bullet2" MadCap:autonum="• ">Status</p>
+        <p class="Bullet2" MadCap:autonum="• ">Workflow</p>
+        <p class="Bullet2" MadCap:autonum="• "><strong>Dataform</strong>: The task is triggered based on the state of a dataform field***, or data returned from&#160;one of the dataforms server data procs.&#160; Field&#160;equivalency operators are compared to the <strong>Field Value&#160;</strong>stated below the <strong>Operator</strong> and can include the following :&#160;</p>
+        <p class="Bullet2" MadCap:autonum="• ">Equals - The field equals the Field Value exactly</p>
+        <p class="Bullet2" MadCap:autonum="• ">Does not Equal - The field is not equal to the Field Value</p>
+        <p class="Bullet2" MadCap:autonum="• ">Is Dirty - The field has changed and has not been saved</p>
+        <p class="Bullet2" MadCap:autonum="• ">Greater Than - the field is Greater than the Field Value</p>
+        <p class="Bullet2" MadCap:autonum="• ">Less Than - the field is Less than the Field Value</p>
+        <p class="Bullet2" MadCap:autonum="• ">Greater Than Or Equal (to) - the field is Greater than or Equal to&#160;the Field Value</p>
+        <p class="Bullet2" MadCap:autonum="• ">Less Than Or Equal (to)&#160;- the field is Less than or Equal to&#160;the Field Value</p>
+        <p class="Bullet2" MadCap:autonum="• ">Empty - The Field has been made Empty and not been saved</p>
+        <p class="Bullet2" MadCap:autonum="• ">Not Empty - The Field has been made Not&#160;Empty and not been saved</p>
+        <p class="Bullet2" MadCap:autonum="• "><strong>Custom</strong>: If standard&#160;task triggering definitions are&#160;not&#160;exactly what you need, NetWise can develop custom business logic for task triggering in your install.&#160; For more information, log an Extranet case.</p>
+        <p class="Bullet2" MadCap:autonum="• "><strong>Workspace Creation</strong>: The task is triggered when a Workspace is created.&#160; *Note: This option will lock the Frequency at 'Create each time this condition is met'.</p>
+        <p class="Bullet2" MadCap:autonum="• "><strong>Manual</strong>: Manual task triggering allows you to generate a template task manually on a dataform.&#160; When you choose Manual and select a dataform, a new link will appear in the header of the Add Task dialog.</p>
+        <p class="Indent2">
+            <img src="../Resources/Images/TempTasks/ManualTask.jpg" />
+        </p>
+        <style id="style-fancybullets-3da65a13-cb2a-4dda-8876-78a59f0f0311">/*<![CDATA[*/
+div#fancybullets-3da65a13-cb2a-4dda-8876-78a59f0f0311 ul
+{
+	list-style: lower-roman;
+}
+
+/*]]>*/</style>
+        <p class="Bullet4">When choosing to Add a new task to the associated dataform, prior to save the task will display a link allowing you to <strong>'Choose Template Task'</strong></p>
+        <p class="Bullet4">Clicking this link will pre-fill the manually generated task information with the data from the chosen Template Task, allowing you to dramatically reduce the amount of time to create tasks that may not be automated.</p>
+        <p class="Bullet1" MadCap:autonum="• ">&#160;<b>Frequency</b>: Frequency determines how often the Task Triggering will occur for the configured Trigger Type, and includes the following options</p>
+        <p class="Bullet2" MadCap:autonum="• ">Create only once for this Condition/Trigger Object</p>
+        <p class="Bullet2" MadCap:autonum="• ">Create only once for the target Workspace</p>
+        <p class="Bullet2" MadCap:autonum="• ">Create each time this condition is met</p>
+        <p class="Bullet2" MadCap:autonum="• ">Handled in Business Logic (Only for Custom Trigger Types)</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Trigger Group (AND)</b>:&#160;This field allows you to group Trigger Conditions together so that ALL conditions in the group have to pass for the Task to be triggered.&#160; Trigger Groups do not work across dataforms unless those dataforms are in a related Tab Group, such as the Unemployment Claims form and the associated Tabbed forms.&#160; For Tab groups, the trigger from a tabbed dataform <u>must</u> include a trigger from the Parent Form Field of the tabbed dataform.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Workflow Group</b>: This field allows you to clone a specific keyword to each template task that is searchable from the Task Dashboard later on.&#160; This makes it easier to group complex workflows and track specific functions of the workflow through the task manager.&#160; This is a text field, so if you are generating multiple template tasks in a complex workflow it may be advisable to copy and paste the Workflow Group, so the information is exactly the same on all Grouped tasks.&#160;</p>
+        <p><strong>Schedule this Task</strong>: ClientSpace can generate Template Tasks automatically relative to a date field on any dataform. This section allows for the automation of your workflow, based on dataform date fields in the system.&#160; You can set frequency and grace periods to create automated task generation when trigger dates are hit.</p>
+        <p>
+            <img src="../Resources/Images/TempTasks/ScheduledTask.jpg" />
+        </p>
+        <p class="Bullet1" MadCap:autonum="• ">Dataform:&#160;This is the dataform that will provide the triggering date field.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Field (date):&#160;The date field from which we will trigger task generation - this is your starting point.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Only clone once every X Days:&#160; Once a task is generated, do not trigger task generation again on this workspace for at least this number of days.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Within X days of the selected field: Trigger the task within X days of the triggering field. This can be a positive (5 days past the triggering date) or negative (10 days prior to the triggering date) number.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Grace Period:&#160; If for any reason the task does not get triggered, continue to attempt to trigger it for this number of days.&#160; This re-triggering of the un-triggered &#160;task is accomplished by the 'Generate Scheduled Task' scheduled process configured under <strong>System Admin</strong>  &#160;&gt; <strong>Advanced </strong>&gt; <strong> Scheduled Processes</strong>.</p>
+        <p>In the example we will trigger a template task from the Contract Effective Date on the Client Master dataform, this task will trigger 45 days after the date.&#160;&#160;If for any reason it is not generated the system will continue to try to generate it for up to 10 days and once generated this task will not be created again for at least a year.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">***One common dataform trigger configuration is to fire Template tasks based on creation of a particular type of <strong>Client Service Case type</strong>.&#160;A Client Service Case with a type of "Client Onboarding" for example could fire a series of tasks to make the client ready for processing including creating a client folder, Inserting the client into the payroll and accounting system, gather and validate employee enrollment documentation.&#160;The Case Type is a Parent form Datatype linking the Client Service Case to the Client Service Case Type dataform stored in the Admin workspace. This is what we call a <a href="https://clientspace.atlassian.net/wiki/x/CIDS#fk" rel="nofollow">foreign key relationship</a>&#160;- the Case Type field stores the numerical key of the related Case Type dataform.&#160;So while the field displays "Client Onboarding" it actually stores the numeric value of the pkAdminCaseTypeID (the primary key of that particular case type on the gen_AdminCaseTypes table) - let's call it 299.&#160; In order to trigger a task from the creation of a Client Onboarding case we would need to set a dataform trigger on the task from the Client Service Case dataform where the Case Type = 299.&#160; You can find the case type ID by going to <strong>Admin Workspace</strong> &gt; <strong> Client Service</strong> &gt; <strong> Case Types</strong> - open the Case Type in question and look at the Administrative fields at the bottom, where you will find the ID.</p>
+    </body>
+</html>

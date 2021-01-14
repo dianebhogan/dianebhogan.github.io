@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Security" />Configuring Pricing Console security in <MadCap:variable name="MyVariables.ProductName" /> PEO             
+        </h1>
+        <p>One of the common first steps for our PEO clients is to configure and use the pricing console in <MadCap:variable name="MyVariables.ProductName" />. While each PEO is unique in their processes, most have a designated workflow through which they would like Pricing to proceed.&#160;While this topic does not discuss pricing workflow, it provides a high-level overview of configuring pricing console security.&#160;</p>
+        <p>While security customization is driven by the individual business requirements of each of our clients, the method for configuring security in ClientSpace is standardized.&#160;Role security provides global administrators with the ability to configure dataform security down to the field level, specifying whether the User is allowed to&#160;<strong>View</strong>, <strong>Add</strong>, or <strong>Edit</strong> the document or field.&#160;The following table lists dataform security rights.</p>
+        <table style="width: 100%; mc-table-style: url('../Resources/TableStyles/Standard_Table.css'); margin-left: 0; margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 185px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Dataform security rights</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">View</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Users with only View rights are able&#160;to open&#160;a dataform and see the contents&#160;of any available fields but may not add&#160;a new or edit an existing document.&#160;Fields appear as read-only. Users with Add or Edit rights should also be given View rights.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Add</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Users with only Add rights&#160;can add new dataforms of this type, but when the&#160;initial save occurs, they cannot edit the dataform they created.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Edit</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">Users with only Edit rights are not able to add new forms but can edit existing forms.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="ProcedureIntro">To update Role security:</p>
+        <p>Update Role security to include appropriate rights to View/Add/Edit the forms using the following steps. Several security entities are used by the Pricing Console.&#160;The following table lists the most common.</p>
+        <table style="width: 100%; mc-table-style: url('../Resources/TableStyles/Standard_Table.css'); margin-left: 0; margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 255px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 505px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Security entity</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Description</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Rights</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">CRM</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Creating and managing Organizations</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">At least <strong>View</strong> rights</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">biz_workflow_cm_create_batch</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Creating batches from the Client Master</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">At least <strong>Add</strong> rights to create new batch</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">PricingConsole</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Access to the pricing console</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">At least <strong>View</strong> rights</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">QuickEdit&#160;</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">QuickEdit_subfields: For each field on the Quick Edit form there are available view/Add/Edit rights. These need to be set for each field (if editing of pricing rows is allowed).</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">At least <strong>Add</strong> rights</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Dataform entities</p>
+                        <p class="TableBullet" MadCap:autonum="• ">gen_PricingBatch</p>
+                        <p class="TableBullet" MadCap:autonum="• ">gen_Pricing</p>
+                        <p class="TableBullet" MadCap:autonum="• ">gen_PricingBatchState</p>
+                        <p class="TableBullet" MadCap:autonum="• ">gen_PricingCompCode</p>
+                        <p class="TableBullet" MadCap:autonum="• ">gen_ClientMaster</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">If any of the&#160;dataforms are secured, the user needs to be in a role with appropriate rights for the dataform, such as Add or Edit rights.</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">At least <strong>View</strong> rights are&#160;also required for the related&#160;Dataform entities</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="ProcedureIntro">To administer role security:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <strong>System Admin</strong> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;  <strong>Security</strong> &gt; <strong>Roles</strong>.<br /></p>
+        <p class="StepResult">The Security Roles dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">You can filter roles Role Title, and Users that are associated with the role, or Entity Name of the associated Security Entities.</p>
+        <p class="L1Num" MadCap:autonum="3. ">If a user needs to have access to a particular security entity, one of two things can be done:</p>
+        <p class="Bullet2" MadCap:autonum="• ">The user can be added to a role that already contains the required entity by filtering roles by desired entity.</p>
+        <p class="Bullet2" MadCap:autonum="• ">The security entity can be added to a role that user is already associated with by filtering roles.</p>
+        <p class="L1Num" MadCap:autonum="4. ">Select a role and click <b>Edit</b>.<br /></p>
+        <p class="StepResult">The Role form opens.</p>
+        <p class="L1Num" MadCap:autonum="5. ">In the <b>Action Center</b>, click <b>Entities</b>.<br /></p>
+        <p class="StepResult">The Security Role Entities dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="6. ">Add the appropriate View, Add, Edit, Delete, and Admin rights&#160;for the role.<br /></p>
+        <p class="L1Num" MadCap:autonum="7. ">To see if a user is already in a role with a specific entity, filter the Roles by user <em>and</em> Entity.</p>
+        <p class="L1Num" MadCap:autonum="8. ">You can also use a wildcard when searching for roles.&#160;When&#160;setting search parameters, place a <b>%</b> symbol before your search string&#160;to make it&#160;a wildcard&#160;keyword search.&#160; Example: %Service Case</p>
+    </body>
+</html>

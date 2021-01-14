@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Publishing the Outlook add-in through Exchange Admin</h1>
+        <p>To begin using the Outlook add-in in your environment, you need to publish the add-in through the Exchange Admin &gt; Manage Add-ins.  This topic provides step-by-step instructions on installing this add-in in the Office 365 environment.</p>
+        <p>Microsoft now supports publishing Outlook Office add-ins through the Microsoft Store.  This method of centralized deployment allows you to define groups that can use the add-in and is recommended for clients that use a hosted environment from a third-party IT provider.  When using centralized deployment to publish through the Microsoft store, the provider should select the URL method of publishing and use the URL provided in this article.  It is critical before proceeding with any method of publishing Outlook Add-ins that the server through which you will publish the add-in is up to date with the latest Microsoft service packs and updates for exchange.  <a href="https://techcommunity.microsoft.com/t5/Outlook-Blog/Centralized-Deployment-for-Outlook-add-ins-will-now-be-generally/ba-p/161164" target="_blank">Instructions for centralized deployment through the Microsoft store may be found here.</a></p>
+        <p class="ActionTip">You must use the following instructions for distributing the Add-In though Exchange Admin when publishing the Outlook Add-In.  Any deviation from this procedure can produce unexpected results and falls outside the scope of support for this product.</p>
+        <p>Per Microsoft, the Outlook add-in deployment requires:</p>
+        <p class="Bullet1" MadCap:autonum="• ">Office 365, Exchange Online, or Exchange Server 2013 or later</p>
+        <p class="Bullet1" MadCap:autonum="• ">Outlook 2013 or later</p>
+        <p>It is also highly recommended that you apply the latest service pack / patches for Exchange server to ensure you have Microsoft's latest deployment code. More details about this and the technology used for these add-ins can be found here:  <a href="https://docs.microsoft.com/en-us/outlook/add-ins/" target="_blank">https://docs.microsoft.com/en-us/outlook/add-ins/</a></p>
+        <p class="ProcedureIntro">To publish the Outlook add-in through Exchange Admin:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Open the Office 365 Admin Center and navigate to <b>Admin Centers</b> &gt; <b>Exchange</b>.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/AddIns/ExchangeAdmin.jpg" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="2. ">In the <b>Exchange Admin Center Dashboard</b>, under <b>Organization</b>, select <b>add-ins</b>.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/AddIns/ExAdminDash.jpg" class="thumbnail" />
+        </p>
+        <p class="Indent1">You are presented with a list of currently available add-ins.</p>
+        <p class="L1Num" MadCap:autonum="3. ">To add the new add-in to this list, click <b>+</b>  and select <b>Add from URL</b>.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/AddIns/AddFromUrl.jpg" />
+        </p>
+        <p class="L1Num" MadCap:autonum="4. ">In the Add from URL dialog, complete the URL field using the following web address:</p>
+        <p class="Code">https://shared.clientspace.net/Content/Manifest/OfficeManifest2.xml</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/AddIns/Step1.jpg" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="5. ">Then click <b>Install</b>.</p>
+        <p class="L1Num" MadCap:autonum="6. ">At the options selection screen, select the <b>Make sure this add-in available to users in your organization</b> option.</p>
+        <p class="L1Num" MadCap:autonum="7. ">Select the appropriate install option for your environment.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/AddIns/Step2.jpg" class="thumbnail" />
+        </p>
+        <p>Available options are as follows:</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Optional, enabled by default</b> (*recommended): Users of Outlook via ofOffice365 online will automatically have access to the add-when using Outlook on the web. When enabled on their online account, the add-in will automatically be installed to their desktop Outlook.  Desktop-only users will need to manually install the add-in using these instructions (click link to open).  Once installed they may uninstall.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Optional, disabled by default</b>: Users of both Office365 online and desktop Outlook will need to manually install the add-in using these instructions (click link to open). Once installed they may uninstall.</p>
+        <p class="Bullet1" MadCap:autonum="• "><b>Mandatory, always enabled</b>: Users of Outlook via Office365 online will automatically have access to the add-when using Outlook on the web. When enabled on their online account, the add-in will automatically be installed to their desktop Outlook.  Desktop only users will need to manually install the add-in using these instructions (click link to open).  Users will be unable to uninstall the add-in.</p>
+    </body>
+</html>

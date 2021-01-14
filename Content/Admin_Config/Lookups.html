@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Configuring lookups</h1>
+        <p>Lookups are one of the most flexible datatypes in ClientSpace and are easily configurable when you understand how they work. Lookups are predetermined, selectable lists of information to ensure data are recorded consistently, instead of a straight text field, which leaves room for errors in spelling and formatting. When you decide to use lookups, you need a Lookup Group (our example – in the subsequent topics – uses <em>US&#160;States</em>) and the associated Lookup values (in our example, the  individual states are the values). The following procedures and subsequent topics show you how you can use lookups to get the most out of your ClientSpace system.</p>
+        <p class="ActionTip">Exercise extreme caution when administering Lookup Groups and the corresponding Lookup values. The system uses values, such as CSC_Status,  in triggering business logic. Changing or deleting these values can result in system issues, which may require programming to resolve. If you are unsure about changing or deleting a value,  please log an Extranet case. It is far better to deactivate a value than delete it, but it is even better to err on the side of caution and ask first.</p>
+        <h2><a name="1."></a>1. Add a Lookup Group</h2>
+        <p>Lookups consist of a Lookup Group and Lookup values, which contain, at a minimum, a Code and Decode value. For new lookups, first, create the Lookup Group. Then you create the Lookup values.</p>
+        <p class="ProcedureIntro">To add or configure a Lookup Group:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Lookups</b> &gt; <b>Manage Groups</b>.<br />The Lookup Groups dashboard opens. From here, you can manage or add groups or edit the values of an existing group.<br /></li>
+            <li>To add a new group, click <b>Add</b>.<br />The Lookup Group Details form opens.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Lookups/LookGroupDetails.png" class="thumbnail" />
+            </p>
+        </div>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 157px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Group Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Enter a unique group name to avoid confusion when using lookups.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Metadata Dataform</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">A lookup can reference associated metadata through another dataform.  However, if not configured correctly, it can cause errors. Before you configure lookup metadata, please log an Extranet case. For more information about metadata, see <MadCap:xref href="../Lookups/Lookup-Metadata.htm" title="Lookups with metadata" alt="Lookups with metadata">Lookups with metadata</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Enter a unique description to avoid confusion.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">System</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Indicates this group is a building block of the system. When marked as System, it is locked down and not editable.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Active</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Select this option to activate the new group.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <b>Save</b>.</li>
+        </ol>
+        <p>You are returned to the Lookup Groups dashboard.</p>
+        <h2>2. Add values to the Lookup Group</h2>
+        <p>Now let's add values to your group.</p>
+        <p class="ProcedureIntro"><a name="AddValues"></a>To add values to the new group:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Lookups</b>.<br />The Lookups dashboard opens.</li>
+            <li>Before adding values to a group, it is helpful to first search for the group in question and then review the existing values (Code and Decode columns) to make sure you do not create duplicates. Remember to select <b>More</b> &gt; <b>Show</b> &gt;&#160;<span class="UXElement">All</span> when searching because archived values are hidden from the list by default.</li>
+            <li>Click <span class="UXElement">Add</span>.<br />The Lookup Details form opens.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Lookups/LookupDetails.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Complete the form:</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 152px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Group</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select the new group you just added.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Filter</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Filter can further refine the lookups or use a lookup group more flexibly. This field works in conjunction with the Filter Value field on the dataform  to associate a lookup with a dataform field. </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Filter can be a word or single characters that represent what you are filtering. To specify multiple filter values, use a comma-separated list with no spaces – for example, <code>South,SE</code> or <code>Purple,JewlelTone</code>. When you specify multiple values, it acts as an OR&#160;mechanism. For a list of US&#160;States, you might specify a state as South and SE (Southeast). So, when a geographic region is selected, the state is available in two regions.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">For details on how to configure filters, see <MadCap:xref href="../Lookups/Basic-Filtering.htm" title="Basic field filtering: Using the lookup Filter and dataform field Filter Value" alt="Basic field filtering: Using the lookup Filter and dataform field Filter Value">Basic field filtering: Using the lookup Filter and dataform field Filter Value</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Code</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The Code value is the actual data value stored in the database when a record is saved.</p>
+                        <ul>
+                            <li>Do <b>not</b> change the Code value of a lookup included with the system because after it is set, there may be logic that includes this code value in the application.</li>
+                            <li>Remove spaces and special characters from the Code value when creating a new lookup record. Use PascalCase formatting – that is, the first letter of each word is capitalized – for example, WinterMonth and SummerMonth.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Decode</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The Decode value is what displays on the dataform. Code and Decode are often the same but are not required to be.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">If the Decode value does not provide a logical description of its purpose, then add a description.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Display Order</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Display Order assigns how the values display in the list.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Default</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">You can set one value as the default when a dataform field is configured to this lookup.  For example, on the Workers’ Comp Claim dataform, the Claim Type field (which is configured as a lookup field) can default to Medical Only (a lookup value). When you add a new dataform, the field defaults to this value instead of blank. You would set Default for commonly used values.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">System</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Indicates this value is a building block of the system. When marked as System, it is locked down and not editable.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Import ID</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">After the lookup is saved, the Import ID&#160;field displays. This field is in the Administrative fieldset. Import ID is used for translation during imports that are configured with the lookup datatype. By default, this field is blank and must be set for imports.</p>
+                        <ul>
+                            <li>This field can either have a single value such as <b>W</b> to match what is exported from your external system or has a pipe-delimited list of optional values that translate to the lookup such as <b>|W|w|Weekly|WEEKLY|WEEK|Week|</b>. </li>
+                            <li>When passing multiple values, each value is evaluated. The inspection is case sensitive, so <b>W</b> is a different value than <b>w</b>. </li>
+                            <li>When passing multiple values, use the pipe delimiter between values – for example, <b>|W|Week|</b>.</li>
+                            <li>When stringing multiple values together, the pipe delimiter <b>|</b> must be the last character in the string.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Active</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Select Active to activate the new value.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <p><i class="fas fa-eye" style="font-family: Font Awesome 5 Free; font-size:24px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="See what you can do" alt="See what you can do"></i> <span class="UXElement">What's next?</span> Now you need to configure the dataform targeted to use the new lookups. Go to <MadCap:xref href="../Lookups/Lookups-Dataform-Fields.htm" title=" Configuring Dataform fields to use Lookups" alt=" Configuring Dataform fields to use Lookups">Configuring Dataform fields to use Lookups</MadCap:xref>.</p>
+    </body>
+</html>

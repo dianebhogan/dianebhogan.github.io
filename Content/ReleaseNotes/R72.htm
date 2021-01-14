@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('../Resources/MasterPages/ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Release Notes" />Release 72 Notes</h1>
+        <p><strong>R72 Sprint</strong>:&#160;9/1/2018&#160;to&#160;9/30/2018. To learn about product features that you may not recognize, contact your Customer Success Manager.</p>
+        <h2>Enhancements</h2>
+        <p>Enhancements are grouped as Change in Functionality, ClientSpace Premium (ClientSpace with additional modules), Advanced Administration, and General.</p>
+        <h3><i class="fas fa-bell" style="font-family: Font Awesome 5 Free; font-size:32px;color:var(--BrandPrimary2); padding:1px 6px 6px;" title="Change in functionality" alt="Change in functionality"></i> Change in Functionality</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Salesforce API overwriting General Notes field </p>
+                        <p class="TableTextLeft">The Salesforce API has been updated.&#160;Previously the API would automatically add a time date stamped message to the Organization General Notes field every time a Salesforce import happened. This new update would overwrite the existing data in that field, clearing any notes created by the salesperson and overwriting the date of the initial creation from Salesforce,&#160;this has been changed.&#160;The system will now write to the general notes field only&#160;on the initial record creation.&#160;Subsequent import events may be recorded by adding a customized notes field to the Organization Other Info dataform and writing to this field using the "Default Value" feature of our import system. If you have questions about configuring imports, review the help article <MadCap:xref href="../ImportsUploads/ConfigNightImports.html" title="Configuring nightly imports " alt="Configuring nightly imports ">Configuring nightly imports
+       </MadCap:xref>or log an Extranet case.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Search Personalization </p>
+                        <p class="TableTextLeft">The system has been dramatically enhanced by adding Search Personalization. Search personalization allows you to customize commonly used modules, storing customized search parameters and even column configurations and eliminating the need to reset these features every time you use the module. Simply configure the module search parameters and list columns as you like, then click the PIN icon to save that configuration for future use. These custom configurations are linked to your user profile and so persist even if the application is closed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Convert Manage Rules to NEXT</p>
+                        <p class="TableTextLeft">The rules management system which allows custom configurations of business rules triggered on dataform save has been converted for use with our cross browser application.&#160; For more information about the types of business rules available and how to configure them, review <MadCap:xref href="../BusinessRules/ConfigRulesBusinessLogic.html" title="Configuring rules and business logic" alt="Configuring rules and business logic">Configuring rules and business logic</MadCap:xref>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Finish Convert Configure Import to NEXT</p>
+                        <p class="TableTextLeft">The import configuration system has been converted to integrate with our cross browser compatible application.&#160; Form more information about&#160;configuring custom imports review <MadCap:xref href="../ImportsUploads/ConfigNightImports.html" title="Configuring nightly imports " alt="Configuring nightly imports ">Configuring nightly imports
+       </MadCap:xref>&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Discussion Reply Email templates</p>
+                        <p class="TableTextLeft">Case discussions have been enhanced, adding the ability for Global Admin users to create new System level templates that may then be used for Discussion replies. Add a new discussion reply by going to <strong> System Admin | Email Templates</strong> and clicking <strong>Add</strong> and selecting a template type of <strong>System</strong>, or clone an existing System template to use as a base and modify as you like. This new system level template will then be available when selecting discussion replies.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>General Enhancements</h3>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: 0;margin-right: auto;">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Enhancement</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Activate Business Rule on Benefit Plan Form </p>
+                        <p class="TableTextLeft">The Benefit Plan form has been enhanced with automated workflow for plan activations. The logic on the Benefit Plan Activate Business Rule that sets the Effective Date and Expiration Date has been removed. These are normally set at the time the Benefit Plan is created and it doesn't make sense to manage the fields via business logic. Should automatic completion of this field be required due to business need it may be configured via a _SetDateField rule. Logic has been added to the Benefit Plan "Activate" Business Rule to update the related Presented Benefits Plans records in the following manner</p>
+                        <ul>
+                            <li>Set the "Effective Date" of any associated Offered Benefit Plan records to the effective date of the Benefit Plan if their current status is "Selected" or "Pending Activation" AND there is not already an Effective Date.</li>
+                            <li>Set the "Expiration Date" of any Offered Benefit Plan records associated with the old Benefit Plan to the Expiration Date of the related Benefit Plan if there is not already an Expiration Date.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Update Benefits Batch Renew Business Rule to run on Dataform</p>
+                        <p class="TableTextLeft">The Benefits Batch system has been redesigned to allow for configurable workflow and email template notifications. This means workflows may be configured and email notifications triggered from Benefits Batch renewals.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Imports ID Setter Rules for Pricing Dataforms</p>
+                        <p class="TableTextLeft">The administrative dataforms that&#160;support the pricing system have been enhanced to automatically generate unique ImportID to insure that updates to these forms via import will be accurate.&#160; For each of these forms the&#160;ImportID will be generated from form data&#160;combined to create a unique key, where all of this form data is not available, the&#160;forms own globally unique identifier will be used to create a key.&#160; The updating user will be warned when any of the pertinent fields are changed and the&#160;ImportID will be re-generated based on the new information on save.&#160; The administrative forms that have been enhanced include:&#160;</p>
+                        <p><strong>State Legal Entity</strong>
+                        </p>
+                        <ul>
+                            <li>ImportID = {StateMaster.State}-{LegalEntity.ShortName}-{ContractTypeCodeValue}</li>
+                            <li>Warn user if updating the State, Legal Entity or Contract Type</li>
+                            <li>If any of these fields are updated then refresh the ImportID.</li>
+                            <li>Contract Type is not a&#160;required field. If this field is empty&#160;the system will not include the last dash and ContractTypeCodeValue.</li>
+                            <li>If Short Name is updated then refresh ImportID and also refresh the ImportIDs on the related State Legal Entities.</li>
+                        </ul>
+                        <p><strong>WC Policy Rates (Policy Comp Code)</strong>
+                        </p>
+                        <ul>
+                            <li>ImportID = {WCPolicy.ShortName}-{State}-{WCMaster.CompCode}</li>
+                            <li>Warn user if Policy, State, or Comp Code are changed.</li>
+                            <li>If State or Comp Code are updated the refresh the ImportID</li>
+                        </ul>
+                        <p><strong>WC Policy (Comp Policy)</strong>
+                        </p>
+                        <ul>
+                            <li>If Short Name is updated then refresh the ImportID and also refresh the ImportIDs on the related WC Policy Rates and Policy State Cost Factor forms.</li>
+                        </ul>
+                        <p><strong>Policy State Cost Factor</strong>
+                        </p>
+                        <ul>
+                            <li>ImportID = {WCPolicy.Shortname}-{State}</li>
+                        </ul>
+                        <p><strong>Surcharge Type Dependency </strong>
+                        </p>
+                        <ul>
+                            <li>ImportID = {SurchargeType.Parent}-{SurchargeType.Child}</li>
+                            <li>Warn user of the Parent Surcharge or Child Surcharge fields are updated</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Datatype Refactoring and Type-ahead Optimizations</p>
+                        <p class="TableTextLeft">Type ahead data types in the system have been re-factored to improve performance by streamlining the amount of information that is passed back and forth when attempting to auto-fill a field based on the information that is being typed into that field.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeftBold">Groups and Lookups made expected in code System level</p>
+                        <p class="TableTextLeft">The Lookup Groups and Lookup values that are included in our CORE system and often used in business logic have been marked as "<strong>IsSystem</strong>" and critical features of these lookups have been locked down. These system level lookups and groups cannot be deleted, nor can the code value for these lookups be changed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeftBold">Entity Framework Changes</p>
+                        <p class="TableTextLeft">The CORE application systems have been updated to replace older data access methodologies and streamline communication between the backend database and the web application. This improves performance for multiple systems including workspaces, dataforms and time tracking, especially for clients with large data sets.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeftBold">Document Search and Index</p>
+                        <p class="TableTextLeft">The document search and file indexing processes of the system have been updated to improve performance.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Fixes</h2>
+        <table class="TableStyle-Standard_Table" cellspacing="0" style="margin-left: auto;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 63px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 269px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Issue summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Resolution</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="font-weight: normal;">34992
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="font-weight: normal;">
+                        <p class="TableTextLeft">Notification emails missing data</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2" style="font-weight: normal;">Fixed a bug in the merge procedure peo_clientservicecase_emailtemplate_merge_proc which caused some of the fields to return blank data due to a data type conversion issue in the stored procedure.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="font-weight: normal;">34492
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="font-weight: normal;">Scheduled Tasks - dataform connection missing
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2" style="font-weight: normal;">Resolved an issue where scheduled workflows would not properly maintain the task to dataform relationship under certain circumstances involving complex scheduled workflows. Scheduled workflow tasks are now always properly associated with the dataform from which they were triggered.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="font-weight: normal;">34607
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="font-weight: normal;">Exception Monitoring Workflow trigger conditions
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2" style="font-weight: normal;">Resolved an issue in Workflow channels where under certain circumstances triggering conditions would not be properly evaluated, causing workflow triggering to behave unexpectedly.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="font-weight: normal;">34763
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="font-weight: normal;">
+                        <p class="TableTextLeft">Not Receiving Notifications for Employee Termination Workflow</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2" style="font-weight: normal;">Resolved an issue where the dataform notification process would not notify all of the notification users in a workflow channel notification.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="font-weight: normal;">34692
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="font-weight: normal;">
+                        <p class="TableTextLeft">Module Admin Detail Roles Count Bug</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2" style="font-weight: normal;">Resolved an issue with the Role badge counter on the module admin where the badge counter would present a role count of "0" after adding roles and closing the Roles add dialog by using the "X" on the work item.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="font-weight: normal;">34823
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="font-weight: normal;">
+                        <p class="TableTextLeft">BI Report widgets on homepage, landing pages, and headers are broken</p>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2" style="font-weight: normal;">Fixed a bug which caused a system exception to occur if a widget was set to use the "SuppressReportTitle" setting which hides the report title, but for some reason the report had no title stored.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="font-weight: normal;">34825
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="font-weight: normal;">Exception - Error editing user profile
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2" style="font-weight: normal;">The user admin system has been refactored to handle user data more efficiently as the large amount of data transferred on the save would occasionally cause system exceptions to be thrown.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="font-weight: normal;">34827
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2" style="font-weight: normal;">Saving User setting
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2" style="font-weight: normal;">Resolved an issue that would occur if the "Global Admin" setting was changed and the user detail record saved.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="font-weight: normal;">34841
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2" style="font-weight: normal;">Activity Summary Showing Wrong Times
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2" style="font-weight: normal;">Resolved an issue where records in the Activity summary were showing the incorrect timestamp value.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2" style="font-weight: normal;">35045
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2" style="font-weight: normal;">dtSearch Conversion, Search Criteria
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2" style="font-weight: normal;">Resolved an issue where application file searches, such as the document search would cause an exception to be written the system log, but not presented to the user.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

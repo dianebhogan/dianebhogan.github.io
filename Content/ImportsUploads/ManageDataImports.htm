@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Managing import data</h1>
+        <p>ClientSpace provides a powerful toolset to import and connect data with external systems. It can be tricky to manage. Connecting imported data to existing data in the system is useful and requires understanding your data and how the underlying tables relate. <MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">If you haven't already, review the <MadCap:xref href="../Glossary/glossary.htm" title="Glossary" alt="Glossary">Glossary</MadCap:xref> and read about foreign key relationships as well as relational databases.</MadCap:conditionalText></p>
+        <p>When configuring imports, it is essential to understand the data relationships within your installation. Each record to be imported must have a unique identifier (ImportID) as well as at least one column containing a method for relating that imported record to another record in the system, be it an Organization, Workspace, Contact, or a combination of these. An incorrectly configured import can corrupt or overwrite existing data, which can then be difficult or even impossible to fix or replace.</p>
+        <p>Now is the time to thoroughly map how the imported records tie to the existing data. If you need assistance, please log an Extranet case. It is much easier (and frankly less expensive) to request help in setting up an import than incorrectly importing records and then requesting help cleaning up the associated fallout. This topic provides an overview of the functionality for managing system imports.</p>
+        <p class="ActionTip">To perform data imports, you must be a Global Admin or have the <b>SYS_ImportManager</b> security entity with the <b>Admin</b> permission. See <MadCap:xref href="../Admin_Config/Config_ImportMgmt.htm" title="import data management for non-Global Admins" alt="import data management for non-Global Admins" class="Heading">Configuring import management for non-Global Admins</MadCap:xref>.</p>
+        <p class="ProcedureIntro">To manage data imports:</p>
+        <ol>
+            <li>Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Imports</b> &gt; <b>Manage Import</b>.<br />The Manage Import dashboard opens. If you have never imported a file, the dashboard opens without any files in the list. When there are no files, your options are limited to Adding a file.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Imports/MI_NoFiles.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Click <b>Add</b>.<br />The Upload File dialog opens.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Imports/Upload-File.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Complete the form fields:</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Choose File</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Browse your local and network drives and select a file.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Category</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">You can select a category for the file. Optional.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Description</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Include a brief description of the file. Optional.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Tags</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Add any Tags that may relate to the file. Optional.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <b>Save</b>.</li>
+        </ol>
+        <div class="indent">
+            <p>If you selected a file whose file name does not match one of the configured import mappings in your installation, the following error displays:</p>
+        </div>
+        <p class="Code">Please correct the following error(s): The file you are attempting to upload does not match a current Import Map Header and cannot be uploaded.</p>
+        <ol MadCap:continue="true">
+            <li>Log an Extranet case if you received this error and are not sure why.</li>
+            <li>When a file has been properly added, <b>Validate File</b> becomes available. <br />Validation compares the file structure to a preexisting import configuration to ensure that the file has all the required columns. Additionally, high-level validation is performed  to ensure that the data types match the field into which the data is imported. </li>
+        </ol>
+        <p class="Indent1">
+            <img src="../Resources/Images/Imports/MI_Validate.png" class="thumbnail" />
+        </p>
+        <div class="indent">
+            <p>Successful validation enables the <span class="UXElement">Run Import</span> function.</p>
+        </div>
+        <p class="Indent1">
+            <img src="../Resources/Images/Imports/MI_Run.png" class="thumbnail" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>With the record in Validate Complete status, click <b>Run Import</b> to begin the import process. <br />The action button reflects that the import process is <b>Running</b>. When complete, the action displays as <b>Completed</b>.</li>
+            <li>To review the success of your import, open the record and use the action item Links on the right: View File, Log File, Log Data, and Reset Status. Log Data presents any errors during the import.</li>
+        </ol>
+        <p class="Indent1">
+            <img src="../Resources/Images/Imports/Links-Options.png" />
+        </p>
+        <ol MadCap:continue="true">
+            <li>From the dashboard, to view the log file for import errors, click <span class="UXElement">View Log</span>.</li>
+        </ol>
+        <p class="ActionTip">Review the data that you just imported for completeness. Navigate to the dataform in the workspace and verify your work. Confirm that you have the expected number of records and that the appropriate data appears in each of the imported fields.</p>
+    </body>
+</html>

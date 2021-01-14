@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Workflow Channels" />Triggering a workflow item from other task items</h1>
+        <p>System administrators can configure a workflow item that can trigger from the Status of other Task workflow items in the same item channel. </p>
+        <p>Workflow configuration includes triggering based on the Status of Task workflow items other than the triggered item's immediate parent. To take advantage of this functionality, administrators must change the immediate parent item to fire the workflow item trigger, allowing the admin to build complex workflow triggers based on  multiple workflow tasks. </p>
+        <p>Using workflow conditions, you can specify additional task triggering conditions not related to the immediately preceding workflow task. Admins can use the Status from any task in the related workflow chain  as an additional triggering condition by selecting the option for Workflow Item from the Source list and then selecting the related workflow task when prompted to select a workflow item. The only field available for triggering configuration, in this case, is Status, and the only operator that can be selected is Equals. </p>
+        <p>The following example shows two parallel workflows: #2135 and #2286. Each of the workflows is a parent workflow. </p>
+        <p class="Bullet1" MadCap:autonum="• ">Workflow #2135 triggers three dependent tasks: #2138, #2136, and #2140.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Workflow #2286 triggers  tasks #2422 and #2425. Task #2422 is not directly related to the preceding workflow.</p>
+        <p>
+            <img src="../Resources/Images/Workflow/WorkflowChannel_1054.png" class="thumbnail" />
+        </p>
+        <p>The following example shows the Parent Workflow 2286 with a Condition: Source as Workflow Item #2422 and Status Equals.</p>
+        <p>
+            <img src="../Resources/Images/Workflow/Trigger_fromOtherTaskItems.png" class="thumbnail" />
+        </p>
+    </body>
+</html>

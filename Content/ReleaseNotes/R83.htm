@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\Resources\MasterPages\ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
+    </head>
+    <body>
+        <h1>Release 83 Notes</h1>
+        <p>The following items have been completed in this release.</p>
+        <p><strong>Sprint Began:</strong>&#160;8/1/2019&#160; &#160; &#160;<strong>Sprint Ended:</strong>&#160;8/31/2019</p>
+        <p>
+            <MadCap:concept term="Release Notes" />ClientSpace release notes are now delivered in a single document. To learn about product features that you may not recognize, contact your customer success manager.</p>
+        <h2>Release schedule</h2>
+        <p>The following chart describes the typical release schedule for our monthly upgrades. The schedule is subject to change and will be&#160;updated as required. To determine your group number or to ask questions, please contact Professional Services via the Extranet.</p>
+        <table class="TableStyle-Standard_Table" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Upgrade groups</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Date of upgrade</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">For this sprint, tentatively occurs on</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Group 1</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Second Tuesday of the month</td>
+                    <td style="text-align: center;" class="TableStyle-Standard_Table-BodyG-Column1-Body2">September 10, 2019</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Group 2</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Third Tuesday of the month</td>
+                    <td style="text-align: center;" class="TableStyle-Standard_Table-BodyD-Column1-Body2">September 17, 2019</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Group 3</td>
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Fourth Tuesday of the month</td>
+                    <td style="text-align: center;" class="TableStyle-Standard_Table-BodyA-Column1-Body2">September 24, 2019</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Enhancements</h2>
+        <p>Hover on the icons to discover the level of product enhancements: <img src="../Resources/Images/ICONS/ICON_FunctionalChange.png" title="Change in functionality" alt="Change in functionality" /> <img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" style="width: 29px;height: 29px;" alt="ClientSpace Premium (ClientSpace with additional modules)" title="ClientSpace Premium (ClientSpace with additional modules)" /> <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" />.<br /></p>
+        <p class="SubHdr">Filter Benefit Plans by Plan Category on Offered Plans&#160;(29496)&#160;<img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" style="width: 29px;height: 29px;" alt="ClientSpace Premium (ClientSpace with additional modules)" title="ClientSpace Premium (ClientSpace with additional modules)" /></p>
+        <p>The Offered Benefits Plan has been enhanced.&#160;Selecting a category of benefit plan now filters the Benefit Plan list to just the plans that are in the associated category.&#160;This can be a time saver when the system is configured with a wide range of benefit plan offerings.</p>
+        <p class="SubHdr">Associate Offered Plans link&#160;(31553)&#160;<img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" style="width: 29px;height: 29px;" alt="ClientSpace Premium (ClientSpace with additional modules)" title="ClientSpace Premium (ClientSpace with additional modules)" /></p>
+        <p>We have enhanced the Benefits Batch functionality. Previously, on Benefits Batch, if you clicked the Associate Offered Plans link, the system would only associate the offered plans with a status of Selected. Now the update associates all plans in the workspace with a status of New or Selected.</p>
+        <p class="SubHdr">Benefit Plan premium/rate update (33564)&#160;<img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" style="width: 29px;height: 29px;" alt="ClientSpace Premium (ClientSpace with additional modules)" title="ClientSpace Premium (ClientSpace with additional modules)" /></p>
+        <p>The Benefit Plan and Benefit Plan Tier dataforms have been enhanced with new business rules.&#160;</p>
+        <ul>
+            <li><strong>SE_WarnOnCostChange</strong>:&#160;If any of the costs have changed, the system warns the user that this may affect offered rates.&#160;</li>
+            <li><strong>UpdateOfferedBenefitsPlans</strong>:&#160;Performs the update to the offered plan rates based on changes to the plan or tier costs. Only triggered if the <strong>Override Client Premiums</strong> option on the Offered Plan is cleared.</li>
+        </ul>
+        <p>These enhancements ensure that changes to rates are carried through to the Offered plan automatically, ensuring that the offer aligns with the current plan rates and tiers.</p>
+        <p class="SubHdr">Add Benefit Plan Tier ImportID logic&#160;(35337)&#160;<img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" style="width: 29px;height: 29px;" alt="ClientSpace Premium (ClientSpace with additional modules)" title="ClientSpace Premium (ClientSpace with additional modules)" /></p>
+        <p>The Benefits system has been enhanced to update the ImportID of the Benefits Plan tier in sync with the associated Benefits Health Carrier/Plan.&#160;The Plan Tier ImportID is formatted as&#160;<strong>&lt;BenefitPlanImportID&gt;-&lt;PlanTier Title&gt;</strong>, so if a benefit plan has an ImportID of&#160;AETHMO13-20190801 and the plan tier record has a title of HP1, the ImportID for this plan tier would be&#160;AETHMO13-20190801-HP1.&#160;In instances where the Benefit Plan ImportID changes or is cleared, the associated Plan Tier ImportIDs also change to match, keeping them in sync.</p>
+        <p class="SubHdr">Related fields on Dataform Field Properties&#160;(37562)&#160;<img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /></p>
+        <p>Certain datatypes allow for advanced configuration, allowing you to specify what displays in the field.&#160;The most common datatypes that support such custom configurations have fields that allow the global administrator to complete these configurations in a straight forward manner.&#160;Some configurable datatypes do not have an easy to use interface.&#160;These may be configured by a knowledgeable professional using the Field properties field (in the case of our newer cross-browser application) or through the Related Data field for the classic application. The fields used for this configuration have been exposed in the Dataform Fields admin console. PrismHR recommends consulting with professional services to configure these special properties unless you have a solid understanding of these field configurations. Mis-configuration could cause unexpected behavior of the dataform/field. </p>
+        <p style="margin-left: 0.0in;">For help configuring specific datatypes, contact professional services.</p>
+        <p class="SubHdr">Convert WCLagTime incident clone key to NEXT&#160;(37795)&#160;</p>
+        <p>The Workflow Channel system has been enhanced to trigger workflows in the same way as the WCLagTime Incident Clone Key from the classic Template Tasks. In the Admin Workspace, on the PEO Configuration page, the <strong>Carrier Lag Threshold</strong> field controls the triggering. On save of the Comp Claim dataform, the&#160;<strong>Check Lag Time</strong>&#160;rule checks the difference between the Injury Date and Carrier Report Date. If the value returned exceeds the lag time threshold, a hidden Lag Time Exceeded field (Yes/No lookup) on the Comp Claim form is set, which can be used to trigger workflows.</p>
+        <p class="SubHdr">Organization security (38041)&#160;</p>
+        <p>Org Category security has been enhanced to dynamically update organization security with changes to the associated Organization category.&#160;Changes made under&#160;<strong>System Admin </strong>&gt;<strong> Security </strong>&gt;<strong> Org Categories</strong>&#160;automatically propagate to the associated organizations with a related category.&#160;Changes include category, role, and access changes.&#160;If an Org Category is deleted, the security is removed from all associated organizations.&#160;For more information about security, review&#160;<a href="https://clientspace.atlassian.net/wiki/x/sYAL" rel="nofollow">Organization and Workspace Security Configuration</a>&#160;in our knowledge base.</p>
+        <p class="SubHdr">Employment dataform (38155) and&#160;Server Data Proc&#160;(38156)&#160;</p>
+        <p><strong>Employment dataform</strong>: The employment dataform has been enhanced to store more information. A new fieldset, <strong>Additional Information</strong>, has been added on the <strong>gen_EmployeeEmploymentInformation</strong>.&#160;These new fields are marked as Triggerable by default. The read-only attribute is controlled from the Source on the Employee form as are most of the employment form fields.</p>
+        <p>The following fields have been added to the <strong>Additional Information</strong> fieldset:</p>
+        <ul>
+            <li><strong>Is FLSA exempt?</strong>: Yes/No lookup</li>
+            <li><strong>Is FICA exempt?</strong>: Yes/No lookup</li>
+        </ul>
+        <p>The following fields are <strong>coming soon</strong>. They are not yet functional as of R83.</p>
+        <ul>
+            <li><strong>Enrolled Benefits</strong>: Multi Lookup (Employment Benefit Types)</li>
+            <li><strong>Has Retirement?</strong>: Yes/No lookup</li>
+            <li><strong>Has Dependents?</strong>: Yes/No lookup</li>
+            <li><strong>Has Garnishments?</strong>: Yes/No lookup</li>
+        </ul>
+        <p><strong>Employment server data proc</strong>: In addition, the&#160;<span style="color: rgb(0,0,0);">Employee server data proc <strong>peo_server_data_employee</strong> used in workflow channel and email template configuration now includes the same employee dataform fields.</span></p>
+        <p>The following fields have been added to the <strong>Additional Information</strong> fieldset:</p>
+        <ul>
+            <li><strong>Is FLSA exempt?</strong>: Yes/No&#160;</li>
+            <li><strong>Is FICA exempt?</strong>: Yes/No</li>
+        </ul>
+        <p>The following fields are <strong>coming soon</strong>. They are not yet functional as of R83.</p>
+        <ul>
+            <li><strong>Enrolled Benefits</strong>:&#160;<span style="color: rgb(0,0,0);">Comma space-delimited list of decode values stored in the multi-lookup field</span></li>
+            <li><strong>Has Retirement?</strong>: Yes/No&#160;</li>
+            <li><strong>Has Dependents?</strong>: Yes/No&#160;</li>
+            <li><strong>Has Garnishments?</strong>: Yes/No</li>
+        </ul>
+        <p>All of the fields can be used in field replacement to return the value stored in the related dataform field. The Yes/No fields can be used to configure trigger conditions by typing Yes or No in the trigger value field.&#160;Enrolled Benefits can be used for triggering by using a trigger operator of Contains and a decoded value such as Health, Dental, Vision, etc.</p>
+        <p class="SubHdr">HRPAPI mapping: Employment benefits (38244)&#160;</p>
+        <p>The HRPAPI has been enhanced to include new employment information. Two new fields have been added to the Employment form in the application. The Employment import configurations have been updated to include the following:</p>
+        <ul>
+            <li><strong>Is FLSA Exempt</strong>:&#160;Imports this flag from the <strong>Employee</strong> &gt; <strong>Name</strong> &gt; <strong>FLSA Exempt</strong> field in PrismHR.</li>
+            <li><strong>Is FICA Exempt</strong>: Imports this flag from the <strong>Employee</strong> &gt; <strong>Tax FICA Exempt</strong> field in PrismHR.</li>
+        </ul>
+        <p class="SubHdr">Client Service Case Due Date (38448)&#160;</p>
+        <p>Client Service Case has been enhanced.&#160;</p>
+        <p>The <strong>SetDueDateFromCaseTypeOffset</strong> business rule now adheres to the Save Action value in the rule configuration so it can run on Insert, Update, or Both instead of being hard-coded to Inserts only.&#160;This enhancement allows you to configure the system so that the Due Date resets dynamically if the case type changes.&#160;</p>
+        <p>For example, a client initially logs a case on January 1 and selects a case type with a due date offset of 2 weeks. The case due date is set by the system to January 15 based on the offset. Two days later they realize the issue is worse than they initially thought, so they change the case type to one that has a default due date offset of 3 days.&#160;</p>
+        <p>Before this enhancement, the Rule that sets the due date on the case would be ignored when updating an existing case. So the due date would still be January 15.</p>
+        <p>The enhancement allows you to configure the rule so that when the case type changes, the due date would be reset based on the new case type parameters and the update date from the case. So the case updated on January 3 with a new case type&#160;due date&#160;offset of 3 days, would have a due date of January 6.</p>
+        <p class="SubHdr">Role Security (38454)&#160;<img src="../Resources/Images/ICONS/ICON_FunctionalChange.png" title="Change in functionality" alt="Change in functionality" /></p>
+        <p>Role security has been enhanced with two new security entities that enable the system administrator to secure the Active option on Orgs, Contacts, and Tasks.</p>
+        <ul>
+            <li><strong>CRM_IsActive&#160;</strong>secures the Active option on Organizations and Contacts</li>
+            <li><strong>Incident_IsActive&#160;</strong>secures the Active option on Tasks. This does not affect mass updates through the task manager. Users with rights to perform mass updates can still mark a task as Inactive by completing and archiving the task.</li>
+        </ul>
+        <p>You need View rights on your role to see the Active option.</p>
+        <p>For more information regarding Role security, review the knowledge base article&#160;<a href="https://clientspace.atlassian.net/wiki/x/eoAV" rel="nofollow">Administering Role Security</a>.</p>
+        <p class="SubHdr">Workflow Channels: Allow trigger conditions across single dataforms&#160;(38614)&#160;</p>
+        <p>The workflow channels system has been enhanced, making all active, triggerable,&#160;single forms in the application available in the Source field when configuring Workflow Channel triggering conditions (Step 4 when configuring workflows).&#160;For more information regarding Workflow channel configuration, review the knowledge base article&#160;<a title="Click here to read the article" href="https://clientspace.atlassian.net/wiki/x/LACGHg" rel="nofollow">Configuring Workflow Channels.</a></p>
+        <p class="SubHdr">Email Templates: Allow trigger conditions across single dataforms&#160;(38712)&#160;</p>
+        <p>The Email Template system has been enhanced to allow triggerable fields from any single dataform marked as triggerable, as an additional triggering condition.&#160;Previously, only the Triggering Table (set on Step 1 of the template) and any dataform related to the triggering table through tabs, were available as additional conditions.</p>
+        <p class="SubHdr">Workflow channel unique index (38828)&#160;</p>
+        <p>The Workflow Channel Name validation has been optimized, moving the database server-side validation to client-side code.</p>
+        <p class="SubHdr">Payroll Batch Type lookup (38905)&#160;</p>
+        <p>Updated Payroll Batch Type lookup. The Decode for R is now set to <em>Regular Scheduled</em> from the previous value of <em>Scheduled</em> to match the values in PrismHR.</p>
+        <p class="SubHdr">Refactor view: peo_vwPricingInfo_All&#160;(38987)&#160;</p>
+        <p>The view&#160;<strong>peo_vwPricingInfo_All</strong> has been refactored to optimize performance, allowing it to run more efficiently.</p>
+        <p class="SubHdr">Refactor view: peo_vwClaimDetail&#160;(38988)&#160;</p>
+        <p>The view&#160;<strong>peo_vwClaimDetail</strong> has been refactored to optimize performance, allowing it to run more efficiently.</p>
+        <p class="SubHdr">Claim Financials Legal fields (39026)&#160;<img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /></p>
+        <p>Three new optional fields have been added to the claim financials form:</p>
+        <ul>
+            <li>Paid Legal</li>
+            <li>Reserved Legal</li>
+            <li>Incurred Legal</li>
+        </ul>
+        <p>These fields are in a hidden fieldset on the dataform. You can activate the fields by moving them into the appropriate Paid / Reserve / Incurred fieldset on the form.&#160;When you store claim related legal cost data in these fields, they affect the financial calculations in the following way:</p>
+        <ul>
+            <li><strong>Incurred Legal&#160;</strong>= Paid Legal + Reserved Legal</li>
+            <li><strong>Paid Total</strong>&#160;= Paid Medical + Paid Indemnity + Paid Expense + Paid Legal</li>
+            <li><strong>ReservedTotal</strong>&#160;= Reserved Medical + Reserved Indemnity + Reserved Expense + Reserved Legal</li>
+            <li><strong>IncurredTotal&#160;</strong>= Incurred Medical + Incurred Indemnity + Incurred Expense + Incurred Legal</li>
+        </ul>
+        <p class="SubHdr">Current Pricing Batch record (39035)&#160;&#160;<img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" style="width: 29px;height: 29px;" alt="ClientSpace Premium (ClientSpace with additional modules)" title="ClientSpace Premium (ClientSpace with additional modules)" /></p>
+        <p>Pricing has been enhanced to add a Current Batch feature with the following changes:</p>
+        <ul>
+            <li>A new option named <strong>Current Pricing Batch</strong> is now in the Workflow History fieldset. It is read-only.</li>
+            <li>A new business rule&#160;<strong>Set Current Pricing Batch </strong>has&#160;been added and is configured to run on the Default and Import pipelines.&#160;<br />This business rule:</li>
+            <ul>
+                <li>Clears the current batch flag on all pricing batches in the workspace,</li>
+                <li>Finds the current activated batch, or in the cases where batch activation has not occurred, selects the most recently created batch that is not a comparison batch,</li>
+                <li>And sets the Current Pricing Batch flag.</li>
+            </ul>
+            <li>This development also includes a script to set the Current Batch on existing Pricing Batch records that meet the criteria.</li>
+        </ul>
+        <p class="SubHdr">Defensive code to force a reload of the cache&#160;(39139)&#160;</p>
+        <p>Defensive code has been added to ensure the datatype cache on the webserver is refreshed automatically in the case of a datatype mismatch, thus avoiding unexpected results.</p>
+        <p class="SubHdr">System database tables (39289)&#160;</p>
+        <p>System database tables have been tuned for optimization by adding a new index.</p>
+        <p class="SubHdr">Tabbed dataforms, Pipeline dependencies (39393)&#160;</p>
+        <p>Default pipeline configuration has been removed from dataform administration.&#160;</p>
+        <p class="SubHdr">License dashboard (39401)&#160;</p>
+        <p>The License dashboard has been enhanced, adding the ability to search all licenses by user.&#160;</p>
+        <p class="SubHdr">PrismHR API (39457)&#160;</p>
+        <p>We have begun the process of converting the PrismHR API to a REST API from the current SOAP API format.&#160;The conversion allows the application to automatically take advantage of new API methods without having to update the base API code every time.&#160;This transition from one API format to another should be seamless from a user perspective.</p>
+        <p class="SubHdr">Email add-in Primary Contact default on Sent emails (39516)&#160;</p>
+        <p>The Email Add-in has been enhanced. If the FROM address of the email is the same as the add-in users email address, the system will use the first TO address to determine the primary contact/organization.&#160;The system will also now use the sent date of the email to populate the Date Sent of the email activity&#160;so the user is not prompted with whether they should send the email on save.&#160;</p>
+        <p class="SubHdr">External Source linking, Import enhancement (39697)&#160;<img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /></p>
+        <p>Users can now be imported into the External Source Linking table using the <strong>IMPORT_externalsourcelinking_*.csv</strong> import map.&#160;The ClientSpaceID value will be tested against the Users table UserGUID field. If a match is found, the record is inserted into the linking table (non-matching ClientSpaceIDs cannot be inserted into this table).</p>
+        <h2>Fixes<br /></h2>
+        <table class="TableStyle-Standard_Table" style="mc-table-style: url('../Resources/TableStyles/Standard_Table.css');margin-left: auto;margin-right: auto;" cellspacing="0">
+            <col style="width: 113px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 360px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 643px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Issue summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Resolution</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">14637</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Dropdown csValue issue</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue that could occur in a drop-down field such as a lookup where, if the selected item does not exist in the list (maybe a lookup item was inactivated), the underlying value is not set on the dataform save.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">38213 <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /></td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Organization category security issue on PEO</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Fixed a bug in Organization category security that occurred when the AssignedTo department matched the role being added because the org category security and the department of the AssignedTo had member access set to None.&#160;In that scenario,&#160;the entity was not added to the Organization.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">38552 <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /></td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Adding fields with { } in field label error</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where field labels containing the characters {} and [] would throw an exception on page load. These characters are now stripped from field labels on dataform field save.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">38640</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Workspace not being properly decoded on Case Type Subscription</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Fixed a bug in the Case Type Subscription dashboard where the&#160;<strong>My Clients</strong>&#160;option in the workspace selector was not being decoded properly after save and would display the value -2 instead.&#160;For more information about getting automatic notifications based on case type, review the article&#160;<a href="https://clientspace.atlassian.net/wiki/x/CgDaAg" rel="nofollow">How Do Case Type Subscriptions Work?</a>&#160;in our knowledge base.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">38713</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Contacts API: Related Org field</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue with the&#160;HRPAPI_contact import configuration that would cause contacts to be imported, but not associated with an organization.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">39030</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Workflow Channel workflow action error</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue that could occur when adding a lookup field using the NAIC lookup group to a workflow channel with the Add Untriggered functionality, which would result in duplicated fields on the workflow configuration page.&#160;&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">39083</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">User deletion issues</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Fixed a bug when attempting to delete a user that was associated with a license would cause a foreign key constraint error and not allow the user to be deleted.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">39159&#160;<img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /></td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Report admin Save and New button</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where using Save and New in report admin would not work.&#160;Save and New will now save the existing record and open a new Add dialog as expected.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">39303</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Active reports date fields on filter pages</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue on the filter page of an active report where date field parameters were truncated, which caused unexpected results.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">39427&#160;<img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /></td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Custom Link conditions, CRM forms</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Fixed an issue during custom link configuration if the TableCode or field label data is missing for the table from which a link is triggered, neither the form nor header proc fields with missing data will be located when attempting to configure link display conditions using those fields.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">39449</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Reports not auto-sent</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Fixed a bug that caused some scheduled BI reports not to be sent.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">39468</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Task ID link in task email does not have full website</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Defensive code has been added to ensure that the link embedded in a Task notification email does not become malformed, causing unexpected results.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">39515</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Tab dataform and field display issue</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where two forms in a tab relationship with field display would cause an exception if there were fields on the related forms with the same name and field display involved one of these fields.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">39641</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Error editing a license</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Optimized the license save process that minimizes the amount of data being passed back to the database on save. The optimization resolves issues that some larger clients may experience when adding or editing licensing in the system.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">39688</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Custom header link conditions not evaluating correctly</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where bit value (checkbox) flags configured as trigger conditions for link display were not being properly evaluated, causing link display to fail.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">39724</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact not defaulting in prod</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where the Primary Contact field was not defaulting properly on add of the first contact to an organization.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">39834</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Exception log: Adding untriggerable form in Email Templates</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue when choosing an Untriggered form as a trigger in a new Email Template. An exception occurred when the modal dialogue opened, allowing the user to choose an untriggerable form.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">39857</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">kandu slackbot not working</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue with the /kandu slackbot where the system would not return results when using the /kandu task command.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">40020</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Email Template Conditions: Added untriggered field</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Changes to Email Templates in R83 caused the <strong>Add Untriggered</strong> field list functionality to improperly include dataform fieldsets and to improperly present certain datatype trigger value fields as a blank integer field. This has been corrected.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">40053</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">Lookup and User Type ahead decode for Fields added through Add Untriggered</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue with lookup, parent form, and user datatypes in Email Templates. When adding these types of fields through the <strong>Add Untriggered</strong> functionality of email templates, the value selector would not correctly decode the field, instead presenting an empty text box that expected an integer as input. These types of fields will now correctly present in the value selector as if they were on a dataform.&#160;For more information about email template configuration, review&#160;<a title="click here to read the article" href="https://clientspace.atlassian.net/wiki/x/AgD5Gg" rel="nofollow">Administering Email Templates&#160;</a>in our knowledge base.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

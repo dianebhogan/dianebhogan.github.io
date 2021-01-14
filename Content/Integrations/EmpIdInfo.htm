@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Employee identifying information</h1>
+        <p><MadCap:variable name="MyVariables.ProductName" /> provides data mapping through the PrismHR API to enhance the Employee related workflows. The additional mapping ensures that  Employee data from PrismHR is imported into the fields on the Employee dataform, so that configured workflows trigger. These fields can be used in Conditions for Workflow Channels and Email Templates.</p>
+        <p>Fields on the Employment dataform populate through the API import process (<b>HRPAPI_initial_employment</b>, <b>HRPAPI_employment</b>, and <span class="UXElement">HRPAPI_emp_benefits</span>). The <b>HRPAPI_initial_employment</b> and <b>HRPAPI_employment</b> import mappings have additional columns for the following fields. </p>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 137px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">Field</th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Enrolled Benefits?</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Multi-lookup</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Has Retirement?</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Yes/No lookup</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Has Dependents?</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Yes/No lookup</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2" MadCap:conditions="">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <p class="TableTextLeft">Has Garnishments?</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Yes/No lookup</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <p class="TableTextLeft">Is FLSA Exempt?</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Yes/No lookup. Imports this flag from the <b>Employee</b> &gt; <b>Name</b> &gt; <b>FLSA Exempt</b> field in PrismHR.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">
+                        <p class="TableTextLeft">Is FICA Exempt?</p>
+                    </td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <p class="TableTextLeft">Yes/No lookup. Imports this flag from the <b>Employee</b> &gt; <b>Tax  FICA Exempt</b> field in PrismHR.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>These fields are displayed in the <b>Additional Information</b> fieldset.</p>
+        <p class="InternalComment" MadCap:conditions="ClientSpace.Exclude">Tech Writer:&#160;To find, navigate PEO UAT &gt; Employees dashboard &gt; Select an employee &gt; Click on Employee Info link - fields are at bottom of page in Additional Information fieldset</p>
+        <p>
+            <img src="../Resources/Images/Integrations/Emp_AddInfo_fieldset.png" />
+        </p>
+        <p class="SubHdr">Field replacement</p>
+        <p>All of the fields can be used in field replacement to return the value stored in the related dataform field. </p>
+        <ul>
+            <li>Use the Yes/No fields  to configure trigger conditions by typing Yes or No in the trigger value field. </li>
+            <li>Use Enrolled Benefits  for triggering by using a trigger operator of Contains and a decoded value such as Health, Dental, and Vision.</li>
+        </ul>
+        <p class="SubHdr">Enrolled Benefits options</p>
+        <p>Code/ImportID - Decode: The fields have the following configured values for Enrolled Benefits options.</p>
+        <table style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <ul>
+                            <li>MED: Medical</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <ul>
+                            <li>ADD: Accidental Death and Dismemberment</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li>ACC: Accident Benefits</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <ul>
+                            <li>VIS: Vision</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <ul>
+                            <li>LIS: Life Insurance - Basic - Spouse Only</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li>LDA: Additional</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <ul>
+                            <li>DEN: Dental</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <ul>
+                            <li>LIC: Life Insurance - Basic - Child Only</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li>LTD SDA: Additional</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <ul>
+                            <li>VOL: Voluntary Benefits</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <ul>
+                            <li>ANC: Ancillary</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li>STD BLX: Basic Life Extra</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <ul>
+                            <li>LIF: Life Insurance - Basic</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <ul>
+                            <li>CRI: Critical Illness</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li>HOS: Voluntary Hospitalization</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <ul>
+                            <li>GTL: Group Term Life</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <ul>
+                            <li>CAN: Cancer Benefits</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li>IDT: Identity Theft</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <ul>
+                            <li>LTD: Long Term Disability </li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <ul>
+                            <li>MDP: Domestic Partner Medical</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li>LGL: Legal</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <ul>
+                            <li>STD: Short Term Disability </li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <ul>
+                            <li>DDP: Domestic Partner Dental</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <ul>
+                            <li>CRL: Critical Illness as Life</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <ul>
+                            <li>GAP: Gap Insurance</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <ul>
+                            <li>VDP: Domestic Partner Vision</li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="SubHdr">Garnishments</p>
+        <p class="TableTextLeft">Has Garnishments data is populated when:</p>
+        <ul>
+            <li>Initial Employment (both Client and Employee Sync processes) runs.</li>
+            <li>An Enrolled Benefit, Dependents, or Retirement change is made in PrismHR (using the PrismHR ongoing import configurations).</li>
+            <li>An Employment change is made.</li>
+        </ul>
+        <p class="TableTextLeft">Configuration:</p>
+        <ul>
+            <li>A new field was added to Employment form luHasGarnishments (lookup, Yes/No).</li>
+            <li>A new Import Field mapping was added to the HRPAPI_employment*.csv and HRPAPI_initial_employment*.csv Import Mappings.</li>
+            <li>Column Name MUST be HasGarnishments, mapped to luHasGarnishment field, API path Employee/Garnishments/active.</li>
+            <li>A new Import Field mapping was added to the  HRPAPI_emp_benefits*.csv import mapping.</li>
+            <li>Column Name MUST be HasGarnishments, mapped to luHasGarnishment field, API path Benefits/Garnishments/active.</li>
+        </ul>
+    </body>
+</html>

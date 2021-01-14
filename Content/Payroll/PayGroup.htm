@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Payroll Batch, Pay Group, and Billing Vouchers</h1>
+        <p>Payroll Batch processing involves a few dataforms:&#160;Payroll Batch, Pay Group, and Billing Vouchers. </p>
+        <p><span class="UXElement">Payroll Batch</span> – The Payroll Batch import brings in the payroll data for each batch, enabling ClientSpace to track the number of paid employees. The Payroll Batch dataform stores the payroll information for each processed batch from PrismHR and allows for tracking of the batch from the beginning of the process to the end. </p>
+        <p><span class="UXElement">Pay Group</span> – The Pay Group dataform stores information about each pay group type, such as Weekly and Bi-Weekly, Period Start and End Date, and Employee Count. Pay Groups allows us to track the frequency of how employees are paid and reflect the employee counts for each frequency type. The number of pay groups depend on who is being paid at the time of the payroll batch run. Pay Group names vary by client need and are imported from PrismHR. Payroll Batches with multiple pay groups will have a pay group dataform for each one associated with that batch.</p>
+        <p> <span class="UXElement">Billing Vouchers</span> – The Billing Vouchers reflect the total amount paid for the payroll batch and also includes items, such as billing codes for taxes and deductions. Billing Vouchers are viewable from the Payroll Batch.</p>
+        <p>Let's look at an example of a Payroll Batch, Pay Group, and Billing Vouchers.</p>
+        <p class="ProcedureIntro">To view the configuration:</p>
+        <ol>
+            <li>On the module bar, click <span class="UXElement">Workspaces</span>.<br />The Workspace Search dashboard opens.</li>
+            <li>Select a workspace and click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Jump</span>).<br />The Workspace opens.</li>
+            <li>Move down the page to the dataform tiles, and click <span class="UXElement">Payroll Batch</span>.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Payroll/PayrollBatch-tile.png" class="thumbnail" />
+            </p>
+            <p>The Payroll Batch dashboard opens.</p>
+            <p>
+                <img src="../Resources/Images/Payroll/PayrollBatch-list.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Open an entry.<br />In our example, we selected an entry with multiple Pay Groups.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Payroll/PayrollBatch-details.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>In the <span class="UXElement">Action Center</span>, click <span class="UXElement">Pay Groups</span>.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Payroll/PayGroups-ActionCenter.png" />
+            </p>
+        </div>
+        <div class="indent">
+            <p>The Pay Group dashboard opens. Our example shows two entries: Bi-Weekly and W. These pay groups are imported from PrismHR into <MadCap:variable name="MyVariables.ProductName" />.</p>
+        </div>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Payroll/PayGroup-List.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>To view a Pay Group, highlight a row and double-click or click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Open</span>).<br />The Pay Group details page opens. </li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Payroll/PayGroup-details.png" class="thumbnail" />
+            </p>
+        </div>
+        <div class="indent">
+            <p class="ProcedureIntro">To view Billing Vouchers from the Payroll Batch:</p>
+            <ol>
+                <li>From the <span class="UXElement">Payroll Batch</span> dataform, in the <span class="UXElement">Action Center</span>, click <span class="UXElement">Billing Vouchers</span>.<br />The Billing Voucher dashboard opens. </li>
+            </ol>
+            <div class="indent">
+                <p>Because our example has two Pay Groups, the entries are associated with each Pay Group. When you total the like entries, for example Gross Wages, these will be the totals for the Payroll Batch. Note, the Billing Voucher reflects the individual items for each Pay Group. </p>
+            </div>
+            <div class="indent">
+                <p class="ProcedureIntro">
+                    <img src="../Resources/Images/Payroll/BillVouchers_PayrollBatch.png" class="thumbnail" />
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" style="mc-master-page: url('..\Resources\MasterPages\ReleaseNotes.flmsp');">
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
+    </head>
+    <body>
+        <h1>Release 81 Notes</h1>
+        <p><strong>Sprint Began:</strong>&#160;6/1/2019&#160; &#160; &#160;<strong>Sprint Ended:</strong>&#160;6/30/2019</p>
+        <p class="auto-cursor-target">
+            <MadCap:concept term="Release Notes" />Starting with <strong>Release 81</strong>, all release notes are being delivered in a single document. To learn about product features that you may not recognize, contact your Customer Success Manager.</p>
+        <p class="SubHdr">ACTION NEEDED!</p>
+        <div class="confluence-information-macro-body">
+            <p>New licensing functionality introduced in R80&#160;<strong>must</strong> <strong>be configured before your site upgrades to R81</strong>.&#160;You <strong>must</strong> configure your licenses so that you can retain access to current modules. For more information about licenses and configuration instructions, review the article&#160;<strong>Managing user licenses</strong>.</p>
+        </div>
+        <h2>Release schedule</h2>
+        <p>The following chart describes the typical release schedule for our monthly upgrades. The schedule is subject to change and will be&#160;updated as required.&#160;To determine your group number or to ask questions, please contact Professional Services via the Extranet.&#160;</p>
+        <table class="TableStyle-Standard_Table" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" cellspacing="0">
+            <col style="width: 0px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 0px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 0px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <div class="tablesorter-header-inner">Upgrade groups</div>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <div class="tablesorter-header-inner" style="text-align: left;">Date of upgrade</div>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <div class="tablesorter-header-inner">For this sprint, tentatively occurs on</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td style="text-align: center;" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Group 1</td>
+                    <td style="text-align: left;" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Second Tuesday of the month</td>
+                    <td style="text-align: center;" class="TableStyle-Standard_Table-BodyG-Column1-Body2">July 9, 2019</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td style="text-align: center;" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Group 2</td>
+                    <td style="text-align: left;" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Third Tuesday of the month</td>
+                    <td style="text-align: center;" class="TableStyle-Standard_Table-BodyD-Column1-Body2">July 16, 2019</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td style="text-align: center;" class="TableStyle-Standard_Table-BodyB-Column1-Body2">Group 3</td>
+                    <td style="text-align: left;" class="TableStyle-Standard_Table-BodyB-Column1-Body2">Fourth Tuesday of the month</td>
+                    <td style="text-align: center;" class="TableStyle-Standard_Table-BodyA-Column1-Body2">July 23, 2019</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="confluence-information-macro confluence-information-macro-note conf-macro output-block">
+            <h2>Enhancements</h2>
+            <p>Hover on the icons to discover the level of product enhancements: <img src="../Resources/Images/ICONS/ICON_FunctionalChange.png" title="Change in functionality" alt="Change in functionality" /> <img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" style="width: 29px;height: 29px;" alt="ClientSpace Premium (ClientSpace with additional modules)" title="ClientSpace Premium (ClientSpace with additional modules)" /> <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" />.</p>
+        </div>
+        <p class="SubHdr">Business Intelligence dashboard (26095)  &#160;</p>
+        <p style="margin-left: 0.0in;">A Business Intelligence dashboard has been added to System Admin. From the dashboard, admin users can see at a glance their business intelligence report names and categories as well as the last edit and last run date of the report.&#160;This information can be useful when attempting to clean up a surplus of unused reports. This system also gives PrismHR developers the ability to script reports from one system to another.</p>
+        <p class="SubHdr">Reactivate link for tasks (29507)  &#160;</p>
+        <p>A&#160;<strong>Reactivate</strong> link has been added to the Action Center for tasks. This link is only available to tasks with a status of Complete that have been Archived.&#160;The link works in much the same as the Reactivate link on the case, returning the status to New and setting the Active flag on the task to true. See&#160;Tasks: Creating and Managing.</p>
+        <p class="SubHdr">Import process (30343)  &#160;</p>
+        <p>The import process has been enhanced to allow carriage returns or line feed characters into text area and log fields.&#160;Previously these types of characters would need to be stripped from the import data before the data was saved to the database.</p>
+        <p class="SubHdr">Email administration (31467) </p>
+        <p>The Email Admin system has been enhanced for ease of use. A Date Sent column has been added to the email list, which displays the date and time an email was sent or <strong>UNSENT</strong> if the email cannot or has not yet been sent.</p>
+        <p class="SubHdr">Business rule administration (35160)&#160;<img src="../Resources/Images/ICONS/ICON_FunctionalChange.png" title="Change in functionality" alt="Change in functionality" />   &#160;</p>
+        <p style="margin-left: 0.0in;">The business rule admin interface has been enhanced.&#160;The system now disables the secondary trigger field and secondary trigger value fields until after the Primary trigger fields have been completed. The system also now allows <strong>%</strong>&#160;Quick search on the Rule Title and Description fields.</p>
+        <p class="SubHdr">Email Active Days before expiration (35553)&#160;</p>
+        <p>The application has been enhanced to include a customizable parameter for Active Days before Expiration. Previously an external user of the system would have their account auto-expired if they had not actively logged in for more than 90 days. The system now makes this value customizable by installation, with a default value of 180 days, which is recommended. 0 Days = never expire.</p>
+        <p class="SubHdr">HRPAPI Ongoing Import (37251)&#160;</p>
+        <p>The HRPAPI Ongoing import has been enhanced to adhere to changes in the API user security parameter settings. Existing user accounts that have been excluded due to changes in user security parameters (UserType, UserName, or ExcludedEmail) are inactivated at the next user change in PrismHR. If the user does not exist in Pulse, their user records are removed from the import queue rather than the previous behavior of creating the user record in the system as Inactive. If the PrismHR user meets all the required parameters, their account is created/updated to match the Active status in PrismHR.</p>
+        <p class="SubHdr">Business Rules (37987)&#160;</p>
+        <p>New business rules have been added to the system:</p>
+        <ul>
+            <li><strong>Update Template From Sales Region</strong>&#160;uses metadata configured on the Sales Region lookup to set the template of the workspace when the sales region is changed on the Client Master dataform.&#160;If metadata for a region is not configured, no change is made. When you change templates, the action updates the users, security, and dataforms associated with the workspace to match that of the new template.</li>
+            <li><strong>Warn Sales Region Template Change</strong> warns the user of these changes prior to saving.&#160;</li>
+        </ul>
+        <p>We recommend System Admins review each template carefully before implementing this functionality.</p>
+        <p class="SubHdr">External Email dashboard (38022)&#160;</p>
+        <p>The External Email dashboard has been Help enabled, to provide Help articles in&#160;<strong>Post to ClientSpace</strong>&#160;when using the email add-in for Outlook.</p>
+        <p class="SubHdr">License system (38087)&#160;<img src="../Resources/Images/ICONS/ICON_FunctionalChange.png" title="Change in functionality" alt="Change in functionality" /></p>
+        <p>The license system released with our June R80 update is being implemented, tying specific features to licenses to determine&#160;which areas of Pulse are available by user.&#160; Before installing the R81 update, you <strong>must</strong> complete the licensing configuration.&#160;For more information about managing user licenses, review&#160;<a href="https://clientspace.atlassian.net/wiki/x/ToBMO" rel="nofollow">Managing user Licenses&#160;</a>in our Knowledge Base.</p>
+        <p class="SubHdr">PrismHR Import Initial Sync (38127) </p>
+        <p>The PrismHR Import Initial Sync process has been updated to import company data. Previously the sync process excluded company-level data changes such as Contract type because these changes can affect other areas of the system.&#160;Exercise caution when including company data in the sync because changes to these data points can have far-reaching consequences.</p>
+        <p>A new API Config Parameter controls this functionality: <strong>ExcludeCompanyFromSync=0/1</strong></p>
+        <p class="Bullet1" MadCap:autonum="• "><strong>0</strong>: The Company Initial import map WILL be included in the Sync if the map is active (i.e., will update Company information and all other active Initial maps).<br /></p>
+        <p class="Bullet1" MadCap:autonum="• "><strong>1</strong>: The Company Initial import map will NOT be included in the Sync whether or not the map is active (i.e., all other active Initial maps will be processed).</p>
+        <p>Company information is imported first. Then all remaining active Import maps are processed (for each Company to sync). <strong>Note</strong>: If API Config param RunImport=0, import files are generated but not imported.&#160;The <strong>ExcludedContractTypes</strong> API Configuration parameter is IGNORED during the process (equates to the PrismHR 'serviceType' value).</p>
+        <p class="SubHdr">Authentication method (38225) </p>
+        <p>The system has been enhanced to include the Authentication Type when cloning a user from a template. When the Authentication Type equal Domain, the template user domain is also cloned to the new user.</p>
+        <p class="SubHdr">Email templates (38277)&#160;</p>
+        <p>The email template system has been enhanced with the ability to&#160;<strong>Add Untriggered Form</strong>&#160;and&#160;<strong>Add Untriggered Field</strong>.&#160;Prior to this change, the only fields available for email template triggering were those marked as Triggerable in Dataform admin.&#160;This enhancement enables the system admin to update the triggerable flag for both dataforms and fields, without the need to leave the email template configuration. Selecting&#160;<strong>Add Untriggered Form</strong> or&#160;<strong>Add Untriggered Field</strong>&#160;presents a modal dialog window, where you can choose from a list of dataforms/fields that currently do not have the&#160;Triggerable&#160;flag set.&#160;When you save the email template, this flag is updated.&#160;This enhancement saves time for admins who would previously need to cancel the email template creation until the dataform or field could be made triggerable.&#160;For more information, review&#160;<MadCap:xref href="../EmailTemp/Admin.html" title="Configuring Email Templates" alt="Configuring Email Templates">Configuring Email Templates</MadCap:xref>&#160;in our Knowledge Base.</p>
+        <p class="SubHdr">PrismHR API (38452) </p>
+        <p>The PrismHR API has been enhanced to support future employee changes.&#160;The import configuration&#160;<strong>HRPAPI_emp_futurechange*.csv</strong> has been created to capture Termination Date and Termination Reason from the employee record when that date occurs in the future. With this enhancement, you can synchronize the fields for future changes while leaving the employment status Active. For help configuring the import, log an Extranet case for one of our application specialists.</p>
+        <p class="SubHdr">Email templates (38469)  &#160;</p>
+        <p>The From address selector in Email Templates has been updated to include the triggering dataform and all user fields on that form (even if the triggering form is a multiform).&#160;Previously the system would only display Single forms containing user fields.</p>
+        <p class="SubHdr">Advanced System Administration (38483) <img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /></p>
+        <p>The system has been enhanced to secure Advanced System Administration using licensing.&#160;A new license has been added (Advanced System Admin), which now controls whether this set is visible in System Administration.&#160;&#160;</p>
+        <p class="SubHdr">Workflow Channels (38528)&#160;</p>
+        <p>The workflow channel administration system has been enhanced with the ability to&#160;<strong>Add Untriggered Form</strong>&#160;and&#160;<strong>Add Untriggered Field</strong>.&#160;Prior to this change, the only fields available for workflow channel triggering were those marked as "Triggerable" in Dataform admin.&#160;This enhancement enables the system admin to update the triggerable flag for both dataforms and fields, without the need to leave the workflow channel configuration. Selecting&#160;<strong>Add Untriggered Form</strong>&#160;or&#160;<strong>Add Untriggered Field</strong>&#160;presents a modal dialog window, where you can choose from a list of dataforms/fields that currently do not have the&#160;Triggerable&#160;flag set.&#160;When you save the workflow channel, this flag is updated.&#160;This enhancement saves time for admins who would previously need to cancel the workflow creation until the dataform or field could be made triggerable.&#160;For more information, review <MadCap:xref href="../WFC/ConfigYourWorkflow.htm" title="Configuring your workflow" alt="Configuring your workflow">Configuring your workflow</MadCap:xref>&#160;in our Knowledge Base.</p>
+        <p class="SubHdr">Data access (38570) </p>
+        <p>Core systems have been refactored to use a newer data access function. These systems include:</p>
+        <ul>
+            <li>OrganizationRepository</li>
+            <li>NotificationRepository</li>
+            <li>MarketingCampaignRepository</li>
+        </ul>
+        <p class="SubHdr">Data access (38572)  &#160;</p>
+        <p>Core systems have been refactored to use a newer data access function. These systems include:</p>
+        <ul>
+            <li>ProjectRepository</li>
+            <li>NotificationRepository</li>
+            <li>MarketingCampaignRepository</li>
+            <li>IncidentRepository</li>
+        </ul>
+        <p class="SubHdr">Database indexes (38817)&#160;<img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" style="width: 29px;height: 29px;" alt="ClientSpace Premium (ClientSpace with additional modules)" title="ClientSpace Premium (ClientSpace with additional modules)" /></p>
+        <p>Database tables have been optimized to improve performance for Benefits related modules such as the Offered Benefits Plan dashboard.</p>
+        <p class="SubHdr">Database indexes (38820)&#160;</p>
+        <p>The Users table has been optimized to improve performance for modules and searches that reference user type fields.</p>
+        <p class="SubHdr">Workspace templates (38820)&#160;</p>
+        <p>The system has been enhanced to allow Workspace defaults to be set based on the sales region.&#160;This enhancement includes the following changes:</p>
+        <ul>
+            <li>New Dataform <strong>SalesRegionMetadata</strong></li>
+            <li>LookupGroup&#160;<strong>SalesRegion&#160;</strong>now has the new dataform as its metadata form</li>
+            <li>Lookups in group SalesRegion can be configured to have a default workspace</li>
+            <li>Two new rules (inactive):<ul><li>Soft Error rule titled <strong>Warn Sales Region Template Change</strong>, which provides an error if changing the Sales Region to one that will update the template.</li><li>BizLogic rule titled <strong>Update Template From Sales Region</strong>, which updates the template when changing the Sales Region to one that will update the template.</li></ul></li>
+            <li>If a Sales Region is selected with metadata that points to a template different than the one used by the selected workspace, the system will update the workspace template.</li>
+            <li>If the template is not different, or no template is configured in the Sales Region metadata, template and workspace configuration will not change.</li>
+        </ul>
+        <h2>Fixes<br /></h2>
+        <table class="TableStyle-Standard_Table" style="margin-left: 0;margin-right: auto;mc-table-style: url('../Resources/TableStyles/Standard_Table.css');" cellspacing="0">
+            <col style="width: 123.0px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 335px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <col style="width: 657px;" class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Case</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Issue summary</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Resolution</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">36999</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Widget layout resizing</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue&#160;in the Widget layouts list that occurred after publishing or unpublishing a layout. When returning to the list, the list view displayed as condensed from the full page to a smaller list of a few lines.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">37115</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Time Record related record translation</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue with time tracking records where the Related record field was not properly decoded after save, and instead displayed the record number stored in the database. The system now displays the same value after save as when selecting the related record.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">37357</td>
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Case Type Subscriptions issues</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where Global Administrators were unable to save changes to the user field of existing Case Type Subscription records.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">38023</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Contact security and logic</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue with the email add-in for Outlook when creating an activity from an email would allow the logged in user to see contacts in the Additional Contacts list to which they would typically not have access.&#160;The system now displays a list of active contacts to which the user has access in the Additional Contacts list.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">38052</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">HTML in body of Case/Task (Email add-in)</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue where HTML enabled emails could cause unexpected behavior when creating a case or task through the email add-in for Outlook.&#160;The system has been enhanced to use a newer methodology for stripping HTML from email data when inserting into text area and log fields.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">38439</td>
+                    <td class="TableStyle-Standard_Table-BodyE-Column1-Body2">Exception: Email template triggered on Employment</td>
+                    <td class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue where the Employee Address Stored Procedure caused the system to generate an exception if the triggering form for the email template was the Employment form.&#160;&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <div class="content-wrapper">
+                            <p class="TableTextLeft">38464&#160;<img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /></p>
+                        </div>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Cannot save BizRules due to BizObject issue</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where under certain conditions a Global Administrator was unable to save a business rule configured to use multiple execution pipelines and would instead receive the error:</p>
+                        <p><strong>The selected Pipelines do not have matching business objects and cannot be mixed on the same rule.</strong>
+                        </p>
+                        <p class="TableTextLeft">The system now allows you to apply a single instance of a business rule across multiple execution pipelines.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">
+                        <div class="content-wrapper">
+                            <p class="TableTextLeft">38465&#160;<img src="../Resources/Images/ICONS/ICON_AdvAdmin_functions.png" alt="ClientSpace Advanced Administration" title="ClientSpace Advanced Administration" /></p>
+                        </div>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Disable the % Search in Dataform Admin for foreign key fields</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Dataform Admin has been updated.&#160;The Quick search functionality has been removed from fields that create table joins such as Parent form fields, or User datatypes.&#160;These fields store code values but display decoded values. Therefore,&#160; Quick search,&#160;which operates on the decoded value, did not work.&#160;</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">38509</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Direct Deposit Notification</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">Resolved an issue in email templates that could occur when an Employee exists in more than one workspace with the same Employee ID number. The recipient stored procedure&#160;would sometimes select the incorrect email address for the employee.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">38610</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Support negative business days/hours in Workflow Channels</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue where the date offsets in scheduled workflow channels did not recognize negative values and caused an exception on the execution of the workflow.&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">
+                        <div class="content-wrapper">
+                            <p class="TableTextLeft">38740&#160;<img src="../Resources/Images/ICONS/ICON_ClientSpacePlus.png" style="width: 29px;height: 29px;" alt="ClientSpace Premium (ClientSpace with additional modules)" title="ClientSpace Premium (ClientSpace with additional modules)" /></p>
+                        </div>
+                    </td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Offered Benefit Plan module</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue with the&#160;Offered Benefit Plan module when opening an unfiltered list could cause the application to stall.&#160;The search procedure has been optimized to return the same results, but much more efficiently.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">38771</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Time Tracking Category&#160;</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">Resolved an issue involving conflict with the time tracking category defaults based on Task category and custom time tracking defaults. The conflict occurred in the case system based on Case Category, which caused time tracking records created from a case to improperly default the time category.</td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">38775</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyH-Column1-Body2">Add subscriber search load issue</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue when adding subscribers to a dataform in a workspace containing large numbers of users caused the system subscriber list to hang and eventually time out, throwing an exception.&#160;The search code has been optimized, resolving the issue.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">38826</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyE-Column1-Body2">Running merge document download popup</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyD-Column1-Body2">
+                        <p class="TableTextLeft">Resolved an issue on opening merges or reports within the application with the progress indicator display. The display would interact with the page, causing the progress indicator to become stuck until manually closed.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">38908</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyB-Column1-Body2">Dynamic search criteria error</td>
+                    <td colspan="1" class="TableStyle-Standard_Table-BodyA-Column1-Body2">Resolved an issue that would sometimes occur on a dashboard search if the more search included a "between" search and both values for this search were empty.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

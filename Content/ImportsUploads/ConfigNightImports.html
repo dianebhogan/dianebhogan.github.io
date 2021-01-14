@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Configuring nightly imports
+       </h1>
+        <p>The ability to import data into ClientSpace provides a powerful toolset to connect your ClientSpace data with external systems, but it can be tricky to configure.&#160;This topic provides a primer for on-demand imports as well as some best practices to help make you a data imports expert. The ability to tie imported data to existing data in the system is critical but requires an understanding of your data and how the underlying tables relate. <MadCap:conditionalText MadCap:conditions="ClientSpace.Screen">If you haven't already, check out&#160;the glossary and read about <MadCap:glossaryTerm glossTerm="Glossary.Term52">Foreign Key Relationships (Primary key to Foreign key)</MadCap:glossaryTerm> as well as <MadCap:glossaryTerm glossTerm="Glossary.Term78">Relational Database</MadCap:glossaryTerm>.</MadCap:conditionalText></p>
+        <h2>Importance of ImportIDs</h2>
+        <p>When configuring imports, it is <strong>vital</strong> that you understand the data relationships within your ClientSpace installation.&#160;Each record to be imported must have a unique identifier (ImportID) as well as at least one column containing a method for relating that imported record to another record in the system, be it an Organization, Workspace, Contact, or a combination of these.&#160;An incorrectly configured import can corrupt or overwrite existing data, which can then be difficult or even impossible to fix or replace.&#160;</p>
+        <p>If you have not spent the time to completely map this out or have questions about how the imported records tie to existing data, <strong>STOP</strong>, and log an Extranet case. Request either help in configuring your import or training about the import process.&#160;It is much easier (and frankly less expensive) to request help in getting an import set up right the first time, than it is to incorrectly import records, and then request help cleaning up the associated fallout.&#160;</p>
+        <h2>Why won't my imports run?</h2>
+        <p>There is a maximum value of 10 mb for manual imports to ClientSpace. Attempts to validate manually or import a file larger than 10 mb alerts the user that the file has exceeded this limitation and stops the validation and run imports processes. Also due to the nature of imports, the standard user interface time out value is far too short to be useful, so the timeout value for processing manual imports is 90 minutes (5400 seconds). If a manual import takes more than 90 minutes to run, the system times out the process, stopping the import. Nightly imports that happen on a schedule are not subject to time or file size restrictions.</p>
+        <p class="TopicsList" MadCap:conditions="ClientSpace.Screen">Topics in this section</p>
+        <MadCap:miniTocProxy MadCap:conditions="ClientSpace.Screen" />
+    </body>
+</html>

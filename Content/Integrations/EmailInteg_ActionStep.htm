@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Step 2:&#160;Action step</h1>
+        <p>The Action step determines how the dataform is created, including where to create it, how to reply to it, what dataform will be created, and what to do if we cannot find an email match.</p>
+        <p>
+            <img src="../Resources/Images/Integrations/Action_Add.png" class="thumbnail">
+            </img>
+        </p>
+        <p class="L1Num1" MadCap:autonum="1. ">Complete the form fields:</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 109px;" />
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 428px;" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Workspace</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required.
+ Contains the workspace that will be used by this email alias for the dataform creation if no matches for the sender's address are found. This
+ is the default workspace used during the processing of the
+ email. This value may be overridden by including the workspace in the
+ body of the email.&#160;The override value must contain a valid workspace ID
+ and be formatted as WSID=# with no spaces between the WSID= and
+ the workspace ID.&#160;</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Select a workspace from the list.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Reply Template</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Required.
+ Must contain the reply template to be used to send the process complete
+ notification.&#160;Select a Reply Template from the list. This can be an existing triggered template, or you can create one
+ just for this reply. See <MadCap:xref href="EmailInteg_ReplyTemp.htm" title="Creating the Email Integration Reply Template" alt="Creating the Email Integration Reply Template"><MadCap:concept term="Email Integration" />Creating the Email Integration Reply Template</MadCap:xref>.</p>
+                        <ul>
+                            <li>For case discussions, select <span class="UXElement">Case to Email Reply</span>.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Business Object</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft"> This is the ClientSpace business object that stores any code to be run during
+ the email integration process.&#160;This should either be left blank or
+ filled in with the appropriate business object. </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft"><span class="UXElement">Important</span>: If you are configuring this for Case Discussion Replies, the requirements are quite different. See <MadCap:xref href="../CasesTasks/Config_CaseDiscAboveLine.htm#Step" title="Step 2: Configure the Email Integration Mailbox" alt="Step 2: Configure the Email Integration Mailbox">Step 2:&#160;Configure the Email Integration Mailbox</MadCap:xref>. </p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">The business object looks up the workspace using a CLID&#160;(ClientNumber)&#160;or&#160;WSID&#160;(ProjectID)
+ to modify the data before the dataform is created or to modify the data
+ before the reply template is generated and sent.  In this way, you can add
+ layer-specific data values to the form or layer-specific replace code values
+ to the reply email.</p>
+                        <ul>
+                            <li>The business object for a standard email integration is <b>ClientSpace.PEO.Business.EmailIntegrationBase</b>. </li>
+                        </ul>
+                        <p class="ProcedureIntro">Pipeline Business Logic</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>CLID</b> represents ClientID or Client Number from the Client Master page in the PEO system.</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>WSID</b> represents WorkspaceID or ProjectID. This is a unique key used as a Foreign Key on all dataforms related to a workspace or project.</p>
+                        <p>These options are powerful because the Workspace selection is not dependent on the email being sent from a specific email address. This allows your clients to send from personal email at home or on a mobile device, but they must always include the CLID or WSID in the exact format: <code>CLID=123456</code> or <code>WSID=654321</code></p>
+                        <p>These strings cannot contain additional spaces and must use the appropriate Client Number or ProjectID.  If you have questions about this, please log an Extranet case. <span class="UXElement">Note</span>: Clients should insert the CLID or WSID in the body of the email message.</p>
+                        <p class="TableTextLeft">If <span class="UXElement">Always Use Default Workspace</span> is not selected and  the business object is configured, the system checks the body of the email for the CSID / WSID information.  If no match is found, the system uses the <MadCap:xref href="EmailProcessing.htm" title="Email Processing hierarchy" alt="Email Processing hierarchy">Email Processing</MadCap:xref> hierarchy to determine which workspace is used when creating the new dataform.</p>
+                        <p class="ProcedureIntro">Configuring the business pipeline</p>
+                        <p class="TableTextLeft">The default PEO business object resides in the DLL Custom Path folder and its complete name is <span class="UXElement">ClientSpace.PEO.Business.EmailIntegrationBase</span>.  This name is case sensitive and must match precisely in the configuration.  If no business object is specified and the message contains a CLID tag, an exception occurs. </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Always Use Default Workspace</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">When selected, this option forces the system to use the default
+ workspace set in the <span class="UXElement">Workspace</span> field,&#160;regardless
+ of the other methods of workspace selection.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Dataform</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Required.
+ Contains the project type associated with this email alias.&#160;This
+ determines what type of dataform to create.&#160;Select the Project Type from the list. </p>
+                        <ul>
+                            <li>For case discussions, select <span class="UXElement">Case Discussion Message</span>.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="2. ">Click <b>Next</b>.</p>
+        <p>The Field Mapping step opens. Go to the next topic, <MadCap:xref href="EmailInteg_FieldMap.htm" title="Field Mapping" alt="Field Mapping">Field Mapping</MadCap:xref>.</p>
+    </body>
+</html>

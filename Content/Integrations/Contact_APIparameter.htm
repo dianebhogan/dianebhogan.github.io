@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.FutureDev">
+    <head>
+    </head>
+    <body>
+        <h1>Adding the Contact API parameter</h1>
+        <p>To synchronize the Import process, you must add the <span class="UXElement">ContactImportBehavior</span> parameter.</p>
+        <p class="ProcedureIntro">To add the parameter:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Advanced</span> &gt; <span class="UXElement">API&#160;Configuration</span>.<br />The API&#160;Configuration dashboard opens.</li>
+            <li>Open <span class="UXElement">PrismHRAPI</span> (click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> Jump).<br />The PrismHRAPI API&#160;Configuration form opens.</li>
+            <li>Click <b>Add Parameter</b>.<br />A new row opens.</li>
+            <li>In <span class="UXElement">Parameter</span>, type <span class="UXElement">ContactImportBehavior</span>.</li>
+            <li>In <span class="UXElement">Value</span>, type one of the following:<ul style="list-style-type: square;"><li>Insert: Inserts Contacts into <MadCap:variable name="MyVariables.ProductName" /> from PrismHR if they do not already exist.</li><li>Update: Updates matched Contacts in <MadCap:variable name="MyVariables.ProductName" /> when the Contact in PrismHR has been updated.</li><li>Both: Performs both Insert and Update actions.</li></ul></li>
+            <li>Click <span class="UXElement">Save</span>.</li>
+        </ol>
+        <p>
+            <img src="../Resources/Images/Integrations/Contact_APIParameter.png" />
+        </p>
+    </body>
+</html>

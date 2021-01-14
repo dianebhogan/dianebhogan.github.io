@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="DocuSign" />Voided documents</h1>
+        <p>The DocuSign process handles voided documents, allowing the user to void a document that has already begun processing through the DocuSign system. The document is voided by using a rule on a workflow. The rule changes the status to Voided. This approach is a reactive measure to voiding documents.</p>
+        <p>You can void documents using the following business rules:</p>
+        <ul>
+            <li>The biz rule (core) <strong>_VoidDocuSignDocument</strong>&#160;updates the Uploaded Files Queue record status to <strong>voided</strong>. <ul><li>The&#160;scheduled process DocuSign Request Signature voids the envelope(s) in DocuSign. </li><li>The Scheduled process DocuSign Get Docs Status retrieves any voided documents. It attaches to the dataform if configured to attach (otherwise, the voided document is attached only to the Uploaded Files Queue record).</li></ul></li>
+            <li>A&#160;soft error (core) <strong>_SE_VoidDocuSignDocument</strong>&#160;warns the user that documents (envelopes) will be voided. This rule also identifies the number of envelopes that are affected.</li>
+        </ul>
+        <p class="StepResult">&#160;</p>
+        <p>Both rules are configurable with the following parameters:</p>
+        <ul>
+            <li><strong>DataformOnly</strong> (option). When selected, it only voids envelopes (and thereby documents) associated with the Dataform on which the rule is configured. When cleared, voids all envelopes in the Workspace associated with the Dataform on which the rule is configured.</li>
+            <li><strong>AllowVoidStatus</strong> (comma-delimited string). Provides the status of Uploaded Files Queue records that can be voided. See the Signature Status lookup group for valid statuses and use the CODE in this parameter, separated by a comma, with no spaces.</li>
+        </ul>
+        <p>&#160;</p>
+        <p><i class="fas fa-info-circle" style="font-size:20px;color:var(--BrandPrimary2);"></i> As a preventive measure, your administrator can set an option (ExcludeVoidedFiles) in the DocuSign API configuration parameters to prevent voided documents from coming back into ClientSpace. See <MadCap:xref href="DocuSign_ConfigAPI.htm" title="Configuring the API record" alt="Configuring the API record">Configuring the API record</MadCap:xref>.</p>
+    </body>
+</html>

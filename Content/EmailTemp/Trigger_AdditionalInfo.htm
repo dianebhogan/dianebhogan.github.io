@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Email Templates" />Tracking Additional Information in Prism events: Triggering from Additional Record Information</h1>
+        <p><MadCap:variable name="MyVariables.ProductName" /> can track what type of user made a data change in Prism when that data imports into <MadCap:variable name="MyVariables.ProductName" />. Administrators can then use that information and alter workflows based on who applied the change – a PEO&#160;employee or a worksite employee. </p>
+        <p>The data change information is available from a column  in the import queue, named Additional Information. All dataforms accommodate the Additional Information column data to show the <span class="UXElement">prismUserName</span> and the <span class="UXElement">userType</span>. The userTypes are as follows:</p>
+        <p class="TableBullet" MadCap:autonum="• ">I = service provider</p>
+        <p class="TableBullet" MadCap:autonum="• ">E = employee</p>
+        <p class="TableBullet" MadCap:autonum="• ">A = worksite trusted adviser</p>
+        <p class="TableBullet" MadCap:autonum="• ">M = worksite manager </p>
+        <p>Additional Information data is only available as a trigger condition from the Triggering Form configured on a Workflow Channel or Email Template</p>
+        <p class="ProcedureIntro">To view the Import Queue:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Imports</span> &gt; <span class="UXElement">Manage Import Queue</span>.<br />The Import Queue dashboard opens.</li>
+            <li>Select an entry and click <span class="UXElement">View</span>.<br />The Import Queue record opens.<br />In the following example, Additional Information shows <span class="UXElement">userType = I</span>, which represents the service provider.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Dataform/Import_AddInfo.png" class="thumbnail" />
+            </p>
+        </div>
+        <p class="ProcedureIntro">To use Additional Information in a Workflow or Email Template:</p>
+        <ol>
+            <li>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<span class="UXElement">Workflow Channels</span>.<br />The Workflow Channels dashboard opens.</li>
+            <li>Select a Workflow Item that uses the Client Master as the Triggering Form and click <span class="UXElement">Details</span>.</li>
+            <li>Go to <span class="UXElement">Step 4 Conditions</span>.</li>
+            <li>Click <span class="UXElement">Add</span>.<br />A row opens for Source, Field, Operator, and Value. In your conditions, specify user type or user name, and then the Value. Value represents the type of user that made the change. Was it a service provider, employee, worksite trusted employee, or a worksite manager who made the change?</li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 120px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Source</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Source  auto-fills with Client Master.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">In <span class="UXElement">Field</span>,</p>
+                        <ol>
+                            <li>Select <span class="UXElement">Additional Record Information</span>.</li>
+                            <li>Select <span class="UXElement">UserType</span>.</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Operator</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Auto-fills with <span class="UXElement">Equals</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Enter a value:</p>
+                        <p class="TableBullet" MadCap:autonum="• ">I = service provider</p>
+                        <p class="TableBullet" MadCap:autonum="• ">E = employee</p>
+                        <p class="TableBullet" MadCap:autonum="• ">A = worksite trusted adviser</p>
+                        <p class="TableBullet" MadCap:autonum="• ">M = worksite manager </p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Label</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">The Label value is used in the Condition Expression. See <MadCap:xref href="CondExpr.htm" title="Condition Expressions" alt="Condition Expressions">Condition Expressions</MadCap:xref>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>Click <span class="UXElement">Save</span>.</li>
+            <li>For Email Templates, configure Source, Field, Operator, and Value in Step 4 Conditions.</li>
+        </ol>
+        <div class="indent">
+            <p>The following example has six conditions with Label 1 through 6. The Condition Expression states that when any of the employee address fields change (address, city, state, or zip code), AND the user type is an Employee (value = E), then trigger this email. When an employee changes the employee address information, then the email is sent to the recipients listed in Step 3 Addresses.</p>
+        </div>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/EmailTemplates/AdditionalInformation.png" alt="" title="" class="thumbnail" />
+            </p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 59 ( CORE )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;8/14/2017&#160; &#160; &#160;<strong>Sprint Ended:</strong>&#160;9/8/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>The following items have been completed in this release:</p>
+                        <h4 id="Release59(CORE)-Fieldsetsandfielddisplayconditions"><span style="color: rgb(51,153,102);">Field sets and field display conditions&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Fieldsets have been filtered&#160;&#160;from the "Controlling Field" dropdown when configuring field display conditions.&#160; During field display, the "This Field" lookup will no longer display field sets in the selection.</p>
+                        <h4 id="Release59(CORE)-ConditionalFieldStyles(ClassicUImodifications)-ENHANCEMENT"><span style="color: rgb(51,153,102);">Conditional Field Styles</span><span style="color: rgb(51,153,102);">&#160;(Classic UI modifications) -&#160;</span><span style="color: rgb(255,0,0);">ENHANCEMENT</span>
+                        </h4>
+                        <hr />
+                        <p>Configurable Field Display has been enhanced with a new field called Type (lookup - options &#160;Field Style, Field State).</p>
+                        <ul>
+                            <li>If "Field State" is selected, field display performs as it did.</li>
+                            <li>If "Field Style" is selected, display a Text Area is displayed called Field Style CSS.</li>
+                        </ul>
+                        <p>The Configurable Field Display logic has been enhanced to support more than one condition per field for rules of type "Style"&#160; for "State" rules the one per field is still respected.</p>
+                        <h4 id="Release59(CORE)-ConditionalFieldStyles-ENHANCEMENT-NEXT"><span style="color: rgb(51,153,102);">Conditional Field Styles -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT - NEXT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Configurable Field Display has been enhanced with a new field called Type (lookup - options &#160;Field Style, Field State).</p>
+                        <p>When "Style" is selected, field label styling may be configured so a field label can be styled differently based on conditions on the dataform - for example:</p>
+                        <p>The label of a field could be set to different colors including Bold and underlined based on another field on the form such as a lookup denoting Client Satisfaction.&#160; As the system supports multiple Style configurations, the field label in question could change to a different color for each lookup value in the list.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(CORE)-RequestDuplicateReview-ENHANCEMENT"><span style="color: rgb(51,153,102);">Request Duplicate Review -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>When adding a new Org, if any possible dupes are found, a new "Request Review"&#160;button will appear on the dupe&#160;check dialog.</p>
+                        <p>Clicking this button will allow the user to request a review. This will insert a record into into tblDuplicateOrgReview (new table - the associated dashboard module&#160;is called "Org Dup Requests"). You&#160;can search and view the duplicate requests in this new module.</p>
+                        <p>Most of the fields are read-only, but global admins can change the assigned-to and the status. The assigned-to user will see the accept and decline links (global admins will see these as well). If the user accepts, the org will be created based on what the original user submitted if the accepting user has "<strong>CRM_CanSaveDuplicates</strong>" rights. If the assigned-to declines, it updates the status of the request to "Declined" and does not create an org.</p>
+                        <p>Components in this development:</p>
+                        <p>- Duplicate Org Review table<br />&#160;&#160;&#160;&#160; - Assigned To<br />&#160;&#160;&#160;&#160; - Date Submitted<br />&#160;&#160;&#160;&#160; - Org data packet<br />&#160;&#160;&#160;&#160; - Org Name<br />&#160;&#160;&#160;&#160; - Submitted By User<br />&#160;&#160;&#160;&#160; - Status<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; - Pending Review<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; - Accepted<br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; - Declined<br />- Search Dashboard for this new table <br />- Trigger Email by Template Code = CRMDupOrgReview<br />&#160;&#160;&#160;&#160; - Org fields as replace fields<br />&#160;&#160;&#160;&#160; - Department Manager as recipient<br />- super special detail page to render the Org data packet to users</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(CORE)-ExposeAdminfieldinActivitySummaryDetailPanel-ENHANCEMENT"><span style="color: rgb(51,153,102);">Expose Admin field in Activity Summary Detail Panel -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The admin fields for Created By, Create Date, Updated By and Updated Date have been exposed on the activity summary so that they are now visible to all users.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(CORE)-ExpandattendeelistforAppointmentsinOrg-ENHANCEMENT-NEXT"><span style="color: rgb(51,153,102);">Expand attendee list for Appointments in Org -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT&#160;</span></span><span style="color: rgb(255,0,0);">- NEXT</span>
+                        </h4>
+                        <hr />
+                        <p>A new Security Entity has been added called "<strong>Calendar_Attendees_ViewAllUsers</strong>". This entity&#160;allows any users with view rights to it to see a new checkbox option in the "More" search&#160;menu when selecting attendees to "Include All Users". Include All Users&#160;adds all&#160;internal users to the Attendees list.&#160; Currently this list contains users with calendar and workspace access.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(CORE)-DatabasePerformanceTuning-ENHANCEMENT"><span style="color: rgb(51,153,102);">Database Performance Tuning -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The ClientSpace CORE database application has been performance tuned to optimize SQL Stored procedures and minimize required resources. &#160;</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(CORE)-PricingComp-QuickEditScreen"><span style="color: rgb(51,153,102);">Pricing Comp - Quick Edit Screen&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where lookups were not properly decoding after the call to _decode, when the underlying value hasn't changed.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(CORE)-DataformfieldcommentsinNext-ENHANCEMENT-NEXT"><span style="color: rgb(51,153,102);">Dataform field comments in Next -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT - NEXT</span></span>
+                        </h4>
+                        <hr />
+                        <p>When a Dataform field has a Description, the form label&#160;now includes an info icon.&#160;Hovering over the icon causes a tooltip&#160;to appear with the comment.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(CORE)-DisappearingLogos"><span style="color: rgb(51,153,102);">Disappearing Logos</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where occasionally users would experience an&#160;exception being&#160;thrown, from the code that writes out the custom branding files on application start, because of multiple threads trying to write the file at the same time. This causes the system to fall back to using the standard clientspace logos, instead of whatever custom images they uploaded.</p>
+                        <p>"The process cannot access the file 'E:\Webs\ClientSpace.PEO.Client.Next\custom\branding\loginlogo.jpg' because it is being used by another process."</p>
+                        <p>The system now briefly locks the file on application start to avoid this issue.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(CORE)-{CaseNotes}and{InternalNotes}notformattingproperlyinTriggeredEmailTemplates"><span style="color: rgb(51,153,102);">{CaseNotes} and {InternalNotes} not formatting properly in Triggered Email Templates&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where merged log and text area fields were not being displayed properly from email templates by converting &lt;crlf&gt; to &lt;br /&gt; tags for ALL replaceable fields in email templates.</p>
+                        <p>Emails produced from templates now properly display returns and line feeds in html formatted emails</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(CORE)-TemplateTaskgettingarchivedonaccident"><span style="color: rgb(51,153,102);">Template Task getting archived on accident</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where notifications would be sent on creation of a Template task in the Template workspace.&#160; The system will now&#160;always suppress task notifications on save if&#160; task is being created in a Template Workspace.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(CORE)-Validateexternalusers-ENHANCEMENT"><span style="color: rgb(51,153,102);">Validate external users -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The system has been updated to disallow global admin to be checked if user is external. &#160;Internal users may be set as Global Admins, but for external users this option is read-only. &#160;</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(CORE)-RequireTimeTrackingRecordonDataforms-ENHANCEMENT"><span style="color: rgb(51,153,102);">Require Time Tracking Record on Dataforms -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Soft Error and&#160;Hard Error core generic _ Business Rules ("<strong>_SE_RequireCurrentUserTimeRecord</strong>", "<strong>_HE_RequireCurrentUserTimeRecord</strong>")&#160;have been created&#160;that&#160;require a time record on configurable trigger conditions.&#160; Such as, Status is dirty, or Case Type = 123, and etc. Since it is an underscore rule it can be used on any dataform. In addition to the configured trigger condition it&#160;can also trigger if a time record doesn't exists for the current user&#160;within a certain time period - setting this value to 0 means that there simply needs to be a time record attached.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(CORE)-EmailandInactiveUsers"><span style="color: rgb(51,153,102);">Email and Inactive Users</span>
+                        </h4>
+                        <hr />
+                        <p>The notification system has been updated - if a situation arises where two users, one active and one inactive happen to have the same email address, when notification will appear as sent to the active user.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(CORE)-DataformFieldadministration"><span style="color: rgb(51,153,102);">Dataform Field administration&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>The word "Attribute" when adding dataform fields or viewing the list of fields on a dataform has been changed to use the word "Fields."</p>
+                        <p>For example, the popup to add a field, previously labeled "Edit Attribute" has been renamed "Edit Field" and the column on the popup with the list of fields on the dataform is now called "Field".</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(CORE)-DisableSubscriptionEmailNotWorking"><span style="color: rgb(51,153,102);">Disable Subscription Email Not Working&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Fixed an issue to ensure new subscribers can be added to data form subscriptions when the Disable Subscription Email is checkbox is ticked on the Dataform Properties dialog.&#160;</p>
+                        <p>This checkbox also<span> sets which notification system is used when producing dataform subscription emails. &#160;</span></p>
+                        <ul>
+                            <li><span>If unchecked a core system notification will be produced when the record is changed. &#160;</span>
+                            </li>
+                            <li><span>If Checked and a published Email Template has been configured for this dataform, that template will be used (dataform subscibers must be a recipient option for subscriber emails to be sent). &#160;</span>
+                            </li>
+                            <li><span>If checked and no template exists&#160;subscription emails will not be sent.</span>
+                            </li>
+                        </ul>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(CORE)-DocuSignRadioButtonBug-ENHANCEMENT"><span style="color: rgb(51,153,102);">DocuSign Radio Button Bug -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A <strong>groupName</strong> property has been added to the Docusign API configuration parameters, allowing configured radio buttons to be grouped appropriately. &#160;For more information on Docusign, contact your Account manager.</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release59(CORE)-IncidentCustomLogicfromTemplateWorkspace"><span style="color: rgb(51,153,102);">Incident Custom Logic from Template Workspace</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where tasks saved in a template workspace would trigger logic on save.&#160; Now when saving an Incident or generating an Incident via a trigger, if the Target workspace is a Template workspace, no custom business logic will be executed</p>
+                        <p>
+                            <br />
+                        </p>
+                        <p><span style="color: rgb(51,153,102);font-weight: bold;">Widget Admin Improvements</span><strong><span style="color: rgb(51,153,102);"> -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT - NEXT</span></span></strong>
+                        </p>
+                        <div class="layout container-fluid">
+                            <div class="main-content">
+                                <div class="page">
+                                    <hr />
+                                    <div class="layout container-fluid">
+                                        <div class="main-content">
+                                            <div class="page">
+                                                <p>The following core changes were made to make individual widgets more uniform and to avoid repeating work:</p>
+                                                <ul>
+                                                    <li>Remove the panel header background color specified in the widget css file</li>
+                                                    <li>Increase the grid resolution by two times (smaller grid squares to improve drag and drop precision)</li>
+                                                    <li>Automatically expand panels to fill all available vertical space</li>
+                                                    <li>Add overflow-y:auto to grid container elements</li>
+                                                </ul>
+                                                <p>
+                                                    <br />
+                                                </p>
+                                                <p><strong style="color: rgb(51,153,102);">Toast Notifications (Classic)</strong>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layout container-fluid">
+                                        <div class="main-content">
+                                            <div class="page">
+                                                <hr />
+                                                <p>Toast notifications have been removed from the ClientSpace classic application. This functionality has been replaced by the notifications area in ClientSpace NEXT.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

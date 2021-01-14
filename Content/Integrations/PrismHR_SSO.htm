@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Implementing SSO from PrismHR to ClientSpace
+        </h1>
+        <p>The ClientSpace TSSO link in PrismHR enables you to seamlessly move from the Payroll application into ClientSpace without the need to log in.&#160;Making this magic happen, however, requires some advanced configuration.&#160;This topic describes the configuration and what to do if you encounter errors along the way.&#160;</p>
+        <p class="Bullet1" MadCap:autonum="• ">The process utilizes the PrismHR User's PeoID to inform ClientSpace which PrismHR Server to use to validate the connection.&#160;</p>
+        <p class="Bullet1" MadCap:autonum="• ">Because you can configure ClientSpace  with multiple PrismHR servers, the API Configuration form for the appropriate PeoID is used for API service endpoints.</p>
+        <p class="Bullet1" MadCap:autonum="• ">Allows a logged-in PrismHR user to access ClientSpace without the need to log in to ClientSpace.&#160; &#160;</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note:&lt;/b&gt; &#160;">PrismHR settings may require system administration rights. Additionally, this topic only describes the configuration portion of PrismHR related to ClientSpace. For help with this, refer to your PrismHR Administration documentation.</p>
+        <h2>ClientSpace configuration: API Configuration form</h2>
+        <p class="auto-cursor-target">The PrismHR API configuration form must have a Secondary ID (the PeoID) that matches the PrismHR User's PeoID. Locate the API configuration record  by matching the PrismHR User's PeoID to the API Configuration Secondary ID.</p>
+        <p class="Bullet2" MadCap:autonum="• ">The Third Party LoginID must match the User ID of PrismHR  user.</p>
+        <p class="Bullet2" MadCap:autonum="• ">The Third Party LoginID must be mapped to a valid ClientSpace User.&#160;This is the User that will be logged into ClientSpace</p>
+        <p class="Bullet2" MadCap:autonum="• ">Each PRismHR user that logs into ClientSpace using SSO will need one of these TPA user records.</p>
+        <p class="ProcedureIntro">To configure the Third Party Application (TPA):</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <b>Advanced</b> &gt; <b>Third Party Applications</b>.</p>
+        <p class="StepResult">The Third Party Application Configuration dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Click <b>Add</b>.</p>
+        <p class="StepResult">The New Third Party Application form opens.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/ThirdPartyApp_form.png" alt="" title="" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="3. ">Complete the form:</p>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 137px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p>Name</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p>Type <strong>PrismHRTSSO<i>+PeoID</i></strong>, where the italics indicate the PeoID. There are NO&#160;spaces in this name.</p>
+                        <p> Example: <code>PrismHRTSSO1*DEMO</code> where <code>1*DEMO</code> is the PeoID. </p>
+                        <p>This allows multiple PrismHR Servers and Users to access ClientSpace.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p>API&#160;Configuration</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p>You must select the appropriate PrismHR API configuration. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="L1Num" MadCap:autonum="4. "><strong>Save</strong> the record.&#160;</p>
+        <p class="StepResult">This action generates the Application Key.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/ThirdParty_completed.png" alt="" title="" class="thumbnail" />
+        </p>
+        <p>After the new Third Party Application entry has been saved, you need to add Third Party users. The users act as translation records, essentially mapping a PrismHR account to a matching ClientSpace account.</p>
+        <p class="ProcedureIntro">To add users to the Application:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Open the TPA record.</p>
+        <p class="L1Num" MadCap:autonum="2. ">In the <b>Action Center</b>, select <b>Users</b>.</p>
+        <p class="StepResult">The Third Party Application Users dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="3. ">Locate a user and click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<b>Jump</b>).</p>
+        <p class="StepResult">The Edit Third Party User form opens.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/TPA_EditUser.png" alt="" title="" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="4. ">Click <b>Ok</b>.</p>
+        <p class="StepResult">The user is added to the application.</p>
+        <h2>PrismHR Configuration</h2>
+        <p class="ProcedureIntro">To specify the ClientSpace TSSO Url:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">In PrismHR, select <strong>Back Office System</strong> &gt; <strong>Change, System Parameters</strong>.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/BackOffice PrismHR.jpg" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="2. ">Select <strong>Tool Menu</strong> &gt; <strong>SSO Services</strong>.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/SSO_Services.jpg" class="thumbnail" />
+        </p>
+        <p class="L1Num" MadCap:autonum="3. ">Select <strong>Service Url:</strong> <code>https://extranet.clientspace.net/Next/Netwise/PrismHR/SSO</code></p>
+        <p class="L1Num" MadCap:autonum="4. ">Additional PrismHR configuration is necessary. Consult with PrismHR for details (beyond the scope of this doc).</p>
+        <h2>Operation overview</h2>
+        <p class="L1Num1" MadCap:autonum="1. ">PrismHR User clicks the ClientSpace link (configured in PrismHR).</p>
+        <p class="L1Num" MadCap:autonum="2. ">PrismHR sends the PrismHR User's PeoID and a secret token to the SSO Services Service Url that has been configured on the PrismHR server.</p>
+        <p class="L1Num" MadCap:autonum="3. ">ClientSpace locates an API Configuration record matching that PeoID.</p>
+        <ul>
+            <li style="margin-left: 0.0px;">If not found, display message <code>"Unable to validate User in ClientSpace for PeoID 'x'.&#160; Please contact your ClientSpace Administrator."</code></li>
+        </ul>
+        <p class="L1Num" MadCap:autonum="4. ">ClientSpace attempts to connect to the API using the credentials on the API Configuration record.&#160;<ul><li style="margin-left: 0.0px;">If unable to connect, display message&#160;<code>"Unable to connect to PrismHR for validation.&#160; Please contact your ClientSpace Administrator."</code></li><li style="margin-left: 0.0px;">If able to connect but no session returned from PrismHR, display message <code>"Unable to obtain a valid Session from PrismHR.&#160;Please contact your ClientSpace Administrator."</code></li></ul></p>
+        <p class="L1Num" MadCap:autonum="5. ">ClientSpace sends the secret token back to PrismHR for validation. &#160;<ul><li style="margin-left: 0.0px;">If a validation response if not returned, display message <code>"Unable to validate this User's Authentication Key, no response from PrismHR. Please contact the System Administrator of the system from which you are trying to log in."</code></li><li style="margin-left: 0.0px;">If validation is refused, display message <code>"Unable to validate User in PrismHR, Error = 'error info'.&#160;Please contact your ClientSpace Administrator and report this error."</code></li></ul></p>
+        <p class="L1Num" MadCap:autonum="6. ">If PrismHR validates the secret key, it returns the PrismHR User information to ClientSpace.</p>
+        <p class="L1Num" MadCap:autonum="7. ">ClientSpace attempts to locate the Third Party Application by name PrismHRTSSO + PeoId and the PrismHR User ID.&#160;<ul><li style="margin-left: 0.0px;">If unable to locate a TPA record for that user, display the message <code>"This User or your Server is not configured for Single Sign On in ClientSpace.&#160;Please contact your ClientSpace Administrator."</code></li><li>f the TPA User is located, the ClientSpace User associated with that PrismHR UserID is logged into ClientSpace.&#160;</li><li>If login is unsuccessful, display message <code>"Unable to log in to ClientSpace.&#160;Please contact your ClientSpace Administrator."</code></li></ul></p>
+        <p class="L1Num" MadCap:autonum="8. ">When logged in, the ClientSpace User is redirected to the ClientSpace home page (honors the Default to Next User setting).</p>
+        <h3>ClientSpace to <MadCap:variable name="MyVariables.CompanyName" /></h3>
+        <p>You can configure SSO&#160;connectivity to PrismHR using a custom link.</p>
+        <p class="ProcedureIntro">To configure a custom link:</p>
+        <p class="L1Num1" MadCap:autonum="1. ">Go to <b>System Admin</b> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt;&#160;<b>Advanced</b> &gt; <b>Custom Links</b>.</p>
+        <p class="StepResult">The Configure Links dashboard opens.</p>
+        <p class="L1Num" MadCap:autonum="2. ">Locate and open <b>Workspace Landing</b> for PrismHR. Or click <b>Add</b> to add the configuration.</p>
+        <p class="StepResult">The Configuration Links Detail form opens.</p>
+        <p class="Indent1">
+            <img src="../Resources/Images/Integrations/ConfigureLinksDetail.png" class="thumbnail" />
+            <br />
+        </p>
+        <p class="L1Num" MadCap:autonum="3. ">Complete the form fields.<br />This is available on PEO Landing Pages (Workspace Landing) and Client Service Case Forms.</p>
+        <table class="TableStyle-Procedure" style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 147px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Location</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <b>Workspace Landing</b> or <b>Client Service Case</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Group</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <b>Link 1</b> or <b>Link 2</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Display Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Type <b>Connect To PrismHR</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Display Action</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <b>Custom Function</b>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Custom Function</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Type one of the following:</p>
+                        <p class="TableBullet" MadCap:autonum="• "><b>peoLanding.connectToPrismHR</b> (Client Master)</p>
+                        <p class="TableBullet" MadCap:autonum="• "><span class="UXElement">clientServiceCase.connectToPrismHR</span> (Client Service Case)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Display Conditions</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableBullet" MadCap:autonum="• "><b>Source</b>: Header Proc 1</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Trigger <b>Field</b>: ShowPrismHR</p>
+                        <p class="TableBullet" MadCap:autonum="• ">Trigger <b>Value</b>: True</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol start="4">
+            <li>
+                <p>Click <span class="UXElement">Save</span>.</p>
+            </li>
+        </ol>
+    </body>
+</html>

@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="ClientSpace.Sprint_R98">
+    <head>
+        <link href="../Resources/TableStyles/Procedure.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>Importing Policy Work Comp Code Rates</h1>
+        <p>When you need to mass update several rates, use the following procedure to import the update rate file. To update a few rates, see <MadCap:xref href="AddingPolicyCompCodes.html" title="Maintaining Policy Comp Codes" alt="Maintaining Policy Comp Codes">Maintaining Policy Comp Codes</MadCap:xref>. Before you can import mass updates, you must first configure the Import Map Header, review the business rules, create the Import file, edit the file, and upload.</p>
+        <h2>Objective</h2>
+        <p>Your primary objective is to create an import file that updates the WC&#160;Code Rates dataform. The source file (imported data) must map to the dataform fields as depicted in the following image: Comp Code, State, WC&#160;Policy, Status, Manual Rate, Funding Rate (Cost), and State Rate.</p>
+        <p>
+            <img src="../Resources/Images/Risk/WCCodeRates-dataform.png" />
+        </p>
+        <h2>Step 1:&#160;Configure the Import Map Header and Fields</h2>
+        <p>In this step, you configure the Import Map Header and Details (the fields)&#160;for the source file <span class="UXElement">admin_wc_rates*.csv</span>. First, determine if you already have the import mapping for the source file. </p>
+        <h3>If the Import Map Header exists</h3>
+        <p>If the import mapping exists, then you only need to activate it. </p>
+        <p class="ProcedureIntro">To activate the Import Map Header:</p>
+        <ol MadCap:continue="true">
+            <li>Go to <strong>System Admin</strong> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <strong>Advanced</strong> &gt; <strong>Configure Import</strong>.<br />The Import Map Header Search dashboard opens. </li>
+            <li>Locate the Source File <span class="UXElement">admin_wc_rates*.csv</span>.</li>
+            <li>Click <img src="../Resources/Images/ICONS/ICON_Jump.png" /> (<span class="UXElement">Open</span>).<br />The Import Map Header Detail form opens.</li>
+            <li>Select the option <span class="UXElement">Active</span>, to enable the import map header.</li>
+            <li>Go to <MadCap:xref href="#Step" title="Step 2: Review Business Rules" alt="Step 2: Review Business Rules">Step 2: Review Business Rules</MadCap:xref>.</li>
+        </ol>
+        <h3>If the Import Map Header does not exist</h3>
+        <p>If the Import Map Header does not exist, use following procedures to add the mapping. </p>
+        <p class="ActionTip">This procedure does <span class="UXElement">not</span> include all form fields – only the ones applicable to the source file. For complete details on creating the import map header, see <MadCap:xref href="../ImportsUploads/ConfigMapHeader.htm" title="Configuring the Import Map Header" alt="Configuring the Import Map Header">Configuring the Import Map Header</MadCap:xref>.</p>
+        <p class="ProcedureIntro">To add the Import Map Header:</p>
+        <ol start="1">
+            <li>From the Import Map Header Search dashboard, click <strong>Add</strong>.<br />The Import Map Header Detail form opens.</li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Risk/ImpMapHdrDet-WcCodeRates.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Complete the fields. This procedure does not include all form fields. For complete details on creating the import map header, see <MadCap:xref href="../ImportsUploads/ConfigMapHeader.htm" title="Configuring the Import Map Header" alt="Configuring the Import Map Header">Configuring the Import Map Header</MadCap:xref>. </li>
+        </ol>
+        <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 190px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Source File</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Type <span class="UXElement">admin_wc_rates*.csv</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Dataform</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">WC Code Rates</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Execution Pipeline</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Imports</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Import Action</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Both</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Execute Business Logic</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select this option. Enabling Execute Business Logic executes business rules when the imported dataform is saved.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Record Source Column </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Set the value to <span class="UXElement">ImportID</span>. The value in this field must match the column name in the import file, which means that the file you create must have a column named <span class="UXElement">ImportID</span>.</p>
+                        <p class="ProcedureIntro">During the import process</p>
+                        <p class="TableTextLeft">This column determines if an existing WC Rate record exists.  If so, that record gets updated with this
+ row's information.  If not, a new record
+ is added only if the Import Map Header Detail import action is set to
+ Insert or Both.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Workspace Source Column</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Set the value to <span class="UXElement">DefInfoImportID</span>. The value in this field must match the column name in the import file. The file you create must have a column named <span class="UXElement">DefInfoImportID</span> - AND - the value in the Import File must be set to 1046. </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>
+                <p>Click <span class="UXElement">Apply</span>.<br /></p>
+            </li>
+            <li>
+                <p>In the right pane, click <span class="UXElement">Fields</span>.<br />The Import Map Search dashboard opens. Now you are ready to add the mappings that correspond to the dataform WC&#160;Code Rates. You must add the following mappings: CompCode, FundingRate, Manual Rate, PolicyNumber, State, StateRate, and Status.</p>
+            </li>
+            <li>
+                <p>Click <span class="UXElement">Add</span>.<br />The Import Map Detail form opens.</p>
+            </li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Risk/ImportMapDetail-form.png" class="thumbnail" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>Complete the mapping for the dataform fields. <br />The mapping represents the columns in the import file, the column values, and the dataform fields to receive the data. Across the top of the following table, note the mapping columns that you must add: Comp Code, Funding Rate, WC&#160;Policy, State, State Rate, and Status. Down the left side are the Import Map Detail form fields. The mapping values are specified in their respective columns. The column names and values also reflect the data in the import file.</li>
+        </ol>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 102px;" />
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 167px;" />
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 158px;" />
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 151px;" />
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 167px;" />
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 117px;" />
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 135px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" colspan="7">
+                        <p class="TableTextLeft"><span class="UXElement">Mapping and values</span> to add  <i class="fas fa-arrows-alt-h" style="font-size:24px;color:var(--BrandPrimary2);"></i></p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft"><span class="UXElement">Fields</span> in each record <i class="fas fa-arrow-down" style="font-size:24px;color:var(--BrandPrimary2);"></i></p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">Comp Code</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">Funding Rate</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">Manual Rate</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">WC&#160;Policy</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">State</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">State Rate</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">Status</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">File Column</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Type <span class="UXElement">CompCode</span>. </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Type <span class="UXElement">FundingRate</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Type <span class="UXElement">ManualRate</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Type <span class="UXElement">PolicyNumber</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Type <span class="UXElement">State</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Type <span class="UXElement">StateRate</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Type <span class="UXElement">Status</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">Dataform</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">WC&#160;Code Rates</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">WC&#160;Code Rates</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">WC&#160;Code Rates</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">WC&#160;Code Rates</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">WC&#160;Code Rates</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">WC&#160;Code Rates</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">WC&#160;Code Rates</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Comp Code (fkCom[CodeID)</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Funding Rate (Cost) (FundingRate)</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select<span class="UXElement"> Manual Rate (RateManual)</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">WC Policy (fkPolicyID)</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">State (crState)</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">State Rate (StateRate)</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Status (crPolicyCodeStatus)</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">Data Type</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Foreign Key</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Number</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Number</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Foreign Key</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Text</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Number</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Text</span>.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">Lookup Table</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">WC&#160;Code Master</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">WC&#160;Policy</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">Lookup Field</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Comp Code (CompCode)</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select <span class="UXElement">Import ID</span>.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">&#160;</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">Required Value</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Select to enable.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Select to enable.</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Select to enable.</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Select to enable.</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Select to enable.</td>
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">Select to enable.</td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">Select to enable.</td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1" style="background-color: #f0f2f7;">
+                        <p class="TableTextLeft">Required Column</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">Select to enable.</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Select to enable.</td>
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Select to enable.</td>
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Select to enable.</td>
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Select to enable.</td>
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">Select to enable.</td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">Select to enable.</td>
+                </tr>
+            </tbody>
+        </table>
+        <ol MadCap:continue="true">
+            <li>
+                <p>Click <span class="UXElement">Save &amp;&#160;New</span>. <br />This action saves the mapping and opens the form to add the next one. </p>
+            </li>
+            <li>
+                <p>Repeat this action for all mappings:&#160;CompCode, FundingRate, Manual Rate, PolicyNumber, State, StateRate, and Status. When complete, you should see the following list on the Import Map dashboard.</p>
+            </li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Risk/WCCodeRates-fields.png" class="thumbnail" />
+            </p>
+        </div>
+        <h2><a name="Step"></a>Step 2: Review Business Rules</h2>
+        <p>Ensure that the business rules run on the Imports pipeline. You can add to the list if it is not already there.  Do this for Biz Logic or Hard Errors. Additionally,  activate the rules if they are inactive.</p>
+        <p class="ProcedureIntro">To review business rules:</p>
+        <ol>
+            <li>
+                <p>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Advanced</span> &gt;&#160;<span class="UXElement">Manage Rules</span>.<br />The Custom Logic Rules dashboard opens.</p>
+            </li>
+            <li>
+                <p>In <span class="UXElement">Quick Search</span>, type <span class="UXElement">%WC&#160;Code Rates</span>.<br />The list of WC&#160;Code Rates rules display.</p>
+            </li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Risk/WC-Code-Rates-rules.png" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>
+                <p>Open each entry and ensure that in <span class="UXElement">Execution Pipeline</span>, <span class="UXElement">Imports</span> is present. If not, click the field and select Imports. Only update entries with the <span class="UXElement">Rule Type</span> of Biz Logic and Hard Error.</p>
+            </li>
+        </ol>
+        <div class="indent">
+            <p>
+                <img src="../Resources/Images/Risk/ExecutionPipeline.png" />
+            </p>
+        </div>
+        <ol MadCap:continue="true">
+            <li>
+                <p>Ensure that <span class="UXElement">Active</span> is selected.</p>
+            </li>
+            <li>
+                <p>Click <span class="UXElement">Save</span>.</p>
+            </li>
+        </ol>
+        <h2>Step 3: Create the Import File</h2>
+        <p>Now you are ready to create the import file. The import file must contain the exact same column names as the mappings you established in the Import Map Detail forms (Step 1):&#160;CompCode, FundingRate, Manual Rate, PolicyNumber, State, StateRate, and Status. The import file needs two additional columns: ImportID and DefInfoImportID.</p>
+        <p>Your primary tool is a spreadsheet that provides the following:</p>
+        <ul>
+            <li>
+                <p>Identifies your existing codes and rates for a workers' comp policy</p>
+            </li>
+            <li>
+                <p>Identifies the existing ImportIDs for these workers' comp code rates</p>
+            </li>
+            <li>
+                <p>Serves as the import template for importing rate updates</p>
+            </li>
+        </ul>
+        <p>You can simply create a spreadsheet that contains the appropriate columns and then add the data. Or, you can use Business Intelligence to create the file. The spreadsheet must contain the list of existing WC&#160;Rate records and the corresponding ImportIDs. If you use a BI&#160;report, then you can download the data as a CSV file, and edit the file to update your WC&#160;Rates.</p>
+        <p class="ActionTip">You <span class="UXElement">must</span> use existing ImportIDs to update existing records, else you risk creating duplicates.</p>
+        <p>The first step is to prepare the mapping file, <span class="UXElement">admin_wc_rate*.csv</span>.</p>
+        <p>To create the BI&#160;Report:</p>
+        <p>&#160;</p>
+        <h3>Run the report</h3>
+        <p>run on the </p>
+        <h3>Export as CSV</h3>
+        <p>stuff</p>
+        <p>&#160;</p>
+        <h3>Edit the file</h3>
+        <p>A rule
+ exists on the WC Rate table to set the ImportID.  So if using an ImportID in this file that
+ is different than the system generated one, the system generated one is
+ saved.  This is why it's important to
+ use a BI Report to validate your existing ImportIDs. ImportIDs by the system
+ are generated as follows: [WCPolicy.ImportID]-[StateAbbeviation]-[WCCodeMaster.CompCode]</p>
+        <p style="color: #c71585;">Edit to reflect source file fields and values.</p>
+        <table style="mc-table-style: url('../Resources/TableStyles/Procedure.css');" class="TableStyle-Procedure" cellspacing="0">
+            <col class="TableStyle-Procedure-Column-Column1" style="width: 145px;" />
+            <col class="TableStyle-Procedure-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Comp Code *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select a Comp Code. </p>
+                        <p class="TableTextLeft">This is a foreign
+ key relationship to the WC Code Master table.  Provide the exact value shown in the WC Code field.  If a 0 or series of zeros precede the
+ number, be sure your import file contains them too.   This field should be treated as text not a
+ number.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">State *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Provide a two-letter state abbreviation.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">WC Policy</p>
+                        <p class="TableTextLeft"><span style="color: #c71585;">(PolicyNumber * on source file)</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft"> This field points to the Policy Number. You can jump to the policy from this field. The policy has the field Policy Number.</p>
+                        <p class="StepResult">&#160;</p>
+                        <p class="TableTextLeft">Provide the
+ ImportID of the related Policy.  Changing the Policy Number or Effective Date fields on the Policy updates the ImportID on this WC Policy and related WC Rate records.  Run your BI Report before
+ importing to ensure you do not get duplicates.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Status *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">Select one of the
+ following:</p>
+                        <ul>
+                            <li>
+                                <p><![CDATA[  ]]><span class="UXElement">Approved</span></p>
+                            </li>
+                            <li>
+                                <p><![CDATA[
+  ]]><span class="UXElement">Referral</span></p>
+                            </li>
+                            <li>
+                                <p><![CDATA[
+  ]]><span class="UXElement">Excluded</span></p>
+                            </li>
+                        </ul>
+                        <p>When you import the source file, the following values in the import file correspond to the dataform fields as:</p>
+                        <ul>
+                            <li>
+                                <p><![CDATA[  ]]><span class="UXElement">Active</span>: Approved code.</p>
+                            </li>
+                            <li>
+                                <p><![CDATA[
+  ]]><span class="UXElement">Restricted</span>: Referral code.</p>
+                            </li>
+                            <li>
+                                <p><![CDATA[
+  ]]><span class="UXElement">Rejected</span>: Excluded code.</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Manual Rate *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The PEO manual
+ rate.  It is also used as the default
+ manual billing rate for the SMB.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyE-Column1-Body1">
+                        <p class="TableTextLeft">Funding Rate *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyD-Column1-Body1">
+                        <p class="TableTextLeft">The PEO cost.
+ The amount paid to the carrier.  Sometimes this is referred to as the Net Rate or Effective Rate paid to
+ the Carrier. </p>
+                        <p class="TableTextLeft">If the Use
+ Cost Factors on the associated Policy is set to Yes and the Manual Rate
+ is changed, this field is recalculated after imported.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Procedure-Body-Body1">
+                    <td class="TableStyle-Procedure-BodyB-Column1-Body1">
+                        <p class="TableTextLeft">State Rate *</p>
+                    </td>
+                    <td class="TableStyle-Procedure-BodyA-Column1-Body1">
+                        <p class="TableTextLeft">Seldom used.
+ Leave blank if not using. It is informational and can be used to store what a
+ State Rate is, should it be different than the Manual Rate.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h2>Step 4: Importing the File to update WC&#160;Code Rates</h2>
+        <p>Now that you have an import file, the next step is to import the file so that you can update the WC&#160;Code Rates. More details about importing files is in the topic <MadCap:xref href="../ImportsUploads/ManageDataImports.htm" title="Managing import data" alt="Managing import data">Managing import data</MadCap:xref>.</p>
+        <p class="ProcedureIntro">To import codes:</p>
+        <ol>
+            <li>
+                <p>Go to <span class="UXElement">System Admin</span> <img src="../Resources/Images/ICONS/ICON_SysAdmin.png" /> &gt; <span class="UXElement">Imports</span> &gt; <span class="UXElement">Manage Import</span>.</p>
+            </li>
+            <li>
+                <p>Click <span class="UXElement">Add</span>.<br />The Upload File dialog box opens.</p>
+            </li>
+            <li>
+                <p>Complete the fields and click <span class="UXElement">Save</span>.</p>
+            </li>
+            <li>
+                <p>When the uploaded file is added, click <span class="UXElement">Validate File</span>.</p>
+            </li>
+            <li>With the record in Validate Complete status, click <b>Run Import</b> to begin the import process. <br />The action button reflects that the import process is <b>Running</b>. When complete, the action displays as <b>Completed</b>.</li>
+            <li>To review the success of your import, open the record and use the action item Links on the right: View File, Log File, Log Data, and Reset Status. Log Data presents any errors during the import.</li>
+            <li>To view the log file for import errors, click <span class="UXElement">View Log</span>.</li>
+        </ol>
+    </body>
+</html>

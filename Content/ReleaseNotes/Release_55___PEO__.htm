@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title></title>
+    </head>
+    <body>
+        <h1>Release 55 ( PEO )</h1>
+        <div class="contentLayout2">
+            <div class="columnLayout two-equal">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="https://clientspace.atlassian.net/wiki/download/attachments/93852942/logo-top-nav.png?version=3&amp;modificationDate=1514573640898&amp;cacheVersion=1&amp;api=v2" /></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p><strong>Sprint Began:</strong>&#160;5/8/2017&#160;&#160;&#160;&#160;&#160;<strong>Sprint Ended:</strong>&#160;6/2/2017</p>
+                    </div>
+                </div>
+            </div>
+            <div class="columnLayout single">
+                <div class="cell normal">
+                    <div class="innerCell">
+                        <p>
+                            <br />
+                        </p>
+                        <p>The following items have been completed in this release:</p>
+                        <p>
+                            <br />
+                        </p>
+                        <h4 id="Release55(PEO)-i3AnalyticsMergeENHANCEMENT"><span style="color: rgb(51,153,102);">i3 Analytics Merge&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>A new merge is available to display i3 Analytics data for a client. &#160;This Excel merge retrieves i3 data from ClientSpace pricing comp codes and aggregates it with payroll data from the same pricing batch. &#160;For more information about i3 analytics integration, or for help with configuring this merge, please contact your NetWise account manager.</p>
+                        <h4 id="Release55(PEO)-RenewalPricingBatchHeaderinbothClassicandNEXTappearstodisplayincorrectTotalEECount"><span style="color: rgb(51,153,102);">Renewal Pricing Batch Header in both Classic and NEXT appears to display incorrect Total EE Count&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Fixed a bug in the header code for the Pricing Batch that would always pull the Employee Count and Gross Payroll amounts from the Activated Batch - system now appropriately displays the Employee Count and Gross Payroll for the current batch being viewed.</p>
+                        <h4 id="Release55(PEO)-EmailReplytoCaseDiscussionENHANCEMENT"><span style="color: rgb(51,153,102);">Email Reply to Case Discussion&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>Email Integration can now be used to initiate CSC Discussions.&#160; An external person can send an email to an Email Alias configured mailbox and a new Client Service Case and Discussion will be generated.&#160; Subsequent Discussion Messages can be managed by using the ReplyTo link to open the discussion in a web browser or by replying to the email (either/or - not both).&#160; External recipients have the option of clicking the standard ReplyTo link embedded in the email or they can 'Reply' to the email (either/or - not both) and the Email Integration process will attach it to the correct CSC/Discussion Thread.&#160; For more information on configuring and using this feature, contact your NetWise account manager.</p>
+                        <h4 id="Release55(PEO)-RFPPricingHeaderWidget(NEXT)ENHANCEMENT"><span style="color: rgb(51,153,102);">RFP Pricing Header Widget (NEXT)&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The RFP Pricing panel used on the&#160;Pricing Batch and Pricing State dataform header(s) has been re-engineered as a widget. This standardizes the modular design, allowing for more flexibility of future development.</p>
+                        <h4 id="Release55(PEO)-EPLIClaimInfoHeaderWidget(NEXT)ENHANCEMENT"><span style="color: rgb(51,153,102);">EPLI Claim Info Header Widget (NEXT)</span>  &#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></h4>
+                        <hr />
+                        <p>The Claim&#160;Info panel used on the&#160;EPLI Claim&#160;dataform header has been re-engineered as a widget. This standardizes the modular design, allowing for more flexibility of future development.</p>
+                        <h4 id="Release55(PEO)-HeaderImportheaderWidget(NEXT)ENHANCEMENT"><span style="color: rgb(51,153,102);">Header Import header Widget (NEXT)&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Import header on the Import Invoice dataform of the Benefits Rec workspace has been re-designed as a NEXT widget.&#160;This standardizes the modular design, allowing for more flexibility of future development.</p>
+                        <h4 id="Release55(PEO)-HeaderClaimNotesWidget(NEXT)ENHANCEMENT"><span style="color: rgb(51,153,102);">Header Claim Notes Widget (NEXT)&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Claim Notes Info panel used on the Claim Notes dataform header has been re-engineered as a widget. This standardizes the modular design, allowing for more flexibility of future development.</p>
+                        <h4 id="Release55(PEO)-ValidationsonFilePricingLoad(NEXT)ENHANCEMENT"><span style="color: rgb(51,153,102);">Validations on File Pricing Load (NEXT)&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Quick Create preload process has been enhanced</p>
+                        <p>Uploading a State/Code CSV file now performs&#160;Row Validation.&#160; Any validation failures will result in the row being highlighted in RED&#160; This validation performs the following:</p>
+                        <ul>
+                            <li>Validates the State against the State Rate table (match on State or Formal Name); if not found, State field will not be populated</li>
+                            <li>Validates the Comp Code against the Comp Code Master table; if not found, Comp Code field will not be populated</li>
+                            <li>Pay Frequency (field in file not populated, does not verify that it is a valid Pay Frequency)</li>
+                            <li>Duplicate State/Code records<ul><li>each row from file will be checked against existing rows in the Quick Create grid</li><li>if a match on State and Comp Code is found, will REPLACE existing FTE, PTE, Gross Payroll, Pay Frequency, Manual Rate and SUTA with new data.&#160; A new row will NOT be created</li></ul></li>
+                        </ul>
+                        <p>Uploading multiple files</p>
+                        <ul>
+                            <li>Additional files can be added (one at a time) to existing records.&#160; Validation and Duplication checks will be made as above</li>
+                            <li>Generate Pricing button will alert an error if any rows have validation errors.&#160; Generate Pricing is not allowed if errors exist.</li>
+                        </ul>
+                        <h4 id="Release55(PEO)-PricingBreakdownUpdates(NEXT)ENHANCEMENT"><span style="color: rgb(51,153,102);">Pricing Breakdown Updates (NEXT)&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The Pricing breakdown in NEXT has been secured - a new security entity has been created "biz_pricingconsole_breakdown" which allows the Pricing Breakdown Matrix at the bottom of the pricing console to be hidden.&#160; At the same time, a link can be made available to display the breakdown information.</p>
+                        <h4 id="Release55(PEO)-UpdateOSHA300-ENHANCEMENT"><span style="color: rgb(51,153,102);">Update OSHA 300 -&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The OSHA 300 report in PEO has been enhanced -</p>
+                        <ul>
+                            <li>A filter has been added to the filter page that allows the user to select whether they want to run the report for clients with claims, clients with and without claims, or clients without claims.</li>
+                            <li>The system will now populate client name, city, state, and year on OSHA 300 regardless if there are claims or not.</li>
+                            <li>If the report is run to only show clients "With Claims" on a client without or vice versa, the report will not populate the client information.</li>
+                        </ul>
+                        <h4 id="Release55(PEO)-PricingModuleError"><span style="color: rgb(51,153,102);">Pricing Module Error</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue with Pricing module widgets where opening pricing directly from the Pricing module would cause the system to throw an error due to the lack of a pre-existing ProjectID. System now allows you to create pricing from the Pricing module directly.</p>
+                        <h4 id="Release55(PEO)-ClientMasterStatus&amp;OrgStatusnotDisplayedinClassic(CLASSIC)"><span style="color: rgb(51,153,102);">Client Master Status &amp; Org Status not Displayed in Classic (CLASSIC)</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where changes to the Client Master header Stored Procedure when it was widgetized caused the Org and Contract Status to not be displayed in ClientSpace Classic.&#160; Both Classic and NEXT now appropriately display the correct status values.</p>
+                        <h4 id="Release55(PEO)-ActOnSyncStatus"><span style="color: rgb(51,153,102);">ActOn Sync Status</span>
+                        </h4>
+                        <hr />
+                        <p>The Contact&#160;Import was missing Act-On Status field,&#160;preventing us from setting up and turning on the API since we are not able to set the initial batch of Contacts to be pushed into Act-On.&#160; This has been corrected by adding the field throughout the import configuration and custom import dataform.&#160; For configuration help contact your NetWise account manager.</p>
+                        <h4 id="Release55(PEO)-DivideByZeroErroronPayrollInfoPanelWidget(NEXT)"><span style="color: rgb(51,153,102);">Divide By Zero Error on Payroll Info Panel Widget (NEXT)&#160;</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue where the Payroll Info widget on the Client Workspace Landing page would throw an "Divide by Zero" error when attempting to calculate annual wages for a workspace which had only one record in Payroll Statistics.</p>
+                        <h4 id="Release55(PEO)-Updatei3Codefrom&quot;RiskMD&quot;to&quot;i3Analytics&quot;ENHANCEMENT"><span style="color: rgb(51,153,102);">Update i3 Code from "RiskMD" to "i3 Analytics"&#160;<span style="color: rgb(255,0,0);">ENHANCEMENT</span></span>
+                        </h4>
+                        <hr />
+                        <p>The system has been updated to alter all areas which reference "RiskMD" to "i3Analytics" as this brand has changed their name.</p>
+                        <h4 id="Release55(PEO)-LandingPageEmailLinkNotWorking(NEXT)"><span style="color: rgb(51,153,102);">Landing Page Email Link Not Working (NEXT)</span>
+                        </h4>
+                        <hr />
+                        <p>Resolved an issue in NEXT where the email and phone links on the Workspace Landing pages would not open a default mail client or start a call. &#160;System will now appropriately interact when Landing page links are clicked. &#160; (Interactions on mobile devices may be browser and phone specific - iPhones for example require you to press and hold email and phone links before being prompted to start a call or email. &#160;For questions on your device, contact your mobile provider).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

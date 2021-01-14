@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html>
+    <head>
+        <link href="../Resources/TableStyles/Standard_Table.css" rel="stylesheet" MadCap:stylesheetType="table" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    </head>
+    <body>
+        <h1>Available data</h1>
+        <p>There are several required fields on the Client Master (and related forms) and Employee (and related forms) dataform. In the following table, fields with an asterisk * indicate that the Export expects to locate, in particular, Import IDs on several users, and lookups.    Other fields are available, but not required.  </p>
+        <table style="width: 100%; mc-table-style: url('../Resources/TableStyles/Standard_Table.css'); margin-left: 0; margin-right: auto;" class="TableStyle-Standard_Table" cellspacing="0">
+            <col class="TableStyle-Standard_Table-Column-Column1" style="width: 130px;" />
+            <col class="TableStyle-Standard_Table-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Standard_Table-Head-Header1">
+                    <th class="TableStyle-Standard_Table-HeadE-Column1-Header1">
+                        <p class="TableHead">Data</p>
+                    </th>
+                    <th class="TableStyle-Standard_Table-HeadD-Column1-Header1">
+                        <p class="TableHead">Description</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyH-Column1-Body2">Client Export</td>
+                    <td class="TableStyle-Standard_Table-BodyG-Column1-Body2">
+                        <ul>
+                            <li>Org Name (ClientName) *
+</li>
+                            <li>ORG.AKA (LegalName)
+</li>
+                            <li>Org County *
+</li>
+                            <li>Org Address1 *</li>
+                            <li>Org City *
+</li>
+                            <li>Org State (StateCode) *
+</li>
+                            <li>Org PostalCode (ZipCode) *
+</li>
+                            <li>CM Contract Type ImportID *
+</li>
+                            <li>CM Corporation Type ImportID *</li>
+                            <li>CM Contract Status ImportID *</li>
+                            <li>CM Contract Status ImportID (must be either A, T, I or P) *</li>
+                            <li>CM Status Date – translated to cmClientEntry.statusDate *</li>
+                            <li>CM.ContractEffectiveDate – translated to cmClientEntry.contractDate (only if populated)</li>
+                            <li>H (DeliverChecks)</li>
+                            <li>ORG.Address2</li>
+                            <li>ORG.crBusinessType (CategoryCode)</li>
+                            <li>ORG.Phone (Telephone)</li>
+                            <li>ORG.Fax</li>
+                            <li>ORG.Email</li>
+                            <li>ORG.EmployerIDNumber (EIN)</li>
+                            <li>ALE ImportID (ALE on the CM) *</li>
+                            <li>Processing Team Payroll Specialist User - ImportID  (Payroll REP id in Prism) *</li>
+                            <li>Processing Team Sales Rep User - ImportID (SalesRep id in Prism)*</li>
+                            <li>Processing Team HR Consultant – ImportID (HRRep id in Prism) *</li>
+                            <li>Org Phone must be (xxx) xxx-xxxx *</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Standard_Table-Body-Body2">
+                    <td class="TableStyle-Standard_Table-BodyB-Column1-Body2">Employee Export</td>
+                    <td class="TableStyle-Standard_Table-BodyA-Column1-Body2">
+                        <ul>
+                            <li>EE.FirstName *</li>
+                            <li>EE.LastName *
+</li>
+                            <li>EE.DOB *
+</li>
+                            <li>EE.Address1 *
+</li>
+                            <li>EE.ZipCode *
+</li>
+                            <li>EE.City *
+</li>
+                            <li>EE.State (2 character) *
+</li>
+                            <li>EE.SSN *
+</li>
+                            <li>EEI.crEmploymentStatus.ImportID:  *<ul><li>Terminated = T
+</li><li>Otherwise, Active = A
+</li></ul></li>
+                            <li>EEI.crEmploymentType.ImportID:
+<ul><li>Part Time = PT
+</li><li>Otherwise, Full Time, FT
+</li></ul></li>
+                            <li>CL.LocationCode (Work location code, must match Prism value) *
+</li>
+                            <li>EEI.JobCode (must match Prism job code for this client) *</li>
+                            <li>EEI.OriginalHireDate *
+</li>
+                            <li>EEI.HireDate *
+</li>
+                            <li>EEI.StartDate *
+</li>
+                            <li>EEI.luPayMethod.ImportID: *
+<ul><li>Salary = S</li><li>
+Hourly = H
+</li><li>Driver = D
+</li><li>Commission = C
+</li></ul></li>
+                            <li>EEI.HourlyRate (min 1)
+</li>
+                            <li>EEI.StandardHoursPerPeriod *
+</li>
+                            <li>EE.crMaritalStatus.ImportID: *
+<ul><li>Married = M
+</li><li>Single = S
+</li><li>Divorced = D
+</li></ul></li>
+                            <li>EEI.HRPPayGroup (must match Prism pay group for this client) *
+</li>
+                            <li>EEI.luPayFrequency.ImportID: *
+<ul><li>Weekly = W
+</li><li>Bi-Weekly 1 = B</li><li>Bi-Weekly 2 = B</li><li>Monthly = M</li><li>Semi-Monthly = S
+</li><li>Yearly = Y
+</li><li>Otherwise, Hourly = H
+</li></ul></li>
+                            <li>EE.crGender.ImportID: *
+<ul><li>Male = M
+</li><li>Female = F</li></ul></li>
+                            <li>EE.crEthnicClassification.ImportID: *<ul><li>Caucasian = W
+</li><li>Asian = A
+</li><li>Native American = N</li><li>Hispanic = H
+</li><li>Black = B
+</li><li>Unknown = X
+</li></ul></li>
+                            <li>EE.luWorkStateFilingStatus.ImportID (if required) *</li>
+                            <li>EE.luHomeStateFIlingStatus.ImportID (if required)
+</li>
+                            <li>EE.WorkStateTaxExemptAmt (if required) *</li>
+                            <li>EE.HomeStateTaxExemptAmt (if required)
+</li>
+                            <li>EE.WorkStatePrimaryAllowance (if required)
+</li>
+                            <li>EE.HomeStatePrimaryAllowance (if required)
+</li>
+                            <li>EE.HomeStateSecondaryAllowance (if required)
+</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
