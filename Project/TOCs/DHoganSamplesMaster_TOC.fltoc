@@ -13,6 +13,9 @@
     ReplaceMergeNode="true"
     FrameName="_blank" />
   <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/HOME/CertProject.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+  <TocEntry
     Title="Instructional Design Samples"
     Link="/Project/TOCs/InstructionalDesign_TOC.fltoc"
     ReplaceMergeNode="true"

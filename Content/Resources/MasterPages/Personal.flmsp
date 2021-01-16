@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../FontAwesome/css/all.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" defer="defer" src="../Scripts/Scroll-Button.js">
+        </script>
+    </head>
+    <body>
+        <MadCap:topicToolbarProxy style="mc-topic-toolbar-items: PreviousTopic NextTopic ExpandAll Print RemoveHighlight;" data-mc-skin="/Project/Skins/Toolbar.flskn" />
+        <MadCap:breadcrumbsProxy class="" />
+        <div class="topicwidth">
+            <MadCap:bodyProxy />
+        </div>
+        <div class="topicwidth">
+            <MadCap:relationshipsProxy />
+        </div>
+        <p class="TableTextLeftSmall">&#160;</p>
+        <p class="LastUpdated">Last updated: <MadCap:variable name="MyVariables.LastUpdated" /></p>
+    </body>
+</html>
