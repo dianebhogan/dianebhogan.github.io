@@ -5,7 +5,7 @@
   Type="WebHelp2"
   Destinations=""
   GlossaryTermConversion="marked"
-  MasterToc="/Project/TOCs/DHoganSamplesMaster_TOC.fltoc"
+  MasterToc="/Project/TOCs/HTML5SamplesMaster_TOC.fltoc"
   ConditionTagExpression="include[ClientSpace.Screen], exclude[ClientSpace.Exclude or ClientSpace.FutureDev or ClientSpace.Print or ClientSpace.SME_Review or ClientSpace.Sprint_R98]"
   EquationsOutputType="PNG"
   MasterPage="/Content/Resources/MasterPages/OtherTopics.flmsp"
@@ -16,7 +16,7 @@
   MasterStylesheet="/Content/Resources/Stylesheets/ClientSpace.css"
   MasterStylesheetOverride="true"
   TopicToolbarSkin="/Project/Skins/Toolbar.flskn"
-  OutputFile="Samples"
+  OutputFile="HTML5Samples"
   ResolveCssVariables="true"
   InsertMOTW="false"
   GenerateWebSafeImages="false"
@@ -35,7 +35,7 @@
   LiveHelpType="Disabled"
   OutputAnalyticsKey="c5430b77-abb5-4d7a-9cec-8685840d42fb"
   SearchFilterSet="/Project/Advanced/SearchFilterSet.flsfs"
-  DefaultUrl="/Content/HOME/DianeHogan-samples.htm"
+  DefaultUrl="/Content/HOME/ClientSpace.htm"
   ContentInclusionType="Toc">
   <PrintedOutput
     CollapseMargins="true"

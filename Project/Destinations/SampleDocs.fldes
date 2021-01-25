@@ -5,7 +5,7 @@
   Host="diane-hogan.com"
   User="MyAccountId"
   Password=""
-  Directory="/public_html"
+  Directory="./html5_samples"
   Port="21"
   ViewUrl=""
   Type="ftp"
